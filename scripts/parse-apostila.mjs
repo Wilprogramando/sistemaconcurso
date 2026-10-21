@@ -61,6 +61,12 @@ for (const mk of marks) {
   lastSection = mk.section;
 }
 
+/** remove o quadrinho "( )" de marcar resposta que o PDF deixa no enunciado */
+const limpaEnunciado = (s) => s.replace(/\s*\(\s*\)\s*$/, '').trim();
+
+/** fundamento que virou so pontuacao ("." quando a apostila nao explica) vira vazio */
+const limpaFundamento = (s) => (/[A-Za-zÀ-ÿ0-9]/.test(s) ? s : '');
+
 const bodyOf = (from, to) =>
   lines
     .slice(from, to)
@@ -79,7 +85,13 @@ function parseQuestions(text) {
     if (m) {
       const statement = m[1].trim().replace(/\s+/g, ' ');
       if (statement.length < 15) continue;
-      out.push({ number: num, type: 'ce', statement, answer: m[2] === 'CERTO' ? 'C' : 'E', explanation: m[3].trim().replace(/\s+/g, ' ') });
+      out.push({
+        number: num,
+        type: 'ce',
+        statement: limpaEnunciado(statement),
+        answer: m[2] === 'CERTO' ? 'C' : 'E',
+        explanation: limpaFundamento(m[3].trim().replace(/\s+/g, ' ')),
+      });
       continue;
     }
     // formato "<frase> Correto? NÃO — justificativa" (usado em Português)
@@ -87,7 +99,13 @@ function parseQuestions(text) {
     if (m) {
       const statement = m[1].trim().replace(/\s+/g, ' ');
       if (statement.length < 15) continue;
-      out.push({ number: num, type: 'ce', statement, answer: m[2] === 'SIM' ? 'C' : 'E', explanation: m[3].trim().replace(/\s+/g, ' ') });
+      out.push({
+        number: num,
+        type: 'ce',
+        statement: limpaEnunciado(statement),
+        answer: m[2] === 'SIM' ? 'C' : 'E',
+        explanation: limpaFundamento(m[3].trim().replace(/\s+/g, ' ')),
+      });
       continue;
     }
     // discursiva curta: pergunta até o "?"/ponto, resto é a resposta
@@ -95,7 +113,13 @@ function parseQuestions(text) {
     // descarta texto que vazou do capítulo seguinte (título em caixa alta, caixas "NO EDITAL")
     const bleed = /NO EDITAL|ATENÇÃO|\(\d+ quest|\d\.\d\s|^[A-ZÀ-Ü][A-ZÀ-Ü ]{6,}/;
     if (m && m[1].trim().length > 15 && m[2].trim().length > 3 && !bleed.test(m[1].trim())) {
-      out.push({ number: num, type: 'open', statement: m[1].trim().replace(/\s+/g, ' '), answer: null, explanation: m[2].trim().replace(/\s+/g, ' ') });
+      out.push({
+        number: num,
+        type: 'open',
+        statement: limpaEnunciado(m[1].trim().replace(/\s+/g, ' ')),
+        answer: null,
+        explanation: limpaFundamento(m[2].trim().replace(/\s+/g, ' ')),
+      });
     }
   }
   return out;
@@ -155,7 +179,7 @@ if (simIdx > -1 && gabIdx > simIdx) {
     const num = Number(parts[i]);
     const statement = (parts[i + 1] || '').trim().replace(/\s+/g, ' ');
     if (!gab[num] || statement.length < 15) continue;
-    simulado.push({ number: num, type: 'ce', statement, answer: gab[num].answer, explanation: gab[num].note });
+    simulado.push({ number: num, type: 'ce', statement: limpaEnunciado(statement), answer: gab[num].answer, explanation: limpaFundamento(gab[num].note) });
   }
   simulado = simulado
     .filter((q, i, a) => a.findIndex((x) => x.number === q.number) === i)

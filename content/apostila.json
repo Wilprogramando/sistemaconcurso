@@ -1231,7 +1231,7 @@
           "type": "ce",
           "statement": "A memória RAM é volátil.",
           "answer": "C",
-          "explanation": "."
+          "explanation": ""
         },
         {
           "number": 5,
@@ -1259,7 +1259,7 @@
           "type": "ce",
           "statement": "No Windows 11, Win + L bloqueia o computador.",
           "answer": "C",
-          "explanation": "."
+          "explanation": ""
         },
         {
           "number": 9,
@@ -1321,70 +1321,70 @@
     {
       "number": 1,
       "type": "ce",
-      "statement": "(Const.) São fundamentos da República: soberania, cidadania, dignidade da pessoa humana, valores sociais do trabalho e da livre iniciativa e pluralismo político. ( )",
+      "statement": "(Const.) São fundamentos da República: soberania, cidadania, dignidade da pessoa humana, valores sociais do trabalho e da livre iniciativa e pluralismo político.",
       "answer": "C",
       "explanation": ""
     },
     {
       "number": 2,
       "type": "ce",
-      "statement": "(Const.) O rol de órgãos de segurança pública do art. 144 é exemplificativo, admitindo que lei estadual crie novos órgãos. ( )",
+      "statement": "(Const.) O rol de órgãos de segurança pública do art. 144 é exemplificativo, admitindo que lei estadual crie novos órgãos.",
       "answer": "E",
       "explanation": "taxativo"
     },
     {
       "number": 3,
       "type": "ce",
-      "statement": "(Const.) A casa é asilo inviolável, podendo o policial nela ingressar à noite por determinação judicial. ( )",
+      "statement": "(Const.) A casa é asilo inviolável, podendo o policial nela ingressar à noite por determinação judicial.",
       "answer": "E",
       "explanation": "à noite só flagrante, desastre ou socorro"
     },
     {
       "number": 4,
       "type": "ce",
-      "statement": "(Const.) Aos militares estaduais são vedadas a sindicalização e a greve. ( )",
+      "statement": "(Const.) Aos militares estaduais são vedadas a sindicalização e a greve.",
       "answer": "C",
       "explanation": ""
     },
     {
       "number": 5,
       "type": "ce",
-      "statement": "(Penal) Considera-se praticado o crime no momento da ação ou omissão, ainda que outro seja o momento do resultado. ( )",
+      "statement": "(Penal) Considera-se praticado o crime no momento da ação ou omissão, ainda que outro seja o momento do resultado.",
       "answer": "C",
       "explanation": ""
     },
     {
       "number": 6,
       "type": "ce",
-      "statement": "(Penal) A embriaguez voluntária completa exclui a imputabilidade penal. ( )",
+      "statement": "(Penal) A embriaguez voluntária completa exclui a imputabilidade penal.",
       "answer": "E",
       "explanation": ""
     },
     {
       "number": 7,
       "type": "ce",
-      "statement": "(Penal) Exigir vantagem indevida em razão da função configura corrupção passiva. ( )",
+      "statement": "(Penal) Exigir vantagem indevida em razão da função configura corrupção passiva.",
       "answer": "E",
       "explanation": "é concussão"
     },
     {
       "number": 8,
       "type": "ce",
-      "statement": "(Penal) No roubo com emprego de arma de fogo, a pena é aumentada de dois terços. ( )",
+      "statement": "(Penal) No roubo com emprego de arma de fogo, a pena é aumentada de dois terços.",
       "answer": "C",
       "explanation": ""
     },
     {
       "number": 9,
       "type": "ce",
-      "statement": "(Proc. Penal) Qualquer do povo deverá prender quem esteja em flagrante delito. ( )",
+      "statement": "(Proc. Penal) Qualquer do povo deverá prender quem esteja em flagrante delito.",
       "answer": "E",
       "explanation": "poderá"
     },
     {
       "number": 10,
       "type": "ce",
-      "statement": "(Proc. Penal) A prisão preventiva deve ser revista a cada 90 dias, sob pena de ilegalidade. ( )",
+      "statement": "(Proc. Penal) A prisão preventiva deve ser revista a cada 90 dias, sob pena de ilegalidade.",
       "answer": "C",
       "explanation": ""
     },
@@ -1398,133 +1398,133 @@
     {
       "number": 12,
       "type": "ce",
-      "statement": "(Proc. Penal) A busca pessoal depende sempre de mandado judicial. ( )",
+      "statement": "(Proc. Penal) A busca pessoal depende sempre de mandado judicial.",
       "answer": "E",
       "explanation": ""
     },
     {
       "number": 13,
       "type": "ce",
-      "statement": "(CPM) A deserção consuma-se com oito dias de ausência. ( )",
+      "statement": "(CPM) A deserção consuma-se com oito dias de ausência.",
       "answer": "E",
       "explanation": "mais de 8 dias"
     },
     {
       "number": 14,
       "type": "ce",
-      "statement": "(CPM) Motim praticado com armas na mão denomina-se revolta. ( )",
+      "statement": "(CPM) Motim praticado com armas na mão denomina-se revolta.",
       "answer": "C",
       "explanation": ""
     },
     {
       "number": 15,
       "type": "ce",
-      "statement": "(CPM) O limite de cumprimento de pena de detenção é de 30 anos. ( )",
+      "statement": "(CPM) O limite de cumprimento de pena de detenção é de 30 anos.",
       "answer": "E",
       "explanation": "15 anos"
     },
     {
       "number": 16,
       "type": "ce",
-      "statement": "(CPM) O militar que cumpre ordem manifestamente criminosa de superior fica isento de pena. ( )",
+      "statement": "(CPM) O militar que cumpre ordem manifestamente criminosa de superior fica isento de pena.",
       "answer": "E",
       "explanation": ""
     },
     {
       "number": 17,
       "type": "ce",
-      "statement": "(Leg. Esp.) Organização criminosa exige associação de quatro ou mais pessoas. ( )",
+      "statement": "(Leg. Esp.) Organização criminosa exige associação de quatro ou mais pessoas.",
       "answer": "C",
       "explanation": ""
     },
     {
       "number": 18,
       "type": "ce",
-      "statement": "(Leg. Esp.) Na tortura, a perda do cargo é efeito automático da condenação. ( )",
+      "statement": "(Leg. Esp.) Na tortura, a perda do cargo é efeito automático da condenação.",
       "answer": "C",
       "explanation": ""
     },
     {
       "number": 19,
       "type": "ce",
-      "statement": "(Leg. Esp.) O tráfico privilegiado é crime hediondo. ( )",
+      "statement": "(Leg. Esp.) O tráfico privilegiado é crime hediondo.",
       "answer": "E",
       "explanation": ""
     },
     {
       "number": 20,
       "type": "ce",
-      "statement": "(Leg. Esp.) A ação penal por lesão corporal em violência doméstica é condicionada à representação. ( )",
+      "statement": "(Leg. Esp.) A ação penal por lesão corporal em violência doméstica é condicionada à representação.",
       "answer": "E",
       "explanation": "incondicionada, Súm. 542 STJ"
     },
     {
       "number": 21,
       "type": "ce",
-      "statement": "(Leg. Esp.) A internação provisória de adolescente pode durar até 45 dias. ( )",
+      "statement": "(Leg. Esp.) A internação provisória de adolescente pode durar até 45 dias.",
       "answer": "C",
       "explanation": ""
     },
     {
       "number": 22,
       "type": "ce",
-      "statement": "(Trânsito) As ordens do agente de trânsito prevalecem sobre as indicações do semáforo. ( )",
+      "statement": "(Trânsito) As ordens do agente de trânsito prevalecem sobre as indicações do semáforo.",
       "answer": "C",
       "explanation": ""
     },
     {
       "number": 23,
       "type": "ce",
-      "statement": "(Trânsito) A infração gravíssima corresponde a sete pontos na CNH. ( )",
+      "statement": "(Trânsito) A infração gravíssima corresponde a sete pontos na CNH.",
       "answer": "C",
       "explanation": ""
     },
     {
       "number": 24,
       "type": "ce",
-      "statement": "(Trânsito) O crime do art. 306 do CTB exige necessariamente a realização de etilômetro. ( )",
+      "statement": "(Trânsito) O crime do art. 306 do CTB exige necessariamente a realização de etilômetro.",
       "answer": "E",
       "explanation": ""
     },
     {
       "number": 25,
       "type": "ce",
-      "statement": "(Institucional) O Conselho de Disciplina destina-se a julgar oficiais. ( )",
+      "statement": "(Institucional) O Conselho de Disciplina destina-se a julgar oficiais.",
       "answer": "E",
       "explanation": "praças estáveis"
     },
     {
       "number": 26,
       "type": "ce",
-      "statement": "(Institucional) A perda do posto e da patente do oficial é declarada pelo Tribunal de Justiça. ( )",
+      "statement": "(Institucional) A perda do posto e da patente do oficial é declarada pelo Tribunal de Justiça.",
       "answer": "C",
       "explanation": ""
     },
     {
       "number": 27,
       "type": "ce",
-      "statement": "(Institucional) A advertência é a punição disciplinar mais branda prevista no RPAD. ( )",
+      "statement": "(Institucional) A advertência é a punição disciplinar mais branda prevista no RPAD.",
       "answer": "C",
       "explanation": ""
     },
     {
       "number": 28,
       "type": "ce",
-      "statement": "(Português) \"Houveram muitos candidatos\" está correto quanto à concordância. ( )",
+      "statement": "(Português) \"Houveram muitos candidatos\" está correto quanto à concordância.",
       "answer": "E",
       "explanation": "Houve"
     },
     {
       "number": 29,
       "type": "ce",
-      "statement": "(Português) Em \"Os policiais, que agiram com excesso, foram punidos\", a oração adjetiva é explicativa. ( )",
+      "statement": "(Português) Em \"Os policiais, que agiram com excesso, foram punidos\", a oração adjetiva é explicativa.",
       "answer": "C",
       "explanation": ""
     },
     {
       "number": 30,
       "type": "ce",
-      "statement": "(Informática) O worm necessita de arquivo hospedeiro para se propagar. ( )",
+      "statement": "(Informática) O worm necessita de arquivo hospedeiro para se propagar.",
       "answer": "E",
       "explanation": "quem precisa é o vírus"
     }

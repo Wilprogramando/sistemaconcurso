@@ -121,7 +121,9 @@ export default function QuestionRunner({
               updated_at: new Date().toISOString(),
             };
           }),
-          { onConflict: 'user_id,question_id' }
+          // defaultToNull: false faz campos ausentes usarem o default da coluna
+          // em vez de virarem null (o PostgREST uniformiza as chaves do lote)
+          { onConflict: 'user_id,question_id', defaultToNull: false }
         );
 
         // caderno de erros: registra os erros desta sessão

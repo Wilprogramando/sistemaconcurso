@@ -3820,7 +3820,7 @@ select 'apostila', id, 3, 'ce', 'A navegação anônima torna o usuário não id
 on conflict (source, coalesce(discipline_id, 0), number) do update set type = excluded.type, statement = excluded.statement, answer = excluded.answer, explanation = excluded.explanation;
 
 insert into questions (source, discipline_id, number, type, statement, answer, explanation)
-select 'apostila', id, 4, 'ce', 'A memória RAM é volátil.', 'C', '.' from disciplines where slug = 'informatica'
+select 'apostila', id, 4, 'ce', 'A memória RAM é volátil.', 'C', '' from disciplines where slug = 'informatica'
 on conflict (source, coalesce(discipline_id, 0), number) do update set type = excluded.type, statement = excluded.statement, answer = excluded.answer, explanation = excluded.explanation;
 
 insert into questions (source, discipline_id, number, type, statement, answer, explanation)
@@ -3836,7 +3836,7 @@ select 'apostila', id, 7, 'ce', 'Na assinatura digital, o emissor usa sua chave 
 on conflict (source, coalesce(discipline_id, 0), number) do update set type = excluded.type, statement = excluded.statement, answer = excluded.answer, explanation = excluded.explanation;
 
 insert into questions (source, discipline_id, number, type, statement, answer, explanation)
-select 'apostila', id, 8, 'ce', 'No Windows 11, Win + L bloqueia o computador.', 'C', '.' from disciplines where slug = 'informatica'
+select 'apostila', id, 8, 'ce', 'No Windows 11, Win + L bloqueia o computador.', 'C', '' from disciplines where slug = 'informatica'
 on conflict (source, coalesce(discipline_id, 0), number) do update set type = excluded.type, statement = excluded.statement, answer = excluded.answer, explanation = excluded.explanation;
 
 insert into questions (source, discipline_id, number, type, statement, answer, explanation)
@@ -4028,35 +4028,35 @@ on conflict (discipline_id, ref) do update set ord = excluded.ord, slug = exclud
 
 delete from questions where source = 'simulado';
 
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 1, 'ce', '(Const.) São fundamentos da República: soberania, cidadania, dignidade da pessoa humana, valores sociais do trabalho e da livre iniciativa e pluralismo político. ( )', 'C', '');
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 2, 'ce', '(Const.) O rol de órgãos de segurança pública do art. 144 é exemplificativo, admitindo que lei estadual crie novos órgãos. ( )', 'E', 'taxativo');
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 3, 'ce', '(Const.) A casa é asilo inviolável, podendo o policial nela ingressar à noite por determinação judicial. ( )', 'E', 'à noite só flagrante, desastre ou socorro');
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 4, 'ce', '(Const.) Aos militares estaduais são vedadas a sindicalização e a greve. ( )', 'C', '');
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 5, 'ce', '(Penal) Considera-se praticado o crime no momento da ação ou omissão, ainda que outro seja o momento do resultado. ( )', 'C', '');
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 6, 'ce', '(Penal) A embriaguez voluntária completa exclui a imputabilidade penal. ( )', 'E', '');
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 7, 'ce', '(Penal) Exigir vantagem indevida em razão da função configura corrupção passiva. ( )', 'E', 'é concussão');
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 8, 'ce', '(Penal) No roubo com emprego de arma de fogo, a pena é aumentada de dois terços. ( )', 'C', '');
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 9, 'ce', '(Proc. Penal) Qualquer do povo deverá prender quem esteja em flagrante delito. ( )', 'E', 'poderá');
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 10, 'ce', '(Proc. Penal) A prisão preventiva deve ser revista a cada 90 dias, sob pena de ilegalidade. ( )', 'C', '');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 1, 'ce', '(Const.) São fundamentos da República: soberania, cidadania, dignidade da pessoa humana, valores sociais do trabalho e da livre iniciativa e pluralismo político.', 'C', '');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 2, 'ce', '(Const.) O rol de órgãos de segurança pública do art. 144 é exemplificativo, admitindo que lei estadual crie novos órgãos.', 'E', 'taxativo');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 3, 'ce', '(Const.) A casa é asilo inviolável, podendo o policial nela ingressar à noite por determinação judicial.', 'E', 'à noite só flagrante, desastre ou socorro');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 4, 'ce', '(Const.) Aos militares estaduais são vedadas a sindicalização e a greve.', 'C', '');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 5, 'ce', '(Penal) Considera-se praticado o crime no momento da ação ou omissão, ainda que outro seja o momento do resultado.', 'C', '');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 6, 'ce', '(Penal) A embriaguez voluntária completa exclui a imputabilidade penal.', 'E', '');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 7, 'ce', '(Penal) Exigir vantagem indevida em razão da função configura corrupção passiva.', 'E', 'é concussão');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 8, 'ce', '(Penal) No roubo com emprego de arma de fogo, a pena é aumentada de dois terços.', 'C', '');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 9, 'ce', '(Proc. Penal) Qualquer do povo deverá prender quem esteja em flagrante delito.', 'E', 'poderá');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 10, 'ce', '(Proc. Penal) A prisão preventiva deve ser revista a cada 90 dias, sob pena de ilegalidade.', 'C', '');
 insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 11, 'ce', '(Proc. Penal) A prisão temporária nos crimes hediondos é de 5 dias, prorrogável por mais', 'E', '30+30');
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 12, 'ce', '(Proc. Penal) A busca pessoal depende sempre de mandado judicial. ( )', 'E', '');
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 13, 'ce', '(CPM) A deserção consuma-se com oito dias de ausência. ( )', 'E', 'mais de 8 dias');
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 14, 'ce', '(CPM) Motim praticado com armas na mão denomina-se revolta. ( )', 'C', '');
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 15, 'ce', '(CPM) O limite de cumprimento de pena de detenção é de 30 anos. ( )', 'E', '15 anos');
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 16, 'ce', '(CPM) O militar que cumpre ordem manifestamente criminosa de superior fica isento de pena. ( )', 'E', '');
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 17, 'ce', '(Leg. Esp.) Organização criminosa exige associação de quatro ou mais pessoas. ( )', 'C', '');
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 18, 'ce', '(Leg. Esp.) Na tortura, a perda do cargo é efeito automático da condenação. ( )', 'C', '');
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 19, 'ce', '(Leg. Esp.) O tráfico privilegiado é crime hediondo. ( )', 'E', '');
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 20, 'ce', '(Leg. Esp.) A ação penal por lesão corporal em violência doméstica é condicionada à representação. ( )', 'E', 'incondicionada, Súm. 542 STJ');
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 21, 'ce', '(Leg. Esp.) A internação provisória de adolescente pode durar até 45 dias. ( )', 'C', '');
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 22, 'ce', '(Trânsito) As ordens do agente de trânsito prevalecem sobre as indicações do semáforo. ( )', 'C', '');
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 23, 'ce', '(Trânsito) A infração gravíssima corresponde a sete pontos na CNH. ( )', 'C', '');
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 24, 'ce', '(Trânsito) O crime do art. 306 do CTB exige necessariamente a realização de etilômetro. ( )', 'E', '');
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 25, 'ce', '(Institucional) O Conselho de Disciplina destina-se a julgar oficiais. ( )', 'E', 'praças estáveis');
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 26, 'ce', '(Institucional) A perda do posto e da patente do oficial é declarada pelo Tribunal de Justiça. ( )', 'C', '');
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 27, 'ce', '(Institucional) A advertência é a punição disciplinar mais branda prevista no RPAD. ( )', 'C', '');
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 28, 'ce', '(Português) "Houveram muitos candidatos" está correto quanto à concordância. ( )', 'E', 'Houve');
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 29, 'ce', '(Português) Em "Os policiais, que agiram com excesso, foram punidos", a oração adjetiva é explicativa. ( )', 'C', '');
-insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 30, 'ce', '(Informática) O worm necessita de arquivo hospedeiro para se propagar. ( )', 'E', 'quem precisa é o vírus');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 12, 'ce', '(Proc. Penal) A busca pessoal depende sempre de mandado judicial.', 'E', '');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 13, 'ce', '(CPM) A deserção consuma-se com oito dias de ausência.', 'E', 'mais de 8 dias');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 14, 'ce', '(CPM) Motim praticado com armas na mão denomina-se revolta.', 'C', '');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 15, 'ce', '(CPM) O limite de cumprimento de pena de detenção é de 30 anos.', 'E', '15 anos');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 16, 'ce', '(CPM) O militar que cumpre ordem manifestamente criminosa de superior fica isento de pena.', 'E', '');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 17, 'ce', '(Leg. Esp.) Organização criminosa exige associação de quatro ou mais pessoas.', 'C', '');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 18, 'ce', '(Leg. Esp.) Na tortura, a perda do cargo é efeito automático da condenação.', 'C', '');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 19, 'ce', '(Leg. Esp.) O tráfico privilegiado é crime hediondo.', 'E', '');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 20, 'ce', '(Leg. Esp.) A ação penal por lesão corporal em violência doméstica é condicionada à representação.', 'E', 'incondicionada, Súm. 542 STJ');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 21, 'ce', '(Leg. Esp.) A internação provisória de adolescente pode durar até 45 dias.', 'C', '');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 22, 'ce', '(Trânsito) As ordens do agente de trânsito prevalecem sobre as indicações do semáforo.', 'C', '');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 23, 'ce', '(Trânsito) A infração gravíssima corresponde a sete pontos na CNH.', 'C', '');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 24, 'ce', '(Trânsito) O crime do art. 306 do CTB exige necessariamente a realização de etilômetro.', 'E', '');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 25, 'ce', '(Institucional) O Conselho de Disciplina destina-se a julgar oficiais.', 'E', 'praças estáveis');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 26, 'ce', '(Institucional) A perda do posto e da patente do oficial é declarada pelo Tribunal de Justiça.', 'C', '');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 27, 'ce', '(Institucional) A advertência é a punição disciplinar mais branda prevista no RPAD.', 'C', '');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 28, 'ce', '(Português) "Houveram muitos candidatos" está correto quanto à concordância.', 'E', 'Houve');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 29, 'ce', '(Português) Em "Os policiais, que agiram com excesso, foram punidos", a oração adjetiva é explicativa.', 'C', '');
+insert into questions (source, discipline_id, number, type, statement, answer, explanation) values ('simulado', null, 30, 'ce', '(Informática) O worm necessita de arquivo hospedeiro para se propagar.', 'E', 'quem precisa é o vírus');
 
 commit;
