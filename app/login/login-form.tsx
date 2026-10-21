@@ -4,13 +4,24 @@ import { useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 
+/**
+ * O Supabase Auth exige e-mail. Para permitir login so com usuario ("adm"),
+ * o que nao tiver "@" recebe este dominio interno, que nunca envia e-mail.
+ */
+const DOMINIO_INTERNO = 'pmsc.local';
+
+export function paraEmail(valor: string) {
+  const v = valor.trim().toLowerCase();
+  return v.includes('@') ? v : `${v}@${DOMINIO_INTERNO}`;
+}
+
 export default function LoginForm() {
   const router = useRouter();
   const params = useSearchParams();
   const next = params.get('next') || '/dashboard';
 
   const [mode, setMode] = useState<'login' | 'signup'>('login');
-  const [email, setEmail] = useState('');
+  const [usuario, setUsuario] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const [busy, setBusy] = useState(false);
@@ -23,12 +34,13 @@ export default function LoginForm() {
     setError(null);
     setInfo(null);
     const supabase = createClient();
+    const email = paraEmail(usuario);
 
     if (mode === 'signup') {
       const { data, error } = await supabase.auth.signUp({
         email,
         password,
-        options: { data: { name } },
+        options: { data: { name: name || usuario.trim() } },
       });
       if (error) {
         setError(traduz(error.message));
@@ -87,15 +99,22 @@ export default function LoginForm() {
       )}
 
       <label className="block">
-        <span className="text-sm font-medium text-slate-700">E-mail</span>
+        <span className="text-sm font-medium text-slate-700">Usuário</span>
         <input
-          type="email"
+          type="text"
           required
-          autoComplete="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          autoCapitalize="none"
+          autoCorrect="off"
+          spellCheck={false}
+          autoComplete="username"
+          value={usuario}
+          onChange={(e) => setUsuario(e.target.value)}
+          placeholder="adm"
           className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100"
         />
+        <span className="mt-1 block text-xs text-slate-400">
+          Pode ser um usuário simples ou um e-mail completo.
+        </span>
       </label>
 
       <label className="block">
@@ -135,9 +154,9 @@ export default function LoginForm() {
 
 function traduz(msg: string) {
   const m = msg.toLowerCase();
-  if (m.includes('invalid login credentials')) return 'E-mail ou senha incorretos.';
+  if (m.includes('invalid login credentials')) return 'Usuário ou senha incorretos.';
   if (m.includes('email not confirmed')) return 'Confirme seu e-mail antes de entrar.';
-  if (m.includes('already registered')) return 'Esse e-mail já tem conta. Use "Entrar".';
+  if (m.includes('already registered')) return 'Esse usuário já existe. Use "Entrar".';
   if (m.includes('password should be')) return 'A senha precisa de pelo menos 6 caracteres.';
   return msg;
 }

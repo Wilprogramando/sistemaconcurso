@@ -48,7 +48,8 @@ npm run seed                 # carrega disciplinas, tópicos e questões no Supa
 npm run dev                  # http://localhost:3000
 ```
 
-Crie sua conta na tela de login (aba **Criar conta**) e o perfil é gerado automaticamente.
+O login aceita usuário simples (sem `@`): o app completa com um domínio interno (`adm` → `adm@pmsc.local`),
+que nunca recebe e-mail. Um e-mail completo também funciona. O perfil é criado pelo trigger no primeiro acesso.
 
 ### 3. Deploy na Vercel
 
