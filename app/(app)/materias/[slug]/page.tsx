@@ -3,8 +3,11 @@ import { notFound } from 'next/navigation';
 import {
   ArrowLeft,
   Clock,
+  GraduationCap,
   Hash,
+  Lightbulb,
   ListChecks,
+  MonitorPlay,
   Play,
   ShieldAlert,
   Target,
@@ -65,6 +68,7 @@ export default async function DisciplinaPage({ params }: { params: Promise<{ slu
   const acerto = desempenho?.accuracy ? Number(desempenho.accuracy) : null;
   const armadilhas = (d.traps as string[] | null) ?? [];
   const numeros = (d.key_numbers as string[] | null) ?? [];
+  const oQueEstudar = (d.what_to_study as string[] | null) ?? [];
 
   return (
     <div className="space-y-5">
@@ -100,6 +104,12 @@ export default async function DisciplinaPage({ params }: { params: Promise<{ slu
           </span>
         </p>
       </div>
+
+      {d.answers_question && (
+        <p className="rounded-2xl bg-brand-600 px-5 py-4 text-base font-semibold text-white sm:text-lg">
+          {d.answers_question}
+        </p>
+      )}
 
       {/* ---------------- o que é e para que serve ---------------- */}
       {d.summary && (
@@ -138,6 +148,44 @@ export default async function DisciplinaPage({ params }: { params: Promise<{ slu
         </Card>
       )}
 
+      {/* ---------------- guia prático ---------------- */}
+      {(oQueEstudar.length > 0 || d.example) && (
+        <div className="grid gap-4 md:grid-cols-2">
+          {oQueEstudar.length > 0 && (
+            <Card title="O que estudar nesta matéria" icon={ListChecks}>
+              <ul className="space-y-2">
+                {oQueEstudar.map((item) => (
+                  <li
+                    key={item}
+                    className="flex gap-2.5 text-sm leading-6 text-slate-700 dark:text-slate-300"
+                  >
+                    <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-500" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </Card>
+          )}
+
+          <div className="space-y-4">
+            {d.example && (
+              <Card title="Na prática" icon={Lightbulb}>
+                <p className="text-[0.95rem] leading-7 text-slate-700 dark:text-slate-300">
+                  {d.example}
+                </p>
+              </Card>
+            )}
+            {d.study_tip && (
+              <Card title="Como estudar" icon={GraduationCap}>
+                <p className="text-[0.95rem] leading-7 text-slate-700 dark:text-slate-300">
+                  {d.study_tip}
+                </p>
+              </Card>
+            )}
+          </div>
+        </div>
+      )}
+
       {/* ---------------- progresso e desempenho ---------------- */}
       <div className="grid gap-4 md:grid-cols-2">
         <Card>
@@ -166,6 +214,12 @@ export default async function DisciplinaPage({ params }: { params: Promise<{ slu
                 <ListChecks size={15} /> Treinar questões
               </Link>
             )}
+            <Link
+              href={`/videos?disciplina=${d.slug}`}
+              className="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-medium text-brand-700 ring-1 ring-slate-300 transition hover:bg-slate-50 dark:bg-slate-800 dark:text-brand-200 dark:ring-slate-600"
+            >
+              <MonitorPlay size={15} /> Vídeo-aulas
+            </Link>
           </div>
         </Card>
 

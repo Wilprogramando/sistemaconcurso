@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { BookOpen, ListChecks } from 'lucide-react';
+import { BookOpen, ListChecks, Scale } from 'lucide-react';
 import { createClient, getUser } from '@/lib/supabase/server';
-import { Badge, Bar } from '@/components/ui';
+import { Badge, Bar, Card } from '@/components/ui';
 import { PRIORITY_CLASS, PRIORITY_LABEL } from '@/lib/types';
 
 export const metadata = { title: 'Matérias — Estudo PM SC 2026' };
@@ -81,6 +81,12 @@ export default async function MateriasPage() {
                 </Badge>
               </div>
 
+              {d.answers_question && (
+                <p className="mt-2 text-sm font-medium text-brand-700 dark:text-brand-300">
+                  {d.answers_question}
+                </p>
+              )}
+
               {d.summary && (
                 <p className="mt-2 line-clamp-3 text-sm leading-6 text-slate-600 dark:text-slate-400">
                   {d.summary}
@@ -122,6 +128,33 @@ export default async function MateriasPage() {
           );
         })}
       </div>
+
+      <Card
+        title="Qual é a diferença entre as matérias de Direito?"
+        subtitle="A pergunta que cada uma responde — é o atalho para não confundir uma com a outra"
+        icon={Scale}
+      >
+        <ul className="space-y-2">
+          {(disciplines ?? [])
+            .filter((d) => d.answers_question)
+            .map((d) => (
+              <li
+                key={d.id}
+                className="flex flex-col gap-1 rounded-xl bg-slate-50 p-3.5 sm:flex-row sm:items-center sm:gap-4 dark:bg-slate-800/60"
+              >
+                <Link
+                  href={`/materias/${d.slug}`}
+                  className="shrink-0 text-sm font-semibold text-brand-700 hover:underline sm:w-64 dark:text-brand-300"
+                >
+                  {d.name}
+                </Link>
+                <span className="text-sm leading-6 text-slate-700 dark:text-slate-300">
+                  {d.answers_question}
+                </span>
+              </li>
+            ))}
+        </ul>
+      </Card>
     </div>
   );
 }

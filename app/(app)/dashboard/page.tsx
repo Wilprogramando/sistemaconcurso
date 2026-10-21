@@ -4,7 +4,9 @@ import {
   BookOpen,
   CalendarDays,
   CheckCircle2,
+  Flame,
   ListChecks,
+  MonitorPlay,
   PenLine,
   Play,
   RefreshCw,
@@ -90,10 +92,12 @@ export default async function Dashboard() {
     .sort((a, b) => b.question_count - a.question_count || a.chapter - b.chapter);
 
   const atalhos = [
-    { href: '/questoes', label: 'Treinar questões', icone: ListChecks, cor: 'bg-brand-600 text-white hover:bg-brand-700' },
+    { href: '/treino', label: 'Treino do dia', icone: Flame, cor: 'bg-brand-600 text-white hover:bg-brand-700' },
+    { href: '/questoes', label: 'Questões livres', icone: ListChecks, cor: 'bg-white text-brand-700 ring-1 ring-slate-300 hover:bg-slate-50 dark:bg-slate-800 dark:text-brand-200 dark:ring-slate-600' },
     { href: '/revisao', label: revisoesHoje > 0 ? `Revisar (${revisoesHoje})` : 'Revisão', icone: RefreshCw, cor: 'bg-white text-brand-700 ring-1 ring-slate-300 hover:bg-slate-50 dark:bg-slate-800 dark:text-brand-200 dark:ring-slate-600' },
     { href: '/materias', label: 'Estudar teoria', icone: BookOpen, cor: 'bg-white text-brand-700 ring-1 ring-slate-300 hover:bg-slate-50 dark:bg-slate-800 dark:text-brand-200 dark:ring-slate-600' },
     { href: '/redacao', label: 'Redação', icone: PenLine, cor: 'bg-white text-brand-700 ring-1 ring-slate-300 hover:bg-slate-50 dark:bg-slate-800 dark:text-brand-200 dark:ring-slate-600' },
+    { href: '/videos', label: 'Vídeo-aulas', icone: MonitorPlay, cor: 'bg-white text-brand-700 ring-1 ring-slate-300 hover:bg-slate-50 dark:bg-slate-800 dark:text-brand-200 dark:ring-slate-600' },
   ];
 
   return (

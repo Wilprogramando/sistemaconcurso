@@ -7,6 +7,7 @@
 //   content/provas-comentarios.json   justificativas das provas, escritas para este sistema
 //   content/apostila-comentarios.json justificativas das questoes da apostila sem fundamento
 //   content/resumos.json              resumos didaticos de disciplinas e topicos
+//   content/guia-materias.json        o que estudar, exemplo e dica por disciplina
 //   content/questoes-ineditas-*.json  questoes ineditas no estilo da banca
 //
 // Idempotente: tudo e casado por ext_id (questoes), slug (disciplinas) e
@@ -42,8 +43,9 @@ const die = (passo, error) => {
   if (!error) return;
   console.error(`\nerro em ${passo}: ${error.message ?? error}`);
   if (/column|ext_id|schema cache|relation .* does not exist/i.test(String(error.message))) {
-    console.error('\nParece que a migracao 0002 ainda nao foi aplicada.');
-    console.error('Rode supabase/migrations/0002_questoes_multipla_escolha.sql no SQL Editor.');
+    console.error('\nFalta aplicar alguma migracao no banco.');
+    console.error('Rode, em ordem, os arquivos ainda nao executados de supabase/migrations/');
+    console.error('no SQL Editor do Supabase. A coluna ou tabela citada acima diz qual falta.');
   }
   process.exit(1);
 };
@@ -61,6 +63,7 @@ const provas = ler('content/provas.json');
 const comentarios = ler('content/provas-comentarios.json').comentarios;
 const comentariosApostila = ler('content/apostila-comentarios.json').comentarios;
 const resumos = ler('content/resumos.json');
+const guia = ler('content/guia-materias.json').disciplinas;
 
 const ineditas = readdirSync(join(root, 'content'))
   .filter((f) => /^questoes-ineditas-\d+\.json$/.test(f))
@@ -76,30 +79,50 @@ const ineditas = readdirSync(join(root, 'content'))
 const idPorSlug = new Map();
 const idTopico = new Map(); // `${slug}:${ref}` -> id
 
+// Campos do guia (migracao 0004). Se a migracao ainda nao foi aplicada, o
+// seed segue sem eles em vez de abortar — as questoes sao mais urgentes.
+let guiaDisponivel = true;
+
 for (const d of apostila.disciplines) {
-  const { data, error } = await db
+  const base = {
+    slug: d.slug,
+    chapter: d.chapter,
+    name: d.name,
+    question_count: d.questionCount,
+    weight: d.weight,
+    priority: d.priority,
+    summary: resumos.disciplinas[d.slug]?.resumo ?? null,
+    what_for: resumos.disciplinas[d.slug]?.paraQue ?? null,
+    how_it_falls: resumos.disciplinas[d.slug]?.comoCai ?? null,
+    traps: resumos.disciplinas[d.slug]?.armadilhas ?? null,
+    key_numbers: resumos.disciplinas[d.slug]?.numerosChave ?? null,
+  };
+
+  const extras = {
+    what_to_study: guia[d.slug]?.oQueEstudar ?? null,
+    example: guia[d.slug]?.exemplo ?? null,
+    answers_question: guia[d.slug]?.perguntaQueResponde ?? null,
+    study_tip: guia[d.slug]?.comoEstudar ?? null,
+  };
+
+  let resposta = await db
     .from('disciplines')
-    .upsert(
-      {
-        slug: d.slug,
-        chapter: d.chapter,
-        name: d.name,
-        question_count: d.questionCount,
-        weight: d.weight,
-        priority: d.priority,
-        summary: resumos.disciplinas[d.slug]?.resumo ?? null,
-        what_for: resumos.disciplinas[d.slug]?.paraQue ?? null,
-        how_it_falls: resumos.disciplinas[d.slug]?.comoCai ?? null,
-        traps: resumos.disciplinas[d.slug]?.armadilhas ?? null,
-        key_numbers: resumos.disciplinas[d.slug]?.numerosChave ?? null,
-      },
-      { onConflict: 'slug' }
-    )
+    .upsert(guiaDisponivel ? { ...base, ...extras } : base, { onConflict: 'slug' })
     .select('id')
     .single();
-  die(`disciplina ${d.slug}`, error);
-  idPorSlug.set(d.slug, data.id);
+
+  if (resposta.error && /answers_question|what_to_study|study_tip|example/.test(resposta.error.message)) {
+    if (guiaDisponivel) {
+      console.warn('aviso: migracao 0004 ainda nao aplicada — o guia das materias nao sera gravado');
+      guiaDisponivel = false;
+    }
+    resposta = await db.from('disciplines').upsert(base, { onConflict: 'slug' }).select('id').single();
+  }
+
+  die(`disciplina ${d.slug}`, resposta.error);
+  idPorSlug.set(d.slug, resposta.data.id);
 }
+
 console.log(`disciplinas: ${idPorSlug.size}`);
 
 let totalTopicos = 0;

@@ -13,7 +13,9 @@ import {
   ListChecks,
   NotebookPen,
   PenLine,
+  Flame,
   RefreshCw,
+  MonitorPlay,
   X,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
@@ -28,6 +30,13 @@ export type Item = {
 
 /** Ordem pensada como fluxo de estudo: ler → treinar → revisar → simular → medir. */
 export const ESTUDAR: Item[] = [
+  {
+    href: '/treino',
+    label: 'Treino do dia',
+    curto: 'Treino',
+    icone: Flame,
+    descricao: '20 questões sorteadas para hoje',
+  },
   {
     href: '/materias',
     label: 'Matérias',
@@ -48,6 +57,13 @@ export const ESTUDAR: Item[] = [
     curto: 'Revisão',
     icone: RefreshCw,
     descricao: 'O que o sistema marcou para hoje',
+  },
+  {
+    href: '/videos',
+    label: 'Vídeo-aulas',
+    curto: 'Vídeos',
+    icone: MonitorPlay,
+    descricao: 'Os mais vistos de cada tema, no YouTube',
   },
 ];
 
@@ -141,7 +157,7 @@ export function NavInferior() {
   const [aberto, setAberto] = useState(false);
 
   const principais = [PAINEL, ESTUDAR[0], ESTUDAR[1], ESTUDAR[2]];
-  const extras = [...AVALIAR, ...ACOMPANHAR];
+  const extras = [ESTUDAR[3], ESTUDAR[4], ...AVALIAR, ...ACOMPANHAR];
   const extraAtivo = extras.some((i) => ehAtivo(path, i.href));
 
   // fecha a gaveta ao navegar

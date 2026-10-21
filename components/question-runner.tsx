@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import {
   ArrowRight,
@@ -12,7 +12,7 @@ import {
   Flag,
   X,
 } from 'lucide-react';
-import { createClient } from '@/lib/supabase/client';
+import { useSessao } from '@/components/sessao';
 import { nextReview, type ReviewState } from '@/lib/srs';
 import type { Question } from '@/lib/types';
 
@@ -22,8 +22,6 @@ type Resposta = {
   correct: boolean;
 };
 
-const LETRAS = ['A', 'B', 'C', 'D', 'E'] as const;
-
 export default function QuestionRunner({
   questions,
   kind,
@@ -32,6 +30,7 @@ export default function QuestionRunner({
   timeLimitSeconds = null,
   titulo,
   subtitulo,
+  diaDoTreino,
   voltarHref = '/dashboard',
 }: {
   questions: Question[];
@@ -42,6 +41,8 @@ export default function QuestionRunner({
   timeLimitSeconds?: number | null;
   titulo: string;
   subtitulo?: string;
+  /** quando vem preenchido, o resultado conta para o treino daquele dia */
+  diaDoTreino?: string;
   voltarHref?: string;
 }) {
   const [index, setIndex] = useState(0);
@@ -54,7 +55,7 @@ export default function QuestionRunner({
   const [marcadas, setMarcadas] = useState<Set<number>>(new Set());
 
   const startedAt = useRef<number>(Date.now());
-  const supabase = useMemo(() => createClient(), []);
+  const { userId, supabase } = useSessao();
 
   const q = questions[index];
   const total = questions.length;
@@ -73,12 +74,6 @@ export default function QuestionRunner({
       setFinished(true);
       setSaving(true);
 
-      const { data: auth } = await supabase.auth.getUser();
-      const user = auth.user;
-      if (!user) {
-        setSaving(false);
-        return;
-      }
 
       const duration = Math.floor((Date.now() - startedAt.current) / 1000);
       const acertos = registro.filter((r) => r.correct).length;
@@ -86,7 +81,7 @@ export default function QuestionRunner({
       const { data: session } = await supabase
         .from('exam_sessions')
         .insert({
-          user_id: user.id,
+          user_id: userId,
           kind,
           discipline_id: disciplineId,
           total: registro.length,
@@ -101,7 +96,7 @@ export default function QuestionRunner({
       if (registro.length) {
         await supabase.from('attempts').insert(
           registro.map((r) => ({
-            user_id: user.id,
+            user_id: userId,
             question_id: r.question.id,
             session_id: session?.id ?? null,
             // 'chosen' guarda a letra marcada (A-E) ou C/E
@@ -114,7 +109,7 @@ export default function QuestionRunner({
         const { data: prev } = await supabase
           .from('reviews')
           .select('*')
-          .eq('user_id', user.id)
+          .eq('user_id', userId)
           .in('question_id', ids);
 
         const prevMap = new Map<number, Partial<ReviewState>>(
@@ -125,7 +120,7 @@ export default function QuestionRunner({
           registro.map((r) => {
             const st = nextReview(prevMap.get(r.question.id) ?? null, r.correct);
             return {
-              user_id: user.id,
+              user_id: userId,
               question_id: r.question.id,
               ease: st.ease,
               interval_days: st.interval_days,
@@ -143,7 +138,7 @@ export default function QuestionRunner({
         if (erros.length) {
           await supabase.from('error_notes').insert(
             erros.map((r) => ({
-              user_id: user.id,
+              user_id: userId,
               question_id: r.question.id,
               topic_id: r.question.topic_id,
               note: '',
@@ -152,9 +147,33 @@ export default function QuestionRunner({
         }
       }
 
+      if (diaDoTreino) {
+        // o treino do dia e cumulativo: pode ser retomado depois de fechar o app
+        const { data: atual } = await supabase
+          .from('daily_sets')
+          .select('answered, correct, goal')
+          .eq('user_id', userId)
+          .eq('day', diaDoTreino)
+          .maybeSingle();
+
+        const respondidas = (atual?.answered ?? 0) + registro.length;
+        const certas = (atual?.correct ?? 0) + acertos;
+
+        await supabase
+          .from('daily_sets')
+          .update({
+            answered: respondidas,
+            correct: certas,
+            finished_at:
+              respondidas >= (atual?.goal ?? registro.length) ? new Date().toISOString() : null,
+          })
+          .eq('user_id', userId)
+          .eq('day', diaDoTreino);
+      }
+
       setSaving(false);
     },
-    [disciplineId, kind, supabase]
+    [diaDoTreino, disciplineId, kind, supabase, userId]
   );
 
   useEffect(() => {
@@ -168,18 +187,16 @@ export default function QuestionRunner({
     tinha ? nova.delete(questionId) : nova.add(questionId);
     setMarcadas(nova);
 
-    const { data: auth } = await supabase.auth.getUser();
-    if (!auth.user) return;
     if (tinha) {
       await supabase
         .from('bookmarks')
         .delete()
-        .eq('user_id', auth.user.id)
+        .eq('user_id', userId)
         .eq('question_id', questionId);
     } else {
       await supabase
         .from('bookmarks')
-        .upsert({ user_id: auth.user.id, question_id: questionId }, { onConflict: 'user_id,question_id' });
+        .upsert({ user_id: userId, question_id: questionId }, { onConflict: 'user_id,question_id' });
     }
   }
 

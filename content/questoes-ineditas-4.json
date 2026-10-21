@@ -1,0 +1,426 @@
+{
+  "sobre": "Quarto lote de questões inéditas de múltipla escolha, elaboradas a partir do Anexo II do Edital 002/CCP/2026. Reforça Direito Penal Comum, Processo Penal, Penal Militar e Informática, que tinham a menor cobertura no banco.",
+  "rotulo": "Inédita — baseada no edital",
+  "questoes": [
+    {
+      "extId": "inedita:penal:003",
+      "disciplina": "direito-penal-comum",
+      "topicoRef": "2.3",
+      "enunciado": "João, querendo matar Pedro, efetua disparos que o atingem, mas Pedro é socorrido e sobrevive por circunstâncias alheias à vontade de João. Nessa situação, João responde por",
+      "alternativas": [
+        { "letra": "A", "texto": "lesão corporal consumada, por não ter havido morte." },
+        { "letra": "B", "texto": "homicídio tentado, com a pena do crime consumado reduzida de um a dois terços." },
+        { "letra": "C", "texto": "homicídio consumado, pela intenção manifestada." },
+        { "letra": "D", "texto": "desistência voluntária, respondendo apenas pelos atos já praticados." },
+        { "letra": "E", "texto": "arrependimento eficaz, com extinção da punibilidade." }
+      ],
+      "resposta": "B",
+      "justificativa": "Art. 14, II, e parágrafo único do CP: há tentativa quando, iniciada a execução, o crime não se consuma por circunstâncias alheias à vontade do agente — e a pena é a do crime consumado, reduzida de um a dois terços. A: o dolo era de matar, então o crime é homicídio tentado, não lesão consumada. D: a desistência voluntária exige que o agente, podendo prosseguir, pare por vontade própria. E: no arrependimento eficaz o agente impede o resultado por ato próprio; aqui quem impediu foi o socorro de terceiros."
+    },
+    {
+      "extId": "inedita:penal:004",
+      "disciplina": "direito-penal-comum",
+      "topicoRef": "2.3",
+      "enunciado": "Policial militar, para repelir injusta agressão atual contra terceiro, usa moderadamente dos meios necessários. Sua conduta é amparada por",
+      "alternativas": [
+        { "letra": "A", "texto": "estado de necessidade." },
+        { "letra": "B", "texto": "legítima defesa de terceiro." },
+        { "letra": "C", "texto": "estrito cumprimento do dever legal, exclusivamente." },
+        { "letra": "D", "texto": "inexigibilidade de conduta diversa." },
+        { "letra": "E", "texto": "coação moral irresistível." }
+      ],
+      "resposta": "B",
+      "justificativa": "Art. 25 do CP: entende-se em legítima defesa quem, usando moderadamente dos meios necessários, repele injusta agressão, atual ou iminente, a direito seu OU DE OUTREM. A: o estado de necessidade pressupõe perigo atual não provocado e colisão de bens jurídicos, não agressão humana injusta. C: o estrito cumprimento do dever legal é outra excludente e pode até coexistir, mas o enunciado descreve exatamente os elementos da legítima defesa. D e E: são causas de exclusão da culpabilidade, e não da ilicitude."
+    },
+    {
+      "extId": "inedita:penal:005",
+      "disciplina": "direito-penal-comum",
+      "topicoRef": "2.6",
+      "enunciado": "Funcionário público retarda ato de ofício para satisfazer sentimento pessoal. Essa conduta configura",
+      "alternativas": [
+        { "letra": "A", "texto": "prevaricação." },
+        { "letra": "B", "texto": "corrupção passiva." },
+        { "letra": "C", "texto": "concussão." },
+        { "letra": "D", "texto": "peculato." },
+        { "letra": "E", "texto": "advocacia administrativa." }
+      ],
+      "resposta": "A",
+      "justificativa": "Art. 319 do CP: prevaricação é retardar ou deixar de praticar, indevidamente, ato de ofício, ou praticá-lo contra disposição expressa de lei, para satisfazer interesse ou sentimento PESSOAL. A marca do tipo é não haver vantagem econômica: se houvesse pedido ou recebimento de vantagem, seria corrupção passiva (art. 317); se houvesse exigência, concussão (art. 316). Peculato é apropriar-se de bem em razão do cargo, e advocacia administrativa é patrocinar interesse privado perante a administração."
+    },
+    {
+      "extId": "inedita:penal:006",
+      "disciplina": "direito-penal-comum",
+      "topicoRef": "2.4",
+      "enunciado": "Sobre a dosimetria da pena no Código Penal, assinale a opção correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "É feita em duas fases: pena-base e causas de aumento." },
+        { "letra": "B", "texto": "É feita em três fases: pena-base, agravantes e atenuantes, e causas de aumento e de diminuição." },
+        { "letra": "C", "texto": "As agravantes podem elevar a pena acima do máximo legal." },
+        { "letra": "D", "texto": "As atenuantes podem reduzir a pena abaixo do mínimo legal." },
+        { "letra": "E", "texto": "As causas de aumento não podem ultrapassar o máximo cominado." }
+      ],
+      "resposta": "B",
+      "justificativa": "O critério trifásico do art. 68 do CP: primeiro a pena-base pelas circunstâncias judiciais do art. 59; depois as agravantes e atenuantes; por fim as causas de aumento e de diminuição. C e D: agravantes e atenuantes NÃO podem levar a pena além dos limites legais — a Súmula 231 do STJ é expressa quanto às atenuantes. E: ao contrário, só as causas de aumento e de diminuição, por terem frações previstas em lei, podem ultrapassar o mínimo e o máximo cominados."
+    },
+    {
+      "extId": "inedita:penal:007",
+      "disciplina": "direito-penal-comum",
+      "topicoRef": "2.6",
+      "enunciado": "Durante abordagem, o policial encontra com o abordado um aparelho celular furtado no dia anterior, que ele adquiriu sabendo da origem criminosa. A conduta do abordado configura",
+      "alternativas": [
+        { "letra": "A", "texto": "furto, em concurso com o autor da subtração." },
+        { "letra": "B", "texto": "receptação dolosa." },
+        { "letra": "C", "texto": "favorecimento pessoal." },
+        { "letra": "D", "texto": "fato atípico, por não ter participado da subtração." },
+        { "letra": "E", "texto": "apropriação de coisa achada." }
+      ],
+      "resposta": "B",
+      "justificativa": "Art. 180 do CP: receptação é adquirir, receber, transportar, conduzir ou ocultar, em proveito próprio ou alheio, coisa que sabe ser produto de crime. Como ele sabia da origem, a receptação é dolosa (caput); se apenas devesse presumir pela natureza do negócio, seria culposa (§3º). A: não houve concurso na subtração, que já estava consumada. C: favorecimento pessoal é auxiliar o autor a subtrair-se à ação da autoridade. E: a apropriação de coisa achada pressupõe coisa perdida, não produto de crime."
+    },
+    {
+      "extId": "inedita:penal:008",
+      "disciplina": "direito-penal-comum",
+      "topicoRef": "2.5",
+      "enunciado": "São causas de extinção da punibilidade previstas no art. 107 do Código Penal, EXCETO:",
+      "alternativas": [
+        { "letra": "A", "texto": "a morte do agente." },
+        { "letra": "B", "texto": "a anistia, a graça ou o indulto." },
+        { "letra": "C", "texto": "a prescrição, a decadência ou a perempção." },
+        { "letra": "D", "texto": "o perdão judicial, nos casos previstos em lei." },
+        { "letra": "E", "texto": "a confissão espontânea do acusado." }
+      ],
+      "resposta": "E",
+      "justificativa": "A confissão espontânea é ATENUANTE genérica (art. 65, III, 'd'), e não causa de extinção da punibilidade. O art. 107 lista: morte do agente; anistia, graça ou indulto; retroatividade de lei que não mais considera o fato criminoso (abolitio criminis); prescrição, decadência ou perempção; renúncia ao direito de queixa ou perdão aceito, nos crimes de ação privada; retratação do agente, nos casos em que a lei admite; e perdão judicial, nos casos previstos em lei."
+    },
+    {
+      "extId": "inedita:proc:006",
+      "disciplina": "direito-processual-penal",
+      "topicoRef": "3.3",
+      "enunciado": "Sobre a ação penal, assinale a opção correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "A ação penal pública é promovida por queixa-crime do ofendido." },
+        { "letra": "B", "texto": "A ação penal pública incondicionada é promovida privativamente pelo Ministério Público, admitida a ação privada subsidiária se ele não oferecer denúncia no prazo legal." },
+        { "letra": "C", "texto": "A ação penal privada é promovida por denúncia do Ministério Público." },
+        { "letra": "D", "texto": "A representação do ofendido é irretratável em qualquer hipótese." },
+        { "letra": "E", "texto": "O prazo decadencial para a queixa é de dez dias." }
+      ],
+      "resposta": "B",
+      "justificativa": "Art. 129, I, da CF e art. 5º, LIX: a ação penal pública é privativa do Ministério Público, admitindo-se a ação privada subsidiária da pública quando a denúncia não é oferecida no prazo legal. A e C invertem os instrumentos: a ação pública se inicia por DENÚNCIA do MP; a privada, por QUEIXA do ofendido. D: a representação é retratável até o oferecimento da denúncia (art. 25 do CPP). E: o prazo decadencial é de seis meses, contados do conhecimento da autoria (art. 38)."
+    },
+    {
+      "extId": "inedita:proc:007",
+      "disciplina": "direito-processual-penal",
+      "topicoRef": "3.6",
+      "enunciado": "Guarnição da PM é acionada e encontra o autor logo depois do crime, com instrumentos que fazem presumir ser ele o autor. Trata-se de flagrante",
+      "alternativas": [
+        { "letra": "A", "texto": "próprio, porque está cometendo a infração." },
+        { "letra": "B", "texto": "impróprio, porque é perseguido logo após em situação que faça presumir ser o autor." },
+        { "letra": "C", "texto": "presumido ou ficto, porque é encontrado logo depois com instrumentos ou objetos que façam presumir ser ele o autor." },
+        { "letra": "D", "texto": "preparado, por ter havido provocação policial." },
+        { "letra": "E", "texto": "esperado, por haver campana prévia." }
+      ],
+      "resposta": "C",
+      "justificativa": "Art. 302 do CPP: é flagrante PRESUMIDO ou ficto (inciso IV) quando o agente é encontrado, logo depois, com instrumentos, armas, objetos ou papéis que façam presumir ser ele o autor. O próprio (I e II) é estar cometendo ou acabar de cometer; o impróprio (III) é ser perseguido logo após. O preparado é nulo (Súmula 145 do STF) porque há provocação e impossibilidade de consumação; o esperado é válido, pois a polícia apenas aguarda a ação que já ia ocorrer."
+    },
+    {
+      "extId": "inedita:proc:008",
+      "disciplina": "direito-processual-penal",
+      "topicoRef": "3.5",
+      "enunciado": "Sobre as provas no processo penal, assinale a opção correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "São admissíveis as provas obtidas por meios ilícitos, desde que úteis à verdade real." },
+        { "letra": "B", "texto": "São inadmissíveis as provas ilícitas, bem como as derivadas delas, salvo quando não evidenciado o nexo de causalidade ou quando puderem ser obtidas por fonte independente." },
+        { "letra": "C", "texto": "A confissão do acusado dispensa as demais provas." },
+        { "letra": "D", "texto": "O juiz está vinculado ao laudo pericial, não podendo rejeitá-lo." },
+        { "letra": "E", "texto": "O ônus da prova da alegação cabe sempre ao acusado." }
+      ],
+      "resposta": "B",
+      "justificativa": "Art. 157 e §1º do CPP: são inadmissíveis as provas ilícitas e também as derivadas delas (teoria dos frutos da árvore envenenada), salvo quando não evidenciado o nexo de causalidade ou quando as derivadas puderem ser obtidas por fonte independente. A contraria o art. 5º, LVI, da CF. C: a confissão é relativa e deve ser confrontada com as demais provas (art. 197). D: o juiz pode aceitar ou rejeitar o laudo, no todo ou em parte (art. 182). E: o ônus da prova da alegação incumbe a quem a fizer, e a dúvida favorece o réu."
+    },
+    {
+      "extId": "inedita:proc:009",
+      "disciplina": "direito-processual-penal",
+      "topicoRef": "3.4",
+      "enunciado": "Policial militar da ativa pratica, em serviço, lesão corporal leve contra outro policial militar da ativa, dentro do quartel. A competência para julgar é",
+      "alternativas": [
+        { "letra": "A", "texto": "do juizado especial criminal, por ser lesão leve." },
+        { "letra": "B", "texto": "da Justiça comum estadual." },
+        { "letra": "C", "texto": "da Justiça Militar estadual, por se tratar de crime militar." },
+        { "letra": "D", "texto": "da Justiça Federal." },
+        { "letra": "E", "texto": "do Tribunal do Júri." }
+      ],
+      "resposta": "C",
+      "justificativa": "O art. 9º, II, 'a', do CPM define como crime militar o previsto também na lei comum quando praticado por militar em situação de atividade contra militar na mesma situação. Sendo crime militar praticado por militar estadual, a competência é da Justiça Militar estadual (art. 125, §4º, da CF). A: a Lei 9.099/95 não se aplica aos crimes militares, por vedação do art. 90-A. E: o Júri só atrai a competência nos crimes dolosos contra a vida praticados por militar contra CIVIL."
+    },
+    {
+      "extId": "inedita:cpm:015",
+      "disciplina": "direito-penal-militar",
+      "topicoRef": "4.5",
+      "enunciado": "O militar que se opõe à execução de ato legal, mediante ameaça ou violência ao executor, comete o crime militar de",
+      "alternativas": [
+        { "letra": "A", "texto": "desobediência." },
+        { "letra": "B", "texto": "resistência." },
+        { "letra": "C", "texto": "desacato." },
+        { "letra": "D", "texto": "insubordinação." },
+        { "letra": "E", "texto": "motim." }
+      ],
+      "resposta": "B",
+      "justificativa": "Resistência (art. 177 do CPM) é opor-se à execução de ato legal mediante AMEAÇA OU VIOLÊNCIA ao executor. Sem violência ou ameaça, a conduta de não cumprir a ordem é desobediência. Desacato é ofender a dignidade ou o decoro de superior ou de funcionário. Motim exige reunião de militares agindo contra a ordem recebida. O elemento que separa resistência de desobediência é exatamente o emprego de violência ou ameaça."
+    },
+    {
+      "extId": "inedita:cpm:016",
+      "disciplina": "direito-penal-militar",
+      "topicoRef": "4.2",
+      "enunciado": "Quanto à aplicação da lei penal militar no tempo, o Código Penal Militar adota, para o TEMPO do crime, a teoria",
+      "alternativas": [
+        { "letra": "A", "texto": "do resultado." },
+        { "letra": "B", "texto": "da ubiquidade." },
+        { "letra": "C", "texto": "da atividade." },
+        { "letra": "D", "texto": "mista." },
+        { "letra": "E", "texto": "da imputação objetiva." }
+      ],
+      "resposta": "C",
+      "justificativa": "Art. 5º do CPM: considera-se praticado o crime no momento da ação ou omissão, ainda que outro seja o momento do resultado — é a teoria da ATIVIDADE, idêntica à do art. 4º do Código Penal comum. Para o LUGAR do crime, o art. 6º do CPM adota a ubiquidade, também como no CP. O macete vale para os dois códigos: tempo é atividade, lugar é ubiquidade."
+    },
+    {
+      "extId": "inedita:cpm:017",
+      "disciplina": "direito-penal-militar",
+      "topicoRef": "4.4",
+      "enunciado": "Sobre a ação penal militar, assinale a opção correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "É pública incondicionada e privativa do Ministério Público Militar, não existindo ação penal privada na Justiça Militar." },
+        { "letra": "B", "texto": "Pode ser privada, nos crimes contra a honra." },
+        { "letra": "C", "texto": "Depende de representação do ofendido nos crimes de lesão leve." },
+        { "letra": "D", "texto": "É promovida pelo comandante da unidade." },
+        { "letra": "E", "texto": "Pode ser iniciada por portaria da autoridade de polícia judiciária militar." }
+      ],
+      "resposta": "A",
+      "justificativa": "Art. 121 do CPM: a ação penal militar é pública e somente pode ser promovida por denúncia do Ministério Público Militar. Não há ação penal privada na Justiça Militar, nem sequer nos crimes contra a honra — é uma das diferenças marcantes em relação ao processo penal comum. E: o que se inicia por portaria é o Inquérito Policial Militar, peça informativa, e não a ação penal. D: ao comandante cabe determinar a instauração do IPM, não denunciar."
+    },
+    {
+      "extId": "inedita:cpm:018",
+      "disciplina": "direito-penal-militar",
+      "topicoRef": "4.5",
+      "enunciado": "Militar da ativa publica, em rede social, crítica a ato de seu superior sobre assunto atinente à disciplina militar, sem autorização. Essa conduta, no CPM, pode configurar o crime de",
+      "alternativas": [
+        { "letra": "A", "texto": "publicação ou crítica indevida." },
+        { "letra": "B", "texto": "motim." },
+        { "letra": "C", "texto": "violência contra superior." },
+        { "letra": "D", "texto": "reunião ilícita." },
+        { "letra": "E", "texto": "conduta atípica, por força da liberdade de expressão." }
+      ],
+      "resposta": "A",
+      "justificativa": "Art. 166 do CPM: publicar o militar, sem licença, ato ou documento oficial, ou criticar publicamente ato de seu superior ou assunto atinente à disciplina militar, é crime punido com detenção. E está errada porque a liberdade de expressão do militar sofre restrições próprias, decorrentes da hierarquia e da disciplina, que a Constituição eleva a pilares institucionais. D: reunião ilícita é promover reunião de militares para discutir ato de superior — exige a reunião, que aqui não houve."
+    },
+    {
+      "extId": "inedita:cpm:019",
+      "disciplina": "direito-penal-militar",
+      "topicoRef": "4.1",
+      "enunciado": "Civil pratica crime contra a administração militar estadual. À luz da Constituição Federal, esse civil será julgado",
+      "alternativas": [
+        { "letra": "A", "texto": "pela Justiça Militar estadual, por se tratar de crime militar." },
+        { "letra": "B", "texto": "pela Justiça comum, porque a Justiça Militar estadual não julga civis." },
+        { "letra": "C", "texto": "pela Justiça Militar da União, em qualquer hipótese." },
+        { "letra": "D", "texto": "pelo Tribunal do Júri." },
+        { "letra": "E", "texto": "pelo Conselho de Justificação." }
+      ],
+      "resposta": "B",
+      "justificativa": "Art. 125, §4º, da CF: compete à Justiça Militar ESTADUAL julgar os MILITARES DOS ESTADOS nos crimes militares — civis nunca. Essa é uma diferença central em relação à Justiça Militar da União, que pode julgar civis em hipóteses específicas. Por isso o civil que pratica crime contra a administração militar estadual responde perante a Justiça comum. E: o Conselho de Justificação é procedimento administrativo de oficiais, não órgão de julgamento de civis."
+    },
+    {
+      "extId": "inedita:cpm:020",
+      "disciplina": "direito-penal-militar",
+      "topicoRef": "4.4",
+      "enunciado": "Sobre a aplicação da pena no CPM ao militar condenado, assinale a opção correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "A pena de reclusão ou detenção até dois anos aplicada a militar é convertida em pena de prisão, quando não cabível a suspensão condicional." },
+        { "letra": "B", "texto": "Toda pena privativa de liberdade aplicada a militar é cumprida em penitenciária comum." },
+        { "letra": "C", "texto": "A pena até dois anos é automaticamente substituída por multa." },
+        { "letra": "D", "texto": "A pena de impedimento equivale à prestação de serviços à comunidade." },
+        { "letra": "E", "texto": "A pena de reforma não produz efeitos sobre a remuneração." }
+      ],
+      "resposta": "A",
+      "justificativa": "Art. 59 do CPM: a pena de reclusão ou de detenção até dois anos aplicada a militar é convertida em pena de prisão e cumprida quando não cabível a suspensão condicional. B: o art. 61 determina que a pena superior a dois anos aplicada a militar seja cumprida em penitenciária militar e, na falta, em estabelecimento prisional civil. D: no impedimento o condenado permanece no recinto da unidade, sem prejuízo da instrução. E: na reforma o militar não pode perceber mais de 1/25 do soldo por ano de serviço."
+    },
+    {
+      "extId": "inedita:info:007",
+      "disciplina": "informatica",
+      "topicoRef": "9.1",
+      "enunciado": "Assinale a opção que apresenta apenas itens de hardware.",
+      "alternativas": [
+        { "letra": "A", "texto": "Windows, Linux e LibreOffice." },
+        { "letra": "B", "texto": "Processador, memória RAM e disco rígido." },
+        { "letra": "C", "texto": "Navegador, antivírus e driver." },
+        { "letra": "D", "texto": "Planilha, editor de texto e sistema operacional." },
+        { "letra": "E", "texto": "Firmware, sistema de arquivos e protocolo." }
+      ],
+      "resposta": "B",
+      "justificativa": "Hardware é a parte física: processador, memória RAM, disco rígido, placa-mãe, teclado, monitor. Software são os programas: sistema operacional (A e D), navegador e antivírus (C). Atenção ao firmware, citado em E: é o software gravado no próprio hardware (como a BIOS), o que o deixa na fronteira entre os dois — mas continua sendo software, e sistema de arquivos e protocolo também são lógicos."
+    },
+    {
+      "extId": "inedita:info:008",
+      "disciplina": "informatica",
+      "topicoRef": "9.4",
+      "enunciado": "No uso do correio eletrônico, ao responder uma mensagem com a opção \"Responder a todos\", os destinatários que estavam em Cco (cópia oculta)",
+      "alternativas": [
+        { "letra": "A", "texto": "recebem a resposta normalmente." },
+        { "letra": "B", "texto": "não são incluídos na resposta, porque seus endereços não são visíveis aos demais." },
+        { "letra": "C", "texto": "recebem a resposta apenas se o remetente original autorizar." },
+        { "letra": "D", "texto": "tornam-se visíveis a todos os destinatários." },
+        { "letra": "E", "texto": "passam automaticamente para o campo Cc." }
+      ],
+      "resposta": "B",
+      "justificativa": "O campo Cco (cópia carbono oculta, ou Bcc) oculta os endereços dos demais destinatários, e justamente por isso esses endereços não são propagados em um \"Responder a todos\". Quem está em Cco recebe a mensagem original, mas fica de fora das respostas. Guarde a tríade: Para é o destinatário principal, Cc envia cópia visível a todos, e Cco envia cópia que ninguém mais enxerga."
+    },
+    {
+      "extId": "inedita:info:009",
+      "disciplina": "informatica",
+      "topicoRef": "9.2",
+      "enunciado": "No Windows, o atalho de teclado que abre o Explorador de Arquivos é",
+      "alternativas": [
+        { "letra": "A", "texto": "Win + D." },
+        { "letra": "B", "texto": "Win + E." },
+        { "letra": "C", "texto": "Win + L." },
+        { "letra": "D", "texto": "Win + R." },
+        { "letra": "E", "texto": "Win + I." }
+      ],
+      "resposta": "B",
+      "justificativa": "Win + E abre o Explorador de Arquivos (E de Explorer). Decore a família toda, porque a banca embaralha: Win + D mostra a área de trabalho (Desktop), Win + L bloqueia a sessão (Lock), Win + R abre a caixa Executar (Run), Win + I abre as Configurações e Win + PrtScn captura a tela salvando o arquivo."
+    },
+    {
+      "extId": "inedita:info:010",
+      "disciplina": "informatica",
+      "topicoRef": "9.6",
+      "enunciado": "Sobre backup, assinale a opção correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "O backup incremental copia apenas o que mudou desde o último backup completo." },
+        { "letra": "B", "texto": "O backup diferencial copia apenas o que mudou desde o último backup de qualquer tipo." },
+        { "letra": "C", "texto": "O backup incremental copia o que mudou desde o último backup de qualquer tipo, e o diferencial, o que mudou desde o último backup completo." },
+        { "letra": "D", "texto": "O backup completo copia apenas os arquivos modificados." },
+        { "letra": "E", "texto": "Backup e sincronização em nuvem são a mesma coisa." }
+      ],
+      "resposta": "C",
+      "justificativa": "O INCREMENTAL parte do último backup de qualquer tipo (completo ou incremental): é mais rápido de gravar, mas exige toda a cadeia para restaurar. O DIFERENCIAL parte sempre do último backup COMPLETO: ocupa mais espaço a cada dia, mas a restauração precisa apenas do completo mais o último diferencial. A e B invertem exatamente essas definições, que é a troca clássica do tema. E: sincronização replica alterações, inclusive exclusões e arquivos corrompidos, o que não substitui backup."
+    },
+    {
+      "extId": "inedita:esp:025",
+      "disciplina": "legislacao-especial",
+      "topicoRef": "5.9",
+      "enunciado": "Segundo o ECA, as medidas socioeducativas aplicáveis ao adolescente autor de ato infracional incluem",
+      "alternativas": [
+        { "letra": "A", "texto": "advertência, obrigação de reparar o dano, prestação de serviços à comunidade, liberdade assistida, semiliberdade e internação." },
+        { "letra": "B", "texto": "multa, prisão simples e detenção." },
+        { "letra": "C", "texto": "prisão preventiva e prisão temporária." },
+        { "letra": "D", "texto": "suspensão de direitos políticos e perda do poder familiar." },
+        { "letra": "E", "texto": "reclusão em regime semiaberto." }
+      ],
+      "resposta": "A",
+      "justificativa": "Art. 112 do ECA: as medidas socioeducativas são advertência; obrigação de reparar o dano; prestação de serviços à comunidade; liberdade assistida; inserção em regime de semiliberdade; e internação em estabelecimento educacional, além das medidas protetivas do art. 101. As demais alternativas trazem penas do direito penal de adultos — e o adolescente não cumpre pena, cumpre medida socioeducativa, com finalidade pedagógica."
+    },
+    {
+      "extId": "inedita:esp:026",
+      "disciplina": "legislacao-especial",
+      "topicoRef": "5.8",
+      "enunciado": "São formas de violência doméstica e familiar contra a mulher previstas na Lei Maria da Penha:",
+      "alternativas": [
+        { "letra": "A", "texto": "apenas a violência física e a sexual." },
+        { "letra": "B", "texto": "física, psicológica, sexual, patrimonial e moral." },
+        { "letra": "C", "texto": "apenas a física, por exigir lesão corporal." },
+        { "letra": "D", "texto": "física, psicológica e digital, exclusivamente." },
+        { "letra": "E", "texto": "apenas aquelas que deixam vestígios materiais." }
+      ],
+      "resposta": "B",
+      "justificativa": "Art. 7º da Lei 11.340/2006: são formas de violência doméstica e familiar contra a mulher a FÍSICA, a PSICOLÓGICA, a SEXUAL, a PATRIMONIAL e a MORAL. O rol mostra que a lei não exige lesão nem vestígio material — destruir documentos ou objetos da vítima é violência patrimonial, e caluniar ou difamar é violência moral. Para o policial, isso amplia muito o que pode configurar a ocorrência."
+    },
+    {
+      "extId": "inedita:const:008",
+      "disciplina": "direito-constitucional",
+      "topicoRef": "1.5",
+      "enunciado": "Sobre o princípio da presunção de inocência, é correto afirmar que ninguém será considerado culpado",
+      "alternativas": [
+        { "letra": "A", "texto": "até o oferecimento da denúncia." },
+        { "letra": "B", "texto": "até a sentença de primeiro grau." },
+        { "letra": "C", "texto": "até a confirmação da condenação em segunda instância." },
+        { "letra": "D", "texto": "até o trânsito em julgado de sentença penal condenatória." },
+        { "letra": "E", "texto": "até o início do cumprimento da pena." }
+      ],
+      "resposta": "D",
+      "justificativa": "Art. 5º, LVII, da CF: ninguém será considerado culpado até o trânsito em julgado de sentença penal condenatória. O STF reafirmou esse marco ao julgar as ADCs 43, 44 e 54, afastando a execução automática da pena após a condenação em segunda instância. A alternativa C é a mais atraente justamente por repetir um entendimento que já esteve em vigor e foi superado — fique atento à redação literal do inciso."
+    },
+    {
+      "extId": "inedita:const:009",
+      "disciplina": "direito-constitucional",
+      "topicoRef": "1.6",
+      "enunciado": "São princípios expressos da administração pública no art. 37, caput, da Constituição Federal:",
+      "alternativas": [
+        { "letra": "A", "texto": "legalidade, impessoalidade, moralidade, publicidade e eficiência." },
+        { "letra": "B", "texto": "legalidade, razoabilidade, proporcionalidade e economicidade." },
+        { "letra": "C", "texto": "supremacia do interesse público, autotutela e continuidade." },
+        { "letra": "D", "texto": "legalidade, moralidade, celeridade e hierarquia." },
+        { "letra": "E", "texto": "publicidade, eficiência, motivação e segurança jurídica." }
+      ],
+      "resposta": "A",
+      "justificativa": "O art. 37, caput, traz cinco princípios expressos, no mnemônico LIMPE: Legalidade, Impessoalidade, Moralidade, Publicidade e Eficiência — esta última acrescentada pela EC 19/1998. Os demais princípios citados nas outras alternativas existem e vinculam a administração, mas são IMPLÍCITOS ou previstos em lei, e não constam do caput do art. 37. A distinção entre expresso e implícito é exatamente o que a questão cobra."
+    },
+    {
+      "extId": "inedita:port:007",
+      "disciplina": "lingua-portuguesa",
+      "topicoRef": "8.4",
+      "enunciado": "Assinale a opção em que a concordância nominal está correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "Seguem anexo as cópias do relatório." },
+        { "letra": "B", "texto": "É proibido a entrada de pessoas não autorizadas." },
+        { "letra": "C", "texto": "Seguem anexas as cópias do relatório." },
+        { "letra": "D", "texto": "As viaturas ficaram meias danificadas." },
+        { "letra": "E", "texto": "Bastante policiais compareceram à instrução." }
+      ],
+      "resposta": "C",
+      "justificativa": "\"Anexo\" é adjetivo e concorda em gênero e número com o substantivo: \"seguem anexas as cópias\". A está errada por não flexionar. B: com o artigo definido, a expressão \"é proibido\" concorda — \"É proibida a entrada\"; sem artigo, ficaria invariável. D: \"meio\", no sentido de um tanto, é advérbio e não varia — \"meio danificadas\". E: \"bastante\", quando equivale a muitos e acompanha substantivo, é pronome indefinido e varia — \"bastantes policiais\"."
+    },
+    {
+      "extId": "inedita:port:008",
+      "disciplina": "lingua-portuguesa",
+      "topicoRef": "8.1",
+      "enunciado": "Em questões de interpretação, a diferença entre uma informação explícita e uma inferência é que a inferência",
+      "alternativas": [
+        { "letra": "A", "texto": "está escrita literalmente no texto." },
+        { "letra": "B", "texto": "é uma conclusão que decorre logicamente do que o texto afirma, sem estar escrita com todas as letras." },
+        { "letra": "C", "texto": "é uma opinião pessoal do leitor sobre o tema." },
+        { "letra": "D", "texto": "contraria o que o texto afirma." },
+        { "letra": "E", "texto": "depende de conhecimento externo não relacionado ao texto." }
+      ],
+      "resposta": "B",
+      "justificativa": "Inferir é concluir a partir do que está dito — a conclusão precisa estar ancorada no texto, embora não escrita literalmente. É isso que separa a inferência válida (B) da opinião do leitor (C) e da extrapolação com conhecimento externo (E), que são os dois erros mais cobrados. A descreve a informação explícita, e D descreve uma contradição, nunca uma inferência. Na prova, a regra prática é: se a alternativa acrescenta algo que o texto não sustenta, está errada."
+    },
+    {
+      "extId": "inedita:tra:025",
+      "disciplina": "legislacao-transito",
+      "topicoRef": "6.7",
+      "enunciado": "Condutor, sem habilitação, dirige veículo automotor em via pública e gera perigo de dano. Essa conduta configura",
+      "alternativas": [
+        { "letra": "A", "texto": "mera infração administrativa, sem repercussão penal." },
+        { "letra": "B", "texto": "o crime do art. 309 do CTB, que exige a geração de perigo de dano." },
+        { "letra": "C", "texto": "o crime do art. 309 do CTB, independentemente de perigo concreto." },
+        { "letra": "D", "texto": "crime de desobediência." },
+        { "letra": "E", "texto": "conduta atípica se o condutor estiver em curso de formação." }
+      ],
+      "resposta": "B",
+      "justificativa": "Art. 309 do CTB: dirigir veículo automotor em via pública sem a devida permissão ou habilitação, ou com o direito cassado ou suspenso, GERANDO PERIGO DE DANO. É crime de perigo CONCRETO: sem a demonstração do perigo, a conduta é apenas a infração administrativa do art. 162. A Súmula 720 do STF confirma essa exigência. Por isso C está errada — o perigo concreto é elemento do tipo, não presunção."
+    },
+    {
+      "extId": "inedita:tra:026",
+      "disciplina": "legislacao-transito",
+      "topicoRef": "6.2",
+      "enunciado": "Quanto à ultrapassagem, o CTB estabelece como regra que ela deve ser feita",
+      "alternativas": [
+        { "letra": "A", "texto": "pela direita, sempre." },
+        { "letra": "B", "texto": "pela esquerda, salvo quando o veículo a ser ultrapassado estiver sinalizando a intenção de entrar à esquerda." },
+        { "letra": "C", "texto": "indiferentemente pela direita ou pela esquerda." },
+        { "letra": "D", "texto": "apenas em vias de pista dupla." },
+        { "letra": "E", "texto": "somente com autorização do agente de trânsito." }
+      ],
+      "resposta": "B",
+      "justificativa": "A ultrapassagem é feita pela ESQUERDA, e a única exceção da regra é quando o veículo a ser ultrapassado está sinalizando o propósito de entrar à esquerda — aí a ultrapassagem se faz pela direita. Some a isso as vedações do art. 33 e seguintes: é proibido ultrapassar em locais de pouca visibilidade, nas curvas, nos aclives sem visibilidade, nas passagens de nível e onde houver sinalização proibindo."
+    }
+  ]
+}

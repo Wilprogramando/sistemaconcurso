@@ -12,6 +12,7 @@ const provas = ler('content/provas.json');
 const comentarios = ler('content/provas-comentarios.json').comentarios;
 const comentariosApostila = ler('content/apostila-comentarios.json').comentarios;
 const resumos = ler('content/resumos.json');
+const guia = ler('content/guia-materias.json').disciplinas;
 
 const ineditas = readdirSync(join(root, 'content'))
   .filter((f) => /^questoes-ineditas-\d+\.json$/.test(f))
@@ -111,6 +112,12 @@ for (const q of ineditas) {
 // ---------- resumos didaticos ----------
 for (const d of apostila.disciplines) {
   if (!resumos.disciplinas[d.slug]) erros.push(`resumo ausente para a disciplina ${d.slug}`);
+  if (!guia[d.slug]) erros.push(`guia ausente para a disciplina ${d.slug}`);
+  else {
+    const g = guia[d.slug];
+    if (!g.perguntaQueResponde || !g.exemplo || !g.comoEstudar || !g.oQueEstudar?.length)
+      erros.push(`guia incompleto em ${d.slug}`);
+  }
   for (const t of d.topics) {
     if (!resumos.topicos[`${d.slug}:${t.ref}`])
       erros.push(`resumo ausente para o topico ${d.slug}:${t.ref}`);

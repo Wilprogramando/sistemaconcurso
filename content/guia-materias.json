@@ -1,0 +1,148 @@
+{
+  "sobre": "Guia introdutório de cada matéria, em linguagem direta: a pergunta que ela responde, o que estudar, um exemplo concreto e como estudar. Complementa os resumos de content/resumos.json.",
+  "disciplinas": {
+    "direito-constitucional": {
+      "perguntaQueResponde": "Quais são os direitos fundamentais e como o Estado funciona?",
+      "chamada": "A Constituição e os direitos dos cidadãos.",
+      "oQueEstudar": [
+        "Direitos e garantias fundamentais (art. 5º)",
+        "Direitos individuais e coletivos, e os limites da atuação policial",
+        "Segurança pública — art. 144 e o papel da polícia militar",
+        "Direitos sociais, nacionalidade e direitos políticos",
+        "Organização do Estado e dos Poderes",
+        "Constituição do Estado de Santa Catarina"
+      ],
+      "exemplo": "A Constituição garante que a casa é asilo inviolável. Na prática, isso significa que o policial só entra sem consentimento em caso de flagrante, desastre ou socorro — a qualquer hora — ou com mandado judicial, e aí somente durante o dia.",
+      "comoEstudar": "Leia o art. 5º e o art. 144 com o texto da lei aberto, mais de uma vez. A banca troca uma palavra do dispositivo, então o que vale é reconhecer a redação, não a ideia geral."
+    },
+    "direito-penal-comum": {
+      "perguntaQueResponde": "O que é crime e qual é a pena?",
+      "chamada": "Quais condutas são crimes e quais são suas penas.",
+      "oQueEstudar": [
+        "Conceito de crime: fato típico, ilicitude e culpabilidade",
+        "Dolo e culpa",
+        "Legítima defesa, estado de necessidade e as demais excludentes",
+        "Crimes contra a pessoa: homicídio e lesão corporal",
+        "Crimes contra o patrimônio: furto, roubo e extorsão",
+        "Crimes contra a administração pública: peculato, concussão, corrupção",
+        "Aplicação da lei penal no tempo e no espaço"
+      ],
+      "exemplo": "Furto é subtrair coisa alheia móvel, sem violência nem grave ameaça. Se houver violência ou grave ameaça à pessoa, o crime passa a ser roubo — e a pena sobe muito. É o verbo do tipo penal que decide o enquadramento.",
+      "comoEstudar": "Monte um quadro com os verbos de cada tipo penal. Exigir é concussão; solicitar ou receber é corrupção passiva. A diferença entre dois crimes quase sempre está em uma palavra."
+    },
+    "direito-processual-penal": {
+      "perguntaQueResponde": "Como um crime é investigado e julgado?",
+      "chamada": "Como funciona a investigação e o processo criminal.",
+      "oQueEstudar": [
+        "Inquérito policial: natureza, prazos e arquivamento",
+        "Prisão em flagrante, preventiva e temporária",
+        "Provas: busca pessoal, busca domiciliar, testemunhas e perícia",
+        "Ação penal pública e privada",
+        "Competência dos órgãos judiciais, inclusive a Justiça Militar",
+        "Etapas do processo criminal"
+      ],
+      "exemplo": "Depois de um roubo, a polícia preserva o local, colhe provas e ouve testemunhas no inquérito. O inquérito vai ao Ministério Público, que decide se denuncia. Prova colhida fora da lei contamina tudo o que vier depois.",
+      "comoEstudar": "Concentre-se nos capítulos que você vai usar na rua: inquérito, prisões e provas. Decore os prazos — 10 dias preso, 30 solto; preventiva revista a cada 90 dias."
+    },
+    "direito-penal-militar": {
+      "perguntaQueResponde": "Quais condutas podem constituir crimes militares?",
+      "chamada": "Crimes militares e suas consequências legais.",
+      "oQueEstudar": [
+        "Conceito de crime militar (art. 9º do CPM)",
+        "Crimes propriamente e impropriamente militares",
+        "Crimes contra a autoridade e a disciplina: motim, revolta, violência contra superior",
+        "Deserção e abandono de posto",
+        "Penas principais e acessórias do CPM",
+        "Diferenças entre o CPM e o Código Penal comum"
+      ],
+      "exemplo": "Um militar que se ausenta da unidade por mais de oito dias comete deserção — crime que só existe na vida militar e que se consuma no nono dia. O mesmo comportamento, por um civil em seu emprego, não é crime nenhum.",
+      "comoEstudar": "Estude pelo quadro comparativo CPM × CP. O que a banca cobra é justamente onde os dois códigos se afastam: limites de pena, crime continuado, ação penal e terminologia do erro."
+    },
+    "legislacao-especial": {
+      "perguntaQueResponde": "Quais leis específicas tratam de determinados crimes e situações?",
+      "chamada": "Leis específicas sobre determinados crimes e situações.",
+      "oQueEstudar": [
+        "Lei de Drogas: a diferença entre usuário e traficante",
+        "Estatuto do Desarmamento: posse × porte",
+        "Lei Maria da Penha e as medidas protetivas de urgência",
+        "Lei de Abuso de Autoridade: os limites do próprio policial",
+        "Crimes Hediondos, tortura e racismo",
+        "ECA e Estatuto da Pessoa Idosa",
+        "Organização criminosa e identificação criminal"
+      ],
+      "exemplo": "A Lei Maria da Penha cria medidas protetivas de urgência, como a proibição de aproximação. Quem costuma ser acionado para fazer valer essa medida, na madrugada, é a guarnição da PM.",
+      "comoEstudar": "É a matéria mais numérica do edital. Faça fichas com os números de cada lei — prazos, idades, quantidade de pessoas — e revise essas fichas toda semana."
+    },
+    "legislacao-transito": {
+      "perguntaQueResponde": "Quais são as regras de trânsito e os crimes relacionados?",
+      "chamada": "As regras para circulação de veículos e segurança nas vias.",
+      "oQueEstudar": [
+        "Sinalização e a ordem de prevalência entre agente, semáforo e sinais",
+        "Infrações, pontuação e penalidades",
+        "Medidas administrativas — que não se confundem com penalidades",
+        "Crimes de trânsito: homicídio culposo, embriaguez, racha e fuga do local",
+        "Habilitação, categorias e documentos obrigatórios",
+        "Regras gerais de circulação e conduta"
+      ],
+      "exemplo": "Dirigir após beber pode gerar duas respostas diferentes: a infração administrativa do art. 165, que se configura com qualquer concentração de álcool, e o crime do art. 306, que exige 6 decigramas por litro de sangue ou sinais de alteração da capacidade psicomotora.",
+      "comoEstudar": "Separe desde o início duas listas: penalidades (art. 256) e medidas administrativas (art. 269). Depois decore a escada de pontos 7-5-4-3 e os números do art. 306."
+    },
+    "legislacao-institucional": {
+      "perguntaQueResponde": "Como funciona a Polícia Militar e quais são suas normas?",
+      "chamada": "As leis e regras específicas da Polícia Militar de Santa Catarina.",
+      "oQueEstudar": [
+        "Estatuto dos Policiais Militares de SC (Lei 6.218/1983)",
+        "Hierarquia e disciplina: postos, graduações e círculos",
+        "Regulamento Disciplinar: transgressões, punições e procedimentos",
+        "Direitos, deveres e responsabilidades do policial militar",
+        "Ingresso e promoção na carreira (LC 587/2013 e LC 801/2022)",
+        "Organização básica da PMSC e Conselho de Disciplina"
+      ],
+      "exemplo": "Posto é o grau do oficial, conferido pelo Governador e confirmado em Carta Patente. Graduação é o grau da praça — o seu caso —, conferida pelo Comandante-Geral. Trocar um pelo outro é erro clássico de prova.",
+      "comoEstudar": "É a maior banca de pontos da prova e a que menos cai em cursinho genérico, porque é 100% legislação de Santa Catarina. Dobre o tempo aqui: é onde se ganha ou se perde a vaga."
+    },
+    "lingua-portuguesa": {
+      "perguntaQueResponde": "O texto diz o quê, e a frase está correta?",
+      "chamada": "Interpretar textos e usar corretamente a língua portuguesa.",
+      "oQueEstudar": [
+        "Interpretação e compreensão de textos",
+        "Ortografia e acentuação",
+        "Pontuação, com atenção à vírgula",
+        "Classes de palavras",
+        "Concordância verbal e nominal",
+        "Regência verbal e nominal, e crase",
+        "Sintaxe e tipos de oração"
+      ],
+      "exemplo": "\"Os policiais, que agiram com excesso, foram punidos\" diz que todos agiram com excesso. Sem as vírgulas, \"Os policiais que agiram com excesso foram punidos\" diz que só alguns agiram. Duas vírgulas mudam o sentido da frase.",
+      "comoEstudar": "Faça questões de interpretação de texto todos os dias, nem que sejam três. E escreva: a redação vale 20 pontos e cobra a mesma norma-padrão da objetiva."
+    },
+    "informatica": {
+      "perguntaQueResponde": "Como usar o computador e proteger a informação?",
+      "chamada": "Conhecimentos básicos de computador, programas e segurança digital.",
+      "oQueEstudar": [
+        "Hardware e software: a diferença e os componentes",
+        "Windows 11: arquivos, pastas, extensões e atalhos",
+        "LibreOffice 7: Writer, Calc e Impress",
+        "Internet, navegadores e correio eletrônico",
+        "Segurança da informação: vírus, worms, golpes e backup",
+        "Computação em nuvem e LGPD"
+      ],
+      "exemplo": "Hardware é a parte física — teclado, memória, processador. Software são os programas. A memória RAM é hardware volátil: perde tudo ao desligar, diferentemente do HD ou do SSD.",
+      "comoEstudar": "São só 5 questões, mas são as mais fáceis de garantir. Decore a tabela de atalhos do Windows e a diferença entre os tipos de malware — isso já resolve metade delas."
+    },
+    "redacao": {
+      "perguntaQueResponde": "Como defender uma tese sobre ordem pública em 30 linhas?",
+      "chamada": "Texto dissertativo-argumentativo sobre ordem pública, valendo 20 pontos.",
+      "oQueEstudar": [
+        "Estrutura em quatro parágrafos: introdução, dois desenvolvimentos e conclusão",
+        "Como formular uma tese clara na introdução",
+        "Proposta de intervenção: agente, ação, meio, finalidade e detalhamento",
+        "Repertório: art. 144 da CF, SUSP, segurança cidadã e sistema de justiça criminal",
+        "Conectivos e coesão entre parágrafos",
+        "Erros que mais custam pontos"
+      ],
+      "exemplo": "Uma conclusão completa responde cinco perguntas: \"Cabe ao Estado (quem) ampliar o policiamento comunitário (o quê), por meio de convênios com os municípios (como), a fim de reduzir a insegurança (para quê), priorizando os bairros com mais ocorrências (detalhe).\"",
+      "comoEstudar": "Escreva uma redação completa, cronometrada, a cada dois dias no último mês. Use a tela de Redação deste sistema: ela sorteia o tema e aponta o que está faltando na sua estrutura."
+    }
+  }
+}
