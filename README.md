@@ -62,6 +62,8 @@ estreitas.
    - `supabase/migrations/0001_init.sql` — tabelas, RLS, trigger de perfil, view de desempenho
    - `supabase/migrations/0002_questoes_multipla_escolha.sql` — múltipla escolha, proveniência,
      textos de apoio, teoria em blocos e marcadores
+   - `supabase/migrations/0003_redacao_e_resumos.sql` — redações, resumos didáticos e limpeza do
+     índice legado de questões
 3. Em **Project Settings → API**, copie `Project URL`, a chave `anon` e a `service_role`.
 4. Em **Authentication → Providers → Email**, mantenha o provedor habilitado. Como a tela de login
    não tem cadastro, crie os usuários pelo painel do Supabase e desligue
@@ -103,14 +105,18 @@ Para reextrair os PDFs (precisa de `pdftotext`, do poppler):
 # apostila — modo layout preserva as tabelas
 pdftotext -layout -enc UTF-8 Apostila_PMSC_2026_Soldado.pdf content/apostila.txt
 
-# prova oficial 2023, direto do CDN da banca — modo raw respeita as duas colunas
-curl -sL -o prova2023.pdf https://cdn.cebraspe.org.br/concursos/pm_sc_23_soldado/arquivos/862_PMSC_SOLDADO_001_01.PDF
-curl -sL -o gab2023.pdf   https://cdn.cebraspe.org.br/concursos/pm_sc_23_soldado/arquivos/GAB_DEFINITIVO_862_PMSC_SOLDADO_001_01.PDF
-pdftotext -raw    -enc UTF-8 prova2023.pdf content/prova-2023.txt
-pdftotext -layout -enc UTF-8 gab2023.pdf   content/prova-2023-gabarito.txt
+# provas oficiais de 2023, direto do CDN da banca — modo raw respeita as duas colunas
+curl -sL -o sold.pdf https://cdn.cebraspe.org.br/concursos/pm_sc_23_soldado/arquivos/862_PMSC_SOLDADO_001_01.PDF
+curl -sL -o soldgab.pdf https://cdn.cebraspe.org.br/concursos/pm_sc_23_soldado/arquivos/GAB_DEFINITIVO_862_PMSC_SOLDADO_001_01.PDF
+curl -sL -o ofic.pdf https://cdn.cebraspe.org.br/concursos/pm_sc_23_oficial/arquivos/860_PMSC_OFICIAL_OBJ_001_01.PDF
+curl -sL -o oficgab.pdf https://cdn.cebraspe.org.br/concursos/pm_sc_23_oficial/arquivos/GAB_DEFINITIVO_860_PMSC_OFICIAL_OBJ_001_01.PDF
+pdftotext -raw    -enc UTF-8 sold.pdf    content/prova-2023.txt
+pdftotext -layout -enc UTF-8 soldgab.pdf content/prova-2023-gabarito.txt
+pdftotext -raw    -enc UTF-8 ofic.pdf    content/prova-2023-oficial.txt
+pdftotext -layout -enc UTF-8 oficgab.pdf content/prova-2023-oficial-gabarito.txt
 ```
 
-Os comentários das questões ficam em `content/prova-2023-comentarios.json`, **separados do parser de
+Os comentários das questões ficam em `content/provas-comentarios.json` e `content/apostila-comentarios.json`, **separados do parser de
 propósito**: reprocessar o PDF nunca apaga o que foi escrito à mão.
 
 ### Escrever novas questões
@@ -129,14 +135,15 @@ app/
 components/
   question-runner   motor de questões (CE e múltipla escolha, correção comentada)
   blocos            renderizador da teoria estruturada
-  navegacao, ui, tema
+  navegacao, ui, tema, graficos, sessao
 lib/
   supabase/         clients de browser e server (@supabase/ssr)
   srs.ts            revisão espaçada
   plans.ts          cronogramas e dicas de banca
   questions.ts      consulta de questões e textos de apoio
+  redacao/          temas de ordem pública e o analisador da redação
 content/            textos extraídos dos PDFs, JSONs estruturados e questões autorais
-scripts/            parse-apostila, parse-prova-2023, validar-conteudo, seed, lib/estrutura
+scripts/            parse-apostila, parse-provas, validar-conteudo, seed, lib/estrutura
 supabase/migrations/
 ```
 
@@ -144,7 +151,7 @@ supabase/migrations/
 
 - **Conteúdo** (leitura para qualquer usuário logado): `disciplines`, `topics`, `questions`, `passages`
 - **Por usuário** (RLS restrita ao dono): `profiles`, `attempts`, `reviews`, `exam_sessions`,
-  `error_notes`, `topic_progress`, `study_days`, `bookmarks`
+  `error_notes`, `topic_progress`, `study_days`, `bookmarks`, `essays`
 - **Views**: `v_discipline_stats` (acurácia por disciplina) e `v_daily_activity` (atividade por dia)
 
 ---
