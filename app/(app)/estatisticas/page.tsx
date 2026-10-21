@@ -68,8 +68,8 @@ export default async function EstatisticasPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-slate-900">Estatísticas</h1>
-        <p className="text-sm text-slate-500">
+        <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl dark:text-slate-100">Estatísticas</h1>
+        <p className="text-sm text-slate-500 dark:text-slate-400">
           Seu desempenho real, ponderado pelo peso de cada disciplina na prova.
         </p>
       </div>
@@ -99,16 +99,16 @@ export default async function EstatisticasPage() {
               const hc = d.total ? Math.round((d.correct / d.total) * h) : 0;
               return (
                 <li key={d.dia} className="flex w-10 shrink-0 flex-col items-center gap-1">
-                  <span className="text-[10px] text-slate-500 tabular-nums">{d.total || ''}</span>
+                  <span className="text-[10px] text-slate-500 tabular-nums dark:text-slate-400">{d.total || ''}</span>
                   <div
-                    className="flex w-6 flex-col justify-end overflow-hidden rounded-t bg-slate-200"
+                    className="flex w-6 flex-col justify-end overflow-hidden rounded-t bg-slate-200 dark:bg-slate-700"
                     style={{ height: 96 }}
                     title={`${d.total} questões, ${d.correct} corretas`}
                   >
-                    <div className="w-full bg-slate-300" style={{ height: h - hc }} />
+                    <div className="w-full bg-slate-300 dark:bg-slate-600" style={{ height: h - hc }} />
                     <div className="w-full bg-emerald-500" style={{ height: hc }} />
                   </div>
-                  <span className="text-[10px] text-slate-400">
+                  <span className="text-[10px] text-slate-400 dark:text-slate-500">
                     {new Date(d.dia + 'T12:00:00').toLocaleDateString('pt-BR', {
                       day: '2-digit',
                       month: '2-digit',
@@ -135,7 +135,7 @@ export default async function EstatisticasPage() {
                 >
                   {s.name}
                 </Link>
-                <span className="text-sm text-slate-500">{s.question_count} questões na prova</span>
+                <span className="text-sm text-slate-500 dark:text-slate-400">{s.question_count} questões na prova</span>
                 <div className="flex min-w-40 flex-1 items-center gap-2">
                   <Bar percent={Number(s.accuracy)} tone="auto" />
                   <span className="w-12 text-right text-sm font-semibold tabular-nums">
@@ -155,7 +155,7 @@ export default async function EstatisticasPage() {
           <div className="overflow-x-auto">
             <table className="w-full min-w-[520px] text-sm">
               <thead>
-                <tr className="border-b border-slate-200 text-left text-xs text-slate-500 uppercase">
+                <tr className="border-b border-slate-200 text-left text-xs text-slate-500 uppercase dark:border-slate-700 dark:text-slate-400">
                   <th className="py-2 pr-3">Data</th>
                   <th className="py-2 pr-3">Tipo</th>
                   <th className="py-2 pr-3">Resultado</th>
@@ -167,8 +167,8 @@ export default async function EstatisticasPage() {
                 {sessions.map((s) => {
                   const pct = s.total ? Math.round((100 * s.correct) / s.total) : 0;
                   return (
-                    <tr key={s.id} className="border-b border-slate-100 last:border-0">
-                      <td className="py-2.5 pr-3 text-slate-600">
+                    <tr key={s.id} className="border-b border-slate-100 last:border-0 dark:border-slate-800">
+                      <td className="py-2.5 pr-3 text-slate-600 dark:text-slate-400">
                         {new Date(s.finished_at!).toLocaleString('pt-BR', {
                           day: '2-digit',
                           month: '2-digit',
@@ -187,7 +187,7 @@ export default async function EstatisticasPage() {
                       >
                         {pct}%
                       </td>
-                      <td className="py-2.5 text-slate-600 tabular-nums">
+                      <td className="py-2.5 text-slate-600 tabular-nums dark:text-slate-400">
                         {s.duration_seconds ? `${Math.round(s.duration_seconds / 60)} min` : '—'}
                       </td>
                     </tr>

@@ -3,6 +3,7 @@
 import { useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
+import { INPUT_CLASS } from '@/lib/types';
 
 export default function ExamDateForm({
   examDate,
@@ -36,24 +37,24 @@ export default function ExamDateForm({
   return (
     <form onSubmit={salvar} className="space-y-3">
       <label className="block">
-        <span className="text-sm font-medium text-slate-700">Data da prova objetiva</span>
+        <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Data da prova objetiva</span>
         <input
           type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
-          className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100"
+          className={INPUT_CLASS}
         />
       </label>
 
       <label className="block">
-        <span className="text-sm font-medium text-slate-700">Meta diária de questões</span>
+        <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Meta diária de questões</span>
         <input
           type="number"
           min={5}
           max={200}
           value={goal}
           onChange={(e) => setGoal(Number(e.target.value))}
-          className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100"
+          className={INPUT_CLASS}
         />
       </label>
 

@@ -49,8 +49,8 @@ export default function ErrorItem({
   }
 
   return (
-    <div className="rounded-xl bg-white p-5 ring-1 ring-slate-200/70">
-      <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500">
+    <div className="rounded-2xl bg-white p-5 ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-700">
+      <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
         {disciplineName && disciplineSlug && (
           <Link href={`/materias/${disciplineSlug}`} className="font-medium text-brand-700 hover:underline">
             {disciplineName}
@@ -59,13 +59,13 @@ export default function ErrorItem({
         <span>· errada em {new Date(createdAt).toLocaleDateString('pt-BR')}</span>
       </div>
 
-      <p className="mt-2 text-sm text-slate-900">{statement}</p>
+      <p className="mt-2 text-sm leading-6 text-slate-900 dark:text-slate-100">{statement}</p>
 
       <p className="mt-2 text-sm">
         <span className="font-semibold text-emerald-700">
           Gabarito: {answer === 'C' ? 'CERTO' : answer === 'E' ? 'ERRADO' : '—'}
         </span>
-        {explanation && <span className="text-slate-600"> — {explanation}</span>}
+        {explanation && <span className="text-slate-600 dark:text-slate-400"> — {explanation}</span>}
       </p>
 
       <textarea
@@ -74,7 +74,7 @@ export default function ErrorItem({
         onBlur={salvar}
         rows={2}
         placeholder="Por que eu errei? (ex.: confundi prazo de 30 com 60 dias)"
-        className="mt-3 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100"
+        className="mt-3 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100"
       />
 
       <div className="mt-2 flex items-center gap-3">
@@ -82,7 +82,7 @@ export default function ErrorItem({
           type="button"
           onClick={alternarResolvido}
           disabled={pending}
-          className="rounded-lg bg-white px-3 py-1.5 text-sm font-medium text-brand-700 ring-1 ring-slate-300 hover:bg-slate-50 disabled:opacity-60"
+          className="rounded-xl bg-white px-3 py-1.5 text-sm font-medium text-brand-700 ring-1 ring-slate-300 hover:bg-slate-50 dark:bg-slate-800 dark:text-brand-200 dark:ring-slate-600 disabled:opacity-60"
         >
           {resolved ? 'Reabrir' : 'Marcar como resolvido'}
         </button>

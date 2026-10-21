@@ -1,9 +1,10 @@
+import Link from 'next/link';
+import { CalendarDays, Play, RefreshCw, Target, TrendingUp, ListOrdered } from 'lucide-react';
 import { createClient, getUser } from '@/lib/supabase/server';
-import { ActionLink, Bar, Badge, Card, Empty, Stat } from '@/components/ui';
+import { ActionLink, Aviso, Bar, Badge, Card, Empty, Stat } from '@/components/ui';
 import { PRIORITY_CLASS, PRIORITY_LABEL, type DisciplineStats } from '@/lib/types';
 import { GOLDEN_RULE, PLAN_30 } from '@/lib/plans';
 import ExamDateForm from './exam-date-form';
-import Link from 'next/link';
 
 export const metadata = { title: 'Painel — Estudo PM SC 2026' };
 export const dynamic = 'force-dynamic';
@@ -11,30 +12,31 @@ export const dynamic = 'force-dynamic';
 export default async function Dashboard() {
   const user = (await getUser())!;
   const supabase = await createClient();
-  const hoje = new Date();
-  const inicioDoDia = new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate()).toISOString();
 
-  const [{ data: profile }, { data: stats }, { data: hojeAttempts }, dueCount, { data: ultimas }] =
-    await Promise.all([
-      supabase.from('profiles').select('*').eq('id', user.id).maybeSingle(),
-      supabase.from('v_discipline_stats').select('*').eq('user_id', user.id),
-      supabase.from('attempts').select('correct').gte('answered_at', inicioDoDia),
-      supabase
-        .from('reviews')
-        .select('question_id', { count: 'exact', head: true })
-        .lte('due_on', new Date().toISOString().slice(0, 10)),
-      supabase
-        .from('exam_sessions')
-        .select('id, kind, total, correct, finished_at')
-        .not('finished_at', 'is', null)
-        .order('finished_at', { ascending: false })
-        .limit(5),
-    ]);
+  const agora = new Date();
+  const inicioDoDia = new Date(agora.getFullYear(), agora.getMonth(), agora.getDate()).toISOString();
+  const hojeISO = new Date().toISOString().slice(0, 10);
 
-  const { data: allDisciplines } = await supabase
-    .from('disciplines')
-    .select('*')
-    .order('chapter');
+  const [
+    { data: profile },
+    { data: stats },
+    { data: hojeAttempts },
+    dueCount,
+    { data: ultimas },
+    { data: disciplines },
+  ] = await Promise.all([
+    supabase.from('profiles').select('*').eq('id', user.id).maybeSingle(),
+    supabase.from('v_discipline_stats').select('*').eq('user_id', user.id),
+    supabase.from('attempts').select('correct').gte('answered_at', inicioDoDia),
+    supabase.from('reviews').select('question_id', { count: 'exact', head: true }).lte('due_on', hojeISO),
+    supabase
+      .from('exam_sessions')
+      .select('id, kind, total, correct, finished_at')
+      .not('finished_at', 'is', null)
+      .order('finished_at', { ascending: false })
+      .limit(5),
+    supabase.from('disciplines').select('*').order('chapter'),
+  ]);
 
   const statMap = new Map<number, DisciplineStats>(
     (stats ?? []).map((s) => [s.discipline_id as number, s as DisciplineStats])
@@ -45,22 +47,21 @@ export default async function Dashboard() {
   const acertosHoje = (hojeAttempts ?? []).filter((a) => a.correct).length;
   const revisoesHoje = dueCount.count ?? 0;
 
-  // projeção ponderada: acurácia de cada disciplina × nº de questões na prova
-  let pontosProjetados = 0;
-  let pesoAvaliado = 0;
-  for (const d of allDisciplines ?? []) {
+  let pontos = 0;
+  let avaliado = 0;
+  for (const d of disciplines ?? []) {
     const s = statMap.get(d.id);
     if (!s?.accuracy || !d.question_count) continue;
-    pontosProjetados += (Number(s.accuracy) / 100) * d.question_count;
-    pesoAvaliado += d.question_count;
+    pontos += (Number(s.accuracy) / 100) * d.question_count;
+    avaliado += d.question_count;
   }
-  const projecao = pesoAvaliado ? Math.round(pontosProjetados) : null;
+  const projecao = avaliado ? Math.round(pontos) : null;
 
   const diasRestantes = profile?.exam_date
     ? Math.ceil((new Date(profile.exam_date + 'T12:00:00').getTime() - Date.now()) / 86400000)
     : null;
 
-  const zeradas = (allDisciplines ?? []).filter(
+  const zeradas = (disciplines ?? []).filter(
     (d) => d.question_count > 0 && !statMap.get(d.id)?.answered
   );
 
@@ -70,35 +71,42 @@ export default async function Dashboard() {
       : null;
 
   return (
-    <div className="space-y-6">
-      <div className="flex flex-wrap items-end justify-between gap-3">
+    <div className="space-y-5">
+      <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900">Painel de estudo</h1>
-          <p className="text-sm text-slate-500">
+          <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl dark:text-slate-100">
+            Painel de estudo
+          </h1>
+          <p className="mt-1 max-w-2xl text-sm text-slate-500 dark:text-slate-400">
             60 questões objetivas + redação (20 pontos). Aprovação exige 50% do total e nenhuma
             disciplina zerada.
           </p>
         </div>
-        <div className="flex gap-2">
-          <ActionLink href="/questoes">Treinar questões</ActionLink>
-          <ActionLink href="/revisao" variant="ghost">
-            Revisar {revisoesHoje > 0 ? `(${revisoesHoje})` : ''}
+        <div className="flex flex-wrap gap-2">
+          <ActionLink href="/questoes" icon={Play}>
+            Treinar questões
+          </ActionLink>
+          <ActionLink href="/revisao" icon={RefreshCw} variant="ghost">
+            Revisar{revisoesHoje > 0 ? ` (${revisoesHoje})` : ''}
           </ActionLink>
         </div>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <Stat
           label="Hoje"
           value={`${respondidasHoje}/${metaDiaria}`}
           hint={`${acertosHoje} acertos · meta diária`}
-          tone={respondidasHoje >= metaDiaria ? 'good' : 'default'}
+          icon={CalendarDays}
+          tone={respondidasHoje >= metaDiaria ? 'good' : 'brand'}
         />
         <Stat
           label="Revisões vencidas"
           value={revisoesHoje}
           hint="questões que o sistema marcou para hoje"
+          icon={RefreshCw}
           tone={revisoesHoje > 0 ? 'warn' : 'good'}
+          href={revisoesHoje > 0 ? '/revisao' : undefined}
         />
         <Stat
           label="Projeção na objetiva"
@@ -110,25 +118,45 @@ export default async function Dashboard() {
                 ? 'ritmo de aprovação'
                 : 'abaixo do ponto de corte seguro'
           }
+          icon={Target}
           tone={projecao === null ? 'default' : projecao >= 40 ? 'good' : projecao >= 30 ? 'warn' : 'bad'}
         />
         <Stat
           label="Dias até a prova"
           value={diasRestantes === null ? '—' : diasRestantes > 0 ? diasRestantes : 'hoje'}
           hint={profile?.exam_date ? 'conforme data informada' : 'informe a data abaixo'}
+          icon={CalendarDays}
+          tone={diasRestantes !== null && diasRestantes <= 30 ? 'warn' : 'default'}
         />
       </div>
 
       {blocoAtual && (
-        <Card title={`Plano de 30 dias — ${blocoAtual.range}`} subtitle="Você está nesta etapa hoje">
+        <Card
+          title={`Plano de 30 dias — ${blocoAtual.range}`}
+          subtitle="Esta é a sua etapa de hoje"
+          icon={CalendarDays}
+          action={
+            <Link href="/plano" className="text-sm font-medium text-brand-600 hover:underline dark:text-brand-300">
+              ver plano →
+            </Link>
+          }
+        >
           <dl className="grid gap-3 sm:grid-cols-2">
-            <div className="rounded-lg bg-brand-50 p-3">
-              <dt className="text-xs font-semibold text-brand-700 uppercase">Manhã (2h)</dt>
-              <dd className="mt-1 text-sm text-slate-700">{blocoAtual.morning}</dd>
+            <div className="rounded-xl bg-brand-50 p-3.5 dark:bg-brand-950/50">
+              <dt className="text-xs font-bold tracking-wide text-brand-700 uppercase dark:text-brand-300">
+                Manhã (2h)
+              </dt>
+              <dd className="mt-1 text-sm leading-6 text-slate-700 dark:text-slate-300">
+                {blocoAtual.morning}
+              </dd>
             </div>
-            <div className="rounded-lg bg-slate-50 p-3">
-              <dt className="text-xs font-semibold text-slate-600 uppercase">Noite (2h)</dt>
-              <dd className="mt-1 text-sm text-slate-700">{blocoAtual.night}</dd>
+            <div className="rounded-xl bg-slate-50 p-3.5 dark:bg-slate-800/60">
+              <dt className="text-xs font-bold tracking-wide text-slate-600 uppercase dark:text-slate-400">
+                Noite (2h)
+              </dt>
+              <dd className="mt-1 text-sm leading-6 text-slate-700 dark:text-slate-300">
+                {blocoAtual.night}
+              </dd>
             </div>
           </dl>
         </Card>
@@ -137,50 +165,92 @@ export default async function Dashboard() {
       <Card
         title="Desempenho por disciplina"
         subtitle="Ordenado pelo peso real na prova (Tabela 8.1 do edital)"
+        icon={ListOrdered}
       >
-        <div className="overflow-x-auto">
-          <table className="w-full min-w-[640px] text-sm">
+        {/* celular: cartões; a partir de md: tabela */}
+        <ul className="space-y-3 md:hidden">
+          {(disciplines ?? [])
+            .slice()
+            .sort((a, b) => b.question_count - a.question_count || a.chapter - b.chapter)
+            .map((d) => {
+              const s = statMap.get(d.id);
+              const acc = s?.accuracy ? Number(s.accuracy) : null;
+              return (
+                <li
+                  key={d.id}
+                  className="rounded-xl p-3 ring-1 ring-slate-200 dark:ring-slate-700"
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <Link href={`/materias/${d.slug}`} className="font-medium hover:underline">
+                      {d.name}
+                    </Link>
+                    <Badge className={PRIORITY_CLASS[d.priority as keyof typeof PRIORITY_CLASS]}>
+                      {PRIORITY_LABEL[d.priority as keyof typeof PRIORITY_LABEL].replace('Prioridade ', '')}
+                    </Badge>
+                  </div>
+                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                    {d.question_count ? `${d.question_count} questões (${d.weight}%)` : 'redação'} ·{' '}
+                    {s?.answered ?? 0} respondidas
+                  </p>
+                  <div className="mt-2 flex items-center gap-2">
+                    <Bar percent={acc ?? 0} tone="auto" />
+                    <span className="w-14 shrink-0 text-right text-xs font-semibold tabular-nums">
+                      {acc === null ? '—' : `${acc}%`}
+                    </span>
+                  </div>
+                </li>
+              );
+            })}
+        </ul>
+
+        <div className="hidden overflow-x-auto md:block">
+          <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-slate-200 text-left text-xs text-slate-500 uppercase">
-                <th className="py-2 pr-3">Disciplina</th>
-                <th className="py-2 pr-3">Questões na prova</th>
-                <th className="py-2 pr-3">Respondidas</th>
-                <th className="py-2 pr-3">Acerto</th>
-                <th className="py-2">Prioridade</th>
+              <tr className="border-b border-slate-200 text-left text-[0.7rem] tracking-wider text-slate-500 uppercase dark:border-slate-700 dark:text-slate-400">
+                <th className="py-2.5 pr-3 font-semibold">Disciplina</th>
+                <th className="py-2.5 pr-3 font-semibold">Questões na prova</th>
+                <th className="py-2.5 pr-3 font-semibold">Respondidas</th>
+                <th className="py-2.5 pr-3 font-semibold">Acerto</th>
+                <th className="py-2.5 font-semibold">Prioridade</th>
               </tr>
             </thead>
             <tbody>
-              {(allDisciplines ?? [])
+              {(disciplines ?? [])
                 .slice()
                 .sort((a, b) => b.question_count - a.question_count || a.chapter - b.chapter)
                 .map((d) => {
                   const s = statMap.get(d.id);
                   const acc = s?.accuracy ? Number(s.accuracy) : null;
                   return (
-                    <tr key={d.id} className="border-b border-slate-100 last:border-0">
-                      <td className="py-2.5 pr-3">
+                    <tr
+                      key={d.id}
+                      className="border-b border-slate-100 last:border-0 dark:border-slate-800"
+                    >
+                      <td className="py-3 pr-3">
                         <Link href={`/materias/${d.slug}`} className="font-medium hover:underline">
                           {d.name}
                         </Link>
                       </td>
-                      <td className="py-2.5 pr-3 text-slate-600">
+                      <td className="py-3 pr-3 text-slate-600 tabular-nums dark:text-slate-400">
                         {d.question_count || '—'}
                         {d.question_count ? (
                           <span className="ml-1 text-xs text-slate-400">({d.weight}%)</span>
                         ) : null}
                       </td>
-                      <td className="py-2.5 pr-3 text-slate-600">{s?.answered ?? 0}</td>
-                      <td className="w-40 py-2.5 pr-3">
+                      <td className="py-3 pr-3 text-slate-600 tabular-nums dark:text-slate-400">
+                        {s?.answered ?? 0}
+                      </td>
+                      <td className="w-48 py-3 pr-3">
                         {acc === null ? (
                           <span className="text-slate-400">sem dados</span>
                         ) : (
                           <div className="flex items-center gap-2">
                             <Bar percent={acc} tone="auto" />
-                            <span className="w-12 text-right font-medium tabular-nums">{acc}%</span>
+                            <span className="w-12 text-right font-semibold tabular-nums">{acc}%</span>
                           </div>
                         )}
                       </td>
-                      <td className="py-2.5">
+                      <td className="py-3">
                         <Badge className={PRIORITY_CLASS[d.priority as keyof typeof PRIORITY_CLASS]}>
                           {PRIORITY_LABEL[d.priority as keyof typeof PRIORITY_LABEL]}
                         </Badge>
@@ -194,44 +264,46 @@ export default async function Dashboard() {
       </Card>
 
       {zeradas.length > 0 && (
-        <Card
-          title="Atenção: disciplinas sem nenhuma questão respondida"
-          subtitle="Zerar uma única disciplina elimina o candidato, mesmo com nota alta nas demais."
-        >
-          <ul className="flex flex-wrap gap-2">
+        <Aviso title="Atenção: disciplinas sem nenhuma questão respondida">
+          <p>Zerar uma única disciplina elimina o candidato, mesmo com nota alta nas demais.</p>
+          <ul className="mt-3 flex flex-wrap gap-2">
             {zeradas.map((d) => (
               <li key={d.id}>
                 <Link
                   href={`/questoes?disciplina=${d.slug}`}
-                  className="inline-flex items-center rounded-lg bg-red-50 px-3 py-1.5 text-sm font-medium text-red-800 ring-1 ring-red-100 hover:bg-red-100"
+                  className="inline-flex items-center rounded-lg bg-white/70 px-3 py-1.5 text-sm font-medium ring-1 ring-amber-300 hover:bg-white dark:bg-slate-900/60 dark:ring-amber-800"
                 >
                   {d.name} →
                 </Link>
               </li>
             ))}
           </ul>
-        </Card>
+        </Aviso>
       )}
 
       <div className="grid gap-4 lg:grid-cols-2">
-        <Card title="Últimas sessões">
+        <Card title="Últimas sessões" icon={TrendingUp}>
           {!ultimas?.length ? (
             <Empty>Nenhuma sessão concluída ainda. Comece por um treino de questões.</Empty>
           ) : (
-            <ul className="divide-y divide-slate-100 text-sm">
+            <ul className="divide-y divide-slate-100 text-sm dark:divide-slate-800">
               {ultimas.map((s) => {
                 const pct = s.total ? Math.round((100 * s.correct) / s.total) : 0;
                 return (
                   <li key={s.id} className="flex items-center justify-between gap-3 py-2.5">
                     <span className="capitalize">{s.kind}</span>
-                    <span className="text-slate-500">
+                    <span className="text-slate-500 dark:text-slate-400">
                       {new Date(s.finished_at!).toLocaleDateString('pt-BR')}
                     </span>
                     <span className="font-semibold tabular-nums">
                       {s.correct}/{s.total}{' '}
                       <span
                         className={
-                          pct >= 70 ? 'text-emerald-700' : pct >= 50 ? 'text-amber-700' : 'text-red-700'
+                          pct >= 70
+                            ? 'text-emerald-600 dark:text-emerald-400'
+                            : pct >= 50
+                              ? 'text-amber-600 dark:text-amber-400'
+                              : 'text-red-600 dark:text-red-400'
                         }
                       >
                         ({pct}%)
@@ -245,11 +317,8 @@ export default async function Dashboard() {
         </Card>
 
         <Card title="Sua configuração" subtitle="Data da prova e meta diária de questões">
-          <ExamDateForm
-            examDate={profile?.exam_date ?? ''}
-            dailyGoal={profile?.daily_goal ?? 20}
-          />
-          <p className="mt-4 rounded-lg bg-amber-50 px-3 py-2 text-xs text-amber-900 ring-1 ring-amber-100">
+          <ExamDateForm examDate={profile?.exam_date ?? ''} dailyGoal={profile?.daily_goal ?? 20} />
+          <p className="mt-4 rounded-xl bg-amber-50 px-3.5 py-2.5 text-xs leading-5 text-amber-900 ring-1 ring-amber-100 dark:bg-amber-950/40 dark:text-amber-200 dark:ring-amber-900">
             {GOLDEN_RULE}
           </p>
         </Card>

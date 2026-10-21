@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
+import { INPUT_CLASS } from '@/lib/types';
 
 /**
  * O Supabase Auth exige e-mail. Para permitir login so com usuario ("adm"),
@@ -49,7 +50,7 @@ export default function LoginForm() {
   return (
     <form onSubmit={submit} className="space-y-4">
       <label className="block">
-        <span className="text-sm font-medium text-slate-700">Usuário</span>
+        <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Usuário</span>
         <input
           type="text"
           required
@@ -60,19 +61,19 @@ export default function LoginForm() {
           autoComplete="username"
           value={usuario}
           onChange={(e) => setUsuario(e.target.value)}
-          className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100"
+          className={INPUT_CLASS}
         />
       </label>
 
       <label className="block">
-        <span className="text-sm font-medium text-slate-700">Senha</span>
+        <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Senha</span>
         <input
           type="password"
           required
           autoComplete="current-password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100"
+          className={INPUT_CLASS}
         />
       </label>
 

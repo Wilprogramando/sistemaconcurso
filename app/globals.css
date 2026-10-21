@@ -1,37 +1,61 @@
 @import 'tailwindcss';
 
+/* dark mode controlado por classe no <html>, nao pelo sistema */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
-  --color-brand-50: #eef5ff;
-  --color-brand-100: #d9e7ff;
-  --color-brand-500: #1f4f8b;
-  --color-brand-600: #1a4477;
-  --color-brand-700: #143659;
-  --color-brand-900: #0b2038;
+  --color-brand-50: #eff5ff;
+  --color-brand-100: #dbe8fe;
+  --color-brand-200: #bfd5fd;
+  --color-brand-300: #93b8fb;
+  --color-brand-400: #6094f7;
+  --color-brand-500: #2f6fe4;
+  --color-brand-600: #1f55c4;
+  --color-brand-700: #1c47a0;
+  --color-brand-800: #1b3c7f;
+  --color-brand-900: #16305f;
+  --color-brand-950: #101f3d;
+
   --font-sans: ui-sans-serif, system-ui, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+  --fundo: #f3f6fc;
+}
+
+html.dark {
+  color-scheme: dark;
+  --fundo: #0b1220;
 }
 
 html {
   -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: #f6f7f9;
-  color: #0f172a;
+  background: var(--fundo);
 }
 
-/* Texto da apostila: preserva as tabelas em layout de colunas do PDF */
-.apostila {
-  white-space: pre-wrap;
-  font-variant-numeric: tabular-nums;
-  line-height: 1.65;
-  font-size: 0.9375rem;
-  overflow-x: auto;
+/* respeita quem pediu menos animacao no sistema */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
-.apostila-mono {
-  white-space: pre;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.8125rem;
-  line-height: 1.6;
-  overflow-x: auto;
+/* alvo de toque confortavel no celular */
+@media (pointer: coarse) {
+  button,
+  a[role='button'],
+  [type='submit'] {
+    min-height: 44px;
+  }
 }

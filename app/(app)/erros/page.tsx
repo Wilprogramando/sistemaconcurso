@@ -42,8 +42,8 @@ export default async function ErrosPage({
     <div className="space-y-6">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900">Caderno de erros</h1>
-          <p className="text-sm text-slate-500">
+          <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl dark:text-slate-100">Caderno de erros</h1>
+          <p className="text-sm text-slate-500 dark:text-slate-400">
             Toda questão errada cai aqui automaticamente. Anote o motivo do erro — é nele que está a
             sua nota.
           </p>
@@ -52,7 +52,7 @@ export default async function ErrosPage({
           <Link
             href="/erros"
             className={`rounded-lg px-3 py-1.5 font-medium ${
-              !mostrarResolvidos ? 'bg-brand-600 text-white' : 'bg-white text-brand-700 ring-1 ring-slate-300'
+              !mostrarResolvidos ? 'bg-brand-600 text-white' : 'bg-white text-brand-700 ring-1 ring-slate-300 dark:bg-slate-800 dark:text-brand-200 dark:ring-slate-600'
             }`}
           >
             Abertos
@@ -60,7 +60,7 @@ export default async function ErrosPage({
           <Link
             href="/erros?ver=resolvidos"
             className={`rounded-lg px-3 py-1.5 font-medium ${
-              mostrarResolvidos ? 'bg-brand-600 text-white' : 'bg-white text-brand-700 ring-1 ring-slate-300'
+              mostrarResolvidos ? 'bg-brand-600 text-white' : 'bg-white text-brand-700 ring-1 ring-slate-300 dark:bg-slate-800 dark:text-brand-200 dark:ring-slate-600'
             }`}
           >
             Resolvidos

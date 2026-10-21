@@ -1,106 +1,151 @@
 # Sistema de Estudo — PM SC 2026 (Soldado QPPM)
 
-App de estudo construído sobre a **Apostila Completa PM SC 2026 — Soldado QPPM** (Edital nº 002/CCP/2026, Instituto AOCP).
-Next.js 15 + Supabase (Postgres + Auth), pronto para deploy na Vercel.
+App de estudo para o concurso de Soldado do Quadro de Praças da PMSC, **Edital nº 002/CCP/2026**
+(Instituto AOCP). Next.js 15 + Supabase (Postgres + Auth), pronto para deploy na Vercel, pensado
+para estudar pelo celular.
 
-## O que o sistema faz
+## O que tem dentro
+
+### Conteúdo
+
+| Fonte | O que é | Quantidade |
+| --- | --- | --- |
+| **Apostila PM SC 2026** | Teoria por tópico + questões comentadas + simulado final | 78 tópicos, 92 questões, 30 do simulado |
+| **Prova oficial 2023** | Prova de Soldado da PMSC aplicada pelo Cebraspe em 27/8/2023, com 5 alternativas | 45 questões aproveitáveis |
+| **Inéditas** | Múltipla escolha no estilo da banca, escritas a partir do Anexo II do edital | 64 questões |
+| | | **231 questões** |
+
+As questões da prova oficial vêm da banca; o **gabarito é o definitivo do Cebraspe**, e as
+justificativas foram escritas para este sistema (a banca publica só a letra). Questões anuladas, as
+de Raciocínio Lógico (fora do edital 2026) e as que dependem de imagem do caderno ficam de fora.
+Cada questão mostra sua origem — prova oficial, apostila ou inédita — para você saber o que está
+treinando.
+
+### Funcionalidades
 
 | Área | Descrição |
 | --- | --- |
-| **Painel** | Meta diária, revisões vencidas, projeção de nota na objetiva (acurácia × peso de cada disciplina), contagem de dias até a prova e alerta de disciplinas zeradas (zerar uma elimina). |
-| **Matérias** | 78 tópicos de teoria extraídos da apostila, por capítulo, com marcação de *lendo / lido / revisar*. |
-| **Questões** | 92 questões comentadas (Certo/Errado e discursivas curtas) com o fundamento legal, por disciplina, aleatórias ou focadas nos seus erros. |
+| **Painel** | Meta diária, revisões vencidas, projeção de nota na objetiva (acurácia × peso de cada disciplina), dias até a prova, etapa de hoje no plano de 30 dias e alerta de disciplina zerada. |
+| **Matérias** | Teoria renderizada em tipografia de verdade — tabelas, listas, destaques "No edital" / "Atenção" / "Dica de prova" — com referências legais e prazos em negrito, tempo de leitura e marcação do que já estudou. |
+| **Questões** | Certo/Errado e múltipla escolha A–E. Ao errar, mostra **sua resposta, a resposta correta e o porquê**. Filtros por disciplina, só prova oficial, ou focado nos seus erros. |
 | **Revisão** | Revisão espaçada (SM-2 simplificado): acertou → 3, 7, 16+ dias; errou → volta amanhã. |
-| **Simulado** | O simulado final de 30 questões da apostila (60 min) e um simulado ponderado de 60 questões que respeita a Tabela 8.1 do edital (120 min). Gabarito só no fim. |
-| **Caderno de erros** | Toda questão errada entra automaticamente; você anota o motivo do erro e marca como resolvido. |
-| **Plano** | Cronogramas da apostila (12 semanas e reta final de 30 dias) com check-off por dia, mais o mapa de pegadinhas da AOCP. |
-| **Estatísticas** | Acerto geral, questões dominadas, sequência de dias, histórico de sessões e onde investir o tempo (pior acerto × maior peso). |
+| **Simulado** | Prova oficial de 2023 (2h), simulado ponderado de 60 questões na distribuição da Tabela 8.1 (2h) e o simulado da apostila (1h). Gabarito comentado só no fim, como na prova. |
+| **Caderno de erros** | Toda questão errada entra automaticamente; você anota o motivo e marca como resolvido. |
+| **Plano** | Cronogramas de 12 semanas e da reta final de 30 dias, com check-off, e o mapa de pegadinhas da banca. |
+| **Estatísticas** | Acerto geral, questões dominadas, sequência de dias, últimos 14 dias e onde investir o tempo. |
 
-Peso real de cada disciplina (Tabela 8.1): Institucional 10, Constitucional 8, Português 8, Penal 6, Processo Penal 6, Penal Militar 6, Legislação Especial 6, Trânsito 5, Informática 5 = 60 questões + 20 pontos de redação.
+Peso real de cada disciplina (Tabela 8.1 do edital): Institucional 10, Constitucional 8, Português 8,
+Penal 6, Processo Penal 6, Penal Militar 6, Legislação Especial 6, Trânsito 5, Informática 5 = 60
+questões + 20 pontos de redação. Aprovação exige 50% do total e **nenhuma disciplina zerada**.
+
+### No celular
+
+Barra inferior fixa com as seções principais, alvos de toque de 44px, tema claro/escuro com
+alternância no cabeçalho, tabelas com rolagem própria e cartões no lugar de tabelas nas telas
+estreitas.
 
 ## Stack
 
 - **Next.js 15** (App Router, Server Components, TypeScript)
-- **Tailwind CSS 4**
-- **Supabase**: Postgres com RLS + Auth por e-mail/senha
+- **Tailwind CSS 4** + **lucide-react**
+- **Supabase**: Postgres com RLS, Auth por usuário/senha
 - **Vercel** para hospedagem
 
-## Passo a passo do setup
+## Setup
 
 ### 1. Supabase
 
 1. Crie um projeto em <https://supabase.com/dashboard>.
-2. Abra **SQL Editor → New query**, cole todo o conteúdo de `supabase/migrations/0001_init.sql` e rode.
-   Isso cria as tabelas, as políticas de RLS, o trigger que cria o perfil no cadastro e a view de desempenho.
-3. Em **Project Settings → API**, copie:
-   - `Project URL` → `NEXT_PUBLIC_SUPABASE_URL`
-   - `anon public` → `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-   - `service_role` → `SUPABASE_SERVICE_ROLE_KEY` (só local, para o seed)
-4. Em **Authentication → Providers → Email**, deixe *Email* habilitado.
-   Para testar sem caixa de entrada, desligue **Confirm email**.
+2. No **SQL Editor**, rode **na ordem**:
+   - `supabase/migrations/0001_init.sql` — tabelas, RLS, trigger de perfil, view de desempenho
+   - `supabase/migrations/0002_questoes_multipla_escolha.sql` — múltipla escolha, proveniência,
+     textos de apoio, teoria em blocos e marcadores
+3. Em **Project Settings → API**, copie `Project URL`, a chave `anon` e a `service_role`.
+4. Em **Authentication → Providers → Email**, mantenha o provedor habilitado. Como a tela de login
+   não tem cadastro, crie os usuários pelo painel do Supabase e desligue
+   **Allow new users to sign up** para fechar o sistema.
 
 ### 2. Rodar local
 
 ```bash
 cp .env.example .env.local   # preencha as 3 variáveis
 npm install
-npm run seed                 # carrega disciplinas, tópicos e questões no Supabase
+npm run conteudo             # parse + validação + seed
 npm run dev                  # http://localhost:3000
 ```
 
-O login aceita usuário simples (sem `@`): o app completa com um domínio interno (`adm` → `adm@pmsc.local`),
-que nunca recebe e-mail. Um e-mail completo também funciona. O perfil é criado pelo trigger no primeiro acesso.
+O login aceita usuário simples, sem `@`: o app completa com um domínio interno
+(`adm` → `adm@pmsc.local`), que nunca recebe e-mail. Um e-mail completo também funciona.
 
 ### 3. Deploy na Vercel
 
-1. <https://vercel.com/new> → importe o repositório `Wilprogramando/sistemaconcurso`.
-2. Framework: **Next.js** (detectado automaticamente). Nada a mudar em build/output.
-3. Em **Environment Variables**, adicione **apenas**:
-   - `NEXT_PUBLIC_SUPABASE_URL`
-   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+1. <https://vercel.com/new> → importe o repositório.
+2. Em **Environment Variables**, adicione **apenas** `NEXT_PUBLIC_SUPABASE_URL` e
+   `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
+   > A `SUPABASE_SERVICE_ROLE_KEY` nunca vai para a Vercel — ela ignora o RLS e só serve ao seed local.
+3. Depois do deploy, em **Supabase → Authentication → URL Configuration**, ponha a URL da Vercel em
+   *Site URL* e em *Redirect URLs*.
 
-   > Não coloque a `SUPABASE_SERVICE_ROLE_KEY` na Vercel — ela ignora o RLS e só é usada no seed local.
-4. Deploy. Depois, em **Supabase → Authentication → URL Configuration**, ponha a URL da Vercel em *Site URL* e em *Redirect URLs*.
-
-## Atualizar o conteúdo da apostila
-
-O conteúdo vem de um PDF e é versionado como texto e JSON:
+## Pipeline de conteúdo
 
 ```bash
-pdftotext -layout -enc UTF-8 Apostila_PMSC_2026_Soldado.pdf content/apostila.txt
-npm run parse   # content/apostila.txt -> content/apostila.json
-npm run seed    # envia para o Supabase (upsert, não duplica)
+npm run parse     # PDFs já extraídos em texto -> content/*.json
+npm run validar   # confere gabaritos, alternativas, comentários e referências
+npm run seed      # envia ao Supabase (idempotente, preserva ids e seu histórico)
+npm run conteudo  # os três acima em sequência
 ```
 
-Sem a `service_role` em mãos? `npm run seed:sql` gera `supabase/seed.sql` (~330 KB) com o mesmo
-conteúdo em INSERTs idempotentes, para colar direto no SQL Editor do Supabase.
+Para reextrair os PDFs (precisa de `pdftotext`, do poppler):
 
-O parser (`scripts/parse-apostila.mjs`) separa capítulos, tópicos `N.M`, as questões comentadas de cada
-disciplina e o simulado final com o gabarito.
+```bash
+# apostila — modo layout preserva as tabelas
+pdftotext -layout -enc UTF-8 Apostila_PMSC_2026_Soldado.pdf content/apostila.txt
+
+# prova oficial 2023, direto do CDN da banca — modo raw respeita as duas colunas
+curl -sL -o prova2023.pdf https://cdn.cebraspe.org.br/concursos/pm_sc_23_soldado/arquivos/862_PMSC_SOLDADO_001_01.PDF
+curl -sL -o gab2023.pdf   https://cdn.cebraspe.org.br/concursos/pm_sc_23_soldado/arquivos/GAB_DEFINITIVO_862_PMSC_SOLDADO_001_01.PDF
+pdftotext -raw    -enc UTF-8 prova2023.pdf content/prova-2023.txt
+pdftotext -layout -enc UTF-8 gab2023.pdf   content/prova-2023-gabarito.txt
+```
+
+Os comentários das questões ficam em `content/prova-2023-comentarios.json`, **separados do parser de
+propósito**: reprocessar o PDF nunca apaga o que foi escrito à mão.
+
+### Escrever novas questões
+
+Acrescente um arquivo `content/questoes-ineditas-N.json` no mesmo formato dos existentes
+(`extId` único, `disciplina` = slug, 5 alternativas A–E, `resposta` e `justificativa`) e rode
+`npm run validar && npm run seed`. O validador recusa gabarito inexistente, alternativa vazia,
+`extId` repetido e justificativa faltando.
 
 ## Estrutura
 
 ```
 app/
   (app)/            páginas autenticadas (painel, matérias, questões, revisão, simulado, erros, plano, estatísticas)
-  login/            cadastro e login
-components/         UI compartilhada + motor de questões (question-runner)
+  login/            login por usuário e senha
+components/
+  question-runner   motor de questões (CE e múltipla escolha, correção comentada)
+  blocos            renderizador da teoria estruturada
+  navegacao, ui, tema
 lib/
   supabase/         clients de browser e server (@supabase/ssr)
   srs.ts            revisão espaçada
-  plans.ts          cronogramas e dicas de banca da apostila
-  types.ts          tipos do domínio
-content/            apostila.txt (extraída do PDF) e apostila.json (estruturada)
-scripts/            parse-apostila.mjs, seed.mjs
-supabase/migrations/0001_init.sql
+  plans.ts          cronogramas e dicas de banca
+  questions.ts      consulta de questões e textos de apoio
+content/            textos extraídos dos PDFs, JSONs estruturados e questões autorais
+scripts/            parse-apostila, parse-prova-2023, validar-conteudo, seed, lib/estrutura
+supabase/migrations/
 ```
 
 ## Modelo de dados
 
-- Conteúdo (leitura para qualquer usuário logado): `disciplines`, `topics`, `questions`
-- Por usuário (RLS restrita ao dono): `profiles`, `attempts`, `reviews`, `exam_sessions`, `error_notes`, `topic_progress`, `study_days`
-- `v_discipline_stats`: respondidas, acertos e acurácia por disciplina e usuário
+- **Conteúdo** (leitura para qualquer usuário logado): `disciplines`, `topics`, `questions`, `passages`
+- **Por usuário** (RLS restrita ao dono): `profiles`, `attempts`, `reviews`, `exam_sessions`,
+  `error_notes`, `topic_progress`, `study_days`, `bookmarks`
+- **Views**: `v_discipline_stats` (acurácia por disciplina) e `v_daily_activity` (atividade por dia)
 
 ---
 
-Material de estudo pessoal, transcrito da apostila do edital 002/CCP/2026.
+Material de estudo pessoal. Teoria transcrita da Apostila PM SC 2026; questões da prova oficial de
+2023 obtidas no CDN público do Cebraspe, com gabarito definitivo da banca.

@@ -1,13 +1,14 @@
 'use client';
 
+import { BookOpen, Check, RotateCcw } from 'lucide-react';
 import { useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 
 const OPCOES = [
-  ['lendo', 'Estou lendo'],
-  ['lido', 'Já li'],
-  ['revisar', 'Preciso revisar'],
+  { valor: 'lendo', label: 'Estudando', icone: BookOpen, ativo: 'bg-sky-600 text-white' },
+  { valor: 'lido', label: 'Já estudei', icone: Check, ativo: 'bg-emerald-600 text-white' },
+  { valor: 'revisar', label: 'Revisar', icone: RotateCcw, ativo: 'bg-amber-600 text-white' },
 ] as const;
 
 export default function TopicStatus({
@@ -43,7 +44,7 @@ export default function TopicStatus({
             status: valor,
             updated_at: new Date().toISOString(),
           },
-          { onConflict: 'user_id,topic_id' }
+          { onConflict: 'user_id,topic_id', defaultToNull: false }
         );
       }
       router.refresh();
@@ -51,26 +52,30 @@ export default function TopicStatus({
   }
 
   return (
-    <div className="flex flex-wrap items-center gap-2">
-      {OPCOES.map(([valor, label]) => {
-        const ativo = status === valor;
+    <div className="flex flex-wrap items-center gap-2 rounded-2xl bg-white p-3 ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-700">
+      <span className="mr-1 text-xs font-semibold tracking-wide text-slate-400 uppercase">
+        Meu progresso
+      </span>
+      {OPCOES.map(({ valor, label, icone: Icone, ativo }) => {
+        const marcado = status === valor;
         return (
           <button
             key={valor}
             type="button"
             disabled={pending}
+            aria-pressed={marcado}
             onClick={() => marcar(valor)}
-            className={`rounded-lg px-3 py-1.5 text-sm font-medium transition disabled:opacity-60 ${
-              ativo
-                ? 'bg-brand-600 text-white'
-                : 'bg-white text-slate-700 ring-1 ring-slate-300 hover:bg-slate-50'
+            className={`inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-sm font-medium transition disabled:opacity-60 ${
+              marcado
+                ? ativo
+                : 'bg-slate-50 text-slate-600 ring-1 ring-slate-200 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700'
             }`}
           >
+            <Icone size={15} />
             {label}
           </button>
         );
       })}
-      {status && <span className="text-xs text-slate-400">clique de novo para desmarcar</span>}
     </div>
   );
 }

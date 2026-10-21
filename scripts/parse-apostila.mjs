@@ -2,6 +2,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { estruturar } from './lib/estrutura.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const raw = readFileSync(join(root, 'content/apostila.txt'), 'utf8');
@@ -140,12 +141,16 @@ for (const [slug, chapter, name, questionCount, priority] of META) {
       questions = parseQuestions(body);
       return;
     }
+    const blocks = estruturar(body);
+    const palavras = body.split(/\s+/).length;
     topics.push({
       ref: `${sec.chapter}.${sec.section}`,
       order: idx + 1,
       slug: slugify(sec.title),
       title: sec.title,
       body,
+      blocks,
+      readingMinutes: Math.max(1, Math.round(palavras / 180)),
     });
   });
   disciplines.push({

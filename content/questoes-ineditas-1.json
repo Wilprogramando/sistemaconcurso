@@ -1,0 +1,576 @@
+{
+  "sobre": "Questões inéditas de múltipla escolha (5 alternativas, como na prova), elaboradas para este sistema a partir do Anexo II do Edital 002/CCP/2026 e do conteúdo da apostila. NÃO são questões de prova anterior — as de prova oficial estão marcadas separadamente no app.",
+  "rotulo": "Inédita — baseada no edital",
+  "questoes": [
+    {
+      "extId": "inedita:cpm:001",
+      "disciplina": "direito-penal-militar",
+      "topicoRef": "4.5",
+      "enunciado": "Um grupo de militares estaduais reuniu-se e, portando armas, recusou-se a cumprir ordem legítima de superior, conservando-se reunido contra ordem de dispersão. Segundo o Código Penal Militar, essa conduta configura o crime de",
+      "alternativas": [
+        { "letra": "A", "texto": "motim, com pena de reclusão de quatro a oito anos." },
+        { "letra": "B", "texto": "revolta, com pena de reclusão de oito a vinte anos." },
+        { "letra": "C", "texto": "conspiração, com pena de reclusão de três a cinco anos." },
+        { "letra": "D", "texto": "aliciação para motim, com pena de reclusão de dois a quatro anos." },
+        { "letra": "E", "texto": "incitamento, com pena de detenção de três meses a dois anos." }
+      ],
+      "resposta": "B",
+      "justificativa": "A única diferença entre motim (art. 149) e revolta (art. 149, parágrafo único) é a ARMA NA MÃO — e é ela que faz a pena saltar de reclusão de 4 a 8 anos para 8 a 20 anos, com aumento de um terço para os cabeças em ambos. Conspiração é o mero ajuste prévio entre militares para a prática do motim ou revolta; aliciação é recrutar outros; incitamento é instigar à desobediência ou à indisciplina. Guarde o par: sem arma 4–8, com arma 8–20."
+    },
+    {
+      "extId": "inedita:cpm:002",
+      "disciplina": "direito-penal-militar",
+      "topicoRef": "4.5",
+      "enunciado": "Quanto ao crime de deserção no Código Penal Militar, assinale a opção correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "Consuma-se no momento em que o militar se ausenta sem licença da unidade em que serve." },
+        { "letra": "B", "texto": "Consuma-se depois de decorridos mais de oito dias de ausência, ou seja, no nono dia." },
+        { "letra": "C", "texto": "É crime impropriamente militar, pois possui figura correspondente na lei penal comum." },
+        { "letra": "D", "texto": "A prescrição começa a correr da data da consumação, como nos demais crimes militares." },
+        { "letra": "E", "texto": "Admite a suspensão condicional da pena, por se tratar de crime cometido em tempo de paz." }
+      ],
+      "resposta": "B",
+      "justificativa": "A deserção se consuma após mais de oito dias de ausência — os oito primeiros dias são o chamado prazo de graça. A: a simples ausência inicial não consuma o crime. C: é crime PROPRIAMENTE militar, sem correspondente na lei comum. D: a prescrição na deserção não começa a correr enquanto o desertor não atingir 45 anos, se praça, ou 60 anos, se oficial (art. 132) — é a regra mais cobrada do tema. E: o art. 88, II, veda expressamente o sursis ao condenado por deserção."
+    },
+    {
+      "extId": "inedita:cpm:003",
+      "disciplina": "direito-penal-militar",
+      "topicoRef": "4.4",
+      "enunciado": "Sobre os limites de cumprimento da pena privativa de liberdade no Código Penal Militar, é correto afirmar que o limite é de",
+      "alternativas": [
+        { "letra": "A", "texto": "quarenta anos, tanto para reclusão quanto para detenção." },
+        { "letra": "B", "texto": "trinta anos para reclusão e trinta anos para detenção." },
+        { "letra": "C", "texto": "trinta anos para reclusão e quinze anos para detenção." },
+        { "letra": "D", "texto": "quinze anos para reclusão e trinta anos para detenção." },
+        { "letra": "E", "texto": "quarenta anos para reclusão e vinte anos para detenção." }
+      ],
+      "resposta": "C",
+      "justificativa": "Art. 81 do CPM: trinta anos se as penas são de reclusão; quinze anos se de detenção. Não confunda com o Código Penal comum, cujo limite único é de quarenta anos desde a Lei 13.964/2019 — a banca adora cruzar os dois números. O par a decorar é 30/15 no CPM contra 40 no CP."
+    },
+    {
+      "extId": "inedita:cpm:004",
+      "disciplina": "direito-penal-militar",
+      "topicoRef": "4.4",
+      "enunciado": "A respeito das penas acessórias previstas no Código Penal Militar, assinale a opção correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "A exclusão das forças armadas decorre da condenação da praça a pena privativa de liberdade por tempo superior a dois anos." },
+        { "letra": "B", "texto": "A perda de posto e patente depende de condenação a pena superior a quatro anos." },
+        { "letra": "C", "texto": "A declaração de indignidade para o oficialato exige condenação a pena superior a dois anos." },
+        { "letra": "D", "texto": "A perda da função pública independe de o crime ter sido praticado com abuso de poder ou violação de dever militar." },
+        { "letra": "E", "texto": "A incompatibilidade com o oficialato aplica-se a qualquer crime militar doloso." }
+      ],
+      "resposta": "A",
+      "justificativa": "Art. 102: a condenação da praça a pena privativa de liberdade superior a dois anos importa sua exclusão. O número 2 é o marco comum de três penas acessórias: exclusão da praça (art. 102), perda de posto e patente do oficial (art. 99) e perda da função pública (art. 103) — por isso B erra ao exigir quatro anos. C: a indignidade (art. 100) independe do quantum da pena, bastando a condenação por traição, espionagem, cobardia ou crime infamante. D: a perda da função pública exige justamente o abuso de poder ou a violação de dever militar. E: a incompatibilidade (art. 101) é restrita aos crimes contra a segurança externa dos arts. 141 e 142."
+    },
+    {
+      "extId": "inedita:cpm:005",
+      "disciplina": "direito-penal-militar",
+      "topicoRef": "4.6",
+      "enunciado": "Comparando o Código Penal Militar com o Código Penal comum, assinale a opção correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "Ambos preveem o crime continuado, com aumento de um sexto a dois terços." },
+        { "letra": "B", "texto": "O CPM não prevê o crime continuado, aplicando-se o cúmulo material das penas." },
+        { "letra": "C", "texto": "Ambos adotam a terminologia erro de tipo e erro de proibição." },
+        { "letra": "D", "texto": "Em ambos a ação penal pode ser pública ou privada, conforme o crime." },
+        { "letra": "E", "texto": "O estado de necessidade, em ambos, só existe na modalidade justificante." }
+      ],
+      "resposta": "B",
+      "justificativa": "O CPM não contempla o crime continuado: havendo pluralidade de crimes, somam-se as penas (cúmulo material). C: o CPM, de 1969, é causalista e fala em erro de fato e erro de direito, não em erro de tipo e de proibição. D: a ação penal militar é SEMPRE pública e só pode ser promovida por denúncia do Ministério Público Militar — não há ação penal privada na Justiça Militar. E: o CPM é mais amplo, prevendo o estado de necessidade justificante (art. 43) e também o exculpante (art. 39), este inexistente no CP comum."
+    },
+    {
+      "extId": "inedita:cpm:006",
+      "disciplina": "direito-penal-militar",
+      "topicoRef": "4.1",
+      "enunciado": "Policial militar estadual, em serviço, pratica homicídio doloso contra civil. À luz do art. 9º do Código Penal Militar, com a redação dada pela Lei n.º 13.491/2017, a competência para o julgamento é",
+      "alternativas": [
+        { "letra": "A", "texto": "do Conselho Permanente de Justiça da Justiça Militar estadual." },
+        { "letra": "B", "texto": "do juiz de direito do juízo militar, monocraticamente." },
+        { "letra": "C", "texto": "do Tribunal do Júri da Justiça comum." },
+        { "letra": "D", "texto": "do Conselho Especial de Justiça, por se tratar de crime contra a vida." },
+        { "letra": "E", "texto": "do Superior Tribunal Militar, em instância originária." }
+      ],
+      "resposta": "C",
+      "justificativa": "O §1º do art. 9º do CPM é expresso: os crimes DOLOSOS CONTRA A VIDA praticados por militares contra civil são da competência do Tribunal do Júri. A pegadinha mora na comparação: crime militar de PM contra civil que NÃO seja doloso contra a vida é julgado pelo juiz de direito do juízo militar, monocraticamente (art. 125, §5º, da CF). Decore o par: doloso contra a vida contra civil vai ao Júri; o restante fica com o juiz de direito singular."
+    },
+    {
+      "extId": "inedita:cpm:007",
+      "disciplina": "direito-penal-militar",
+      "topicoRef": "4.2",
+      "enunciado": "Segundo o Código Penal Militar, considera-se superior o militar que",
+      "alternativas": [
+        { "letra": "A", "texto": "ocupa posto ou graduação mais elevada, exclusivamente." },
+        { "letra": "B", "texto": "em virtude da função, exerce autoridade sobre outro de igual posto ou graduação." },
+        { "letra": "C", "texto": "tem maior tempo de serviço na corporação, independentemente da função." },
+        { "letra": "D", "texto": "integra círculo hierárquico diverso, ainda que sem função de comando." },
+        { "letra": "E", "texto": "foi designado para o serviço de dia, apenas durante o turno." }
+      ],
+      "resposta": "B",
+      "justificativa": "Art. 24 do CPM: o militar que, em razão da função, exerce autoridade sobre outro de igual posto ou graduação considera-se SUPERIOR para os efeitos da lei penal militar. É um conceito funcional, e não apenas hierárquico — por isso A está incompleta. O dispositivo é muito cobrado porque amplia o alcance dos crimes de violência e desrespeito a superior (arts. 157 e 160)."
+    },
+    {
+      "extId": "inedita:cpm:008",
+      "disciplina": "direito-penal-militar",
+      "topicoRef": "4.4",
+      "enunciado": "Quanto às penas principais no Código Penal Militar, assinale a opção correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "A pena de morte é vedada em qualquer hipótese pelo CPM." },
+        { "letra": "B", "texto": "A pena de impedimento obriga o condenado a permanecer no recinto da unidade, sem prejuízo da instrução militar." },
+        { "letra": "C", "texto": "A suspensão do exercício do posto ou da graduação tem duração de seis meses a dois anos." },
+        { "letra": "D", "texto": "A pena de reclusão tem mínimo genérico de dois anos e máximo de quarenta anos." },
+        { "letra": "E", "texto": "A pena de reforma assegura ao militar a percepção integral do soldo." }
+      ],
+      "resposta": "B",
+      "justificativa": "Art. 63: no impedimento, o condenado fica obrigado a permanecer no recinto da unidade, sem prejuízo da instrução militar. A: o CPM prevê a pena de morte por fuzilamento, só em tempo de guerra declarada, o que é autorizado pelo art. 5º, XLVII, 'a', da CF. C: a suspensão do exercício do posto, graduação, cargo ou função é de 2 a 6 MESES (art. 64). D: o mínimo genérico é de 1 ano e o máximo de 30 anos (art. 58). E: na reforma (art. 65), o militar não pode perceber mais de 1/25 do soldo por ano de serviço, nem importância superior à do soldo."
+    },
+    {
+      "extId": "inedita:cpm:009",
+      "disciplina": "direito-penal-militar",
+      "topicoRef": "4.4",
+      "enunciado": "A suspensão condicional da pena, no Código Penal Militar, NÃO se aplica ao condenado por",
+      "alternativas": [
+        { "letra": "A", "texto": "furto simples praticado em lugar sujeito à administração militar." },
+        { "letra": "B", "texto": "deserção." },
+        { "letra": "C", "texto": "peculato culposo." },
+        { "letra": "D", "texto": "lesão corporal leve contra civil." },
+        { "letra": "E", "texto": "dano simples a patrimônio sob administração militar." }
+      ],
+      "resposta": "B",
+      "justificativa": "O art. 88, II, veda expressamente o sursis para a deserção, ao lado de crimes como violência contra superior, contra oficial de dia, de serviço, de quarto, sentinela, vigia ou plantão, e desrespeito a superior. O sursis militar, em regra, cabe para pena não superior a dois anos, pelo prazo de dois a seis anos — mas essas vedações são absolutas, e a deserção é a mais cobrada delas."
+    },
+    {
+      "extId": "inedita:cpm:010",
+      "disciplina": "direito-penal-militar",
+      "topicoRef": "4.5",
+      "enunciado": "O militar que, tendo notícia da preparação de um motim, deixa de levá-la ao conhecimento do superior responde pelo crime de",
+      "alternativas": [
+        { "letra": "A", "texto": "conspiração." },
+        { "letra": "B", "texto": "prevaricação militar." },
+        { "letra": "C", "texto": "omissão de lealdade militar." },
+        { "letra": "D", "texto": "aliciação para motim ou revolta." },
+        { "letra": "E", "texto": "incitamento à desobediência." }
+      ],
+      "resposta": "C",
+      "justificativa": "Omissão de lealdade militar (art. 151) é justamente o crime de quem sabe e cala: deixar de levar ao conhecimento do superior o motim ou a revolta de cuja preparação teve notícia, ou, estando presente, não usar de todos os meios ao seu alcance para impedi-lo. Conspiração (art. 152) é concertar-se para praticar o motim; aliciação (art. 154) é recrutar; incitamento (art. 155) é instigar à desobediência ou à indisciplina."
+    },
+    {
+      "extId": "inedita:cpm:011",
+      "disciplina": "direito-penal-militar",
+      "topicoRef": "4.3",
+      "enunciado": "A respeito das excludentes previstas no Código Penal Militar, assinale a opção correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "O excesso é sempre punível, ainda que decorrente de escusável surpresa ou perturbação de ânimo." },
+        { "letra": "B", "texto": "A obediência hierárquica só exclui a culpabilidade quando a ordem não for manifestamente ilegal, nos mesmos termos do CP comum." },
+        { "letra": "C", "texto": "Não há crime quando o fato é praticado em estado de necessidade, legítima defesa, estrito cumprimento do dever legal ou exercício regular de direito." },
+        { "letra": "D", "texto": "O CPM não prevê o estrito cumprimento do dever legal como causa de exclusão da ilicitude." },
+        { "letra": "E", "texto": "O estado de necessidade, no CPM, exclui apenas a culpabilidade, nunca a ilicitude." }
+      ],
+      "resposta": "C",
+      "justificativa": "Art. 42: não há crime quando o agente pratica o fato em estado de necessidade, em legítima defesa, em estrito cumprimento do dever legal ou em exercício regular de direito — o mesmo rol do CP comum. A: o art. 45, parágrafo único, prevê que o excesso NÃO é punível quando resulta de escusável surpresa ou perturbação de ânimo. B: no CPM a obediência hierárquica é tratada de forma mais ampla, ligada à ordem direta de superior em matéria de serviço (art. 38). D: está expresso no art. 42, III. E: o CPM prevê as duas modalidades — justificante (art. 43) e exculpante (art. 39)."
+    },
+    {
+      "extId": "inedita:cpm:012",
+      "disciplina": "direito-penal-militar",
+      "topicoRef": "4.4",
+      "enunciado": "No peculato culposo previsto no Código Penal Militar, a reparação do dano",
+      "alternativas": [
+        { "letra": "A", "texto": "se anterior à sentença irrecorrível, extingue a punibilidade." },
+        { "letra": "B", "texto": "se posterior à sentença irrecorrível, extingue a punibilidade." },
+        { "letra": "C", "texto": "não produz qualquer efeito sobre a punibilidade." },
+        { "letra": "D", "texto": "reduz a pena de um a dois terços, em qualquer momento." },
+        { "letra": "E", "texto": "converte a pena privativa de liberdade em pena de impedimento." }
+      ],
+      "resposta": "A",
+      "justificativa": "No peculato culposo, a reparação do dano anterior à sentença irrecorrível EXTINGUE a punibilidade (art. 123 c/c art. 303, §4º); se posterior, apenas reduz de metade a pena imposta. É o par clássico do tema: antes extingue, depois reduz pela metade — e a banca inverte os dois momentos."
+    },
+    {
+      "extId": "inedita:cpm:013",
+      "disciplina": "direito-penal-militar",
+      "topicoRef": "4.1",
+      "enunciado": "São exemplos de crimes propriamente militares, respectivamente:",
+      "alternativas": [
+        { "letra": "A", "texto": "homicídio, furto e roubo praticados em lugar sujeito à administração militar." },
+        { "letra": "B", "texto": "deserção, motim e violência contra superior." },
+        { "letra": "C", "texto": "estelionato, peculato e corrupção passiva." },
+        { "letra": "D", "texto": "lesão corporal, ameaça e dano." },
+        { "letra": "E", "texto": "tráfico de drogas, tortura e abuso de autoridade." }
+      ],
+      "resposta": "B",
+      "justificativa": "Crime propriamente militar é o que só pode ser praticado por militar e tem previsão exclusiva no CPM, sem correspondente na lei penal comum: deserção, motim, revolta, violência contra superior, insubmissão. Os crimes das demais alternativas existem também na lei comum e, quando praticados nas circunstâncias do art. 9º, tornam-se impropriamente militares."
+    },
+    {
+      "extId": "inedita:cpm:014",
+      "disciplina": "direito-penal-militar",
+      "topicoRef": "4.4",
+      "enunciado": "Quanto à agravação e à atenuação da pena no Código Penal Militar, quando a lei determina a agravação ou a atenuação sem mencionar o quantum, o juiz deve fixá-lo entre",
+      "alternativas": [
+        { "letra": "A", "texto": "um sexto e um terço." },
+        { "letra": "B", "texto": "um quinto e um terço." },
+        { "letra": "C", "texto": "um terço e metade." },
+        { "letra": "D", "texto": "um sexto e dois terços." },
+        { "letra": "E", "texto": "metade e dois terços." }
+      ],
+      "resposta": "B",
+      "justificativa": "Art. 73 do CPM: a fração vai de um quinto a um terço, respeitados os limites da pena cominada. É um número exclusivo do CPM — no CP comum não há fração legal fixa para agravantes e atenuantes genéricas (a jurisprudência usa um sexto). Justamente por ser peculiar, cai com frequência."
+    },
+    {
+      "extId": "inedita:esp:001",
+      "disciplina": "legislacao-especial",
+      "topicoRef": "5.6",
+      "enunciado": "De acordo com a Lei n.º 13.869/2019 (Lei de Abuso de Autoridade), assinale a opção correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "A divergência na interpretação de lei ou na avaliação de fatos e provas configura abuso de autoridade." },
+        { "letra": "B", "texto": "Os crimes exigem dolo específico, consistente na finalidade de prejudicar outrem, beneficiar a si mesmo ou a terceiro, ou por mero capricho ou satisfação pessoal." },
+        { "letra": "C", "texto": "A lei não se aplica a militares, por existir regulamento disciplinar próprio." },
+        { "letra": "D", "texto": "A ação penal é privada, cabendo ao ofendido o oferecimento de queixa-crime." },
+        { "letra": "E", "texto": "As penas são exclusivamente de multa, sem previsão de privação de liberdade." }
+      ],
+      "resposta": "B",
+      "justificativa": "O art. 1º, §1º, exige o elemento subjetivo especial: só há crime quando o agente age para prejudicar outrem, beneficiar a si ou a terceiro, ou por mero capricho ou satisfação pessoal — sem esse dolo específico, não há abuso. A: o §2º diz exatamente o contrário, a divergência de interpretação NÃO configura abuso. C: a lei alcança membros de qualquer dos Poderes e de todos os entes, incluindo expressamente os militares. D: a ação é pública incondicionada, admitida a ação privada subsidiária se o MP não denunciar no prazo. E: as penas são de detenção ou reclusão, além de multa."
+    },
+    {
+      "extId": "inedita:esp:002",
+      "disciplina": "legislacao-especial",
+      "topicoRef": "5.4",
+      "enunciado": "Nos termos da Lei n.º 12.850/2013, considera-se organização criminosa a associação de",
+      "alternativas": [
+        { "letra": "A", "texto": "duas ou mais pessoas, com infrações cujas penas máximas sejam superiores a dois anos." },
+        { "letra": "B", "texto": "três ou mais pessoas, com infrações cujas penas máximas sejam superiores a quatro anos." },
+        { "letra": "C", "texto": "quatro ou mais pessoas, com infrações cujas penas máximas sejam superiores a quatro anos." },
+        { "letra": "D", "texto": "três ou mais pessoas, com infrações cujas penas mínimas sejam superiores a quatro anos." },
+        { "letra": "E", "texto": "cinco ou mais pessoas, independentemente da pena das infrações praticadas." }
+      ],
+      "resposta": "C",
+      "justificativa": "Art. 1º, §1º, da Lei 12.850/2013: organização criminosa é a associação de 4 OU MAIS pessoas, estruturalmente ordenada e caracterizada pela divisão de tarefas, ainda que informalmente, com objetivo de obter vantagem de qualquer natureza mediante a prática de infrações penais cujas penas MÁXIMAS sejam superiores a 4 anos, ou que sejam de caráter transnacional. Fixe o contraste que a banca explora: associação criminosa do art. 288 do CP exige 3 pessoas; organização criminosa exige 4. E atenção ao segundo número: o critério é a pena MÁXIMA superior a 4 anos, nunca a mínima."
+    },
+    {
+      "extId": "inedita:esp:003",
+      "disciplina": "legislacao-especial",
+      "topicoRef": "5.8",
+      "enunciado": "Sobre a Lei n.º 11.340/2006 (Lei Maria da Penha), assinale a opção correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "Aplica-se a Lei n.º 9.099/1995 aos crimes de violência doméstica cuja pena máxima não exceda dois anos." },
+        { "letra": "B", "texto": "A ação penal no crime de lesão corporal leve praticado com violência doméstica contra a mulher é pública condicionada à representação." },
+        { "letra": "C", "texto": "A ação penal no crime de lesão corporal praticado com violência doméstica contra a mulher é pública incondicionada." },
+        { "letra": "D", "texto": "A configuração da violência doméstica exige coabitação entre autor e vítima." },
+        { "letra": "E", "texto": "As medidas protetivas de urgência só podem ser concedidas após a oitiva do Ministério Público." }
+      ],
+      "resposta": "C",
+      "justificativa": "Súmula 542 do STJ: a ação penal relativa ao crime de lesão corporal resultante de violência doméstica contra a mulher é pública INCONDICIONADA — por isso B está errada. A: o art. 41 veda expressamente a aplicação da Lei 9.099/95 aos crimes praticados com violência doméstica e familiar contra a mulher, qualquer que seja a pena. D: a lei abrange a unidade doméstica, a família e qualquer relação íntima de afeto, independendo de coabitação. E: as medidas protetivas podem ser concedidas de imediato, inclusive sem oitiva das partes e sem manifestação prévia do MP."
+    },
+    {
+      "extId": "inedita:esp:004",
+      "disciplina": "legislacao-especial",
+      "topicoRef": "5.7",
+      "enunciado": "De acordo com a Lei n.º 10.826/2003 (Estatuto do Desarmamento), assinale a opção correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "Posse e porte de arma de fogo são sinônimos para fins penais." },
+        { "letra": "B", "texto": "A posse irregular de arma de fogo de uso permitido ocorre quando o agente mantém a arma no interior de sua residência ou dependência desta, ou no seu local de trabalho, desde que seja o titular ou responsável legal." },
+        { "letra": "C", "texto": "O porte ilegal de arma de fogo de uso permitido tem pena de reclusão de quatro a dez anos." },
+        { "letra": "D", "texto": "O disparo de arma de fogo em lugar habitado é conduta atípica quando não há vítima atingida." },
+        { "letra": "E", "texto": "A arma de fogo com numeração raspada caracteriza apenas infração administrativa." }
+      ],
+      "resposta": "B",
+      "justificativa": "Art. 12: a posse é a manutenção da arma dentro de casa ou no local de trabalho, sendo o agente o titular ou responsável legal — fora desses limites, o crime passa a ser de PORTE (art. 14), com pena maior. A: a distinção posse/porte é justamente o eixo do Estatuto. C: a pena de reclusão de 4 a 10 anos é a do porte de arma de uso RESTRITO ou proibido (art. 16); o porte de uso permitido é de reclusão de 2 a 4 anos e multa. D: o disparo em lugar habitado é crime autônomo (art. 15), de perigo, independentemente de alguém ser atingido. E: a arma com numeração raspada ou adulterada é equiparada à de uso restrito, com pena do art. 16."
+    },
+    {
+      "extId": "inedita:esp:005",
+      "disciplina": "legislacao-especial",
+      "topicoRef": "5.3",
+      "enunciado": "Quanto à Lei n.º 9.455/1997 (Lei de Tortura), assinale a opção correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "A condenação acarreta a perda do cargo, função ou emprego público como efeito automático, além da interdição para seu exercício pelo dobro do prazo da pena." },
+        { "letra": "B", "texto": "O crime de tortura é imprescritível, como o racismo." },
+        { "letra": "C", "texto": "A omissão de quem tinha o dever de evitar a tortura é atípica." },
+        { "letra": "D", "texto": "A tortura admite fiança e graça." },
+        { "letra": "E", "texto": "O crime de tortura só pode ser praticado por funcionário público." }
+      ],
+      "resposta": "A",
+      "justificativa": "Art. 1º, §5º: a condenação acarretará a perda do cargo, função ou emprego público como efeito AUTOMÁTICO da sentença, com interdição para seu exercício pelo dobro do prazo da pena aplicada — é a única hipótese do ordenamento em que esse efeito é automático e não precisa ser motivado. B: a tortura PRESCREVE; imprescritíveis são apenas o racismo e a ação de grupos armados contra a ordem constitucional. C: o §2º pune com detenção de 1 a 4 anos quem se omite diante da tortura quando tinha o dever de evitá-la ou apurá-la. D: é inafiançável e insuscetível de graça ou anistia. E: a tortura é crime comum, podendo ser praticada por qualquer pessoa; a condição de agente público é causa de aumento."
+    },
+    {
+      "extId": "inedita:esp:006",
+      "disciplina": "legislacao-especial",
+      "topicoRef": "5.1",
+      "enunciado": "Em relação à Lei n.º 8.072/1990 (Crimes Hediondos), assinale a opção correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "Os crimes hediondos e equiparados são insuscetíveis de anistia, graça e indulto, e inafiançáveis." },
+        { "letra": "B", "texto": "O tráfico privilegiado é considerado crime hediondo." },
+        { "letra": "C", "texto": "A pena deve ser cumprida inicialmente em regime integralmente fechado, sem possibilidade de progressão." },
+        { "letra": "D", "texto": "O rol de crimes hediondos é exemplificativo, podendo o juiz reconhecer a hediondez pela gravidade concreta do fato." },
+        { "letra": "E", "texto": "O livramento condicional é vedado em qualquer hipótese aos condenados por crime hediondo." }
+      ],
+      "resposta": "A",
+      "justificativa": "Art. 5º, XLIII, da CF e art. 2º da Lei 8.072/1990: os hediondos e equiparados (tortura, tráfico e terrorismo) são inafiançáveis e insuscetíveis de anistia, graça e indulto. B: o STF e o STJ firmaram que o tráfico privilegiado (art. 33, §4º, da Lei de Drogas) NÃO é hediondo, e a Lei 13.964/2019 confirmou isso. C: o regime integralmente fechado foi declarado inconstitucional pelo STF; há progressão, com frações próprias. D: o rol é TAXATIVO — a hediondez decorre de previsão legal, nunca da gravidade concreta. E: o livramento condicional é admitido após o cumprimento de mais de dois terços da pena, vedado ao reincidente específico."
+    },
+    {
+      "extId": "inedita:esp:007",
+      "disciplina": "legislacao-especial",
+      "topicoRef": "5.5",
+      "enunciado": "Policial militar aborda indivíduo que portava pequena quantidade de maconha para consumo próprio. De acordo com o art. 28 da Lei n.º 11.343/2006, a consequência jurídica prevista é",
+      "alternativas": [
+        { "letra": "A", "texto": "prisão em flagrante e pena de detenção de seis meses a um ano." },
+        { "letra": "B", "texto": "advertência sobre os efeitos das drogas, prestação de serviços à comunidade e medida educativa de comparecimento a programa ou curso educativo." },
+        { "letra": "C", "texto": "pena de reclusão de cinco a quinze anos, por equiparação ao tráfico." },
+        { "letra": "D", "texto": "internação compulsória em estabelecimento de saúde." },
+        { "letra": "E", "texto": "multa e suspensão dos direitos políticos." }
+      ],
+      "resposta": "B",
+      "justificativa": "O art. 28 prevê três consequências, e nenhuma delas é privativa de liberdade: advertência sobre os efeitos das drogas, prestação de serviços à comunidade e medida educativa de comparecimento a programa ou curso educativo. Por isso não cabe prisão em flagrante pelo porte para consumo próprio — lavra-se termo circunstanciado. Para distinguir consumo de tráfico, o §2º manda considerar a natureza e a quantidade da substância, o local e as condições da ação, as circunstâncias sociais e pessoais, a conduta e os antecedentes do agente."
+    },
+    {
+      "extId": "inedita:esp:008",
+      "disciplina": "legislacao-especial",
+      "topicoRef": "5.9",
+      "enunciado": "Sobre o Estatuto da Criança e do Adolescente (Lei n.º 8.069/1990), assinale a opção correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "Considera-se criança a pessoa de até dezesseis anos incompletos e adolescente a de dezesseis a dezoito anos." },
+        { "letra": "B", "texto": "Considera-se criança a pessoa de até doze anos incompletos e adolescente aquela entre doze e dezoito anos de idade." },
+        { "letra": "C", "texto": "A medida socioeducativa de internação pode ser aplicada por prazo indeterminado, sem reavaliação periódica." },
+        { "letra": "D", "texto": "A criança está sujeita às mesmas medidas socioeducativas aplicáveis ao adolescente." },
+        { "letra": "E", "texto": "O adolescente apreendido em flagrante de ato infracional deve ser recolhido a estabelecimento prisional comum." }
+      ],
+      "resposta": "B",
+      "justificativa": "Art. 2º do ECA: criança é a pessoa até doze anos INCOMPLETOS; adolescente, a que tem entre doze e dezoito anos. C: a internação não comporta prazo determinado, mas deve ser reavaliada no máximo a cada seis meses, com limite de três anos e liberação compulsória aos vinte e um anos. D: à criança aplicam-se MEDIDAS DE PROTEÇÃO (art. 101), e não medidas socioeducativas, reservadas ao adolescente. E: o adolescente não pode ser recolhido a estabelecimento prisional comum, devendo ser encaminhado a entidade de atendimento ou à autoridade competente."
+    },
+    {
+      "extId": "inedita:esp:009",
+      "disciplina": "legislacao-especial",
+      "topicoRef": "5.11",
+      "enunciado": "De acordo com a Lei n.º 12.037/2009, que trata da identificação criminal do civilmente identificado, é correto afirmar que",
+      "alternativas": [
+        { "letra": "A", "texto": "o civilmente identificado será sempre submetido a identificação criminal." },
+        { "letra": "B", "texto": "a identificação criminal do civilmente identificado é vedada em qualquer hipótese." },
+        { "letra": "C", "texto": "o civilmente identificado não será submetido a identificação criminal, salvo nas hipóteses previstas em lei, como quando o documento apresentar rasura ou indício de falsificação." },
+        { "letra": "D", "texto": "a identificação criminal depende sempre de autorização judicial prévia." },
+        { "letra": "E", "texto": "a coleta de material biológico para obtenção do perfil genético é vedada em todos os casos." }
+      ],
+      "resposta": "C",
+      "justificativa": "Art. 3º: a regra é a não identificação criminal de quem já está civilmente identificado, com exceções taxativas — documento com rasura ou indício de falsificação; documento insuficiente para identificar cabalmente; o indiciado portar documentos de identidade distintos com informações conflitantes; a identificação criminal ser essencial às investigações, por decisão da autoridade judiciária; constar de registros policiais o uso de outros nomes ou identidades; ou o estado da documentação impossibilitar a identificação completa. A e B são os extremos opostos que a banca oferece. D: só a hipótese de essencialidade para a investigação exige decisão judicial. E: a coleta de perfil genético é admitida nos casos previstos em lei."
+    },
+    {
+      "extId": "inedita:esp:010",
+      "disciplina": "legislacao-especial",
+      "topicoRef": "5.10",
+      "enunciado": "Segundo o Estatuto da Pessoa Idosa (Lei n.º 10.741/2003), considera-se pessoa idosa aquela com idade",
+      "alternativas": [
+        { "letra": "A", "texto": "igual ou superior a 55 anos." },
+        { "letra": "B", "texto": "igual ou superior a 60 anos." },
+        { "letra": "C", "texto": "superior a 60 anos." },
+        { "letra": "D", "texto": "igual ou superior a 65 anos." },
+        { "letra": "E", "texto": "superior a 70 anos." }
+      ],
+      "resposta": "B",
+      "justificativa": "Art. 1º: o Estatuto destina-se a regular os direitos das pessoas com idade IGUAL OU SUPERIOR a 60 anos. Cuidado com a pegadinha dos 65 anos: esse é o marco do transporte coletivo urbano gratuito (art. 39) e do benefício de prestação continuada da LOAS, não o da definição de pessoa idosa. A diferença entre 'igual ou superior' e 'superior a' também é alvo frequente de troca."
+    },
+    {
+      "extId": "inedita:esp:011",
+      "disciplina": "legislacao-especial",
+      "topicoRef": "5.2",
+      "enunciado": "A respeito da Lei n.º 7.716/1989 e do tratamento constitucional do racismo, assinale a opção correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "O racismo é crime inafiançável e imprescritível, sujeito a pena de reclusão." },
+        { "letra": "B", "texto": "O racismo é crime afiançável, mas imprescritível." },
+        { "letra": "C", "texto": "O racismo prescreve em vinte anos, conforme a pena máxima cominada." },
+        { "letra": "D", "texto": "A injúria racial e o racismo sempre tiveram tratamento idêntico na legislação." },
+        { "letra": "E", "texto": "O racismo é crime de menor potencial ofensivo, sujeito à Lei n.º 9.099/1995." }
+      ],
+      "resposta": "A",
+      "justificativa": "Art. 5º, XLII, da CF: a prática do racismo constitui crime inafiançável e imprescritível, sujeito à pena de reclusão. Decore o rol curto dos imprescritíveis: racismo e ação de grupos armados contra a ordem constitucional e o Estado Democrático. E o rol dos inafiançáveis do art. 5º: racismo, tortura, tráfico, terrorismo, hediondos e a ação de grupos armados. D: a injúria racial era tipificada no art. 140, §3º, do CP e teve seu tratamento aproximado ao do racismo por legislação posterior — confira a redação vigente, pois o tema mudou recentemente."
+    },
+    {
+      "extId": "inedita:esp:012",
+      "disciplina": "legislacao-especial",
+      "topicoRef": "5.6",
+      "enunciado": "Policial militar, durante abordagem, invade imóvel alheio de forma clandestina, à revelia da vontade do ocupante e sem determinação judicial, fora das hipóteses legais. Essa conduta, segundo a Lei n.º 13.869/2019, configura",
+      "alternativas": [
+        { "letra": "A", "texto": "mera irregularidade administrativa, apurável apenas no âmbito disciplinar." },
+        { "letra": "B", "texto": "crime de abuso de autoridade, punido com detenção, além de multa." },
+        { "letra": "C", "texto": "crime de invasão de domicílio comum, do art. 150 do Código Penal, exclusivamente." },
+        { "letra": "D", "texto": "exercício regular de direito, por se tratar de atuação policial." },
+        { "letra": "E", "texto": "crime de dano qualificado contra o patrimônio particular." }
+      ],
+      "resposta": "B",
+      "justificativa": "A Lei de Abuso de Autoridade tipifica expressamente a conduta de invadir ou adentrar imóvel alheio ou suas dependências, clandestina ou astuciosamente, ou à revelia da vontade do ocupante, fora das hipóteses legais, com pena de detenção e multa. Lembre que, pelo art. 5º, XI, da CF, o ingresso em domicílio sem consentimento só se admite em flagrante delito, desastre, para prestar socorro ou, durante o dia, por determinação judicial — à noite nem com mandado. A: a responsabilização penal convive com a disciplinar, pois as instâncias são independentes. D: não há exercício regular de direito fora das hipóteses legais."
+    },
+    {
+      "extId": "inedita:tra:001",
+      "disciplina": "legislacao-transito",
+      "topicoRef": "6.7",
+      "enunciado": "Nos termos do art. 306 do Código de Trânsito Brasileiro, a embriaguez ao volante é verificada, entre outros meios, quando constatada concentração de álcool",
+      "alternativas": [
+        { "letra": "A", "texto": "igual ou superior a 3 decigramas por litro de sangue, ou 0,6 miligrama por litro de ar alveolar." },
+        { "letra": "B", "texto": "igual ou superior a 6 decigramas por litro de sangue, ou 0,3 miligrama por litro de ar alveolar." },
+        { "letra": "C", "texto": "superior a 1 decigrama por litro de sangue, ou 0,1 miligrama por litro de ar alveolar." },
+        { "letra": "D", "texto": "igual ou superior a 6 decigramas por litro de ar alveolar, ou 0,3 miligrama por litro de sangue." },
+        { "letra": "E", "texto": "qualquer que seja a concentração, desde que haja recusa ao teste." }
+      ],
+      "resposta": "B",
+      "justificativa": "Art. 306, §1º, I: 6 decigramas de álcool por litro de SANGUE ou 0,3 miligrama por litro de AR ALVEOLAR. O par 6/0,3 é um dos números mais cobrados do CTB, e a alternativa D inverte os meios de aferição, que é a pegadinha preferida. Guarde ainda a distinção: o CRIME do art. 306 exige esses índices ou sinais de alteração da capacidade psicomotora; a INFRAÇÃO ADMINISTRATIVA do art. 165 se configura com qualquer concentração de álcool por litro de sangue."
+    },
+    {
+      "extId": "inedita:tra:002",
+      "disciplina": "legislacao-transito",
+      "topicoRef": "6.6",
+      "enunciado": "De acordo com o Código de Trânsito Brasileiro, a infração de natureza gravíssima corresponde a quantos pontos no prontuário do condutor?",
+      "alternativas": [
+        { "letra": "A", "texto": "3 pontos." },
+        { "letra": "B", "texto": "4 pontos." },
+        { "letra": "C", "texto": "5 pontos." },
+        { "letra": "D", "texto": "7 pontos." },
+        { "letra": "E", "texto": "10 pontos." }
+      ],
+      "resposta": "D",
+      "justificativa": "Art. 259: gravíssima 7 pontos, grave 5, média 4 e leve 3. Decore a escada 7-5-4-3, que anda junto com os fatores multiplicadores da multa do art. 258: 3,0 na gravíssima, 2,0 na grave, 1,5 na média e 1,0 na leve. A banca costuma trocar os pontos pelos multiplicadores."
+    },
+    {
+      "extId": "inedita:tra:003",
+      "disciplina": "legislacao-transito",
+      "topicoRef": "6.6",
+      "enunciado": "Quanto à suspensão do direito de dirigir por pontuação, prevista no art. 261 do CTB, o limite é de",
+      "alternativas": [
+        { "letra": "A", "texto": "20 pontos, caso constem duas ou mais infrações gravíssimas no período de doze meses." },
+        { "letra": "B", "texto": "20 pontos, independentemente da natureza das infrações." },
+        { "letra": "C", "texto": "30 pontos em qualquer hipótese, no período de doze meses." },
+        { "letra": "D", "texto": "40 pontos, caso não conste nenhuma infração gravíssima." },
+        { "letra": "E", "texto": "15 pontos, caso conste uma infração gravíssima." }
+      ],
+      "resposta": "A",
+      "justificativa": "O art. 261 escalona o limite conforme o histórico do condutor nos últimos doze meses: 20 pontos se houver duas ou mais infrações gravíssimas; 30 pontos se houver uma infração gravíssima; e 40 pontos se não houver nenhuma. A lógica é simples — quanto mais infrações graves, menor a tolerância. Decore a trinca 20/30/40 associada a 2 ou mais, 1 e nenhuma gravíssima."
+    },
+    {
+      "extId": "inedita:tra:004",
+      "disciplina": "legislacao-transito",
+      "topicoRef": "6.3",
+      "enunciado": "Em um cruzamento, o semáforo indica luz verde, mas um agente de trânsito, com gestos, determina a parada dos veículos. Segundo o CTB, o condutor deve",
+      "alternativas": [
+        { "letra": "A", "texto": "seguir a indicação do semáforo, por ser sinalização de maior confiabilidade técnica." },
+        { "letra": "B", "texto": "obedecer ao agente, cuja ordem prevalece sobre as demais formas de sinalização e sobre as normas de circulação." },
+        { "letra": "C", "texto": "obedecer ao agente apenas se houver sinalização escrita confirmando a ordem." },
+        { "letra": "D", "texto": "parar somente se o agente for policial rodoviário federal." },
+        { "letra": "E", "texto": "seguir as normas gerais de circulação, que prevalecem sobre a ordem do agente." }
+      ],
+      "resposta": "B",
+      "justificativa": "O art. 89 estabelece a ordem de prevalência da sinalização, e o macete é 'Agente > Semáforo > Sinais > Normas': as ordens do agente de trânsito prevalecem sobre as normas de circulação e demais sinais; estes, sobre as normas de circulação; e os semáforos, sobre os demais sinais, salvo os de parada obrigatória. Na prática, o gesto do policial vale mais que o farol verde — e esse é o item que mais cai sobre sinalização."
+    },
+    {
+      "extId": "inedita:tra:005",
+      "disciplina": "legislacao-transito",
+      "topicoRef": "6.2",
+      "enunciado": "Na ausência de sinalização regulamentadora, as velocidades máximas permitidas em vias urbanas são, respectivamente, nas vias de trânsito rápido, arteriais, coletoras e locais:",
+      "alternativas": [
+        { "letra": "A", "texto": "80, 60, 40 e 30 km/h." },
+        { "letra": "B", "texto": "80, 70, 50 e 40 km/h." },
+        { "letra": "C", "texto": "110, 90, 60 e 40 km/h." },
+        { "letra": "D", "texto": "60, 50, 40 e 30 km/h." },
+        { "letra": "E", "texto": "90, 70, 50 e 30 km/h." }
+      ],
+      "resposta": "A",
+      "justificativa": "Art. 61, §1º, I: trânsito rápido 80 km/h, arterial 60, coletora 40 e local 30. Nas vias rurais, por sua vez, a regra é 110 km/h para automóveis e camionetas em rodovias de pista dupla, 90 km/h nas de pista simples e 60 km/h nas estradas (não pavimentadas). Decore a escada urbana 80-60-40-30."
+    },
+    {
+      "extId": "inedita:tra:006",
+      "disciplina": "legislacao-transito",
+      "topicoRef": "6.7",
+      "enunciado": "Motorista embriagado provoca acidente que resulta na morte de um pedestre. De acordo com o CTB, a pena prevista para o homicídio culposo na direção de veículo automotor praticado sob influência de álcool é de",
+      "alternativas": [
+        { "letra": "A", "texto": "detenção, de dois a quatro anos." },
+        { "letra": "B", "texto": "reclusão, de cinco a oito anos." },
+        { "letra": "C", "texto": "reclusão, de doze a trinta anos." },
+        { "letra": "D", "texto": "detenção, de seis meses a três anos." },
+        { "letra": "E", "texto": "reclusão, de dois a cinco anos." }
+      ],
+      "resposta": "B",
+      "justificativa": "Art. 302, §3º: reclusão de 5 a 8 anos, além da suspensão ou proibição de obter a habilitação. Compare com as demais penas do capítulo: homicídio culposo simples no trânsito é detenção de 2 a 4 anos (caput); lesão corporal culposa é detenção de 6 meses a 2 anos (art. 303); lesão grave ou gravíssima sob influência de álcool é reclusão de 2 a 5 anos (art. 303, §2º); e embriaguez ao volante sem resultado é detenção de 6 meses a 3 anos (art. 306)."
+    },
+    {
+      "extId": "inedita:tra:007",
+      "disciplina": "legislacao-transito",
+      "topicoRef": "6.7",
+      "enunciado": "Quanto aos crimes de trânsito, assinale a opção correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "Ao condutor envolvido em acidente com vítima que presta pronto e integral socorro impõe-se a prisão em flagrante, mas dispensa-se a fiança." },
+        { "letra": "B", "texto": "Ao condutor envolvido em acidente com vítima que presta pronto e integral socorro não se imporá a prisão em flagrante nem se exigirá fiança." },
+        { "letra": "C", "texto": "A suspensão ou proibição de obter a habilitação tem duração de seis meses a dois anos." },
+        { "letra": "D", "texto": "As penas do CTB não se aplicam quando o fato ocorre em via privada aberta à circulação." },
+        { "letra": "E", "texto": "O crime de afastar-se do local do acidente para fugir à responsabilidade só se configura se houver vítima fatal." }
+      ],
+      "resposta": "B",
+      "justificativa": "Art. 301: ao condutor que presta pronto e integral socorro à vítima não se imporá prisão em flagrante nem se exigirá fiança — é um dos dispositivos mais cobrados, porque premia o socorro. C: a suspensão ou proibição dura de 2 meses a 5 anos (art. 293). D: o CTB alcança as vias privadas abertas à circulação. E: o art. 305 pune o afastamento do local do acidente para fugir à responsabilidade penal ou civil, independentemente de morte."
+    },
+    {
+      "extId": "inedita:tra:008",
+      "disciplina": "legislacao-transito",
+      "topicoRef": "6.5",
+      "enunciado": "Sobre a habilitação no CTB, assinale a opção correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "A Permissão para Dirigir tem validade de dois anos." },
+        { "letra": "B", "texto": "A CNH tem validade de dez anos para condutores com menos de cinquenta anos de idade." },
+        { "letra": "C", "texto": "A categoria B abrange veículos com peso bruto total de até 6.000 kg." },
+        { "letra": "D", "texto": "A categoria D destina-se ao transporte de carga acima de 3.500 kg." },
+        { "letra": "E", "texto": "Para habilitar-se nas categorias C, D e E basta estar habilitado na categoria B, sem prazo mínimo." }
+      ],
+      "resposta": "B",
+      "justificativa": "Art. 147, §2º: a CNH vale 10 anos para quem tem menos de 50 anos, 5 anos entre 50 e 70 e 3 anos para maiores de 70. A: a Permissão para Dirigir vale 1 ano, e ao fim dele, sem cometer infração grave ou gravíssima nem ser reincidente em média, obtém-se a CNH. C: a categoria B é para veículos de até 3.500 kg e até 8 lugares além do motorista; 6.000 kg é o marco da categoria E. D: carga acima de 3.500 kg é categoria C; a D é para transporte de passageiros com lotação superior a 8 lugares. E: o art. 145 exige estar habilitado no mínimo há um ano na categoria B ou na imediatamente anterior."
+    },
+    {
+      "extId": "inedita:tra:009",
+      "disciplina": "legislacao-transito",
+      "topicoRef": "6.6",
+      "enunciado": "O condutor abordado em fiscalização recusa-se a realizar o teste do etilômetro e qualquer outro procedimento de aferição de alcoolemia. Nessa situação, nos termos do CTB,",
+      "alternativas": [
+        { "letra": "A", "texto": "nada pode ser feito, pois ninguém é obrigado a produzir prova contra si mesmo, e a recusa é juridicamente indiferente." },
+        { "letra": "B", "texto": "aplicam-se ao condutor as penalidades e medidas administrativas do art. 165-A, idênticas às da infração de dirigir sob influência de álcool." },
+        { "letra": "C", "texto": "o condutor deve ser preso em flagrante pelo crime de desobediência." },
+        { "letra": "D", "texto": "o condutor será obrigado, mediante força física, a soprar o etilômetro." },
+        { "letra": "E", "texto": "a recusa impede a caracterização da infração por qualquer outro meio de prova." }
+      ],
+      "resposta": "B",
+      "justificativa": "Art. 277, §3º: ao condutor que se recusa a se submeter a qualquer dos procedimentos aplicam-se as penalidades e medidas administrativas do art. 165-A — multa gravíssima multiplicada por dez e suspensão do direito de dirigir por doze meses, com recolhimento da CNH e retenção do veículo. Ou seja: a recusa é infração autônoma, com a mesma sanção de quem dirige embriagado. A e E: o §2º permite caracterizar a infração por imagem, vídeo, constatação de sinais de alteração da capacidade psicomotora ou prova testemunhal. D: ninguém pode ser compelido fisicamente ao teste."
+    },
+    {
+      "extId": "inedita:tra:010",
+      "disciplina": "legislacao-transito",
+      "topicoRef": "6.2",
+      "enunciado": "Sobre as normas gerais de circulação e conduta do CTB, assinale a opção correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "Crianças com idade inferior a dez anos devem ser transportadas nos bancos traseiros, salvo exceções regulamentadas pelo CONTRAN." },
+        { "letra": "B", "texto": "O uso do cinto de segurança é obrigatório apenas nas rodovias federais." },
+        { "letra": "C", "texto": "A ultrapassagem deve ser feita pela direita, como regra geral." },
+        { "letra": "D", "texto": "Os veículos de maior porte têm preferência sobre os de menor porte em qualquer situação." },
+        { "letra": "E", "texto": "O motorista profissional pode dirigir por até oito horas ininterruptas antes do descanso obrigatório." }
+      ],
+      "resposta": "A",
+      "justificativa": "Art. 64: crianças com menos de dez anos devem ser transportadas nos bancos traseiros, usando individualmente cinto de segurança ou dispositivo de retenção equivalente, salvo exceções do CONTRAN. B: o art. 65 torna o cinto obrigatório em TODAS as vias do território nacional. C: a ultrapassagem é pela esquerda, salvo quando o veículo a ser ultrapassado sinaliza a intenção de entrar à esquerda. D: o art. 29, §2º, inverte a lógica — os veículos de maior porte são sempre RESPONSÁVEIS pela segurança dos menores, e os motorizados pelos não motorizados; é dever de cuidado, não preferência. E: o art. 67-C limita a cinco horas e meia ininterruptas, com descanso de trinta minutos."
+    },
+    {
+      "extId": "inedita:tra:011",
+      "disciplina": "legislacao-transito",
+      "topicoRef": "6.6",
+      "enunciado": "São penalidades previstas no art. 256 do CTB, EXCETO:",
+      "alternativas": [
+        { "letra": "A", "texto": "advertência por escrito." },
+        { "letra": "B", "texto": "multa." },
+        { "letra": "C", "texto": "suspensão do direito de dirigir." },
+        { "letra": "D", "texto": "retenção do veículo." },
+        { "letra": "E", "texto": "frequência obrigatória em curso de reciclagem." }
+      ],
+      "resposta": "D",
+      "justificativa": "A retenção do veículo é MEDIDA ADMINISTRATIVA (art. 269), e não penalidade. Essa é a distinção mais cobrada do tema: penalidades (art. 256) são advertência por escrito, multa, suspensão do direito de dirigir, cassação da CNH, cassação da Permissão para Dirigir e frequência obrigatória em curso de reciclagem; medidas administrativas (art. 269) são retenção e remoção do veículo, recolhimento da CNH, da PPD, do CRLV e do CRV, transbordo de excesso de carga, realização de teste de alcoolemia, entre outras."
+    },
+    {
+      "extId": "inedita:tra:012",
+      "disciplina": "legislacao-transito",
+      "topicoRef": "6.6",
+      "enunciado": "Em relação à atuação do policial militar na fiscalização de trânsito, à luz do CTB, é correto afirmar que",
+      "alternativas": [
+        { "letra": "A", "texto": "o policial militar pode lavrar auto de infração de trânsito independentemente de convênio, por ser agente da autoridade pública." },
+        { "letra": "B", "texto": "o policial militar atua como agente da autoridade de trânsito quando designado, no âmbito de convênio firmado com o órgão de trânsito com circunscrição sobre a via." },
+        { "letra": "C", "texto": "a competência para fiscalizar o trânsito é exclusiva da Polícia Rodoviária Federal em todas as vias." },
+        { "letra": "D", "texto": "o auto de infração dispensa a identificação do agente autuador." },
+        { "letra": "E", "texto": "o policial militar não pode, em nenhuma hipótese, atuar na fiscalização de trânsito." }
+      ],
+      "resposta": "B",
+      "justificativa": "O art. 280, §4º, é o dispositivo mais importante do CTB para o policial militar: ele atua como agente da autoridade de trânsito por designação, no âmbito de convênio firmado com o órgão ou entidade de trânsito com circunscrição sobre a via. Sem convênio e designação, a lavratura do auto é irregular — por isso A está errada. C: a competência da PRF é no âmbito das rodovias e estradas federais (art. 23). D: o art. 280 exige a identificação do agente autuador no auto de infração."
+    }
+  ]
+}

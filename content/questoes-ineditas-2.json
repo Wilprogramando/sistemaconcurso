@@ -1,0 +1,396 @@
+{
+  "sobre": "Segundo lote de questões inéditas de múltipla escolha, com foco em Legislação Institucional (10 das 60 questões da prova) e reforço das demais disciplinas. Elaboradas para este sistema a partir do Anexo II do Edital 002/CCP/2026 e do conteúdo da apostila — não são questões de prova anterior.",
+  "rotulo": "Inédita — baseada no edital",
+  "questoes": [
+    {
+      "extId": "inedita:inst:001",
+      "disciplina": "legislacao-institucional",
+      "topicoRef": "7.1",
+      "enunciado": "Segundo o Estatuto dos Policiais Militares de Santa Catarina (Lei n.º 6.218/1983), hierarquia e disciplina são definidas, respectivamente, como",
+      "alternativas": [
+        { "letra": "A", "texto": "a ordenação da autoridade em níveis diferentes dentro da estrutura da corporação e a rigorosa observância e acatamento integral das leis, regulamentos, normas e disposições." },
+        { "letra": "B", "texto": "o tempo de serviço prestado à corporação e a assiduidade no cumprimento das escalas." },
+        { "letra": "C", "texto": "a antiguidade na graduação e a submissão irrestrita a qualquer ordem, ainda que manifestamente ilegal." },
+        { "letra": "D", "texto": "a classificação de comportamento da praça e o número de punições registradas em seus assentamentos." },
+        { "letra": "E", "texto": "a divisão em círculos hierárquicos e o regime de dedicação exclusiva ao serviço." }
+      ],
+      "resposta": "A",
+      "justificativa": "O Estatuto define hierarquia como a ordenação da autoridade em níveis diferentes dentro da estrutura da Polícia Militar, feita por postos (oficiais) e graduações (praças); e disciplina como a rigorosa observância e o acatamento integral das leis, regulamentos, normas e disposições, traduzindo-se pelo perfeito cumprimento do dever. C é a pegadinha mais comum: a disciplina nunca abrange o cumprimento de ordem manifestamente ilegal. Lembre ainda que hierarquia e disciplina devem ser mantidas permanentemente, na ativa e na inatividade."
+    },
+    {
+      "extId": "inedita:inst:002",
+      "disciplina": "legislacao-institucional",
+      "topicoRef": "7.1",
+      "enunciado": "Na escala hierárquica da PMSC, a sequência correta das graduações de praças, da mais baixa para a mais alta, é",
+      "alternativas": [
+        { "letra": "A", "texto": "Soldado, Cabo, 1º Sargento, 2º Sargento, 3º Sargento, Subtenente." },
+        { "letra": "B", "texto": "Soldado, Cabo, 3º Sargento, 2º Sargento, 1º Sargento, Subtenente." },
+        { "letra": "C", "texto": "Cabo, Soldado, 3º Sargento, 2º Sargento, 1º Sargento, Subtenente." },
+        { "letra": "D", "texto": "Soldado, Cabo, Subtenente, 3º Sargento, 2º Sargento, 1º Sargento." },
+        { "letra": "E", "texto": "Soldado, 3º Sargento, Cabo, 2º Sargento, 1º Sargento, Subtenente." }
+      ],
+      "resposta": "B",
+      "justificativa": "A ordem é Soldado → Cabo → 3º Sargento → 2º Sargento → 1º Sargento → Subtenente. O ponto que derruba candidato é a numeração dos sargentos, que é INVERSA à intuição: o 3º Sargento é o mais baixo e o 1º Sargento o mais alto. A mesma lógica vale para os tenentes: 2º Tenente é inferior ao 1º Tenente. Nos oficiais a escala é 2º Ten → 1º Ten → Capitão → Major → Tenente-Coronel → Coronel."
+    },
+    {
+      "extId": "inedita:inst:003",
+      "disciplina": "legislacao-institucional",
+      "topicoRef": "7.2",
+      "enunciado": "De acordo com o Regulamento Disciplinar da PMSC, as punições disciplinares, da mais branda para a mais grave, são:",
+      "alternativas": [
+        { "letra": "A", "texto": "repreensão, advertência, detenção, prisão, licenciamento e exclusão a bem da disciplina." },
+        { "letra": "B", "texto": "advertência, repreensão, prisão, detenção, licenciamento e exclusão a bem da disciplina." },
+        { "letra": "C", "texto": "advertência, repreensão, detenção, prisão, licenciamento e exclusão a bem da disciplina." },
+        { "letra": "D", "texto": "advertência, detenção, repreensão, prisão, reforma disciplinar." },
+        { "letra": "E", "texto": "repreensão, detenção, prisão, suspensão, demissão." }
+      ],
+      "resposta": "C",
+      "justificativa": "A escala é advertência (admoestação verbal e reservada), repreensão (censura por escrito, publicada em boletim), detenção (o punido permanece na organização policial militar, sem ficar confinado), prisão (cerceamento da liberdade em local próprio e designado) e, no topo, licenciamento e exclusão a bem da disciplina, aplicáveis à praça e precedidos de Conselho de Disciplina quando exigido em lei. A troca mais frequente é inverter detenção e prisão — lembre que na detenção o militar não fica confinado, e na prisão sim."
+    },
+    {
+      "extId": "inedita:inst:004",
+      "disciplina": "legislacao-institucional",
+      "topicoRef": "7.2",
+      "enunciado": "A classificação do comportamento da praça na PMSC compreende as seguintes categorias:",
+      "alternativas": [
+        { "letra": "A", "texto": "excepcional, ótimo, bom, insuficiente e mau." },
+        { "letra": "B", "texto": "excelente, muito bom, bom, regular e péssimo." },
+        { "letra": "C", "texto": "ótimo, bom, regular, insuficiente e mau." },
+        { "letra": "D", "texto": "exemplar, satisfatório, regular e insatisfatório." },
+        { "letra": "E", "texto": "excepcional, bom, regular e mau." }
+      ],
+      "resposta": "A",
+      "justificativa": "São cinco categorias: excepcional, ótimo, bom, insuficiente e mau. A classificação depende do número e da gravidade das punições registradas em determinado período de efetivo serviço, e repercute em promoção, concessão de benefícios, escolha para cursos e na dosimetria de futuras punições. A banca gosta de inserir 'regular', que NÃO existe nessa escala."
+    },
+    {
+      "extId": "inedita:inst:005",
+      "disciplina": "legislacao-institucional",
+      "topicoRef": "7.8",
+      "enunciado": "Quanto ao Conselho de Disciplina da PMSC (Lei n.º 5.209/1976), assinale a opção correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "Destina-se a oficiais, apurando a indignidade e a incompatibilidade com o oficialato." },
+        { "letra": "B", "texto": "Destina-se ao Aspirante a Oficial e às demais praças com estabilidade assegurada, para julgar a incapacidade de permanecer na ativa." },
+        { "letra": "C", "texto": "É composto por cinco oficiais, todos de posto superior ao do acusado." },
+        { "letra": "D", "texto": "Dispensa o contraditório e a ampla defesa, por se tratar de procedimento administrativo interno." },
+        { "letra": "E", "texto": "Sua decisão final cabe exclusivamente ao Tribunal de Justiça do Estado." }
+      ],
+      "resposta": "B",
+      "justificativa": "O Conselho de Disciplina destina-se ao Aspirante a Oficial e às praças com estabilidade assegurada. A praça SEM estabilidade é licenciada por procedimento mais simples, o licenciamento a bem da disciplina. A: o procedimento dos oficiais é o Conselho de Justificação, cuja perda de posto e patente é decidida pelo Tribunal de Justiça mediante representação do Governador — o que também afasta E. C: a composição é de três oficiais (presidente, interrogante/relator e escrivão). D: contraditório e ampla defesa são assegurados pelo art. 5º, LV, da CF e pela própria lei."
+    },
+    {
+      "extId": "inedita:inst:006",
+      "disciplina": "legislacao-institucional",
+      "topicoRef": "7.7",
+      "enunciado": "Conforme a organização básica da PMSC, os escalões de comando, do menor para o maior, são:",
+      "alternativas": [
+        { "letra": "A", "texto": "Pelotão → Grupo → Companhia → Comando Regional → Batalhão." },
+        { "letra": "B", "texto": "Grupo → Pelotão → Companhia → Batalhão → Comando Regional." },
+        { "letra": "C", "texto": "Grupo → Companhia → Pelotão → Batalhão → Comando Regional." },
+        { "letra": "D", "texto": "Pelotão → Companhia → Grupo → Comando Regional → Batalhão." },
+        { "letra": "E", "texto": "Companhia → Pelotão → Grupo → Batalhão → Comando Regional." }
+      ],
+      "resposta": "B",
+      "justificativa": "A escada é Grupo → Pelotão → Companhia → Batalhão → Comando Regional, e acima deles o Comando-Geral. A banca costuma inverter grupo e pelotão ou deslocar a companhia. Vale guardar também o encaixe: o pelotão é formado por dois ou mais grupos, a companhia por pelotões, o batalhão por companhias, e os Comandos Regionais (CRPM) são grandes comandos responsáveis pela polícia ostensiva em circunscrições delimitadas."
+    },
+    {
+      "extId": "inedita:inst:007",
+      "disciplina": "legislacao-institucional",
+      "topicoRef": "7.7",
+      "enunciado": "A respeito da estrutura e do comando da PMSC, assinale a opção correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "O Comandante-Geral é oficial do último posto da ativa, nomeado em comissão pelo Governador do Estado." },
+        { "letra": "B", "texto": "O Comandante-Geral é eleito pelos oficiais superiores da corporação." },
+        { "letra": "C", "texto": "A Corregedoria-Geral é órgão de execução do policiamento ostensivo." },
+        { "letra": "D", "texto": "O Estado-Maior Geral é órgão de apoio logístico, sem atribuição de planejamento." },
+        { "letra": "E", "texto": "A PMSC é subordinada diretamente ao Comando Militar do Sul do Exército Brasileiro." }
+      ],
+      "resposta": "A",
+      "justificativa": "O Comandante-Geral é oficial do último posto da ativa (Coronel), nomeado em comissão pelo Governador, a quem cabe a direção superior da corporação. C: a Corregedoria-Geral é órgão de controle interno disciplinar, que apura desvios de conduta — não executa policiamento. D: o Estado-Maior Geral é o órgão de direção geral, responsável pelo planejamento estratégico. E: a PM é força auxiliar e reserva do Exército, mas subordina-se ao GOVERNADOR do Estado, por intermédio da Secretaria de Segurança Pública — subordinação operacional ao Exército só existiria em caso de mobilização."
+    },
+    {
+      "extId": "inedita:inst:008",
+      "disciplina": "legislacao-institucional",
+      "topicoRef": "7.5",
+      "enunciado": "Segundo a LC n.º 801/2022, que trata da promoção das praças militares estaduais de Santa Catarina, NÃO constitui critério de promoção:",
+      "alternativas": [
+        { "letra": "A", "texto": "antiguidade." },
+        { "letra": "B", "texto": "merecimento." },
+        { "letra": "C", "texto": "bravura." },
+        { "letra": "D", "texto": "post mortem." },
+        { "letra": "E", "texto": "sorteio entre os habilitados." }
+      ],
+      "resposta": "E",
+      "justificativa": "Os critérios são antiguidade (precedência hierárquica pelo tempo de efetivo serviço na graduação), merecimento (avaliação de desempenho, produtividade, cursos, condecorações), bravura (ato de excepcional valor, com risco da própria vida, no cumprimento do dever), post mortem (falecimento no cumprimento do dever ou em consequência dele) e ressarcimento de preterição (correção, com efeitos retroativos, de promoção indevidamente não concedida). Sorteio não existe — a promoção é ato vinculado a mérito e antiguidade."
+    },
+    {
+      "extId": "inedita:inst:009",
+      "disciplina": "legislacao-institucional",
+      "topicoRef": "7.5",
+      "enunciado": "Sobre os requisitos para a promoção das praças na PMSC, assinale a opção correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "O interstício é o número máximo de vagas abertas em cada graduação." },
+        { "letra": "B", "texto": "O interstício é o tempo mínimo de permanência na graduação exigido para a passagem à seguinte." },
+        { "letra": "C", "texto": "A praça que cumpre pena privativa de liberdade pode ser promovida normalmente, por antiguidade." },
+        { "letra": "D", "texto": "A conclusão de cursos de formação e aperfeiçoamento é dispensável para promoção por antiguidade." },
+        { "letra": "E", "texto": "A existência de vaga é irrelevante, pois a promoção é automática ao completar o interstício." }
+      ],
+      "resposta": "B",
+      "justificativa": "Interstício é o tempo mínimo de permanência na graduação fixado em lei para cada passagem (Soldado → Cabo → 3º Sgt → 2º Sgt → 1º Sgt → Subtenente). Além dele, exige-se conclusão dos cursos pertinentes, comportamento mínimo exigido em lei, aptidão em inspeção de saúde e teste físico quando exigido, e existência de vaga no quadro — o que afasta D e E. C: cumprir pena privativa de liberdade é impedimento à promoção, assim como estar licenciado para tratar de interesse particular ou submetido a Conselho de Disciplina."
+    },
+    {
+      "extId": "inedita:inst:010",
+      "disciplina": "legislacao-institucional",
+      "topicoRef": "7.3",
+      "enunciado": "A Lei n.º 14.751/2023 (Lei Orgânica Nacional das Polícias Militares e Corpos de Bombeiros Militares) foi editada com fundamento na competência da União para",
+      "alternativas": [
+        { "letra": "A", "texto": "legislar privativamente sobre normas gerais de organização, efetivos, material bélico, garantias, convocação e mobilização das polícias militares." },
+        { "letra": "B", "texto": "legislar concorrentemente com os estados sobre direito penal militar." },
+        { "letra": "C", "texto": "organizar e manter diretamente as polícias militares dos estados." },
+        { "letra": "D", "texto": "nomear os comandantes-gerais das polícias militares estaduais." },
+        { "letra": "E", "texto": "exercer o comando operacional das polícias militares em tempo de paz." }
+      ],
+      "resposta": "A",
+      "justificativa": "O fundamento é o art. 22, XXI, da CF: compete PRIVATIVAMENTE à União legislar sobre normas gerais de organização, efetivos, material bélico, garantias, convocação e mobilização das polícias militares e corpos de bombeiros militares. Note o alcance: a União edita normas GERAIS, e os estados legislam sobre a organização concreta de suas corporações — por isso a LONPM convive com a Lei 6.218/1983 e as demais leis catarinenses, que são normas específicas e devem a ela se adequar. C, D e E confundem competência legislativa com competência administrativa: as PMs são subordinadas aos Governadores (art. 144, §6º)."
+    },
+    {
+      "extId": "inedita:inst:011",
+      "disciplina": "legislacao-institucional",
+      "topicoRef": "7.2",
+      "enunciado": "São causas de justificação que afastam a transgressão disciplinar, segundo o Regulamento Disciplinar da PMSC, EXCETO:",
+      "alternativas": [
+        { "letra": "A", "texto": "ter sido o ato praticado em legítima defesa própria ou de outrem." },
+        { "letra": "B", "texto": "ter sido praticado em obediência a ordem superior não manifestamente ilegal." },
+        { "letra": "C", "texto": "ter sido praticado em estado de necessidade." },
+        { "letra": "D", "texto": "ter sido praticado na prática de ação meritória no interesse público." },
+        { "letra": "E", "texto": "ter o transgressor bom comportamento e relevantes serviços prestados." }
+      ],
+      "resposta": "E",
+      "justificativa": "Bom comportamento e relevância dos serviços prestados são circunstâncias ATENUANTES — diminuem a punição, mas não afastam a transgressão. As causas de JUSTIFICAÇÃO excluem a própria transgressão: legítima defesa própria ou de outrem, obediência a ordem superior não manifestamente ilegal, motivo de força maior plenamente comprovado, estado de necessidade e prática de ação meritória no interesse público. Separar justificação (exclui) de atenuante (reduz) é o eixo do tema."
+    },
+    {
+      "extId": "inedita:inst:012",
+      "disciplina": "legislacao-institucional",
+      "topicoRef": "7.2",
+      "enunciado": "Policial militar, punido disciplinarmente, pretende que a própria autoridade que aplicou a punição reexamine sua decisão. O instrumento adequado é",
+      "alternativas": [
+        { "letra": "A", "texto": "o pedido de reconsideração de ato." },
+        { "letra": "B", "texto": "a representação à autoridade superior." },
+        { "letra": "C", "texto": "o recurso hierárquico." },
+        { "letra": "D", "texto": "o mandado de segurança disciplinar." },
+        { "letra": "E", "texto": "a queixa ao Ministério Público Militar." }
+      ],
+      "resposta": "A",
+      "justificativa": "O pedido de reconsideração de ato é dirigido à PRÓPRIA autoridade que praticou o ato; o recurso hierárquico é dirigido à autoridade SUPERIOR. Essa troca é a pegadinha clássica do tema recursal disciplinar. Além dessas vias administrativas, resta a via judicial — e o STF admite habeas corpus para discutir a legalidade da punição disciplinar militar, embora o art. 142, §2º, da CF vede o exame do mérito."
+    },
+    {
+      "extId": "inedita:inst:013",
+      "disciplina": "legislacao-institucional",
+      "topicoRef": "7.2",
+      "enunciado": "Um mesmo fato praticado por policial militar pode gerar responsabilidade penal, civil e administrativo-disciplinar. A respeito dessa tríplice responsabilização, assinale a opção correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "As instâncias são sempre dependentes: a absolvição penal, por qualquer fundamento, impede a punição disciplinar." },
+        { "letra": "B", "texto": "As instâncias são, em regra, independentes, mas a absolvição penal por negativa do fato ou de autoria repercute na esfera administrativa." },
+        { "letra": "C", "texto": "A punição disciplinar impede a persecução penal pelo mesmo fato, por força do ne bis in idem." },
+        { "letra": "D", "texto": "A responsabilidade civil do Estado por ato do policial militar é subjetiva, exigindo prova de dolo." },
+        { "letra": "E", "texto": "A instância administrativa só pode ser instaurada após o trânsito em julgado da sentença penal." }
+      ],
+      "resposta": "B",
+      "justificativa": "A regra é a independência das instâncias, com uma exceção relevante: a absolvição penal fundada na negativa do fato ou na negativa de autoria vincula a administração e impede a punição disciplinar pelo mesmo fato. Absolvição por insuficiência de provas, ao contrário, não impede a sanção administrativa. C: punição disciplinar e condenação penal podem coexistir, pois as esferas são distintas. D: a responsabilidade do Estado é OBJETIVA (art. 37, §6º, da CF), com direito de regresso contra o agente em caso de dolo ou culpa."
+    },
+    {
+      "extId": "inedita:inst:014",
+      "disciplina": "legislacao-institucional",
+      "topicoRef": "7.1",
+      "enunciado": "Quanto à forma de conferência de postos e graduações na PMSC, é correto afirmar que",
+      "alternativas": [
+        { "letra": "A", "texto": "os postos dos oficiais são conferidos pelo Comandante-Geral e as graduações das praças pelo Governador." },
+        { "letra": "B", "texto": "os postos dos oficiais são conferidos por ato do Governador do Estado e confirmados em Carta Patente; as graduações das praças são conferidas pelo Comandante-Geral." },
+        { "letra": "C", "texto": "tanto os postos quanto as graduações são conferidos pela Assembleia Legislativa." },
+        { "letra": "D", "texto": "os postos e as graduações são conferidos pelo Secretário de Estado da Segurança Pública." },
+        { "letra": "E", "texto": "a Carta Patente é documento conferido às praças ao concluírem o curso de formação." }
+      ],
+      "resposta": "B",
+      "justificativa": "O Estatuto é claro: posto é o grau hierárquico do oficial, conferido por ato do Governador do Estado e confirmado em Carta Patente; graduação é o grau hierárquico da praça, conferido pelo Comandante-Geral. Guarde o par Governador/Carta Patente para oficiais e Comandante-Geral para praças — a inversão é a armadilha padrão, e a Carta Patente nunca é documento de praça."
+    },
+    {
+      "extId": "inedita:const:001",
+      "disciplina": "direito-constitucional",
+      "topicoRef": "1.8",
+      "enunciado": "Nos termos do art. 144 da Constituição Federal, às polícias militares cabem",
+      "alternativas": [
+        { "letra": "A", "texto": "a apuração de infrações penais comuns e o exercício da polícia judiciária." },
+        { "letra": "B", "texto": "a polícia ostensiva e a preservação da ordem pública, sendo forças auxiliares e reserva do Exército." },
+        { "letra": "C", "texto": "o patrulhamento ostensivo exclusivamente das rodovias federais." },
+        { "letra": "D", "texto": "a execução de atividades de defesa civil e a apuração de crimes militares praticados por civis." },
+        { "letra": "E", "texto": "a polícia ostensiva, subordinando-se diretamente ao Ministério da Justiça." }
+      ],
+      "resposta": "B",
+      "justificativa": "Art. 144, §5º: às polícias militares cabem a polícia ostensiva e a preservação da ordem pública; §6º: são forças auxiliares e reserva do Exército, subordinando-se, junto com as polícias civis, aos Governadores dos Estados, do Distrito Federal e dos Territórios. A: a apuração de infrações penais comuns e a polícia judiciária são da polícia civil. C: rodovias federais são da Polícia Rodoviária Federal. D: a execução de atividades de defesa civil cabe aos corpos de bombeiros militares. E: a subordinação é ao Governador, não ao Ministério da Justiça."
+    },
+    {
+      "extId": "inedita:const:002",
+      "disciplina": "direito-constitucional",
+      "topicoRef": "1.5",
+      "enunciado": "Policial militar, em diligência, pretende ingressar em residência sem o consentimento do morador. À luz do art. 5º, XI, da Constituição Federal, o ingresso é possível",
+      "alternativas": [
+        { "letra": "A", "texto": "a qualquer hora do dia ou da noite, mediante determinação judicial." },
+        { "letra": "B", "texto": "durante o dia, em caso de flagrante delito, desastre ou para prestar socorro, e à noite somente com mandado judicial." },
+        { "letra": "C", "texto": "em caso de flagrante delito, desastre ou para prestar socorro, a qualquer hora; e, durante o dia, também por determinação judicial." },
+        { "letra": "D", "texto": "somente com mandado judicial, em qualquer hipótese e horário." },
+        { "letra": "E", "texto": "sempre que houver fundada suspeita da prática de crime, independentemente de horário ou mandado." }
+      ],
+      "resposta": "C",
+      "justificativa": "A casa é asilo inviolável: ninguém nela pode penetrar sem consentimento do morador, SALVO em caso de flagrante delito ou desastre, ou para prestar socorro — essas três hipóteses valem a qualquer hora, inclusive à noite —, ou, DURANTE O DIA, por determinação judicial. A pegadinha mais cobrada é oferecer o mandado judicial como válido à noite, como faz a alternativa B: à noite nem com mandado. E: fundada suspeita autoriza busca pessoal (art. 244 do CPP), não o ingresso domiciliar; o STF exige justa causa prévia, demonstrável, para o flagrante em domicílio."
+    },
+    {
+      "extId": "inedita:const:003",
+      "disciplina": "direito-constitucional",
+      "topicoRef": "1.8",
+      "enunciado": "Sobre os militares dos Estados, segundo a Constituição Federal, assinale a opção correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "São-lhes permitidas a sindicalização e a greve, por serem servidores públicos civis por equiparação." },
+        { "letra": "B", "texto": "São-lhes proibidas a sindicalização e a greve." },
+        { "letra": "C", "texto": "É permitida a greve, desde que mantido percentual mínimo de efetivo em serviço." },
+        { "letra": "D", "texto": "É permitida a filiação sindical, vedada apenas a greve." },
+        { "letra": "E", "texto": "Podem filiar-se a partidos políticos e exercer mandato eletivo sem qualquer restrição." }
+      ],
+      "resposta": "B",
+      "justificativa": "Art. 142, §3º, IV, aplicável aos militares estaduais por força do art. 42, §1º: ao militar são PROIBIDAS a sindicalização e a greve. Trata-se de vedação absoluta, sem a flexibilização que C e D sugerem. E: o militar da ativa não pode estar filiado a partido político; para concorrer a mandato eletivo, se tiver menos de dez anos de serviço deve afastar-se da atividade, e se tiver mais de dez anos será agregado pela autoridade superior, passando à inatividade se eleito."
+    },
+    {
+      "extId": "inedita:penal:001",
+      "disciplina": "direito-penal-comum",
+      "topicoRef": "2.3",
+      "enunciado": "A respeito do princípio da insignificância, conforme a jurisprudência do Supremo Tribunal Federal, assinale a opção correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "Trata-se de causa de exclusão da culpabilidade." },
+        { "letra": "B", "texto": "É causa supralegal de exclusão da tipicidade material, exigindo mínima ofensividade, nenhuma periculosidade social, reduzido grau de reprovabilidade e inexpressividade da lesão." },
+        { "letra": "C", "texto": "É causa legal de exclusão da ilicitude prevista no art. 23 do Código Penal." },
+        { "letra": "D", "texto": "Aplica-se automaticamente sempre que o valor do bem for inferior a um salário mínimo." },
+        { "letra": "E", "texto": "É incompatível com o direito penal brasileiro, por violar o princípio da legalidade." }
+      ],
+      "resposta": "B",
+      "justificativa": "O STF reconhece a insignificância como causa SUPRALEGAL de exclusão da tipicidade MATERIAL, condicionada a quatro vetores cumulativos: mínima ofensividade da conduta, nenhuma periculosidade social da ação, reduzidíssimo grau de reprovabilidade do comportamento e inexpressividade da lesão jurídica. D: não há critério puramente aritmético — o valor do bem é um indício, mas a reincidência, a habitualidade e as circunstâncias afastam o princípio. A e C erram o plano de análise: a insignificância atua na tipicidade, não na ilicitude nem na culpabilidade."
+    },
+    {
+      "extId": "inedita:penal:002",
+      "disciplina": "direito-penal-comum",
+      "topicoRef": "2.2",
+      "enunciado": "Lei posterior deixa de considerar crime determinado fato pelo qual o agente já foi condenado por sentença transitada em julgado. Nessa hipótese, ocorre",
+      "alternativas": [
+        { "letra": "A", "texto": "novatio legis in pejus, que não retroage." },
+        { "letra": "B", "texto": "abolitio criminis, cessando a execução e os efeitos penais da condenação, subsistindo os efeitos civis." },
+        { "letra": "C", "texto": "abolitio criminis, cessando todos os efeitos, inclusive a obrigação de indenizar." },
+        { "letra": "D", "texto": "ultratividade da lei anterior, que continua a reger o fato." },
+        { "letra": "E", "texto": "irrelevância jurídica, pois a coisa julgada é intangível." }
+      ],
+      "resposta": "B",
+      "justificativa": "Art. 2º, caput, do CP: ninguém pode ser punido por fato que lei posterior deixa de considerar crime, cessando em virtude dela a execução e os EFEITOS PENAIS da sentença condenatória. Os efeitos CIVIS, como a obrigação de indenizar a vítima, permanecem — e é exatamente aí que a alternativa C erra. D: a ultratividade vale para a lei excepcional ou temporária (art. 3º) e para a lei revogada mais benéfica, não para a mais gravosa. E: a lei penal benéfica retroage mesmo após o trânsito em julgado (art. 5º, XL, da CF)."
+    },
+    {
+      "extId": "inedita:proc:001",
+      "disciplina": "direito-processual-penal",
+      "topicoRef": "3.6",
+      "enunciado": "Quanto à prisão preventiva, assinale a opção correta.",
+      "alternativas": [
+        { "letra": "A", "texto": "Pode ser decretada de ofício pelo juiz, em qualquer fase da investigação ou do processo." },
+        { "letra": "B", "texto": "Uma vez decretada, dispensa qualquer revisão periódica enquanto durar o processo." },
+        { "letra": "C", "texto": "Deve ser revista a cada noventa dias, mediante decisão fundamentada, sob pena de tornar-se ilegal." },
+        { "letra": "D", "texto": "Tem prazo máximo e improrrogável de trinta dias." },
+        { "letra": "E", "texto": "Somente é cabível após o oferecimento da denúncia." }
+      ],
+      "resposta": "C",
+      "justificativa": "Art. 316, parágrafo único, do CPP, com a redação da Lei 13.964/2019: o órgão emissor da decisão deverá revisar a necessidade de manutenção da prisão a cada 90 dias, mediante decisão fundamentada, de ofício, sob pena de tornar a prisão ilegal. A: desde o Pacote Anticrime o juiz não pode decretar a preventiva de ofício — depende de requerimento do MP, do querelante, do assistente ou de representação da autoridade policial. B contraria o próprio art. 316. D: a preventiva não tem prazo fixo de duração. E: pode ser decretada na fase de investigação."
+    },
+    {
+      "extId": "inedita:proc:002",
+      "disciplina": "direito-processual-penal",
+      "topicoRef": "3.5",
+      "enunciado": "Policial militar, em patrulhamento, realiza busca pessoal em indivíduo sem mandado judicial. Segundo o Código de Processo Penal, essa busca é",
+      "alternativas": [
+        { "letra": "A", "texto": "sempre ilegal, pois toda busca depende de mandado." },
+        { "letra": "B", "texto": "legal, dispensando mandado quando houver fundada suspeita de que a pessoa oculte consigo arma proibida ou objetos relacionados ao crime." },
+        { "letra": "C", "texto": "legal apenas se houver autorização por escrito do delegado de polícia." },
+        { "letra": "D", "texto": "legal somente se realizada no interior de estabelecimento prisional." },
+        { "letra": "E", "texto": "legal, dispensando qualquer justificativa, por decorrer do poder de polícia." }
+      ],
+      "resposta": "B",
+      "justificativa": "Art. 244 do CPP: a busca pessoal independe de mandado no caso de prisão, quando houver fundada suspeita de que a pessoa esteja na posse de arma proibida ou de objetos ou papéis que constituam corpo de delito, ou quando a medida for determinada no curso de busca domiciliar. Atenção à jurisprudência recente do STJ: a 'fundada suspeita' exige elementos concretos e objetivos, indicados pelo policial — nervosismo, 'atitude suspeita' genérica ou perfil racial não bastam e tornam a prova ilícita. Por isso E está errada: há sim exigência de justificativa."
+    },
+    {
+      "extId": "inedita:port:001",
+      "disciplina": "lingua-portuguesa",
+      "topicoRef": "8.4",
+      "enunciado": "Assinale a opção em que a concordância verbal está de acordo com a norma-padrão.",
+      "alternativas": [
+        { "letra": "A", "texto": "Houveram muitas ocorrências registradas no último plantão." },
+        { "letra": "B", "texto": "Fazem dois anos que ele ingressou na corporação." },
+        { "letra": "C", "texto": "Devem haver outros policiais interessados no curso." },
+        { "letra": "D", "texto": "Houve muitas ocorrências registradas no último plantão." },
+        { "letra": "E", "texto": "Existe, nos arquivos, diversos documentos sobre o caso." }
+      ],
+      "resposta": "D",
+      "justificativa": "O verbo haver no sentido de existir é IMPESSOAL: fica sempre na terceira pessoa do singular, por isso 'Houve muitas ocorrências'. A: 'Houveram' flexiona indevidamente o impessoal. B: fazer indicando tempo decorrido também é impessoal — 'Faz dois anos'. C: a impessoalidade se transmite ao auxiliar — 'Deve haver outros policiais'. E: existir, ao contrário de haver, é verbo PESSOAL e concorda com o sujeito — 'Existem diversos documentos'. Guarde o contraste: haver impessoal não varia; existir varia."
+    },
+    {
+      "extId": "inedita:port:002",
+      "disciplina": "lingua-portuguesa",
+      "topicoRef": "8.4",
+      "enunciado": "Assinale a opção em que o emprego do acento indicativo de crase está correto.",
+      "alternativas": [
+        { "letra": "A", "texto": "O policial dirigiu-se à ela para prestar esclarecimentos." },
+        { "letra": "B", "texto": "A guarnição chegou à Florianópolis no início da madrugada." },
+        { "letra": "C", "texto": "O comandante referiu-se à ordem expedida na véspera." },
+        { "letra": "D", "texto": "Começou à chover durante a abordagem." },
+        { "letra": "E", "texto": "Entregou o relatório à todos os presentes." }
+      ],
+      "resposta": "C",
+      "justificativa": "Há crase em 'referiu-se à ordem': o verbo referir-se exige a preposição a e 'ordem' admite o artigo a. A: não há crase antes de pronome pessoal (a ela). B: nomes de cidade que não admitem artigo não recebem crase — 'chegou a Florianópolis'; o teste é 'venho DE Florianópolis', e não 'venho DA'. D: não há crase antes de verbo. E: não há crase antes de pronome indefinido/palavra masculina plural — 'a todos'."
+    },
+    {
+      "extId": "inedita:info:001",
+      "disciplina": "informatica",
+      "topicoRef": "9.5",
+      "enunciado": "De acordo com a Lei n.º 13.709/2018 (LGPD), o tratamento de dados pessoais realizado para fins exclusivos de segurança pública",
+      "alternativas": [
+        { "letra": "A", "texto": "submete-se integralmente à LGPD, sem qualquer ressalva." },
+        { "letra": "B", "texto": "está excluído do âmbito de aplicação da lei, devendo ser regido por legislação específica." },
+        { "letra": "C", "texto": "é vedado em qualquer hipótese." },
+        { "letra": "D", "texto": "depende sempre do consentimento expresso do titular dos dados." },
+        { "letra": "E", "texto": "submete-se à LGPD apenas quando realizado por pessoa jurídica de direito privado." }
+      ],
+      "resposta": "B",
+      "justificativa": "Art. 4º, III, da LGPD: a lei não se aplica ao tratamento de dados realizado para fins exclusivos de segurança pública, defesa nacional, segurança do Estado ou atividades de investigação e repressão de infrações penais — matéria reservada a legislação específica, com observância dos princípios de proteção de dados. Isso não significa vedação (C) nem liberdade absoluta. D: mesmo dentro da LGPD, o consentimento é apenas uma das dez bases legais de tratamento, ao lado do cumprimento de obrigação legal, da execução de políticas públicas e da proteção da vida, entre outras."
+    },
+    {
+      "extId": "inedita:info:002",
+      "disciplina": "informatica",
+      "topicoRef": "9.6",
+      "enunciado": "Assinale a opção que descreve corretamente o tipo de malware indicado.",
+      "alternativas": [
+        { "letra": "A", "texto": "Worm: depende de um arquivo hospedeiro para se propagar." },
+        { "letra": "B", "texto": "Ransomware: exibe anúncios publicitários indesejados no navegador." },
+        { "letra": "C", "texto": "Vírus: propaga-se automaticamente pela rede, sem interação do usuário." },
+        { "letra": "D", "texto": "Worm: propaga-se automaticamente pela rede, sem necessidade de hospedeiro." },
+        { "letra": "E", "texto": "Spyware: criptografa os arquivos da vítima e exige pagamento de resgate." }
+      ],
+      "resposta": "D",
+      "justificativa": "O worm é autorreplicante e se propaga sozinho pela rede, explorando vulnerabilidades, sem precisar de arquivo hospedeiro nem de ação do usuário. Quem precisa de hospedeiro é o VÍRUS, que se anexa a um arquivo e depende de o usuário executá-lo — por isso A e C estão invertidas, e essa inversão é a questão de segurança mais repetida em concursos. B descreve o adware; E descreve o ransomware, enquanto o spyware apenas coleta informações às escondidas."
+    },
+    {
+      "extId": "inedita:info:003",
+      "disciplina": "informatica",
+      "topicoRef": "9.3",
+      "enunciado": "No LibreOffice Calc, a referência $A$1 utilizada em uma fórmula é classificada como",
+      "alternativas": [
+        { "letra": "A", "texto": "relativa, pois se ajusta ao ser copiada para outra célula." },
+        { "letra": "B", "texto": "absoluta, pois não se altera ao ser copiada para outra célula." },
+        { "letra": "C", "texto": "mista, pois fixa apenas a coluna." },
+        { "letra": "D", "texto": "mista, pois fixa apenas a linha." },
+        { "letra": "E", "texto": "tridimensional, por referenciar outra planilha." }
+      ],
+      "resposta": "B",
+      "justificativa": "O cifrão trava o que vem imediatamente depois dele. Em $A$1 há cifrão antes da coluna e antes da linha, então ambas ficam travadas: referência ABSOLUTA, que não muda ao ser copiada. A1 é relativa; $A1 é mista com a coluna fixa; A$1 é mista com a linha fixa. Esse é o quarteto que a banca embaralha, e a mesma regra vale no Excel."
+    }
+  ]
+}
