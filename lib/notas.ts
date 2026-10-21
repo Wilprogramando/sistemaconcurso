@@ -1,0 +1,57 @@
+import { BookMarked, CircleHelp, Hash, Lightbulb, Scale } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+
+export type Tag = 'nota' | 'macete' | 'duvida' | 'numero' | 'lei';
+
+export type Nota = {
+  id: string;
+  title: string;
+  body: string;
+  discipline_id: number | null;
+  topic_id: number | null;
+  tag: Tag;
+  pinned: boolean;
+  created_at: string;
+  updated_at: string;
+};
+
+export const TAGS: Record<Tag, { label: string; icone: LucideIcon; classe: string }> = {
+  nota: {
+    label: 'Nota',
+    icone: BookMarked,
+    classe: 'bg-slate-100 text-slate-700 ring-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700',
+  },
+  macete: {
+    label: 'Macete',
+    icone: Lightbulb,
+    classe: 'bg-emerald-100 text-emerald-800 ring-emerald-200 dark:bg-emerald-950 dark:text-emerald-300 dark:ring-emerald-900',
+  },
+  duvida: {
+    label: 'Dúvida',
+    icone: CircleHelp,
+    classe: 'bg-amber-100 text-amber-900 ring-amber-200 dark:bg-amber-950 dark:text-amber-300 dark:ring-amber-900',
+  },
+  numero: {
+    label: 'Número',
+    icone: Hash,
+    classe: 'bg-sky-100 text-sky-900 ring-sky-200 dark:bg-sky-950 dark:text-sky-300 dark:ring-sky-900',
+  },
+  lei: {
+    label: 'Letra de lei',
+    icone: Scale,
+    classe: 'bg-violet-100 text-violet-900 ring-violet-200 dark:bg-violet-950 dark:text-violet-300 dark:ring-violet-900',
+  },
+};
+
+export const ORDEM_TAGS: Tag[] = ['nota', 'macete', 'numero', 'lei', 'duvida'];
+
+/** A tabela vem da migração 0005; sem ela, a tela avisa em vez de quebrar. */
+export class NotasIndisponiveis extends Error {
+  constructor() {
+    super('A tabela notes ainda nao existe');
+    this.name = 'NotasIndisponiveis';
+  }
+}
+
+export const ehTabelaAusente = (mensagem: string) =>
+  /notes|schema cache|does not exist/i.test(mensagem);

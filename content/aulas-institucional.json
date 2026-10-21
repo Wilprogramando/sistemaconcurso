@@ -1,0 +1,254 @@
+{
+  "sobre": "Aulas didáticas de Legislação Institucional — 10 das 60 questões, o maior peso da prova. Escritas para este sistema a partir do Anexo II do Edital 002/CCP/2026 e do conteúdo da apostila. Ficam acima do texto da apostila na tela do tópico.",
+  "aulas": {
+    "legislacao-institucional:7.0": {
+      "emUmaFrase": "São oito normas de Santa Catarina que valem 10 das 60 questões — e quase ninguém estuda, porque cursinho nacional não ensina lei estadual.",
+      "explicacao": [
+        "Esta disciplina é o retrato do seu futuro emprego em forma de lei. Ela não fala de crime nem de trânsito: fala de como a Polícia Militar de Santa Catarina é organizada, como você entra, como sobe de graduação, o que pode te punir e como você se defende.",
+        "São oito normas, e elas se dividem em dois blocos. O primeiro é a vida funcional: o Estatuto (Lei 6.218/1983) diz quem você é e quais são seus direitos e deveres; o Regulamento Disciplinar (Portaria 009/2001) diz o que acontece quando você falha; a Lei 5.209/1976 trata do Conselho de Disciplina, o processo que pode excluir uma praça estável da corporação.",
+        "O segundo bloco é a carreira e a estrutura: a LC 587/2013 rege o ingresso — é literalmente a lei deste concurso; a LC 801/2022 rege a promoção das praças; a LC 765/2020 trata da remuneração; o Decreto 1.601/2021 organiza a corporação em comandos, batalhões e companhias. Fechando, a Lei 14.751/2023 é a norma federal nova, a Lei Orgânica Nacional, que fixa diretrizes gerais para todas as polícias militares do país.",
+        "A lógica para estudar é simples: comece pelo Estatuto e pelo Regulamento Disciplinar, que juntos respondem pela maior parte das questões. Depois a organização básica e o Conselho de Disciplina. Por último promoção, ingresso e remuneração, que costumam vir em uma questão cada."
+      ],
+      "naPratica": "O concurso que você está fazendo nasce da LC 587/2013. Cada exigência do edital — idade, altura, escolaridade, investigação social, TAF — tem fundamento em algum artigo dela. Estudar essa lei é ler as regras do jogo em que você já está jogando.",
+      "pegadinhas": [
+        "A banca mistura norma federal com norma estadual: o Decreto-lei 667/1969 e o R-200 são federais; o Estatuto 6.218 e o RDPM são de Santa Catarina.",
+        "Troca o número das leis entre si — cuidado especial com LC 587 (ingresso) e LC 801 (promoção).",
+        "Apresenta regra de outro estado como se fosse de SC. Se a questão citar uma lei que você não reconhece no rol das oito, desconfie."
+      ],
+      "revisao": [
+        "10 das 60 questões — o maior peso da prova",
+        "Lei 6.218/1983 — Estatuto dos PM de SC",
+        "Portaria 009/2001 — Regulamento Disciplinar",
+        "Lei 5.209/1976 — Conselho de Disciplina",
+        "LC 587/2013 — ingresso (a lei deste concurso)",
+        "LC 801/2022 — promoção de praças",
+        "LC 765/2020 — remuneração",
+        "Decreto 1.601/2021 — organização básica",
+        "Lei 14.751/2023 — Lei Orgânica Nacional"
+      ]
+    },
+    "legislacao-institucional:7.1": {
+      "emUmaFrase": "O Estatuto é a Constituição interna do policial militar catarinense: define quem você é, onde se posiciona na hierarquia e quais são seus direitos e deveres.",
+      "explicacao": [
+        "Duas palavras sustentam tudo nesta lei: hierarquia e disciplina. HIERARQUIA é a ordenação da autoridade em níveis diferentes dentro da estrutura da corporação. Ela se materializa em postos, para oficiais, e em graduações, para praças. DISCIPLINA é a rigorosa observância e o acatamento integral das leis, regulamentos, normas e disposições — traduzindo-se pelo perfeito cumprimento do dever.",
+        "Guarde a distinção entre posto e graduação, porque ela cai sempre. POSTO é o grau do oficial, conferido por ato do Governador do Estado e confirmado em um documento chamado Carta Patente. GRADUAÇÃO é o grau da praça — o seu caso como Soldado — conferida pelo Comandante-Geral. Trocar quem confere o quê é o erro mais repetido do tema.",
+        "A escala de praças, da mais baixa para a mais alta, é: Soldado, Cabo, 3º Sargento, 2º Sargento, 1º Sargento e Subtenente. Repare que a numeração dos sargentos é invertida em relação à intuição — o 3º é o mais baixo, o 1º é o mais alto. A mesma lógica vale para os tenentes: 2º Tenente vem antes de 1º Tenente. Nos oficiais a escala completa é 2º Ten, 1º Ten, Capitão, Major, Tenente-Coronel e Coronel.",
+        "Entre praças e oficiais existe uma categoria intermediária: as PRAÇAS ESPECIAIS, que reúnem os aspirantes a oficial e os alunos dos cursos de formação de oficiais. Elas estão acima das demais praças e abaixo dos oficiais.",
+        "O Estatuto também organiza as SITUAÇÕES em que o militar pode estar. Vale conhecer três: AGREGAÇÃO é quando o militar da ativa deixa de ocupar vaga na escala hierárquica, nela permanecendo sem número — continua na ativa, mas fora do efetivo, e por isso não concorre a promoção. REVERSÃO é o retorno à situação normal. À DISPOSIÇÃO é servir a órgão ou autoridade a que não está diretamente subordinado."
+      ],
+      "naPratica": "Na sua primeira formatura, quando o Comandante-Geral confere a graduação de Soldado, é o art. do Estatuto sendo aplicado. E quando um colega é designado para servir em outro órgão, ele está 'à disposição' — não agregado. Essas palavras têm significado técnico, e a prova cobra exatamente isso.",
+      "pegadinhas": [
+        "Inverter quem confere posto e graduação: Governador com Carta Patente para oficial, Comandante-Geral para praça.",
+        "Errar a ordem dos sargentos — o 3º Sargento é o mais baixo, não o mais alto.",
+        "Dizer que a disciplina obriga a cumprir qualquer ordem. Ordem manifestamente ilegal nunca obriga.",
+        "Confundir agregação (sai da vaga, fica sem número) com estar à disposição (serve a outro órgão).",
+        "Afirmar que hierarquia e disciplina valem só na ativa — elas devem ser mantidas permanentemente, inclusive na inatividade."
+      ],
+      "revisao": [
+        "Posto = oficial, pelo Governador, com Carta Patente",
+        "Graduação = praça, pelo Comandante-Geral",
+        "Praças: Sd → Cb → 3º Sgt → 2º Sgt → 1º Sgt → Subten",
+        "Oficiais: 2º Ten → 1º Ten → Cap → Maj → Ten-Cel → Cel",
+        "Praças especiais: aspirante e aluno-oficial",
+        "Agregado = sem número na escala, não concorre a promoção",
+        "Limite da punição de detenção ou prisão: 30 dias"
+      ]
+    },
+    "legislacao-institucional:7.2": {
+      "emUmaFrase": "Enquanto o Estatuto diz o que você deve fazer, o Regulamento Disciplinar diz o que acontece quando você não faz — e é o campeão de questões práticas da prova.",
+      "explicacao": [
+        "TRANSGRESSÃO DISCIPLINAR é toda ação ou omissão contrária ao dever policial-militar, ofensiva aos preceitos da hierarquia e da disciplina, cuja gravidade não chegue a constituir crime. Guarde essa última parte: se a conduta é crime, sai do campo disciplinar e entra no penal — embora as duas esferas possam coexistir.",
+        "Isso leva ao ponto mais importante do tema: a INDEPENDÊNCIA DAS INSTÂNCIAS. Um mesmo fato pode gerar responsabilidade penal, civil e administrativo-disciplinar, e as três correm em paralelo. Há uma exceção relevante: a absolvição penal por NEGATIVA DO FATO ou NEGATIVA DE AUTORIA repercute na esfera administrativa e impede a punição. Absolvição por falta de provas, não — ali a administração ainda pode punir.",
+        "As transgressões se classificam em LEVES, MÉDIAS e GRAVES, conforme a natureza, as circunstâncias e os antecedentes do transgressor. Antes de punir, a autoridade verifica se há causa de justificação, atenuante ou agravante — e essa distinção é o que a banca mais explora.",
+        "CAUSAS DE JUSTIFICAÇÃO afastam a própria transgressão: legítima defesa própria ou de outrem, obediência a ordem superior não manifestamente ilegal, motivo de força maior plenamente comprovado, estado de necessidade e prática de ação meritória no interesse público. ATENUANTES apenas reduzem a punição: bom comportamento, relevância dos serviços prestados, motivo de força maior, ter agido para evitar mal maior, confissão espontânea. AGRAVANTES aumentam: mau comportamento, reincidência, conluio, prática na presença de subordinado, abuso de autoridade hierárquica.",
+        "A escala de punições, da mais branda à mais grave, é: ADVERTÊNCIA (admoestação verbal e reservada, em regra não registrada), REPREENSÃO (censura por escrito, publicada em boletim), DETENÇÃO (o punido permanece na organização policial militar, sem ficar confinado), PRISÃO (cerceamento da liberdade em local próprio e designado) e, no topo, LICENCIAMENTO e EXCLUSÃO A BEM DA DISCIPLINA. Detenção e prisão têm limite de 30 dias.",
+        "O COMPORTAMENTO da praça é classificado em cinco faixas: excepcional, ótimo, bom, insuficiente e mau. Ele depende do número e da gravidade das punições registradas em determinado período de efetivo serviço, e repercute em promoção, benefícios, escolha para cursos e na dosagem de punições futuras.",
+        "Quanto aos recursos, memorize o par: PEDIDO DE RECONSIDERAÇÃO DE ATO é dirigido à PRÓPRIA autoridade que puniu; RECURSO HIERÁRQUICO é dirigido à autoridade SUPERIOR. Resta ainda a via judicial — e o STF admite habeas corpus para discutir a legalidade da punição disciplinar, embora o art. 142, §2º, da Constituição vede o exame do mérito."
+      ],
+      "naPratica": "O enunciado típico narra um caso: 'o Sd PM X deixou de comparecer ao serviço sem justificativa' ou 'o Sd Y agrediu um colega que o havia agredido primeiro'. Você precisa dizer se houve transgressão, se há causa de justificação, qual punição cabe e qual o recurso. É por isso que a distinção justificação × atenuante decide a maioria das questões.",
+      "pegadinhas": [
+        "Inverter detenção e prisão: na detenção o punido NÃO fica confinado; na prisão, sim.",
+        "Apresentar bom comportamento ou relevância de serviços como causa de justificação — são atenuantes.",
+        "Trocar pedido de reconsideração (mesma autoridade) por representação ou recurso hierárquico (autoridade superior).",
+        "Dizer que a absolvição penal sempre impede a punição disciplinar. Só a negativa do fato ou de autoria repercute.",
+        "Incluir 'regular' na escala de comportamento — ela não existe; é excepcional, ótimo, bom, insuficiente e mau."
+      ],
+      "revisao": [
+        "Punições: advertência → repreensão → detenção → prisão → licenciamento/exclusão",
+        "Detenção e prisão: limite de 30 dias",
+        "Comportamento: excepcional, ótimo, bom, insuficiente, mau",
+        "Transgressões: leves, médias e graves",
+        "Justificação exclui · atenuante reduz · agravante aumenta",
+        "Reconsideração = mesma autoridade · recurso = superior",
+        "Instâncias independentes, salvo negativa do fato ou de autoria"
+      ]
+    },
+    "legislacao-institucional:7.3": {
+      "emUmaFrase": "A Lei Orgânica Nacional é a norma federal nova que fixa o piso de regras para todas as polícias militares do país — e por ser recente, tem altíssima chance de cair.",
+      "explicacao": [
+        "A Constituição, no art. 22, XXI, dá à União a competência PRIVATIVA para legislar sobre normas gerais de organização, efetivos, material bélico, garantias, convocação e mobilização das polícias militares. A Lei 14.751/2023 é o exercício dessa competência: ela fixa diretrizes nacionais, e cada estado continua organizando concretamente a sua corporação.",
+        "Entenda a relação de encaixe: a LONPM é norma GERAL e federal; as leis catarinenses — Estatuto 6.218/1983, LC 587/2013, LC 801/2022, Portaria 009/2001 — são normas ESPECÍFICAS e estaduais, que devem se adequar a ela. Uma não substitui a outra.",
+        "Os pontos estruturantes: as polícias militares e os corpos de bombeiros militares são instituições permanentes e regulares, organizadas com base na hierarquia e na disciplina, forças auxiliares e reserva do Exército, subordinadas aos Governadores. À PM cabe a polícia ostensiva e a preservação da ordem pública, o que abrange policiamento ostensivo geral, de trânsito urbano e rodoviário estadual, ambiental, escolar, de proximidade e outros.",
+        "A lei também lista princípios de atuação — legalidade, impessoalidade, moralidade, publicidade, eficiência, respeito aos direitos humanos, proteção à vida e uso progressivo e diferenciado da força — e fixa garantias mínimas no processo disciplinar: contraditório, ampla defesa, direito à defesa técnica e proporcionalidade das sanções.",
+        "Por fim, ela trata da polícia judiciária militar, exercida dentro das corporações para apurar crimes militares por meio do Inquérito Policial Militar e do Auto de Prisão em Flagrante Delito, e dos direitos dos militares estaduais, inclusive defesa técnica custeada pelo Estado em processos decorrentes do exercício da função."
+      ],
+      "naPratica": "O uso progressivo e diferenciado da força, que a lei eleva a princípio, é o que separa uma abordagem legítima de um abuso. Na prova isso aparece como fundamento; na rua, é a diferença entre cumprir o dever e responder por ele.",
+      "pegadinhas": [
+        "Dizer que a competência da União para legislar sobre PM é concorrente — é privativa, e só de normas gerais.",
+        "Afirmar que a lei federal subordina a PM ao Ministério da Justiça ou ao Exército. A subordinação é ao Governador.",
+        "Confundir competência legislativa (da União) com competência administrativa (do Estado).",
+        "Esquecer que a lei é de 2023: por ser nova, a banca gosta de cobrá-la literalmente."
+      ],
+      "revisao": [
+        "Fundamento: art. 22, XXI, da CF — competência privativa da União",
+        "Só NORMAS GERAIS; o estado organiza a própria corporação",
+        "PM: instituição permanente, força auxiliar e reserva do Exército",
+        "Subordinação ao Governador (art. 144, §6º, da CF)",
+        "Princípios: legalidade, direitos humanos, uso progressivo da força",
+        "Polícia judiciária militar: IPM e APFD"
+      ]
+    },
+    "legislacao-institucional:7.4": {
+      "emUmaFrase": "É a lei do seu próprio concurso: cada exigência do edital que você está cumprindo tem fundamento aqui.",
+      "explicacao": [
+        "A Lei Complementar 587/2013 rege o ingresso nas carreiras das instituições militares de Santa Catarina. Ela é a base legal do Edital 002/CCP/2026 — quando o edital exige idade mínima, escolaridade, aptidão física ou investigação social, está concretizando um artigo desta lei.",
+        "A maneira mais eficiente de estudá-la é com o edital aberto ao lado. Para cada requisito que o edital impõe, localize o dispositivo correspondente. Isso transforma uma leitura abstrata em algo que você já viveu na inscrição.",
+        "Os eixos que costumam ser cobrados: requisitos para o ingresso (nacionalidade, idade, escolaridade, idoneidade, aptidão física e mental), as etapas do processo seletivo (prova objetiva, redação, exames de saúde, teste de aptidão física, avaliação psicológica, investigação social), a natureza de cada etapa — eliminatória, classificatória ou ambas —, e as condições de matrícula e de permanência no Curso de Formação.",
+        "Atenção especial ao aluno do curso de formação. Ele é praça especial, está sujeito a regime próprio, e o descumprimento das condições do curso pode levar ao desligamento — inclusive sem direito a remuneração ou indenização, conforme o caso."
+      ],
+      "naPratica": "Quando a prova apresenta um caso do tipo 'o candidato aprovado na objetiva foi reprovado na investigação social; ele pode ser matriculado?', a resposta está nesta lei e no edital. Saber qual etapa é eliminatória resolve a questão.",
+      "pegadinhas": [
+        "Trocar os números: LC 587 é INGRESSO; LC 801 é PROMOÇÃO.",
+        "Dizer que alguma etapa do certame é meramente classificatória quando o edital a define como eliminatória.",
+        "Tratar o aluno do curso de formação como praça comum — ele é praça especial."
+      ],
+      "revisao": [
+        "LC 587/2013 = ingresso nas carreiras militares de SC",
+        "É a base legal do Edital 002/CCP/2026",
+        "Etapas: objetiva, redação, saúde, TAF, psicológico, investigação social",
+        "Aluno do curso de formação é PRAÇA ESPECIAL",
+        "Estude com o edital ao lado, dispositivo por dispositivo"
+      ]
+    },
+    "legislacao-institucional:7.5": {
+      "emUmaFrase": "A promoção é o acesso gradual às graduações seguintes, por mérito e antiguidade — e ela só acontece quando interstício, cursos, comportamento, aptidão e vaga se encontram ao mesmo tempo.",
+      "explicacao": [
+        "A LC 801/2022 organiza a subida na carreira das praças: Soldado → Cabo → 3º Sargento → 2º Sargento → 1º Sargento → Subtenente. A promoção tem caráter seletivo: não é automática por tempo.",
+        "São cinco os critérios. ANTIGUIDADE baseia-se na precedência hierárquica, apurada pelo tempo de efetivo serviço na graduação — o mais antigo da lista é promovido quando surge a vaga. MERECIMENTO avalia desempenho, produtividade, cursos, condecorações e resultados de avaliação. BRAVURA é excepcional, para ato de valor com risco da própria vida no cumprimento do dever. POST MORTEM alcança quem falece no cumprimento do dever ou em consequência dele. RESSARCIMENTO DE PRETERIÇÃO corrige, com efeitos retroativos, uma promoção que deveria ter ocorrido e não ocorreu.",
+        "Os requisitos gerais se somam, e é aí que a prova pega: INTERSTÍCIO (tempo mínimo de permanência na graduação, fixado em lei para cada passagem), CURSOS concluídos com aproveitamento, COMPORTAMENTO no mínimo no patamar exigido, APTIDÃO em inspeção de saúde e teste físico quando exigido, e existência de VAGA no quadro. Faltando um deles, não há promoção.",
+        "Há ainda os IMPEDIMENTOS, situações que travam a promoção mesmo com os requisitos cumpridos: estar licenciado para tratar de interesse particular, estar agregado em certas hipóteses, estar cumprindo pena privativa de liberdade, estar submetido a Conselho de Disciplina, entre outros previstos na lei."
+      ],
+      "naPratica": "Esta é a lei da sua progressão salarial e de carreira. Quando você completar o interstício de Soldado e quiser concorrer a Cabo, são esses cinco requisitos que vão ser conferidos no seu assentamento.",
+      "pegadinhas": [
+        "Dizer que a promoção é automática ao completar o interstício — falta vaga, curso, comportamento e aptidão.",
+        "Definir interstício como número de vagas. Interstício é TEMPO mínimo na graduação.",
+        "Incluir sorteio ou antiguidade de idade entre os critérios — não existem.",
+        "Afirmar que quem cumpre pena privativa de liberdade pode ser promovido por antiguidade."
+      ],
+      "revisao": [
+        "Critérios: antiguidade, merecimento, bravura, post mortem, ressarcimento de preterição",
+        "Requisitos: interstício + cursos + comportamento + aptidão + VAGA",
+        "Interstício = tempo mínimo na graduação",
+        "Impedimentos: pena, Conselho de Disciplina, licença para interesse particular",
+        "Sequência: Sd → Cb → 3º Sgt → 2º Sgt → 1º Sgt → Subten"
+      ]
+    },
+    "legislacao-institucional:7.6": {
+      "emUmaFrase": "O regime remuneratório dos militares estaduais é de SUBSÍDIO: parcela única, que por definição constitucional não admite acréscimo de outras verbas remuneratórias.",
+      "explicacao": [
+        "A LC 765/2020 institui o Regime Remuneratório Especial dos militares estaduais de Santa Catarina. O conceito central é o SUBSÍDIO, previsto no art. 39, §4º, da Constituição: remuneração fixada em parcela única, vedado o acréscimo de qualquer gratificação, adicional, abono, prêmio, verba de representação ou outra espécie remuneratória.",
+        "Isso não significa que o militar receba apenas o subsídio e nada mais. Permanecem fora da vedação as verbas de natureza INDENIZATÓRIA — que não remuneram o trabalho, mas repõem um gasto ou compensam uma situação específica. Ajuda de custo, diárias e indenizações por regime especial de serviço entram nessa categoria, não se incorporam aos proventos nem à pensão e, em regra, não sofrem contribuição previdenciária.",
+        "Dois outros conceitos aparecem com frequência. IRREDUTIBILIDADE: o valor do subsídio é protegido contra redução nominal. TETO: nenhuma remuneração pode ultrapassar o limite constitucional aplicável.",
+        "Esta é a norma de menor incidência entre as oito. Priorize entender a lógica do subsídio como parcela única, a diferença entre verba remuneratória e indenizatória, e o fato de os militares terem sistema de proteção social próprio, distinto do regime dos servidores civis."
+      ],
+      "naPratica": "Quando você vê no contracheque uma diária de viagem, ela não é 'salário a mais': é indenização por um gasto que você teve. Por isso não entra no cálculo da aposentadoria.",
+      "pegadinhas": [
+        "Dizer que o subsídio admite gratificações e adicionais — a vedação é constitucional.",
+        "Tratar verba indenizatória como remuneratória, incorporando-a a proventos e pensão.",
+        "Aplicar aos militares a legislação dos regimes próprios dos servidores civis — eles têm sistema de proteção social próprio."
+      ],
+      "revisao": [
+        "Subsídio = parcela única (art. 39, §4º, da CF)",
+        "Vedado acrescentar gratificação, adicional, abono ou prêmio",
+        "Verbas indenizatórias não se incorporam a proventos nem a pensão",
+        "Militar tem sistema de proteção social próprio",
+        "Menor incidência entre as oito normas — estude o essencial"
+      ]
+    },
+    "legislacao-institucional:7.7": {
+      "emUmaFrase": "É o mapa da corporação: quem planeja, quem apoia e quem executa o policiamento — e a ordem das frações de tropa, do Grupo ao Comando Regional.",
+      "explicacao": [
+        "O Decreto 1.601/2021 regulamenta a Lei 6.217/1983 e desenha a organização básica da PMSC. A corporação é instituição permanente, força auxiliar e reserva do Exército, organizada com base na hierarquia e na disciplina, subordinada ao Governador por intermédio da Secretaria de Estado da Segurança Pública.",
+        "A competência central: planejar, coordenar e dirigir a execução da polícia ostensiva e da preservação da ordem pública. Isso abrange o policiamento ostensivo em suas várias modalidades — geral, de trânsito, ambiental, rodoviário estadual, escolar, de proximidade.",
+        "A estrutura se divide por função. DIREÇÃO: Comando-Geral (Comandante-Geral e Subcomandante-Geral), Estado-Maior Geral e Diretorias. ASSESSORAMENTO: Gabinete, Ajudância-Geral, Consultoria Jurídica, Corregedoria-Geral, Ouvidoria, Agência de Inteligência. APOIO: centros e unidades de ensino, de saúde, de logística e de tecnologia. EXECUÇÃO: Comandos Regionais, Batalhões, Companhias, Pelotões, Grupos e as unidades especializadas, como BPMA (ambiental), BPRv (rodoviária estadual), BOPE, BPTran, Cavalaria, Canil e Aviação.",
+        "O Comandante-Geral é oficial do último posto da ativa — Coronel — nomeado em comissão pelo Governador. O Estado-Maior Geral é o órgão de direção geral, responsável pelo planejamento estratégico. A Corregedoria-Geral é o controle interno disciplinar, que apura desvios de conduta.",
+        "Decore a escada dos escalões de comando, do menor para o maior: GRUPO → PELOTÃO → COMPANHIA → BATALHÃO → COMANDO REGIONAL, e acima de todos o Comando-Geral. O pelotão é formado por dois ou mais grupos; a companhia, por pelotões; o batalhão, por companhias."
+      ],
+      "naPratica": "Ao ser classificado depois do curso de formação, você vai para um Grupo, dentro de um Pelotão, de uma Companhia, de um Batalhão, subordinado a um Comando Regional. Saber essa cadeia é saber onde você está dentro da instituição.",
+      "pegadinhas": [
+        "Inverter a ordem das frações — Grupo vem antes de Pelotão, e Companhia antes de Batalhão.",
+        "Dizer que a Corregedoria executa policiamento. Ela é controle interno disciplinar.",
+        "Afirmar que o Estado-Maior é órgão de apoio logístico — é direção geral e planejamento estratégico.",
+        "Subordinar a PM ao Exército. A subordinação é ao Governador; força auxiliar e reserva não é subordinação direta."
+      ],
+      "revisao": [
+        "Escalões: Grupo → Pelotão → Companhia → Batalhão → Comando Regional",
+        "Comandante-Geral: Coronel da ativa, nomeado pelo Governador",
+        "Estado-Maior Geral: direção geral e planejamento estratégico",
+        "Corregedoria-Geral: controle interno disciplinar",
+        "Funções: direção, assessoramento, apoio e execução",
+        "Especializadas: BPMA, BPRv, BOPE, BPTran, Cavalaria, Canil, Aviação"
+      ]
+    },
+    "legislacao-institucional:7.8": {
+      "emUmaFrase": "O Conselho de Disciplina é o processo que julga se uma praça ESTÁVEL ainda tem condições de permanecer na ativa — e o equivalente do oficial é o Conselho de Justificação.",
+      "explicacao": [
+        "A Lei 5.209/1976 cria o Conselho de Disciplina, processo administrativo especial destinado ao Aspirante a Oficial PM e às demais praças com ESTABILIDADE assegurada. A estabilidade é o divisor de águas: praça sem estabilidade é licenciada por procedimento mais simples, o licenciamento a bem da disciplina, sem Conselho.",
+        "A finalidade não é punir um fato isolado, e sim julgar a INCAPACIDADE do militar de permanecer na ativa. Será submetida a Conselho a praça que praticar ato que afete a honra pessoal, o pundonor policial-militar ou o decoro da classe; que houver perdido a nacionalidade brasileira; que for condenada, em sentença transitada em julgado, a pena restritiva de liberdade até dois anos por crime doloso comum ou por crime militar; e nas demais hipóteses legais.",
+        "A composição é de TRÊS oficiais, nomeados por ato da autoridade competente: um presidente, de posto superior ou mais antigo, um interrogante e relator e um escrivão.",
+        "O rito assegura contraditório e ampla defesa: portaria de nomeação, citação do acusado, oitiva de testemunhas e produção de provas, interrogatório, prazo para razões escritas de defesa e relatório conclusivo. Durante a tramitação, a praça pode ser afastada das funções e, conforme o caso, agregada.",
+        "A decisão pode ser pelo arquivamento, se julgada capaz; pelo licenciamento ou exclusão a bem da disciplina; pela reforma disciplinar, quando for o caso.",
+        "Faça o contraste com o oficial. O procedimento dele é o CONSELHO DE JUSTIFICAÇÃO, que apura indignidade ou incompatibilidade com o oficialato, e a perda do posto e da patente é declarada pelo TRIBUNAL DE JUSTIÇA, mediante representação do Governador — nunca por decisão administrativa interna."
+      ],
+      "naPratica": "O Conselho é o processo mais grave da vida funcional: dele pode sair a exclusão da corporação. Por isso a lei cerca o acusado de garantias — e por isso a banca cobra quem passa por ele e quem o compõe.",
+      "pegadinhas": [
+        "Mandar praça para Conselho de Justificação. Esse é de oficial; praça estável vai a Conselho de Disciplina.",
+        "Dizer que o Conselho tem cinco membros — são três oficiais.",
+        "Afirmar que a perda do posto do oficial é decidida pelo Comandante-Geral. Quem declara é o Tribunal de Justiça.",
+        "Submeter praça SEM estabilidade a Conselho de Disciplina — ela é licenciada por rito mais simples.",
+        "Dispensar contraditório e ampla defesa por ser procedimento interno. O art. 5º, LV, da CF alcança o processo administrativo."
+      ],
+      "revisao": [
+        "Conselho de Disciplina: aspirante e praças ESTÁVEIS",
+        "Composição: 3 oficiais (presidente, relator, escrivão)",
+        "Condenação até 2 anos transitada em julgado leva ao Conselho",
+        "Decisão: arquivamento, licenciamento/exclusão ou reforma",
+        "Oficial: Conselho de Justificação + decisão do Tribunal de Justiça",
+        "Praça sem estabilidade: licenciamento a bem da disciplina"
+      ]
+    },
+    "legislacao-institucional:7.9": {
+      "emUmaFrase": "É o tópico com melhor relação entre tempo de leitura e pontos: a lista enxuta dos números que a banca cobra literalmente.",
+      "explicacao": [
+        "Legislação Institucional é, em grande parte, prova de memória. A banca não pede interpretação sofisticada: ela troca um número, inverte uma ordem ou substitui um órgão. Este tópico reúne o que precisa estar decorado.",
+        "Use-o de duas formas. Na primeira leitura, como conferência: se algum item aqui soar novo, volte ao tópico de origem. Na véspera, como revisão rápida — é o último texto a ser lido antes da prova.",
+        "Os blocos de memória são quatro. HIERARQUIA: a escala completa de praças e de oficiais, com a numeração invertida dos sargentos e dos tenentes. DISCIPLINA: a escala de punições, a classificação das transgressões e as faixas de comportamento. PROCESSOS: a composição do Conselho de Disciplina e quem passa por ele, mais o contraste com o Conselho de Justificação. ESTRUTURA: a ordem dos escalões de comando.",
+        "A esses some os marcos numéricos que atravessam várias normas: 30 dias é o limite da detenção e da prisão disciplinares; 2 anos é o divisor para condenação que leva a praça ao Conselho de Disciplina e, no Código Penal Militar, para exclusão da praça e perda de posto do oficial."
+      ],
+      "naPratica": "Transforme cada linha daqui em uma anotação do tipo 'Número' no seu caderno do sistema. Revisar cinco cartões por dia é mais eficiente do que reler o capítulo inteiro.",
+      "pegadinhas": [
+        "Confiar na memória sem revisão espaçada: número decorado uma vez some em uma semana.",
+        "Misturar o limite de 30 dias da punição disciplinar com os 2 anos da condenação penal.",
+        "Esquecer que a numeração de sargentos e tenentes é invertida."
+      ],
+      "revisao": [
+        "30 dias: limite de detenção e prisão disciplinares",
+        "2 anos: condenação que leva praça ao Conselho de Disciplina",
+        "2 anos (CPM): exclusão da praça e perda de posto do oficial",
+        "3 oficiais: composição do Conselho de Disciplina",
+        "5 faixas de comportamento · 3 classes de transgressão",
+        "5 punições: advertência, repreensão, detenção, prisão, exclusão"
+      ]
+    }
+  }
+}

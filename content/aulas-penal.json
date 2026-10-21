@@ -1,0 +1,197 @@
+{
+  "sobre": "Aulas didáticas de Direito Penal Comum — 6 das 60 questões.",
+  "aulas": {
+    "direito-penal-comum:2.1": {
+      "emUmaFrase": "Os princípios são os freios do poder de punir: eles dizem o que o Estado NÃO pode fazer, mesmo quando quer.",
+      "explicacao": [
+        "LEGALIDADE ou reserva legal é a base de tudo: não há crime sem lei anterior que o defina, nem pena sem prévia cominação legal. A lei penal precisa ser escrita, estrita, certa e prévia — ou seja, não existe crime por costume, por analogia em prejuízo do réu, nem por texto vago.",
+        "Dela decorre a ANTERIORIDADE: a lei tem de existir antes do fato. E a IRRETROATIVIDADE: a lei penal não retroage, salvo para beneficiar o réu. Essa ressalva é absoluta e alcança até sentença transitada em julgado.",
+        "INTERVENÇÃO MÍNIMA diz que o Direito Penal é a última razão — só entra quando os outros ramos falham. Dela nascem a FRAGMENTARIEDADE (só os ataques mais graves aos bens mais relevantes) e a SUBSIDIARIEDADE.",
+        "O princípio da INSIGNIFICÂNCIA é causa SUPRALEGAL de exclusão da TIPICIDADE MATERIAL — ou seja, o fato se encaixa na descrição da lei, mas não lesa o bem jurídico de forma relevante. O STF exige quatro vetores cumulativos: mínima ofensividade da conduta, nenhuma periculosidade social da ação, reduzidíssimo grau de reprovabilidade e inexpressividade da lesão. Não é critério puramente aritmético: reincidência, habitualidade e circunstâncias afastam o princípio.",
+        "Fecham o rol: CULPABILIDADE (não há pena sem culpa; veda-se a responsabilidade objetiva), LESIVIDADE (não há crime sem lesão ou perigo de lesão a bem jurídico alheio), ALTERIDADE (não se pune a autolesão), HUMANIDADE (proibidas penas cruéis, perpétuas, de morte salvo guerra declarada, de trabalhos forçados e de banimento), NE BIS IN IDEM, ADEQUAÇÃO SOCIAL e PRESUNÇÃO DE INOCÊNCIA."
+      ],
+      "naPratica": "Quando o policial encontra alguém com um objeto de valor ínfimo furtado, o enquadramento é formalmente possível, mas a insignificância pode levar à atipicidade material. É por isso que o registro da ocorrência precisa descrever bem o valor, as circunstâncias e os antecedentes.",
+      "pegadinhas": [
+        "Dizer que a insignificância exclui a ilicitude ou a culpabilidade. Ela exclui a TIPICIDADE material.",
+        "Aplicar a insignificância só pelo valor do bem, sem os quatro vetores.",
+        "Afirmar que a lei penal nunca retroage. Retroage para beneficiar o réu, sempre.",
+        "Dizer que existe crime por analogia. Analogia em prejuízo do réu é vedada."
+      ],
+      "revisao": [
+        "Legalidade: lei escrita, estrita, certa e prévia",
+        "Lei benéfica retroage, inclusive após o trânsito em julgado",
+        "Insignificância: exclui tipicidade MATERIAL, 4 vetores do STF",
+        "Culpabilidade: veda responsabilidade objetiva",
+        "Humanidade: sem pena de morte, salvo guerra declarada"
+      ]
+    },
+    "direito-penal-comum:2.2": {
+      "emUmaFrase": "Para o TEMPO do crime vale a teoria da atividade; para o LUGAR, a ubiquidade — e o macete é LUTA: Lugar Ubiquidade, Tempo Atividade.",
+      "explicacao": [
+        "A regra geral no tempo é tempus regit actum: aplica-se a lei vigente ao tempo do fato. A exceção é a EXTRATIVIDADE da lei benéfica, que se desdobra em duas: RETROATIVIDADE (a lei nova mais benéfica alcança fatos anteriores) e ULTRATIVIDADE (a lei revogada mais benéfica continua regendo fatos praticados sob sua vigência).",
+        "ABOLITIO CRIMINIS (art. 2º, caput): a lei nova deixa de considerar o fato crime; cessam a execução e os EFEITOS PENAIS da condenação. Os efeitos CIVIS permanecem — a obrigação de indenizar a vítima continua. NOVATIO LEGIS IN MELLIUS (parágrafo único): a lei posterior que de qualquer modo favoreça o agente aplica-se aos fatos anteriores, ainda que decididos por sentença transitada em julgado. NOVATIO LEGIS IN PEJUS: não retroage.",
+        "As LEIS EXCEPCIONAIS E TEMPORÁRIAS (art. 3º) são ULTRATIVAS: mesmo cessada a circunstância ou decorrido o prazo, aplicam-se ao fato praticado durante sua vigência. É exceção à retroatividade benéfica.",
+        "TEMPO DO CRIME (art. 4º): teoria da ATIVIDADE — considera-se praticado no momento da ação ou omissão, ainda que outro seja o momento do resultado. LUGAR DO CRIME (art. 6º): teoria da UBIQUIDADE — é tanto o lugar da ação ou omissão quanto onde se produziu ou deveria produzir-se o resultado.",
+        "Sobre o ESPAÇO, a regra é a TERRITORIALIDADE temperada (art. 5º): aplica-se a lei brasileira ao crime cometido no território nacional, sem prejuízo de convenções e tratados. Consideram-se extensão do território as embarcações e aeronaves brasileiras públicas onde quer que estejam, e as privadas em alto-mar ou espaço aéreo correspondente. E aplica-se a lei brasileira aos crimes praticados em aeronaves e embarcações estrangeiras PRIVADAS quando em território nacional.",
+        "CONTAGEM DE PRAZO (art. 10): INCLUI-SE o dia do começo — diferente do prazo processual, que exclui. LEI PENAL EM BRANCO é a que precisa de complemento: HOMOGÊNEA quando o complemento vem da mesma fonte legislativa; HETEROGÊNEA quando vem de fonte diversa, como a portaria que lista as drogas."
+      ],
+      "naPratica": "Quem decide a lei aplicável a um fato antigo é o juízo competente, mas o policial precisa entender a lógica: uma lei nova mais severa nunca alcança o fato já praticado.",
+      "pegadinhas": [
+        "Trocar atividade por ubiquidade. Tempo é atividade; lugar é ubiquidade.",
+        "Dizer que a abolitio criminis apaga também os efeitos civis. Não apaga.",
+        "Afirmar que lei temporária não se aplica após o prazo. Ela é ultrativa.",
+        "Excluir o dia do começo na contagem penal. No penal, inclui-se."
+      ],
+      "revisao": [
+        "LUTA: Lugar Ubiquidade · Tempo Atividade",
+        "Lei benéfica: retroage, inclusive após trânsito em julgado",
+        "Abolitio criminis: cessa efeito PENAL, não o civil",
+        "Temporária e excepcional: ultrativas",
+        "Prazo penal inclui o dia do começo"
+      ]
+    },
+    "direito-penal-comum:2.3": {
+      "emUmaFrase": "Crime é fato típico, ilícito e culpável — e cada uma dessas três camadas tem suas próprias causas de exclusão.",
+      "explicacao": [
+        "O FATO TÍPICO tem quatro elementos: conduta (dolosa ou culposa), resultado, nexo causal e tipicidade. DOLO é vontade e consciência de realizar o tipo — direto, quando se quer o resultado; eventual, quando se assume o risco de produzi-lo. CULPA é a violação do dever de cuidado, nas modalidades imprudência, negligência e imperícia. O crime só é punível na forma culposa quando a lei expressamente prevê.",
+        "A TENTATIVA (art. 14, II) ocorre quando, iniciada a execução, o crime não se consuma por circunstâncias alheias à vontade do agente; a pena é a do consumado, reduzida de um a dois terços. Distinga dos institutos vizinhos: DESISTÊNCIA VOLUNTÁRIA é parar podendo prosseguir; ARREPENDIMENTO EFICAZ é impedir o resultado por ato próprio — em ambos, o agente responde só pelos atos já praticados. ARREPENDIMENTO POSTERIOR (art. 16) é reparar o dano, nos crimes sem violência ou grave ameaça, até o RECEBIMENTO da denúncia, com redução de um a dois terços.",
+        "A ILICITUDE é excluída pelas causas do art. 23: estado de necessidade, legítima defesa, estrito cumprimento do dever legal e exercício regular de direito. LEGÍTIMA DEFESA (art. 25) é repelir, usando moderadamente dos meios necessários, injusta agressão atual ou iminente, a direito seu OU DE OUTREM. Em todas elas, o excesso doloso ou culposo é punível.",
+        "A CULPABILIDADE tem três elementos: imputabilidade, potencial consciência da ilicitude e exigibilidade de conduta diversa. Excluem a imputabilidade a doença mental que retire a capacidade de entendimento ou autodeterminação, a menoridade penal e a embriaguez COMPLETA proveniente de caso fortuito ou força maior. A embriaguez voluntária ou culposa NÃO exclui — é a teoria da actio libera in causa. Excluem a exigibilidade a coação moral irresistível e a obediência a ordem não manifestamente ilegal.",
+        "No CONCURSO DE PESSOAS (art. 29), quem de qualquer modo concorre para o crime incide nas penas a ele cominadas, na medida de sua CULPABILIDADE. Participação de menor importância reduz de um sexto a um terço. COOPERAÇÃO DOLOSAMENTE DISTINTA (§2º): se o concorrente quis participar de crime menos grave, responde pela pena deste, aumentada até metade se o resultado mais grave era previsível."
+      ],
+      "naPratica": "Na ocorrência, descrever bem se houve violência, se o agente podia prosseguir e parou, ou se reparou o dano, muda o enquadramento inteiro. O registro é o que permite ao juízo aplicar desistência voluntária ou arrependimento.",
+      "pegadinhas": [
+        "Dizer que a embriaguez voluntária completa exclui a imputabilidade. Não exclui.",
+        "Trocar 'medida da culpabilidade' por 'medida da personalidade' no concurso de pessoas.",
+        "Confundir arrependimento eficaz (impede o resultado) com posterior (repara o dano).",
+        "Limitar a legítima defesa à defesa própria — ela alcança direito de outrem.",
+        "Dizer que o erro de tipo exclui dolo e culpa. Exclui o dolo; pune-se a culpa se prevista."
+      ],
+      "revisao": [
+        "Crime = fato típico + ilícito + culpável",
+        "Tentativa: redução de 1/3 a 2/3",
+        "Arrependimento posterior: até o RECEBIMENTO da denúncia",
+        "Excludentes de ilicitude: art. 23 (4 causas)",
+        "Embriaguez voluntária não exclui imputabilidade",
+        "Participação de menor importância: redução de 1/6 a 1/3"
+      ]
+    },
+    "direito-penal-comum:2.4": {
+      "emUmaFrase": "A pena se calcula em três fases, e só as causas de aumento e de diminuição podem ultrapassar o mínimo e o máximo previstos na lei.",
+      "explicacao": [
+        "As penas são de três espécies: PRIVATIVAS DE LIBERDADE (reclusão, detenção e prisão simples), RESTRITIVAS DE DIREITOS e MULTA.",
+        "O cálculo segue o CRITÉRIO TRIFÁSICO do art. 68. Primeira fase: PENA-BASE, fixada pelas circunstâncias judiciais do art. 59 — culpabilidade, antecedentes, conduta social, personalidade, motivos, circunstâncias e consequências do crime e comportamento da vítima. Segunda fase: AGRAVANTES (arts. 61 e 62) e ATENUANTES (arts. 65 e 66). Terceira fase: CAUSAS DE AUMENTO e DE DIMINUIÇÃO.",
+        "A regra decisiva: agravantes e atenuantes NÃO podem levar a pena além dos limites legais. A Súmula 231 do STJ é expressa quanto às atenuantes — elas não reduzem abaixo do mínimo. Já as causas de aumento e de diminuição, por terem frações previstas em lei, PODEM ultrapassar o mínimo e o máximo.",
+        "Os REGIMES iniciais seguem a pena e a reincidência: fechado para pena superior a 8 anos; semiaberto para pena superior a 4 e até 8, se primário; aberto para pena igual ou inferior a 4, se primário. Circunstâncias judiciais desfavoráveis e reincidência autorizam regime mais gravoso, com motivação idônea.",
+        "Os EFEITOS DA CONDENAÇÃO interessam de perto ao servidor público. O art. 92 prevê a perda do cargo, função pública ou mandato eletivo quando aplicada pena privativa de liberdade igual ou superior a um ano, nos crimes praticados com abuso de poder ou violação de dever para com a administração, ou superior a quatro anos nos demais casos. Esse efeito NÃO é automático: precisa ser motivadamente declarado na sentença. Guarde a exceção: na Lei de Tortura, a perda do cargo é efeito AUTOMÁTICO."
+      ],
+      "naPratica": "O efeito mais pesado de uma condenação, para quem veste farda, não é a pena em si — é a perda do cargo. Por isso o art. 92 e a exceção da tortura são cobrados com tanta frequência em concursos policiais.",
+      "pegadinhas": [
+        "Dizer que atenuante reduz abaixo do mínimo legal. Súmula 231 do STJ diz o contrário.",
+        "Afirmar que a perda do cargo é automática no Código Penal. Só é automática na Lei de Tortura.",
+        "Apresentar o cálculo em duas fases. São três.",
+        "Dizer que causas de aumento não podem ultrapassar o máximo. Podem."
+      ],
+      "revisao": [
+        "Três fases: base → agravantes/atenuantes → causas de aumento/diminuição",
+        "Agravantes e atenuantes: dentro dos limites legais",
+        "Causas de aumento e diminuição: podem ultrapassar",
+        "Regime: +8 fechado · +4 até 8 semiaberto · até 4 aberto (primário)",
+        "Perda do cargo (art. 92): motivada, não automática"
+      ]
+    },
+    "direito-penal-comum:2.5": {
+      "emUmaFrase": "São as causas que fazem o Estado perder o direito de punir — e a prescrição é a que mais cai, porque é pura tabela de prazos.",
+      "explicacao": [
+        "O art. 107 lista as causas: morte do agente; anistia, graça ou indulto; retroatividade de lei que não mais considera o fato criminoso (abolitio criminis); prescrição, decadência ou perempção; renúncia ao direito de queixa ou perdão aceito, nos crimes de ação privada; retratação do agente, nos casos em que a lei admite; e perdão judicial, nos casos previstos em lei.",
+        "Distinga os três institutos de clemência. ANISTIA vem por lei do Congresso, alcança fatos (em regra crimes políticos) e apaga o crime e seus efeitos penais. GRAÇA é individual e concedida pelo Presidente. INDULTO é coletivo, também do Presidente. Graça e indulto extinguem a pena, não o crime.",
+        "A PRESCRIÇÃO é a perda do direito de punir pelo decurso do tempo. A prescrição da PRETENSÃO PUNITIVA regula-se pelo máximo da pena cominada; a da PRETENSÃO EXECUTÓRIA, pela pena aplicada. Os prazos do art. 109 são: 20 anos se o máximo é superior a 12; 16 anos se superior a 8 até 12; 12 anos se superior a 4 até 8; 8 anos se superior a 2 até 4; 4 anos se igual a 1 ou, sendo superior, não excede 2; e 3 anos se inferior a 1 ano.",
+        "A prescrição começa a correr, em regra, do dia da CONSUMAÇÃO; na tentativa, do dia em que cessou a atividade criminosa; nos permanentes, do dia em que cessou a permanência. São causas interruptivas, entre outras, o recebimento da denúncia ou queixa, a pronúncia, a publicação da sentença condenatória recorrível e a reincidência.",
+        "DECADÊNCIA é a perda do direito de queixa ou de representação pelo decurso do prazo de seis meses contados do conhecimento da autoria. PEREMPÇÃO é a perda do direito de prosseguir na ação penal privada por inércia do querelante."
+      ],
+      "naPratica": "Prazo prescricional não é detalhe burocrático: é o que decide se um inquérito ainda tem utilidade. Por isso a celeridade na conclusão dos atos de polícia tem efeito concreto.",
+      "pegadinhas": [
+        "Incluir a confissão espontânea entre as causas de extinção. É atenuante.",
+        "Dizer que graça e indulto apagam o crime. Extinguem a pena.",
+        "Confundir decadência (6 meses, direito de queixa) com prescrição (direito de punir).",
+        "Usar a pena aplicada para calcular a prescrição da pretensão punitiva antes da sentença."
+      ],
+      "revisao": [
+        "Prescrição: +12 → 20 anos · +8 a 12 → 16 · +4 a 8 → 12 · +2 a 4 → 8 · até 2 → 4 · <1 → 3",
+        "Punitiva = pena máxima em abstrato · Executória = pena aplicada",
+        "Decadência: 6 meses do conhecimento da autoria",
+        "Anistia apaga o crime · graça e indulto extinguem a pena",
+        "Confissão espontânea é atenuante, não extintiva"
+      ]
+    },
+    "direito-penal-comum:2.6": {
+      "emUmaFrase": "Na parte especial, o que decide o enquadramento é o VERBO do tipo — e a banca troca o verbo para mudar o crime inteiro.",
+      "explicacao": [
+        "CRIMES CONTRA A PESSOA. HOMICÍDIO (art. 121): simples, privilegiado (motivo de relevante valor social ou moral, ou domínio de violenta emoção após injusta provocação) e qualificado (motivo torpe ou fútil, meio cruel, recurso que dificulte a defesa, para assegurar execução ou impunidade de outro crime, contra autoridade de segurança pública no exercício da função, com emprego de arma de fogo de uso restrito ou proibido). LESÃO CORPORAL (art. 129): leve, grave, gravíssima e seguida de morte, graduadas pelo resultado.",
+        "CRIMES CONTRA O PATRIMÔNIO. A diferença fundamental: FURTO (art. 155) é subtrair coisa alheia móvel SEM violência ou grave ameaça à pessoa; ROUBO (art. 157) é subtrair COM violência, grave ameaça ou depois de reduzir a vítima à impossibilidade de resistência. Decore as frações do roubo: §2º (concurso de pessoas, restrição da liberdade da vítima, emprego de arma branca, entre outros) aumenta de um terço até metade; §2º-A (arma de fogo, explosivo) aumenta de DOIS TERÇOS; §2º-B (arma de fogo de uso restrito ou proibido) aplica a pena em DOBRO; §3º, II, é o latrocínio, roubo seguido de morte, com reclusão de 20 a 30 anos.",
+        "Ainda no patrimônio: EXTORSÃO (art. 158) é constranger alguém, com violência ou grave ameaça, a fazer, tolerar que se faça ou deixar de fazer algo, para obter vantagem indevida. RECEPTAÇÃO (art. 180) é adquirir, receber, transportar, conduzir ou ocultar coisa que SABE ser produto de crime — dolosa; se apenas DEVIA presumir pela natureza do negócio, é culposa. ESTELIONATO (art. 171) é obter vantagem ilícita induzindo alguém em erro mediante artifício, ardil ou outro meio fraudulento.",
+        "CRIMES CONTRA A ADMINISTRAÇÃO PÚBLICA — os de maior risco para o próprio servidor. PECULATO (art. 312): apropriar-se de dinheiro ou bem de que tem a posse em razão do cargo; na forma culposa, a reparação do dano antes da sentença irrecorrível EXTINGUE a punibilidade, e depois reduz pela metade. CONCUSSÃO (art. 316): EXIGIR vantagem indevida, ainda que fora da função ou antes de assumi-la, mas em razão dela. CORRUPÇÃO PASSIVA (art. 317): SOLICITAR, RECEBER ou ACEITAR promessa de vantagem. PREVARICAÇÃO (art. 319): retardar ou deixar de praticar ato de ofício, ou praticá-lo contra disposição de lei, para satisfazer interesse ou sentimento PESSOAL — sem vantagem econômica. ADVOCACIA ADMINISTRATIVA (art. 321): patrocinar interesse privado perante a administração.",
+        "O verbo é tudo: EXIGIR é concussão, SOLICITAR é corrupção, APROPRIAR-SE é peculato, RETARDAR por interesse pessoal é prevaricação."
+      ],
+      "naPratica": "Na ocorrência, a pergunta que define o crime é: houve violência ou grave ameaça à pessoa? Se sim, roubo. Se não, furto. E se a subtração foi descoberta e o agente usou força só para fugir, pode configurar roubo impróprio.",
+      "pegadinhas": [
+        "Trocar concussão (exigir) por corrupção passiva (solicitar ou receber).",
+        "Dizer que o roubo com arma de fogo aumenta de um terço até metade. São dois terços.",
+        "Qualificar o homicídio pelo emprego de arma de fogo de uso permitido. Só restrito ou proibido qualifica.",
+        "Afirmar que a reparação no peculato doloso extingue a punibilidade. Só no culposo."
+      ],
+      "revisao": [
+        "Furto: sem violência · Roubo: com violência ou grave ameaça",
+        "Roubo: §2º 1/3 a 1/2 · §2º-A 2/3 · §2º-B dobro",
+        "Latrocínio: reclusão de 20 a 30 anos",
+        "Exigir = concussão · Solicitar/receber = corrupção passiva",
+        "Peculato culposo: reparação antes da sentença extingue"
+      ]
+    },
+    "direito-penal-comum:2.7": {
+      "emUmaFrase": "A Lei de Crimes Ambientais pune pessoa física e também PESSOA JURÍDICA — a única hipótese de responsabilidade penal da empresa no Brasil.",
+      "explicacao": [
+        "A Lei 9.605/1998 organiza os crimes ambientais em grupos: contra a fauna (maus-tratos, caça, pesca proibida), contra a flora (desmatamento, incêndio em mata, destruição de vegetação protegida), poluição e outros crimes contra o meio ambiente, contra o ordenamento urbano e o patrimônio cultural, e contra a administração ambiental.",
+        "O ponto mais distintivo é a RESPONSABILIDADE PENAL DA PESSOA JURÍDICA, admitida com base no art. 225, §3º, da Constituição. As penas aplicáveis à empresa são multa, restritivas de direitos e prestação de serviços à comunidade — não há pena privativa de liberdade para pessoa jurídica. A responsabilização da pessoa jurídica não exclui a das pessoas físicas autoras ou partícipes.",
+        "A lei também prevê benefícios condicionados à reparação: a composição do dano ambiental é requisito para a transação penal e para a suspensão condicional do processo nos crimes de menor potencial ofensivo.",
+        "Para o policial militar, o contato mais frequente é com a PM Ambiental e com condutas flagrantes: maus-tratos a animais, transporte irregular de madeira, pesca em período proibido, queimada sem autorização. Em todas, o registro correto do local, da quantidade e do estado do bem ambiental é o que sustenta a apuração."
+      ],
+      "naPratica": "Numa abordagem com animal silvestre em gaiola, o enquadramento depende de detalhes: espécie, origem, existência de autorização. Descrever esses elementos no boletim é o que permite distinguir crime de infração administrativa.",
+      "pegadinhas": [
+        "Negar a responsabilidade penal da pessoa jurídica em crime ambiental. Ela existe.",
+        "Dizer que a pessoa jurídica pode ser condenada a pena privativa de liberdade. Não pode.",
+        "Afirmar que a responsabilização da empresa afasta a das pessoas físicas. Não afasta.",
+        "Dispensar a reparação do dano para obter os benefícios da lei."
+      ],
+      "revisao": [
+        "Lei 9.605/1998 — base constitucional: art. 225, §3º",
+        "Pessoa jurídica responde penalmente",
+        "Penas da PJ: multa, restritivas de direitos, prestação de serviços",
+        "Responsabilidade da PJ não exclui a da pessoa física",
+        "Benefícios condicionados à reparação do dano"
+      ]
+    },
+    "direito-penal-comum:2.8": {
+      "emUmaFrase": "Súmula é resposta pronta: decorar meia dúzia delas resolve questões inteiras sem precisar raciocinar do zero.",
+      "explicacao": [
+        "As súmulas condensam entendimento já pacificado. Quando a questão cita uma, não há o que discutir — ou a alternativa reproduz o enunciado, ou o contraria.",
+        "Do STF, três são clássicas em prova policial. SÚMULA 145: não há crime quando a preparação do flagrante pela polícia torna impossível a sua consumação — é o flagrante preparado, nulo. SÚMULA 611: transitada em julgado a sentença condenatória, compete ao juízo das execuções a aplicação de lei mais benigna. SÚMULA 719: a imposição de regime mais severo do que a pena aplicada permitir exige motivação idônea.",
+        "Do STJ, as mais cobradas: SÚMULA 231: a incidência da circunstância atenuante não pode conduzir à redução da pena abaixo do mínimo legal. SÚMULA 542: a ação penal relativa ao crime de lesão corporal resultante de violência doméstica contra a mulher é pública INCONDICIONADA. SÚMULA 527: o tempo de duração da medida de segurança não deve ultrapassar o limite máximo da pena abstratamente cominada ao delito. SÚMULA 443: o aumento no roubo circunstanciado exige fundamentação concreta, não bastando a mera indicação do número de majorantes.",
+        "Para memorizar, associe cada súmula a um tema: 145 é flagrante, 231 é dosimetria, 542 é Maria da Penha, 611 é execução, 719 é regime. Em prova, basta reconhecer o tema para lembrar do conteúdo."
+      ],
+      "naPratica": "A Súmula 145 tem efeito direto na rua: campana que aguarda a ação que já ia acontecer gera flagrante ESPERADO, válido. Provocar a conduta que não ocorreria sem a provocação gera flagrante PREPARADO, nulo.",
+      "pegadinhas": [
+        "Dizer que o flagrante esperado é nulo. Nulo é o preparado.",
+        "Afirmar que a atenuante reduz abaixo do mínimo, contrariando a Súmula 231.",
+        "Condicionar à representação a ação por lesão em violência doméstica, contra a Súmula 542."
+      ],
+      "revisao": [
+        "STF 145: flagrante preparado é nulo",
+        "STF 611: lei mais benigna após trânsito = juízo da execução",
+        "STJ 231: atenuante não reduz abaixo do mínimo",
+        "STJ 542: lesão em violência doméstica é ação incondicionada",
+        "STJ 527: medida de segurança limitada à pena máxima em abstrato"
+      ]
+    }
+  }
+}

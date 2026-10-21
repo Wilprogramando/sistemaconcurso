@@ -14,6 +14,10 @@ const comentariosApostila = ler('content/apostila-comentarios.json').comentarios
 const resumos = ler('content/resumos.json');
 const guia = ler('content/guia-materias.json').disciplinas;
 
+const aulas = readdirSync(join(root, 'content'))
+  .filter((f) => /^aulas-[a-z-]+.json$/.test(f))
+  .reduce((acc, f) => ({ ...acc, ...ler(`content/${f}`).aulas }), {});
+
 const ineditas = readdirSync(join(root, 'content'))
   .filter((f) => /^questoes-ineditas-\d+\.json$/.test(f))
   .sort()
@@ -124,6 +128,25 @@ for (const d of apostila.disciplines) {
   }
 }
 
+// ---------- aulas didaticas ----------
+let comAula = 0;
+for (const d of apostila.disciplines) {
+  for (const t of d.topics) {
+    const a = aulas[`${d.slug}:${t.ref}`];
+    if (!a) {
+      avisos.push(`sem aula didatica: ${d.slug}:${t.ref}`);
+      continue;
+    }
+    comAula += 1;
+    if (!a.emUmaFrase || a.emUmaFrase.length < 30)
+      erros.push(`${d.slug}:${t.ref}: emUmaFrase ausente ou curta`);
+    if (!Array.isArray(a.explicacao) || a.explicacao.length < 2)
+      erros.push(`${d.slug}:${t.ref}: explicacao precisa de ao menos 2 paragrafos`);
+    if (a.explicacao?.some((x) => x.length < 60))
+      erros.push(`${d.slug}:${t.ref}: paragrafo curto demais na explicacao`);
+  }
+}
+
 // ---------- resumo ----------
 const porDisciplina = new Map();
 const soma = (slug, n) => porDisciplina.set(slug, (porDisciplina.get(slug) ?? 0) + n);
@@ -149,6 +172,9 @@ for (const exame of provas.exames) {
 }
 console.log(`  ineditas: ${ineditas.length}`);
 console.log(`\nTOTAL: ${total} questoes`);
+
+const totalTopicos = apostila.disciplines.reduce((a, d) => a + d.topics.length, 0);
+console.log(`aulas didaticas: ${comAula}/${totalTopicos} topicos`);
 
 if (avisos.length) {
   console.log(`\navisos (${avisos.length}):`);

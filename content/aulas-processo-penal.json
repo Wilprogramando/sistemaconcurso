@@ -1,0 +1,253 @@
+{
+  "sobre": "Aulas didáticas de Direito Processual Penal Comum — 6 das 60 questões, e o conteúdo mais próximo da rotina operacional do policial militar.",
+  "aulas": {
+    "direito-processual-penal:3.1": {
+      "emUmaFrase": "O processo penal brasileiro é acusatório: quem acusa não julga, e prova obtida por meio ilícito não entra no processo.",
+      "explicacao": [
+        "Três sistemas disputam a história. INQUISITIVO: as funções de acusar, defender e julgar se concentram em uma só pessoa; não há contraditório pleno; o acusado é objeto da investigação. ACUSATÓRIO: funções separadas, contraditório, ampla defesa, publicidade; o acusado é sujeito de direitos. MISTO: fase de investigação inquisitiva seguida de fase processual acusatória.",
+        "O Brasil adota o sistema ACUSATÓRIO, reforçado pela Lei 13.964/2019, que inseriu no art. 3º-A do CPP a vedação à iniciativa do juiz na fase de investigação e à substituição da atuação probatória do órgão acusador. Isso explica por que o juiz não pode mais decretar prisão preventiva de ofício.",
+        "O INQUÉRITO POLICIAL, porém, continua sendo inquisitivo: é peça informativa, sem contraditório pleno. Isso não é contradição — a fase investigativa é preparatória; o contraditório se instala no processo.",
+        "Os princípios que mais caem: PRESUNÇÃO DE INOCÊNCIA (ninguém é considerado culpado até o trânsito em julgado); CONTRADITÓRIO e AMPLA DEFESA, corolários do DEVIDO PROCESSO LEGAL; VEDAÇÃO DAS PROVAS ILÍCITAS (art. 5º, LVI); JUIZ NATURAL (vedados juízo ou tribunal de exceção); PUBLICIDADE, com restrições legais; e FAVOR REI, a dúvida em favor do acusado.",
+        "Sobre a APLICAÇÃO DA LEI PROCESSUAL NO TEMPO, o art. 2º é simples e muito cobrado: a lei processual aplica-se DESDE LOGO, sem prejuízo da validade dos atos realizados sob a lei anterior. É o sistema do isolamento dos atos processuais — nada se renova. E o art. 3º admite interpretação extensiva, aplicação analógica e suplemento dos princípios gerais de direito."
+      ],
+      "naPratica": "A vedação da prova ilícita é o que torna o procedimento da abordagem tão importante. Uma busca feita fora da lei não apenas é inválida: ela contamina o que foi encontrado e, muitas vezes, tudo o que dela derivou.",
+      "pegadinhas": [
+        "Dizer que o processo penal brasileiro é inquisitivo. Inquisitivo é o inquérito; o processo é acusatório.",
+        "Afirmar que a lei processual nova exige renovação dos atos já praticados. Eles permanecem válidos.",
+        "Dizer que a lei processual penal não admite analogia. O art. 3º admite.",
+        "Sustentar que a verdade real autoriza prova ilícita. Não autoriza."
+      ],
+      "revisao": [
+        "Sistema acusatório; inquérito é inquisitivo",
+        "Art. 2º: aplicação imediata, atos anteriores válidos",
+        "Art. 3º: admite interpretação extensiva e analogia",
+        "Prova ilícita é inadmissível (art. 5º, LVI)",
+        "Juiz não decreta preventiva de ofício"
+      ]
+    },
+    "direito-processual-penal:3.2": {
+      "emUmaFrase": "O inquérito é peça informativa, inquisitiva e dispensável — e o delegado, em nenhuma hipótese, pode mandar arquivá-lo.",
+      "explicacao": [
+        "O inquérito policial é procedimento administrativo, preparatório da ação penal, presidido pelo DELEGADO DE POLÍCIA. Suas características formam uma lista que a banca cobra inteira: ESCRITO, SIGILOSO, INQUISITIVO, OFICIOSO (instaurado de ofício nos crimes de ação pública incondicionada), DISCRICIONÁRIO quanto às diligências, INDISPONÍVEL (uma vez instaurado, a autoridade não pode arquivar) e DISPENSÁVEL — se o Ministério Público já tiver elementos suficientes, denuncia sem ele.",
+        "A INSTAURAÇÃO varia conforme a ação penal. Na pública incondicionada, de ofício, por requisição do MP ou do juiz, por requerimento do ofendido ou por auto de prisão em flagrante. Na pública condicionada, depende de representação. Na privada, de requerimento de quem tem qualidade para intentar a queixa.",
+        "Os PRAZOS do art. 10 são cobrança certa: 10 DIAS se o indiciado estiver PRESO, contados do dia da prisão; 30 DIAS se estiver SOLTO, prorrogáveis. Leis especiais têm prazos próprios — na Lei de Drogas, 30 dias preso e 90 solto, duplicáveis. Quando o fato é de difícil elucidação e o indiciado está solto, a autoridade pede ao JUIZ a devolução dos autos para novas diligências, e é o juiz quem marca o prazo.",
+        "O ARQUIVAMENTO é tema de três proibições e uma permissão. O art. 17 veda à autoridade policial mandar arquivar. O art. 16 veda ao MP requerer a devolução do inquérito, salvo para novas diligências imprescindíveis ao oferecimento da denúncia. E o DESARQUIVAMENTO só é possível diante de NOTÍCIA DE PROVA NOVA — art. 18 e Súmula 524 do STF. Mera mudança de opinião sobre o mesmo acervo não serve.",
+        "Dois dispositivos modernos merecem atenção. O art. 13-B permite ao MP ou ao delegado requisitar às prestadoras de telecomunicações os meios técnicos que permitam a localização da vítima nos crimes de tráfico de pessoas — mas MEDIANTE AUTORIZAÇÃO JUDICIAL. O art. 14-A, incluído pela Lei 13.964/2019, assegura ao investigado policial, nos casos de uso de força letal no exercício profissional, o direito de constituir defensor."
+      ],
+      "naPratica": "O auto de prisão em flagrante lavrado pela autoridade policial é, ele próprio, forma de instauração do inquérito. O que a guarnição registra na apresentação do preso vira a base de toda a apuração seguinte.",
+      "pegadinhas": [
+        "Trocar os prazos: é 10 preso e 30 solto, não o contrário.",
+        "Dizer que o delegado pode arquivar o inquérito. Nunca pode.",
+        "Omitir a autorização judicial do art. 13-B.",
+        "Trocar 'requerer' por 'requisitar' no art. 14: o ofendido e o indiciado REQUEREM diligências.",
+        "Dizer que o inquérito é indispensável à denúncia. É dispensável."
+      ],
+      "revisao": [
+        "Prazos: 10 dias preso · 30 dias solto (prorrogável)",
+        "Drogas: 30 preso · 90 solto, duplicáveis",
+        "Características: escrito, sigiloso, inquisitivo, oficioso, dispensável, indisponível",
+        "Art. 17: delegado não arquiva",
+        "Desarquivamento: só com notícia de PROVA NOVA (Súmula 524 STF)"
+      ]
+    },
+    "direito-processual-penal:3.3": {
+      "emUmaFrase": "Ação pública se inicia por DENÚNCIA do Ministério Público; ação privada, por QUEIXA do ofendido — e confundir os dois nomes derruba a questão.",
+      "explicacao": [
+        "A AÇÃO PENAL PÚBLICA é privativa do Ministério Público (art. 129, I, da CF) e se inicia por DENÚNCIA. Divide-se em INCONDICIONADA, a regra, e CONDICIONADA à representação do ofendido ou à requisição do Ministro da Justiça.",
+        "A REPRESENTAÇÃO é condição de procedibilidade. Pode ser feita pelo ofendido ou por representante legal, no prazo decadencial de SEIS MESES contados do conhecimento da autoria, e é RETRATÁVEL até o oferecimento da denúncia.",
+        "A AÇÃO PENAL PRIVADA se inicia por QUEIXA, oferecida pelo ofendido. Rege-se por quatro princípios: OPORTUNIDADE (o ofendido decide se processa), DISPONIBILIDADE (pode desistir), INDIVISIBILIDADE (processa todos ou nenhum) e INTRANSCENDÊNCIA. Extinguem a punibilidade a renúncia, o perdão aceito e a perempção.",
+        "A AÇÃO PENAL PRIVADA SUBSIDIÁRIA DA PÚBLICA (art. 5º, LIX, da CF) é a válvula de segurança: se o MP não oferece denúncia no prazo legal, o ofendido pode oferecer queixa subsidiária. Atenção: ela só cabe diante da INÉRCIA do MP, nunca quando ele pede o arquivamento.",
+        "Conheça também o ACORDO DE NÃO PERSECUÇÃO PENAL (art. 28-A), criado pela Lei 13.964/2019: cabe quando não for caso de arquivamento, o investigado confessar formal e circunstancialmente, a infração for sem violência ou grave ameaça e a pena mínima for inferior a 4 anos. Para aferir a pena mínima, consideram-se as causas de aumento e de diminuição aplicáveis. É vedado em crimes de violência doméstica e familiar contra a mulher."
+      ],
+      "naPratica": "A diferença importa na ocorrência: no crime de ação pública condicionada, se a vítima não quer representar, o registro muda de rumo. Já na lesão corporal em contexto de violência doméstica, a ação é INCONDICIONADA — não depende da vontade da vítima.",
+      "pegadinhas": [
+        "Dizer que a ação pública se inicia por queixa. Inicia-se por denúncia.",
+        "Afirmar que a representação é irretratável. É retratável até o oferecimento da denúncia.",
+        "Admitir ação privada subsidiária quando o MP pediu arquivamento. Só cabe na inércia.",
+        "Dizer que o prazo decadencial é de 10 dias. É de 6 meses.",
+        "Admitir ANPP em violência doméstica. É vedado."
+      ],
+      "revisao": [
+        "Pública = denúncia do MP · Privada = queixa do ofendido",
+        "Representação: 6 meses, retratável até a denúncia",
+        "Privada: oportunidade, disponibilidade, indivisibilidade",
+        "Subsidiária: só na INÉRCIA do MP",
+        "ANPP: sem violência, pena mínima < 4 anos, confissão"
+      ]
+    },
+    "direito-processual-penal:3.4": {
+      "emUmaFrase": "Competência é saber quem julga — e para você a pergunta decisiva é: crime militar vai à Justiça Militar estadual, salvo doloso contra a vida de civil, que vai ao Júri.",
+      "explicacao": [
+        "A competência se fixa por critérios. Pelo LUGAR da infração (ratione loci), em regra o lugar da consumação; nos crimes tentados, o lugar do último ato de execução. Pelo DOMICÍLIO do réu, subsidiariamente. Pela MATÉRIA (ratione materiae), que separa Justiça comum, eleitoral e militar. Pela PESSOA (ratione personae), que gera o foro por prerrogativa de função.",
+        "Para a sua prova, o eixo é a JUSTIÇA MILITAR ESTADUAL. O art. 125, §4º, da Constituição dá a ela competência para processar e julgar os MILITARES DOS ESTADOS nos crimes militares definidos em lei e as ações judiciais contra atos disciplinares militares, RESSALVADA a competência do júri quando a vítima for civil. Ela nunca julga civis.",
+        "O §5º completa e é muito cobrado: compete ao JUIZ DE DIREITO do juízo militar processar e julgar, MONOCRATICAMENTE, os crimes militares cometidos contra CIVIS; ao CONSELHO DE JUSTIÇA, sob a presidência do juiz de direito, os demais crimes militares.",
+        "Monte o raciocínio em três perguntas. É crime militar pelo art. 9º do CPM? Se não, Justiça comum. Se sim, é doloso contra a vida com vítima civil? Se sim, Tribunal do Júri. Se não, Justiça Militar estadual — e aí, vítima civil leva ao juiz de direito sozinho; vítima militar leva ao Conselho.",
+        "Guarde também a SEPARAÇÃO OBRIGATÓRIA de processos: o art. 79, I, do CPP determina a separação entre a jurisdição comum e a militar. E a CONEXÃO e a CONTINÊNCIA, que reúnem processos, não prevalecem sobre essa separação."
+      ],
+      "naPratica": "Uma briga entre dois policiais militares da ativa, dentro do quartel, é crime militar e vai à Justiça Militar estadual. A mesma briga entre um policial e um civil, na rua, fora das hipóteses do art. 9º, é crime comum.",
+      "pegadinhas": [
+        "Dizer que a Justiça Militar estadual julga civis. Nunca julga.",
+        "Mandar ao Conselho de Justiça o crime militar com vítima civil não doloso contra a vida — esse é do juiz de direito, sozinho.",
+        "Mandar à Justiça Militar o homicídio doloso de militar contra civil. Vai ao Júri.",
+        "Reunir processos da Justiça comum e da militar por conexão. A separação é obrigatória."
+      ],
+      "revisao": [
+        "Art. 125, §4º: militares dos estados, crimes militares",
+        "Vítima civil + doloso contra a vida = Tribunal do Júri",
+        "Vítima civil, não doloso contra a vida = juiz de direito, monocrático",
+        "Vítima militar = Conselho de Justiça",
+        "Art. 79, I: separação obrigatória comum × militar"
+      ]
+    },
+    "direito-processual-penal:3.5": {
+      "emUmaFrase": "Busca pessoal dispensa mandado quando há fundada suspeita — e fundada suspeita exige elementos concretos, não 'atitude suspeita'.",
+      "explicacao": [
+        "A prova no processo penal tem como destinatário o juiz, que a valora livremente, com motivação. O art. 155 impede a condenação fundada EXCLUSIVAMENTE em elementos colhidos na investigação, ressalvadas as provas cautelares, não repetíveis e antecipadas.",
+        "São INADMISSÍVEIS as provas ILÍCITAS e as DERIVADAS delas — a teoria dos frutos da árvore envenenada, no art. 157, §1º. Há duas exceções: quando não evidenciado o nexo de causalidade e quando a prova derivada puder ser obtida por FONTE INDEPENDENTE.",
+        "A BUSCA PESSOAL é o instituto mais próximo do seu dia a dia. O art. 244 dispensa o mandado quando houver FUNDADA SUSPEITA de que a pessoa esteja na posse de arma proibida ou de objetos ou papéis que constituam corpo de delito, no caso de prisão, ou no curso de busca domiciliar. A jurisprudência recente do STJ apertou o conceito: a fundada suspeita exige elementos concretos e objetivos, descritos pelo policial. Nervosismo, 'atitude suspeita' genérica ou o perfil da pessoa não bastam, e a prova obtida assim é ilícita.",
+        "A BUSCA DOMICILIAR depende, em regra, de mandado judicial e deve ser executada DE DIA (art. 245), salvo consentimento do morador. Sem consentimento, o ingresso noturno só se admite em flagrante, desastre ou socorro. O STF exige justa causa prévia e aferível para o flagrante que justifica a entrada, e recomenda o registro do consentimento, preferencialmente em vídeo.",
+        "Outras provas cobradas: CONFISSÃO é divisível e retratável, e deve ser confrontada com as demais provas (art. 197). RECONHECIMENTO DE PESSOAS tem rito no art. 226, e o STJ passou a exigir sua observância sob pena de nulidade. PERÍCIA: o juiz não fica vinculado ao laudo, podendo aceitá-lo ou rejeitá-lo no todo ou em parte (art. 182). TESTEMUNHA tem o dever de dizer a verdade; o acusado não presta compromisso.",
+        "Por fim, o NEMO TENETUR SE DETEGERE: ninguém é obrigado a produzir prova contra si. O investigado não é obrigado a fornecer padrões vocais, material grafotécnico, nem a participar de reconstituição. Mas o direito ao silêncio NÃO autoriza mentir sobre a identidade — atribuir-se falsa identidade é crime do art. 307 do CP."
+      ],
+      "naPratica": "Descrever no boletim o que exatamente motivou a busca — o volume na cintura, a tentativa de descarte, a informação prévia qualificada — é o que separa uma prova válida de uma prova anulada meses depois.",
+      "pegadinhas": [
+        "Dizer que a busca pessoal sempre exige mandado. Não exige, com fundada suspeita.",
+        "Admitir busca domiciliar noturna com mandado. Mandado só autoriza ingresso de dia.",
+        "Afirmar que a confissão dispensa as demais provas.",
+        "Dizer que o juiz está vinculado ao laudo pericial.",
+        "Sustentar que o direito ao silêncio permite mentir sobre a identidade."
+      ],
+      "revisao": [
+        "Art. 244: busca pessoal sem mandado com fundada suspeita",
+        "Fundada suspeita = elementos concretos e descritos",
+        "Art. 245: busca domiciliar de dia, salvo consentimento",
+        "Prova ilícita contamina a derivada, salvo fonte independente",
+        "Silêncio não autoriza falsa identidade (art. 307 CP)"
+      ]
+    },
+    "direito-processual-penal:3.6": {
+      "emUmaFrase": "Flagrante é o que você faz; preventiva e temporária são o que o juiz decreta — e desde 2019 o juiz não decreta nada de ofício.",
+      "explicacao": [
+        "O art. 302 lista as espécies de FLAGRANTE. PRÓPRIO: está cometendo a infração (I) ou acaba de cometê-la (II). IMPRÓPRIO: é perseguido, logo após, em situação que faça presumir ser o autor (III). PRESUMIDO ou FICTO: é encontrado, logo depois, com instrumentos, armas, objetos ou papéis que façam presumir ser ele o autor (IV).",
+        "O art. 301 traz a distinção que mais cai: QUALQUER DO POVO PODERÁ e as AUTORIDADES POLICIAIS E SEUS AGENTES DEVERÃO prender quem se encontre em flagrante. O facultativo é do particular; o obrigatório é seu.",
+        "Sobre a validade, a jurisprudência distingue: FLAGRANTE PREPARADO ou provocado é NULO (Súmula 145 do STF), porque o agente é induzido e a consumação é impossível. FLAGRANTE ESPERADO é VÁLIDO: a polícia apenas aguarda a ação que já ia ocorrer. FLAGRANTE FORJADO é crime do policial.",
+        "Lavrado o auto, a prisão é comunicada imediatamente ao juiz, ao Ministério Público e à família do preso ou pessoa indicada; o auto é remetido em até 24 horas, com nota de culpa ao preso no mesmo prazo. Segue-se a AUDIÊNCIA DE CUSTÓDIA, em que o juiz verifica a legalidade, a necessidade da prisão e eventuais maus-tratos.",
+        "A PRISÃO PREVENTIVA exige pressupostos (prova da materialidade e indícios suficientes de autoria) e ao menos um fundamento (garantia da ordem pública ou econômica, conveniência da instrução criminal ou asseguração da aplicação da lei penal). Desde a Lei 13.964/2019, o juiz NÃO a decreta de ofício: depende de requerimento do MP, do querelante, do assistente ou de representação da autoridade policial. E o art. 316, parágrafo único, obriga à REVISÃO a cada 90 DIAS, por decisão fundamentada, sob pena de a prisão tornar-se ilegal.",
+        "A PRISÃO TEMPORÁRIA (Lei 7.960/1989) tem prazo de 5 DIAS, prorrogáveis por mais 5, na regra geral; nos crimes HEDIONDOS e equiparados, 30 DIAS prorrogáveis por mais 30. Depende sempre de mandado judicial e nunca é decretada de ofício.",
+        "Existem ainda as MEDIDAS CAUTELARES DIVERSAS DA PRISÃO (art. 319): comparecimento periódico em juízo, proibição de acesso a lugares, proibição de contato, recolhimento domiciliar noturno, monitoração eletrônica, fiança, suspensão de função pública, entre outras."
+      ],
+      "naPratica": "Decore o par de verbos do art. 301: o cidadão PODE prender em flagrante; você DEVE. E lembre que o pronto e integral socorro à vítima, no acidente de trânsito, impede a prisão em flagrante (art. 301 do CTB).",
+      "pegadinhas": [
+        "Dizer que qualquer do povo DEVERÁ prender. Poderá.",
+        "Afirmar que o flagrante esperado é nulo. Nulo é o preparado.",
+        "Esquecer a revisão da preventiva a cada 90 dias.",
+        "Trocar os prazos da temporária: 5+5 comum, 30+30 hediondo.",
+        "Dizer que o juiz pode decretar preventiva de ofício na investigação."
+      ],
+      "revisao": [
+        "Flagrante: próprio, impróprio (perseguição), presumido (encontrado logo depois)",
+        "Art. 301: particular PODE, policial DEVE",
+        "Preparado é nulo · esperado é válido",
+        "Auto remetido ao juiz em 24h + audiência de custódia",
+        "Preventiva: revisão a cada 90 dias, nunca de ofício",
+        "Temporária: 5+5 comum · 30+30 hediondo"
+      ]
+    },
+    "direito-processual-penal:3.7": {
+      "emUmaFrase": "São os incidentes que correm ao lado do processo principal e as medidas que garantem a reparação do dano — tópico de baixa incidência, leitura única.",
+      "explicacao": [
+        "As QUESTÕES PREJUDICIAIS são aquelas cuja solução influencia a decisão sobre o crime. Podem ser OBRIGATÓRIAS, quando versam sobre o estado civil das pessoas e exigem a suspensão do processo penal até a decisão no cível, ou FACULTATIVAS, quando versam sobre outra matéria de competência do juízo cível e a suspensão fica a critério do juiz.",
+        "Entre os PROCESSOS INCIDENTES estão as exceções (suspeição, incompetência, litispendência, ilegitimidade de parte e coisa julgada), as incompatibilidades e impedimentos, o conflito de jurisdição, a restituição de coisas apreendidas e o incidente de insanidade mental do acusado.",
+        "As MEDIDAS ASSECURATÓRIAS existem para garantir a reparação do dano e o perdimento de bens. SEQUESTRO recai sobre bens adquiridos com os proventos da infração. ARRESTO recai sobre bens lícitos do investigado, para garantir a indenização. ESPECIALIZAÇÃO DA HIPOTECA LEGAL é o registro da hipoteca sobre imóveis do acusado.",
+        "Para o policial militar, o contato prático é com a APREENSÃO de objetos no local e com a RESTITUIÇÃO de coisas apreendidas. Vale lembrar o art. 11 do CPP: os instrumentos do crime e os objetos que interessarem à prova ACOMPANHAM os autos do inquérito."
+      ],
+      "naPratica": "O cuidado com a cadeia de custódia do que é apreendido — lacrar, descrever, identificar quem manuseou — é o que preserva o valor probatório. A Lei 13.964/2019 detalhou essas etapas no CPP.",
+      "pegadinhas": [
+        "Trocar sequestro (bens de origem ilícita) por arresto (bens lícitos).",
+        "Dizer que os instrumentos do crime não acompanham os autos. Acompanham.",
+        "Afirmar que toda questão prejudicial suspende obrigatoriamente o processo. Só a de estado civil."
+      ],
+      "revisao": [
+        "Prejudicial obrigatória: estado civil das pessoas",
+        "Sequestro: bens adquiridos com proventos da infração",
+        "Arresto: bens lícitos, para garantir indenização",
+        "Art. 11: instrumentos e objetos acompanham os autos",
+        "Cadeia de custódia detalhada pela Lei 13.964/2019"
+      ]
+    },
+    "direito-processual-penal:3.8": {
+      "emUmaFrase": "Cada sujeito do processo tem um papel próprio — e os atos de comunicação (citação e intimação) têm prazos e formas que a banca cobra literalmente.",
+      "explicacao": [
+        "O JUIZ é o sujeito imparcial; sujeita-se a impedimento e suspeição. O MINISTÉRIO PÚBLICO é o titular da ação penal pública e fiscal da lei, e exerce o controle externo da atividade policial. O ACUSADO é sujeito de direitos, com direito ao silêncio e à ampla defesa. O DEFENSOR é indispensável: nenhum processo corre sem defesa técnica. O ASSISTENTE DE ACUSAÇÃO é o ofendido ou seu representante, admitido após o recebimento da denúncia.",
+        "Entre os AUXILIARES estão o escrivão, o oficial de justiça, os peritos e os intérpretes. Os PERITOS são sujeitos a impedimento e suspeição como o juiz.",
+        "A CITAÇÃO é o ato que chama o réu ao processo e pode ser REAL (pessoal, por mandado, por carta precatória, rogatória ou de ordem) ou FICTA (por edital, quando o réu não é encontrado, ou por hora certa, quando se oculta). Citado por edital e não comparecendo nem constituindo advogado, o processo e a prescrição ficam suspensos (art. 366).",
+        "A INTIMAÇÃO comunica atos já praticados. Os prazos processuais, diferentemente dos penais, EXCLUEM o dia do começo e incluem o do vencimento.",
+        "Guarde o art. 800, que traz prazos de memória pura: os juízes singulares proferem sentença em 10 dias, decisões interlocutórias em 5 dias e despachos de expediente em 1 dia."
+      ],
+      "naPratica": "A diferença entre citação e intimação aparece quando a guarnição cumpre mandados: citar é chamar ao processo pela primeira vez; intimar é comunicar um ato já praticado.",
+      "pegadinhas": [
+        "Dizer que o prazo processual inclui o dia do começo. Exclui — o penal é que inclui.",
+        "Afirmar que o processo corre sem defensor. Não corre.",
+        "Trocar os prazos do art. 800: 10 sentença, 5 interlocutória, 1 despacho.",
+        "Dizer que o assistente de acusação pode intervir antes do recebimento da denúncia."
+      ],
+      "revisao": [
+        "Prazo processual: exclui o dia do começo",
+        "Prazo penal: inclui o dia do começo",
+        "Citação real × ficta (edital e hora certa)",
+        "Art. 366: citado por edital e ausente = processo e prescrição suspensos",
+        "Art. 800: 10 · 5 · 1 dia"
+      ]
+    },
+    "direito-processual-penal:3.9": {
+      "emUmaFrase": "O rito depende da pena máxima: ordinário para 4 anos ou mais, sumário para menos de 4, e sumaríssimo para os de menor potencial ofensivo.",
+      "explicacao": [
+        "O procedimento comum se divide em três. ORDINÁRIO: crimes cuja pena máxima é igual ou superior a 4 anos. SUMÁRIO: pena máxima inferior a 4 anos. SUMARÍSSIMO: infrações de menor potencial ofensivo, ou seja, contravenções e crimes com pena máxima não superior a 2 anos, regidos pela Lei 9.099/1995.",
+        "No rito ORDINÁRIO, a sequência é: oferecimento da denúncia, recebimento, citação, resposta à acusação em 10 dias, eventual absolvição sumária, audiência de instrução e julgamento com oitiva do ofendido, testemunhas de acusação e de defesa, esclarecimentos de peritos, acareações, reconhecimento, interrogatório do acusado ao final, diligências, alegações finais e sentença.",
+        "A Lei 9.099/1995 traz institutos próprios: a COMPOSIÇÃO CIVIL dos danos, a TRANSAÇÃO PENAL e a SUSPENSÃO CONDICIONAL DO PROCESSO, esta cabível quando a pena mínima não for superior a 1 ano. O termo circunstanciado substitui o auto de prisão em flagrante, e não se impõe prisão em flagrante ao autor do fato que se compromete a comparecer ao juizado.",
+        "Duas vedações importantes. O art. 41 da Lei Maria da Penha afasta a aplicação da Lei 9.099/1995 aos crimes praticados com violência doméstica e familiar contra a mulher, qualquer que seja a pena. E o art. 90-A afasta sua aplicação no âmbito da Justiça Militar.",
+        "Na Lei 9.099, o recurso contra a sentença e contra a decisão que rejeita a denúncia ou a queixa é a APELAÇÃO, em 10 dias, para a Turma Recursal — diferente do CPP, em que a rejeição da denúncia desafia recurso em sentido estrito."
+      ],
+      "naPratica": "Saber que a Lei 9.099 não se aplica à violência doméstica muda o procedimento na ocorrência: não há termo circunstanciado nem transação; o caso segue o rito comum e as medidas protetivas.",
+      "pegadinhas": [
+        "Aplicar a Lei 9.099 à violência doméstica contra a mulher. É vedado pelo art. 41.",
+        "Aplicar a Lei 9.099 aos crimes militares. Vedado pelo art. 90-A.",
+        "Dizer que o interrogatório abre a instrução. Ele é o último ato.",
+        "Usar recurso em sentido estrito contra rejeição de denúncia no juizado. Ali é apelação."
+      ],
+      "revisao": [
+        "Ordinário: pena máxima ≥ 4 anos",
+        "Sumário: pena máxima < 4 anos",
+        "Sumaríssimo: menor potencial ofensivo (até 2 anos)",
+        "Suspensão condicional do processo: pena mínima ≤ 1 ano",
+        "Interrogatório é o ÚLTIMO ato da instrução",
+        "Lei 9.099 não se aplica à violência doméstica nem à Justiça Militar"
+      ]
+    },
+    "direito-processual-penal:3.10": {
+      "emUmaFrase": "Nulidade absoluta é vício que se presume prejudicial; relativa precisa ser alegada no momento certo e com prova do prejuízo — e sem prejuízo não há nulidade.",
+      "explicacao": [
+        "O princípio que governa o tema é o PAS DE NULLITÉ SANS GRIEF, positivado no art. 563: nenhum ato será declarado nulo se não houver resultado prejuízo para a acusação ou para a defesa.",
+        "NULIDADE ABSOLUTA atinge matéria de ordem pública, o prejuízo é presumido e pode ser reconhecida de ofício, a qualquer tempo. NULIDADE RELATIVA depende de alegação no momento oportuno, sob pena de preclusão, e de demonstração do prejuízo.",
+        "Três regras do CPP caem com frequência. O art. 565 impede que a parte argua nulidade a que haja dado causa ou para a qual tenha concorrido. O art. 567 estabelece que a incompetência do juízo anula somente os ATOS DECISÓRIOS, devendo o processo ser remetido ao juiz competente, que pode ratificar os atos instrutórios. O art. 571 fixa o momento de arguição conforme a fase.",
+        "A SENTENÇA pode ser condenatória, absolutória própria (sem imposição de medida) ou absolutória imprópria (absolve, mas impõe medida de segurança). Deve conter relatório, fundamentação e dispositivo. A EMENDATIO LIBELLI (art. 383) permite ao juiz dar definição jurídica diversa ao fato descrito, ainda que aplique pena mais grave. A MUTATIO LIBELLI (art. 384) ocorre quando surge elemento novo não contido na denúncia, exigindo aditamento pelo MP.",
+        "Entre os RECURSOS, os mais cobrados: APELAÇÃO, contra sentenças definitivas, prazo de 5 dias para interpor; RECURSO EM SENTIDO ESTRITO, nas hipóteses taxativas do art. 581, incluindo a rejeição da denúncia; EMBARGOS DE DECLARAÇÃO, para ambiguidade, obscuridade, contradição ou omissão; e o HABEAS CORPUS, que não é propriamente recurso, mas ação autônoma de impugnação."
+      ],
+      "naPratica": "A lição prática é a mesma de sempre: procedimento bem feito evita nulidade. Registrar hora, local, testemunhas e o motivo concreto de cada ato é o que sustenta a validade lá na frente.",
+      "pegadinhas": [
+        "Dizer que toda nulidade pode ser alegada a qualquer tempo. Só a absoluta.",
+        "Afirmar que a incompetência anula todos os atos. Anula só os decisórios.",
+        "Permitir que a parte alegue nulidade que ela mesma causou.",
+        "Confundir emendatio (mesma descrição, outra classificação) com mutatio (fato novo)."
+      ],
+      "revisao": [
+        "Sem prejuízo não há nulidade (art. 563)",
+        "Absoluta: prejuízo presumido, de ofício, a qualquer tempo",
+        "Relativa: alegação oportuna + prova do prejuízo",
+        "Art. 567: incompetência anula só atos decisórios",
+        "Emendatio: nova classificação · Mutatio: fato novo, exige aditamento",
+        "Apelação: 5 dias para interpor"
+      ]
+    }
+  }
+}

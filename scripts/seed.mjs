@@ -8,6 +8,7 @@
 //   content/apostila-comentarios.json justificativas das questoes da apostila sem fundamento
 //   content/resumos.json              resumos didaticos de disciplinas e topicos
 //   content/guia-materias.json        o que estudar, exemplo e dica por disciplina
+//   content/aulas-*.json              aula didatica de cada topico
 //   content/questoes-ineditas-*.json  questoes ineditas no estilo da banca
 //
 // Idempotente: tudo e casado por ext_id (questoes), slug (disciplinas) e
@@ -64,6 +65,13 @@ const comentarios = ler('content/provas-comentarios.json').comentarios;
 const comentariosApostila = ler('content/apostila-comentarios.json').comentarios;
 const resumos = ler('content/resumos.json');
 const guia = ler('content/guia-materias.json').disciplinas;
+
+// as aulas vivem em um arquivo por disciplina, para ficarem editaveis sem
+// mexer num JSON gigante
+const aulas = readdirSync(join(root, 'content'))
+  .filter((f) => /^aulas-[a-z-]+.json$/.test(f))
+  .sort()
+  .reduce((acc, f) => ({ ...acc, ...ler(`content/${f}`).aulas }), {});
 
 const ineditas = readdirSync(join(root, 'content'))
   .filter((f) => /^questoes-ineditas-\d+\.json$/.test(f))
@@ -126,6 +134,15 @@ for (const d of apostila.disciplines) {
 console.log(`disciplinas: ${idPorSlug.size}`);
 
 let totalTopicos = 0;
+// coluna lesson vem da migracao 0005; sem ela o seed segue sem as aulas
+let aulasDisponiveis = true;
+{
+  const { error } = await db.from('topics').select('lesson').limit(1);
+  if (error && /lesson|schema cache|does not exist/i.test(error.message)) {
+    console.warn('aviso: migracao 0005 ainda nao aplicada — as aulas nao serao gravadas');
+    aulasDisponiveis = false;
+  }
+}
 for (const d of apostila.disciplines) {
   if (!d.topics.length) continue;
   const linhas = d.topics.map((t) => ({
@@ -139,6 +156,7 @@ for (const d of apostila.disciplines) {
     reading_minutes: t.readingMinutes ?? null,
     summary: resumos.topicos[`${d.slug}:${t.ref}`]?.resumo ?? null,
     what_for: resumos.topicos[`${d.slug}:${t.ref}`]?.paraQue ?? null,
+    ...(aulasDisponiveis ? { lesson: aulas[`${d.slug}:${t.ref}`] ?? null } : {}),
   }));
   await upsertEmLotes('topics', linhas, { onConflict: 'discipline_id,ref', defaultToNull: false }, 25);
   totalTopicos += linhas.length;
@@ -152,7 +170,7 @@ const slugPorId = new Map([...idPorSlug].map(([s, i]) => [i, s]));
 for (const t of topicosSalvos ?? []) {
   idTopico.set(`${slugPorId.get(t.discipline_id)}:${t.ref}`, t.id);
 }
-console.log(`topicos: ${totalTopicos}`);
+console.log(`topicos: ${totalTopicos}${aulasDisponiveis ? ` (${Object.keys(aulas).length} com aula didatica)` : ''}`);
 
 // =====================================================================
 // 2. Textos de apoio da prova 2023

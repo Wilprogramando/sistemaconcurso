@@ -1,9 +1,12 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, ArrowRight, Clock, ListChecks, Target } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Clock, FileText, ListChecks, Target } from 'lucide-react';
 import { createClient, getUser } from '@/lib/supabase/server';
 import Blocos, { type Bloco } from '@/components/blocos';
 import TopicStatus from './topic-status';
+import NotasDoTopico from '@/components/notas-do-topico';
+import AulaDoTopico, { type Aula } from '@/components/aula';
+import { ehTabelaAusente, type Nota } from '@/lib/notas';
 
 export const dynamic = 'force-dynamic';
 
@@ -39,18 +42,29 @@ export default async function TopicoPage({
   ]);
   if (!topic) notFound();
 
-  const { data: progresso } = await supabase
-    .from('topic_progress')
-    .select('status')
-    .eq('user_id', user.id)
-    .eq('topic_id', topic.id)
-    .maybeSingle();
+  const [{ data: progresso }, { data: notas, error: erroNotas }] = await Promise.all([
+    supabase
+      .from('topic_progress')
+      .select('status')
+      .eq('user_id', user.id)
+      .eq('topic_id', topic.id)
+      .maybeSingle(),
+    supabase
+      .from('notes')
+      .select('*')
+      .eq('user_id', user.id)
+      .eq('topic_id', topic.id)
+      .order('updated_at', { ascending: false }),
+  ]);
+
+  const notasIndisponiveis = !!erroNotas && ehTabelaAusente(erroNotas.message);
 
   const idx = (irmaos ?? []).findIndex((t) => t.id === topic.id);
   const anterior = idx > 0 ? irmaos![idx - 1] : null;
   const proximo = idx >= 0 && idx < (irmaos?.length ?? 0) - 1 ? irmaos![idx + 1] : null;
 
   const blocos = (topic.blocks as Bloco[] | null) ?? null;
+  const aula = (topic.lesson as Aula | null) ?? null;
 
   return (
     <article className="space-y-5">
@@ -104,15 +118,45 @@ export default async function TopicoPage({
 
       <TopicStatus topicId={topic.id} current={progresso?.status ?? null} />
 
-      <div className="rounded-2xl bg-white p-5 ring-1 ring-slate-200 sm:p-7 dark:bg-slate-900 dark:ring-slate-700">
-        {blocos?.length ? (
-          <Blocos blocos={blocos} />
-        ) : (
-          <pre className="overflow-x-auto font-mono text-[0.8rem] leading-6 whitespace-pre text-slate-700 dark:text-slate-300">
-            {topic.body}
-          </pre>
-        )}
-      </div>
+      <NotasDoTopico
+        notas={(notas ?? []) as Nota[]}
+        topicId={topic.id}
+        disciplineId={d.id}
+        indisponivel={notasIndisponiveis}
+      />
+
+      {aula && <AulaDoTopico aula={aula} />}
+
+      {aula ? (
+        <details className="group rounded-2xl bg-white ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-700">
+          <summary className="flex cursor-pointer items-center gap-2.5 px-5 py-4 font-semibold text-slate-900 dark:text-slate-100">
+            <FileText size={17} className="text-slate-400" />
+            Texto completo da apostila
+            <span className="ml-auto text-xs font-normal text-slate-500 dark:text-slate-400">
+              a letra da lei, como está no material
+            </span>
+          </summary>
+          <div className="border-t border-slate-200 px-5 py-5 sm:px-7 dark:border-slate-700">
+            {blocos?.length ? (
+              <Blocos blocos={blocos} />
+            ) : (
+              <pre className="overflow-x-auto font-mono text-[0.8rem] leading-6 whitespace-pre text-slate-700 dark:text-slate-300">
+                {topic.body}
+              </pre>
+            )}
+          </div>
+        </details>
+      ) : (
+        <div className="rounded-2xl bg-white p-5 ring-1 ring-slate-200 sm:p-7 dark:bg-slate-900 dark:ring-slate-700">
+          {blocos?.length ? (
+            <Blocos blocos={blocos} />
+          ) : (
+            <pre className="overflow-x-auto font-mono text-[0.8rem] leading-6 whitespace-pre text-slate-700 dark:text-slate-300">
+              {topic.body}
+            </pre>
+          )}
+        </div>
+      )}
 
       <nav className="grid gap-3 sm:grid-cols-2">
         {anterior ? (

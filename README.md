@@ -29,7 +29,8 @@ treinando.
 | **Treino do dia** | 20 questões sorteadas por dia, com prioridade para a revisão vencida e para os seus erros, e o resto distribuído pelo peso de cada disciplina. Registra a sequência de dias. |
 | **Vídeo-aulas** | Menu por matéria e por tópico que abre a busca do YouTube já ordenada por visualizações, mais indicações e canais. |
 | **Painel** | Meta diária, revisões vencidas, projeção de nota na objetiva (acurácia × peso de cada disciplina), dias até a prova, etapa de hoje no plano de 30 dias e alerta de disciplina zerada. |
-| **Matérias** | Guia de cada matéria: a pergunta que ela responde, o que é, para que serve, o que estudar, um exemplo concreto, como estudar, armadilhas e números-chave e de cada tópico, antes da teoria. Teoria renderizada em tipografia de verdade — tabelas, listas, destaques "No edital" / "Atenção" / "Dica de prova" — com referências legais e prazos em negrito, tempo de leitura e marcação do que já estudou. |
+| **Anotações** | Caderno livre com busca, filtro por matéria e etiquetas (nota, macete, dúvida, número, letra de lei). Pode anotar de dentro do tópico, sem sair da leitura. |
+| **Matérias** | Aula didática de cada um dos 78 tópicos — em uma frase, explicação em linguagem direta, exemplo do serviço policial, o que a banca troca e resumo para a véspera — com o texto da apostila logo abaixo. Guia de cada matéria: a pergunta que ela responde, o que é, para que serve, o que estudar, um exemplo concreto, como estudar, armadilhas e números-chave e de cada tópico, antes da teoria. Teoria renderizada em tipografia de verdade — tabelas, listas, destaques "No edital" / "Atenção" / "Dica de prova" — com referências legais e prazos em negrito, tempo de leitura e marcação do que já estudou. |
 | **Questões** | Certo/Errado e múltipla escolha A–E. Ao errar, mostra **sua resposta, a resposta correta e o porquê**. Filtros por disciplina, só prova oficial, ou focado nos seus erros. |
 | **Revisão** | Revisão espaçada (SM-2 simplificado): acertou → 3, 7, 16+ dias; errou → volta amanhã. |
 | **Simulado** | Prova oficial de 2023 (2h), simulado ponderado de 60 questões na distribuição da Tabela 8.1 (2h) e o simulado da apostila (1h). Gabarito comentado só no fim, como na prova. |
@@ -67,6 +68,7 @@ estreitas.
    - `supabase/migrations/0003_redacao_e_resumos.sql` — redações, resumos didáticos e limpeza do
      índice legado de questões
    - `supabase/migrations/0004_treino_diario_e_guia.sql` — treino diário e guia das matérias
+   - `supabase/migrations/0005_anotacoes_e_aulas.sql` — anotações do candidato e aulas dos tópicos
 3. Em **Project Settings → API**, copie `Project URL`, a chave `anon` e a `service_role`.
 4. Em **Authentication → Providers → Email**, mantenha o provedor habilitado. Como a tela de login
    não tem cadastro, crie os usuários pelo painel do Supabase e desligue
@@ -149,7 +151,7 @@ lib/
   redacao/          temas de ordem pública e o analisador da redação
   treino.ts         seleção das 20 questões do dia
   videos.ts         menu de vídeo-aulas e buscas prontas no YouTube
-content/            textos extraídos dos PDFs, JSONs estruturados e questões autorais
+content/            textos extraídos dos PDFs, JSONs estruturados, aulas (aulas-*.json) e questões autorais
 scripts/            parse-apostila, parse-provas, validar-conteudo, seed, lib/estrutura
 supabase/migrations/
 ```
@@ -158,7 +160,7 @@ supabase/migrations/
 
 - **Conteúdo** (leitura para qualquer usuário logado): `disciplines`, `topics`, `questions`, `passages`
 - **Por usuário** (RLS restrita ao dono): `profiles`, `attempts`, `reviews`, `exam_sessions`,
-  `error_notes`, `topic_progress`, `study_days`, `bookmarks`, `essays`, `daily_sets`
+  `error_notes`, `topic_progress`, `study_days`, `bookmarks`, `essays`, `daily_sets`, `notes`
 - **Views**: `v_discipline_stats` (acurácia por disciplina) e `v_daily_activity` (atividade por dia)
 
 ---

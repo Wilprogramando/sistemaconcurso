@@ -1,0 +1,189 @@
+{
+  "sobre": "Aulas didáticas de Legislação de Trânsito — 5 das 60 questões. O CTB é onde a PM atua por convênio e onde a distinção entre infração administrativa e crime decide a ocorrência.",
+  "aulas": {
+    "legislacao-transito:6.1": {
+      "emUmaFrase": "O CTB rege o trânsito em todas as vias terrestres abertas à circulação — inclusive as privadas abertas ao público — e trânsito seguro é direito de todos e dever dos órgãos do sistema.",
+      "explicacao": [
+        "O art. 1º abre o Código: o trânsito de qualquer natureza nas vias terrestres do território nacional, abertas à circulação, rege-se pelo CTB. Considera-se trânsito a utilização das vias por pessoas, veículos e animais, isolados ou em grupos, conduzidos ou não, para fins de circulação, parada, estacionamento e operação de carga ou descarga.",
+        "O §2º é cobrado literalmente: o trânsito em condições seguras é um DIREITO DE TODOS e um DEVER dos órgãos e entidades componentes do Sistema Nacional de Trânsito. E o §3º completa: esses órgãos respondem OBJETIVAMENTE por danos causados aos cidadãos em virtude de ação, omissão ou erro na execução e manutenção de programas, projetos e serviços que garantam o trânsito seguro.",
+        "O SISTEMA NACIONAL DE TRÂNSITO reúne os órgãos e entidades da União, dos Estados, do Distrito Federal e dos Municípios. No topo normativo está o CONTRAN, órgão máximo normativo e consultivo.",
+        "O art. 23 trata da POLÍCIA RODOVIÁRIA FEDERAL, com competência no âmbito das rodovias e estradas FEDERAIS: cumprir e fazer cumprir a legislação, realizar o patrulhamento ostensivo, aplicar e arrecadar multas, efetuar levantamento de acidentes, credenciar serviços de escolta, entre outras. Para você, esse artigo serve para delimitar circunscrições — a PM não atua nas federais nessa condição.",
+        "A atuação da PM no trânsito se dá por CONVÊNIO com o órgão de trânsito com circunscrição sobre a via, e por DESIGNAÇÃO, nos termos do art. 280, §4º, que é o dispositivo mais importante do CTB para o policial militar."
+      ],
+      "naPratica": "Uma via dentro de um condomínio fechado, aberta à circulação, está sob o CTB. Já uma área totalmente privada e fechada ao público, não. Essa definição muda se a ocorrência é de trânsito ou não.",
+      "pegadinhas": [
+        "Dizer que o CTB não alcança vias privadas abertas à circulação. Alcança.",
+        "Atribuir à PM o patrulhamento das rodovias federais. É da PRF.",
+        "Dizer que a responsabilidade dos órgãos de trânsito é subjetiva. É objetiva.",
+        "Dizer que o PM lavra auto de trânsito sem convênio e designação."
+      ],
+      "revisao": [
+        "Alcança vias abertas à circulação, inclusive privadas",
+        "Trânsito seguro: direito de todos, dever dos órgãos",
+        "Responsabilidade dos órgãos: OBJETIVA",
+        "CONTRAN: órgão máximo normativo",
+        "Art. 23: PRF nas rodovias federais",
+        "Art. 280, §4º: PM atua por convênio e designação"
+      ]
+    },
+    "legislacao-transito:6.2": {
+      "emUmaFrase": "As normas de circulação cuidam de preferências, velocidade, ultrapassagem e proteção — e o art. 29, §2º, inverte a intuição: o veículo maior é o RESPONSÁVEL, não o preferencial.",
+      "explicacao": [
+        "O art. 26 abre o capítulo com o dever geral: os usuários das vias devem abster-se de todo ato que possa constituir perigo ou obstáculo para o trânsito, danificar a via, suas instalações e equipamentos.",
+        "O art. 29, VII, trata dos VEÍCULOS DE URGÊNCIA — polícia, bombeiro, ambulância, fiscalização de trânsito. Eles gozam de livre circulação, estacionamento e parada quando em serviço de urgência e devidamente identificados por alarme sonoro e iluminação vermelha intermitente. Mas o §1º exige que o deslocamento se faça com a devida cautela e segurança: a sirene não suspende o dever de cuidado.",
+        "O art. 29, §2º, é cobrado com frequência porque inverte o senso comum: respeitadas as normas de circulação, em ordem decrescente, os veículos de MAIOR PORTE serão sempre RESPONSÁVEIS pela segurança dos menores, os motorizados pelos não motorizados, e todos pela incolumidade dos pedestres. É dever de cuidado, não preferência de passagem.",
+        "ULTRAPASSAGEM: feita pela ESQUERDA, salvo quando o veículo a ser ultrapassado estiver sinalizando a intenção de entrar à esquerda. É vedada em locais de pouca visibilidade, nas curvas, nos aclives sem visibilidade, nas passagens de nível e onde houver sinalização proibindo.",
+        "VELOCIDADES na ausência de sinalização (art. 61). Vias URBANAS: 80 km/h nas de trânsito rápido, 60 nas arteriais, 40 nas coletoras, 30 nas locais. Vias RURAIS: 110 km/h para automóveis, camionetas e motocicletas em rodovias de pista dupla, 90 em pista simples, e 60 nas estradas não pavimentadas; para ônibus e caminhões, 90 e 80 nas rodovias.",
+        "PROTEÇÃO: o art. 64 determina que crianças com menos de DEZ ANOS sejam transportadas nos bancos traseiros, com cinto ou dispositivo de retenção, salvo exceções do CONTRAN. O art. 65 torna obrigatório o uso do cinto de segurança em TODAS as vias do território nacional. E o art. 67-C limita a jornada do motorista profissional a cinco horas e meia ininterruptas de direção, com descanso de trinta minutos."
+      ],
+      "naPratica": "O §2º do art. 29 é a base jurídica de muitas responsabilizações em acidentes: o condutor do caminhão responde pela segurança do carro, o do carro pela da moto, e todos pela do pedestre.",
+      "pegadinhas": [
+        "Transformar o art. 29, §2º, em regra de preferência. É dever de cuidado.",
+        "Dizer que o veículo de urgência pode trafegar sem limite de velocidade.",
+        "Restringir o uso do cinto às rodovias. É obrigatório em todas as vias.",
+        "Trocar a escada de velocidades urbanas (80-60-40-30) pela rural (110-90-60)."
+      ],
+      "revisao": [
+        "Urbanas: 80 · 60 · 40 · 30 km/h",
+        "Rurais: 110 pista dupla · 90 pista simples · 60 estrada",
+        "Ultrapassagem pela esquerda, salvo sinalização de entrada à esquerda",
+        "Crianças < 10 anos: banco traseiro",
+        "Cinto obrigatório em todas as vias",
+        "Motorista profissional: 5h30 ininterruptas + 30 min"
+      ]
+    },
+    "legislacao-transito:6.3": {
+      "emUmaFrase": "A ordem de prevalência é Agente > Semáforo > Demais sinais > Normas de circulação: o gesto do policial vale mais que o farol verde.",
+      "explicacao": [
+        "A sinalização de trânsito se classifica em VERTICAL (placas), HORIZONTAL (marcas no pavimento), DISPOSITIVOS AUXILIARES, SINALIZAÇÃO LUMINOSA (semáforos), SINAIS SONOROS e GESTOS do agente e do condutor.",
+        "A sinalização vertical se divide por função. REGULAMENTAÇÃO: impõe obrigações, limitações e proibições — descumprir é infração. ADVERTÊNCIA: alerta para condições potencialmente perigosas. INDICAÇÃO: identifica vias e orienta percursos, com caráter informativo.",
+        "O art. 80 estabelece que, sempre que necessário, será colocada sinalização ao longo da via, e VEDA a utilização de qualquer elemento que prejudique a visibilidade, a visualização e a interpretação da sinalização — inclusive publicidade.",
+        "O art. 89 fixa a ORDEM DE PREVALÊNCIA, que é o item mais cobrado do capítulo: as ordens do AGENTE de trânsito prevalecem sobre as normas de circulação e demais sinais; as indicações do SEMÁFORO prevalecem sobre os demais sinais, EXCETO os sinais de PARADA OBRIGATÓRIA; e as indicações dos demais sinais prevalecem sobre as normas de circulação.",
+        "O macete é a escada: Agente > Semáforo > Sinais > Normas. E a ressalva: o semáforo não vence a parada obrigatória."
+      ],
+      "naPratica": "Num cruzamento com semáforo quebrado ou com fluxo alterado por acidente, o agente de trânsito assume o controle — e o condutor deve obedecê-lo mesmo contra a indicação luminosa. É o art. 89 em ação.",
+      "pegadinhas": [
+        "Dizer que o semáforo prevalece sobre o agente. É o contrário.",
+        "Esquecer a ressalva dos sinais de parada obrigatória.",
+        "Admitir publicidade sobre a sinalização desde que não a oculte totalmente. O art. 80 veda prejudicar a visibilidade.",
+        "Chamar as marcas no pavimento de sinalização vertical. São horizontais."
+      ],
+      "revisao": [
+        "Agente > Semáforo > Demais sinais > Normas de circulação",
+        "Semáforo não prevalece sobre PARADA OBRIGATÓRIA",
+        "Vertical: regulamentação, advertência, indicação",
+        "Horizontal: marcas no pavimento",
+        "Art. 80: vedado prejudicar a visibilidade da sinalização"
+      ]
+    },
+    "legislacao-transito:6.4": {
+      "emUmaFrase": "Os veículos se classificam por tração, espécie e categoria — e modificar característica de fábrica sem autorização é irregularidade que gera retenção.",
+      "explicacao": [
+        "O art. 96 classifica os veículos. QUANTO À TRAÇÃO: automotor, elétrico, de propulsão humana, de tração animal, reboque ou semirreboque. QUANTO À ESPÉCIE: de passageiros (bicicleta, motoneta, motocicleta, automóvel, micro-ônibus, ônibus, bonde, reboque), de carga (motoneta, triciclo, caminhonete, caminhão), misto, de competição, de tração e especial. QUANTO À CATEGORIA: oficial, de representação diplomática, particular, de aluguel e de aprendizagem.",
+        "O art. 98 é o mais cobrado: nenhum proprietário ou responsável poderá, SEM PRÉVIA AUTORIZAÇÃO da autoridade competente, fazer ou ordenar que sejam feitas modificações da característica de fábrica do veículo. Alterações no sistema de escapamento, na suspensão, nos vidros e na iluminação entram nessa vedação.",
+        "O art. 99 impõe que só transite o veículo cujo peso e dimensões atendam aos limites do CONTRAN, e o art. 102 exige que o veículo de carga esteja devidamente equipado para transitar.",
+        "Para a atividade de fiscalização, o relevante é que a irregularidade nos equipamentos obrigatórios ou a modificação não autorizada autoriza a RETENÇÃO do veículo — medida administrativa que pode ser sanada no local, se a irregularidade ali puder ser corrigida."
+      ],
+      "naPratica": "Escapamento alterado, insulfilm fora do padrão e farol de cor não permitida são casos cotidianos de modificação não autorizada. A retenção é a medida administrativa cabível, e ela se encerra quando o veículo é regularizado.",
+      "pegadinhas": [
+        "Dizer que a modificação de característica independe de autorização.",
+        "Classificar o reboque como veículo de passageiros por tração própria.",
+        "Tratar a retenção como penalidade. É medida administrativa.",
+        "Dizer que a retenção nunca pode ser sanada no local."
+      ],
+      "revisao": [
+        "Tração, espécie e categoria",
+        "Categorias: oficial, diplomática, particular, aluguel, aprendizagem",
+        "Art. 98: modificação exige autorização prévia",
+        "Peso e dimensões: limites do CONTRAN",
+        "Irregularidade sanável no local libera o veículo"
+      ]
+    },
+    "legislacao-transito:6.5": {
+      "emUmaFrase": "Cinco categorias de habilitação, validade que varia com a idade e uma Permissão de um ano que só vira CNH para quem não comete infração grave ou gravíssima.",
+      "explicacao": [
+        "Os REQUISITOS para habilitar-se, no art. 140: ser penalmente imputável, saber ler e escrever e possuir documento de identidade e CPF.",
+        "As CATEGORIAS, no art. 143. A: veículo motorizado de duas ou três rodas, com ou sem carro lateral. B: veículo motorizado não abrangido pela A, cujo peso bruto total não exceda 3.500 kg e cuja lotação não exceda 8 lugares, excluído o motorista. C: transporte de CARGA com peso bruto total acima de 3.500 kg. D: transporte de PASSAGEIROS com lotação acima de 8 lugares. E: unidade acoplada, reboque, semirreboque ou articulada com 6.000 kg ou mais de peso bruto total, ou lotação acima de 8 lugares.",
+        "O art. 145 traz os requisitos para C, D e E: estar habilitado no mínimo há UM ANO na categoria B, ou na imediatamente anterior, e não ter cometido infração grave ou gravíssima, nem ser reincidente em média, nos últimos doze meses.",
+        "O art. 147 lista os EXAMES: aptidão física e mental, psicológico quando for o caso, escrito sobre legislação, noções de primeiros socorros e direção veicular. O §2º fixa a VALIDADE da CNH: 10 ANOS para condutores com menos de 50 anos; 5 ANOS entre 50 e 70; 3 ANOS para maiores de 70.",
+        "A PERMISSÃO PARA DIRIGIR (art. 148, §§2º e 3º) tem validade de UM ANO. Ao fim dele, obtém a CNH o condutor que NÃO tenha cometido nenhuma infração de natureza grave ou gravíssima, nem seja reincidente em infração média.",
+        "O art. 148-A exige EXAME TOXICOLÓGICO de larga janela de detecção para habilitação e renovação nas categorias C, D e E, e periodicamente para motoristas profissionais dessas categorias.",
+        "Por fim, o art. 159: a CNH e a PPD são documentos de habilitação válidos em todo o território nacional, sendo obrigatório o porte, admitido o meio digital."
+      ],
+      "naPratica": "Na fiscalização, conferir se a categoria corresponde ao veículo conduzido é rotina. Conduzir veículo de categoria superior à habilitação é infração gravíssima, e pode configurar o crime do art. 309 se gerar perigo de dano.",
+      "pegadinhas": [
+        "Dizer que a PPD vale dois anos. Vale um.",
+        "Afirmar que a CNH é obtida automaticamente ao fim do ano de permissão.",
+        "Trocar C (carga) por D (passageiros).",
+        "Dizer que a validade da CNH é de cinco anos para todos.",
+        "Dispensar o porte do documento de habilitação."
+      ],
+      "revisao": [
+        "A: 2 ou 3 rodas · B: até 3.500 kg e 8 lugares",
+        "C: carga > 3.500 kg · D: passageiros > 8 lugares · E: 6.000 kg ou mais",
+        "C, D e E: 1 ano na B + sem grave/gravíssima em 12 meses",
+        "Validade: 10 anos (<50) · 5 anos (50 a 70) · 3 anos (>70)",
+        "PPD: 1 ano, sem grave ou gravíssima",
+        "Toxicológico: C, D e E"
+      ]
+    },
+    "legislacao-transito:6.6": {
+      "emUmaFrase": "PENALIDADE e MEDIDA ADMINISTRATIVA são coisas diferentes — e saber separar as duas listas resolve a maioria das questões do capítulo.",
+      "explicacao": [
+        "As PENALIDADES estão no art. 256: advertência por escrito, multa, suspensão do direito de dirigir, cassação da Carteira Nacional de Habilitação, cassação da Permissão para Dirigir e frequência obrigatória em curso de reciclagem.",
+        "As MEDIDAS ADMINISTRATIVAS estão no art. 269 e são outra coisa: retenção do veículo, remoção do veículo, recolhimento da CNH, recolhimento da PPD, recolhimento do CRLV, recolhimento do CRV, transbordo do excesso de carga, realização de teste de alcoolemia ou exame toxicológico, recolhimento de animais na via, entre outras. Retenção e remoção NÃO são penalidades.",
+        "A GRAVIDADE das infrações e a pontuação, no art. 259: GRAVÍSSIMA 7 pontos, GRAVE 5, MÉDIA 4, LEVE 3. E o fator multiplicador da multa, no art. 258: 3,0 na gravíssima, 2,0 na grave, 1,5 na média e 1,0 na leve. A banca troca uma lista pela outra.",
+        "A SUSPENSÃO POR PONTUAÇÃO, no art. 261, é escalonada conforme o histórico dos últimos doze meses: 20 PONTOS se houver duas ou mais infrações gravíssimas; 30 PONTOS se houver uma gravíssima; 40 PONTOS se não houver nenhuma. Quanto mais infração grave, menor a tolerância.",
+        "A CASSAÇÃO, no art. 263, ocorre quando, suspenso o direito de dirigir, o condutor dirigir veículo; na reincidência em doze meses nas infrações dos arts. 162, I, 163, 164, 165, 173, 174 e 175; e quando o condutor for condenado judicialmente por delito de trânsito. Após a cassação, só é permitido requerer nova habilitação depois de dois anos.",
+        "A FISCALIZAÇÃO DE EMBRIAGUEZ está no art. 277: o condutor envolvido em acidente ou alvo de fiscalização poderá ser submetido a teste, exame clínico, perícia ou outro procedimento. O §2º permite caracterizar a infração do art. 165 por imagem, vídeo, constatação de sinais de alteração da capacidade psicomotora ou prova testemunhal. E o §3º é decisivo: ao condutor que se RECUSA a submeter-se a qualquer dos procedimentos aplicam-se as penalidades e medidas administrativas do art. 165-A — ou seja, a recusa é infração autônoma com a mesma sanção de quem dirige embriagado.",
+        "O AUTO DE INFRAÇÃO, no art. 280, exige: tipificação da infração; local, data e hora do cometimento; caracteres da placa; prontuário do condutor quando possível; identificação do órgão ou entidade e da autoridade ou agente autuador; e assinatura do infrator SEMPRE QUE POSSÍVEL. O §4º é o dispositivo-chave para a PM: o policial militar atua como agente da autoridade de trânsito por DESIGNAÇÃO, no âmbito de CONVÊNIO firmado com o órgão de trânsito com circunscrição sobre a via."
+      ],
+      "naPratica": "A recusa ao etilômetro não encerra a ocorrência: ela própria é infração gravíssima do art. 165-A, com multa multiplicada por dez e suspensão por doze meses. E a embriaguez ainda pode ser demonstrada por outros meios.",
+      "pegadinhas": [
+        "Listar retenção ou remoção entre as penalidades. São medidas administrativas.",
+        "Trocar a pontuação (7-5-4-3) pelo multiplicador (3,0-2,0-1,5-1,0).",
+        "Dizer que o limite de pontos é sempre 20. É 20, 30 ou 40, conforme as gravíssimas.",
+        "Dizer que a recusa ao teste é juridicamente indiferente.",
+        "Afirmar que a assinatura do infrator é obrigatória sob pena de nulidade."
+      ],
+      "revisao": [
+        "Penalidades (art. 256) ≠ Medidas administrativas (art. 269)",
+        "Pontos: gravíssima 7 · grave 5 · média 4 · leve 3",
+        "Multiplicador: 3,0 · 2,0 · 1,5 · 1,0",
+        "Suspensão: 20 (2+ gravíssimas) · 30 (1) · 40 (nenhuma)",
+        "Recusa ao teste: art. 165-A, infração autônoma",
+        "Art. 280, §4º: PM por convênio e designação"
+      ]
+    },
+    "legislacao-transito:6.7": {
+      "emUmaFrase": "Nos crimes de trânsito, o número que precisa estar decorado é 6 decigramas por litro de sangue, que equivale a 0,3 miligrama por litro de ar alveolar.",
+      "explicacao": [
+        "O art. 291 manda aplicar aos crimes de trânsito, no que couber, as normas gerais do Código Penal e do Código de Processo Penal, e também a Lei 9.099/1995 — esta, porém, afastada nas hipóteses do §1º, entre elas a lesão corporal culposa sob influência de álcool, em racha ou em velocidade superior à máxima permitida em mais de 50 km/h.",
+        "O art. 301 é uma regra de ouro para a ocorrência: ao condutor de veículo, nos casos de acidente de trânsito de que resulte vítima, NÃO se imporá prisão em flagrante nem se exigirá fiança, se prestar PRONTO E INTEGRAL SOCORRO à vítima.",
+        "A SUSPENSÃO ou PROIBIÇÃO de obter a permissão ou habilitação, como pena, dura de 2 MESES A 5 ANOS (art. 293) e pode ser imposta isolada ou cumulativamente.",
+        "Os crimes em espécie. ART. 302 — homicídio culposo na direção: detenção de 2 a 4 anos, com aumento de um terço à metade se o condutor não possui habilitação, pratica em faixa de pedestres ou calçada, deixa de prestar socorro quando possível, ou está no exercício de transporte de passageiros. O §3º é o mais severo: homicídio culposo sob influência de álcool ou substância psicoativa — RECLUSÃO de 5 a 8 anos.",
+        "ART. 303 — lesão corporal culposa: detenção de 6 meses a 2 anos; o §2º agrava para reclusão de 2 a 5 anos se a lesão é grave ou gravíssima e o condutor está sob influência de álcool. ART. 304 — omissão de socorro: deixar o condutor de prestar imediato socorro à vítima. ART. 305 — afastar-se do local do acidente para fugir à responsabilidade penal ou civil: detenção de 6 meses a 1 ano, ou multa; o STF reconheceu a constitucionalidade do tipo.",
+        "ART. 306 — embriaguez ao volante: conduzir com capacidade psicomotora alterada em razão da influência de álcool ou outra substância. Pena: detenção de 6 meses a 3 anos, multa e suspensão. O §1º define a verificação: concentração igual ou superior a 6 DECIGRAMAS de álcool por litro de SANGUE, ou igual ou superior a 0,3 MILIGRAMA por litro de AR ALVEOLAR; ou sinais que indiquem alteração da capacidade psicomotora. O §2º admite qualquer meio de prova: teste, exame clínico, perícia, vídeo, prova testemunhal.",
+        "ART. 308 — racha: participar de corrida, disputa ou competição não autorizada, gerando situação de risco à incolumidade pública ou privada; qualificado pela lesão grave e pela morte, que chega a reclusão de 5 a 10 anos. ART. 309 — dirigir sem habilitação GERANDO PERIGO DE DANO: crime de perigo concreto, conforme a Súmula 720 do STF. ART. 310 — permitir, confiar ou entregar a direção a pessoa não habilitada ou sem condições de conduzir com segurança. ART. 311 — velocidade incompatível com a segurança nas proximidades de escolas, hospitais e locais de grande movimentação. ART. 312 — inovar artificiosamente o estado de lugar, coisa ou pessoa em acidente com vítima.",
+        "Guarde a distinção que organiza tudo: a INFRAÇÃO ADMINISTRATIVA do art. 165 configura-se com QUALQUER concentração de álcool; o CRIME do art. 306 exige os índices ou os sinais de alteração."
+      ],
+      "naPratica": "No acidente com vítima, quem presta socorro integral não é preso em flagrante. Isso tem razão de política pública: a lei prefere que a vítima seja socorrida a punir imediatamente o condutor.",
+      "pegadinhas": [
+        "Dizer que o art. 306 exige etilômetro. Qualquer meio de prova serve.",
+        "Inverter as unidades: 6 decigramas é no SANGUE; 0,3 mg é no AR.",
+        "Dizer que o art. 309 dispensa perigo concreto. Exige (Súmula 720 STF).",
+        "Afirmar que o art. 305 só se configura com vítima fatal.",
+        "Dizer que a suspensão como pena dura de 6 meses a 2 anos. São 2 meses a 5 anos."
+      ],
+      "revisao": [
+        "306: 6 dg/L sangue = 0,3 mg/L ar",
+        "302 caput: detenção 2 a 4 anos · §3º (álcool): reclusão 5 a 8",
+        "303: detenção 6 meses a 2 anos · §2º: reclusão 2 a 5",
+        "305: fuga do local, detenção 6 meses a 1 ano",
+        "309: perigo CONCRETO (Súmula 720 STF)",
+        "Art. 301: socorro integral afasta flagrante e fiança",
+        "Suspensão como pena: 2 meses a 5 anos"
+      ]
+    }
+  }
+}

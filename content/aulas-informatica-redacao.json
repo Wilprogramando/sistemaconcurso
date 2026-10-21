@@ -1,0 +1,248 @@
+{
+  "sobre": "Aulas didáticas de Informática (5 questões) e da Prova de Redação (20 pontos).",
+  "aulas": {
+    "informatica:9.1": {
+      "emUmaFrase": "Hardware é o que se toca; software é o que se executa — e a RAM é hardware volátil, que perde tudo ao desligar.",
+      "explicacao": [
+        "HARDWARE é a parte física: processador, memória, placa-mãe, disco, teclado, monitor. SOFTWARE é o conjunto de programas: sistema operacional, aplicativos, utilitários. FIRMWARE fica na fronteira — é software gravado no próprio hardware, como a BIOS ou a UEFI.",
+        "O PROCESSADOR (CPU) executa as instruções. Dentro dele estão a unidade de controle, a unidade lógica e aritmética e os registradores. A velocidade se mede em GHz, e o número de NÚCLEOS indica quantas tarefas podem ser processadas simultaneamente.",
+        "A hierarquia de MEMÓRIA é o que mais cai. MEMÓRIA RAM é a memória de trabalho: volátil, de leitura e escrita, perde todo o conteúdo ao desligar. MEMÓRIA ROM é não volátil e, em sua concepção original, somente de leitura — guarda instruções básicas de inicialização. MEMÓRIA CACHE é pequena e rapidíssima, fica entre o processador e a RAM. ARMAZENAMENTO SECUNDÁRIO — HD, SSD, pen drive, cartão — é não volátil e guarda os dados permanentemente. O SSD é mais rápido que o HD porque não tem partes móveis.",
+        "Sobre SOFTWARE, distinga: BÁSICO é o sistema operacional, que gerencia os recursos; APLICATIVO é o que o usuário usa para uma tarefa (editor de texto, navegador); UTILITÁRIO dá manutenção ao sistema (antivírus, compactador). DRIVER é o programa que permite ao sistema conversar com um dispositivo.",
+        "Quanto à licença: PROPRIETÁRIO (Windows, Office), LIVRE (Linux, LibreOffice), FREEWARE (gratuito, mas não necessariamente aberto) e SHAREWARE (gratuito por tempo limitado)."
+      ],
+      "naPratica": "Quando o computador da unidade trava e você reinicia, tudo o que estava só na RAM se perde. É por isso que salvar o documento, que o grava no disco, é o reflexo certo.",
+      "pegadinhas": [
+        "Dizer que a RAM é não volátil ou que guarda dados permanentemente.",
+        "Chamar o sistema operacional de hardware.",
+        "Dizer que freeware é sinônimo de software livre. Gratuito não é o mesmo que aberto.",
+        "Confundir memória cache com armazenamento secundário."
+      ],
+      "revisao": [
+        "RAM: volátil, leitura e escrita, memória de trabalho",
+        "ROM: não volátil, inicialização",
+        "Cache: pequena e rápida, entre CPU e RAM",
+        "HD/SSD/pen drive: não voláteis",
+        "Software básico (SO) · aplicativo · utilitário"
+      ]
+    },
+    "informatica:9.2": {
+      "emUmaFrase": "Em Windows, a questão quase sempre é de atalho — e a família Win + letra resolve metade delas.",
+      "explicacao": [
+        "O Windows organiza os arquivos em uma árvore de PASTAS (diretórios), a partir de uma unidade (C:). O EXPLORADOR DE ARQUIVOS é o gerenciador: cria, renomeia, move, copia e exclui. Renomear um arquivo altera só o nome; o conteúdo permanece.",
+        "A EXTENSÃO indica o tipo do arquivo: .docx e .odt para texto, .xlsx e .ods para planilha, .pptx e .odp para apresentação, .pdf para documento portátil, .jpg e .png para imagem, .exe para executável, .zip e .rar para compactados.",
+        "Os ATALHOS que mais caem, da família Windows: Win + E abre o Explorador de Arquivos; Win + D mostra a área de trabalho; Win + L bloqueia a sessão; Win + R abre a caixa Executar; Win + I abre Configurações; Win + PrtScn captura a tela e salva o arquivo. Da família Ctrl: Ctrl + C copia, Ctrl + X recorta, Ctrl + V cola, Ctrl + Z desfaz, Ctrl + Y refaz, Ctrl + A seleciona tudo, Ctrl + S salva, Ctrl + P imprime, Ctrl + F localiza. E Ctrl + Alt + Del abre as opções de segurança; Alt + Tab alterna janelas; Alt + F4 fecha a janela ativa.",
+        "A LIXEIRA guarda temporariamente o que é excluído do disco local; Shift + Delete exclui sem passar por ela. Arquivos excluídos de unidades de rede ou removíveis em geral não vão para a Lixeira.",
+        "Entre os aplicativos nativos: BLOCO DE NOTAS e WORDPAD editam texto (o WordPad com alguma formatação); PAINT edita imagens; o aplicativo CONFIGURAÇÕES permite alterar data, hora, idioma, contas e rede."
+      ],
+      "naPratica": "Win + L é o atalho mais útil da lista para quem trabalha com dado sensível: ao sair da estação, bloquear a sessão impede acesso de terceiros sem fechar o que está aberto.",
+      "pegadinhas": [
+        "Dizer que o WordPad edita imagens. Quem faz isso é o Paint.",
+        "Afirmar que renomear um arquivo altera o conteúdo.",
+        "Dizer que tudo que é excluído vai para a Lixeira. Shift + Delete não vai.",
+        "Afirmar que o idioma do Windows não pode ser alterado após a instalação."
+      ],
+      "revisao": [
+        "Win + E: Explorador · Win + D: área de trabalho",
+        "Win + L: bloquear · Win + R: Executar · Win + I: Configurações",
+        "Ctrl + C/X/V/Z/Y/A/S/P/F",
+        "Shift + Delete não passa pela Lixeira",
+        "Bloco de Notas e WordPad: texto · Paint: imagem"
+      ]
+    },
+    "informatica:9.3": {
+      "emUmaFrase": "O formato nativo do LibreOffice é o ODF — .odt, .ods, .odp — e no Calc o cifrão é que trava a referência.",
+      "explicacao": [
+        "O LibreOffice é suíte livre e multiplataforma, disponível em dezenas de idiomas. Seus aplicativos: WRITER (textos), CALC (planilhas e gráficos), IMPRESS (apresentações), DRAW (desenho vetorial), BASE (banco de dados) e MATH (fórmulas matemáticas).",
+        "O formato nativo é o OPENDOCUMENT (ODF): .odt para texto, .ods para planilha, .odp para apresentação. A suíte abre e salva também em formatos da Microsoft (.docx, .xlsx, .pptx), em PDF e em HTML. As ferramentas são integradas e compartilham recursos, como o corretor ortográfico.",
+        "No CALC, o tema mais cobrado são as REFERÊNCIAS. O cifrão trava o que vem imediatamente depois dele. A1 é RELATIVA: muda ao ser copiada. $A$1 é ABSOLUTA: não muda. $A1 é MISTA com a coluna travada; A$1 é mista com a linha travada.",
+        "Outro ponto é a diferença entre DOIS-PONTOS e PONTO E VÍRGULA. Os dois-pontos indicam INTERVALO contínuo: SOMA(A1:A10) soma as dez células. O ponto e vírgula separa ARGUMENTOS: SOMA(A1;A10) soma apenas duas.",
+        "As funções básicas: SOMA, MÉDIA, MÁXIMO, MÍNIMO, CONT.NÚM (conta células com número), CONT.VALORES (conta células não vazias), SE (condicional), PROCV. Toda fórmula começa com o sinal de igual.",
+        "No WRITER, vale conhecer estilos, cabeçalho e rodapé, numeração de páginas, inserção de tabelas e a exportação direta para PDF."
+      ],
+      "naPratica": "Uma escala de serviço em planilha costuma usar referência absoluta para a célula do mês e relativa para os dias. Entender o cifrão evita refazer a planilha inteira ao copiar uma fórmula.",
+      "pegadinhas": [
+        "Dizer que a extensão nativa de planilha do LibreOffice é .xlsx. É .ods.",
+        "Classificar $A$1 como relativa.",
+        "Dizer que o LibreOffice roda só em Windows ou só em português.",
+        "Confundir intervalo (:) com separador de argumentos (;)."
+      ],
+      "revisao": [
+        "Nativo: ODF — .odt, .ods, .odp",
+        "Writer, Calc, Impress, Draw, Base, Math",
+        "A1 relativa · $A$1 absoluta · $A1 e A$1 mistas",
+        "A1:A10 = intervalo · A1;A10 = dois argumentos",
+        "Toda fórmula começa com ="
+      ]
+    },
+    "informatica:9.4": {
+      "emUmaFrase": "Navegação anônima não torna ninguém invisível: ela apenas deixa de gravar dados no computador local.",
+      "explicacao": [
+        "NAVEGADOR é o programa que acessa páginas da web: Edge, Chrome, Firefox. HIPERLINK não é programa — é o elemento que liga um documento a outro. PLUG-IN é um módulo instalado no navegador que permite apresentar conteúdos em formatos que o HTML sozinho não trata.",
+        "A NAVEGAÇÃO ANÔNIMA (ou privativa) não grava, no computador, o histórico, os cookies nem os dados de formulário da sessão. Ela NÃO oculta o acesso do provedor, do empregador nem do site visitado. Quem fornece anonimato de rede é outra tecnologia, como VPN ou Tor — e ainda assim com limites.",
+        "COOKIES são pequenos arquivos de texto gravados pelo site no computador do usuário, para lembrar preferências e sessão. Não são vírus nem executáveis. CACHE do navegador guarda cópias locais para acelerar o carregamento.",
+        "Sobre ENDEREÇOS: a URL de um site segue o padrão protocolo://domínio/caminho — https://www.pm.sc.gov.br. O HTTPS indica conexão criptografada, protegendo o transporte dos dados. O domínio gov.br identifica o governo brasileiro.",
+        "O E-MAIL tem formato próprio: identificacao@dominio, com uma única arroba. Os protocolos: SMTP ENVIA; POP3 e IMAP RECEBEM — o POP3 em geral baixa e remove do servidor, o IMAP mantém sincronizado. Os campos: PARA é o destinatário principal; CC envia cópia visível a todos; CCO envia cópia oculta, e quem está em CCO não é incluído em um 'Responder a todos', porque seu endereço não é propagado.",
+        "INTRANET é a rede interna e privada de uma organização. EXTRANET é a extensão da intranet com acesso externo controlado, para parceiros ou clientes. INTERNET é a rede pública mundial."
+      ],
+      "naPratica": "Ao encaminhar um comunicado para muitos destinatários externos, usar CCO protege os endereços de todos. É boa prática de proteção de dados, não apenas de etiqueta.",
+      "pegadinhas": [
+        "Dizer que a navegação anônima torna o usuário não identificável na internet.",
+        "Chamar cookie de vírus.",
+        "Dizer que SMTP recebe mensagens. SMTP envia.",
+        "Confundir intranet (interna) com extranet (acesso externo controlado).",
+        "Dizer que quem está em CCO recebe o 'Responder a todos'."
+      ],
+      "revisao": [
+        "Anônima: não grava LOCALMENTE; não oculta na rede",
+        "SMTP envia · POP3 e IMAP recebem",
+        "Para · Cc (visível) · Cco (oculta, fora do responder a todos)",
+        "HTTPS = transporte criptografado",
+        "Intranet interna · Extranet acesso externo controlado",
+        "E-mail: usuario@dominio, uma única arroba"
+      ]
+    },
+    "informatica:9.5": {
+      "emUmaFrase": "A LGPD NÃO se aplica ao tratamento de dados feito para fins exclusivos de segurança pública — e isso é exceção legal, não permissão sem limites.",
+      "explicacao": [
+        "COMPUTAÇÃO EM NUVEM é o fornecimento de recursos de computação pela internet. Os três modelos de serviço: IAAS (Infraestrutura como Serviço) entrega servidores, armazenamento e rede, e o cliente gerencia sistema operacional e aplicações; PAAS (Plataforma como Serviço) entrega também o sistema operacional e a plataforma, e o cliente só cuida das aplicações; SAAS (Software como Serviço) entrega o software pronto, e o usuário apenas o utiliza.",
+        "Os modelos de implantação: nuvem PÚBLICA, compartilhada entre vários clientes; PRIVADA, de uso exclusivo de uma organização; HÍBRIDA, combinando as duas. A segurança na nuvem é de RESPONSABILIDADE COMPARTILHADA entre provedor e cliente.",
+        "A LGPD (Lei 13.709/2018) regula o tratamento de dados pessoais. Conceitos centrais: DADO PESSOAL é a informação relacionada a pessoa natural identificada ou identificável; DADO PESSOAL SENSÍVEL é o que revela origem racial ou étnica, convicção religiosa, opinião política, filiação sindical, dado referente à saúde, à vida sexual, genético ou biométrico; TITULAR é a pessoa a quem os dados se referem; CONTROLADOR decide sobre o tratamento; OPERADOR trata em nome do controlador.",
+        "O art. 4º, III, traz a exceção que mais importa para você: a LGPD NÃO SE APLICA ao tratamento de dados realizado para fins exclusivos de SEGURANÇA PÚBLICA, DEFESA NACIONAL, SEGURANÇA DO ESTADO ou atividades de investigação e repressão de infrações penais. Esse tratamento é reservado a legislação específica, com observância dos princípios de proteção de dados — ou seja, é exceção, não liberdade total.",
+        "Fora dessa exceção, o tratamento depende de uma das BASES LEGAIS do art. 7º, e o consentimento é apenas uma delas, ao lado do cumprimento de obrigação legal, da execução de políticas públicas, do exercício regular de direitos, da proteção da vida e da tutela da saúde, entre outras."
+      ],
+      "naPratica": "Um registro de ocorrência contém dado pessoal e, muitas vezes, dado sensível. A exceção do art. 4º não autoriza divulgar: ela apenas retira a aplicação da LGPD daquele tratamento específico, mantendo os deveres funcionais de sigilo.",
+      "pegadinhas": [
+        "Dizer que a LGPD se aplica integralmente à segurança pública.",
+        "Dizer que o tratamento para segurança pública é vedado. Não é — está fora da LGPD.",
+        "Afirmar que o consentimento é a única base legal de tratamento.",
+        "No SaaS, dizer que o usuário gerencia o sistema operacional."
+      ],
+      "revisao": [
+        "IaaS: infraestrutura · PaaS: plataforma · SaaS: software pronto",
+        "Pública, privada e híbrida; segurança compartilhada",
+        "Art. 4º, III: LGPD não se aplica à segurança pública",
+        "Dado sensível: origem racial, religião, política, saúde, biometria",
+        "Consentimento é só uma das bases legais"
+      ]
+    },
+    "informatica:9.6": {
+      "emUmaFrase": "Quem precisa de arquivo hospedeiro é o VÍRUS; o worm se propaga sozinho pela rede — e inverter os dois é o erro mais repetido da matéria.",
+      "explicacao": [
+        "A tríade da segurança da informação é CID. CONFIDENCIALIDADE: só quem está autorizado acessa. INTEGRIDADE: a informação não foi alterada indevidamente. DISPONIBILIDADE: a informação está acessível quando necessária. Some a AUTENTICIDADE (a origem é quem diz ser) e a IRRETRATABILIDADE ou não repúdio (o autor não pode negar a autoria).",
+        "Os MALWARES, um a um. VÍRUS: anexa-se a um arquivo hospedeiro e depende de o usuário executá-lo. WORM: autorreplicante, propaga-se sozinho pela rede explorando vulnerabilidades, sem hospedeiro e sem ação do usuário. TROJAN (cavalo de Troia): disfarça-se de programa legítimo para abrir caminho a outras ações. SPYWARE: espiona e coleta informações sem conhecimento do usuário; o KEYLOGGER, que captura o que é digitado, é uma de suas espécies. RANSOMWARE: criptografa os dados e exige resgate. ADWARE: exibe publicidade indesejada. ROOTKIT: esconde a presença do invasor no sistema.",
+        "Os GOLPES: PHISHING é a mensagem falsa que induz o usuário a entregar dados ou clicar em link malicioso; PHARMING redireciona o usuário para um site falso mesmo digitando o endereço correto; ENGENHARIA SOCIAL é a manipulação da pessoa, não do sistema.",
+        "O BACKUP tem três tipos. COMPLETO copia tudo. INCREMENTAL copia o que mudou desde o último backup DE QUALQUER TIPO — grava rápido, mas a restauração exige toda a cadeia. DIFERENCIAL copia o que mudou desde o último backup COMPLETO — ocupa mais espaço a cada dia, mas restaura com o completo mais o último diferencial. Sincronização em nuvem NÃO é backup: ela replica também exclusões e corrupções.",
+        "Na CRIPTOGRAFIA, a assimétrica usa par de chaves. Na ASSINATURA DIGITAL, assina-se com a chave PRIVADA e verifica-se com a PÚBLICA — isso garante autenticidade e não repúdio. Para CIFRAR uma mensagem para alguém, usa-se a chave PÚBLICA do destinatário, e só ele decifra com a sua privada."
+      ],
+      "naPratica": "O phishing é o vetor mais comum em órgãos públicos: um e-mail que parece institucional, pedindo confirmação de senha. A regra prática é simples — nenhuma instituição pede senha por e-mail.",
+      "pegadinhas": [
+        "Dizer que o worm precisa de hospedeiro. Quem precisa é o vírus.",
+        "Trocar as definições de incremental e diferencial.",
+        "Dizer que se assina com a chave pública. Assina-se com a privada.",
+        "Confundir confidencialidade (acesso) com integridade (alteração)."
+      ],
+      "revisao": [
+        "CID: confidencialidade, integridade, disponibilidade",
+        "Vírus precisa de hospedeiro · worm se propaga sozinho",
+        "Spyware espiona · ransomware sequestra · adware anuncia",
+        "Incremental: desde o último de qualquer tipo",
+        "Diferencial: desde o último COMPLETO",
+        "Assinatura: chave privada assina, pública verifica"
+      ]
+    },
+    "redacao:10.1": {
+      "emUmaFrase": "O repertório da sua redação já está definido pelo edital: sistema de justiça criminal, políticas públicas de ordem pública e o art. 144 da Constituição.",
+      "explicacao": [
+        "O recorte temático é ORDEM PÚBLICA, e isso é uma vantagem: você não precisa de repertório genérico, precisa dominar três eixos.",
+        "PRIMEIRO EIXO — SISTEMA DE JUSTIÇA CRIMINAL. É o conjunto articulado de instituições que previnem, apuram, processam, julgam e executam a resposta estatal ao crime. Três subsistemas: POLICIAL (polícias militares, com polícia ostensiva e preservação da ordem pública; polícias civil e federal, com polícia judiciária e investigação); DE JUSTIÇA (Ministério Público, titular da ação penal e responsável pelo controle externo da atividade policial; Defensoria, advocacia e Judiciário); e DE EXECUÇÃO PENAL (polícias penais, estabelecimentos prisionais, varas de execução). Problemas estruturais que você pode citar: fragmentação e baixa integração, cifra oculta, baixas taxas de elucidação de homicídios, superlotação carcerária.",
+        "SEGUNDO EIXO — POLÍTICAS PÚBLICAS DE ORDEM PÚBLICA E CIDADANIA. O conceito central é a SEGURANÇA CIDADÃ: paradigma que desloca o foco da repressão pura para a prevenção integrada, articulando segurança com educação, saúde, urbanismo e assistência social. Repertório concreto: a Lei 13.675/2018, que institui o SUSP e a Política Nacional de Segurança Pública e Defesa Social; o POLICIAMENTO COMUNITÁRIO, com territorialização e corresponsabilização; a divisão da prevenção em PRIMÁRIA (causas sociais), SECUNDÁRIA (grupos de risco) e TERCIÁRIA (evitar reincidência); e a GESTÃO POR EVIDÊNCIAS, com mapeamento de hot spots e indicadores.",
+        "TERCEIRO EIXO — ORDEM PÚBLICA NA CONSTITUIÇÃO. O art. 144, caput: segurança pública é dever do Estado, direito e responsabilidade de todos. O conceito TRIPARTITE de ordem pública, de base no Decreto 88.777/1983: segurança pública + tranquilidade pública + salubridade pública. O art. 144, §5º: polícia ostensiva e preservação da ordem pública. O §6º: força auxiliar e reserva do Exército, subordinada ao Governador. E os arts. 42 e 142, §3º: hierarquia e disciplina como pilares institucionais, que existem para garantir previsibilidade e contenção do arbítrio no uso legítimo da força.",
+        "Uma advertência importante: repertório inventado conta contra. Cite apenas o que você sabe que existe — a Constituição, as leis listadas, os conceitos acima. Dado estatístico sem fonte segura é melhor substituir por argumento conceitual."
+      ],
+      "naPratica": "Três repertórios bem usados valem mais que dez citações superficiais. Escolha um de cada eixo, domine-os, e eles servirão para qualquer tema de ordem pública que caia.",
+      "pegadinhas": [
+        "Inventar dado estatístico ou atribuir frase a autor que você não tem certeza.",
+        "Citar lei pelo número errado — melhor citar pelo nome e pelo conteúdo.",
+        "Usar repertório genérico (filósofos, frases de efeito) que não dialoga com ordem pública."
+      ],
+      "revisao": [
+        "Eixo 1: sistema de justiça criminal (3 subsistemas)",
+        "Eixo 2: segurança cidadã, SUSP (Lei 13.675/2018), prevenção 1ª/2ª/3ª",
+        "Eixo 3: art. 144 e ordem pública tripartite",
+        "Ordem pública = segurança + tranquilidade + salubridade",
+        "Repertório inventado conta contra"
+      ]
+    },
+    "redacao:10.2": {
+      "emUmaFrase": "São quatro parágrafos com funções fixas — e a conclusão, com a proposta de intervenção completa, é o parágrafo que mais pesa.",
+      "explicacao": [
+        "A estrutura é um molde, e molde se repete. INTRODUÇÃO, de 4 a 6 linhas: contextualize o tema e feche com a TESE, dizendo claramente o que você defende, e indicando os dois argumentos que virão.",
+        "DESENVOLVIMENTO 1, de 7 a 9 linhas: abra com um TÓPICO FRASAL que anuncie o argumento, fundamente com lei, dado, autor ou exemplo, e feche amarrando ao tema. DESENVOLVIMENTO 2, igual em tamanho: segundo argumento, de outro ângulo — se o primeiro foi jurídico, o segundo pode ser social ou institucional.",
+        "CONCLUSÃO, de 4 a 6 linhas: retome a tese e apresente a PROPOSTA DE INTERVENÇÃO. Ela tem cinco elementos, e faltar um custa ponto: AGENTE (quem faz), AÇÃO (o que faz), MEIO (como faz), FINALIDADE (para quê) e DETALHAMENTO (um detalhe que mostra domínio).",
+        "Um modelo de conclusão que funciona: 'Diante do exposto, é imperioso que o Estado de Santa Catarina, por meio da Secretaria de Segurança Pública e da PMSC (AGENTE), promova a ampliação do policiamento comunitário (AÇÃO), por meio de convênios com os municípios (MEIO), a fim de reduzir a sensação de insegurança (FINALIDADE), priorizando os bairros com maiores índices de ocorrência (DETALHAMENTO).'",
+        "Um modelo de introdução: 'A Constituição Federal de 1988 define a segurança pública como dever do Estado e responsabilidade de todos, atribuindo às polícias militares a polícia ostensiva e a preservação da ordem pública. Nesse sentido, é necessário que...' — e aí vem a sua tese.",
+        "Use a tela de Redação deste sistema para treinar: ela sorteia o tema, cronometra e aponta quais dos cinco elementos da proposta estão faltando."
+      ],
+      "naPratica": "Escreva a conclusão primeiro, no rascunho. Se a proposta de intervenção estiver pronta e completa, os dois desenvolvimentos passam a ter um destino claro para onde caminhar.",
+      "pegadinhas": [
+        "Conclusão sem proposta de intervenção, ou com proposta vaga ('o governo deve investir mais').",
+        "Tese implícita: o corretor precisa localizar o seu posicionamento.",
+        "Dois desenvolvimentos repetindo o mesmo argumento com outras palavras.",
+        "Ultrapassar o espaço da folha por falta de planejamento."
+      ],
+      "revisao": [
+        "4 parágrafos: introdução, 2 desenvolvimentos, conclusão",
+        "Introdução: contexto + tese + indicação dos argumentos",
+        "Desenvolvimento: tópico frasal + fundamentação + fechamento",
+        "Proposta: agente, ação, meio, finalidade, detalhamento",
+        "Extensão alvo: 25 a 30 linhas"
+      ]
+    },
+    "redacao:10.3": {
+      "emUmaFrase": "Evitar os erros que zeram ou derrubam a nota vale mais que tentar escrever bonito.",
+      "explicacao": [
+        "O erro mais grave é a FUGA OU TANGÊNCIA AO TEMA. Fuga é escrever sobre outro assunto; tangência é passar perto sem enfrentar a proposta. A defesa é simples: sublinhe as palavras-chave do tema e verifique, ao fim de cada parágrafo, se elas ainda estão presentes.",
+        "O segundo é o USO DA PRIMEIRA PESSOA. A dissertação exige impessoalidade: nada de 'eu acho', 'na minha opinião', 'eu acredito'. Troque por construções como 'é possível afirmar que', 'evidencia-se que', 'nota-se que'.",
+        "O terceiro é a CONCLUSÃO SEM PROPOSTA DE INTERVENÇÃO, ou com proposta genérica. 'O governo deve investir mais em segurança' não é proposta: não tem meio, não tem finalidade, não tem detalhamento.",
+        "O quarto é o REPERTÓRIO INVENTADO. Atribuir uma frase a um autor que não a disse, citar uma lei com número errado ou criar um dado estatístico conta contra. Na dúvida, argumente conceitualmente.",
+        "O quinto são os CLICHÊS: 'desde os primórdios da humanidade', 'nos dias atuais', 'é sabido que', 'vivemos em um mundo'. Eles ocupam linhas sem acrescentar nada e sinalizam falta de repertório real. Troque por contextualização concreta.",
+        "Somam-se a esses os desvios de norma-padrão que mais aparecem: 'houveram', 'fazem X anos', 'a nível de', 'onde' para situações não espaciais, crase indevida, e vírgula separando sujeito e verbo."
+      ],
+      "naPratica": "Revise sua redação procurando especificamente por esses seis itens, nessa ordem. É mais eficiente do que reler procurando 'erros' em geral.",
+      "pegadinhas": [
+        "Achar que tangenciar o tema é menos grave que fugir dele. Ambos derrubam a nota.",
+        "Usar 'nós' achando que escapa da primeira pessoa.",
+        "Confundir proposta de intervenção com desejo genérico."
+      ],
+      "revisao": [
+        "Fuga ou tangência: a falha mais grave",
+        "Impessoalidade: nada de 'eu acho'",
+        "Conclusão sempre com proposta completa",
+        "Repertório inventado conta contra",
+        "Sem clichês: 'desde os primórdios', 'nos dias atuais'",
+        "Checar: houveram, fazem, a nível de, onde, crase, vírgula"
+      ]
+    },
+    "redacao:10.4": {
+      "emUmaFrase": "Treino de redação é como treino físico: a regra é frequência, não intensidade isolada — uma redação completa a cada dois dias no último mês.",
+      "explicacao": [
+        "Os três temas propostos pela apostila cobrem os três eixos de repertório. PRIMEIRO: 'O papel da polícia ostensiva na construção de uma segurança pública cidadã' — eixo de políticas públicas. SEGUNDO: 'Hierarquia e disciplina: anacronismo ou condição de legitimidade do uso da força pelo Estado?' — eixo constitucional e institucional. TERCEIRO: 'Integração do sistema de justiça criminal como caminho para a redução da impunidade' — eixo do sistema de justiça criminal.",
+        "A regra de treino: escreva uma redação COMPLETA, CRONOMETRADA, a cada dois dias no último mês. Escrever meia redação não treina a parte mais difícil, que é fechar com proposta completa dentro do tempo.",
+        "A revisão é parte do treino, e deve ser feita NO DIA SEGUINTE, não logo depois de escrever — com distância você enxerga o que não via. Releia procurando quatro coisas: a tese está explícita? Há dois argumentos distintos? A proposta de intervenção tem os cinco elementos? Há desvio de norma-padrão?",
+        "A tela de Redação deste sistema sorteia o tema entre oito opções de ordem pública, cronometra, conta palavras e linhas, e devolve uma correção por cinco critérios com apontamentos classificados. Use-a como primeira revisão — e depois faça a sua, com os olhos de quem escreveu."
+      ],
+      "naPratica": "Guarde todas as suas redações. Reler a primeira depois de dez é a forma mais concreta de ver que a evolução aconteceu — e o histórico do sistema faz isso por você.",
+      "pegadinhas": [
+        "Treinar só a introdução. O que decide a nota é a conclusão.",
+        "Escrever sem cronômetro e descobrir na prova que o tempo não dá.",
+        "Revisar no calor do momento, quando você ainda lê o que quis escrever, não o que escreveu."
+      ],
+      "revisao": [
+        "1 redação completa e cronometrada a cada 2 dias no último mês",
+        "Revisar no dia seguinte, não na hora",
+        "Checklist: tese? dois argumentos? proposta completa? norma-padrão?",
+        "Os 3 temas da apostila cobrem os 3 eixos de repertório"
+      ]
+    }
+  }
+}

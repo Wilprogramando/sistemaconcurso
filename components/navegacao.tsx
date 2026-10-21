@@ -7,6 +7,7 @@ import {
   BarChart3,
   BookOpen,
   CalendarDays,
+  CircleAlert,
   FileText,
   House,
   LayoutGrid,
@@ -86,10 +87,17 @@ export const AVALIAR: Item[] = [
 
 export const ACOMPANHAR: Item[] = [
   {
+    href: '/anotacoes',
+    label: 'Anotações',
+    curto: 'Notas',
+    icone: NotebookPen,
+    descricao: 'Seu caderno livre de macetes e dúvidas',
+  },
+  {
     href: '/erros',
     label: 'Caderno de erros',
     curto: 'Erros',
-    icone: NotebookPen,
+    icone: CircleAlert,
     descricao: 'Tudo que você errou, com anotações',
   },
   {

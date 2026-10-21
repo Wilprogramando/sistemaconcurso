@@ -1,0 +1,270 @@
+{
+  "sobre": "Aulas didáticas de Legislação Especial — 6 das 60 questões, distribuídas entre onze leis. É a disciplina mais numérica do edital.",
+  "aulas": {
+    "legislacao-especial:5.1": {
+      "emUmaFrase": "Hediondo não é o crime grave: é o crime que está na LISTA da Lei 8.072/1990 — o rol é taxativo.",
+      "explicacao": [
+        "A Constituição, no art. 5º, XLIII, manda a lei considerar inafiançáveis e insuscetíveis de graça ou anistia a prática da TORTURA, o TRÁFICO ilícito de entorpecentes, o TERRORISMO e os crimes definidos como HEDIONDOS. Os três primeiros são EQUIPARADOS a hediondos; os hediondos propriamente ditos estão listados na Lei 8.072/1990.",
+        "O ponto central: o rol é TAXATIVO. Nenhum crime vira hediondo pela gravidade concreta do fato ou pela comoção que causa. Ou está na lista, ou não é hediondo. Entre os listados estão homicídio qualificado, latrocínio, extorsão qualificada pela morte, estupro, estupro de vulnerável, epidemia com resultado morte, genocídio e, por acréscimos legislativos, a lesão corporal gravíssima e a lesão seguida de morte praticadas contra autoridades de segurança pública e seus familiares em razão dessa condição.",
+        "As CONSEQUÊNCIAS do rótulo: inafiançabilidade; vedação de anistia, graça e indulto; prazos diferenciados de progressão de regime; livramento condicional após mais de dois terços da pena, vedado ao reincidente específico; e prisão temporária de 30 dias prorrogáveis por mais 30 — contra os 5+5 da regra geral.",
+        "Duas correções de entendimento que a banca adora. Primeira: o regime INTEGRALMENTE fechado foi declarado inconstitucional pelo STF; há progressão, com frações próprias. Segunda: o TRÁFICO PRIVILEGIADO (art. 33, §4º, da Lei de Drogas) NÃO é hediondo — entendimento firmado por STF e STJ e depois positivado pela Lei 13.964/2019."
+      ],
+      "naPratica": "O rótulo de hediondo muda o procedimento desde a prisão: não cabe fiança, e o prazo da temporária é outro. Saber se o crime está no rol altera a condução da ocorrência.",
+      "pegadinhas": [
+        "Dizer que o rol é exemplificativo. É taxativo.",
+        "Afirmar que o tráfico privilegiado é hediondo. Não é.",
+        "Manter o regime integralmente fechado. Foi declarado inconstitucional.",
+        "Trocar os prazos da temporária: hediondo é 30+30, não 5+5."
+      ],
+      "revisao": [
+        "Rol TAXATIVO — gravidade concreta não cria hediondez",
+        "Equiparados: tortura, tráfico, terrorismo",
+        "Inafiançáveis, sem anistia, graça ou indulto",
+        "Temporária: 30+30 dias",
+        "Tráfico privilegiado NÃO é hediondo"
+      ]
+    },
+    "legislacao-especial:5.2": {
+      "emUmaFrase": "Racismo é inafiançável e IMPRESCRITÍVEL, punido com reclusão — e imprescritibilidade, na Constituição, só existe em duas hipóteses.",
+      "explicacao": [
+        "A Lei 7.716/1989 pune os crimes resultantes de discriminação ou preconceito de RAÇA, COR, ETNIA, RELIGIÃO ou PROCEDÊNCIA NACIONAL. É crime comum: pode ser praticado por qualquer pessoa, embora a condição de agente público possa agravar.",
+        "As condutas típicas alcançam situações concretas: impedir ou obstar acesso a emprego na administração pública ou em empresa privada; recusar ou impedir acesso a estabelecimento comercial; impedir acesso a entradas sociais em edifícios; recusar hospedagem; impedir o acesso a transportes públicos; e praticar, induzir ou incitar a discriminação.",
+        "O tratamento constitucional é o que mais cai. O art. 5º, XLII: a prática do racismo constitui crime INAFIANÇÁVEL e IMPRESCRITÍVEL, sujeito à pena de RECLUSÃO. Guarde que a imprescritibilidade, na Constituição, só alcança duas hipóteses: o racismo e a ação de grupos armados contra a ordem constitucional e o Estado Democrático (art. 5º, XLIV).",
+        "Atenção ao contraste com a INJÚRIA RACIAL, que era tipificada no Código Penal e teve seu tratamento aproximado ao do racismo por legislação posterior. Como o tema mudou recentemente, confira a redação vigente antes da prova."
+      ],
+      "naPratica": "Numa ocorrência com ofensa de cunho racial, o registro preciso das palavras usadas e do contexto é o que permite ao Ministério Público distinguir as figuras típicas. Transcrever literalmente, entre aspas, é a conduta correta.",
+      "pegadinhas": [
+        "Dizer que o racismo é punido com detenção. É reclusão.",
+        "Afirmar que a tortura é imprescritível. Imprescritíveis são racismo e ação de grupos armados.",
+        "Restringir o crime a agentes públicos. É crime comum.",
+        "Tratá-lo como de menor potencial ofensivo. Não é — é inafiançável."
+      ],
+      "revisao": [
+        "Art. 5º, XLII: inafiançável, imprescritível, pena de reclusão",
+        "Imprescritíveis: racismo e ação de grupos armados",
+        "Abrange raça, cor, etnia, religião e procedência nacional",
+        "Crime comum, qualquer pessoa pode praticar"
+      ]
+    },
+    "legislacao-especial:5.3": {
+      "emUmaFrase": "Na tortura, a perda do cargo é efeito AUTOMÁTICO da condenação — a única hipótese do ordenamento em que isso acontece sem precisar ser motivada.",
+      "explicacao": [
+        "A Lei 9.455/1997 tipifica a tortura em algumas modalidades. TORTURA-PROVA: constranger alguém com emprego de violência ou grave ameaça, causando sofrimento físico ou mental, para obter informação, declaração ou confissão. TORTURA-CRIME: para provocar ação ou omissão de natureza criminosa. TORTURA-DISCRIMINAÇÃO: em razão de discriminação racial ou religiosa. TORTURA-CASTIGO: submeter pessoa sob sua guarda, poder ou autoridade, com emprego de violência ou grave ameaça, a intenso sofrimento, como forma de aplicar castigo pessoal ou medida de caráter preventivo.",
+        "O §2º traz a TORTURA POR OMISSÃO: aquele que se omite em face dessas condutas, quando tinha o DEVER DE EVITÁ-LAS OU APURÁ-LAS, incorre em detenção de 1 a 4 anos. Esse dispositivo atinge em cheio quem tem a custódia de preso.",
+        "O §5º é o mais cobrado: a condenação acarretará a PERDA DO CARGO, função ou emprego público e a interdição para seu exercício pelo DOBRO do prazo da pena aplicada. É efeito AUTOMÁTICO da sentença — exceção ao art. 92 do Código Penal, em que a perda do cargo precisa ser motivadamente declarada.",
+        "O regime é severo: crime equiparado a hediondo, inafiançável, insuscetível de graça ou anistia, com cumprimento inicial em regime fechado. Mas atenção: a tortura PRESCREVE. Imprescritíveis são apenas o racismo e a ação de grupos armados.",
+        "A lei também se aplica quando o crime é cometido fora do território nacional, sendo a vítima brasileira ou encontrando-se o agente em local sob jurisdição brasileira."
+      ],
+      "naPratica": "O §2º é um alerta direto: estar presente e não impedir é crime. Quem tem o preso sob custódia tem o dever jurídico de agir — a omissão aqui não é neutra.",
+      "pegadinhas": [
+        "Dizer que a perda do cargo na tortura precisa ser motivada. É automática.",
+        "Afirmar que a tortura é imprescritível. Prescreve.",
+        "Restringir a tortura a agente público. É crime comum; a condição de agente é causa de aumento.",
+        "Dizer que a omissão diante da tortura é atípica."
+      ],
+      "revisao": [
+        "Perda do cargo: efeito AUTOMÁTICO + interdição pelo dobro da pena",
+        "Omissão de quem devia evitar: detenção de 1 a 4 anos",
+        "Equiparado a hediondo, inafiançável, sem graça ou anistia",
+        "PRESCREVE (diferente do racismo)",
+        "Crime comum, com aumento se praticado por agente público"
+      ]
+    },
+    "legislacao-especial:5.4": {
+      "emUmaFrase": "Organização criminosa exige QUATRO ou mais pessoas e infrações com pena máxima superior a QUATRO anos — e associação criminosa, do Código Penal, exige só três.",
+      "explicacao": [
+        "O art. 1º, §1º, da Lei 12.850/2013 define organização criminosa pela soma de quatro requisitos CUMULATIVOS: associação de 4 OU MAIS pessoas; estruturalmente ordenada; caracterizada pela divisão de tarefas, ainda que informalmente; com objetivo de obter vantagem de qualquer natureza mediante a prática de infrações penais cujas penas MÁXIMAS sejam superiores a 4 anos, ou que sejam de caráter transnacional.",
+        "Faça sempre o contraste com a ASSOCIAÇÃO CRIMINOSA do art. 288 do Código Penal, que exige apenas TRÊS pessoas e não pede estrutura ordenada. Decore o par: associação 3, organização 4.",
+        "Os MEIOS DE OBTENÇÃO DE PROVA são o segundo eixo cobrado. COLABORAÇÃO PREMIADA pode ser celebrada pelo delegado de polícia nos autos do inquérito, com manifestação do MP, ou pelo próprio MP; o §16 veda expressamente que a sentença condenatória se funde APENAS nas declarações do colaborador. AÇÃO CONTROLADA depende de prévia COMUNICAÇÃO ao juiz, que pode estabelecer limites — não de autorização. INFILTRAÇÃO DE AGENTES depende de autorização judicial circunstanciada e motivada. ACESSO A DADOS CADASTRAIS que informem qualificação, filiação e endereço independe de autorização judicial (art. 15).",
+        "Guarde a diferença de regimes: comunicação (ação controlada) × autorização (infiltração) × independe de autorização (dados cadastrais). É exatamente nesses três verbos que as questões são montadas."
+      ],
+      "naPratica": "Na prática policial, a ação controlada é o que permite retardar a intervenção para colher mais elementos. Mas ela não é discricionária: exige comunicação prévia ao juízo.",
+      "pegadinhas": [
+        "Trocar 3 por 4 pessoas na organização criminosa.",
+        "Usar a pena MÍNIMA em vez da máxima no requisito dos 4 anos.",
+        "Dizer que a infiltração dispensa autorização judicial.",
+        "Dizer que a ação controlada exige autorização. Exige comunicação prévia.",
+        "Admitir condenação fundada apenas na colaboração premiada."
+      ],
+      "revisao": [
+        "4+ pessoas · estrutura ordenada · divisão de tarefas · pena MÁXIMA > 4 anos",
+        "Associação criminosa (CP, art. 288): 3 pessoas",
+        "Ação controlada: comunicação prévia ao juiz",
+        "Infiltração: autorização judicial",
+        "Dados cadastrais: independem de autorização",
+        "Colaboração sozinha não condena"
+      ]
+    },
+    "legislacao-especial:5.5": {
+      "emUmaFrase": "A Lei de Drogas não prende o usuário: o art. 28 prevê advertência, prestação de serviços e medida educativa — nenhuma pena privativa de liberdade.",
+      "explicacao": [
+        "O art. 28 trata de quem adquire, guarda, tem em depósito, transporta ou traz consigo droga PARA CONSUMO PESSOAL. As consequências são três, e nenhuma é prisão: advertência sobre os efeitos das drogas; prestação de serviços à comunidade; e medida educativa de comparecimento a programa ou curso educativo. Por isso não se lavra auto de prisão em flagrante — lavra-se termo circunstanciado.",
+        "O §2º dá os critérios para distinguir consumo de tráfico, e é ele que o policial aplica na ocorrência: a NATUREZA e a QUANTIDADE da substância, o LOCAL e as CONDIÇÕES em que se desenvolveu a ação, as CIRCUNSTÂNCIAS SOCIAIS E PESSOAIS, bem como a CONDUTA e os ANTECEDENTES do agente. Registrar esses elementos é o que sustenta o enquadramento.",
+        "O art. 33 é o TRÁFICO: tipo misto alternativo, com dezoito verbos — importar, exportar, remeter, preparar, produzir, fabricar, adquirir, vender, expor à venda, oferecer, ter em depósito, transportar, trazer consigo, guardar, prescrever, ministrar, entregar a consumo ou fornecer. Praticar mais de um verbo no mesmo contexto gera crime único. Pena: reclusão de 5 a 15 anos e multa.",
+        "O §4º traz o TRÁFICO PRIVILEGIADO, com redução de um sexto a dois terços, exigindo quatro requisitos CUMULATIVOS: agente primário, de bons antecedentes, que não se dedique a atividades criminosas e que não integre organização criminosa. Por essa cumulatividade, o STJ nega o benefício a quem também é condenado por associação para o tráfico. E, como já visto, o tráfico privilegiado NÃO é hediondo.",
+        "Outros tipos relevantes: art. 35, ASSOCIAÇÃO PARA O TRÁFICO, que exige duas ou mais pessoas de forma reiterada; art. 33, §1º, equiparados ao tráfico; art. 33, §2º, induzir, instigar ou auxiliar alguém ao uso; art. 33, §3º, oferecer droga eventualmente e sem objetivo de lucro a pessoa do relacionamento, para juntos consumirem.",
+        "Na investigação, a Lei de Drogas tem prazos próprios de inquérito: 30 dias com indiciado preso e 90 dias solto, ambos duplicáveis."
+      ],
+      "naPratica": "A decisão entre termo circunstanciado e prisão em flagrante nasce da aplicação do §2º no local. Quantidade pequena, sem balança, sem embalagens fracionadas, sem dinheiro trocado, em contexto de consumo, aponta para o art. 28.",
+      "pegadinhas": [
+        "Dizer que o art. 28 prevê pena de detenção. Não prevê pena privativa de liberdade.",
+        "Afirmar que basta a primariedade para o tráfico privilegiado. São quatro requisitos cumulativos.",
+        "Dizer que o tráfico privilegiado é hediondo.",
+        "Usar os prazos comuns de inquérito. Na Lei de Drogas são 30 e 90, duplicáveis."
+      ],
+      "revisao": [
+        "Art. 28: advertência, serviços à comunidade, medida educativa",
+        "Sem prisão em flagrante para o usuário — termo circunstanciado",
+        "Critérios do §2º: natureza, quantidade, local, condições, conduta, antecedentes",
+        "Art. 33: reclusão de 5 a 15 anos, 18 verbos",
+        "Privilegiado (§4º): 4 requisitos cumulativos, redução de 1/6 a 2/3",
+        "Inquérito: 30 preso · 90 solto, duplicáveis"
+      ]
+    },
+    "legislacao-especial:5.6": {
+      "emUmaFrase": "É a lei que mais pode atingir você: todo crime de abuso de autoridade exige DOLO ESPECÍFICO, e divergência de interpretação nunca é abuso.",
+      "explicacao": [
+        "A Lei 13.869/2019 define os crimes de abuso de autoridade. O sujeito ativo, pelo art. 2º, é qualquer AGENTE PÚBLICO, servidor ou não, da administração direta, indireta ou fundacional de qualquer dos Poderes e de todos os entes — o que inclui expressamente os militares.",
+        "O art. 1º, §1º, é a trava que protege o agente de boa-fé: os crimes só se configuram quando praticados pelo agente com a FINALIDADE ESPECÍFICA de prejudicar outrem, beneficiar a si mesmo ou a terceiro, ou por mero capricho ou satisfação pessoal. Sem esse dolo específico, não há crime.",
+        "O §2º completa: a divergência na interpretação de lei ou na avaliação de fatos e provas NÃO configura abuso de autoridade. Errar na interpretação não é crime.",
+        "Entre as condutas típicas que mais tocam a atividade policial: decretar medida de privação da liberdade em manifesta desconformidade com a lei; proceder à obtenção de prova por meio manifestamente ilícito; constranger alguém, sob violência ou grave ameaça, a autoacusar-se; invadir ou adentrar imóvel alheio, clandestina ou astuciosamente, ou à revelia da vontade do ocupante, fora das hipóteses legais; deixar de comunicar prisão em flagrante à autoridade judiciária no prazo legal; submeter preso ao uso de algemas quando não houver resistência ou risco; e divulgar gravação sem relação com a prova, expondo a intimidade.",
+        "As penas são de detenção ou reclusão, conforme o tipo, com multa. A ação penal é PÚBLICA INCONDICIONADA, admitida a privada subsidiária se o MP não denunciar no prazo. E as sanções penais convivem com as civis e administrativas, porque as instâncias são independentes."
+      ],
+      "naPratica": "O melhor antídoto contra o abuso de autoridade é o registro: descrever a justa causa da abordagem, o motivo do uso de algemas, a hora da comunicação da prisão. O que está documentado demonstra que não houve capricho nem perseguição.",
+      "pegadinhas": [
+        "Dizer que a divergência de interpretação configura abuso. O §2º diz o contrário.",
+        "Dispensar o dolo específico. Ele é elementar de todos os tipos.",
+        "Excluir os militares do alcance da lei.",
+        "Dizer que a ação penal é privada. É pública incondicionada."
+      ],
+      "revisao": [
+        "Sujeito ativo: qualquer agente público, inclusive militar",
+        "Dolo específico obrigatório: prejudicar, beneficiar, capricho ou satisfação pessoal",
+        "Divergência de interpretação não é abuso",
+        "Ação penal pública incondicionada",
+        "Instâncias penal, civil e administrativa são independentes"
+      ]
+    },
+    "legislacao-especial:5.7": {
+      "emUmaFrase": "Posse é dentro de casa ou do trabalho; porte é fora — e essa única distinção muda o crime e a pena.",
+      "explicacao": [
+        "O Estatuto do Desarmamento (Lei 10.826/2003) organiza-se em torno de uma distinção. POSSE IRREGULAR (art. 12): manter sob sua guarda arma de fogo de uso permitido NO INTERIOR DE SUA RESIDÊNCIA ou dependência desta, ou ainda no seu LOCAL DE TRABALHO, desde que seja o titular ou o responsável legal do estabelecimento. Pena: detenção de 1 a 3 anos e multa. PORTE ILEGAL de arma de uso permitido (art. 14): portar, deter, adquirir, fornecer, receber, transportar, ceder, emprestar, remeter, empregar ou ocultar, fora das hipóteses de posse. Pena: reclusão de 2 a 4 anos e multa.",
+        "Para arma de USO RESTRITO ou PROIBIDO, o art. 16 agrava: reclusão de 3 a 6 anos e multa, com figuras equiparadas no parágrafo único — entre elas suprimir ou alterar marca, numeração ou sinal de identificação, portar arma com numeração raspada, e possuir arma de fogo de uso proibido.",
+        "Outros crimes: art. 13, OMISSÃO DE CAUTELA, deixar de observar as cautelas para impedir que menor de 18 anos ou pessoa com deficiência mental se apodere de arma; art. 15, DISPARO DE ARMA DE FOGO em lugar habitado ou em via pública, crime autônomo de perigo que independe de alguém ser atingido; art. 17, comércio ilegal; art. 18, tráfico internacional.",
+        "Sobre o PORTE DO POLICIAL MILITAR: o art. 6º veda o porte em regra, mas ressalva expressamente os integrantes das Forças Armadas e das polícias federal, rodoviária federal, civis e militares, bem como dos corpos de bombeiros militares. O porte é garantido nos termos do regulamento, condicionado à comprovação periódica de aptidão psicológica e de capacidade técnica."
+      ],
+      "naPratica": "Na abordagem, a pergunta é simples: onde a arma estava e quem é a pessoa? Dentro da casa, do titular, arma de uso permitido: posse. Na cintura, na rua: porte. Numeração raspada: equipara-se a uso restrito, com pena bem maior.",
+      "pegadinhas": [
+        "Tratar posse e porte como sinônimos.",
+        "Dizer que o disparo em lugar habitado só é crime se houver vítima. É crime de perigo.",
+        "Classificar arma com numeração suprimida como de uso permitido. Equipara-se ao restrito.",
+        "Atribuir ao porte de uso permitido a pena de 4 a 10 anos — essa não é a do Estatuto para esse tipo."
+      ],
+      "revisao": [
+        "Posse (art. 12): residência ou local de trabalho, detenção 1 a 3 anos",
+        "Porte (art. 14): fora dali, reclusão 2 a 4 anos",
+        "Uso restrito (art. 16): reclusão 3 a 6 anos",
+        "Numeração raspada equipara-se ao restrito",
+        "Disparo (art. 15): crime de perigo, independe de vítima",
+        "Porte do PM garantido por lei e regulamento"
+      ]
+    },
+    "legislacao-especial:5.8": {
+      "emUmaFrase": "A Lei Maria da Penha cria um microssistema inteiro de proteção — e a lesão corporal nesse contexto é de ação penal INCONDICIONADA.",
+      "explicacao": [
+        "A Lei 11.340/2006 configura violência doméstica e familiar contra a mulher em três âmbitos: na UNIDADE DOMÉSTICA, no âmbito da FAMÍLIA e em qualquer RELAÇÃO ÍNTIMA DE AFETO, em que o agressor conviva ou tenha convivido com a ofendida — INDEPENDENTEMENTE DE COABITAÇÃO. Relação já encerrada também está alcançada.",
+        "O art. 7º lista cinco FORMAS de violência, e o rol é mais amplo do que se imagina: FÍSICA, PSICOLÓGICA, SEXUAL, PATRIMONIAL (destruir ou subtrair objetos, documentos, bens) e MORAL (calúnia, difamação, injúria). Não se exige lesão nem vestígio material.",
+        "O art. 11 fixa as PROVIDÊNCIAS DA AUTORIDADE POLICIAL, que tocam diretamente o trabalho da guarnição: garantir proteção policial quando necessário, inclusive comunicando o Ministério Público e o Judiciário; encaminhar a ofendida ao hospital, posto de saúde e ao Instituto Médico Legal; fornecer transporte para local seguro ou abrigo; acompanhar a ofendida para retirar seus pertences; e informá-la sobre seus direitos.",
+        "As MEDIDAS PROTETIVAS DE URGÊNCIA podem ser concedidas de imediato, inclusive sem audiência das partes e sem manifestação prévia do Ministério Público. As que obrigam o agressor incluem suspensão da posse ou restrição do porte de armas, afastamento do lar, proibição de aproximação e de contato, restrição ou suspensão de visitas e prestação de alimentos provisionais.",
+        "Duas regras fecham o tema. O art. 41 afasta a aplicação da Lei 9.099/1995 aos crimes praticados com violência doméstica e familiar contra a mulher, QUALQUER QUE SEJA A PENA — não há transação penal nem termo circunstanciado. E a Súmula 542 do STJ: a ação penal relativa ao crime de LESÃO CORPORAL resultante de violência doméstica contra a mulher é pública INCONDICIONADA."
+      ],
+      "naPratica": "Quem costuma ser acionado às três da manhã para fazer valer uma medida protetiva é a guarnição da PM. Conhecer o rol de medidas e as providências do art. 11 é o que permite atuar corretamente na ocorrência.",
+      "pegadinhas": [
+        "Exigir coabitação. A lei alcança relação íntima de afeto, mesmo já encerrada.",
+        "Condicionar a ação por lesão corporal à representação. É incondicionada (Súmula 542 STJ).",
+        "Aplicar a Lei 9.099 por ser crime de menor pena. O art. 41 veda.",
+        "Restringir a violência à forma física. São cinco formas."
+      ],
+      "revisao": [
+        "Cinco formas: física, psicológica, sexual, patrimonial e moral",
+        "Independe de coabitação; alcança relação já encerrada",
+        "Art. 11: proteção, IML, transporte, pertences",
+        "Medidas protetivas: de imediato, sem oitiva prévia",
+        "Art. 41: Lei 9.099 não se aplica",
+        "Súmula 542 STJ: lesão = ação incondicionada"
+      ]
+    },
+    "legislacao-especial:5.9": {
+      "emUmaFrase": "Criança é até 12 anos INCOMPLETOS; adolescente, de 12 a 18 — e o adolescente não é preso em flagrante, é apreendido.",
+      "explicacao": [
+        "O art. 2º do ECA define: CRIANÇA é a pessoa até doze anos INCOMPLETOS; ADOLESCENTE é aquela entre doze e dezoito anos de idade. Esse marco decide todo o resto.",
+        "ATO INFRACIONAL é a conduta descrita como crime ou contravenção praticada por criança ou adolescente. À CRIANÇA aplicam-se MEDIDAS DE PROTEÇÃO (art. 101): encaminhamento aos pais, orientação, matrícula, inclusão em programa, tratamento, acolhimento institucional. Ao ADOLESCENTE aplicam-se MEDIDAS SOCIOEDUCATIVAS (art. 112): advertência, obrigação de reparar o dano, prestação de serviços à comunidade, liberdade assistida, semiliberdade e internação.",
+        "O procedimento na apreensão é o que mais interessa à PM. O art. 107 determina que a apreensão de qualquer adolescente e o local onde se encontra recolhido sejam INCONTINENTI comunicados à autoridade judiciária competente e à família do apreendido ou à pessoa por ele indicada. O adolescente não vai para estabelecimento prisional comum: é encaminhado a entidade de atendimento ou à autoridade competente.",
+        "Os prazos da internação são tabela pura. INTERNAÇÃO PROVISÓRIA, antes da sentença: máximo de 45 DIAS, improrrogáveis. INTERNAÇÃO como medida socioeducativa: reavaliação no máximo a cada 6 MESES, duração máxima de 3 ANOS e liberação compulsória aos 21 ANOS.",
+        "A internação submete-se a três princípios: BREVIDADE, EXCEPCIONALIDADE e RESPEITO À CONDIÇÃO PECULIAR DE PESSOA EM DESENVOLVIMENTO. E só é admitida quando houver ato infracional cometido mediante grave ameaça ou violência, reiteração em infrações graves, ou descumprimento reiterado e injustificável de medida anteriormente imposta."
+      ],
+      "naPratica": "Errar o procedimento com adolescente gera responsabilização do próprio policial. Comunicar imediatamente o juízo e a família, e encaminhar à entidade correta, não é formalidade: é o rito legal.",
+      "pegadinhas": [
+        "Dizer que criança é até 16 anos. É até 12 incompletos.",
+        "Aplicar medida socioeducativa a criança. A ela cabem medidas de proteção.",
+        "Afirmar que o adolescente é preso em flagrante e recolhido a presídio.",
+        "Trocar os prazos: 45 dias é a provisória; 3 anos é o limite da internação; 21 anos é a liberação compulsória."
+      ],
+      "revisao": [
+        "Criança: até 12 anos INCOMPLETOS · Adolescente: 12 a 18",
+        "Criança: medidas de PROTEÇÃO · Adolescente: SOCIOEDUCATIVAS",
+        "Internação provisória: até 45 dias improrrogáveis",
+        "Internação: reavaliação a cada 6 meses, máximo 3 anos, liberação aos 21",
+        "Art. 107: comunicação incontinenti ao juiz e à família"
+      ]
+    },
+    "legislacao-especial:5.10": {
+      "emUmaFrase": "Pessoa idosa é quem tem 60 anos ou mais — e 65 anos é outro marco, o do transporte coletivo gratuito.",
+      "explicacao": [
+        "O art. 1º do Estatuto (Lei 10.741/2003) define: destina-se a regular os direitos das pessoas com idade IGUAL OU SUPERIOR A 60 ANOS. Guarde a fórmula 'igual ou superior' — a banca troca por 'superior a'.",
+        "O segundo marco é o do art. 39: aos maiores de 65 ANOS fica assegurada a gratuidade dos transportes coletivos públicos urbanos e semiurbanos. É aqui que a maioria erra, confundindo os dois números.",
+        "Os direitos assegurados incluem prioridade de atendimento em órgãos públicos e privados, prioridade na tramitação de processos em que figure como parte ou interveniente, atendimento preferencial no Sistema Único de Saúde, e a obrigação de a família, a comunidade, a sociedade e o poder público assegurarem com absoluta prioridade a efetivação de seus direitos.",
+        "Entre os CRIMES em espécie, vários tocam a atividade policial: discriminar pessoa idosa impedindo ou dificultando acesso a operações; deixar de prestar assistência à pessoa idosa quando possível fazê-lo sem risco; abandonar pessoa idosa em hospitais, casas de saúde ou entidades de longa permanência; expor a perigo a integridade e a saúde, física ou psíquica, submetendo-a a condições desumanas; reter o cartão magnético de conta bancária ou documentos; e apropriar-se de bens ou proventos da pessoa idosa.",
+        "Todos os crimes do Estatuto são de ação penal PÚBLICA INCONDICIONADA."
+      ],
+      "naPratica": "Ocorrências de abandono e de apropriação de benefício previdenciário de pessoa idosa são frequentes e muitas vezes registradas de forma genérica. Identificar a figura típica correta faz diferença na apuração.",
+      "pegadinhas": [
+        "Dizer que pessoa idosa é quem tem 65 anos ou mais. São 60.",
+        "Trocar 'igual ou superior a 60' por 'superior a 60'.",
+        "Dizer que o abandono em hospital é atípico.",
+        "Afirmar que os crimes do Estatuto são de ação privada."
+      ],
+      "revisao": [
+        "Pessoa idosa: 60 anos ou mais",
+        "Transporte coletivo gratuito: 65 anos",
+        "Prioridade de atendimento e de tramitação processual",
+        "Crimes de ação penal pública incondicionada",
+        "Abandono, retenção de cartão e apropriação de proventos são crimes"
+      ]
+    },
+    "legislacao-especial:5.11": {
+      "emUmaFrase": "Quem já tem identificação civil não é identificado criminalmente — salvo nas hipóteses taxativas da lei, e só uma delas exige decisão judicial.",
+      "explicacao": [
+        "A Lei 12.037/2009 regulamenta o art. 5º, LVIII, da Constituição: o civilmente identificado não será submetido a identificação criminal, SALVO nas hipóteses previstas em lei. A regra, portanto, é a NÃO identificação.",
+        "O art. 3º lista as exceções, e vale conhecê-las uma a uma: quando o documento apresentar RASURA ou tiver INDÍCIO DE FALSIFICAÇÃO; quando o documento for INSUFICIENTE para identificar cabalmente o indiciado; quando o indiciado portar documentos de identidade DISTINTOS, com informações conflitantes; quando a identificação criminal for ESSENCIAL ÀS INVESTIGAÇÕES, por decisão da AUTORIDADE JUDICIÁRIA competente; quando constar de registros policiais o uso de OUTROS NOMES ou diferentes qualificações; e quando o estado de conservação ou a distância temporal da expedição do documento IMPOSSIBILITAR a completa identificação.",
+        "Repare: das seis hipóteses, apenas UMA — a essencialidade às investigações — exige decisão judicial. As demais são aferidas no momento, pela autoridade.",
+        "A identificação criminal inclui o processo DATILOSCÓPICO e o FOTOGRÁFICO (art. 5º), e, nos casos previstos, a coleta de material biológico para obtenção do PERFIL GENÉTICO, mediante autorização judicial.",
+        "A lei também prevê a retirada da identificação fotográfica dos autos quando houver arquivamento definitivo ou absolvição, mediante requerimento do interessado."
+      ],
+      "naPratica": "A abordagem em que o documento apresenta rasura visível autoriza a identificação criminal ali mesmo, sem ordem judicial. Mas o motivo precisa constar do registro — a hipótese legal invocada é o que legitima o ato.",
+      "pegadinhas": [
+        "Dizer que o civilmente identificado é sempre identificado criminalmente.",
+        "Dizer que a identificação criminal é vedada em qualquer hipótese.",
+        "Exigir autorização judicial para todas as hipóteses. Só a da essencialidade exige.",
+        "Afirmar que só cabe o processo datiloscópico. Cabe também o fotográfico."
+      ],
+      "revisao": [
+        "Regra: civilmente identificado NÃO é identificado criminalmente",
+        "6 exceções no art. 3º",
+        "Só a 'essencial às investigações' exige decisão judicial",
+        "Identificação: datiloscópica e fotográfica",
+        "Perfil genético: mediante autorização judicial"
+      ]
+    }
+  }
+}

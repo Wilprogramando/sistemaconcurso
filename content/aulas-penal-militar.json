@@ -1,0 +1,160 @@
+{
+  "sobre": "Aulas didáticas de Direito Penal Militar — 6 das 60 questões. O Código Penal Militar é de 1969 e tem lógica própria: estudar pelas diferenças em relação ao Código Penal comum é o caminho mais curto.",
+  "aulas": {
+    "direito-penal-militar:4.1": {
+      "emUmaFrase": "Crime militar é o que a lei diz que é: o art. 9º do CPM define a lista, e fora dela não há crime militar, por mais militar que o contexto pareça.",
+      "explicacao": [
+        "O art. 124 da Constituição diz que à Justiça Militar compete julgar os crimes militares DEFINIDOS EM LEI. O CPM adota, portanto, um critério RATIONE LEGIS: é militar o crime que o próprio Código define como tal, nos arts. 9º (tempo de paz) e 10 (tempo de guerra).",
+        "A doutrina separa dois tipos. CRIME PROPRIAMENTE MILITAR só pode ser praticado por militar e tem previsão exclusiva no CPM, sem correspondente na lei comum: deserção, motim, revolta, violência contra superior, insubmissão. CRIME IMPROPRIAMENTE MILITAR existe também na lei penal comum, mas praticado nas circunstâncias do art. 9º torna-se militar: homicídio, furto, roubo, estelionato, lesão corporal.",
+        "O art. 9º tem três incisos. O INCISO I alcança os crimes previstos no CPM quando definidos de modo diverso na lei comum, ou nela não previstos, QUALQUER QUE SEJA O AGENTE — note que aqui não se exige que o autor seja militar. O INCISO II alcança os crimes com igual definição na lei comum quando praticados em certas circunstâncias, entre elas por militar em situação de ATIVIDADE contra militar na mesma situação, ou por militar em serviço, ou em lugar sujeito à administração militar. O INCISO III alcança os crimes praticados por militar da reserva, reformado ou por CIVIL contra as instituições militares, nas hipóteses das alíneas 'a' a 'd'.",
+        "A Lei 13.491/2017 ampliou enormemente o conceito: o inciso II passou a abranger não só os crimes previstos no CPM, mas também os previstos na LEGISLAÇÃO PENAL comum, quando praticados nas circunstâncias ali descritas. Na prática, muito mais condutas passaram a ser crime militar.",
+        "A mesma lei inseriu o §1º: os crimes DOLOSOS CONTRA A VIDA cometidos por militares CONTRA CIVIL são da competência do TRIBUNAL DO JÚRI. E o §2º trouxe uma exceção para militares das Forças Armadas em contextos específicos de missão determinada pelo Presidente ou pelo Ministro da Defesa, hipótese em que a competência é da Justiça Militar da União."
+      ],
+      "naPratica": "A pergunta prática é sempre a mesma: a conduta se encaixa em algum inciso do art. 9º? Se um policial militar da ativa, em serviço, agride outro policial militar da ativa, encaixa — é crime militar. Se agride um civil fora do serviço e sem relação com a função, não encaixa.",
+      "pegadinhas": [
+        "Dizer que o inciso I exige agente militar. Ele alcança qualquer que seja o agente.",
+        "Afirmar que militar da reserva comete crime militar nas mesmas hipóteses do militar da ativa. Só nas do inciso III.",
+        "Mandar à Justiça Militar o homicídio doloso de militar contra civil. Vai ao Júri.",
+        "Dizer que a Justiça Militar ESTADUAL julga civis. Nunca julga — quem pode é a da União."
+      ],
+      "revisao": [
+        "Critério ratione legis: crime militar é o do art. 9º do CPM",
+        "Propriamente militar: só militar, sem correspondente comum",
+        "Impropriamente militar: existe na lei comum, vira militar pelo art. 9º",
+        "Lei 13.491/2017 ampliou o inciso II para toda a legislação penal",
+        "Doloso contra a vida de civil: Tribunal do Júri"
+      ]
+    },
+    "direito-penal-militar:4.2": {
+      "emUmaFrase": "A parte geral do CPM é quase igual à do Código Penal comum — e o que a prova cobra são exatamente os pontos em que ela se afasta.",
+      "explicacao": [
+        "Vários institutos são idênticos: legalidade (art. 1º), retroatividade da lei mais benigna (art. 2º), ultratividade da lei excepcional ou temporária (art. 4º), teoria da ATIVIDADE para o tempo do crime (art. 5º), teoria da UBIQUIDADE para o lugar (art. 6º), e a contagem de prazo incluindo o dia do começo (art. 16).",
+        "As diferenças merecem atenção. O art. 3º manda aplicar à MEDIDA DE SEGURANÇA a lei vigente ao tempo da SENTENÇA. O art. 19 registra que a lei militar não distingue crime de contravenção, usando o gênero 'crime'. O art. 13 mantém as responsabilidades do militar da reserva ou reformado quando o crime é praticado em lugar sujeito à administração militar.",
+        "O conceito mais cobrado de todos é o de SUPERIOR, no art. 24: considera-se superior o militar que, em virtude da FUNÇÃO, exerce autoridade sobre outro de IGUAL posto ou graduação. É um conceito funcional, não apenas hierárquico — e é ele que amplia o alcance dos crimes de violência e desrespeito a superior.",
+        "Outros conceitos do Título I: militar da ativa e assemelhado (arts. 21 e 22), equiparação a comandante (art. 23), crime praticado em presença do inimigo (art. 25) e TEMPO DE GUERRA (art. 15), que começa com a declaração ou o reconhecimento do estado de guerra, ou com o decreto de mobilização."
+      ],
+      "naPratica": "O art. 24 explica uma situação comum no quartel: o militar de mesma graduação que está exercendo a função de comandante da guarnição é SUPERIOR para efeitos penais. Desrespeitá-lo não é desrespeito a um igual.",
+      "pegadinhas": [
+        "Definir superior apenas pelo posto ou graduação mais elevada. O art. 24 é funcional.",
+        "Dizer que o CPM distingue crime de contravenção. Não distingue.",
+        "Trocar a teoria do tempo (atividade) pela do lugar (ubiquidade).",
+        "Aplicar à medida de segurança a lei do tempo do fato. É a do tempo da sentença."
+      ],
+      "revisao": [
+        "Tempo: atividade · Lugar: ubiquidade (igual ao CP)",
+        "Art. 24: superior é quem exerce autoridade pela FUNÇÃO",
+        "Art. 19: a lei militar não distingue crime de contravenção",
+        "Art. 3º: medida de segurança segue a lei do tempo da sentença",
+        "Prazo: inclui o dia do começo"
+      ]
+    },
+    "direito-penal-militar:4.3": {
+      "emUmaFrase": "O CPM é de 1969 e ainda fala em erro de fato e erro de direito — enquanto o Código Penal moderno fala em erro de tipo e erro de proibição.",
+      "explicacao": [
+        "A estrutura do crime é a mesma: relação de causalidade no art. 29, com a regra da superveniência causal relativamente independente no §1º e o dever de agir do garantidor no §2º. A TENTATIVA está no art. 30, com redução de um a dois terços; nos crimes de atentado, não há redução.",
+        "As EXCLUDENTES DE ILICITUDE estão no art. 42 e repetem o rol comum: estado de necessidade, legítima defesa, estrito cumprimento do dever legal e exercício regular de direito. A diferença está no ESTADO DE NECESSIDADE: o CPM prevê duas modalidades — a JUSTIFICANTE, que exclui a ilicitude (art. 43), e a EXCULPANTE, que exclui a culpabilidade (art. 39). O Código Penal comum só conhece a justificante.",
+        "O EXCESSO é tratado no art. 45: o excesso culposo é punível, mas o parágrafo único afasta a punição quando o excesso resulta de ESCUSÁVEL SURPRESA OU PERTURBAÇÃO DE ÂNIMO em face da situação. É uma regra mais generosa que a do CP comum.",
+        "A TERMINOLOGIA DO ERRO é a marca do código antigo: ERRO DE FATO (art. 36) e ERRO DE DIREITO (art. 35), em vez de erro de tipo e erro de proibição. A banca cobra isso literalmente.",
+        "A OBEDIÊNCIA HIERÁRQUICA, no art. 38, é tratada de forma mais ampla: refere-se ao cumprimento de ordem direta de superior em matéria de serviço. Mas a trava permanece — ordem MANIFESTAMENTE criminosa não isenta ninguém; respondem o superior que a emite e o subordinado que a executa.",
+        "Na IMPUTABILIDADE (arts. 48 a 52), a EMBRIAGUEZ segue a lógica comum: não é imputável quem, por embriaguez COMPLETA proveniente de caso fortuito ou força maior, era incapaz de entender o caráter ilícito; a embriaguez INCOMPLETA por caso fortuito apenas REDUZ a pena de um a dois terços; e a embriaguez PREORDENADA é agravante. O art. 50 traz regra sobre o menor de 18 anos que não foi recepcionada pela Constituição de 1988.",
+        "O CONCURSO DE AGENTES está no art. 53: quem de qualquer modo concorre incide nas penas cominadas, e a punibilidade de cada concorrente é independente, determinando-se segundo a sua culpabilidade."
+      ],
+      "naPratica": "O excesso escusável do art. 45 reconhece algo real: em situação de surpresa ou grande tensão, a reação pode ultrapassar o necessário sem que haja culpa reprovável. É uma regra pensada para quem atua sob pressão.",
+      "pegadinhas": [
+        "Dizer que o CPM usa erro de tipo e erro de proibição. Usa erro de fato e erro de direito.",
+        "Afirmar que o estado de necessidade no CPM só é justificante. Há também o exculpante.",
+        "Dizer que o excesso é sempre punível. O escusável não é.",
+        "Sustentar que ordem manifestamente criminosa isenta de pena. Não isenta."
+      ],
+      "revisao": [
+        "Erro de FATO e erro de DIREITO (não tipo/proibição)",
+        "Estado de necessidade: justificante (art. 43) e exculpante (art. 39)",
+        "Excesso escusável por surpresa ou perturbação: não punível",
+        "Obediência: ordem direta de superior em matéria de serviço",
+        "Embriaguez completa por caso fortuito: exclui imputabilidade"
+      ]
+    },
+    "direito-penal-militar:4.4": {
+      "emUmaFrase": "Aqui moram os números mais cobrados do CPM: limite de 30 anos para reclusão e 15 para detenção, e o marco de 2 anos que decide a exclusão da praça e a perda do posto do oficial.",
+      "explicacao": [
+        "As PENAS PRINCIPAIS estão no art. 55: morte, reclusão, detenção, prisão, impedimento, suspensão do exercício do posto, graduação, cargo ou função, e reforma. A PENA DE MORTE (art. 56) é executada por fuzilamento, só em tempo de guerra declarada — o que é autorizado pelo art. 5º, XLVII, 'a', da Constituição; a sentença definitiva só é executada depois de comunicada ao Presidente da República.",
+        "Penas específicas: IMPEDIMENTO (art. 63) obriga o condenado a permanecer no recinto da unidade, sem prejuízo da instrução militar. SUSPENSÃO DO EXERCÍCIO DO POSTO (art. 64) dura de 2 a 6 MESES. REFORMA (art. 65) passa o militar à inatividade, não podendo perceber mais de 1/25 do soldo por ano de serviço, nem importância superior à do soldo.",
+        "Limites genéricos: a reclusão e a detenção, salvo disposição especial, vão de 1 a 30 anos (art. 58). A pena até 2 anos aplicada a militar é convertida em PRISÃO, quando não cabível a suspensão condicional (art. 59). A pena superior a 2 anos é cumprida em penitenciária militar e, na falta, em estabelecimento civil (art. 61).",
+        "O LIMITE DE CUMPRIMENTO (art. 81) é o número mais cobrado: 30 ANOS para reclusão e 15 ANOS para detenção. Compare com o Código Penal comum, cujo limite único é de 40 anos desde a Lei 13.964/2019.",
+        "As PENAS ACESSÓRIAS (art. 98) têm altíssima incidência: perda de posto e patente; indignidade para o oficialato; incompatibilidade com o oficialato; exclusão das forças armadas; perda da função pública; inabilitação para o exercício de função pública; suspensão do pátrio poder, tutela ou curatela; suspensão dos direitos políticos. O número 2 é a chave: PERDA DE POSTO E PATENTE (art. 99) resulta de condenação a pena privativa de liberdade SUPERIOR A 2 ANOS; EXCLUSÃO DAS FORÇAS ARMADAS (art. 102) decorre da condenação da PRAÇA a pena superior a 2 anos; PERDA DA FUNÇÃO PÚBLICA (art. 103) exige pena superior a 2 anos por crime cometido com abuso de poder ou violação de dever militar. Já a INDIGNIDADE (art. 100) independe do quantum — basta condenação por traição, espionagem, cobardia ou crime infamante. A INCOMPATIBILIDADE (art. 101) é restrita aos crimes contra a segurança externa dos arts. 141 e 142.",
+        "Na APLICAÇÃO DA PENA, o art. 73 traz um número exclusivo: quando a lei determina agravação ou atenuação sem mencionar o quantum, o juiz fixa entre 1/5 E 1/3. No CONCURSO DE CRIMES (arts. 79 e 80), o CPM aplica o cúmulo material no concurso material e a exasperação no formal — e NÃO PREVÊ O CRIME CONTINUADO.",
+        "A SUSPENSÃO CONDICIONAL DA PENA cabe para pena não superior a 2 anos, pelo prazo de 2 a 6 anos, e o art. 88 traz vedações expressas, entre elas a DESERÇÃO e a violência contra superior. O LIVRAMENTO CONDICIONAL exige pena igual ou superior a 2 anos e o cumprimento de MAIS DA METADE.",
+        "A AÇÃO PENAL MILITAR (art. 121) é sempre PÚBLICA e só pode ser promovida por denúncia do Ministério Público Militar. Não existe ação penal privada na Justiça Militar.",
+        "Na EXTINÇÃO DA PUNIBILIDADE, duas regras próprias: no PECULATO CULPOSO, a reparação do dano ANTES da sentença irrecorrível extingue a punibilidade, e depois reduz pela metade; e a PRESCRIÇÃO NA DESERÇÃO (art. 132) não começa a correr enquanto o desertor não atingir 45 ANOS, se praça, ou 60 ANOS, se oficial."
+      ],
+      "naPratica": "O marco de 2 anos é o que todo militar deveria saber: condenação acima disso pode significar a perda da carreira, não apenas a pena. É o ponto em que o processo criminal invade definitivamente a vida funcional.",
+      "pegadinhas": [
+        "Usar o limite de 40 anos do CP. No CPM é 30 (reclusão) e 15 (detenção).",
+        "Dizer que existe crime continuado no CPM. Não existe.",
+        "Falar em ação penal privada militar. A ação é sempre pública.",
+        "Exigir 4 anos para a perda do posto. São mais de 2 anos.",
+        "Dizer que a prescrição da deserção corre normalmente. Só começa aos 45 ou 60 anos."
+      ],
+      "revisao": [
+        "Limite: 30 anos reclusão · 15 anos detenção",
+        "Marco de 2 anos: exclusão da praça, perda de posto, perda da função",
+        "Indignidade independe do quantum da pena",
+        "Agravante/atenuante sem quantum: 1/5 a 1/3",
+        "Sursis vedado na deserção (art. 88, II)",
+        "Livramento: pena ≥ 2 anos e mais da metade cumprida",
+        "Prescrição da deserção: 45 anos (praça) · 60 anos (oficial)"
+      ]
+    },
+    "direito-penal-militar:4.5": {
+      "emUmaFrase": "O Título II — crimes contra a autoridade e a disciplina militar — é o mais cobrado da parte especial, e nele motim e revolta se separam por uma única coisa: a arma na mão.",
+      "explicacao": [
+        "MOTIM (art. 149) é a reunião de militares agindo contra a ordem recebida de superior, ou negando-se a cumpri-la, recusando obediência, ocupando quartel, navio ou aeronave, ou conservando-se reunidos contra ordem de dispersão. Pena: reclusão de 4 a 8 anos, com aumento de um terço para os cabeças.",
+        "REVOLTA (art. 149, parágrafo único) é o motim praticado COM ARMAS NA MÃO. Só isso muda — e a pena salta para reclusão de 8 a 20 anos, também com aumento de um terço para os cabeças. Essa é a comparação mais cobrada da disciplina inteira.",
+        "Ao redor desses dois, os crimes satélites. ORGANIZAÇÃO DE GRUPO PARA A PRÁTICA DE VIOLÊNCIA (art. 150). OMISSÃO DE LEALDADE MILITAR (art. 151): deixar de levar ao conhecimento do superior o motim ou revolta de cuja preparação teve notícia, ou, estando presente, não usar de todos os meios ao alcance para impedi-lo — é o crime de quem sabe e cala. CONSPIRAÇÃO (art. 152): concertarem-se militares para a prática do motim ou revolta — é o ajuste prévio. ALICIAÇÃO (art. 154): recrutar para motim ou revolta. INCITAMENTO (art. 155): instigar à desobediência, à indisciplina ou à prática de crime militar.",
+        "Contra a pessoa do superior: VIOLÊNCIA CONTRA SUPERIOR (art. 157), com formas qualificadas que chegam a 12 a 30 anos se resulta morte; VIOLÊNCIA CONTRA MILITAR DE SERVIÇO (art. 158), quando a vítima é oficial de dia, de serviço, de quarto, sentinela, vigia ou plantão; DESRESPEITO A SUPERIOR (art. 160), que é desrespeitar diante de outro militar; DESACATO A SUPERIOR (art. 298), já no Título dos crimes contra a administração militar.",
+        "Contra a ordem interna: RECUSA DE OBEDIÊNCIA (art. 163), recusar obedecer a ordem do superior sobre assunto de serviço; OPOSIÇÃO A ORDEM DE SENTINELA (art. 164); REUNIÃO ILÍCITA (art. 165), promover reunião de militares para discutir ato de superior ou assunto atinente à disciplina; PUBLICAÇÃO OU CRÍTICA INDEVIDA (art. 166), publicar sem licença ato ou documento oficial, ou criticar publicamente ato de superior ou assunto de disciplina militar; RESISTÊNCIA (art. 177), opor-se à execução de ato legal mediante AMEAÇA OU VIOLÊNCIA ao executor.",
+        "A DESERÇÃO (Título III) é o outro grande tema. É crime PROPRIAMENTE militar, PERMANENTE e de MERA CONDUTA. Consuma-se depois de MAIS DE OITO DIAS de ausência — ou seja, no NONO dia. Os oito primeiros dias são o prazo de graça. Não admite sursis (art. 88, II) e tem a regra especial de prescrição já vista."
+      ],
+      "naPratica": "O art. 166 tem efeito direto hoje: criticar publicamente, em rede social, ato de superior ou assunto de disciplina militar, sem licença, é conduta típica. A liberdade de expressão do militar é restringida pela hierarquia e pela disciplina.",
+      "pegadinhas": [
+        "Trocar motim por revolta. A diferença é a arma na mão: 4–8 contra 8–20 anos.",
+        "Dizer que a deserção se consuma com oito dias. Consuma no nono — após MAIS de oito.",
+        "Confundir resistência (com violência ou ameaça) com desobediência (sem).",
+        "Classificar violência contra superior como crime contra a administração militar. É contra a autoridade e a disciplina."
+      ],
+      "revisao": [
+        "Motim: reclusão 4 a 8 anos · Revolta (com armas): 8 a 20 anos",
+        "Cabeças: aumento de 1/3 nos dois",
+        "Omissão de lealdade: sabe e cala · Conspiração: ajuste prévio",
+        "Resistência exige ameaça ou violência ao executor",
+        "Deserção: consuma no 9º dia, após mais de 8 de ausência",
+        "Art. 166: crítica pública a superior é crime"
+      ]
+    },
+    "direito-penal-militar:4.6": {
+      "emUmaFrase": "Este quadro é o atalho de revisão da disciplina: estudar o CPM pelas suas diferenças em relação ao CP comum é o jeito mais rápido de acertar as questões.",
+      "explicacao": [
+        "A banca quase nunca cobra o que os dois códigos têm em comum. Ela cobra exatamente onde eles divergem — por isso este tópico vale mais, por minuto de leitura, do que qualquer outro da disciplina.",
+        "ERRO: o CP fala em erro de tipo e erro de proibição; o CPM, em erro de fato e erro de direito. ESTADO DE NECESSIDADE: no CP só existe o justificante; no CPM há o justificante (art. 43) e o exculpante (art. 39). CRIME CONTINUADO: o CP prevê, com exasperação de um sexto a dois terços; o CPM NÃO prevê, aplicando o cúmulo material.",
+        "TENTATIVA: no CP, redução de um a dois terços; no CPM, a mesma redução, mas nos crimes de atentado não há redução. PENA DE MORTE: vedada no CP, salvo guerra declarada; prevista no CPM para tempo de guerra, por fuzilamento. LIMITE DE CUMPRIMENTO: 40 anos no CP; 30 anos (reclusão) e 15 anos (detenção) no CPM.",
+        "AÇÃO PENAL: pública ou privada no CP; sempre pública, por denúncia do MPM, no CPM. OBEDIÊNCIA HIERÁRQUICA: no CP, ordem não manifestamente ilegal; no CPM, ordem direta de superior em matéria de serviço, com tratamento mais amplo. PERDÃO JUDICIAL E ARREPENDIMENTO POSTERIOR: previstos no CP; não previstos genericamente no CPM.",
+        "Uma rotina de revisão que funciona: na véspera, leia só este quadro e o roteiro de números do tópico 7.9 de Institucional. São os dois textos com maior densidade de pontos por linha em todo o material."
+      ],
+      "naPratica": "Quando a questão citar um instituto que você conhece do CP comum, pare e pergunte: no CPM é igual? Se o instituto for crime continuado, perdão judicial ou arrependimento posterior, a resposta é não.",
+      "pegadinhas": [
+        "Aplicar o crime continuado no CPM.",
+        "Usar o limite de 40 anos no CPM.",
+        "Admitir ação penal privada militar.",
+        "Usar a terminologia erro de tipo/erro de proibição em questão de CPM."
+      ],
+      "revisao": [
+        "Erro: fato/direito (CPM) × tipo/proibição (CP)",
+        "Estado de necessidade exculpante só existe no CPM",
+        "Crime continuado: só no CP",
+        "Limite: 30/15 (CPM) × 40 (CP)",
+        "Ação penal: sempre pública no CPM",
+        "Perdão judicial e arrependimento posterior: só no CP"
+      ]
+    }
+  }
+}

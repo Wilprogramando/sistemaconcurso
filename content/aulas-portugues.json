@@ -1,0 +1,170 @@
+{
+  "sobre": "Aulas didáticas de Língua Portuguesa — 8 das 60 questões, e a base da redação, que vale outros 20 pontos.",
+  "aulas": {
+    "lingua-portuguesa:8.1": {
+      "emUmaFrase": "Interpretar é responder o que o texto diz e o que dele se conclui — nunca o que você acha, nem o que seria razoável supor por fora.",
+      "explicacao": [
+        "Toda questão de interpretação se resolve com uma pergunta: isso está ancorado no texto? Há três níveis de resposta. INFORMAÇÃO EXPLÍCITA está escrita com todas as letras. INFERÊNCIA é a conclusão que decorre logicamente do que foi dito, ainda que não literalmente escrita. EXTRAPOLAÇÃO é o que o leitor acrescenta de fora — e é sempre alternativa errada.",
+        "A alternativa incorreta costuma ter uma de quatro marcas. GENERALIZAÇÃO indevida: o texto fala de um caso e a alternativa transforma em regra geral ('sempre', 'todo', 'nenhum'). INVERSÃO: troca causa por consequência, ou meio por fim. ACRÉSCIMO: insere uma informação verdadeira no mundo, mas ausente do texto. EXAGERO: intensifica um juízo que o texto apresenta com ressalvas.",
+        "Localize também a IDEIA CENTRAL, que não é o assunto. Assunto é o tema ('segurança pública'); ideia central é a tese defendida sobre ele ('a segurança pública depende de integração entre instituições'). A ideia central costuma aparecer no primeiro ou no último parágrafo.",
+        "Uma técnica prática: leia o enunciado antes do texto, para saber o que procurar. Depois leia o texto inteiro uma vez, sem parar. Só então volte à alternativa, procurando no texto o trecho que a sustenta. Se não achar o trecho, a alternativa está errada — mesmo que pareça verdadeira."
+      ],
+      "naPratica": "Essa mesma habilidade serve na lavratura de um boletim: relatar o que foi observado, sem acrescentar conclusões que os fatos não sustentam. Separar o que se viu do que se supôs é exatamente interpretar.",
+      "pegadinhas": [
+        "Alternativa que está correta no mundo, mas não está no texto. Não interessa: o parâmetro é o texto.",
+        "Palavras absolutas — sempre, nunca, apenas, exclusivamente, único. Quase sempre marcam erro.",
+        "Confundir assunto com ideia central.",
+        "Responder pela sua opinião sobre o tema, especialmente em texto sobre segurança pública."
+      ],
+      "revisao": [
+        "Explícito · inferência · extrapolação (esta é sempre erro)",
+        "Marcas de erro: generalização, inversão, acréscimo, exagero",
+        "Assunto ≠ ideia central",
+        "Ache o trecho que sustenta a alternativa; sem trecho, está errada"
+      ]
+    },
+    "lingua-portuguesa:8.2": {
+      "emUmaFrase": "Semântica é o estudo do sentido — e na prova vira troca de palavra: a substituição mantém ou muda o que a frase diz?",
+      "explicacao": [
+        "SINONÍMIA é a proximidade de sentido; ANTONÍMIA, a oposição. Mas atenção: sinônimo perfeito quase não existe. A questão típica pede a substituição que preserva o sentido NO CONTEXTO, e a alternativa errada traz um sinônimo que existe no dicionário mas não serve ali.",
+        "POLISSEMIA é a palavra com vários sentidos, definidos pelo contexto ('banco' de praça, de sangue, financeiro). HOMONÍMIA são palavras diferentes com forma igual ou parecida. PARONÍMIA são palavras parecidas com sentidos diferentes — e é a campeã de questões. Fixe os pares que mais caem: INFRINGIR (violar) × INFLIGIR (aplicar uma pena); TRÁFEGO (trânsito) × TRÁFICO (comércio ilícito); MANDADO (ordem judicial) × MANDATO (período de exercício); DESCRIMINAR (deixar de ser crime) × DISCRIMINAR (separar, diferenciar); EMINENTE (elevado) × IMINENTE (prestes a ocorrer); RATIFICAR (confirmar) × RETIFICAR (corrigir); DEFERIR (conceder) × DIFERIR (adiar, divergir).",
+        "DENOTAÇÃO é o sentido literal, de dicionário; CONOTAÇÃO é o figurado. A banca costuma pedir qual expressão foi empregada em sentido não literal, e as aspas no texto costumam marcar isso.",
+        "Entre as FIGURAS DE LINGUAGEM, guarde as mais cobradas: METÁFORA (comparação implícita: 'a cidade é uma selva'); METONÍMIA (parte pelo todo, continente pelo conteúdo, marca pelo produto — 'a farda impõe respeito' usa a farda pela instituição); IRONIA; EUFEMISMO (suavização); HIPÉRBOLE (exagero); PERSONIFICAÇÃO."
+      ],
+      "naPratica": "A diferença entre MANDADO e MANDATO aparece todo dia no serviço: você cumpre um mandado de prisão; o vereador exerce um mandato. Trocar as duas em um documento oficial é erro grave.",
+      "pegadinhas": [
+        "Oferecer sinônimo de dicionário que não cabe naquele contexto.",
+        "Trocar os parônimos — infringir/infligir e tráfego/tráfico são os prediletos.",
+        "Chamar de metáfora o que é metonímia: se há relação de parte-todo ou de contiguidade, é metonímia.",
+        "Dizer que aspas sempre indicam citação. Também marcam sentido figurado ou ressalva."
+      ],
+      "revisao": [
+        "Infringir = violar · Infligir = aplicar pena",
+        "Mandado = ordem judicial · Mandato = período",
+        "Tráfego = trânsito · Tráfico = comércio ilícito",
+        "Descriminar = tirar do crime · Discriminar = separar",
+        "Metáfora = comparação implícita · Metonímia = contiguidade"
+      ]
+    },
+    "lingua-portuguesa:8.3": {
+      "emUmaFrase": "Morfologia classifica a palavra; sintaxe diz a função dela na frase — e a prova adora perguntar uma achando que você vai responder a outra.",
+      "explicacao": [
+        "São dez as classes de palavras. Variáveis: substantivo, artigo, adjetivo, numeral, pronome e verbo. Invariáveis: advérbio, preposição, conjunção e interjeição.",
+        "A confusão mais cobrada é entre CLASSE e FUNÇÃO. Em 'os policiais agiram com serenidade', a palavra 'serenidade' é, morfologicamente, SUBSTANTIVO abstrato; sintaticamente, a locução 'com serenidade' funciona como adjunto adverbial de modo. Pergunta sobre classe, responda classe.",
+        "Alguns pontos de atenção por classe. SUBSTANTIVO: concretos e abstratos, próprios e comuns, coletivos. ADJETIVO: pode vir de particípio ('pessoa presa' — adjetivo, não verbo). PRONOME: relativos (que, qual, cujo, onde, quem) são a porta das orações adjetivas; CUJO indica posse e NUNCA admite artigo depois ('o réu cujo processo', nunca 'cujo o processo'). VERBO: atenção aos impessoais, que não têm sujeito e ficam no singular — HAVER no sentido de existir, FAZER indicando tempo decorrido, e os que indicam fenômeno da natureza.",
+        "ADVÉRBIO modifica verbo, adjetivo ou outro advérbio e é invariável. Daí a regra de MEIO: quando equivale a 'um tanto', é advérbio e não varia ('meio cansada'); quando é numeral, varia ('meia hora'). BASTANTE segue a lógica inversa: acompanhando substantivo, é pronome indefinido e varia ('bastantes motivos'); modificando verbo ou adjetivo, é advérbio e não varia."
+      ],
+      "naPratica": "Reconhecer a classe da palavra é o que permite aplicar a regra certa de concordância. Se 'anexo' é adjetivo, concorda: 'seguem anexas as fotografias'. Se fosse advérbio, não variaria.",
+      "pegadinhas": [
+        "Perguntar a classe e você responder a função sintática.",
+        "Colocar artigo depois de CUJO.",
+        "Flexionar HAVER impessoal ('houveram') ou FAZER de tempo ('fazem dois anos').",
+        "Variar MEIO quando é advérbio ('meias danificadas' em vez de 'meio danificadas')."
+      ],
+      "revisao": [
+        "10 classes: 6 variáveis, 4 invariáveis",
+        "Classe ≠ função sintática",
+        "Cujo nunca admite artigo",
+        "Haver (existir) e fazer (tempo): impessoais, sempre singular",
+        "Meio advérbio não varia · bastante com substantivo varia"
+      ]
+    },
+    "lingua-portuguesa:8.4": {
+      "emUmaFrase": "É o tópico mais cobrado da matéria: concordância, regência e crase respondem pela maioria das questões — e também pelos erros da redação.",
+      "explicacao": [
+        "Comece pela estrutura. A oração tem termos ESSENCIAIS (sujeito e predicado), INTEGRANTES (complementos: objeto direto, objeto indireto, complemento nominal, agente da passiva) e ACESSÓRIOS (adjunto adnominal, adjunto adverbial, aposto, vocativo). Período SIMPLES tem uma oração; COMPOSTO tem duas ou mais, por coordenação (independentes) ou subordinação (uma depende da outra).",
+        "CONCORDÂNCIA VERBAL: o verbo concorda com o sujeito. Os casos cobrados são sempre os mesmos. Verbos IMPESSOAIS não têm sujeito e ficam no singular — 'HOUVE muitas ocorrências', 'FAZ dez anos'. A impessoalidade contamina o auxiliar: 'DEVE HAVER outros interessados'. EXISTIR, ao contrário de haver, é pessoal e concorda: 'EXISTEM documentos'. Com a partícula apassivadora SE, o verbo concorda com o sujeito paciente: 'vendem-se casas'. Com o índice de indeterminação do sujeito SE, fica no singular: 'precisa-se de policiais'.",
+        "CONCORDÂNCIA NOMINAL: adjetivo concorda com o substantivo. ANEXO, INCLUSO, OBRIGADO e MESMO variam. É PROIBIDO, É NECESSÁRIO, É BOM ficam invariáveis quando o substantivo vem sem determinante ('é proibido entrada'), e concordam quando há determinante ('é proibida A entrada').",
+        "REGÊNCIA VERBAL: a preposição que o verbo exige. ASSISTIR no sentido de ver pede 'a' ('assistir AO filme'); sem preposição significa prestar assistência. OBEDECER e DESOBEDECER pedem 'a'. PREFERIR é transitivo direto e indireto e não admite 'do que' — 'prefiro isto A aquilo'. CHEGAR e IR pedem 'a', não 'em' — 'cheguei À ocorrência'. VISAR no sentido de pretender pede 'a'; no de pôr visto, é direto. ESQUECER sem pronome é direto ('esqueci o documento'); com pronome, pede de ('esqueci-me DO documento').",
+        "CRASE é a fusão da preposição 'a' com o artigo feminino 'a'. Só existe antes de palavra feminina que admita artigo. NÃO há crase antes de verbo, de pronome pessoal, de pronome indefinido, de palavra masculina (salvo 'à moda de'), nem antes de nome de cidade que não admita artigo. O teste infalível: troque a palavra feminina por uma masculina. Se aparecer AO, há crase; se aparecer A, não há. 'Vou à escola' → 'vou ao colégio' → tem crase."
+      ],
+      "naPratica": "Esses mesmos pontos são critério de correção da redação. Um 'houveram' ou uma crase indevida custam pontos duas vezes: na objetiva e na dissertativa.",
+      "pegadinhas": [
+        "'Houveram' e 'fazem dois anos' — sempre errados.",
+        "'Prefiro trabalhar na rua do que no escritório' — o correto é 'a trabalhar no escritório'.",
+        "'Chegou na ocorrência' em vez de 'chegou à ocorrência'.",
+        "Crase antes de verbo, pronome pessoal ou palavra masculina.",
+        "'É proibida entrada' sem determinante, quando o certo é 'é proibido entrada'."
+      ],
+      "revisao": [
+        "Haver/fazer impessoais: sempre singular",
+        "Existir é pessoal: concorda",
+        "Preferir: isto A aquilo (nunca 'do que')",
+        "Obedecer, assistir (ver), chegar, ir: pedem 'a'",
+        "Crase: troque por masculino — se der AO, tem crase",
+        "Sem crase antes de verbo, pronome pessoal e masculino"
+      ]
+    },
+    "lingua-portuguesa:8.5": {
+      "emUmaFrase": "Duas vírgulas podem mudar o sentido de uma frase inteira — e a regra de ouro é que nunca se separa sujeito do verbo nem verbo do complemento.",
+      "explicacao": [
+        "A vírgula tem dois usos principais: SEPARAR termos de mesma função (enumerações) e ISOLAR termos deslocados ou explicativos.",
+        "As proibições são mais importantes que as permissões, porque são elas que a banca testa. NUNCA separe por vírgula: o sujeito do seu verbo ('Os policiais, participaram' é erro); o verbo do seu complemento ('determinou, que a guarnição ficasse' é erro); o nome do seu adjunto adnominal.",
+        "Os usos obrigatórios: isolar o VOCATIVO ('Senhor Gerente, solicito...'); isolar o APOSTO explicativo; separar ADJUNTO ADVERBIAL deslocado para o início ('Durante a abordagem, o condutor apresentou os documentos'); isolar a ORAÇÃO ADJETIVA EXPLICATIVA; marcar a omissão do verbo; separar orações coordenadas, salvo as unidas por 'e' com sujeitos iguais.",
+        "O caso que mais cai é a diferença entre ORAÇÃO ADJETIVA RESTRITIVA e EXPLICATIVA. 'Os policiais QUE agiram com excesso foram punidos', sem vírgulas, é RESTRITIVA: delimita o grupo, só alguns agiram com excesso e só esses foram punidos. 'Os policiais, QUE agiram com excesso, foram punidos', entre vírgulas, é EXPLICATIVA: todos agiram com excesso e todos foram punidos. O sentido muda por completo.",
+        "Os demais sinais: PONTO E VÍRGULA separa orações já internamente pontuadas ou itens de enumeração longa. DOIS-PONTOS anunciam enumeração, explicação ou fala. TRAVESSÃO isola um comentário, com efeito próximo ao das vírgulas, e por isso costuma ser substituível por elas."
+      ],
+      "naPratica": "Num relatório, escrever 'os presentes, que resistiram, foram conduzidos' afirma que TODOS resistiram. Sem as vírgulas, afirma que apenas alguns resistiram. A pontuação decide o que o documento diz.",
+      "pegadinhas": [
+        "Vírgula entre sujeito e verbo, o erro mais comum de todos.",
+        "Vírgula separando o verbo do seu objeto.",
+        "Tratar oração adjetiva entre vírgulas como restritiva.",
+        "Dizer que o travessão sempre introduz enumeração — ele costuma isolar comentário explicativo."
+      ],
+      "revisao": [
+        "Nunca: sujeito | verbo · verbo | complemento",
+        "Sempre: vocativo, aposto explicativo, adverbial deslocado",
+        "Restritiva = sem vírgulas, delimita",
+        "Explicativa = entre vírgulas, vale para todos",
+        "Travessão explicativo ≈ vírgula"
+      ]
+    },
+    "lingua-portuguesa:8.6": {
+      "emUmaFrase": "Coesão é a amarração visível entre as partes do texto; coerência é o sentido fazer sentido — e o conectivo errado quebra as duas.",
+      "explicacao": [
+        "COESÃO é a ligação formal entre os elementos: pronomes que retomam termos, sinônimos que evitam repetição, conectivos que marcam relações. COERÊNCIA é a unidade de sentido: ausência de contradição, progressão de ideias, relação lógica entre as partes.",
+        "A REFERENCIAÇÃO acontece de duas formas. ANÁFORA retoma algo já dito ('O delegado chegou. ELE determinou a perícia'). CATÁFORA antecipa o que virá ('Era ISTO que faltava: a perícia'). Questões de interpretação perguntam a que termo um pronome se refere — e a resposta costuma ser o termo mais próximo semanticamente compatível, não necessariamente o mais próximo fisicamente.",
+        "Os CONECTIVOS marcam a relação lógica, e trocá-los muda o argumento. ADIÇÃO: além disso, ademais, outrossim, também. OPOSIÇÃO: porém, contudo, todavia, entretanto, no entanto, por outro lado. CONCESSÃO: embora, ainda que, conquanto, apesar de — admite um fato contrário sem impedir o principal. CAUSA: porque, pois, uma vez que, visto que, já que. CONSEQUÊNCIA: portanto, logo, de modo que, de sorte que. CONCLUSÃO: portanto, em suma, diante do exposto. CONDIÇÃO: se, caso, desde que, contanto que. FINALIDADE: a fim de, para que, com o intuito de. PROPORÇÃO: à medida que, ao passo que.",
+        "Guarde os pares que a banca troca: concessão por condição ('embora' por 'se'), causa por consequência ('porque' por 'portanto'), e finalidade por conclusão ('a fim de' por 'portanto'). Cada troca inverte a lógica do período."
+      ],
+      "naPratica": "Na redação, começar cada parágrafo de desenvolvimento com um conectivo adequado é o jeito mais barato de ganhar pontos em coesão. 'Em primeiro lugar...', 'Além disso...', 'Por outro lado...', 'Diante do exposto...'.",
+      "pegadinhas": [
+        "Trocar conectivo de concessão por um de condição na reescrita.",
+        "Dizer que o pronome retoma o termo fisicamente mais próximo, ignorando a compatibilidade de sentido.",
+        "Confundir coesão (forma) com coerência (sentido).",
+        "Repetir o mesmo conectivo em todos os parágrafos — é falha de coesão, não virtude."
+      ],
+      "revisao": [
+        "Anáfora retoma · catáfora antecipa",
+        "Embora, ainda que = concessão",
+        "Se, caso, desde que = condição",
+        "Portanto, logo = conclusão/consequência",
+        "A fim de, para que = finalidade",
+        "Coesão = forma · coerência = sentido"
+      ]
+    },
+    "lingua-portuguesa:8.7": {
+      "emUmaFrase": "Reescrever é dizer o mesmo com outras palavras — e a alternativa certa é a única que preserva ao mesmo tempo o sentido e a correção gramatical.",
+      "explicacao": [
+        "A questão de reescrita cobra duas coisas ao mesmo tempo, e basta falhar em uma para a alternativa cair: manter o SENTIDO original e manter a CORREÇÃO gramatical. Uma alternativa pode estar impecável gramaticalmente e mudar o sentido; outra pode manter o sentido e trazer um erro de crase. Ambas estão erradas.",
+        "As transformações mais cobradas são quatro. TROCA DE CONECTIVO: substituir 'de modo que' por 'de sorte que' mantém a consecução; substituir por 'desde que' muda para condição. MUDANÇA DE VOZ VERBAL: na passagem da ativa para a passiva, o objeto direto vira sujeito e o sujeito vira agente da passiva ('o policial deteve o suspeito' → 'o suspeito foi detido pelo policial'). INVERSÃO DA ORDEM: deslocar um adjunto adverbial para o início exige vírgula. SUBSTITUIÇÃO VOCABULAR: trocar uma palavra por sinônimo que caiba no contexto e respeite a regência.",
+        "Atenção especial à REGÊNCIA na reescrita. Ao trocar um verbo por outro, a preposição muda junto. 'Ele informou o fato ao delegado' e 'ele comunicou o delegado do fato' são ambas corretas, mas trocar os complementos sem ajustar a regência produz erro.",
+        "Uma rotina que funciona: leia o período original e resuma o sentido em uma frase sua. Depois teste cada alternativa contra esse resumo, e só então confira a gramática. Começar pela gramática faz perder tempo em alternativas que já mudaram o sentido."
+      ],
+      "naPratica": "A mesma habilidade aparece ao redigir uma parte ou um relatório: dizer o fato com precisão, sem mudar o que aconteceu. Reescrever bem é escrever com controle.",
+      "pegadinhas": [
+        "Alternativa gramaticalmente correta que muda a relação lógica.",
+        "Troca de voz verbal com o sujeito errado.",
+        "Substituição vocabular que ignora a regência do novo verbo.",
+        "Erros de grafia embutidos: 'a cerca de' no lugar de 'acerca de', 'de encontro a' no lugar de 'ao encontro de'."
+      ],
+      "revisao": [
+        "A alternativa certa preserva SENTIDO e CORREÇÃO",
+        "Ativa → passiva: objeto vira sujeito",
+        "Adverbial no início pede vírgula",
+        "Trocou o verbo, confira a preposição",
+        "Acerca de = sobre · A cerca de = aproximadamente"
+      ]
+    }
+  }
+}
