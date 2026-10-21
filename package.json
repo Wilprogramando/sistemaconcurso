@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "parse": "node scripts/parse-apostila.mjs",
-    "seed": "node scripts/seed.mjs"
+    "seed": "node scripts/seed.mjs",
+    "seed:sql": "node scripts/export-seed-sql.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.5.2",

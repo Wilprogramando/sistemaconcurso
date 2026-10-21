@@ -8,7 +8,7 @@ Next.js 15 + Supabase (Postgres + Auth), pronto para deploy na Vercel.
 | Área | Descrição |
 | --- | --- |
 | **Painel** | Meta diária, revisões vencidas, projeção de nota na objetiva (acurácia × peso de cada disciplina), contagem de dias até a prova e alerta de disciplinas zeradas (zerar uma elimina). |
-| **Matérias** | 80 tópicos de teoria extraídos da apostila, por capítulo, com marcação de *lendo / lido / revisar*. |
+| **Matérias** | 78 tópicos de teoria extraídos da apostila, por capítulo, com marcação de *lendo / lido / revisar*. |
 | **Questões** | 92 questões comentadas (Certo/Errado e discursivas curtas) com o fundamento legal, por disciplina, aleatórias ou focadas nos seus erros. |
 | **Revisão** | Revisão espaçada (SM-2 simplificado): acertou → 3, 7, 16+ dias; errou → volta amanhã. |
 | **Simulado** | O simulado final de 30 questões da apostila (60 min) e um simulado ponderado de 60 questões que respeita a Tabela 8.1 do edital (120 min). Gabarito só no fim. |
@@ -70,6 +70,9 @@ pdftotext -layout -enc UTF-8 Apostila_PMSC_2026_Soldado.pdf content/apostila.txt
 npm run parse   # content/apostila.txt -> content/apostila.json
 npm run seed    # envia para o Supabase (upsert, não duplica)
 ```
+
+Sem a `service_role` em mãos? `npm run seed:sql` gera `supabase/seed.sql` (~330 KB) com o mesmo
+conteúdo em INSERTs idempotentes, para colar direto no SQL Editor do Supabase.
 
 O parser (`scripts/parse-apostila.mjs`) separa capítulos, tópicos `N.M`, as questões comentadas de cada
 disciplina e o simulado final com o gabarito.
