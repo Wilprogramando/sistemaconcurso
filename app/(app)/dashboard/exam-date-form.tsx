@@ -2,7 +2,7 @@
 
 import { useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
-import { createClient } from '@/lib/supabase/client';
+import { useSessao } from '@/components/sessao';
 import { INPUT_CLASS } from '@/lib/types';
 
 export default function ExamDateForm({
@@ -12,23 +12,23 @@ export default function ExamDateForm({
   examDate: string;
   dailyGoal: number;
 }) {
-  const router = useRouter();
   const [date, setDate] = useState(examDate);
   const [goal, setGoal] = useState(dailyGoal);
   const [saved, setSaved] = useState(false);
   const [pending, start] = useTransition();
+  const { userId, supabase } = useSessao();
+  const router = useRouter();
 
   function salvar(e: React.FormEvent) {
     e.preventDefault();
     start(async () => {
-      const supabase = createClient();
-      const { data } = await supabase.auth.getUser();
-      if (!data.user) return;
       await supabase
         .from('profiles')
         .update({ exam_date: date || null, daily_goal: goal })
-        .eq('id', data.user.id);
+        .eq('id', userId);
       setSaved(true);
+      // aqui o refresh vale a pena: a contagem regressiva e a etapa do plano
+      // são calculadas no servidor e precisam reagir à nova data
       router.refresh();
       setTimeout(() => setSaved(false), 2500);
     });

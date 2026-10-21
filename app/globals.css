@@ -59,3 +59,33 @@ body {
     min-height: 44px;
   }
 }
+
+/* ---------------------------------------------------------------
+   Tokens de visualização de dados.
+   Paleta validada (CVD + contraste) nos dois temas: blue/orange.
+   --------------------------------------------------------------- */
+.viz {
+  --viz-surface: #ffffff;
+  --viz-grid: #e8ecf3;
+  --viz-eixo: #94a3b8;
+  --viz-s1: #2a78d6; /* série 1 — acertos */
+  --viz-s2: #eb6834; /* série 2 — erros */
+  --viz-meta: #64748b;
+  --viz-seq-100: #cde2fb;
+  --viz-seq-250: #86b6ef;
+  --viz-seq-450: #2a78d6;
+  --viz-seq-600: #184f95;
+}
+
+html.dark .viz {
+  --viz-surface: #0f172a;
+  --viz-grid: #1e293b;
+  --viz-eixo: #64748b;
+  --viz-s1: #3987e5;
+  --viz-s2: #d95926;
+  --viz-meta: #94a3b8;
+  --viz-seq-100: #184f95;
+  --viz-seq-250: #1c5cab;
+  --viz-seq-450: #3987e5;
+  --viz-seq-600: #86b6ef;
+}

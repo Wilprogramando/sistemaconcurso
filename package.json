@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "parse": "node scripts/parse-apostila.mjs && node scripts/parse-prova-2023.mjs",
+    "parse": "node scripts/parse-apostila.mjs && node scripts/parse-provas.mjs",
     "seed": "node scripts/seed.mjs",
     "validar": "node scripts/validar-conteudo.mjs",
     "conteudo": "npm run parse && npm run validar && npm run seed"

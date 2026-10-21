@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, ArrowRight, Clock, ListChecks } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Clock, ListChecks, Target } from 'lucide-react';
 import { createClient, getUser } from '@/lib/supabase/server';
 import Blocos, { type Bloco } from '@/components/blocos';
 import TopicStatus from './topic-status';
@@ -75,6 +75,32 @@ export default async function TopicoPage({
           </span>
         </p>
       </div>
+
+      {(topic.summary || topic.what_for) && (
+        <section className="rounded-2xl border-l-4 border-brand-500 bg-brand-50/70 p-4 sm:p-5 dark:bg-brand-950/40">
+          {topic.summary && (
+            <>
+              <h2 className="text-xs font-bold tracking-wider text-brand-700 uppercase dark:text-brand-300">
+                O que é este tópico
+              </h2>
+              <p className="mt-1.5 text-[0.95rem] leading-7 text-slate-700 dark:text-slate-200">
+                {topic.summary}
+              </p>
+            </>
+          )}
+          {topic.what_for && (
+            <p className="mt-3 flex gap-2 text-sm leading-7 text-slate-600 dark:text-slate-300">
+              <Target size={15} className="mt-1.5 shrink-0 text-brand-600 dark:text-brand-400" />
+              <span>
+                <strong className="font-semibold text-slate-700 dark:text-slate-200">
+                  Por que importa:{' '}
+                </strong>
+                {topic.what_for}
+              </span>
+            </p>
+          )}
+        </section>
+      )}
 
       <TopicStatus topicId={topic.id} current={progresso?.status ?? null} />
 

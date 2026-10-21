@@ -1,0 +1,502 @@
+{
+  "sobre": "Resumos didáticos escritos para este sistema. Cada disciplina ganha um 'o que é / para que serve / como cai / armadilhas / números-chave', e cada tópico ganha duas linhas explicando o que ele significa e por que importa na prova. Conteúdo autoral, separado da apostila.",
+  "disciplinas": {
+    "direito-constitucional": {
+      "resumo": "É o estudo da Constituição Federal de 1988 — a norma que está acima de todas as outras e de onde nasce a própria existência da Polícia Militar. Você estuda a estrutura do Estado brasileiro, os direitos do cidadão e os limites da atuação do poder público.",
+      "paraQue": "Na rua, é a Constituição que diz até onde o policial pode ir: quando pode entrar numa casa, quando pode revistar, o que é prisão legal e quais direitos do abordado não podem ser violados. Uma abordagem feita fora dela vira prova ilícita, responsabilidade civil do Estado e processo contra o policial.",
+      "comoCai": "Muita letra de lei do art. 5º (direitos individuais) e do art. 144 (segurança pública), além de princípios da administração pública do art. 37. A banca gosta de trocar uma palavra do texto constitucional e de inventar exceções que não existem.",
+      "armadilhas": [
+        "Dizer que entes federados têm soberania — eles têm autonomia; a soberania é da República.",
+        "Admitir entrada em domicílio à noite com mandado judicial — à noite só flagrante, desastre ou socorro.",
+        "Trocar os fundamentos do art. 1º pelos objetivos do art. 3º.",
+        "Afirmar que o rol de órgãos de segurança pública do art. 144 é exemplificativo — ele é taxativo.",
+        "Esquecer que ao militar são proibidas a sindicalização e a greve."
+      ],
+      "numerosChave": [
+        "Art. 144: 5 níveis de polícia; §5º é a PM, §6º é a subordinação ao Governador",
+        "Concurso público: validade de até 2 anos, prorrogável uma vez por igual período",
+        "Prisão: comunicação imediata ao juiz e à família; relaxamento se ilegal",
+        "Cláusulas pétreas (art. 60, §4º): forma federativa, voto, separação dos Poderes, direitos individuais"
+      ]
+    },
+    "direito-penal-comum": {
+      "resumo": "É o ramo que define quais condutas são crime e qual a pena de cada uma. A parte geral ensina a lógica (o que é crime, quando a lei se aplica, como a pena é calculada) e a parte especial traz os tipos penais em si.",
+      "paraQue": "O policial militar precisa reconhecer o crime no momento da ocorrência para agir certo: prender em flagrante exige saber se aquilo é crime, qual é, se admite fiança e se cabe termo circunstanciado. Enquadrar errado compromete toda a ocorrência.",
+      "comoCai": "Teoria do crime, concurso de pessoas, concurso de crimes e os crimes de maior incidência — furto, roubo, lesão, homicídio e os crimes contra a administração. Também aparecem súmulas consolidadas do STF e do STJ.",
+      "armadilhas": [
+        "Confundir concussão (exigir) com corrupção passiva (solicitar ou receber).",
+        "Trocar a teoria do tempo do crime (atividade) pela do lugar (ubiquidade).",
+        "Dizer que a embriaguez voluntária completa exclui a imputabilidade — não exclui.",
+        "Somar penas no concurso formal perfeito, quando a regra ali é exasperação.",
+        "Achar que a insignificância exclui a ilicitude — ela exclui a tipicidade material."
+      ],
+      "numerosChave": [
+        "Tentativa: redução de 1/3 a 2/3",
+        "Roubo com arma de fogo: aumento de 2/3; de uso restrito: pena em dobro",
+        "Limite de cumprimento de pena: 40 anos",
+        "Prescrição: começa a correr da consumação, salvo regras próprias"
+      ]
+    },
+    "direito-processual-penal": {
+      "resumo": "É o conjunto de regras sobre COMO o Estado apura e julga um crime: quem investiga, como a prova é produzida, quando alguém pode ser preso e qual o caminho até a sentença.",
+      "paraQue": "É a disciplina do dia a dia operacional: prisão em flagrante, busca pessoal, busca domiciliar, condução, apreensão e a lavratura correta dos documentos. Prova colhida fora do processo legal é prova nula, e a ocorrência inteira pode cair.",
+      "comoCai": "Inquérito policial (natureza e prazos), provas (busca pessoal e domiciliar), prisões e medidas cautelares. São os capítulos que tocam diretamente a atividade policial.",
+      "armadilhas": [
+        "Dizer que a busca pessoal sempre exige mandado — não exige, basta fundada suspeita.",
+        "Trocar os prazos do inquérito: 10 dias preso, 30 solto.",
+        "Afirmar que o delegado pode mandar arquivar o inquérito — não pode.",
+        "Confundir 'requerer' (o que o ofendido faz) com 'requisitar' (ordem que ele não tem).",
+        "Esquecer a revisão da preventiva a cada 90 dias."
+      ],
+      "numerosChave": [
+        "Inquérito: 10 dias preso · 30 dias solto (prorrogável)",
+        "Preventiva: revisão obrigatória a cada 90 dias",
+        "Temporária: 5+5 dias na regra geral · 30+30 nos hediondos",
+        "Flagrante: comunicação ao juiz em até 24 horas; audiência de custódia"
+      ]
+    },
+    "direito-penal-militar": {
+      "resumo": "É o Código Penal próprio da caserna, de 1969. Define o que é crime militar, traz crimes que só existem na vida militar — deserção, motim, violência contra superior — e tem regras próprias de pena, prescrição e ação penal.",
+      "paraQue": "Delimita a conduta do policial militar como agente e como eventual acusado. Saber o que é crime militar e quem julga cada caso é o que separa uma falta disciplinar de um processo criminal.",
+      "comoCai": "Conceito de crime militar (art. 9º), crimes contra a autoridade e a disciplina (motim, revolta, violência e desrespeito a superior), deserção, penas acessórias e os pontos em que o CPM se afasta do CP comum.",
+      "armadilhas": [
+        "Trocar motim por revolta: a diferença é a arma na mão (4–8 anos × 8–20 anos).",
+        "Usar o limite de 40 anos do CP comum: no CPM é 30 (reclusão) e 15 (detenção).",
+        "Achar que existe crime continuado no CPM — não existe, aplica-se o cúmulo material.",
+        "Falar em ação penal privada militar — a ação é sempre pública, do MPM.",
+        "Esquecer que a prescrição da deserção só corre aos 45 anos (praça) ou 60 (oficial)."
+      ],
+      "numerosChave": [
+        "Limite de pena: 30 anos reclusão · 15 anos detenção",
+        "Deserção: consuma no 9º dia (após mais de 8 dias de ausência)",
+        "Pena superior a 2 anos: exclusão da praça e perda de posto do oficial",
+        "Agravantes e atenuantes sem quantum: de 1/5 a 1/3"
+      ]
+    },
+    "legislacao-especial": {
+      "resumo": "São onze leis que tratam de temas específicos e que o policial militar encontra na rua: hediondos, racismo, tortura, organização criminosa, drogas, abuso de autoridade, armas, violência doméstica, criança e adolescente, pessoa idosa e identificação criminal.",
+      "paraQue": "Cada uma dessas leis muda o procedimento da ocorrência: o que fazer com um adolescente apreendido, como tratar a vítima de violência doméstica, quando a arma caracteriza posse ou porte, o que é consumo e o que é tráfico, e o que o próprio policial não pode fazer sob pena de abuso.",
+      "comoCai": "Prazos, rol de crimes, requisitos numéricos e as vedações de cada lei. É a disciplina mais 'decoreba' do edital, e também a que mais se repete entre concursos.",
+      "armadilhas": [
+        "Dizer que o tráfico privilegiado é hediondo — não é.",
+        "Dizer que a tortura é imprescritível — prescreve; imprescritível é o racismo.",
+        "Trocar 3 por 4 pessoas na organização criminosa.",
+        "Condicionar a ação penal da lesão em violência doméstica à representação — é incondicionada (Súmula 542 do STJ).",
+        "Esquecer que o abuso de autoridade exige dolo específico."
+      ],
+      "numerosChave": [
+        "Organização criminosa: 4+ pessoas, penas máximas acima de 4 anos",
+        "Pessoa idosa: 60 anos ou mais (65 é o do transporte gratuito)",
+        "Criança: até 12 anos incompletos · adolescente: 12 a 18",
+        "Internação provisória do adolescente: até 45 dias improrrogáveis",
+        "Tortura: perda do cargo automática + interdição pelo dobro da pena"
+      ]
+    },
+    "legislacao-transito": {
+      "resumo": "É o Código de Trânsito Brasileiro: as regras de circulação, a sinalização, a habilitação, as infrações administrativas e os crimes de trânsito.",
+      "paraQue": "A PM atua na fiscalização de trânsito por convênio e é quem chega primeiro no acidente. Saber diferenciar infração de crime, o que é penalidade e o que é medida administrativa, e como proceder na embriaguez ao volante é rotina de serviço.",
+      "comoCai": "Pontuação e gravidade das infrações, hierarquia da sinalização, habilitação, embriaguez (art. 165, 165-A e 306) e os crimes dos arts. 302 a 312.",
+      "armadilhas": [
+        "Trocar os pontos (7-5-4-3) pelos multiplicadores da multa (3,0-2,0-1,5-1,0).",
+        "Dizer que o semáforo prevalece sobre o agente — é o contrário.",
+        "Afirmar que o crime do art. 306 exige etilômetro — qualquer meio de prova serve.",
+        "Confundir penalidade (art. 256) com medida administrativa (art. 269).",
+        "Achar que o PM lavra auto de trânsito sem convênio e designação."
+      ],
+      "numerosChave": [
+        "Pontos: gravíssima 7 · grave 5 · média 4 · leve 3",
+        "Suspensão por pontos: 20 (2+ gravíssimas) · 30 (1 gravíssima) · 40 (nenhuma)",
+        "Embriaguez: 6 decigramas/litro de sangue = 0,3 mg/litro de ar",
+        "Velocidade urbana sem sinalização: 80 · 60 · 40 · 30 km/h",
+        "CNH: 10 anos até 49 · 5 anos de 50 a 70 · 3 anos acima de 70"
+      ]
+    },
+    "legislacao-institucional": {
+      "resumo": "São as oito normas que regem a vida do policial militar catarinense: o Estatuto, o Regulamento Disciplinar, a Lei Orgânica Nacional, a lei de ingresso, a de promoção, a de remuneração, a da organização básica da PMSC e a do Conselho de Disciplina.",
+      "paraQue": "É a lei da sua própria carreira: hierarquia, deveres, punições, promoções, direitos e o processo que pode excluir alguém da corporação. Tudo o que acontece dentro do quartel nasce dessas normas.",
+      "comoCai": "É a maior banca de pontos da prova — 10 das 60 questões — e a que menos aparece em cursinho genérico, porque é 100% legislação de Santa Catarina. Costuma vir em casos práticos: 'o Sd X fez tal coisa; qual a consequência?'",
+      "armadilhas": [
+        "Inverter detenção e prisão na escala de punições.",
+        "Mandar praça para Conselho de Justificação — esse é de oficial; praça estável vai a Conselho de Disciplina.",
+        "Confundir pedido de reconsideração (mesma autoridade) com recurso hierárquico (autoridade superior).",
+        "Errar a ordem dos sargentos: o 3º é o mais baixo e o 1º o mais alto.",
+        "Dizer que o Comandante-Geral confere posto a oficial — quem confere é o Governador, com Carta Patente."
+      ],
+      "numerosChave": [
+        "10 das 60 questões — o maior peso da prova",
+        "Conselho de Disciplina: 3 oficiais",
+        "Comportamento da praça: excepcional, ótimo, bom, insuficiente, mau",
+        "Escalões: Grupo → Pelotão → Companhia → Batalhão → Comando Regional",
+        "Punições: advertência → repreensão → detenção → prisão → licenciamento/exclusão"
+      ]
+    },
+    "lingua-portuguesa": {
+      "resumo": "Compreensão e interpretação de texto, semântica, morfologia, sintaxe, pontuação, coesão e reescrita. É a disciplina que mede se você entende o que lê e escreve dentro da norma-padrão.",
+      "paraQue": "Além da prova, é o que sustenta a redação (20 pontos) e a lavratura de documentos no serviço: boletim de ocorrência, parte, relatório. Um texto ambíguo ou mal escrito prejudica a ocorrência.",
+      "comoCai": "Interpretação com texto de apoio, substituição de palavras sem mudar o sentido, classificação de orações, concordância, regência, crase e reescrita de frases.",
+      "armadilhas": [
+        "Flexionar o verbo haver impessoal ('houveram').",
+        "Crase antes de palavra masculina, verbo ou pronome.",
+        "Confundir oração adjetiva restritiva (sem vírgulas) com explicativa (entre vírgulas).",
+        "Aceitar 'a nível de' e 'onde' para situações não espaciais.",
+        "Trocar o sentido do conectivo na reescrita (concessão por condição, por exemplo)."
+      ],
+      "numerosChave": [
+        "8 das 60 questões",
+        "Conectivos: adição, oposição, causa, consequência, conclusão, finalidade",
+        "Crase: só antes de palavra feminina que admita o artigo 'a'",
+        "Haver impessoal e fazer de tempo: sempre no singular"
+      ]
+    },
+    "informatica": {
+      "resumo": "Noções de hardware e software, Windows 11, LibreOffice 7, navegadores, correio eletrônico, computação em nuvem, LGPD e segurança da informação.",
+      "paraQue": "O trabalho policial hoje passa por sistemas: registro de ocorrência, consulta de dados, e-mail institucional. E a LGPD define o que pode ser feito com dados pessoais na atividade de segurança pública.",
+      "comoCai": "Questões práticas: atalhos do Windows, funções e referências do Calc, formatos nativos do LibreOffice, protocolos da internet e tipos de malware.",
+      "armadilhas": [
+        "Inverter vírus e worm: quem precisa de hospedeiro é o vírus.",
+        "Dizer que a extensão nativa do Calc é .xlsx — é .ods.",
+        "Achar que a navegação anônima torna o usuário não identificável.",
+        "Confundir intranet (interna) com extranet (acesso externo controlado).",
+        "Trocar chave pública por privada na assinatura digital — assina-se com a privada."
+      ],
+      "numerosChave": [
+        "5 das 60 questões",
+        "Referências do Calc: A1 relativa · $A$1 absoluta · $A1 e A$1 mistas",
+        "SMTP envia · POP3 e IMAP recebem",
+        "LGPD: não se aplica a dados tratados para fins exclusivos de segurança pública"
+      ]
+    },
+    "redacao": {
+      "resumo": "Texto dissertativo-argumentativo sobre ordem pública, valendo 20 pontos — um quarto da nota da primeira fase. Cobra estrutura em quatro parágrafos, tese clara, dois argumentos fundamentados e proposta de intervenção.",
+      "paraQue": "É a prova que mais depende de treino de forma, e não de conteúdo novo: o repertório vem do próprio edital (art. 144 da CF, sistema de justiça criminal, políticas de segurança cidadã). Quem domina a estrutura entrega nota alta com segurança.",
+      "comoCai": "Tema de ordem pública, com proposta e texto motivador. A correção pesa estrutura, argumentação, proposta de intervenção, coesão e norma-padrão.",
+      "armadilhas": [
+        "Fugir ou tangenciar o tema — é a falha que mais derruba nota.",
+        "Usar primeira pessoa ('eu acho', 'na minha opinião').",
+        "Entregar conclusão sem proposta de intervenção completa.",
+        "Inventar repertório: dado ou lei falsos contam contra.",
+        "Clichês como 'desde os primórdios' e 'nos dias atuais' no lugar de contextualização real."
+      ],
+      "numerosChave": [
+        "20 pontos — um quarto da 1ª fase",
+        "4 parágrafos: introdução, 2 desenvolvimentos, conclusão",
+        "Proposta: agente, ação, meio, finalidade e detalhamento",
+        "Extensão alvo: 25 a 30 linhas (250 a 350 palavras)"
+      ]
+    }
+  },
+  "topicos": {
+    "direito-constitucional:1.1": {
+      "resumo": "Explica o que é uma Constituição, de que partes ela é feita e qual a diferença entre normas constitucionais de eficácia plena, contida e limitada.",
+      "paraQue": "É a base para entender por que algumas regras valem sozinhas e outras dependem de lei — pergunta recorrente em prova."
+    },
+    "direito-constitucional:1.2": {
+      "resumo": "Organiza as Constituições por critérios: quanto à origem, forma, extensão, estabilidade e conteúdo.",
+      "paraQue": "A banca cobra a classificação da CF/88 (promulgada, escrita, analítica, rígida, dogmática) quase sempre da mesma forma."
+    },
+    "direito-constitucional:1.3": {
+      "resumo": "Trata de quem tem o poder de criar e de reformar a Constituição: poder originário, derivado reformador, derivado decorrente e revisor.",
+      "paraQue": "Sustenta o tema das cláusulas pétreas e dos limites das emendas constitucionais."
+    },
+    "direito-constitucional:1.4": {
+      "resumo": "Os quatro primeiros artigos da CF: fundamentos, separação dos Poderes, objetivos da República e princípios das relações internacionais.",
+      "paraQue": "São artigos curtos e de redação fechada — a banca troca uma palavra e a assertiva fica errada."
+    },
+    "direito-constitucional:1.5": {
+      "resumo": "O art. 5º e seguintes: direitos individuais e coletivos, inviolabilidade de domicílio, devido processo, direitos sociais e políticos.",
+      "paraQue": "É o capítulo que mais toca a abordagem policial — entrada em domicílio, prisão, identificação e integridade do abordado."
+    },
+    "direito-constitucional:1.6": {
+      "resumo": "A federação brasileira: União, estados, DF e municípios, repartição de competências, intervenção e administração pública.",
+      "paraQue": "Explica por que a PM é estadual, a quem ela se subordina e quem legisla sobre o quê."
+    },
+    "direito-constitucional:1.7": {
+      "resumo": "Como se organizam Legislativo, Executivo e Judiciário, com suas funções típicas e atípicas.",
+      "paraQue": "Aparece em questões sobre processo legislativo, competências e foro por prerrogativa de função."
+    },
+    "direito-constitucional:1.8": {
+      "resumo": "O núcleo constitucional da sua futura profissão: art. 144 (segurança pública) e arts. 122 a 125 (Justiça Militar).",
+      "paraQue": "É o tópico de maior densidade de prova dentro de Constitucional — leia-o mais de uma vez."
+    },
+    "direito-constitucional:1.9": {
+      "resumo": "A Constituição do Estado de Santa Catarina na parte que organiza o Estado e as instituições de segurança.",
+      "paraQue": "É o recorte local que diferencia este concurso dos nacionais; cai em simetria com a CF."
+    },
+    "direito-penal-comum:2.1": {
+      "resumo": "Os princípios que limitam o poder de punir: legalidade, anterioridade, intervenção mínima, insignificância, culpabilidade, entre outros.",
+      "paraQue": "Dão a lógica do sistema e aparecem como fundamento de várias respostas, especialmente a insignificância."
+    },
+    "direito-penal-comum:2.2": {
+      "resumo": "Quando e onde a lei penal se aplica: retroatividade benéfica, abolitio criminis, leis temporárias, tempo e lugar do crime.",
+      "paraQue": "Concentra números e teorias que a banca adora inverter (atividade × ubiquidade)."
+    },
+    "direito-penal-comum:2.3": {
+      "resumo": "A estrutura do crime: fato típico, ilicitude e culpabilidade, com dolo, culpa, tentativa, excludentes e concurso de pessoas.",
+      "paraQue": "É a espinha dorsal da disciplina; sem ela, nenhuma questão da parte especial se resolve com segurança."
+    },
+    "direito-penal-comum:2.4": {
+      "resumo": "Espécies de pena, dosimetria em três fases, regimes de cumprimento e efeitos da condenação.",
+      "paraQue": "Explica como se chega à pena final e quais consequências atingem o servidor público condenado."
+    },
+    "direito-penal-comum:2.5": {
+      "resumo": "As causas que fazem o Estado perder o direito de punir: morte, prescrição, decadência, perdão, anistia e outras.",
+      "paraQue": "Prescrição é tema de número puro e aparece com frequência."
+    },
+    "direito-penal-comum:2.6": {
+      "resumo": "Os crimes que o policial mais encontra: homicídio, lesão, furto, roubo, receptação, estelionato e os crimes contra a administração.",
+      "paraQue": "É onde se decide o enquadramento correto da ocorrência; confundir os verbos do tipo muda o crime."
+    },
+    "direito-penal-comum:2.7": {
+      "resumo": "A Lei de Crimes Ambientais e as condutas que a PM Ambiental e a PM ordinária podem flagrar.",
+      "paraQue": "Está no edital e costuma vir em uma questão isolada sobre conduta típica ou responsabilidade da pessoa jurídica."
+    },
+    "direito-penal-comum:2.8": {
+      "resumo": "As súmulas do STF e do STJ mais citadas em prova de Penal.",
+      "paraQue": "Súmula é resposta pronta: decorar meia dúzia delas resolve questões inteiras."
+    },
+    "direito-processual-penal:3.1": {
+      "resumo": "Os princípios do processo penal e os sistemas inquisitivo, acusatório e misto.",
+      "paraQue": "Fundamenta por que a prova ilícita é inadmissível e por que o inquérito é inquisitivo."
+    },
+    "direito-processual-penal:3.2": {
+      "resumo": "O inquérito policial: natureza, características, prazos, formas de instauração, indiciamento e arquivamento.",
+      "paraQue": "É o tópico campeão de questões em Processo Penal para carreiras policiais."
+    },
+    "direito-processual-penal:3.3": {
+      "resumo": "Quem pode levar o caso a juízo: ação pública incondicionada, condicionada e ação privada.",
+      "paraQue": "Define se a vítima precisa representar, o que muda a conduta na ocorrência."
+    },
+    "direito-processual-penal:3.4": {
+      "resumo": "Qual juízo julga cada caso: competência pelo lugar, pela matéria e pela pessoa, incluindo a Justiça Militar.",
+      "paraQue": "É o que responde 'quem julga o PM?' — pergunta clássica deste concurso."
+    },
+    "direito-processual-penal:3.5": {
+      "resumo": "Como a prova é produzida e quais são lícitas: busca pessoal, busca domiciliar, perícias, testemunhas, reconhecimento e interrogatório.",
+      "paraQue": "Toca diretamente a rotina da abordagem; prova colhida fora da lei contamina tudo o que vier depois."
+    },
+    "direito-processual-penal:3.6": {
+      "resumo": "Prisão em flagrante, preventiva e temporária, e as medidas cautelares diversas da prisão.",
+      "paraQue": "É o procedimento mais sensível do serviço policial, e o que mais gera responsabilização quando feito errado."
+    },
+    "direito-processual-penal:3.7": {
+      "resumo": "Incidentes do processo e medidas que garantem a reparação do dano, como sequestro e arresto de bens.",
+      "paraQue": "Tópico de menor incidência; leia uma vez para não ser pego de surpresa."
+    },
+    "direito-processual-penal:3.8": {
+      "resumo": "Juiz, Ministério Público, acusado, defensor, assistente e auxiliares, e como os atos são comunicados (citação e intimação).",
+      "paraQue": "Explica os papéis de cada um e os prazos de comunicação dos atos."
+    },
+    "direito-processual-penal:3.9": {
+      "resumo": "O rito do processo: procedimento comum ordinário, sumário e sumaríssimo.",
+      "paraQue": "Cai em questões sobre qual rito se aplica conforme a pena máxima cominada."
+    },
+    "direito-processual-penal:3.10": {
+      "resumo": "Quando um ato é nulo, como se estrutura a sentença e quais recursos existem.",
+      "paraQue": "Tópico de fechamento; foque nos prazos recursais e na diferença entre nulidade absoluta e relativa."
+    },
+    "direito-penal-militar:4.1": {
+      "resumo": "Define o que a lei considera crime militar, pelo art. 9º do CPM, e separa crimes propriamente de impropriamente militares.",
+      "paraQue": "É o portão de entrada da disciplina: sem saber se o crime é militar, não se sabe quem julga nem qual lei aplicar."
+    },
+    "direito-penal-militar:4.2": {
+      "resumo": "A parte geral do CPM: aplicação da lei no tempo e no espaço, conceitos de superior, militar da ativa e equiparações.",
+      "paraQue": "Traz o conceito funcional de superior (art. 24), que sustenta vários crimes da parte especial."
+    },
+    "direito-penal-militar:4.3": {
+      "resumo": "Teoria do crime no CPM: causalidade, tentativa, excludentes, erro de fato e de direito, imputabilidade e concurso de agentes.",
+      "paraQue": "Mostra onde o CPM se afasta do CP comum — e é exatamente aí que a banca cobra."
+    },
+    "direito-penal-militar:4.4": {
+      "resumo": "Penas principais e acessórias, aplicação da pena, suspensão condicional, livramento, ação penal e extinção da punibilidade.",
+      "paraQue": "Concentra os números mais cobrados do CPM, como os limites de 30 e 15 anos e o marco de 2 anos."
+    },
+    "direito-penal-militar:4.5": {
+      "resumo": "Os crimes militares em tempo de paz, com destaque para o Título II — crimes contra a autoridade e a disciplina militar.",
+      "paraQue": "Motim, revolta, violência e desrespeito a superior e deserção são presença garantida em prova."
+    },
+    "direito-penal-militar:4.6": {
+      "resumo": "Quadro que coloca lado a lado CPM e Código Penal comum, tema por tema.",
+      "paraQue": "É o atalho de revisão mais eficiente da disciplina: estude por ele na véspera."
+    },
+    "legislacao-especial:5.1": {
+      "resumo": "Define o rol taxativo dos crimes hediondos e o regime mais severo que se aplica a eles e aos equiparados.",
+      "paraQue": "Determina vedações (anistia, graça, indulto, fiança) e frações diferenciadas de progressão."
+    },
+    "legislacao-especial:5.2": {
+      "resumo": "Tipifica as condutas de preconceito de raça ou cor e o tratamento constitucional do racismo.",
+      "paraQue": "Racismo é inafiançável e imprescritível — par de adjetivos que a banca adora trocar."
+    },
+    "legislacao-especial:5.3": {
+      "resumo": "Define os crimes de tortura, inclusive a tortura por omissão de quem tinha o dever de evitá-la.",
+      "paraQue": "Atinge diretamente o agente público: a perda do cargo é efeito automático da condenação."
+    },
+    "legislacao-especial:5.4": {
+      "resumo": "Conceitua organização criminosa e traz os meios de obtenção de prova, como a colaboração premiada e a infiltração de agentes.",
+      "paraQue": "Os requisitos numéricos (4 pessoas, pena máxima acima de 4 anos) são cobrados literalmente."
+    },
+    "legislacao-especial:5.5": {
+      "resumo": "Separa o usuário (art. 28) do traficante (art. 33) e define as consequências de cada conduta.",
+      "paraQue": "Na abordagem, é a diferença entre termo circunstanciado e prisão em flagrante."
+    },
+    "legislacao-especial:5.6": {
+      "resumo": "Tipifica condutas de agentes públicos que excedem suas atribuições, exigindo dolo específico.",
+      "paraQue": "É a lei que mais pode atingir o policial militar: saber seus limites é autoproteção."
+    },
+    "legislacao-especial:5.7": {
+      "resumo": "Regula posse, porte, registro e comércio de armas de fogo, com crimes próprios para cada conduta.",
+      "paraQue": "Posse × porte muda o crime e a pena; é a distinção central da lei."
+    },
+    "legislacao-especial:5.8": {
+      "resumo": "Cria o microssistema de proteção à mulher em situação de violência doméstica e familiar, com medidas protetivas de urgência.",
+      "paraQue": "A PM é quem atende a ocorrência e fiscaliza o cumprimento das medidas protetivas."
+    },
+    "legislacao-especial:5.9": {
+      "resumo": "O ECA: direitos da criança e do adolescente, ato infracional, medidas protetivas e socioeducativas.",
+      "paraQue": "Define o procedimento correto na apreensão de adolescente — erro aqui gera responsabilização."
+    },
+    "legislacao-especial:5.10": {
+      "resumo": "O Estatuto da Pessoa Idosa: direitos, prioridades e crimes contra quem tem 60 anos ou mais.",
+      "paraQue": "Os marcos de idade (60 e 65) são a pegadinha padrão do tema."
+    },
+    "legislacao-especial:5.11": {
+      "resumo": "Diz quando o civilmente identificado pode, excepcionalmente, ser submetido a identificação criminal.",
+      "paraQue": "É a lei que autoriza (ou proíbe) a identificação datiloscópica e fotográfica na abordagem."
+    },
+    "legislacao-transito:6.1": {
+      "resumo": "Abre o CTB: o que é trânsito, quais vias o Código alcança e quem compõe o Sistema Nacional de Trânsito.",
+      "paraQue": "Delimita circunscrições e competências — útil para separar PM, PRF e órgãos municipais."
+    },
+    "legislacao-transito:6.2": {
+      "resumo": "As regras de circulação: preferências, ultrapassagem, velocidade, cinto, transporte de crianças e conduta do condutor.",
+      "paraQue": "É o conjunto de regras que fundamenta a maior parte das autuações de trânsito."
+    },
+    "legislacao-transito:6.3": {
+      "resumo": "Tipos de sinalização e a ordem de prevalência entre agente, semáforo, sinais e normas.",
+      "paraQue": "A hierarquia da sinalização é uma das questões mais previsíveis do CTB."
+    },
+    "legislacao-transito:6.4": {
+      "resumo": "Classificação dos veículos, equipamentos obrigatórios e regras de modificação e de carga.",
+      "paraQue": "Fundamenta a retenção do veículo por irregularidade em fiscalização."
+    },
+    "legislacao-transito:6.5": {
+      "resumo": "Registro e licenciamento, categorias de habilitação, exames, validade da CNH e a Permissão para Dirigir.",
+      "paraQue": "As categorias e os prazos de validade são cobrados em números exatos."
+    },
+    "legislacao-transito:6.6": {
+      "resumo": "Gravidade das infrações, multas, pontuação, suspensão, cassação e as medidas administrativas.",
+      "paraQue": "Separar penalidade de medida administrativa é a distinção mais cobrada do capítulo."
+    },
+    "legislacao-transito:6.7": {
+      "resumo": "Os crimes de trânsito: homicídio e lesão culposos, embriaguez, racha, omissão de socorro e fuga do local.",
+      "paraQue": "Define quando a ocorrência de trânsito vira caso de polícia judiciária e prisão em flagrante."
+    },
+    "legislacao-institucional:7.0": {
+      "resumo": "Mapa das oito normas cobradas, com o peso de cada uma na prova.",
+      "paraQue": "Comece por aqui: ele diz onde investir o tempo dentro da disciplina mais pesada do edital."
+    },
+    "legislacao-institucional:7.1": {
+      "resumo": "O Estatuto dos Policiais Militares de SC: hierarquia, disciplina, círculos, deveres, direitos e situações do militar.",
+      "paraQue": "É a 'Constituição interna' da corporação, base de quase todas as questões institucionais."
+    },
+    "legislacao-institucional:7.2": {
+      "resumo": "O Regulamento Disciplinar: o que é transgressão, como se classifica, quais punições existem e como se apura.",
+      "paraQue": "É o campeão de questões práticas — o enunciado narra um caso e pergunta a consequência."
+    },
+    "legislacao-institucional:7.3": {
+      "resumo": "A Lei Orgânica Nacional das PM e CBM, norma federal recente que fixa diretrizes gerais para todas as corporações.",
+      "paraQue": "Por ser nova, tem altíssima chance de cair; conhece-se pelos princípios e pelas garantias mínimas que criou."
+    },
+    "legislacao-institucional:7.4": {
+      "resumo": "A lei que rege o ingresso nas carreiras militares de Santa Catarina — inclusive este concurso.",
+      "paraQue": "Estude com o edital ao lado: cada exigência do edital tem fundamento aqui."
+    },
+    "legislacao-institucional:7.5": {
+      "resumo": "Como a praça sobe de graduação: critérios, interstício, requisitos e impedimentos.",
+      "paraQue": "É a sua própria carreira; os critérios e impedimentos são cobrados em lista."
+    },
+    "legislacao-institucional:7.6": {
+      "resumo": "O regime remuneratório especial dos militares estaduais: subsídio, parcelas e vantagens.",
+      "paraQue": "Tópico de menor incidência — foque na lógica do subsídio como parcela única."
+    },
+    "legislacao-institucional:7.7": {
+      "resumo": "A organização básica da PMSC: competências, órgãos de direção, apoio e execução, e os escalões de comando.",
+      "paraQue": "Explica a estrutura em que você vai trabalhar e a ordem das frações de tropa."
+    },
+    "legislacao-institucional:7.8": {
+      "resumo": "O Conselho de Disciplina: processo especial que julga a incapacidade da praça estável de permanecer na ativa.",
+      "paraQue": "A distinção entre praça estável (Conselho de Disciplina) e oficial (Conselho de Justificação) é cobrança certa."
+    },
+    "legislacao-institucional:7.9": {
+      "resumo": "Lista enxuta dos números e sequências que mais caem na disciplina.",
+      "paraQue": "Use como revisão final: é o tópico com melhor relação entre tempo de leitura e pontos."
+    },
+    "lingua-portuguesa:8.1": {
+      "resumo": "Como localizar informação explícita, inferir sentido implícito e identificar a ideia central de um texto.",
+      "paraQue": "Abre a prova de Português e costuma vir com textos jornalísticos ou documentos oficiais."
+    },
+    "lingua-portuguesa:8.2": {
+      "resumo": "Sentido das palavras: sinonímia, antonímia, polissemia, denotação, conotação, figuras de linguagem e parônimos.",
+      "paraQue": "Sustenta as questões de substituição vocabular sem alteração de sentido."
+    },
+    "lingua-portuguesa:8.3": {
+      "resumo": "As classes de palavras e suas flexões: substantivo, adjetivo, verbo, pronome, advérbio, preposição e conjunção.",
+      "paraQue": "É a base para classificar termos e entender concordância e regência."
+    },
+    "lingua-portuguesa:8.4": {
+      "resumo": "A estrutura da oração e do período: termos essenciais e acessórios, orações coordenadas e subordinadas, concordância, regência e crase.",
+      "paraQue": "É o tópico mais cobrado de Português e o que mais aparece na correção da redação."
+    },
+    "lingua-portuguesa:8.5": {
+      "resumo": "O uso da vírgula, do ponto e vírgula, dos dois-pontos e do travessão.",
+      "paraQue": "Duas vírgulas mudam o sentido de uma oração adjetiva — e a banca sabe disso."
+    },
+    "lingua-portuguesa:8.6": {
+      "resumo": "Como as partes do texto se ligam: referenciação, substituição e conectivos de cada relação lógica.",
+      "paraQue": "Vale duplamente: cai na objetiva e é critério de correção da redação."
+    },
+    "lingua-portuguesa:8.7": {
+      "resumo": "Como reescrever uma frase preservando sentido e correção, trocando conectivos, vozes e ordem dos termos.",
+      "paraQue": "É o formato típico da questão: 'mantém-se o sentido ao substituir X por...'."
+    },
+    "informatica:9.1": {
+      "resumo": "Componentes do computador, tipos de memória e a diferença entre software básico e aplicativo.",
+      "paraQue": "Fornece os conceitos que as demais questões de Informática pressupõem."
+    },
+    "informatica:9.2": {
+      "resumo": "Ambiente Windows 11: área de trabalho, Explorador de Arquivos, configurações e atalhos de teclado.",
+      "paraQue": "Questão prática de atalho é quase certa — vale decorar a lista."
+    },
+    "informatica:9.3": {
+      "resumo": "Writer, Calc e Impress: formatos nativos, funções básicas e referências de célula.",
+      "paraQue": "O LibreOffice está no edital porque é a suíte usada no serviço público."
+    },
+    "informatica:9.4": {
+      "resumo": "Navegadores Edge, Chrome e Firefox, navegação anônima, cookies, plug-ins e correio eletrônico.",
+      "paraQue": "Explica o que a navegação anônima realmente faz — e não faz."
+    },
+    "informatica:9.5": {
+      "resumo": "Modelos de computação em nuvem e as regras da LGPD, incluindo a exceção da segurança pública.",
+      "paraQue": "A LGPD toca diretamente o tratamento de dados pela polícia."
+    },
+    "informatica:9.6": {
+      "resumo": "Tipos de malware, princípios da segurança da informação, backup e criptografia.",
+      "paraQue": "Vírus × worm × ransomware × spyware é a questão mais repetida do tema."
+    },
+    "redacao:10.1": {
+      "resumo": "O repertório dos três eixos do edital: sistema de justiça criminal, políticas públicas de ordem pública e o art. 144 da CF.",
+      "paraQue": "É de onde sai a fundamentação dos seus parágrafos — leia antes de escrever qualquer treino."
+    },
+    "redacao:10.2": {
+      "resumo": "O formato do texto: o que vai em cada um dos quatro parágrafos e como montar a proposta de intervenção.",
+      "paraQue": "É a parte que dá nota sem depender de inspiração — domine o molde e repita."
+    },
+    "redacao:10.3": {
+      "resumo": "Os erros que mais custam pontos: fuga ao tema, primeira pessoa, conclusão sem proposta e repertório inventado.",
+      "paraQue": "Evitar esses erros vale mais do que tentar escrever bonito."
+    },
+    "redacao:10.4": {
+      "resumo": "Três temas propostos para treinar, com a regra de treino da apostila.",
+      "paraQue": "Use junto com a tela de Redação do sistema, que sorteia temas e corrige sua estrutura."
+    }
+  }
+}

@@ -81,7 +81,13 @@ export default async function MateriasPage() {
                 </Badge>
               </div>
 
-              <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
+              {d.summary && (
+                <p className="mt-2 line-clamp-3 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                  {d.summary}
+                </p>
+              )}
+
+              <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
                 {d.question_count
                   ? `${d.question_count} questões na prova (${d.weight}%)`
                   : 'Prova de redação — 20 pontos'}

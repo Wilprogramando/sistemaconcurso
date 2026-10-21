@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useTransition } from 'react';
-import { createClient } from '@/lib/supabase/client';
+import { useSessao } from '@/components/sessao';
 
 export default function DayCheck({
   plan,
@@ -16,26 +16,24 @@ export default function DayCheck({
 }) {
   const [marcado, setMarcado] = useState(done);
   const [pending, start] = useTransition();
+  const { userId, supabase } = useSessao();
 
   function alternar() {
     const valor = !marcado;
     setMarcado(valor);
     start(async () => {
-      const supabase = createClient();
-      const { data } = await supabase.auth.getUser();
-      if (!data.user) return;
       if (valor) {
         await supabase
           .from('study_days')
           .upsert(
-            { user_id: data.user.id, plan, day, done: true, done_at: new Date().toISOString() },
+            { user_id: userId, plan, day, done: true, done_at: new Date().toISOString() },
             { onConflict: 'user_id,plan,day' }
           );
       } else {
         await supabase
           .from('study_days')
           .delete()
-          .eq('user_id', data.user.id)
+          .eq('user_id', userId)
           .eq('plan', plan)
           .eq('day', day);
       }

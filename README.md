@@ -11,9 +11,10 @@ para estudar pelo celular.
 | Fonte | O que é | Quantidade |
 | --- | --- | --- |
 | **Apostila PM SC 2026** | Teoria por tópico + questões comentadas + simulado final | 78 tópicos, 92 questões, 30 do simulado |
-| **Prova oficial 2023** | Prova de Soldado da PMSC aplicada pelo Cebraspe em 27/8/2023, com 5 alternativas | 45 questões aproveitáveis |
-| **Inéditas** | Múltipla escolha no estilo da banca, escritas a partir do Anexo II do edital | 64 questões |
-| | | **231 questões** |
+| **Prova oficial 2023 — Soldado** | Cebraspe, 27/8/2023, 5 alternativas | 45 questões |
+| **Prova oficial 2023 — Oficial** | Cebraspe, 13/8/2023 — mesma legislação de SC | 47 questões |
+| **Inéditas** | Múltipla escolha no estilo da banca, a partir do Anexo II do edital | 102 questões |
+| | | **316 questões** |
 
 As questões da prova oficial vêm da banca; o **gabarito é o definitivo do Cebraspe**, e as
 justificativas foram escritas para este sistema (a banca publica só a letra). Questões anuladas, as
@@ -26,13 +27,14 @@ treinando.
 | Área | Descrição |
 | --- | --- |
 | **Painel** | Meta diária, revisões vencidas, projeção de nota na objetiva (acurácia × peso de cada disciplina), dias até a prova, etapa de hoje no plano de 30 dias e alerta de disciplina zerada. |
-| **Matérias** | Teoria renderizada em tipografia de verdade — tabelas, listas, destaques "No edital" / "Atenção" / "Dica de prova" — com referências legais e prazos em negrito, tempo de leitura e marcação do que já estudou. |
+| **Matérias** | Resumo didático de cada matéria (o que é, para que serve, como cai, armadilhas, números-chave) e de cada tópico, antes da teoria. Teoria renderizada em tipografia de verdade — tabelas, listas, destaques "No edital" / "Atenção" / "Dica de prova" — com referências legais e prazos em negrito, tempo de leitura e marcação do que já estudou. |
 | **Questões** | Certo/Errado e múltipla escolha A–E. Ao errar, mostra **sua resposta, a resposta correta e o porquê**. Filtros por disciplina, só prova oficial, ou focado nos seus erros. |
 | **Revisão** | Revisão espaçada (SM-2 simplificado): acertou → 3, 7, 16+ dias; errou → volta amanhã. |
 | **Simulado** | Prova oficial de 2023 (2h), simulado ponderado de 60 questões na distribuição da Tabela 8.1 (2h) e o simulado da apostila (1h). Gabarito comentado só no fim, como na prova. |
 | **Caderno de erros** | Toda questão errada entra automaticamente; você anota o motivo e marca como resolvido. |
 | **Plano** | Cronogramas de 12 semanas e da reta final de 30 dias, com check-off, e o mapa de pegadinhas da banca. |
-| **Estatísticas** | Acerto geral, questões dominadas, sequência de dias, últimos 14 dias e onde investir o tempo. |
+| **Estatísticas** | Acerto geral, questões dominadas, sequência de dias, gráfico dos últimos 14 dias, evolução por sessão e onde investir o tempo. |
+| **Redação** | Tema de ordem pública sorteado, cronômetro, correção automática por cinco critérios (20 pontos), apontamentos classificados e histórico de notas. |
 
 Peso real de cada disciplina (Tabela 8.1 do edital): Institucional 10, Constitucional 8, Português 8,
 Penal 6, Processo Penal 6, Penal Militar 6, Legislação Especial 6, Trânsito 5, Informática 5 = 60

@@ -3,9 +3,11 @@
 //
 // Fontes:
 //   content/apostila.json             teoria, questoes comentadas e simulado da apostila
-//   content/prova-2023.json           prova oficial Cebraspe 2023 + textos de apoio
-//   content/prova-2023-comentarios.json  justificativas escritas para este sistema
-//   content/questoes-ineditas-*.json  questoes inereditas no estilo da banca
+//   content/provas.json               provas oficiais Cebraspe 2023 (Soldado e Oficial) + textos
+//   content/provas-comentarios.json   justificativas das provas, escritas para este sistema
+//   content/apostila-comentarios.json justificativas das questoes da apostila sem fundamento
+//   content/resumos.json              resumos didaticos de disciplinas e topicos
+//   content/questoes-ineditas-*.json  questoes ineditas no estilo da banca
 //
 // Idempotente: tudo e casado por ext_id (questoes), slug (disciplinas) e
 // discipline_id+ref (topicos), entao rodar de novo atualiza em vez de duplicar,
@@ -55,8 +57,10 @@ async function upsertEmLotes(tabela, linhas, opcoes, tamanho = 100) {
 }
 
 const apostila = ler('content/apostila.json');
-const prova = ler('content/prova-2023.json');
-const comentarios = ler('content/prova-2023-comentarios.json').comentarios;
+const provas = ler('content/provas.json');
+const comentarios = ler('content/provas-comentarios.json').comentarios;
+const comentariosApostila = ler('content/apostila-comentarios.json').comentarios;
+const resumos = ler('content/resumos.json');
 
 const ineditas = readdirSync(join(root, 'content'))
   .filter((f) => /^questoes-ineditas-\d+\.json$/.test(f))
@@ -83,6 +87,11 @@ for (const d of apostila.disciplines) {
         question_count: d.questionCount,
         weight: d.weight,
         priority: d.priority,
+        summary: resumos.disciplinas[d.slug]?.resumo ?? null,
+        what_for: resumos.disciplinas[d.slug]?.paraQue ?? null,
+        how_it_falls: resumos.disciplinas[d.slug]?.comoCai ?? null,
+        traps: resumos.disciplinas[d.slug]?.armadilhas ?? null,
+        key_numbers: resumos.disciplinas[d.slug]?.numerosChave ?? null,
       },
       { onConflict: 'slug' }
     )
@@ -105,6 +114,8 @@ for (const d of apostila.disciplines) {
     body: t.body,
     blocks: t.blocks ?? null,
     reading_minutes: t.readingMinutes ?? null,
+    summary: resumos.topicos[`${d.slug}:${t.ref}`]?.resumo ?? null,
+    what_for: resumos.topicos[`${d.slug}:${t.ref}`]?.paraQue ?? null,
   }));
   await upsertEmLotes('topics', linhas, { onConflict: 'discipline_id,ref', defaultToNull: false }, 25);
   totalTopicos += linhas.length;
@@ -123,12 +134,14 @@ console.log(`topicos: ${totalTopicos}`);
 // =====================================================================
 // 2. Textos de apoio da prova 2023
 // =====================================================================
-const passages = Object.entries(prova.textos).map(([id, body]) => ({
-  id: `prova2023:${id}`,
-  label: `Texto ${id}`,
-  body,
-  source: prova.exame.fonte,
-}));
+const passages = provas.exames.flatMap((e) =>
+  Object.entries(e.textos).map(([id, body]) => ({
+    id: `${e.id}:${id}`,
+    label: `Texto ${id}`,
+    body,
+    source: e.fonte,
+  }))
+);
 if (passages.length) {
   await upsertEmLotes('passages', passages, { onConflict: 'id' }, 10);
   console.log(`textos de apoio: ${passages.length}`);
@@ -155,7 +168,7 @@ for (const d of apostila.disciplines) {
       options: null,
       statement: q.statement,
       answer: q.answer,
-      explanation: q.explanation,
+      explanation: q.explanation || comentariosApostila[`apostila:${d.slug}:${q.number}`] || '',
       year: null,
       banca: null,
       source_url: null,
@@ -179,7 +192,7 @@ for (const q of apostila.simulado) {
     options: null,
     statement: q.statement,
     answer: q.answer,
-    explanation: q.explanation,
+    explanation: q.explanation || comentariosApostila[`apostila:simulado:${q.number}`] || '',
     year: null,
     banca: null,
     source_url: null,
@@ -187,29 +200,40 @@ for (const q of apostila.simulado) {
   });
 }
 
-// 3c. prova oficial de 2023
-const uteis = prova.questoes.filter((q) => q.slug && !q.anulada && !q.dependeDeImagem);
-for (const q of uteis) {
-  questoes.push({
-    ext_id: `prova2023:${q.numero}`,
-    source: 'prova',
-    origin: 'prova',
-    origin_label: `Prova oficial PMSC 2023 · ${prova.exame.banca} · Q${q.numero}`,
-    discipline_id: idPorSlug.get(q.slug),
-    topic_id: null,
-    number: q.numero,
-    kind: 'mc',
-    type: 'ce',
-    options: q.alternativas.map((a) => ({ letter: a.letra, text: a.texto })),
-    statement: q.enunciado,
-    answer: q.resposta,
-    explanation: comentarios[String(q.numero)] ?? '',
-    year: prova.exame.ano,
-    banca: prova.exame.banca,
-    source_url: prova.exame.fonte,
-    passage_id: q.textoId ? `prova2023:${q.textoId}` : null,
-  });
+// 3c. provas oficiais (Soldado e Oficial, Cebraspe 2023)
+let totalProva = 0;
+// O indice legado questions_unique_idx (source + disciplina + numero) nao sabe
+// distinguir duas provas do mesmo ano: ambas tem uma Q1 de Constitucional.
+// A identidade real e o ext_id; aqui so deslocamos o numero interno por exame
+// para nao colidir. O numero original continua visivel no rotulo de origem.
+let faixa = 0;
+for (const exame of provas.exames) {
+  const uteis = exame.questoes.filter((q) => q.slug && !q.anulada && !q.dependeDeImagem);
+  for (const q of uteis) {
+    questoes.push({
+      ext_id: q.extId,
+      source: 'prova',
+      origin: 'prova',
+      origin_label: `Prova oficial PMSC ${exame.ano} · ${exame.cargo} · ${exame.banca} · Q${q.numero}`,
+      discipline_id: idPorSlug.get(q.slug),
+      topic_id: null,
+      number: faixa + q.numero,
+      kind: 'mc',
+      type: 'ce',
+      options: q.alternativas.map((a) => ({ letter: a.letra, text: a.texto })),
+      statement: q.enunciado,
+      answer: q.resposta,
+      explanation: comentarios[q.extId] ?? '',
+      year: exame.ano,
+      banca: exame.banca,
+      source_url: exame.fonte,
+      passage_id: q.textoId ? `${exame.id}:${q.textoId}` : null,
+    });
+    totalProva += 1;
+  }
+  faixa += 1000;
 }
+console.log(`questoes de prova oficial: ${totalProva}`);
 
 // 3d. questoes ineditas
 let numeroInedita = 0;

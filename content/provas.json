@@ -1,0 +1,4453 @@
+{
+  "exames": [
+    {
+      "id": "prova2023",
+      "nome": "PMSC 2023 — Soldado (prova objetiva)",
+      "cargo": "Soldado",
+      "banca": "CEBRASPE",
+      "ano": 2023,
+      "aplicacao": "2023-08-27",
+      "fonte": "https://cdn.cebraspe.org.br/concursos/pm_sc_23_soldado/arquivos/862_PMSC_SOLDADO_001_01.PDF",
+      "fonteGabarito": "https://cdn.cebraspe.org.br/concursos/pm_sc_23_soldado/arquivos/GAB_DEFINITIVO_862_PMSC_SOLDADO_001_01.PDF",
+      "textos": {
+        "1A5-I": "Os algoritmos estão em toda parte. Quando a bolsa de\nvalores sobe ou desce, eles geralmente estão\nenvolvidos. Segundo dados divulgados em 2016 pelo Instituto\nde Pesquisa Econômica Aplicada (IPEA), robôs investidores\nprogramados para reagir instantaneamente ante determinadas\nsituações são responsáveis por mais de 40% das decisões de\ncompra e venda no mercado de ações no país — nos Estados\nUnidos, o percentual chegou a 70%. O sucesso de uma\nsimples pesquisa no Google depende de uma dessas receitas\nescritas em linguagem de programação computacional, que é\ncapaz de filtrar, em segundos, bilhões de páginas na Web — a\nimportância de uma página, definida por um algoritmo,\nbaseia-se na quantidade e na boa procedência de links que\nremetem a ela. Na fronteira da pesquisa em engenharia\nautomotiva, conjuntos de algoritmos utilizados por carros\nautônomos processam informações captadas por câmeras e\nsensores, tomando instantaneamente as decisões ao volante\nsem intervenção humana.\nEmbora influenciem até mesmo atividades cotidianas\nprosaicas, como a procura de atalhos no trânsito com a ajuda\nde aplicativos de celular, os algoritmos costumam ser vistos\ncomo objetos intangíveis pela população em geral — que\nsente seus efeitos, mas não conhece ou compreende seu\nformato e modo de ação. Um algoritmo nada mais é do que\numa sequência de etapas para resolver um problema ou\nrealizar uma tarefa de forma automática, quer ele tenha apenas\numa dezena de linhas de programação ou milhões delas\nempilhadas em uma espécie de pergaminho virtual. “É o\nátomo de qualquer processo computacional”, define o\ncientista da computação Roberto Marcondes Cesar Junior,\npesquisador do Instituto de Matemática e Estatística da\nUniversidade de São Paulo (IME-USP).\nBruno de Pierro. O mundo mediado por algoritmos.\nInternet: <revistapesquisa.fapesp.br> (com adaptações).",
+        "1A5-II": "Um chatbot pode ser resumido em sua tradução —\n“robô de bate-papo”. Porém, atualmente, o ChatGPT, um tipo\nde chatbot, tem chamado atenção pela sua capacidade de\nmanter a coesão e a coerência: “Ele funciona como um\nmodelo de linguagem e consegue fazer uma redação com\nconteúdo e produção de sentido, de modo que não se sabe se\naquele texto foi produzido por um humano ou por um robô”,\nexplica o professor Rogério de Almeida da Faculdade de\nEducação da USP.\nO professor brinca e pergunta para o chatbot como ele\nvê a principal preocupação dos acadêmicos com o chat. O\npróprio ChatGPT pontua cinco questões: a primeira seria a\nexistência de um viés, mediado pelos algoritmos, que pode\nreproduzir preconceitos; a segunda, ética, relacionada a como\no chat seria utilizado; a terceira tem relação com a\nprivacidade, já que ele funciona com o uso de diversos dados;\na quarta está relacionada a controle, pois ele é imprevisível e é\nimportante prezar pelo bem-estar das pessoas; a quinta, a\ntransparência de como essa ferramenta funciona.\nPorém, o especialista não segue a linha de raciocínio\ndessa inteligência artificial: “Eu vou por outro caminho. O\nque eu acho que ele nos coloca é uma questão muito\ninteressante daquilo que nós consideramos humano. Porque,\nde certa forma, a inteligência artificial aprende conosco, ela é\ntreinada com os textos que nós produzimos. Isso nos coloca\nem xeque em relação à criatividade e ao pensamento crítico”.\nInternet: <jornal.usp.br> (com adaptações).",
+        "1A5-III": "OFÍCIO No 000/ano/siglas do setor\nCidade-UF, data.\nAo Senhor\n[Nome]\nGerente dos Complexos Reguladores\nEndereço\nCEP Cidade/UF\nAssunto: Solicitação de senha.\nSenhor Gerente,\nTenho o prazer de dirigir-me ao Senhor para solicitar\nsenha de acesso ao sistema SISREG, perfil administrador,\nobjetivando a implantação da Central de Regulação de\nConsultas e Exames do Município.\nEssa ação visa à humanização dos serviços, ao\ncontrole do fluxo e à otimização na utilização dos recursos.\nAgradecendo a colaboração,\nrenovo protestos de estima,\n(espaço para assinatura)\n[NOME DO SIGNATÁRIO]\nSecretário Municipal de Saúde",
+        "1A7-I": "Considere-se que C, L e W representem,\nrespectivamente, os conjuntos verdade das seguintes\nsentenças abertas, todas com a variável x = “pessoa” tomada\nno conjunto universo V de todos os cidadãos de determinada\ncidade.\nc(x): a pessoa confunde crime com liberdade de expressão\nl(x): a pessoa confunde liberdade de expressão com crime\nw(x): a pessoa que confunde crime com liberdade de\nexpressão confunde liberdade de expressão com crime"
+      },
+      "questoes": [
+        {
+          "extId": "prova2023:1",
+          "numero": 1,
+          "slug": "direito-constitucional",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Considerando os princípios fundamentais, os direitos de nacionalidade e a organização do Estado brasileiro, assinale a opção correta de acordo com a Constituição Federal de 1988 (CF).",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Os entes da Federação, em seus três níveis — União, estados e municípios —, possuem soberania."
+            },
+            {
+              "letra": "B",
+              "texto": "Para fins constitucionais, a população do Brasil é formada apenas por brasileiros natos."
+            },
+            {
+              "letra": "C",
+              "texto": "A erradicação da pobreza e da marginalização é objetivo fundamental da República Federativa do Brasil."
+            },
+            {
+              "letra": "D",
+              "texto": "A CF adota a separação rígida dos Poderes, de modo que cada Poder possui funções especializadas que os demais não podem exercer, ainda que excepcionalmente."
+            },
+            {
+              "letra": "E",
+              "texto": "A CF expressamente elenca a orientação sexual entre os fatores com base nos quais não se admite tratamento jurídico diferenciado de pessoas."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023:2",
+          "numero": 2,
+          "slug": "direito-constitucional",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "A respeito da eficácia das normas constitucionais, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Mesmo normas constitucionais programáticas possuem algum nível de eficácia."
+            },
+            {
+              "letra": "B",
+              "texto": "Certas normas constitucionais são completamente destituídas de efeito."
+            },
+            {
+              "letra": "C",
+              "texto": "A norma constitucional que define um plano de ação para os órgãos públicos é de eficácia plena."
+            },
+            {
+              "letra": "D",
+              "texto": "A eficácia das normas constitucionais não pode, em nenhum caso, depender de normas hierarquicamente inferiores."
+            },
+            {
+              "letra": "E",
+              "texto": "Apenas as normas constitucionais de eficácia plena produzem o efeito de condicionar aos seus preceitos novas normas criadas posteriormente pelo Poder Legislativo."
+            }
+          ],
+          "resposta": "A"
+        },
+        {
+          "extId": "prova2023:3",
+          "numero": 3,
+          "slug": "direito-constitucional",
+          "anulada": true,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "No que se refere aos direitos e deveres individuais e coletivos, julgue os itens que se seguem. I Um integrante de uma associação poderá, por decisão da maioria de seus membros reunidos em assembleia, ficar proibido de desligar-se do quadro de sócios. II O direito de propriedade não tem natureza de direito absoluto. III Não é permitido ingressar na casa de alguém no período noturno, ainda que com mandado judicial. IV Em casos de urgência e de perigo à ordem pública, a polícia poderá realizar interceptação telefônica desde que previamente peça e obtenha, em até 48 horas, autorização do Ministério Público e do Poder Judiciário. Estão certos apenas os itens",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "I e II."
+            },
+            {
+              "letra": "B",
+              "texto": "I e IV."
+            },
+            {
+              "letra": "C",
+              "texto": "II e III."
+            },
+            {
+              "letra": "D",
+              "texto": "I, III e IV."
+            },
+            {
+              "letra": "E",
+              "texto": "II, III e IV."
+            }
+          ],
+          "resposta": null
+        },
+        {
+          "extId": "prova2023:4",
+          "numero": 4,
+          "slug": "direito-constitucional",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "No Brasil, os partidos políticos",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "têm direito de acesso gratuito ao rádio e à televisão, desde que sejam registrados na justiça eleitoral."
+            },
+            {
+              "letra": "B",
+              "texto": "não são indispensáveis ao funcionamento do regime democrático."
+            },
+            {
+              "letra": "C",
+              "texto": "não necessitam de autorização estatal prévia para se constituir."
+            },
+            {
+              "letra": "D",
+              "texto": "integram a estrutura da administração pública."
+            },
+            {
+              "letra": "E",
+              "texto": "podem ter qualquer finalidade e receber recursos de qualquer origem, em virtude do princípio da liberdade partidária."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023:5",
+          "numero": 5,
+          "slug": "direito-constitucional",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Na Federação brasileira, os estados",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "detêm soberania frente às decisões da União."
+            },
+            {
+              "letra": "B",
+              "texto": "podem organizar-se livremente por meio de Constituição estadual, dispensada de observar as regras da Constituição Federal."
+            },
+            {
+              "letra": "C",
+              "texto": "possuem a mesma estrutura de Poderes que os municípios."
+            },
+            {
+              "letra": "D",
+              "texto": "têm Poder Legislativo organizado de forma bicameral, com dois órgãos legislativos, tal qual a União."
+            },
+            {
+              "letra": "E",
+              "texto": "podem, apesar da autonomia municipal, intervir nos municípios, em algumas circunstâncias."
+            }
+          ],
+          "resposta": "E"
+        },
+        {
+          "extId": "prova2023:6",
+          "numero": 6,
+          "slug": "direito-constitucional",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Em relação aos municípios da Federação brasileira, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Em todas as câmaras municipais, o controle externo será exercido com o auxílio do tribunal de contas dos municípios."
+            },
+            {
+              "letra": "B",
+              "texto": "A lei orgânica dos municípios deve ser aprovada pela assembleia legislativa dos respectivos estados."
+            },
+            {
+              "letra": "C",
+              "texto": "A lei orgânica dos municípios define livremente o número de vereadores das respectivas câmaras municipais, de acordo com a realidade e a decisão política de cada município."
+            },
+            {
+              "letra": "D",
+              "texto": "Os prefeitos municipais que praticarem crime comum no exercício da função e em razão dela deverão ser julgados, em regra, pelo tribunal de justiça estadual."
+            },
+            {
+              "letra": "E",
+              "texto": "No caso de divergência entre a orientação do Poder Executivo municipal e a do estadual, esta última deverá prevalecer."
+            }
+          ],
+          "resposta": "D"
+        },
+        {
+          "extId": "prova2023:7",
+          "numero": 7,
+          "slug": "direito-constitucional",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Considerando as disposições gerais da CF acerca da administração pública, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Em razão do princípio da legalidade, todas as normas constitucionais devem ser objeto de lei ordinária para que a administração pública possa agir de forma legítima com base nelas."
+            },
+            {
+              "letra": "B",
+              "texto": "Todos os princípios aplicáveis à administração pública devem estar expressos na CF, que não admite princípios implícitos."
+            },
+            {
+              "letra": "C",
+              "texto": "Em regra, se não houver norma específica que imponha a publicidade de um ato administrativo, não é necessário torná-lo público."
+            },
+            {
+              "letra": "D",
+              "texto": "Atos jurídicos da administração pública devem considerar apenas as regras jurídicas objetivas; considerações sobre moralidade, por exemplo, não interferem na validade desses atos."
+            },
+            {
+              "letra": "E",
+              "texto": "Por força do princípio da impessoalidade, os atos da administração pública não são atribuídos à pessoa física que os pratica, mas ao órgão ou ente público que esta representa."
+            }
+          ],
+          "resposta": "E"
+        },
+        {
+          "extId": "prova2023:8",
+          "numero": 8,
+          "slug": "direito-constitucional",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Com base nas normas da CF acerca dos servidores públicos e de aspectos a eles relacionados, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Em regra, é inadmitida a acumulação de cargos e empregos públicos."
+            },
+            {
+              "letra": "B",
+              "texto": "Cada estado-membro e cada município, devido a sua autonomia, decidem livremente, em lei, o regime jurídico de seus servidores públicos."
+            },
+            {
+              "letra": "C",
+              "texto": "O prazo de validade dos concursos públicos é, em regra, de quatro anos, prorrogável uma vez, por igual período."
+            },
+            {
+              "letra": "D",
+              "texto": "Todo agente público é contratado por prazo indeterminado, não sendo admitidos no serviço público vínculos profissionais de caráter temporário."
+            },
+            {
+              "letra": "E",
+              "texto": "Eventuais acréscimos pecuniários percebidos por servidor público serão computados para fins de concessão de acréscimos ulteriores."
+            }
+          ],
+          "resposta": "A"
+        },
+        {
+          "extId": "prova2023:9",
+          "numero": 9,
+          "slug": "direito-penal-comum",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Acerca da aplicação da lei penal, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Compete ao juízo das execuções a aplicação da lei penal mais benéfica ao acusado, ainda que não transitada em julgado a sentença condenatória."
+            },
+            {
+              "letra": "B",
+              "texto": "Sem prejuízo de convenções, tratados e regras de direito internacional, aplica-se a lei penal brasileira aos fatos ocorridos em aeronaves privadas estrangeiras durante seu voo sobre o território brasileiro."
+            },
+            {
+              "letra": "C",
+              "texto": "A lei excepcional ou temporária, quando decorrido o período de sua duração ou cessadas as circunstâncias que a determinaram, não se aplica ao fato praticado durante sua vigência."
+            },
+            {
+              "letra": "D",
+              "texto": "Para efeito de análise do local do crime, a legislação brasileira adota a teoria da atividade."
+            },
+            {
+              "letra": "E",
+              "texto": "Na contagem dos prazos previstos no Código Penal (CP), exclui-se o dia do começo do prazo e inclui-se o do vencimento."
+            }
+          ],
+          "resposta": "B"
+        },
+        {
+          "extId": "prova2023:10",
+          "numero": 10,
+          "slug": "direito-penal-comum",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Admite-se punição para a forma tentada de",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "contravenção penal."
+            },
+            {
+              "letra": "B",
+              "texto": "crime habitual."
+            },
+            {
+              "letra": "C",
+              "texto": "crime culposo."
+            },
+            {
+              "letra": "D",
+              "texto": "crime praticado com dolo eventual."
+            },
+            {
+              "letra": "E",
+              "texto": "crime omissivo próprio."
+            }
+          ],
+          "resposta": "D"
+        },
+        {
+          "extId": "prova2023:11",
+          "numero": 11,
+          "slug": "direito-penal-comum",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Em relação ao concurso de pessoas, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "O ajuste, a determinação ou instigação e o auxílio, salvo disposição expressa em contrário, não são puníveis se o crime houver sido tentado."
+            },
+            {
+              "letra": "B",
+              "texto": "O concurso de pessoas caracteriza-se pelo necessário ajuste prévio entre os colaboradores para a prática do delito."
+            },
+            {
+              "letra": "C",
+              "texto": "Se a participação for de menor importância, o juiz poderá aplicar o perdão judicial."
+            },
+            {
+              "letra": "D",
+              "texto": "Quem, de qualquer modo, concorre para o crime incide nas penas a este cominadas, na medida de sua personalidade."
+            },
+            {
+              "letra": "E",
+              "texto": "Se a intenção de algum dos concorrentes fosse participar de crime menos grave, ser-lhe-á aplicada a pena deste, a qual será aumentada até a metade na hipótese de ter sido previsível o resultado mais grave."
+            }
+          ],
+          "resposta": "E"
+        },
+        {
+          "extId": "prova2023:12",
+          "numero": 12,
+          "slug": "direito-penal-comum",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Nos termos do CP, a pena pelo crime de feminicídio é aumentada de um terço até a metade se o crime tiver sido praticado",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "enquanto a vítima estava gestante ou nos três meses posteriores ao parto."
+            },
+            {
+              "letra": "B",
+              "texto": "em descumprimento de medida protetiva de urgência referente ao dever de pagar alimentos provisórios."
+            },
+            {
+              "letra": "C",
+              "texto": "na presença física de terceiros."
+            },
+            {
+              "letra": "D",
+              "texto": "na presença virtual de descendentes do acusado."
+            },
+            {
+              "letra": "E",
+              "texto": "em descumprimento de medida protetiva de urgência referente ao dever de comparecimento do agressor a programas de recuperação e reeducação."
+            }
+          ],
+          "resposta": "A"
+        },
+        {
+          "extId": "prova2023:13",
+          "numero": 13,
+          "slug": "direito-penal-comum",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Caso um indivíduo seja preso em flagrante pela prática de furto a uma residência, ele será isento de pena se tiver cometido o crime em prejuízo de",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "sua namorada, desde que coabite com ela."
+            },
+            {
+              "letra": "B",
+              "texto": "sua mãe, desde que ela tenha sessenta anos ou mais de idade."
+            },
+            {
+              "letra": "C",
+              "texto": "seu irmão, desde que coabite com ele."
+            },
+            {
+              "letra": "D",
+              "texto": "seu filho, desde que coabite com ele."
+            },
+            {
+              "letra": "E",
+              "texto": "seu cônjuge, na constância da sociedade conjugal."
+            }
+          ],
+          "resposta": "E"
+        },
+        {
+          "extId": "prova2023:14",
+          "numero": 14,
+          "slug": "direito-penal-comum",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Quando o agente, mediante mais de uma ação ou omissão, pratica dois ou mais crimes, idênticos ou não, aplicam-se cumulativamente as penas privativas de liberdade em que haja incorrido. Nessa hipótese, ocorre",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "crime continuado."
+            },
+            {
+              "letra": "B",
+              "texto": "concurso formal imperfeito."
+            },
+            {
+              "letra": "C",
+              "texto": "concurso formal."
+            },
+            {
+              "letra": "D",
+              "texto": "concurso material."
+            },
+            {
+              "letra": "E",
+              "texto": "crime multitudinário."
+            }
+          ],
+          "resposta": "D"
+        },
+        {
+          "extId": "prova2023:15",
+          "numero": 15,
+          "slug": "direito-penal-comum",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "A conduta de funcionário público, fora do exercício de sua função, mas em razão dela, exigir o pagamento de uma vantagem indevida configura o crime de",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "extorsão."
+            },
+            {
+              "letra": "B",
+              "texto": "prevaricação."
+            },
+            {
+              "letra": "C",
+              "texto": "concussão."
+            },
+            {
+              "letra": "D",
+              "texto": "corrupção passiva."
+            },
+            {
+              "letra": "E",
+              "texto": "advocacia administrativa."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023:16",
+          "numero": 16,
+          "slug": "direito-penal-comum",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Segundo o entendimento jurisprudencial do Superior Tribunal de Justiça (STJ), inserir informação falsa em currículo Lattes configura",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "crime de falsificação de documento particular."
+            },
+            {
+              "letra": "B",
+              "texto": "conduta atípica."
+            },
+            {
+              "letra": "C",
+              "texto": "crime de falsidade ideológica."
+            },
+            {
+              "letra": "D",
+              "texto": "crime de estelionato."
+            },
+            {
+              "letra": "E",
+              "texto": "crime de falsificação de documento público."
+            }
+          ],
+          "resposta": "B"
+        },
+        {
+          "extId": "prova2023:17",
+          "numero": 17,
+          "slug": "direito-processual-penal",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "No que se refere à aplicação da lei processual penal no tempo, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Nova lei processual penal, mesmo que favorável ao agente de crime, é aplicável aos fatos anteriores a ela, ainda que já haja decisão a respeito desses fatos em sentença condenatória transitada em julgado."
+            },
+            {
+              "letra": "B",
+              "texto": "Nova lei processual penal tem aplicação imediata em processos que já estejam em andamento."
+            },
+            {
+              "letra": "C",
+              "texto": "A lei processual penal não admite interpretação extensiva nem aplicação analógica, por força do princípio da legalidade."
+            },
+            {
+              "letra": "D",
+              "texto": "Nova lei processual penal tem aplicação imediata, o que impõe a necessidade de renovação dos atos praticados de acordo com a lei anterior, para que estejam em conformidade com a nova legislação."
+            },
+            {
+              "letra": "E",
+              "texto": "A lei processual penal será aplicada exclusivamente aos processos iniciados durante sua vigência."
+            }
+          ],
+          "resposta": "B"
+        },
+        {
+          "extId": "prova2023:18",
+          "numero": 18,
+          "slug": "direito-processual-penal",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Assinale a opção correta acerca do processo penal constitucional.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Ninguém será considerado culpado até o seu julgamento em segunda instância."
+            },
+            {
+              "letra": "B",
+              "texto": "Permite-se, excepcionalmente, a criação de juízo ou de tribunal especial para julgar crimes graves."
+            },
+            {
+              "letra": "C",
+              "texto": "O princípio da inadmissibilidade das provas ilícitas será afastado quando a prova, ainda que obtida por meios ilícitos, for absolutamente necessária para estabelecer a verdade real dos fatos."
+            },
+            {
+              "letra": "D",
+              "texto": "O princípio do contraditório constitui corolário do devido processo legal."
+            },
+            {
+              "letra": "E",
+              "texto": "Por força do princípio da intranscendência, é terminantemente vedado estender aos sucessores do condenado a obrigação de reparar o dano por ele causado."
+            }
+          ],
+          "resposta": "D"
+        },
+        {
+          "extId": "prova2023:19",
+          "numero": 19,
+          "slug": "direito-processual-penal",
+          "anulada": true,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Considerando-se os sistemas processuais, é correto afirmar que uma das características do sistema acusatório é",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "a separação das funções de acusar, defender e julgar, ficando cada qual a cargo de uma pessoa distinta."
+            },
+            {
+              "letra": "B",
+              "texto": "a existência, em regra, de decisões sigilosas."
+            },
+            {
+              "letra": "C",
+              "texto": "o reconhecimento do réu como objeto de direito."
+            },
+            {
+              "letra": "D",
+              "texto": "a neutralidade do juiz."
+            },
+            {
+              "letra": "E",
+              "texto": "a iniciativa probatória de ofício."
+            }
+          ],
+          "resposta": null
+        },
+        {
+          "extId": "prova2023:20",
+          "numero": 20,
+          "slug": "direito-processual-penal",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Segundo o princípio de vedação da autoincriminação (nemo tenetur se detegere), o acusado",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "é obrigado a fornecer padrões vocais necessários para subsidiar prova pericial de verificação de interlocutor."
+            },
+            {
+              "letra": "B",
+              "texto": "é obrigado a fornecer material para exame grafotécnico, para fins de reconhecimento de escritos por comparação de letra."
+            },
+            {
+              "letra": "C",
+              "texto": "é obrigado a participar da reconstituição do crime a ele imputado."
+            },
+            {
+              "letra": "D",
+              "texto": "não pode mentir, sob pena de perjúrio."
+            },
+            {
+              "letra": "E",
+              "texto": "tem direito ao silêncio, o que não implica direito de falsear a verdade quanto à identidade pessoal."
+            }
+          ],
+          "resposta": "E"
+        },
+        {
+          "extId": "prova2023:21",
+          "numero": 21,
+          "slug": "direito-processual-penal",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "No tocante ao inquérito policial, julgue os itens seguintes, à luz do Código de Processo Penal (CPP). I Para repressão do crime de tráfico de pessoas, o membro do Ministério Público poderá requisitar diretamente às empresas prestadoras de serviço de telecomunicações que disponibilizem imediatamente os sinais que permitam a localização da vítima do delito em curso. II O policial militar que figure como investigado em inquérito policial cujo objeto seja a investigação de fatos relacionados ao uso de força letal no exercício profissional poderá constituir defensor. III O ofendido, ou seu representante legal, e o indiciado poderão requisitar qualquer diligência, que será realizada pela autoridade policial, em respeito ao princípio da isonomia. Assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Apenas o item I está certo."
+            },
+            {
+              "letra": "B",
+              "texto": "Apenas o item II está certo."
+            },
+            {
+              "letra": "C",
+              "texto": "Apenas os itens I e III estão certos."
+            },
+            {
+              "letra": "D",
+              "texto": "Apenas os itens II e III estão certos."
+            },
+            {
+              "letra": "E",
+              "texto": "Todos os itens estão certos."
+            }
+          ],
+          "resposta": "B"
+        },
+        {
+          "extId": "prova2023:22",
+          "numero": 22,
+          "slug": "direito-processual-penal",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "João estava sendo investigado por um crime, no entanto, devido à falta de indícios suficientes de autoria, o inquérito policial foi arquivado mediante pedido do Ministério Público e determinação da autoridade judiciária competente. Passados dois anos, a polícia civil descobriu uma nova prova relevante que apontava para o possível envolvimento de João no crime em questão. Essa prova consistia em imagens de câmeras de segurança de residências, na vizinhança onde ocorrera o delito, captadas no momento exato da sua prática, mas cuja existência só foi descoberta posteriormente. Com base nessa nova evidência, o delegado responsável pelo caso pretende desarquivar o inquérito policial para retomar as investigações. Considerando a situação hipotética precedente, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "O inquérito policial não poderá ser reaberto, pois se operou a coisa julgada material."
+            },
+            {
+              "letra": "B",
+              "texto": "A reabertura das investigações poderá decorrer de simples mudança de opinião ou reavaliação da situação, em razão do princípio da verdade real."
+            },
+            {
+              "letra": "C",
+              "texto": "Dada a notícia de prova nova, é possível o desarquivamento do inquérito policial."
+            },
+            {
+              "letra": "D",
+              "texto": "Não poderá haver o desarquivamento do inquérito, uma vez que as imagens foram captadas antes do seu arquivamento."
+            },
+            {
+              "letra": "E",
+              "texto": "O arquivamento do inquérito por falta de justa causa poderia ter sido diretamente determinado pela autoridade policial, sem a necessidade de manifestação do Ministério Público ou do juiz."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023:23",
+          "numero": 23,
+          "slug": "direito-processual-penal",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "O inquérito policial é um procedimento",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "de natureza inquisitiva."
+            },
+            {
+              "letra": "B",
+              "texto": "indispensável."
+            },
+            {
+              "letra": "C",
+              "texto": "público em todos os seus atos."
+            },
+            {
+              "letra": "D",
+              "texto": "passível de ser presidido pelo Ministério Público."
+            },
+            {
+              "letra": "E",
+              "texto": "não oficioso."
+            }
+          ],
+          "resposta": "A"
+        },
+        {
+          "extId": "prova2023:24",
+          "numero": 24,
+          "slug": "direito-processual-penal",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Uma vez instaurado pelo delegado de polícia, o inquérito policial deve ser concluído no prazo de",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "cinco dias, em caso de prisão em flagrante."
+            },
+            {
+              "letra": "B",
+              "texto": "quinze dias, caso o investigado esteja solto."
+            },
+            {
+              "letra": "C",
+              "texto": "dez dias, em caso de prisão preventiva."
+            },
+            {
+              "letra": "D",
+              "texto": "trinta dias, em caso de crime hediondo."
+            },
+            {
+              "letra": "E",
+              "texto": "dez dias, sendo prorrogável por igual período, em caso de prisão em flagrante."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023:25",
+          "numero": 25,
+          "slug": "legislacao-institucional",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "José, aluno-oficial do primeiro ano do curso de formação de oficiais da Polícia Militar de Santa Catarina (PMSC), conheceu Maria, turista espanhola de passagem pelo Brasil. Embora soubesse que o curso exigia a condição de solteiro, José casou-se com Maria às escondidas. Após o casamento, o casal viajou por sete dias. Ao retornar, José informou à corporação que se casara e que estivera em lua de mel no referido período. Nessa situação hipotética, conforme o Estatuto dos Policiais Militares do Estado de Santa Catarina (Lei n.º 6.218/1983), José",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "deveria ter sido considerado desaparecido pela corporação policial militar no período em que se ausentou do curso de formação de oficiais."
+            },
+            {
+              "letra": "B",
+              "texto": "tinha direito ao afastamento total do serviço por motivo de núpcias."
+            },
+            {
+              "letra": "C",
+              "texto": "poderá permanecer, se for do interesse da corporação, na graduação de terceiro-sargento da PMSC, desde que tranque definitivamente sua matrícula no curso de formação de oficiais."
+            },
+            {
+              "letra": "D",
+              "texto": "deve ser excluído da corporação, sem qualquer direito a remuneração ou indenização."
+            },
+            {
+              "letra": "E",
+              "texto": "terá agido corretamente se, por ocasião de seu retorno, tiver apresentado documentação que justificasse sua ausência."
+            }
+          ],
+          "resposta": "D"
+        },
+        {
+          "extId": "prova2023:26",
+          "numero": 26,
+          "slug": "legislacao-institucional",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Em 7/7/2023, sexta-feira, Alberto chegou ao 1.º Batalhão da PMSC para cumprir escala de serviço como guarda do quartel, porém foi preso por estar visivelmente embriagado. No alojamento, começou a furtar dinheiro da carteira de Carlos, que o surpreendeu e passou a agredi-lo. Ato contínuo, Mário tentou impedir as agressões, mas foi agredido seriamente por Carlos. Utilizando-se dos meios necessários, Mário repeliu a injusta agressão de Carlos, momento em que este foi lesionado por Mário. Após os ânimos se acalmarem, Alberto, Carlos e Mário decidiram não comunicar o fato a seus superiores, porém o soldado André, que havia presenciado tudo, comunicou o ocorrido ao seu chefe imediato, por escrito, no dia seguinte, mencionando, inclusive, que Alberto tinha sido seu companheiro de curso de formação policial e que ambos ingressaram na corporação em 1.º/5/2014. Em relação a essa situação hipotética, assinale a opção correta segundo o Regulamento Disciplinar da PMSC e o Estatuto dos Policiais Militares do Estado de Santa Catarina.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "André não fez a comunicação do fato em conformidade com a forma legal prevista no referido regulamento."
+            },
+            {
+              "letra": "B",
+              "texto": "Mário não deverá ser punido por ter lesionado Carlos na tentativa de conter as agressões, haja vista ter agido em legítima defesa."
+            },
+            {
+              "letra": "C",
+              "texto": "Alberto deverá ser submetido ao Conselho de Disciplina, na forma do referido estatuto."
+            },
+            {
+              "letra": "D",
+              "texto": "Caso se sinta prejudicado e injustiçado, Alberto poderá ajuizar representação, solicitando à autoridade que determinou sua punição disciplinar que reexamine sua decisão e a reconsidere."
+            },
+            {
+              "letra": "E",
+              "texto": "O início do cumprimento da punição disciplinar imposta a Alberto se dará com a publicação da punição disciplinar em boletim da organização policial militar."
+            }
+          ],
+          "resposta": "B"
+        },
+        {
+          "extId": "prova2023:27",
+          "numero": 27,
+          "slug": "legislacao-institucional",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Com base no Decreto-lei n.º 667/1969, que reorganiza as polícias militares e os corpos de bombeiros militares dos estados, dos territórios e do Distrito Federal, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "A legislação dos regimes próprios de previdência social dos servidores públicos, a partir de 1.º de janeiro de 2025, será aplicada ao sistema de proteção social dos militares dos estados, do Distrito Federal e dos territórios."
+            },
+            {
+              "letra": "B",
+              "texto": "É permitido ao policial militar em serviço ativo fazer parte de firmas comerciais de empresas industriais de qualquer natureza."
+            },
+            {
+              "letra": "C",
+              "texto": "Cumprido o tempo mínimo de 35 anos de serviço, dos quais no mínimo 30 anos sejam de exercício de atividade de natureza militar, o policial terá direito a aposentaria proporcional, por ocasião da transferência para a inatividade remunerada."
+            },
+            {
+              "letra": "D",
+              "texto": "O policial reformado por invalidez decorrente do exercício da função tem direito a remuneração integral, com base na remuneração do posto ou da graduação que possuir por ocasião da transferência para a inatividade remunerada."
+            },
+            {
+              "letra": "E",
+              "texto": "Para fins de recebimento da pensão militar, o valor do benefício da remuneração do militar da ativa ou em inatividade será acrescido da vantagem pessoal nominalmente identificada (VPNI)."
+            }
+          ],
+          "resposta": "D"
+        },
+        {
+          "extId": "prova2023:28",
+          "numero": 28,
+          "slug": "legislacao-institucional",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "À luz do Decreto n.º 88.777/1983, que aprova o regulamento para as polícias militares e os corpos de bombeiros militares (R-200), assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Os anos de serviço correspondem ao tempo mínimo de permanência no posto ou na graduação, nas condições de merecimento e antiguidade."
+            },
+            {
+              "letra": "B",
+              "texto": "Quando se fizer necessário o aproveitamento de seus conhecimentos técnicos e especializados, policiais militares reformados poderão ser designados para o serviço ativo."
+            },
+            {
+              "letra": "C",
+              "texto": "Enquanto permanecer à disposição de outra corporação policial militar, o policial militar não será considerado no exercício de função policial militar."
+            },
+            {
+              "letra": "D",
+              "texto": "A grave perturbação ou subversão da ordem configura-se pelo exercício dinâmico do poder de polícia, no campo da segurança pública, manifestado por atuações predominantemente ostensivas."
+            },
+            {
+              "letra": "E",
+              "texto": "O aprestamento consiste no conjunto de medidas que incluem instrução, adestramento e preparo logístico para tornar uma organização policial militar pronta para emprego imediato."
+            }
+          ],
+          "resposta": "E"
+        },
+        {
+          "extId": "prova2023:29",
+          "numero": 29,
+          "slug": "legislacao-institucional",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Assinale a opção correta de acordo com a Lei estadual n.º 6.215/1983, que dispõe acerca da promoção de oficiais da PMSC.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "A antiguidade no posto é contada a partir da data do ato de promoção, inclusive para os casos de promoção post mortem, por bravura e em ressarcimento de preterição."
+            },
+            {
+              "letra": "B",
+              "texto": "O oficial da PMSC que, agregado, for promovido, mas continuar na mesma situação, preencherá o quadro de vagas a serem consideradas para promoção."
+            },
+            {
+              "letra": "C",
+              "texto": "As exigências para a promoção por ato de bravura abrangem as mesmas da promoção por outro critério."
+            },
+            {
+              "letra": "D",
+              "texto": "A Comissão de Promoção de Oficiais da PMSC tem caráter temporário e é constituída por membros natos e presidida pelo comandante-geral da corporação."
+            },
+            {
+              "letra": "E",
+              "texto": "O oficial que falecer em consequência de ferimento sofrido na manutenção da ordem pública terá direito à promoção post mortem."
+            }
+          ],
+          "resposta": "E"
+        },
+        {
+          "extId": "prova2023:30",
+          "numero": 30,
+          "slug": "legislacao-institucional",
+          "anulada": true,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Considerando as disposições do Decreto n.º 19.236/1983 a respeito da promoção de oficiais da PMSC, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Os oficiais estagiários que não satisfizerem às condições para sua efetivação no primeiro posto serão exonerados por ato do comandante-geral da corporação, mediante proposta do comandante do estagiário."
+            },
+            {
+              "letra": "B",
+              "texto": "Os oficiais habilitados ao acesso por antiguidade serão organizados em ordem crescente de antiguidade e submetidos à aprovação do comandante-geral da corporação."
+            },
+            {
+              "letra": "C",
+              "texto": "O oficial que tenha sido punido com prisão, no posto atual, por transgressão atentatória à dignidade e ao pundonor policial militar será excluído do quadro de acesso por merecimento já organizado ou dele não poderá constar."
+            },
+            {
+              "letra": "D",
+              "texto": "Em relação ao número de vagas para o posto de segundo-tenente da PMSC, será efetuada uma única promoção por antiguidade e uma única por merecimento."
+            },
+            {
+              "letra": "E",
+              "texto": "Considera-se como posto inicial para o ingresso na carreira de oficial da PMSC, no quadro de oficiais policiais militares, o de aspirante a oficial, por promoção do aluno a oficial."
+            }
+          ],
+          "resposta": null
+        },
+        {
+          "extId": "prova2023:31",
+          "numero": 31,
+          "slug": "legislacao-institucional",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Com relação ao subsídio mensal dos militares de Santa Catarina disposto na Lei Complementar n.º 614/2013, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "O regime de compensação de horas consiste no registro do quantitativo de horas, excedentes ou insuficientes, em relação ao quantitativo estabelecido para a jornada de trabalho individual do militar estadual."
+            },
+            {
+              "letra": "B",
+              "texto": "O subtenente militar estadual, ao ingressar na inatividade, perceberá proventos correspondentes ao subsídio que possuía enquanto militar da ativa."
+            },
+            {
+              "letra": "C",
+              "texto": "O subsídio dos militares estaduais não exclui o direito à percepção das vantagens pessoais nominalmente identificadas (VPNI), de qualquer origem e natureza."
+            },
+            {
+              "letra": "D",
+              "texto": "A indenização por regime especial de serviço ativo constitui verba de natureza remuneratória e se incorpora ao subsídio, aos proventos e à pensão por morte, não sendo isenta da incidência de contribuição previdenciária."
+            },
+            {
+              "letra": "E",
+              "texto": "A ajuda de custo devida ao militar estadual corresponderá a 75% do respectivo subsídio quando ele não possuir dependentes."
+            }
+          ],
+          "resposta": "A"
+        },
+        {
+          "extId": "prova2023:32",
+          "numero": 32,
+          "slug": "legislacao-institucional",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Em consonância com o Decreto n.º 1.601/2021, que aprova o regulamento da Lei n.º 6.217/1983, acerca da organização básica da PMSC, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "O planejamento, a coordenação e a direção da execução da polícia ostensiva e da preservação da ordem pública constituem uma das competências da PMSC."
+            },
+            {
+              "letra": "B",
+              "texto": "Os pelotões são frações de tropa com dois ou mais grupos de policiais militares e podem ser incorporados, destacados ou independentes."
+            },
+            {
+              "letra": "C",
+              "texto": "Os órgãos de execução são as organizações policiais militares que desenvolvem as atividades finalísticas da PMSC, podendo ser grandes comandos, unidades e subunidades."
+            },
+            {
+              "letra": "D",
+              "texto": "São órgãos de direção setorial da PMSC a Diretoria de Pessoal, a Divisão de Inteligência, a Divisão Operacional e a Diretoria de Apoio Logístico e Finanças."
+            },
+            {
+              "letra": "E",
+              "texto": "Os Comandos Regionais de Polícia Militar (CRPM) são grandes comandos responsáveis pela polícia ostensiva e pela preservação da ordem pública em circunscrições delimitadas às quais são subordinadas duas ou mais subunidades."
+            }
+          ],
+          "resposta": "A"
+        },
+        {
+          "extId": "prova2023:33",
+          "numero": 33,
+          "slug": "lingua-portuguesa",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": "1A5-I",
+          "enunciado": "A afirmação que inicia o texto 1A5-I é confirmada, entre outros fatores, por meio da",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "descrição de estudos sobre a aplicabilidade dos algoritmos."
+            },
+            {
+              "letra": "B",
+              "texto": "indicação de que um algoritmo pode ter uma dezena de linhas de programação ou milhões delas."
+            },
+            {
+              "letra": "C",
+              "texto": "informação de dados estatísticos do uso de algoritmos em diversas áreas."
+            },
+            {
+              "letra": "D",
+              "texto": "apresentação de exemplos do uso dos algoritmos em diferentes setores da sociedade."
+            },
+            {
+              "letra": "E",
+              "texto": "definição de que algoritmo é uma sequência de etapas para resolver um problema."
+            }
+          ],
+          "resposta": "D"
+        },
+        {
+          "extId": "prova2023:34",
+          "numero": 34,
+          "slug": "lingua-portuguesa",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": "1A5-I",
+          "enunciado": "Nos segmentos “atividades cotidianas prosaicas” e “objetos intangíveis” (primeiro período do segundo parágrafo), os vocábulos “prosaicas” e “intangíveis” poderiam ser respectivamente substituídos, sem prejuízo da coerência das ideias do texto 1A5-I, por",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "comuns e incompreensíveis."
+            },
+            {
+              "letra": "B",
+              "texto": "banais e inatacáveis."
+            },
+            {
+              "letra": "C",
+              "texto": "triviais e imprecisos."
+            },
+            {
+              "letra": "D",
+              "texto": "práticas e inalcançáveis."
+            },
+            {
+              "letra": "E",
+              "texto": "vulgares e incontestáveis."
+            }
+          ],
+          "resposta": "A"
+        },
+        {
+          "extId": "prova2023:35",
+          "numero": 35,
+          "slug": "lingua-portuguesa",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": "1A5-I",
+          "enunciado": "No terceiro período do primeiro parágrafo, o termo “ante” poderia ser substituído, sem prejuízo da correção gramatical e do sentido original do texto 1A5-I, por I diante de. II perante. III face à. Assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Apenas o item II está certo."
+            },
+            {
+              "letra": "B",
+              "texto": "Apenas o item III está certo."
+            },
+            {
+              "letra": "C",
+              "texto": "Apenas os itens I e II estão certos."
+            },
+            {
+              "letra": "D",
+              "texto": "Apenas os itens I e III estão certos."
+            },
+            {
+              "letra": "E",
+              "texto": "Todos os itens estão certos."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023:36",
+          "numero": 36,
+          "slug": "lingua-portuguesa",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": "1A5-I",
+          "enunciado": "No segundo parágrafo do texto 1A5-I, a oração introduzida pelo vocábulo “Embora” exprime, em relação à oração seguinte, circunstância de",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "condição."
+            },
+            {
+              "letra": "B",
+              "texto": "concessão."
+            },
+            {
+              "letra": "C",
+              "texto": "explicação."
+            },
+            {
+              "letra": "D",
+              "texto": "conformidade."
+            },
+            {
+              "letra": "E",
+              "texto": "comparação."
+            }
+          ],
+          "resposta": "B"
+        },
+        {
+          "extId": "prova2023:37",
+          "numero": 37,
+          "slug": "lingua-portuguesa",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": "1A5-I",
+          "enunciado": "Estariam mantidos os sentidos e a correção gramatical do texto1A5-I caso o travessão empregado no primeiro período do segundo parágrafo fosse substituído por",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "ponto final, pois as orações que seguem o travessão podem constituir um período isolado."
+            },
+            {
+              "letra": "B",
+              "texto": "pelo vocábulo e, pois o travessão, no contexto em questão, é empregado para separar orações coordenadas aditivas."
+            },
+            {
+              "letra": "C",
+              "texto": "ponto e vírgula, pois o travessão, no contexto em que se insere, separa ideias distintas e orações independentes."
+            },
+            {
+              "letra": "D",
+              "texto": "vírgula, pois o travessão separa uma oração de sentido explicativo."
+            },
+            {
+              "letra": "E",
+              "texto": "dois-pontos, pois o travessão introduz uma enumeração em relação à ideia anterior."
+            }
+          ],
+          "resposta": "D"
+        },
+        {
+          "extId": "prova2023:38",
+          "numero": 38,
+          "slug": "lingua-portuguesa",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": "1A5-II",
+          "enunciado": "Estariam mantidos os sentidos e a correção gramatical do texto 1A5-II caso se substituísse a expressão “de modo que (último período do primeiro parágrafo) por",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "de forma à que."
+            },
+            {
+              "letra": "B",
+              "texto": "na medida em que."
+            },
+            {
+              "letra": "C",
+              "texto": "desde que."
+            },
+            {
+              "letra": "D",
+              "texto": "ainda que."
+            },
+            {
+              "letra": "E",
+              "texto": "de sorte que."
+            }
+          ],
+          "resposta": "E"
+        },
+        {
+          "extId": "prova2023:39",
+          "numero": 39,
+          "slug": "lingua-portuguesa",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": "1A5-II",
+          "enunciado": "Assinale a opção em que a proposta de reescrita do último período do texto1A5-II preserva os seus sentidos e a correção gramatical.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Isso nos coloca no jogo de criatividade e pensamento crítico."
+            },
+            {
+              "letra": "B",
+              "texto": "Isso nos coloca em situação duvidosa no que se refere à criatividade e ao pensamento crítico."
+            },
+            {
+              "letra": "C",
+              "texto": "Isso nos coloca em dúvida a cerca da criatividade e do pensamento crítico."
+            },
+            {
+              "letra": "D",
+              "texto": "O que nos coloca em perigo no que concerne a criatividade e ao pensamento crítico."
+            },
+            {
+              "letra": "E",
+              "texto": "Fato que nos ameaça no tocante a criatividade e o pensamento crítico."
+            }
+          ],
+          "resposta": "B"
+        },
+        {
+          "extId": "prova2023:40",
+          "numero": 40,
+          "slug": "lingua-portuguesa",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": "1A5-III",
+          "enunciado": "Considerando que coesão e coerência, segundo o Manual de Redação da Presidência da República, são atributos que favorecem a conexão, a ligação e a harmonia entre os elementos de um texto, é correto afirmar que, no texto 1A5-III, a expressão “Essa ação” (segundo parágrafo do texto do documento) é empregada em relação",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "ao ofício em si."
+            },
+            {
+              "letra": "B",
+              "texto": "à solicitação de senha."
+            },
+            {
+              "letra": "C",
+              "texto": "ao acesso ao sistema SISREG."
+            },
+            {
+              "letra": "D",
+              "texto": "à humanização dos serviços, ao controle do fluxo e à otimização na utilização dos recursos."
+            },
+            {
+              "letra": "E",
+              "texto": "à implantação da Central de Regulação de Consultas e Exames do Município."
+            }
+          ],
+          "resposta": "E"
+        },
+        {
+          "extId": "prova2023:41",
+          "numero": 41,
+          "slug": "lingua-portuguesa",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": "1A5-III",
+          "enunciado": "Com base no Manual de Redação da Presidência da República, julgue os itens a seguir, relativos ao texto 1A5-III. I A forma de tratamento empregada no endereçamento do documento é adequada ao cargo ocupado pelo destinatário. II No parágrafo de introdução do documento, a substituição de “Tenho o prazer de dirigir-me ao Senhor para solicitar” por Solicito conferiria maior formalidade ao texto. III Dada a hierarquia das autoridades envolvidas na correspondência apresentada, o fecho adequado para o documento seria o exposto a seguir. Atenciosamente, Assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Apenas o item I está certo."
+            },
+            {
+              "letra": "B",
+              "texto": "Apenas o item II está certo."
+            },
+            {
+              "letra": "C",
+              "texto": "Apenas os itens I e III estão certos."
+            },
+            {
+              "letra": "D",
+              "texto": "Apenas os itens II e III estão certos."
+            },
+            {
+              "letra": "E",
+              "texto": "Todos os itens estão certos."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023:42",
+          "numero": 42,
+          "slug": "lingua-portuguesa",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Considerem-se os trechos hipotéticos de documentos oficiais apresentados nos itens a seguir. I Com os meus melhores cumprimentos, venho, por meio deste, encaminhar a essa Coordenação o documento em anexo, emitido pela Diretoria de Comunicação – DICOM. II Encaminho a essa Coordenação o documento em anexo, emitido pela Diretoria de Comunicação – DICOM. Levando-se em consideração as características básicas da comunicação oficial, é correto afirmar que a redação do item II se diferencia da redação do item I pela",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "coesão e coerência."
+            },
+            {
+              "letra": "B",
+              "texto": "clareza e formalidade."
+            },
+            {
+              "letra": "C",
+              "texto": "objetividade e concisão."
+            },
+            {
+              "letra": "D",
+              "texto": "precisão e padronização."
+            },
+            {
+              "letra": "E",
+              "texto": "formalidade e impessoalidade."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023:43",
+          "numero": 43,
+          "slug": "informatica",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Considerando conceitos relacionados a Internet e intranet, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "SMTP (Simple Mail Transfer Protocol) é o protocolo padrão de navegação na Internet, responsável pela estruturação do conteúdo e pela apresentação de páginas da Web."
+            },
+            {
+              "letra": "B",
+              "texto": "Nas redes, denomina-se hashtag qualquer conjunto formado por palavra-chave posposta ao sinal tipográfico da cerquilha (#), com o que se identificam conteúdos que se deseja ocultar."
+            },
+            {
+              "letra": "C",
+              "texto": "Intranet é uma rede de equipamentos que permite acesso externo controlado, para negócios específicos ou propósitos educacionais, sendo uma extensão da rede local de uma organização, disponibilizada para usuários externos a ela."
+            },
+            {
+              "letra": "D",
+              "texto": "O protocolo padrão da Internet é o TCP/IP (Transmission Control Protocol/Internet Protocol), responsável por fornecer uma base confiável e eficiente para a comunicação entre dispositivos em redes de computadores."
+            },
+            {
+              "letra": "E",
+              "texto": "O protocolo padrão da Internet é o DHCP (Dynamic Host Configuration Protocol), responsável por fornecer uma base confiável e eficiente para a comunicação entre dispositivos em redes de computadores."
+            }
+          ],
+          "resposta": "D"
+        },
+        {
+          "extId": "prova2023:44",
+          "numero": 44,
+          "slug": "informatica",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "No que se refere ao LibreOffice, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "O formato de arquivo nativo do LibreOffice é o OpenDocument (ODF), mas no programa também é possível abrir e salvar documentos em outros formatos."
+            },
+            {
+              "letra": "B",
+              "texto": "O LibreOffice funciona em arquitetura específica de hardware e restrita a sistemas operacionais Windows."
+            },
+            {
+              "letra": "C",
+              "texto": "A interface de usuário do LibreOffice, incluindo-se ortografia, hifenização e dicionário de sinônimos, está disponível somente em português, pois é uma suíte construída no Brasil."
+            },
+            {
+              "letra": "D",
+              "texto": "No LibreOffice, não é possível abrir arquivos no formato HTML."
+            },
+            {
+              "letra": "E",
+              "texto": "As ferramentas do LibreOffice não são integradas, então o corretor ortográfico, por exemplo, é exclusivo do LibreOffice Writer."
+            }
+          ],
+          "resposta": "A"
+        },
+        {
+          "extId": "prova2023:45",
+          "numero": 45,
+          "slug": "informatica",
+          "anulada": false,
+          "dependeDeImagem": true,
+          "textoId": null,
+          "enunciado": "A partir da figura anterior, que ilustra a caixa de diálogo Salvar como no LibreOffice em um computador hipotético, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Nesse computador, os arquivos criados com o LibreOffice Writer só podem ser salvos na pasta Meus documentos."
+            },
+            {
+              "letra": "B",
+              "texto": "Para proteger o Documento 1 e restringir o acesso ao seu conteúdo, deve-se utilizar a opção Salvar com senha."
+            },
+            {
+              "letra": "C",
+              "texto": "Se o usuário clicar na opção Cancelar, o Documento 1 será deletado."
+            },
+            {
+              "letra": "D",
+              "texto": "Nesse computador, os arquivos criados com o LibreOffice Draw serão gravados necessariamente na pasta Imagens."
+            },
+            {
+              "letra": "E",
+              "texto": "A opção Extensão de arquivo automática, marcada na caixa de diálogo, tem a finalidade de autorizar o LibreOffice a salvar documentos automaticamente."
+            }
+          ],
+          "resposta": "B"
+        },
+        {
+          "extId": "prova2023:46",
+          "numero": 46,
+          "slug": "informatica",
+          "anulada": true,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Acerca do Windows 10, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Os ícones da Área de Trabalho são dispostos de acordo com a instalação do Windows 10, não sendo possível alterar tal disposição."
+            },
+            {
+              "letra": "B",
+              "texto": "A Cortana, assistente inteligente do Windows 10, responde a perguntas relacionadas ao Windows em qualquer idioma."
+            },
+            {
+              "letra": "C",
+              "texto": "No Windows 10, é denominada Central de Configurações a opção que permite explorar, alterar e renomear arquivos."
+            },
+            {
+              "letra": "D",
+              "texto": "No Windows 10, um item que for copiado ficará armazenado na Área de Trabalho."
+            },
+            {
+              "letra": "E",
+              "texto": "O Windows 10 é um sistema operacional da Microsoft utilizável em desktops, laptops, aparelhos de video game e dispositivos móveis como tablets."
+            }
+          ],
+          "resposta": null
+        },
+        {
+          "extId": "prova2023:47",
+          "numero": 47,
+          "slug": "informatica",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Assinale a opção em que é apresentada uma ferramenta de pesquisa na Internet.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Explorador de Arquivos do Windows"
+            },
+            {
+              "letra": "B",
+              "texto": "LibreOffice Math"
+            },
+            {
+              "letra": "C",
+              "texto": "ChatGPT"
+            },
+            {
+              "letra": "D",
+              "texto": "LibreOffice Draw"
+            },
+            {
+              "letra": "E",
+              "texto": "hiperlink"
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023:48",
+          "numero": 48,
+          "slug": "informatica",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "No que se refere a ferramentas e aplicativos de navegação, bem como à segurança da informação, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Hiperlink é um programa de computador que habilita os usuários a interagir com documentos virtuais na Internet, também conhecidos como páginas da Web."
+            },
+            {
+              "letra": "B",
+              "texto": "Cookies são vírus que afetam arquivos executáveis e que funcionam apenas quando o usuário abre o arquivo infectado."
+            },
+            {
+              "letra": "C",
+              "texto": "Plug-ins são módulos de código instalados no browser que permitem a apresentação de arquivos com formatos diferentes do HTML."
+            },
+            {
+              "letra": "D",
+              "texto": "O uso do software TCP/IP evita a infecção de vírus ao se baixarem arquivos em páginas da Internet."
+            },
+            {
+              "letra": "E",
+              "texto": "O IP de um computador é uma ferramenta de busca que permite acessar informações de vídeos e imagens."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023:49",
+          "numero": 49,
+          "slug": "informatica",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Assinale a opção que corresponde a um exemplo correto de endereço de email de um soldado da Polícia Militar do Estado de Santa Catarina, considerando-se que, para que o endereço de email seja viável, o nome do soldado seja usado, sem espaços, no lugar do termo nomesoldado.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "@nomesoldado.pm.sc.gov.br"
+            },
+            {
+              "letra": "B",
+              "texto": "https://www.pm.sc.gov.br@nomesoldado"
+            },
+            {
+              "letra": "C",
+              "texto": "pm.sc.gov.br@nomesoldado"
+            },
+            {
+              "letra": "D",
+              "texto": "https://www.pm.sc.gov.br/nomesoldado"
+            },
+            {
+              "letra": "E",
+              "texto": "nomesoldado@pm.sc.gov.br"
+            }
+          ],
+          "resposta": "E"
+        },
+        {
+          "extId": "prova2023:50",
+          "numero": 50,
+          "slug": "informatica",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Assinale a opção em que é indicado um tipo de malware projetado para coletar informações relativas à atividade do usuário sem o seu conhecimento ou consentimento.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "spyware"
+            },
+            {
+              "letra": "B",
+              "texto": "cavalo de Troia (trojan)"
+            },
+            {
+              "letra": "C",
+              "texto": "adware"
+            },
+            {
+              "letra": "D",
+              "texto": "ransomware"
+            },
+            {
+              "letra": "E",
+              "texto": "vírus de arquivo"
+            }
+          ],
+          "resposta": "A"
+        },
+        {
+          "extId": "prova2023:51",
+          "numero": 51,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": "1A7-I",
+          "enunciado": "A partir do texto 1A7-I e considerando que João seja um dos elementos do conjunto V, assinale a opção que apresenta o número de linhas da tabela-verdade da proposição w(João).",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "2"
+            },
+            {
+              "letra": "B",
+              "texto": "4"
+            },
+            {
+              "letra": "C",
+              "texto": "8"
+            },
+            {
+              "letra": "D",
+              "texto": "16"
+            },
+            {
+              "letra": "E",
+              "texto": "32"
+            }
+          ],
+          "resposta": "B"
+        },
+        {
+          "extId": "prova2023:52",
+          "numero": 52,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": "1A7-I",
+          "enunciado": "Tendo em vista o texto 1A7-I e considerando que os símbolos “~”, “˄”, “˅”, “→” e “↔” representem, respectivamente, as expressões “não [...]”, “e”, “ou”, “se [...], então [...]” e “se, e somente se”, e que Mário seja um dos elementos do conjunto C, mas não do conjunto L, assinale a opção em que é apresentada uma proposição verdadeira.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "c(Mário) ˄ l(Mário)"
+            },
+            {
+              "letra": "B",
+              "texto": "c(Mário) ˅ l(Mário)"
+            },
+            {
+              "letra": "C",
+              "texto": "c(Mário) → l(Mário)"
+            },
+            {
+              "letra": "D",
+              "texto": "c(Mário) ↔ l(Mário)"
+            },
+            {
+              "letra": "E",
+              "texto": "~c(Mário) ˅ l(Mário)"
+            }
+          ],
+          "resposta": "B"
+        },
+        {
+          "extId": "prova2023:53",
+          "numero": 53,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": "1A7-I",
+          "enunciado": "Ainda no que se refere ao texto 1A7-I, para que o conjunto verdade de w(x) coincida com o conjunto V",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "C e L devem esgotar o universo (C ꓴ L = V)."
+            },
+            {
+              "letra": "B",
+              "texto": "L e C devem ser disjuntos (L ∩ C = ∅)."
+            },
+            {
+              "letra": "C",
+              "texto": "C e L devem coincidir (C = L)."
+            },
+            {
+              "letra": "D",
+              "texto": "C deve conter L (L ⸦ C)."
+            },
+            {
+              "letra": "E",
+              "texto": "L deve conter C (C ⸦ L)."
+            }
+          ],
+          "resposta": "E"
+        },
+        {
+          "extId": "prova2023:54",
+          "numero": 54,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": "1A7-I",
+          "enunciado": "Tendo o texto 1A7-I como referência e considerando que Priscila seja um dos elementos do conjunto V, assinale a opção que apresenta a proposição obtida a partir da sentença w(x) quando sua variável assume o valor x = Priscila.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Priscila confunde crime com liberdade de expressão."
+            },
+            {
+              "letra": "B",
+              "texto": "Priscila confunde liberdade de expressão com crime e Priscila confunde crime com liberdade de expressão."
+            },
+            {
+              "letra": "C",
+              "texto": "Priscila confunde liberdade de expressão com crime."
+            },
+            {
+              "letra": "D",
+              "texto": "Se Priscila confunde crime com liberdade de expressão, então Priscila confunde liberdade de expressão com crime."
+            },
+            {
+              "letra": "E",
+              "texto": "Se Priscila confunde liberdade de expressão com crime, então Priscila confunde crime com liberdade de expressão."
+            }
+          ],
+          "resposta": "D"
+        },
+        {
+          "extId": "prova2023:55",
+          "numero": 55,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Assinale a opção em que é apresentada uma tautologia.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Gosto do trabalho, mas não gosto de trabalhar."
+            },
+            {
+              "letra": "B",
+              "texto": "Conserto o computador se, e somente se, o computador estragar."
+            },
+            {
+              "letra": "C",
+              "texto": "Sou feliz ou não com quem eu sou."
+            },
+            {
+              "letra": "D",
+              "texto": "Não me lembro se molhei ou não a grama."
+            },
+            {
+              "letra": "E",
+              "texto": "Se eu estudar, então serei aprovado, e se eu fui aprovado, então estudei."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023:56",
+          "numero": 56,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Assinale a opção que apresenta uma proposição equivalente a Você faltou com a verdade.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Você não falou a verdade."
+            },
+            {
+              "letra": "B",
+              "texto": "Você não falou mentira."
+            },
+            {
+              "letra": "C",
+              "texto": "Você faltou com a mentira."
+            },
+            {
+              "letra": "D",
+              "texto": "Você falou a verdade."
+            },
+            {
+              "letra": "E",
+              "texto": "Você não disse mentira."
+            }
+          ],
+          "resposta": "A"
+        },
+        {
+          "extId": "prova2023:57",
+          "numero": 57,
+          "slug": null,
+          "anulada": true,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "De 100 candidatos a determinada prova, 65 disseram sentir-se preparados e 80 disseram ter estudado. Nessa situação hipotética, o menor número possível de candidatos que não disseram sentir-se preparados ou ter estudado é igual a",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "15."
+            },
+            {
+              "letra": "B",
+              "texto": "20."
+            },
+            {
+              "letra": "C",
+              "texto": "35."
+            },
+            {
+              "letra": "D",
+              "texto": "45."
+            },
+            {
+              "letra": "E",
+              "texto": "65."
+            }
+          ],
+          "resposta": null
+        },
+        {
+          "extId": "prova2023:58",
+          "numero": 58,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "O salário líquido de Letícia é calculado de tal forma que do salário bruto são descontados 14% para previdência social e, sobre o valor remanescente, são descontados 27,5% de imposto de renda. Com base na situação hipotética apresentada e considerando que não haja mais descontos, o percentual do salário bruto que corresponde ao salário líquido de Letícia é igual a",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "23,65%."
+            },
+            {
+              "letra": "B",
+              "texto": "41,5%."
+            },
+            {
+              "letra": "C",
+              "texto": "58,5%."
+            },
+            {
+              "letra": "D",
+              "texto": "62,35%."
+            },
+            {
+              "letra": "E",
+              "texto": "72,5%."
+            }
+          ],
+          "resposta": "D"
+        }
+      ]
+    },
+    {
+      "id": "prova2023of",
+      "nome": "PMSC 2023 — Oficial (prova objetiva)",
+      "cargo": "Oficial",
+      "banca": "CEBRASPE",
+      "ano": 2023,
+      "aplicacao": "2023-08-13",
+      "fonte": "https://cdn.cebraspe.org.br/concursos/pm_sc_23_oficial/arquivos/860_PMSC_OFICIAL_OBJ_001_01.PDF",
+      "fonteGabarito": "https://cdn.cebraspe.org.br/concursos/pm_sc_23_oficial/arquivos/GAB_DEFINITIVO_860_PMSC_OFICIAL_OBJ_001_01.PDF",
+      "textos": {
+        "1A9-I": "A situação carcerária é uma das questões mais complexas\nda realidade social brasileira. O retrato das prisões no Brasil\ndesafia o sistema de justiça penal, a política criminal e a política\nde segurança pública. O equacionamento de seus problemas\nexige, necessariamente, o envolvimento dos três Poderes da\nRepública, em todos os níveis da Federação, além de se\nrelacionar diretamente com o que a sociedade espera do Estado\ncomo agente de pacificação social.\nDiante dessa complexidade, parece acertado descartar\nqualquer solução que se apresente como uma panaceia, seja no\nâmbito legislativo, seja no administrativo, seja no judicial. No\nentanto, isso não significa que nada possa ser feito. Ao contrário,\na magnitude do problema exige que os operadores jurídicos, os\ngestores públicos e os legisladores intensifiquem seus esforços na\nbusca conjunta de soluções e estratégias inteligentes, e não\nreducionistas, aptas a nos conduzir à construção de horizontes\nmais alentadores.\nOs problemas do sistema penitenciário que se concretizam\nem nosso país devem nos conduzir a profundas reflexões,\nsobretudo em uma conjuntura em que o perfil das pessoas presas\né majoritariamente de jovens negros, de baixa escolaridade e de\nbaixa renda. Além da necessidade de construção de vagas para o\nsistema prisional, é preciso analisar a “qualidade” das prisões\nefetuadas e o perfil das pessoas que têm sido encarceradas, para\nque seja possível problematizar a “porta de entrada” e as práticas\nde gestão dos serviços penais, desde a baixa aplicação de\nmedidas cautelares e de alternativas penais até a organização das\ndiversas rotinas do cotidiano das unidades prisionais.\nA necessária busca por alternativas penais tão ou mais\neficazes que o encarceramento é um desafio de alta\ncomplexidade que depende de estreita articulação entre os órgãos\ndo sistema de justiça criminal. Nesse sentido, têm sido\nextremamente interessantes os resultados da implantação das\naudiências de custódia, objeto de acordo de cooperação entre o\nMinistério da Justiça e o Conselho Nacional de Justiça, que\nconsistem na garantia da rápida apresentação da pessoa presa a\num juiz no caso de prisão em flagrante. Na audiência, são\nouvidas as manifestações do Ministério Público, da Defensoria\nPública ou do advogado da pessoa presa. Além de analisar a\nlegalidade e a necessidade da prisão, o juiz pode verificar\neventuais ocorrências de tortura ou de maus-tratos.\nA humanização das condições carcerárias depende da\npromoção de um modelo intersetorial de políticas públicas de\nsaúde, de educação, de trabalho, de cultura, de esporte, de\nassistência social e de acesso à justiça. Para que esses serviços\nalcancem as pessoas que se encontram nos presídios brasileiros,\nas políticas devem ser implementadas pelos gestores estaduais\nespecializados nas diferentes temáticas sociais governamentais.\nJá se sabe que é inadequado o modelo de “instituição total”, que\ndesafia unicamente o gestor prisional a improvisar arranjos de\nserviços para o ambiente intramuros, de forma frágil e\ndesconectada das políticas sociais do Estado. Esse passo parece\nser decisivo para reconhecermos, de fato, a pessoa privada de\nliberdade e o egresso como sujeitos de direitos.\nTatiana W. de Moura e Natália C. T. Ribeiro.\nLevantamento nacional de informações penitenciárias (INFOPEN).\nMinistério da Justiça, 2014 (com adaptações)."
+      },
+      "questoes": [
+        {
+          "extId": "prova2023of:1",
+          "numero": 1,
+          "slug": "direito-constitucional",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "No que se refere à segurança pública, é correto afirmar que às polícias",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "militares competem as funções de polícia judiciária da União."
+            },
+            {
+              "letra": "B",
+              "texto": "civis competem as funções de polícia judiciária e a apuração de infrações penais comuns e militares."
+            },
+            {
+              "letra": "C",
+              "texto": "militares compete o patrulhamento das rodovias federais."
+            },
+            {
+              "letra": "D",
+              "texto": "militares competem o policiamento ostensivo e a preservação da ordem pública."
+            },
+            {
+              "letra": "E",
+              "texto": "penais compete a manutenção da segurança pública no entorno dos estabelecimentos prisionais."
+            }
+          ],
+          "resposta": "D"
+        },
+        {
+          "extId": "prova2023of:2",
+          "numero": 2,
+          "slug": "direito-constitucional",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Com base no entendimento jurisprudencial do Supremo Tribunal Federal (STF) e na Constituição Federal de 1988 (CF), assinale a opção correta acerca dos militares dos estados.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Será submetido ao julgamento de indignidade do oficialato o oficial condenado na justiça comum ou militar à pena privativa de liberdade superior a um ano."
+            },
+            {
+              "letra": "B",
+              "texto": "Cabe habeas corpus para questionar os aspectos formais da punição disciplinar militar."
+            },
+            {
+              "letra": "C",
+              "texto": "Será reformado o militar em atividade que tomar posse em cargo ou emprego público civil permanente."
+            },
+            {
+              "letra": "D",
+              "texto": "Não pode ser promovido o militar da ativa que tomar posse no cargo de secretário estadual de segurança pública enquanto permanecer nesse cargo."
+            },
+            {
+              "letra": "E",
+              "texto": "Para ser elegível, o militar alistável que contar mais de dez anos de serviço deverá afastar-se da atividade."
+            }
+          ],
+          "resposta": "B"
+        },
+        {
+          "extId": "prova2023of:3",
+          "numero": 3,
+          "slug": "direito-constitucional",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Acerca dos direitos e das garantias fundamentais previstos na CF, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Lei que tipifica um crime pode ser aplicada para uma conduta praticada anteriormente à sua vigência."
+            },
+            {
+              "letra": "B",
+              "texto": "A prática de racismo constitui crime inafiançável e imprescritível, sujeito à pena de detenção, nos termos da legislação penal."
+            },
+            {
+              "letra": "C",
+              "texto": "Excepcionalmente, é possível a tipificação de crimes por meio de medida provisória."
+            },
+            {
+              "letra": "D",
+              "texto": "São inafiançáveis e insuscetíveis de graça ou anistia a prática de tortura, o tráfico ilícito de entorpecentes e de drogas afins, o terrorismo e os crimes definidos como hediondos."
+            },
+            {
+              "letra": "E",
+              "texto": "A pena de multa pode ser executada contra os sucessores do condenado, até o limite do valor do patrimônio transferido."
+            }
+          ],
+          "resposta": "D"
+        },
+        {
+          "extId": "prova2023of:4",
+          "numero": 4,
+          "slug": "direito-constitucional",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "No que diz respeito aos direitos e às garantias fundamentais relacionados à prisão, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "O preso em flagrante não pode ser submetido à identificação criminal."
+            },
+            {
+              "letra": "B",
+              "texto": "A prisão de qualquer pessoa e o local onde se encontre serão comunicados imediatamente ao juiz competente ou à família do preso."
+            },
+            {
+              "letra": "C",
+              "texto": "A prisão ilegal será imediatamente revogada pela autoridade judiciária."
+            },
+            {
+              "letra": "D",
+              "texto": "É lícita a prisão civil do depositário infiel apenas quando se tratar de depósito voluntário."
+            },
+            {
+              "letra": "E",
+              "texto": "O preso tem direito à identificação dos responsáveis por sua prisão."
+            }
+          ],
+          "resposta": "E"
+        },
+        {
+          "extId": "prova2023of:5",
+          "numero": 5,
+          "slug": "direito-constitucional",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "A respeito dos direitos políticos, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "O voto é facultativo para os maiores de 65 anos de idade."
+            },
+            {
+              "letra": "B",
+              "texto": "A incapacidade civil absoluta é causa de suspensão dos direitos políticos."
+            },
+            {
+              "letra": "C",
+              "texto": "O domicílio eleitoral na circunscrição em que o eleitor se candidata é uma condição facultativa de elegibilidade."
+            },
+            {
+              "letra": "D",
+              "texto": "Os estrangeiros, no Brasil, têm capacidade eleitoral ativa."
+            },
+            {
+              "letra": "E",
+              "texto": "A condenação criminal à pena de multa é causa de perda dos direitos políticos."
+            }
+          ],
+          "resposta": "B"
+        },
+        {
+          "extId": "prova2023of:6",
+          "numero": 6,
+          "slug": "direito-constitucional",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Em relação ao estado de defesa e ao estado de sítio, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "É necessária a autorização do Congresso Nacional para a decretação do estado de defesa, durante o qual é admitida a restrição ao sigilo de correspondência."
+            },
+            {
+              "letra": "B",
+              "texto": "Não é necessária a autorização do Congresso Nacional para a decretação do estado de sítio, durante o qual é admitida a detenção de pessoas em edifício não destinado a acusados ou condenados por crimes comuns."
+            },
+            {
+              "letra": "C",
+              "texto": "Na vigência do estado de sítio, podem ser realizadas busca e apreensão, independentemente de ordem judicial."
+            },
+            {
+              "letra": "D",
+              "texto": "Admite-se o controle, pelo Poder Judiciário, dos motivos pelos quais o presidente da República decreta o estado de defesa e o estado de sítio."
+            },
+            {
+              "letra": "E",
+              "texto": "Durante o estado de defesa, admite-se a suspensão da liberdade de reunião."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023of:7",
+          "numero": 7,
+          "slug": "direito-constitucional",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Conforme previsto na CF, compete ao presidente da República I iniciar o processo legislativo. II vetar projetos de lei. III sancionar leis. IV promulgar emendas constitucionais. V celebrar tratados internacionais. Estão certos apenas os itens",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "I, II, III e IV."
+            },
+            {
+              "letra": "B",
+              "texto": "I, II, III e V."
+            },
+            {
+              "letra": "C",
+              "texto": "I, II, IV e V."
+            },
+            {
+              "letra": "D",
+              "texto": "I, III, IV e V."
+            },
+            {
+              "letra": "E",
+              "texto": "II, III, IV e V."
+            }
+          ],
+          "resposta": "B"
+        },
+        {
+          "extId": "prova2023of:8",
+          "numero": 8,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "De acordo com a Lei n.º 8.429/1992, assinale a opção que indica as cominações aplicáveis aos atos de improbidade administrativa que atentam contra os princípios da administração pública.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "proibição de contratar com a administração pública e pagamento de multa"
+            },
+            {
+              "letra": "B",
+              "texto": "perda do cargo público e pagamento de multa"
+            },
+            {
+              "letra": "C",
+              "texto": "suspensão dos direitos políticos e proibição de contratar com a administração pública"
+            },
+            {
+              "letra": "D",
+              "texto": "suspensão dos direitos políticos e pagamento de multa"
+            },
+            {
+              "letra": "E",
+              "texto": "suspensão dos direitos políticos e perda do cargo público"
+            }
+          ],
+          "resposta": "A"
+        },
+        {
+          "extId": "prova2023of:9",
+          "numero": 9,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Conforme a jurisprudência do Supremo Tribunal Federal (STF), a transferência do controle de subsidiárias e controladas das sociedades de economia mista",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "não é admitida pela Constituição Federal de 1988, porquanto o Estado não pode abrir mão da exploração de atividade econômica que lhe foi outorgada."
+            },
+            {
+              "letra": "B",
+              "texto": "não está condicionada à anuência do Poder Legislativo, desde que garantida a competitividade entre os potenciais interessados e observados os princípios da administração pública constantes da Constituição Federal de 1988, mas exige a realização de processo licitatório."
+            },
+            {
+              "letra": "C",
+              "texto": "não está condicionada à anuência do Poder Legislativo nem exige a realização de processo licitatório, desde que garantida a competitividade entre os potenciais interessados e observados os princípios da administração pública constantes da Constituição Federal de 1988."
+            },
+            {
+              "letra": "D",
+              "texto": "está condicionada à anuência do Poder Legislativo, mas não exige a realização de processo licitatório, desde que garantida a competitividade entre os potenciais interessados e observados os princípios da administração pública constantes da Constituição Federal de 1988."
+            },
+            {
+              "letra": "E",
+              "texto": "está condicionada à anuência do Poder Legislativo bem como exige a realização de processo licitatório."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023of:10",
+          "numero": 10,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Considerando-se os atributos dos atos administrativos, é correto afirmar que, segundo a doutrina, na aplicação de multas administrativas, incide(m) o(s) atributo(s) de I presunção de legitimidade. II imperatividade. III autoexecutoriedade. Assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Apenas o item I está certo."
+            },
+            {
+              "letra": "B",
+              "texto": "Apenas o item III está certo."
+            },
+            {
+              "letra": "C",
+              "texto": "Apenas os itens I e II estão certos."
+            },
+            {
+              "letra": "D",
+              "texto": "Apenas os itens II e III estão certos."
+            },
+            {
+              "letra": "E",
+              "texto": "Todos os itens estão certos."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023of:11",
+          "numero": 11,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "A respeito do poder de polícia, julgue os itens a seguir de acordo com a jurisprudência do STF. I Admite-se a cobrança de taxa como remuneração pelo poder de polícia, independentemente de ele ser efetivo ou potencial. II Entre as fases que o poder de polícia comporta — ordem, consentimento, fiscalização e sanção —, a primeira não pode ser delegada, em nenhuma hipótese, a pessoa jurídica de direito privado. III A polícia judiciária, da qual é exemplo a polícia militar, ao contrário da polícia administrativa, não exerce função administrativa, porquanto sua atuação é limitada à função jurisdicional penal. Assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Nenhum item está certo."
+            },
+            {
+              "letra": "B",
+              "texto": "Apenas o item I está certo."
+            },
+            {
+              "letra": "C",
+              "texto": "Apenas o item II está certo."
+            },
+            {
+              "letra": "D",
+              "texto": "Apenas os itens I e III estão certos."
+            },
+            {
+              "letra": "E",
+              "texto": "Apenas os itens II e III estão certos."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023of:12",
+          "numero": 12,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Julgue os itens seguintes acerca de licitações, considerando as disposições da Lei n.º 14.133/2021. I A legislação de licitações não se aplica à concessão e à permissão do uso de bens públicos. II Entre os objetivos do processo licitatório inclui-se o incentivo à inovação e ao desenvolvimento nacional sustentável. III O pregão é a modalidade de licitação obrigatória para a aquisição de bens e serviços comuns. Assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Apenas o item I está certo."
+            },
+            {
+              "letra": "B",
+              "texto": "Apenas o item II está certo."
+            },
+            {
+              "letra": "C",
+              "texto": "Apenas os itens I e III estão certos."
+            },
+            {
+              "letra": "D",
+              "texto": "Apenas os itens II e III estão certos."
+            },
+            {
+              "letra": "E",
+              "texto": "Todos os itens estão certos."
+            }
+          ],
+          "resposta": "D"
+        },
+        {
+          "extId": "prova2023of:13",
+          "numero": 13,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "São pessoas jurídicas de direito público criadas por meio de lei, visando ao desempenho de funções próprias e típicas do Estado, a exemplo do Banco Central do Brasil, as",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "sociedades de economia mista."
+            },
+            {
+              "letra": "B",
+              "texto": "permissionárias de serviço público."
+            },
+            {
+              "letra": "C",
+              "texto": "autarquias."
+            },
+            {
+              "letra": "D",
+              "texto": "empresas públicas."
+            },
+            {
+              "letra": "E",
+              "texto": "consórcios públicos."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023of:14",
+          "numero": 14,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Consoante a Constituição Federal de 1988 e a jurisprudência do STF, a responsabilidade civil do Estado é",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "objetiva e baseia-se no risco administrativo, admitindo excludentes de responsabilidade, razão pela qual o cometimento de crime por presidiário foragido do sistema prisional não necessariamente conduzirá à responsabilização extracontratual do poder público."
+            },
+            {
+              "letra": "B",
+              "texto": "objetiva e baseia-se na culpa do serviço, não admitindo excludentes de responsabilidade, razão pela qual o cometimento de crime por presidiário foragido do sistema prisional conduzirá à responsabilização extracontratual do poder público."
+            },
+            {
+              "letra": "C",
+              "texto": "subjetiva e baseia-se na culpa do serviço, admitindo excludentes de responsabilidade, razão pela qual o cometimento de crime por presidiário foragido do sistema prisional não necessariamente conduzirá à responsabilização extracontratual do poder público."
+            },
+            {
+              "letra": "D",
+              "texto": "objetiva e baseia-se na culpa do serviço, admitindo excludentes de responsabilidade, razão pela qual o cometimento de crime por presidiário foragido do sistema prisional não necessariamente conduzirá à responsabilização extracontratual do poder público."
+            },
+            {
+              "letra": "E",
+              "texto": "objetiva e baseia-se no risco administrativo, não admitindo excludentes de responsabilidade, razão pela qual o cometimento de crime por presidiário foragido do sistema prisional conduzirá à responsabilização extracontratual do poder público."
+            }
+          ],
+          "resposta": "A"
+        },
+        {
+          "extId": "prova2023of:15",
+          "numero": 15,
+          "slug": "direito-penal-comum",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Com base no disposto no Código Penal (CP) e no entendimento jurisprudencial do Superior Tribunal de Justiça (STJ), assinale a opção correta a respeito de medidas de segurança.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Ainda que extinta a punibilidade do agente, pode ser imposta medida de segurança ou subsistir a que tenha sido imposta."
+            },
+            {
+              "letra": "B",
+              "texto": "O CP, no tocante à imputabilidade penal, adota como regra o critério biológico; logo, a doença mental, por si só, afasta a imputabilidade do agente, sendo aplicada a medida de segurança."
+            },
+            {
+              "letra": "C",
+              "texto": "O instituto da prescrição não é aplicável à medida de segurança, por esta decorrer de absolvição imprópria."
+            },
+            {
+              "letra": "D",
+              "texto": "É possível a execução provisória da medida de segurança."
+            },
+            {
+              "letra": "E",
+              "texto": "Em se tratando de medida de segurança aplicada para substituir a pena corporal inicialmente imposta, extrapolado o prazo de cumprimento previsto para a pena privativa de liberdade, deve cessar a intervenção do Estado na esfera penal, independentemente da cessação da periculosidade do paciente."
+            }
+          ],
+          "resposta": "E"
+        },
+        {
+          "extId": "prova2023of:16",
+          "numero": 16,
+          "slug": "direito-penal-comum",
+          "anulada": true,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Em relação às espécies, à aplicação, à cominação e à execução das penas, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Tratando-se de crime sujeito à pena de detenção, o regime inicial de cumprimento de pena deve ser o fechado."
+            },
+            {
+              "letra": "B",
+              "texto": "O tempo total de cumprimento das penas privativas de liberdade não pode ser superior a 40 anos, ainda que sobrevenha condenação por fato posterior ao início do cumprimento da pena, não devendo ser desprezado o período de pena já cumprido."
+            },
+            {
+              "letra": "C",
+              "texto": "Nos crimes culposos, qualquer que seja a quantidade de pena aplicada, será possível a substituição da pena privativa de liberdade por pena restritiva de direitos."
+            },
+            {
+              "letra": "D",
+              "texto": "A pena de multa consiste no pagamento em dinheiro à vítima ou aos seus dependentes, e o valor pago será deduzido do montante de eventual condenação em ação de reparação civil."
+            },
+            {
+              "letra": "E",
+              "texto": "A execução da pena restritiva de direitos prescinde do trânsito em julgado da condenação."
+            }
+          ],
+          "resposta": null
+        },
+        {
+          "extId": "prova2023of:17",
+          "numero": 17,
+          "slug": "direito-penal-comum",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Considerando o entendimento dos tribunais superiores, assinale a opção correta a respeito de punibilidade, causas de extinção da pena, livramento condicional, execução das penas em espécie e incidentes de execução.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "A pena unificada para atender ao limite máximo de cumprimento previsto na lei deve ser considerada para a concessão de outros benefícios, como o livramento condicional ou a progressão de regime."
+            },
+            {
+              "letra": "B",
+              "texto": "De acordo com o princípio da continuidade normativo-típica, a mera revogação da norma incriminadora configura abolitio criminis, cessando, em virtude desta, a execução e os efeitos penais da condenação."
+            },
+            {
+              "letra": "C",
+              "texto": "Na hipótese de condenação concomitante à pena privativa de liberdade e multa, o inadimplemento da sanção pecuniária pelo condenado que comprovar a impossibilidade de fazê-lo não obsta o reconhecimento da extinção da punibilidade."
+            },
+            {
+              "letra": "D",
+              "texto": "A ausência de suspensão ou revogação do livramento condicional antes do término do período de prova não enseja a extinção da punibilidade pelo integral cumprimento da pena."
+            },
+            {
+              "letra": "E",
+              "texto": "Para fins de livramento condicional, o requisito subjetivo consistente no bom comportamento durante a execução da pena limita-se ao não cometimento de falta grave nos últimos 12 meses."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023of:18",
+          "numero": 18,
+          "slug": "direito-penal-comum",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Com base no disposto na Lei Antidrogas (Lei n.º 11.343/2006), na Lei Maria da Penha (Lei n.º 11.340/2006), na Lei do Crime Organizado (Lei n.º 12.850/2013) e na Lei de Crimes Hediondos (Lei n.º 8.072/1990), bem como no entendimento jurisprudencial do STJ, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "É permitida a concessão de indulto ao crime de associação para o tráfico, por este não ser considerado crime hediondo ou a ele equiparado."
+            },
+            {
+              "letra": "B",
+              "texto": "É considerado hediondo o delito de lesão corporal gravíssima cometido contra cônjuge de integrante da Força Nacional de Segurança Pública em razão dessa condição."
+            },
+            {
+              "letra": "C",
+              "texto": "Consoante exegese da Lei do Crime Organizado, é possível celebrar acordo de colaboração premiada com a vítima, pois o referido acordo é meio de obtenção de prova."
+            },
+            {
+              "letra": "D",
+              "texto": "É possível a aplicação do redutor de pena do tráfico privilegiado, ainda que haja condenação pela prática do crime de associação para o tráfico de drogas."
+            },
+            {
+              "letra": "E",
+              "texto": "Cessada a relação amorosa entre casal de namorados, não deve ser aplicada a Lei Maria da Penha a eventual delito cometido pelo ex-namorado contra a ex-namorada."
+            }
+          ],
+          "resposta": "B"
+        },
+        {
+          "extId": "prova2023of:19",
+          "numero": 19,
+          "slug": "direito-penal-comum",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Acerca do arrependimento posterior, das descriminantes putativas, da coação irresistível e da obediência hierárquica, bem como do erro sobre os elementos do tipo e sobre a pessoa, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Nos crimes cometidos sem violência ou grave ameaça à pessoa, é possível a aplicação do instituto do arrependimento posterior caso o dano seja reparado integralmente, por ato voluntário do agente, até a prolação da sentença."
+            },
+            {
+              "letra": "B",
+              "texto": "O agente que agir sob coação irresistível, seja moral ou física, praticará uma conduta típica e antijurídica, mas não culpável, ficando isento de pena o referido agente."
+            },
+            {
+              "letra": "C",
+              "texto": "O erro sobre elemento constitutivo do tipo legal de crime exclui o dolo e a culpa."
+            },
+            {
+              "letra": "D",
+              "texto": "Ocorre aberratio ictus quando o acidente ou erro no emprego dos meios executórios faz com que se atinja um bem jurídico diferente do pretendido."
+            },
+            {
+              "letra": "E",
+              "texto": "As descriminantes putativas configuram, à luz da teoria extremada da culpabilidade, erro de proibição."
+            }
+          ],
+          "resposta": "E"
+        },
+        {
+          "extId": "prova2023of:20",
+          "numero": 20,
+          "slug": "direito-penal-comum",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Com base no CP, na Lei de Crimes Hediondos e na Lei n.º 9.503/1997, que trata dos crimes de trânsito, assinale a opção correta a respeito dos diferentes tipos penais.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Considere-se que um agente, conduzindo veículo automotor sob a influência de álcool ou de qualquer outra substância psicoativa que determine dependência, atropele um pedestre que venha a falecer em decorrência do atropelamento. Nessa situação, caso o agente seja condenado por homicídio culposo, a pena privativa de liberdade a ele aplicada poderá ser substituída por pena restritiva de direitos."
+            },
+            {
+              "letra": "B",
+              "texto": "Nos crimes contra a pessoa, considera-se qualificado o homicídio praticado com o emprego de arma de fogo de uso permitido."
+            },
+            {
+              "letra": "C",
+              "texto": "Nos crimes contra o patrimônio, há a caracterização de roubo simples se a violência ou grave ameaça é exercida com o emprego de arma branca."
+            },
+            {
+              "letra": "D",
+              "texto": "Entre os crimes contra a dignidade sexual, o crime de importunação sexual não é considerado crime hediondo."
+            },
+            {
+              "letra": "E",
+              "texto": "Conforme previsão legal, é possível a substituição da pena privativa de liberdade por pena restritiva de direitos na modalidade de prestação pecuniária ao condenado pela prática de lesão corporal culposa na direção de veículo automotor."
+            }
+          ],
+          "resposta": "D"
+        },
+        {
+          "extId": "prova2023of:21",
+          "numero": 21,
+          "slug": "direito-penal-comum",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "À luz do disposto no CP e na Lei Antidrogas, assinale a opção correta no que diz respeito aos efeitos da condenação, à classificação dos crimes, à aplicação da pena e à reabilitação.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "A perda de cargo, função pública ou mandato eletivo como efeito da aplicação de pena privativa de liberdade por tempo superior a 4 anos prescinde de declaração na sentença."
+            },
+            {
+              "letra": "B",
+              "texto": "A reabilitação alcança quaisquer penas aplicadas em sentença definitiva, assegura ao condenado o sigilo dos registros sobre o seu processo e atinge, inclusive, os efeitos da condenação, de modo que é permitida ao reabilitado a sua reintegração ao cargo efetivo anteriormente perdido em decorrência da condenação transitada em julgado."
+            },
+            {
+              "letra": "C",
+              "texto": "No que se refere ao crime de tráfico ilícito de entorpecentes, a incidência da atenuante da confissão espontânea não exige o reconhecimento da traficância pelo acusado, bastando a mera admissão da posse ou propriedade da substância entorpecente para uso próprio."
+            },
+            {
+              "letra": "D",
+              "texto": "É possível a fixação de regime inicial fechado àquele que for condenado a uma pena inferior a 4 anos pela prática de crime sem violência ou grave ameaça, em decorrência do reconhecimento das circunstâncias judiciais desfavoráveis e da sua reincidência."
+            },
+            {
+              "letra": "E",
+              "texto": "O crime permanente caracteriza-se, quanto ao seu momento consumativo, como o delito cuja consumação ocorre de forma instantânea, embora seus efeitos sejam duradouros."
+            }
+          ],
+          "resposta": "D"
+        },
+        {
+          "extId": "prova2023of:22",
+          "numero": 22,
+          "slug": "direito-processual-penal",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "A respeito das nulidades processuais, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "As nulidades relativas verificadas após a decisão de primeira instância deverão ser arguidas até a conclusão do julgamento pelo tribunal."
+            },
+            {
+              "letra": "B",
+              "texto": "A parte poderá arguir nulidade a que haja dado causa."
+            },
+            {
+              "letra": "C",
+              "texto": "A incompetência do juízo implica a anulação somente dos atos decisórios, devendo o processo, quando for declarada a nulidade, ser remetido ao juiz competente."
+            },
+            {
+              "letra": "D",
+              "texto": "A falta do recurso de ofício, nos casos em que a lei o tenha estabelecido, não acarreta nulidade processual."
+            },
+            {
+              "letra": "E",
+              "texto": "A nulidade por ilegitimidade do representante da parte deverá ser alegada até o final da audiência de instrução, sob pena de preclusão."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023of:23",
+          "numero": 23,
+          "slug": "direito-processual-penal",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Com base na Lei dos Juizados Especiais Criminais — Lei n.º 9.099/1995 —, assinale a opção que corresponde ao recurso cabível contra a decisão que rejeita a denúncia ou a queixa.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "apelação"
+            },
+            {
+              "letra": "B",
+              "texto": "recurso em sentido estrito"
+            },
+            {
+              "letra": "C",
+              "texto": "embargos de declaração"
+            },
+            {
+              "letra": "D",
+              "texto": "mandado de segurança"
+            },
+            {
+              "letra": "E",
+              "texto": "agravo"
+            }
+          ],
+          "resposta": "A"
+        },
+        {
+          "extId": "prova2023of:24",
+          "numero": 24,
+          "slug": "direito-processual-penal",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "De acordo com a Lei n.º 9.296/1996, que dispõe acerca da interceptação telefônica no Brasil, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "A autoridade policial, durante a investigação criminal ou na instrução processual, poderá requerer ao juiz o deferimento da interceptação de comunicações telefônicas."
+            },
+            {
+              "letra": "B",
+              "texto": "Admite-se a interceptação de comunicações telefônicas se o fato investigado constituir infração penal punida, no máximo, com pena de detenção."
+            },
+            {
+              "letra": "C",
+              "texto": "O pedido de interceptação telefônica não poderá ser formulado verbalmente."
+            },
+            {
+              "letra": "D",
+              "texto": "Admite-se a interceptação telefônica mesmo que a prova possa ser obtida por outros meios disponíveis."
+            },
+            {
+              "letra": "E",
+              "texto": "A interceptação de comunicações telefônicas não será admitida quando não houver indícios razoáveis de autoria ou participação em infração penal."
+            }
+          ],
+          "resposta": "E"
+        },
+        {
+          "extId": "prova2023of:25",
+          "numero": 25,
+          "slug": "direito-processual-penal",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Considerando a Lei n.º 7.960/1989 e a jurisprudência dos tribunais superiores no que se refere à prisão temporária, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "A autoridade judiciária deverá decretar, de ofício, a prisão temporária de suspeito do cometimento de crimes considerados hediondos."
+            },
+            {
+              "letra": "B",
+              "texto": "Não é necessário constar do mandado de prisão temporária o dia em que o preso deverá ser libertado."
+            },
+            {
+              "letra": "C",
+              "texto": "A prisão temporária somente poderá ser executada depois da expedição de mandado judicial."
+            },
+            {
+              "letra": "D",
+              "texto": "O despacho que decretar a prisão temporária deverá ser fundamentado e prolatado dentro do prazo de 24 horas, contadas a partir da expedição da representação ou do requerimento."
+            },
+            {
+              "letra": "E",
+              "texto": "O dia do cumprimento do mandado de prisão não será incluído no cômputo do prazo de prisão temporária."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023of:26",
+          "numero": 26,
+          "slug": "direito-processual-penal",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Assinale a opção correta conforme as disposições do Código de Processo Penal (CPP) acerca do inquérito policial.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "O Ministério Público não poderá requerer a devolução do inquérito à autoridade policial, senão para novas diligências, imprescindíveis ao oferecimento da denúncia."
+            },
+            {
+              "letra": "B",
+              "texto": "Quando o fato for de difícil elucidação e o indiciado estiver solto, a autoridade poderá requerer ao juiz a devolução dos autos, para ulteriores diligências, que serão realizadas no prazo marcado pela autoridade policial."
+            },
+            {
+              "letra": "C",
+              "texto": "É inadmissível recurso do despacho que indeferir o requerimento de abertura de inquérito policial."
+            },
+            {
+              "letra": "D",
+              "texto": "Os instrumentos do crime, bem como os objetos que interessarem à prova, não acompanharão os autos do inquérito."
+            },
+            {
+              "letra": "E",
+              "texto": "Admite-se excepcionalmente o arquivamento do inquérito pela própria autoridade policial."
+            }
+          ],
+          "resposta": "A"
+        },
+        {
+          "extId": "prova2023of:27",
+          "numero": 27,
+          "slug": "direito-processual-penal",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Com relação ao acordo de não persecução penal (ANPP), assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Admite-se ANPP nos casos de crimes praticados no âmbito de violência doméstica ou familiar."
+            },
+            {
+              "letra": "B",
+              "texto": "É dispensável a intimação da vítima quando da homologação do ANPP."
+            },
+            {
+              "letra": "C",
+              "texto": "Para aferição da pena mínima cominada ao delito a que se referir o ANPP, serão consideradas as causas de aumento e de diminuição aplicáveis ao caso concreto."
+            },
+            {
+              "letra": "D",
+              "texto": "Não se admite a recusa de homologação do ANPP pelo juiz."
+            },
+            {
+              "letra": "E",
+              "texto": "O descumprimento do ANPP pelo investigado não poderá ser utilizado pelo Ministério Público como justificativa para não oferecimento de suspensão condicional do processo."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023of:28",
+          "numero": 28,
+          "slug": "direito-processual-penal",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Nos termos do CPP, quando não houver prazo estabelecido, o prazo legal para que os juízes singulares possam proferir seus despachos de expedientes será de",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "dez dias."
+            },
+            {
+              "letra": "B",
+              "texto": "cinco dias."
+            },
+            {
+              "letra": "C",
+              "texto": "um dia."
+            },
+            {
+              "letra": "D",
+              "texto": "quinze dias."
+            },
+            {
+              "letra": "E",
+              "texto": "quarenta e oito horas."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023of:29",
+          "numero": 29,
+          "slug": "direito-penal-militar",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Segundo o que dispõe o Código Penal Militar (CPM), são previstos(as) como pena principal e pena acessória, respectivamente,",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "a reclusão e a reforma."
+            },
+            {
+              "letra": "B",
+              "texto": "a prisão e a perda do posto e da patente."
+            },
+            {
+              "letra": "C",
+              "texto": "a exclusão das Forças Armadas e o impedimento."
+            },
+            {
+              "letra": "D",
+              "texto": "a indignidade para o oficialato e a incompatibilidade com o oficialato."
+            },
+            {
+              "letra": "E",
+              "texto": "a suspensão dos direitos políticos e a detenção."
+            }
+          ],
+          "resposta": "B"
+        },
+        {
+          "extId": "prova2023of:30",
+          "numero": 30,
+          "slug": "direito-penal-militar",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "No que diz respeito aos crimes militares, comete crime militar e será julgado pela justiça militar estadual o",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "policial militar reformado que desobedecer a ordem do comandante do 1.º Batalhão da Polícia Militar de Santa Catarina."
+            },
+            {
+              "letra": "B",
+              "texto": "civil que praticar lesão corporal contra policial militar de serviço."
+            },
+            {
+              "letra": "C",
+              "texto": "policial militar da ativa que, ainda que esteja de férias, publicar crítica indevida a documento oficial em suas redes sociais."
+            },
+            {
+              "letra": "D",
+              "texto": "policial militar da reserva remunerada que desacatar superior, ofendendo a dignidade ou o decoro deste."
+            },
+            {
+              "letra": "E",
+              "texto": "militar das Forças Armadas que praticar lesão corporal contra policial militar de serviço."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023of:31",
+          "numero": 31,
+          "slug": "direito-penal-militar",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Conforme a lei penal militar, consideram-se crimes militares em tempo de paz I os definidos de modo diverso na lei penal comum, ou nela não previstos, desde que o sujeito ativo seja militar, salvo disposição especial. II os que, embora também estejam previstos com igual definição na lei penal comum, forem praticados por militar em situação de inatividade contra militar na mesma situação. III os que forem dolosos contra a vida e praticados por militares das Forças Armadas contra civil no contexto de cumprimento de atribuições que lhes forem estabelecidas pelo Presidente da República ou pelo Ministro de Estado da Defesa. Assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Apenas o item I está certo."
+            },
+            {
+              "letra": "B",
+              "texto": "Apenas o item II está certo."
+            },
+            {
+              "letra": "C",
+              "texto": "Apenas o item III está certo."
+            },
+            {
+              "letra": "D",
+              "texto": "Apenas os itens I e II estão certos."
+            },
+            {
+              "letra": "E",
+              "texto": "Apenas os itens II e III estão certos."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023of:32",
+          "numero": 32,
+          "slug": "direito-penal-militar",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Acerca do que dispõe o Código Penal Militar (CPM) relativamente à imputabilidade penal, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "A pena poderá ser reduzida de um a dois terços se o agente, por embriaguez incompleta proveniente de caso fortuito ou força maior, não possuía, ao tempo da ação ou da omissão, a plena capacidade de entender o caráter criminoso do fato ou de determinar-se de acordo com esse entendimento."
+            },
+            {
+              "letra": "B",
+              "texto": "Será imputada a responsabilidade pela conduta ao agente que, no momento da ação ou omissão, em virtude de doença mental, não possuía a capacidade de entender o caráter ilícito do fato ou de determinar-se de acordo com esse entendimento."
+            },
+            {
+              "letra": "C",
+              "texto": "Não será imputada a responsabilidade pela conduta ao agente que, no momento da ação ou omissão, apesar de doença mental, possuía a capacidade de determinar-se de acordo com o entendimento do caráter ilícito do fato."
+            },
+            {
+              "letra": "D",
+              "texto": "Não será imputada a responsabilidade pelo crime ao agente se a doença mental não suprimiu e não diminuiu a capacidade de entendimento da ilicitude do fato ou a de autodeterminação."
+            },
+            {
+              "letra": "E",
+              "texto": "Não será imputada a responsabilidade pelo crime ao agente que, no momento da conduta, estava em estado de embriaguez incompleta proveniente de caso fortuito ou força maior."
+            }
+          ],
+          "resposta": "A"
+        },
+        {
+          "extId": "prova2023of:33",
+          "numero": 33,
+          "slug": "direito-penal-militar",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Considerando o que dispõe o Código Penal Militar (CPM) acerca de suspensão condicional da pena, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "A execução da pena pode ser suspensa pelo prazo máximo de oito anos desde que os antecedentes, a personalidade e a conduta posterior do agente autorizem a presunção de que ele não voltará a delinquir."
+            },
+            {
+              "letra": "B",
+              "texto": "A suspensão condicional da pena pode ser estendida às penas de reforma, suspensão do exercício do posto, graduação, função ou à pena acessória."
+            },
+            {
+              "letra": "C",
+              "texto": "A suspensão condicional da pena não pode ser aplicada, por exemplo, ao agente que, em tempo de paz, tenha praticado crime contra a segurança nacional ou que tenha praticado violência contra superior."
+            },
+            {
+              "letra": "D",
+              "texto": "Não é necessário que, na sentença, o juiz especifique as condições a que fica subordinada a suspensão."
+            },
+            {
+              "letra": "E",
+              "texto": "Não haverá a revogação da suspensão caso o condenado descumpra qualquer das condições impostas na sentença."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023of:34",
+          "numero": 34,
+          "slug": "direito-penal-militar",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Capitão Martins, integrante da PMSC, foi condenado a uma pena superior a dois anos pela prática de crime militar. Após o cumprimento parcial da pena, capitão Martins solicitou livramento condicional da pena. Considerando a situação hipotética precedente e o que dispõe o Código Penal Militar (CPM) acerca do assunto, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Cumpridas as demais condições, será concedido o livramento condicional ao capitão Martins caso ele cumpra metade da pena, se reincidente, ou dois terços da pena, se primário."
+            },
+            {
+              "letra": "B",
+              "texto": "Entre outras condições, é necessário o cumprimento de metade da pena para que se conceda o livramento condicional ao agente que, em tempo de paz, tenha praticado crime contra a segurança externa do país, crime de motim ou que tenha praticado violência contra militar de serviço."
+            },
+            {
+              "letra": "C",
+              "texto": "O livramento condicional será concedido mediante parecer do Conselho Penitenciário, ouvido o diretor do estabelecimento em que está ou tenha estado o liberando, sendo desnecessário ouvir o representante do Ministério Público da Justiça Militar."
+            },
+            {
+              "letra": "D",
+              "texto": "O livramento condicional que for revogado poderá ser novamente concedido."
+            },
+            {
+              "letra": "E",
+              "texto": "Terminado o prazo de cumprimento do livramento condicional sem que haja a sua revogação, a pena privativa de liberdade será considerada extinta."
+            }
+          ],
+          "resposta": "E"
+        },
+        {
+          "extId": "prova2023of:35",
+          "numero": 35,
+          "slug": "direito-penal-militar",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Configura crime militar em tempo de paz praticado contra a administração militar a conduta de I praticar violência contra superior. II desacatar superior, ofendendo-lhe a dignidade ou o decoro, ou procurando deprimir-lhe a autoridade. III desobedecer a ordem legal de autoridade militar. Assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Apenas o item I está certo."
+            },
+            {
+              "letra": "B",
+              "texto": "Apenas o item II está certo."
+            },
+            {
+              "letra": "C",
+              "texto": "Apenas os itens I e III estão certos."
+            },
+            {
+              "letra": "D",
+              "texto": "Apenas os itens II e III estão certos."
+            },
+            {
+              "letra": "E",
+              "texto": "Todos os itens estão certos."
+            }
+          ],
+          "resposta": "D"
+        },
+        {
+          "extId": "prova2023of:36",
+          "numero": 36,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "No que concerne à polícia judiciária militar e ao inquérito policial militar (IPM), assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Convencida da inexistência de crime, a autoridade policial militar ordenará o arquivamento do IPM, desde que ausentes quaisquer diligências sujeitas à autorização ou à comunicação judicial no caderno de investigação."
+            },
+            {
+              "letra": "B",
+              "texto": "É vedada a participação de advogado nas diligências probatórias da fase policial, salvo nos IPM que versem sobre crimes dolosos contra a vida."
+            },
+            {
+              "letra": "C",
+              "texto": "A instauração de IPM é feita por meio de portaria, exigindo-se da autoridade responsável o grau de bacharel em direito."
+            },
+            {
+              "letra": "D",
+              "texto": "A abertura de sindicância não poderá ser simultânea à instauração de IPM quando os fatos forem os mesmos."
+            },
+            {
+              "letra": "E",
+              "texto": "A sindicância suficientemente instruída poderá substituir o IPM quando da proposição de denúncia pelo Ministério Público."
+            }
+          ],
+          "resposta": "E"
+        },
+        {
+          "extId": "prova2023of:37",
+          "numero": 37,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "No que se refere à aplicação e à interpretação do Código de Processo Penal Militar (CPPM), assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Havendo divergência entre norma do CPPM e tratado internacional de que o Brasil seja signatário, prevalecerá a primeira, em observância aos princípios da hierarquia e da disciplina militares."
+            },
+            {
+              "letra": "B",
+              "texto": "É permitida interpretação extensiva da norma processual penal militar, ainda que essa interpretação enseje cerceamento à defesa do acusado."
+            },
+            {
+              "letra": "C",
+              "texto": "Admite-se interpretação restritiva quando for manifesta a amplitude demasiada da lei, salvo quando tal interpretação buscar impedir a marcha natural do processo, especialmente em sua fase inicial."
+            },
+            {
+              "letra": "D",
+              "texto": "A lei processual penal comum é complementar à lei especial militar, devendo ambas ser aplicadas simultaneamente, quando coerentes, ou segundo o critério de razoabilidade do julgador, quando omissas."
+            },
+            {
+              "letra": "E",
+              "texto": "Diante de omissão legislativa, o intérprete poderá recorrer à jurisprudência ou aos costumes militares, mas não à analogia."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023of:38",
+          "numero": 38,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Acerca da prisão em flagrante delito por crime propriamente militar, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Efetuada a prisão em local não sujeito à administração militar, o preso deverá ser encaminhado à autoridade da unidade militar mais próxima, não podendo esse procedimento ser substituído pela lavratura do auto de prisão por autoridade civil."
+            },
+            {
+              "letra": "B",
+              "texto": "Caberá à autoridade militar ou judiciária relaxar a prisão em flagrante se verificar a manifesta inexistência de infração penal militar ou a não participação da pessoa que estiver sendo conduzida."
+            },
+            {
+              "letra": "C",
+              "texto": "Não poderá o militar ofendido proceder, de ofício, à prisão em flagrante do infrator."
+            },
+            {
+              "letra": "D",
+              "texto": "No prazo máximo de 24 horas após a prisão, o auto de prisão em flagrante deverá ser remetido à autoridade judiciária competente."
+            },
+            {
+              "letra": "E",
+              "texto": "O juiz não concederá a liberdade provisória de preso em flagrante por crime propriamente militar quando a autoridade militar superior na unidade em que o infrator sirva entender conveniente seu acautelamento."
+            }
+          ],
+          "resposta": "B"
+        },
+        {
+          "extId": "prova2023of:39",
+          "numero": 39,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "O foro competente para o julgamento do militar que, em atividade, cometer infração penal militar em local não sabido será o local",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "de seu domicílio."
+            },
+            {
+              "letra": "B",
+              "texto": "da distribuição ao primeiro juízo militar ao qual tenha sido comunicada a infração."
+            },
+            {
+              "letra": "C",
+              "texto": "da unidade em que ele estiver lotado."
+            },
+            {
+              "letra": "D",
+              "texto": "onde supostamente tenha sido cometido o crime, apontado fundamentadamente pela autoridade militar responsável pelo IPM."
+            },
+            {
+              "letra": "E",
+              "texto": "onde tiver sido efetuada e(ou) processada sua prisão ou instaurado o correspondente IPM."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023of:40",
+          "numero": 40,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Assinale a opção correta a respeito do mandado de busca no direito processual penal militar.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "A autoridade militar poderá requisitar outras forças militares para a realização da busca, mas não forças civis."
+            },
+            {
+              "letra": "B",
+              "texto": "Na hipótese de a autoridade que cumpre o mandado de busca domiciliar verificar que o morador da casa está ausente, ela deverá localizá-lo e aguardar sua chegada, se puder ser imediata."
+            },
+            {
+              "letra": "C",
+              "texto": "O mandado de busca poderá ser determinado de ofício pela autoridade policial militar."
+            },
+            {
+              "letra": "D",
+              "texto": "A ordem de prisão no mandado de busca domiciliar é implícita."
+            },
+            {
+              "letra": "E",
+              "texto": "A revista pessoal a ser feita durante o cumprimento de busca domiciliar depende de menção expressa no mandado judicial."
+            }
+          ],
+          "resposta": "B"
+        },
+        {
+          "extId": "prova2023of:41",
+          "numero": 41,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Segundo o disposto no CPPM, o termo “casa” compreende",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "habitação coletiva aberta e desocupada."
+            },
+            {
+              "letra": "B",
+              "texto": "qualquer tipo de habitação, inclusive quando usada como local para a prática de infrações penais."
+            },
+            {
+              "letra": "C",
+              "texto": "sala alugada, não aberta ao público, utilizada para exercício profissional."
+            },
+            {
+              "letra": "D",
+              "texto": "armário individual em alojamento militar."
+            },
+            {
+              "letra": "E",
+              "texto": "local utilizado para prática de jogos, boate ou similares."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023of:42",
+          "numero": 42,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Em relação à acareação e à prova testemunhal no âmbito do direito processual penal militar, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "É dispensada de depor a testemunha militar que tenha atuado em operação na qual outro militar tenha praticado infração penal."
+            },
+            {
+              "letra": "B",
+              "texto": "No ato da acareação, a autoridade explicará os pontos de divergência aos acareados, os quais serão reinquiridos para, então, responderem seguidamente e na presença um do outro."
+            },
+            {
+              "letra": "C",
+              "texto": "As testemunhas militares serão ouvidas em juízo uma após a outra, de preferência presentes no mesmo recinto e por ordem de chegada, de modo a evitar repetição e mora da audiência."
+            },
+            {
+              "letra": "D",
+              "texto": "A contradita será levantada após a inquirição da testemunha e ela própria poderá responder, sem que se admita réplica à resposta."
+            },
+            {
+              "letra": "E",
+              "texto": "Admite-se a acareação entre acusado e testemunha apenas em juízo, cabendo à autoridade policial, na fase de inquérito, proceder à simples colheita de depoimentos."
+            }
+          ],
+          "resposta": "B"
+        },
+        {
+          "extId": "prova2023of:43",
+          "numero": 43,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "À luz do entendimento do Superior Tribunal de Justiça (STJ), assinale a opção correta acerca dos bens de família.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "A vaga de garagem com matrícula própria no registro de imóveis constitui bem de família para efeito de penhora."
+            },
+            {
+              "letra": "B",
+              "texto": "O imóvel pertencente a pessoas solteiras, separadas e viúvas não é abrangido pela impenhorabilidade do bem de família."
+            },
+            {
+              "letra": "C",
+              "texto": "A proteção legal de impenhorabilidade alcança apenas o imóvel da família, não se estendendo aos bens móveis que o guarnecem."
+            },
+            {
+              "letra": "D",
+              "texto": "A impenhorabilidade da pequena propriedade rural pode ser renunciada pelo titular."
+            },
+            {
+              "letra": "E",
+              "texto": "O fato de o terreno encontrar-se não edificado ou em construção, por si só, não obsta a sua qualificação como bem de família, visto que a finalidade a este atribuída deve ser analisada caso a caso."
+            }
+          ],
+          "resposta": "E"
+        },
+        {
+          "extId": "prova2023of:44",
+          "numero": 44,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Considerando a jurisprudência do STJ a respeito dos direitos da personalidade, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Exige-se prova inequívoca da má-fé da publicação (actual malice) para ensejar indenização por ofensa ao nome ou à imagem de alguém."
+            },
+            {
+              "letra": "B",
+              "texto": "A concessão de dano moral extrapatrimonial em relação a um grupo ou uma coletividade, diferentemente de a um indivíduo isolado, pressupõe a efetiva demonstração da dor, da repulsa ou da indignação."
+            },
+            {
+              "letra": "C",
+              "texto": "A voz humana é protegida pelos direitos da personalidade, seja como direito autônomo, seja como parte integrante do direito à imagem ou do direito à identidade pessoal."
+            },
+            {
+              "letra": "D",
+              "texto": "Em regra, não é possível a continuidade do uso de sobrenome de ex-cônjuge, visto que não configura direito inerente à personalidade, de modo que não se integra à identidade civil da pessoa."
+            },
+            {
+              "letra": "E",
+              "texto": "Não é possível o restabelecimento do nome de solteiro após a dissolução do vínculo conjugal em decorrência de morte."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023of:45",
+          "numero": 45,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Com base nas disposições do Código Civil no que concerne aos institutos da tutela e da curatela, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Ao tutor é vedado dispor dos bens do menor a título gratuito, exceto para instituições confessionais ou de caridade."
+            },
+            {
+              "letra": "B",
+              "texto": "Prescreve em dois anos a pretensão relativa à tutela, a contar da data da aprovação das contas."
+            },
+            {
+              "letra": "C",
+              "texto": "O juiz deverá condicionar o exercício da tutela à prestação de caução bancária ou à indicação de dois fiadores, a fim de preservar os interesses do menor, caso seu patrimônio seja de valor considerável."
+            },
+            {
+              "letra": "D",
+              "texto": "Durante a tutela ou curatela, a prescrição corre entre tutelados ou curatelados e seus tutores ou curadores."
+            },
+            {
+              "letra": "E",
+              "texto": "Os militares em serviço podem escusar-se da tutela."
+            }
+          ],
+          "resposta": "E"
+        },
+        {
+          "extId": "prova2023of:46",
+          "numero": 46,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "No que diz respeito aos defeitos do negócio jurídico, assinale a opção correta com base no que dispõe o Código Civil.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "O erro prejudica a validade do negócio jurídico, ainda que a pessoa a quem se dirija a manifestação de vontade se ofereça para executá-la conforme a vontade real do manifestante."
+            },
+            {
+              "letra": "B",
+              "texto": "Se ambas as partes procederem com dolo, ambas poderão alegá-lo para anular o negócio jurídico."
+            },
+            {
+              "letra": "C",
+              "texto": "Ocorre a lesão quando alguém, premido da necessidade de salvar-se, ou a pessoa de sua família, de grave dano conhecido pela outra parte, assume obrigação excessivamente onerosa."
+            },
+            {
+              "letra": "D",
+              "texto": "No apreciar a coação, ter-se-ão em conta o sexo, a idade, a condição, a saúde, o temperamento do paciente e todas as demais circunstâncias que possam influir na gravidade dela."
+            },
+            {
+              "letra": "E",
+              "texto": "Na fraude contra credores, os contratos onerosos do devedor insolvente não serão passíveis de anulação, ainda que a insolvência do devedor seja notória."
+            }
+          ],
+          "resposta": "D"
+        },
+        {
+          "extId": "prova2023of:47",
+          "numero": 47,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "A respeito da prestação de alimentos, consideradas as disposições do Código Civil e a jurisprudência do STJ, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "A obrigação de prestar alimentos não se transmite aos herdeiros do devedor."
+            },
+            {
+              "letra": "B",
+              "texto": "Os avós têm responsabilidade principal de prestar alimentos aos netos, ainda que os genitores tenham capacidade econômica de prestá-los."
+            },
+            {
+              "letra": "C",
+              "texto": "É automática a exoneração de alimentos a filhos adultos com plena capacidade civil que não ostentarem incapacidade para o trabalho."
+            },
+            {
+              "letra": "D",
+              "texto": "Diante do princípio da incompensabilidade dos alimentos, não é possível abater verbas relativas ao custeio direto de despesas de natureza alimentar do cálculo da dívida do alimentante, ainda que comprovadamente feitas em prol do beneficiário."
+            },
+            {
+              "letra": "E",
+              "texto": "A regra geral da impenhorabilidade dos vencimentos poderá ser excepcionada, nos termos da lei, quando se voltar para o pagamento de prestação alimentícia, de qualquer origem, independentemente do valor da verba remuneratória recebida."
+            }
+          ],
+          "resposta": "E"
+        },
+        {
+          "extId": "prova2023of:48",
+          "numero": 48,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Acerca dos regimes de bens, assinale a opção correta à luz do disposto no Código Civil.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Qualquer que seja o regime de bens, tanto um quanto outro cônjuge pode livremente administrar os bens próprios."
+            },
+            {
+              "letra": "B",
+              "texto": "No regime de separação de bens, em regra, ambos os cônjuges são obrigados a contribuir para as despesas do casal de forma igualitária."
+            },
+            {
+              "letra": "C",
+              "texto": "Qualquer que seja o regime de bens, nenhum dos cônjuges pode, sem autorização do outro, prestar fiança ou aval."
+            },
+            {
+              "letra": "D",
+              "texto": "No regime de comunhão parcial, comunicam-se as obrigações, contraídas na constância da união, provenientes de atos ilícitos que tenham revertido em benefício de apenas um dos cônjuges."
+            },
+            {
+              "letra": "E",
+              "texto": "No regime de participação final nos aquestos, em regra, ambos os cônjuges responderão pelas dívidas contraídas após o casamento, ainda que contraídas por apenas um deles."
+            }
+          ],
+          "resposta": "A"
+        },
+        {
+          "extId": "prova2023of:49",
+          "numero": 49,
+          "slug": "legislacao-institucional",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "De acordo com a Lei Estadual n.º 6.218/1983, que dispõe sobre o Estatuto dos Policiais Militares do Estado de Santa Catarina, a situação em que o policial militar da ativa deixa de ocupar vaga na escala hierárquica de seu quadro ou qualificação, nela permanecendo sem número, é conhecida como",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "agregação."
+            },
+            {
+              "letra": "B",
+              "texto": "transferência."
+            },
+            {
+              "letra": "C",
+              "texto": "disposição."
+            },
+            {
+              "letra": "D",
+              "texto": "reversão."
+            },
+            {
+              "letra": "E",
+              "texto": "promoção."
+            }
+          ],
+          "resposta": "A"
+        },
+        {
+          "extId": "prova2023of:50",
+          "numero": 50,
+          "slug": "legislacao-institucional",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Segundo o Estatuto dos Policiais Militares do Estado de Santa Catarina, o limite máximo aplicável às penas disciplinares de detenção ou prisão é de",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "15 dias."
+            },
+            {
+              "letra": "B",
+              "texto": "30 dias."
+            },
+            {
+              "letra": "C",
+              "texto": "45 dias."
+            },
+            {
+              "letra": "D",
+              "texto": "60 dias."
+            },
+            {
+              "letra": "E",
+              "texto": "90 dias."
+            }
+          ],
+          "resposta": "B"
+        },
+        {
+          "extId": "prova2023of:51",
+          "numero": 51,
+          "slug": "legislacao-institucional",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Considerando o que dispõe o Regulamento Disciplinar da Polícia Militar do Estado de Santa Catarina, assinale a opção em que são apresentadas causas de justificação que podem ser reconhecidas no julgamento das transgressões praticadas pelo policial militar.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "falta de prática do serviço e bom comportamento"
+            },
+            {
+              "letra": "B",
+              "texto": "relevância de serviços prestados e legítima defesa"
+            },
+            {
+              "letra": "C",
+              "texto": "legítima defesa e motivo de força maior"
+            },
+            {
+              "letra": "D",
+              "texto": "bom comportamento e relevância dos serviços prestados"
+            },
+            {
+              "letra": "E",
+              "texto": "motivo de força maior e falta de prática do serviço"
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023of:52",
+          "numero": 52,
+          "slug": "legislacao-institucional",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Com base no disposto no Decreto-lei n.º 667/1969, que reorganiza as polícias militares e os corpos de bombeiro militares dos estados, dos territórios e do Distrito Federal, assinale a opção em que é indicado o membro da corporação designado, segundo a hierarquia das polícias militares, como praça especial de polícia.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "1.º tenente"
+            },
+            {
+              "letra": "B",
+              "texto": "subtenente"
+            },
+            {
+              "letra": "C",
+              "texto": "soldado"
+            },
+            {
+              "letra": "D",
+              "texto": "cabo"
+            },
+            {
+              "letra": "E",
+              "texto": "aluno da Escola de Formação de Oficiais da Polícia"
+            }
+          ],
+          "resposta": "E"
+        },
+        {
+          "extId": "prova2023of:53",
+          "numero": 53,
+          "slug": "legislacao-institucional",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Assinale a opção em que é indicado, conforme disposto no Decreto-lei n.º 667/1969, o órgão do Estado-Maior do Exército que detém a competência para baixar as normas e diretrizes para a fiscalização da instrução das polícias militares.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Comitê Gestor de Normas das Polícias Militares"
+            },
+            {
+              "letra": "B",
+              "texto": "Tribunal Pleno das Polícias Militares"
+            },
+            {
+              "letra": "C",
+              "texto": "Consultoria Jurídica das Polícias Militares"
+            },
+            {
+              "letra": "D",
+              "texto": "Inspetoria-Geral das Polícias Militares"
+            },
+            {
+              "letra": "E",
+              "texto": "Assessoria Legislativa das Polícias Militares"
+            }
+          ],
+          "resposta": "D"
+        },
+        {
+          "extId": "prova2023of:54",
+          "numero": 54,
+          "slug": "legislacao-institucional",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Considerando o disposto no Decreto n.º 88.777/1983, que aprova o regulamento para as polícias militares e corpos de bombeiros militares (R-200), julgue os itens seguintes. I É permitido ao policial militar o exercício de função ou cargo público civil temporário, não eletivo, em órgãos da administração pública indireta. II É vedado ao Estado-Maior do Exército, em vista do princípio da separação de poderes, interferir em questões relativas à organização, aumento ou diminuição de efetivos das polícias militares. III O policiamento ostensivo militar de radiopatrulha terrestre, aérea e portuária é exercido direta e exclusivamente pelo Exército, pela Aeronáutica e pela Marinha, respectivamente. Assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Apenas o item I está certo."
+            },
+            {
+              "letra": "B",
+              "texto": "Apenas o item II está certo."
+            },
+            {
+              "letra": "C",
+              "texto": "Apenas os itens I e III estão certos."
+            },
+            {
+              "letra": "D",
+              "texto": "Apenas os itens II e III estão certos."
+            },
+            {
+              "letra": "E",
+              "texto": "Todos os itens estão certos."
+            }
+          ],
+          "resposta": "A"
+        },
+        {
+          "extId": "prova2023of:55",
+          "numero": 55,
+          "slug": "legislacao-institucional",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Segundo determina o Decreto n.º 88.777/1983, quando o policial militar estiver a serviço de órgão ou autoridade a que não esteja diretamente subordinado, o policial estará",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "em aprestamento."
+            },
+            {
+              "letra": "B",
+              "texto": "à disposição."
+            },
+            {
+              "letra": "C",
+              "texto": "em aforamento."
+            },
+            {
+              "letra": "D",
+              "texto": "ao encargo."
+            },
+            {
+              "letra": "E",
+              "texto": "em missão."
+            }
+          ],
+          "resposta": "B"
+        },
+        {
+          "extId": "prova2023of:56",
+          "numero": 56,
+          "slug": "lingua-portuguesa",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": "1A9-I",
+          "enunciado": "De acordo com o texto 1A9-I,",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "o equacionamento dos problemas carcerários no Brasil exige especialmente o envolvimento das secretarias de segurança de cada estado, que são o único órgão competente para fazê-lo."
+            },
+            {
+              "letra": "B",
+              "texto": "a humanização das condições carcerárias depende de esforços dos gestores estaduais especializados nas diferentes temáticas sociais governamentais."
+            },
+            {
+              "letra": "C",
+              "texto": "as audiências de custódia têm o objetivo de libertar os presos o mais rápido possível, mediante a análise da legalidade e da necessidade da prisão."
+            },
+            {
+              "letra": "D",
+              "texto": "qualquer solução legislativa, administrativa ou judicial que se apresente como uma panaceia é uma boa alternativa para solucionar parte dos problemas do sistema carcerário brasileiro."
+            },
+            {
+              "letra": "E",
+              "texto": "a busca por alternativas penais tão ou mais eficazes que o encarceramento depende simplesmente da articulação entre os órgãos do sistema de justiça criminal."
+            }
+          ],
+          "resposta": "B"
+        },
+        {
+          "extId": "prova2023of:57",
+          "numero": 57,
+          "slug": "lingua-portuguesa",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": "1A9-I",
+          "enunciado": "A respeito do trecho “Diante dessa complexidade, parece acertado descartar qualquer solução que se apresente como uma panaceia”, no início do segundo parágrafo do texto 1A9-I, é correto afirmar que",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "o vocábulo “que” faz referência ao termo “complexidade”."
+            },
+            {
+              "letra": "B",
+              "texto": "a oração introduzida pelo vocábulo “que” explica o termo “solução”."
+            },
+            {
+              "letra": "C",
+              "texto": "a oração introduzida pelo vocábulo “que” restringe o sentido da expressão “qualquer solução”."
+            },
+            {
+              "letra": "D",
+              "texto": "a oração introduzida pelo vocábulo “que” poderia ser substituída por apresentada por uma panaceia, sem prejuízo da correção gramatical e do sentido original do texto."
+            },
+            {
+              "letra": "E",
+              "texto": "o vocábulo “que” introduz uma oração que funciona como complemento de “parece”."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023of:58",
+          "numero": 58,
+          "slug": "lingua-portuguesa",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": "1A9-I",
+          "enunciado": "Em relação à pontuação empregada no texto 1A9-I, julgue os itens a seguir. I O emprego da vírgula imediatamente após o vocábulo “Federação” (último período do primeiro parágrafo) é facultativo. II As aspas em ‘porta de entrada’ (último período do terceiro parágrafo) indicam que essa expressão está empregada em sentido não literal, tal qual se usa na modalidade coloquial da língua portuguesa. III A vírgula subsequente ao segmento ‘instituição total’ (penúltimo período do último parágrafo) tem a finalidade de introduzir uma oração com sentido explicativo. IV A supressão da vírgula empregada imediatamente após o vocábulo “brasileiros” (segundo período do último parágrafo) não prejudicaria a correção gramatical do texto, mas alteraria o seu sentido original. Estão certos apenas os itens",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "I e II."
+            },
+            {
+              "letra": "B",
+              "texto": "I e IV."
+            },
+            {
+              "letra": "C",
+              "texto": "II e III."
+            },
+            {
+              "letra": "D",
+              "texto": "I, III e IV."
+            },
+            {
+              "letra": "E",
+              "texto": "II, III e IV."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023of:59",
+          "numero": 59,
+          "slug": "lingua-portuguesa",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": "1A9-I",
+          "enunciado": "No texto 1A9-I, o segmento “de soluções e estratégias inteligentes” (último período do segundo parágrafo) exerce a mesma função sintática que",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "“do Estado” (final do primeiro parágrafo)."
+            },
+            {
+              "letra": "B",
+              "texto": "“à construção de horizontes mais alentadores” (final do segundo parágrafo)."
+            },
+            {
+              "letra": "C",
+              "texto": "“das políticas sociais do Estado” (penúltimo período do último parágrafo)."
+            },
+            {
+              "letra": "D",
+              "texto": "“de estreita articulação” (primeiro período do quarto parágrafo)."
+            },
+            {
+              "letra": "E",
+              "texto": "“a improvisar arranjos de serviços” (penúltimo período do último parágrafo)."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023of:60",
+          "numero": 60,
+          "slug": "lingua-portuguesa",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": "1A9-I",
+          "enunciado": "No final do penúltimo período do quarto parágrafo do texto 1A9-I, o vocábulo “presa” é empregado como",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "substantivo."
+            },
+            {
+              "letra": "B",
+              "texto": "verbo."
+            },
+            {
+              "letra": "C",
+              "texto": "advérbio de modo."
+            },
+            {
+              "letra": "D",
+              "texto": "advérbio de lugar."
+            },
+            {
+              "letra": "E",
+              "texto": "adjetivo."
+            }
+          ],
+          "resposta": "E"
+        },
+        {
+          "extId": "prova2023of:61",
+          "numero": 61,
+          "slug": "lingua-portuguesa",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": "1A9-I",
+          "enunciado": "No texto 1A9-I, são acentuados graficamente de acordo com a mesma regra de acentuação gráfica os vocábulos I “carcerária” e “estratégias”. II “Além” e “Já”. III “política” e “jurídicos”. IV “é” e “à”. Estão certos apenas os itens",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "I e III."
+            },
+            {
+              "letra": "B",
+              "texto": "II e III."
+            },
+            {
+              "letra": "C",
+              "texto": "II e IV."
+            },
+            {
+              "letra": "D",
+              "texto": "I, II e IV."
+            },
+            {
+              "letra": "E",
+              "texto": "I, III e IV."
+            }
+          ],
+          "resposta": "A"
+        },
+        {
+          "extId": "prova2023of:62",
+          "numero": 62,
+          "slug": "lingua-portuguesa",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": "1A9-I",
+          "enunciado": "A correção gramatical e os sentidos do texto 1A9-I seriam mantidos caso",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "a forma verbal “desafia” (segundo período do primeiro parágrafo) fosse flexionada no plural — desafiam."
+            },
+            {
+              "letra": "B",
+              "texto": "o segmento “em que” (primeiro período do terceiro parágrafo) fosse substituído por na qual."
+            },
+            {
+              "letra": "C",
+              "texto": "o termo “interessantes” (segundo período do quarto parágrafo) fosse empregado no singular."
+            },
+            {
+              "letra": "D",
+              "texto": "a forma verbal “exige” (terceiro período do primeiro parágrafo) fosse flexionada no plural — exigem."
+            },
+            {
+              "letra": "E",
+              "texto": "fosse empregado acento indicativo de crase no “a” presente no segmento “devem nos conduzir a profundas reflexões” (primeiro período do terceiro parágrafo)."
+            }
+          ],
+          "resposta": "B"
+        },
+        {
+          "extId": "prova2023of:63",
+          "numero": 63,
+          "slug": "lingua-portuguesa",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": "1A9-I",
+          "enunciado": "Assinale a opção em que o termo destacado do texto 1A9-I exerce a função sintática de adjunto adverbial que exprime circunstância de lugar.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "“três Poderes da República” (terceiro período do primeiro parágrafo)"
+            },
+            {
+              "letra": "B",
+              "texto": "“do sistema penitenciário” (primeiro período do terceiro parágrafo)"
+            },
+            {
+              "letra": "C",
+              "texto": "‘porta de entrada’ (último período do terceiro parágrafo)"
+            },
+            {
+              "letra": "D",
+              "texto": "“nos presídios brasileiros” (segundo período do quinto parágrafo)"
+            },
+            {
+              "letra": "E",
+              "texto": "“nas diferentes temáticas sociais governamentais” (segundo período do quinto parágrafo)"
+            }
+          ],
+          "resposta": "D"
+        },
+        {
+          "extId": "prova2023of:64",
+          "numero": 64,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Uma pesquisa revelou que 45% dos policiais militares de Santa Catarina haviam sido surfistas e, entre esses policiais militares surfistas, 30% deles construíam suas próprias pranchas de surfe. Com base nessa situação hipotética, é correto afirmar que a porcentagem de policiais militares de Santa Catarina que tinham sido surfistas e que construíram as suas próprias pranchas de surfe é",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "inferior a 10%."
+            },
+            {
+              "letra": "B",
+              "texto": "superior a 11% e inferior a 16%."
+            },
+            {
+              "letra": "C",
+              "texto": "superior a 17% e inferior a 21%."
+            },
+            {
+              "letra": "D",
+              "texto": "superior a 21% e inferior a 29%."
+            },
+            {
+              "letra": "E",
+              "texto": "superior a 30%."
+            }
+          ],
+          "resposta": "B"
+        },
+        {
+          "extId": "prova2023of:65",
+          "numero": 65,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Assinale a opção que corresponde a uma tautologia lógica.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "(P ˄ Q) ↔ (~P ˅ Q)"
+            },
+            {
+              "letra": "B",
+              "texto": "(P ˄ Q) ˄ R ↔ ((R ˄ Q) → P)"
+            },
+            {
+              "letra": "C",
+              "texto": "(~P ˅ Q) ↔ (P ˅ ~Q)"
+            },
+            {
+              "letra": "D",
+              "texto": "(P → Q) ˅ (R ˄ S) ↔ ((P ˅ Q) ˄ R ˄ S)"
+            },
+            {
+              "letra": "E",
+              "texto": "(~P → ~Q) ↔ (Q → P)"
+            }
+          ],
+          "resposta": "E"
+        },
+        {
+          "extId": "prova2023of:66",
+          "numero": 66,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "((P ˄ S) → (Q ˅ R)) → ((~R ˅ P) → (~Q ˅ ~S) O número de linhas da tabela-verdade da proposição lógica precedente é igual a",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "2."
+            },
+            {
+              "letra": "B",
+              "texto": "4."
+            },
+            {
+              "letra": "C",
+              "texto": "8."
+            },
+            {
+              "letra": "D",
+              "texto": "16."
+            },
+            {
+              "letra": "E",
+              "texto": "32."
+            }
+          ],
+          "resposta": "D"
+        },
+        {
+          "extId": "prova2023of:67",
+          "numero": 67,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "“A variedade de espécies presentes na produção de plantas ornamentais no Vale do Itajaí é consequência de avanços expressivos nas áreas de pesquisa em botânica.” O trecho de texto precedente pode ser expresso corretamente pela expressão lógica",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "P."
+            },
+            {
+              "letra": "B",
+              "texto": "P ˅ Q."
+            },
+            {
+              "letra": "C",
+              "texto": "P ↔ Q."
+            },
+            {
+              "letra": "D",
+              "texto": "P ˄ Q."
+            },
+            {
+              "letra": "E",
+              "texto": "P → Q."
+            }
+          ],
+          "resposta": "A"
+        },
+        {
+          "extId": "prova2023of:68",
+          "numero": 68,
+          "slug": null,
+          "anulada": true,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "A figura precedente apresenta os conjuntos A, B, C e U. Considerando que CY (X) representa o complementar de X em Y, assinale a opção que representa corretamente o subconjunto do conjunto B em destaque na referida figura.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "CU (C⋂B)"
+            },
+            {
+              "letra": "B",
+              "texto": "A⋂B⋂C"
+            },
+            {
+              "letra": "C",
+              "texto": "CB (C) ⋂ A"
+            },
+            {
+              "letra": "D",
+              "texto": "CU (A) ⋂ C"
+            },
+            {
+              "letra": "E",
+              "texto": "A⋃(B⋂C)"
+            }
+          ],
+          "resposta": null
+        },
+        {
+          "extId": "prova2023of:69",
+          "numero": 69,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "local de atuação efetivo masculino efetivo feminino Centro 350 140 Campeche 240 90 Ribeirão da Ilha 200 80 1.100 policiais militares foram destacados para atuar nos três distritos de Florianópolis, conforme a distribuição constante da tabela precedente. Com base nessas informações e considerando que N seja igual ao número de policiais femininos que não foram destacados para atuar em Campeche somado ao número de policiais que foram destacados para atuar em Campeche, tem-se que N corresponde a",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "menos de 33% desse efetivo de policiais militares."
+            },
+            {
+              "letra": "B",
+              "texto": "mais de 34%, no entanto, menos de 38% desse efetivo de policiais militares."
+            },
+            {
+              "letra": "C",
+              "texto": "mais de 39%, no entanto, menos de 44% desse efetivo de policiais militares."
+            },
+            {
+              "letra": "D",
+              "texto": "mais de 45%, no entanto, menos de 52% desse efetivo de policiais militares."
+            },
+            {
+              "letra": "E",
+              "texto": "mais de 53% desse efetivo de policiais militares."
+            }
+          ],
+          "resposta": "D"
+        },
+        {
+          "extId": "prova2023of:70",
+          "numero": 70,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Uma pesquisa com participantes de uma festa tradicional de Santa Catarina revelou que 320 tinham experimentado a cerveja artesanal X, 200 não experimentaram a cerveja artesanal Y, e 220 tinham experimentado as cervejas artesanais X e Y. Com base na situação hipotética apresentada, o número de participantes dessa pesquisa que não experimentaram nenhuma dessas duas cervejas artesanais",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "é inferior ou igual a 50."
+            },
+            {
+              "letra": "B",
+              "texto": "é superior a 50 e inferior ou igual a 70."
+            },
+            {
+              "letra": "C",
+              "texto": "é superior a 70 e inferior ou igual a 90."
+            },
+            {
+              "letra": "D",
+              "texto": "é superior a 90 e inferior ou igual a 110."
+            },
+            {
+              "letra": "E",
+              "texto": "é superior a 110. INGLÊS Text 1A11-I Internet: < www.gocomics.com > (adapted)."
+            }
+          ],
+          "resposta": "D"
+        },
+        {
+          "extId": "prova2023of:71",
+          "numero": 71,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "It can be inferred from text 1A11-I that",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "the cat does not like lasagna."
+            },
+            {
+              "letra": "B",
+              "texto": "lasagna is not a natural food."
+            },
+            {
+              "letra": "C",
+              "texto": "the cat really enjoys lasagna."
+            },
+            {
+              "letra": "D",
+              "texto": "the cat’s owner does not feed it."
+            },
+            {
+              "letra": "E",
+              "texto": "the cat in the comic considers himself a special cat."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023of:72",
+          "numero": 72,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Considering text 1A11-I, choose the correct option.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "The word “nature” (second square) can be correctly replaced by natural."
+            },
+            {
+              "letra": "B",
+              "texto": "The word “ordinary” (first square) could be replaced by “mediocre” without changing the meaning of the sentence."
+            },
+            {
+              "letra": "C",
+              "texto": "The expression “For instance” (second square) has the same meaning as for example."
+            },
+            {
+              "letra": "D",
+              "texto": "The comparison “most perfect food” could be correctly made in the text with the expression the perfectest food."
+            },
+            {
+              "letra": "E",
+              "texto": "It can be inferred from the expression “I’m crazy about” (second square) that the cat needs to see a psychiatrist. Text 1A11-II “Click!” That’s the sound of safety. That’s the sound of survival. That’s the sound of a seat belt locking in place. Seat belts save lives and that’s a fact. That’s why I don’t drive anywhere until mine is on tight. Choosing to wear your seat belt is as simple as choosing between life and death. Which one do you choose? Think about it. When you’re driving in a car, you may be going 100 km/h or faster. That car is zipping down the road. Then somebody ahead of you locks up his or her brakes. You don’t have time to stop. The car that you are in crashes. Some people think that seat belts are uncool. They think that seat belts cramp their style, or that seat belts are uncomfortable. To them, I say, what’s more uncomfortable? Wearing a seat belt or flying through a car windshield? What’s more uncool? Being safely anchored to a car, or skidding across the road in your jean shorts? Wearing a seat belt is both cooler and more comfortable than the alternatives. Let’s just take a closer look at your choices. If you are not wearing your seat belt, you can hop around the car and slide in and out of your seat easily. That sounds like a lot of fun. But, you are also more likely to die or suffer serious injuries. If you are wearing a seat belt, you have to stay in your seat. That’s no fun. But, you are much more likely to walk away unharmed from a car accident. Hmmm... A small pleasure for a serious pain. That’s a tough choice. I think that I’ll avoid the serious pain. Internet: <www.agendaweb.com> (adapted)."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023of:73",
+          "numero": 73,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "The main purpose of text 1A11-II is",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "to inform readers about seat belt laws."
+            },
+            {
+              "letra": "B",
+              "texto": "to persuade readers to wear seat belts."
+            },
+            {
+              "letra": "C",
+              "texto": "to teach readers how to make a choice."
+            },
+            {
+              "letra": "D",
+              "texto": "to entertain readers with jokes about seat belts."
+            },
+            {
+              "letra": "E",
+              "texto": "to describe car accidents."
+            }
+          ],
+          "resposta": "B"
+        },
+        {
+          "extId": "prova2023of:74",
+          "numero": 74,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Without changing the meaning of text 1A11-II, the sentence “The car is zipping down the road” (seventh sentence of the first paragraph) could be correctly rewritten as",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "The car is unzipping the road."
+            },
+            {
+              "letra": "B",
+              "texto": "The car is closing down the road."
+            },
+            {
+              "letra": "C",
+              "texto": "The car is traveling really fast down the road."
+            },
+            {
+              "letra": "D",
+              "texto": "The car is riding down the road."
+            },
+            {
+              "letra": "E",
+              "texto": "The car is going slowly down the road."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023of:75",
+          "numero": 75,
+          "slug": null,
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "In text 1A11-II, the pronoun “their” (second sentence of the second paragraph) refers to",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "“seat belts” (first sentence of the second paragraph)."
+            },
+            {
+              "letra": "B",
+              "texto": "“windshield” (fourth sentence of the second paragraph)."
+            },
+            {
+              "letra": "C",
+              "texto": "“his or her brakes” (eighth sentence of the first paragraph)."
+            },
+            {
+              "letra": "D",
+              "texto": "“car” (fourth sentence of the second paragraph)."
+            },
+            {
+              "letra": "E",
+              "texto": "“some people” (first sentence of the second paragraph)."
+            }
+          ],
+          "resposta": "E"
+        },
+        {
+          "extId": "prova2023of:76",
+          "numero": 76,
+          "slug": "informatica",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "O endereço eletrônico https://www.pm.sc.gov.br/ refere-se",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "a um site que somente pode ser acessado a partir do navegador Chrome ou da página do Google."
+            },
+            {
+              "letra": "B",
+              "texto": "a um site de segurança do governo brasileiro, conforme indicado pela sigla https."
+            },
+            {
+              "letra": "C",
+              "texto": "à intranet da Polícia Militar (PM) de Santa Catarina (SC), conforme indicado por pm.sc."
+            },
+            {
+              "letra": "D",
+              "texto": "a um site que somente pode ser acessado por colaboradores da Polícia Militar (PM) de Santa Catarina (SC)."
+            },
+            {
+              "letra": "E",
+              "texto": "a um site do governo do Brasil, como indicado por gov.br."
+            }
+          ],
+          "resposta": "E"
+        },
+        {
+          "extId": "prova2023of:77",
+          "numero": 77,
+          "slug": "informatica",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Na suíte de escritório LibreOffice, o aplicativo",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Writer permite a realização de cálculos numéricos e o Impress permite a edição de relatórios."
+            },
+            {
+              "letra": "B",
+              "texto": "Draw é utilizado para a produção de relatórios e o Writer permite a criação de apresentações."
+            },
+            {
+              "letra": "C",
+              "texto": "Writer permite a edição de documentos e o Calc permite a criação de planilhas e gráficos."
+            },
+            {
+              "letra": "D",
+              "texto": "Impress permite a criação de relatórios e o Draw é utilizado para a produção de planilhas e gráficos."
+            },
+            {
+              "letra": "E",
+              "texto": "Base permite a criação de apresentações e o Draw é utilizado para a produção de planilhas e gráficos."
+            }
+          ],
+          "resposta": "C"
+        },
+        {
+          "extId": "prova2023of:78",
+          "numero": 78,
+          "slug": "informatica",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Considerando que o sistema operacional Windows 10 esteja instalado em um computador, assinale a opção correta.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "O nome de um arquivo armazenado no computador pode ser alterado por meio do Explorador de Arquivos, sem comprometer o seu conteúdo."
+            },
+            {
+              "letra": "B",
+              "texto": "O Windows 10 é uma versão do sistema operacional da Microsoft disponível apenas para computador do tipo notebook."
+            },
+            {
+              "letra": "C",
+              "texto": "WordPad é um aplicativo padrão do Windows 10, desenvolvido exclusivamente para a criação e a edição simples de imagens, em duas dimensões."
+            },
+            {
+              "letra": "D",
+              "texto": "A ferramenta de busca padrão do Windows 10 permite a pesquisa de documentos que estejam armazenados apenas no computador local, mesmo que este esteja conectado à Internet."
+            },
+            {
+              "letra": "E",
+              "texto": "Em qualquer versão do Windows 10, por meio do aplicativo Configurações, é possível alterar a data e o horário do computador; no entanto, não é possível alterar o idioma após a instalação do sistema operacional."
+            }
+          ],
+          "resposta": "A"
+        },
+        {
+          "extId": "prova2023of:79",
+          "numero": 79,
+          "slug": "informatica",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Para o envio de dois arquivos, um de texto e outro com uma planilha, por correio eletrônico, é correto utilizar o aplicativo",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "Edge, clicar a opção e-mail, encaminhar inicialmente o arquivo de texto e, em seguida, enviar o arquivo da planilha."
+            },
+            {
+              "letra": "B",
+              "texto": "Outlook, clicar a opção Novo Email, anexar os dois arquivos, digitar o endereço de destino e enviar a mensagem."
+            },
+            {
+              "letra": "C",
+              "texto": "Safari, enviando-se primeiro o arquivo de texto e depois a planilha, para garantir a segurança."
+            },
+            {
+              "letra": "D",
+              "texto": "Chrome, criptografando-se os arquivos antes de enviar."
+            },
+            {
+              "letra": "E",
+              "texto": "Firefox, compactando-se os arquivos antes de enviar."
+            }
+          ],
+          "resposta": "B"
+        },
+        {
+          "extId": "prova2023of:80",
+          "numero": 80,
+          "slug": "informatica",
+          "anulada": false,
+          "dependeDeImagem": false,
+          "textoId": null,
+          "enunciado": "Assinale a opção em que é indicado o malware cujo objetivo é monitorar as atividades dos sistemas computacionais a partir da coleta de informações pessoais e confidenciais dos usuários, como senhas, histórico de navegação e e-mails, sem o conhecimento do usuário.",
+          "alternativas": [
+            {
+              "letra": "A",
+              "texto": "trojan"
+            },
+            {
+              "letra": "B",
+              "texto": "worms"
+            },
+            {
+              "letra": "C",
+              "texto": "ransomware"
+            },
+            {
+              "letra": "D",
+              "texto": "adware"
+            },
+            {
+              "letra": "E",
+              "texto": "spyware"
+            }
+          ],
+          "resposta": "E"
+        }
+      ]
+    }
+  ]
+}

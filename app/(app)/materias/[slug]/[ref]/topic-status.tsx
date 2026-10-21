@@ -2,8 +2,7 @@
 
 import { BookOpen, Check, RotateCcw } from 'lucide-react';
 import { useState, useTransition } from 'react';
-import { useRouter } from 'next/navigation';
-import { createClient } from '@/lib/supabase/client';
+import { useSessao } from '@/components/sessao';
 
 const OPCOES = [
   { valor: 'lendo', label: 'Estudando', icone: BookOpen, ativo: 'bg-sky-600 text-white' },
@@ -18,28 +17,25 @@ export default function TopicStatus({
   topicId: number;
   current: string | null;
 }) {
-  const router = useRouter();
   const [status, setStatus] = useState(current);
   const [pending, start] = useTransition();
+  const { userId, supabase } = useSessao();
 
   function marcar(novo: string) {
     const valor = status === novo ? null : novo;
     setStatus(valor);
     start(async () => {
-      const supabase = createClient();
-      const { data } = await supabase.auth.getUser();
-      if (!data.user) return;
 
       if (valor === null) {
         await supabase
           .from('topic_progress')
           .delete()
-          .eq('user_id', data.user.id)
+          .eq('user_id', userId)
           .eq('topic_id', topicId);
       } else {
         await supabase.from('topic_progress').upsert(
           {
-            user_id: data.user.id,
+            user_id: userId,
             topic_id: topicId,
             status: valor,
             updated_at: new Date().toISOString(),
@@ -47,7 +43,6 @@ export default function TopicStatus({
           { onConflict: 'user_id,topic_id', defaultToNull: false }
         );
       }
-      router.refresh();
     });
   }
 

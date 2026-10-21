@@ -1,7 +1,19 @@
 import Link from 'next/link';
-import { CalendarDays, Play, RefreshCw, Target, TrendingUp, ListOrdered } from 'lucide-react';
+import {
+  AlertTriangle,
+  BookOpen,
+  CalendarDays,
+  CheckCircle2,
+  ListChecks,
+  PenLine,
+  Play,
+  RefreshCw,
+  Target,
+  TrendingUp,
+} from 'lucide-react';
 import { createClient, getUser } from '@/lib/supabase/server';
-import { ActionLink, Aviso, Bar, Badge, Card, Empty, Stat } from '@/components/ui';
+import { Aviso, Card, Empty, Stat } from '@/components/ui';
+import { Medidor, PesoDaProva } from '@/components/graficos';
 import { PRIORITY_CLASS, PRIORITY_LABEL, type DisciplineStats } from '@/lib/types';
 import { GOLDEN_RULE, PLAN_30 } from '@/lib/plans';
 import ExamDateForm from './exam-date-form';
@@ -24,6 +36,7 @@ export default async function Dashboard() {
     dueCount,
     { data: ultimas },
     { data: disciplines },
+    errosAbertos,
   ] = await Promise.all([
     supabase.from('profiles').select('*').eq('id', user.id).maybeSingle(),
     supabase.from('v_discipline_stats').select('*').eq('user_id', user.id),
@@ -36,6 +49,7 @@ export default async function Dashboard() {
       .order('finished_at', { ascending: false })
       .limit(5),
     supabase.from('disciplines').select('*').order('chapter'),
+    supabase.from('error_notes').select('id', { count: 'exact', head: true }).eq('resolved', false),
   ]);
 
   const statMap = new Map<number, DisciplineStats>(
@@ -47,96 +61,149 @@ export default async function Dashboard() {
   const acertosHoje = (hojeAttempts ?? []).filter((a) => a.correct).length;
   const revisoesHoje = dueCount.count ?? 0;
 
+  const objetivas = (disciplines ?? []).filter((d) => d.question_count > 0);
+
   let pontos = 0;
   let avaliado = 0;
-  for (const d of disciplines ?? []) {
+  for (const d of objetivas) {
     const s = statMap.get(d.id);
-    if (!s?.accuracy || !d.question_count) continue;
+    if (!s?.accuracy) continue;
     pontos += (Number(s.accuracy) / 100) * d.question_count;
     avaliado += d.question_count;
   }
   const projecao = avaliado ? Math.round(pontos) : null;
+  const cobertura = Math.round((100 * avaliado) / 60);
 
   const diasRestantes = profile?.exam_date
     ? Math.ceil((new Date(profile.exam_date + 'T12:00:00').getTime() - Date.now()) / 86400000)
     : null;
 
-  const zeradas = (disciplines ?? []).filter(
-    (d) => d.question_count > 0 && !statMap.get(d.id)?.answered
-  );
+  const zeradas = objetivas.filter((d) => !statMap.get(d.id)?.answered);
 
   const blocoAtual =
     diasRestantes !== null && diasRestantes > 0 && diasRestantes <= 30
       ? PLAN_30.find((b) => b.days.includes(31 - diasRestantes))
       : null;
 
+  const ordenadas = objetivas
+    .slice()
+    .sort((a, b) => b.question_count - a.question_count || a.chapter - b.chapter);
+
+  const atalhos = [
+    { href: '/questoes', label: 'Treinar questões', icone: ListChecks, cor: 'bg-brand-600 text-white hover:bg-brand-700' },
+    { href: '/revisao', label: revisoesHoje > 0 ? `Revisar (${revisoesHoje})` : 'Revisão', icone: RefreshCw, cor: 'bg-white text-brand-700 ring-1 ring-slate-300 hover:bg-slate-50 dark:bg-slate-800 dark:text-brand-200 dark:ring-slate-600' },
+    { href: '/materias', label: 'Estudar teoria', icone: BookOpen, cor: 'bg-white text-brand-700 ring-1 ring-slate-300 hover:bg-slate-50 dark:bg-slate-800 dark:text-brand-200 dark:ring-slate-600' },
+    { href: '/redacao', label: 'Redação', icone: PenLine, cor: 'bg-white text-brand-700 ring-1 ring-slate-300 hover:bg-slate-50 dark:bg-slate-800 dark:text-brand-200 dark:ring-slate-600' },
+  ];
+
   return (
     <div className="space-y-5">
-      <div className="flex flex-wrap items-end justify-between gap-4">
-        <div>
-          <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl dark:text-slate-100">
-            Painel de estudo
-          </h1>
-          <p className="mt-1 max-w-2xl text-sm text-slate-500 dark:text-slate-400">
-            60 questões objetivas + redação (20 pontos). Aprovação exige 50% do total e nenhuma
-            disciplina zerada.
+      {/* ---------------- cabeçalho ---------------- */}
+      <div>
+        <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl dark:text-slate-100">
+          Painel de estudo
+        </h1>
+        <p className="mt-1 max-w-2xl text-sm text-slate-500 dark:text-slate-400">
+          60 questões objetivas + redação (20 pontos). Aprovação exige 50% do total e nenhuma
+          disciplina zerada.
+        </p>
+      </div>
+
+      {/* ---------------- atalhos ---------------- */}
+      <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
+        {atalhos.map(({ href, label, icone: Icone, cor }) => (
+          <Link
+            key={href}
+            href={href}
+            className={`inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold transition ${cor}`}
+          >
+            <Icone size={16} />
+            {label}
+          </Link>
+        ))}
+      </div>
+
+      {/* ---------------- projeção em destaque ---------------- */}
+      <section className="overflow-hidden rounded-2xl bg-gradient-to-br from-brand-900 to-brand-700 p-5 text-white sm:p-6 dark:from-slate-900 dark:to-slate-800">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <div>
+            <p className="flex items-center gap-2 text-xs font-bold tracking-wider text-brand-100 uppercase">
+              <Target size={14} /> Projeção na prova objetiva
+            </p>
+            <p className="mt-2 flex items-baseline gap-2">
+              <span className="text-5xl leading-none font-bold tabular-nums sm:text-6xl">
+                {projecao === null ? '—' : projecao}
+              </span>
+              <span className="text-2xl font-semibold text-brand-200">/60</span>
+            </p>
+            <p className="mt-2 max-w-md text-sm text-brand-100">
+              {projecao === null
+                ? 'Responda questões em cada disciplina para o sistema calcular sua projeção.'
+                : `Calculada com o seu acerto em ${cobertura}% do peso da prova. ${
+                    projecao >= 40
+                      ? 'Ritmo de aprovação.'
+                      : projecao >= 30
+                        ? 'Perto do corte — ainda dá para subir.'
+                        : 'Abaixo do corte seguro.'
+                  }`}
+            </p>
+          </div>
+
+          <dl className="grid grid-cols-3 gap-5 text-center sm:gap-8">
+            {[
+              ['Hoje', `${respondidasHoje}/${metaDiaria}`, `${acertosHoje} acertos`],
+              ['Revisões', revisoesHoje, 'para hoje'],
+              [
+                'Dias p/ prova',
+                diasRestantes === null ? '—' : diasRestantes > 0 ? diasRestantes : 'hoje',
+                profile?.exam_date ? '' : 'informe a data',
+              ],
+            ].map(([k, v, hint]) => (
+              <div key={String(k)}>
+                <dt className="text-[0.65rem] font-semibold tracking-wider text-brand-200 uppercase">
+                  {k}
+                </dt>
+                <dd className="mt-0.5 text-2xl font-bold tabular-nums">{v}</dd>
+                {hint ? <dd className="text-[0.65rem] text-brand-200">{hint}</dd> : null}
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
+      {/* ---------------- alertas ---------------- */}
+      {zeradas.length > 0 && (
+        <Aviso title={`Atenção: ${zeradas.length} disciplina(s) sem nenhuma questão respondida`}>
+          <p className="flex items-start gap-2">
+            <AlertTriangle size={16} className="mt-0.5 shrink-0" />
+            <span>Zerar uma única disciplina elimina o candidato, mesmo com nota alta nas demais.</span>
           </p>
-        </div>
-        <div className="flex flex-wrap gap-2">
-          <ActionLink href="/questoes" icon={Play}>
-            Treinar questões
-          </ActionLink>
-          <ActionLink href="/revisao" icon={RefreshCw} variant="ghost">
-            Revisar{revisoesHoje > 0 ? ` (${revisoesHoje})` : ''}
-          </ActionLink>
-        </div>
-      </div>
+          <ul className="mt-3 flex flex-wrap gap-2">
+            {zeradas.map((d) => (
+              <li key={d.id}>
+                <Link
+                  href={`/questoes?disciplina=${d.slug}`}
+                  className="inline-flex items-center rounded-lg bg-white/70 px-3 py-1.5 text-sm font-medium ring-1 ring-amber-300 transition hover:bg-white dark:bg-slate-900/60 dark:ring-amber-800"
+                >
+                  {d.name} →
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Aviso>
+      )}
 
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        <Stat
-          label="Hoje"
-          value={`${respondidasHoje}/${metaDiaria}`}
-          hint={`${acertosHoje} acertos · meta diária`}
-          icon={CalendarDays}
-          tone={respondidasHoje >= metaDiaria ? 'good' : 'brand'}
-        />
-        <Stat
-          label="Revisões vencidas"
-          value={revisoesHoje}
-          hint="questões que o sistema marcou para hoje"
-          icon={RefreshCw}
-          tone={revisoesHoje > 0 ? 'warn' : 'good'}
-          href={revisoesHoje > 0 ? '/revisao' : undefined}
-        />
-        <Stat
-          label="Projeção na objetiva"
-          value={projecao === null ? '—' : `${projecao}/60`}
-          hint={
-            projecao === null
-              ? 'responda questões para calcular'
-              : projecao >= 40
-                ? 'ritmo de aprovação'
-                : 'abaixo do ponto de corte seguro'
-          }
-          icon={Target}
-          tone={projecao === null ? 'default' : projecao >= 40 ? 'good' : projecao >= 30 ? 'warn' : 'bad'}
-        />
-        <Stat
-          label="Dias até a prova"
-          value={diasRestantes === null ? '—' : diasRestantes > 0 ? diasRestantes : 'hoje'}
-          hint={profile?.exam_date ? 'conforme data informada' : 'informe a data abaixo'}
-          icon={CalendarDays}
-          tone={diasRestantes !== null && diasRestantes <= 30 ? 'warn' : 'default'}
-        />
-      </div>
-
+      {/* ---------------- etapa do plano ---------------- */}
       {blocoAtual && (
         <Card
           title={`Plano de 30 dias — ${blocoAtual.range}`}
           subtitle="Esta é a sua etapa de hoje"
           icon={CalendarDays}
           action={
-            <Link href="/plano" className="text-sm font-medium text-brand-600 hover:underline dark:text-brand-300">
+            <Link
+              href="/plano"
+              className="text-sm font-medium text-brand-600 hover:underline dark:text-brand-300"
+            >
               ver plano →
             </Link>
           }
@@ -162,127 +229,69 @@ export default async function Dashboard() {
         </Card>
       )}
 
+      {/* ---------------- peso da prova ---------------- */}
       <Card
-        title="Desempenho por disciplina"
-        subtitle="Ordenado pelo peso real na prova (Tabela 8.1 do edital)"
-        icon={ListOrdered}
+        title="Como os 60 pontos estão distribuídos"
+        subtitle="Tabela 8.1 do edital — cada faixa é uma disciplina"
+        icon={Target}
       >
-        {/* celular: cartões; a partir de md: tabela */}
-        <ul className="space-y-3 md:hidden">
-          {(disciplines ?? [])
-            .slice()
-            .sort((a, b) => b.question_count - a.question_count || a.chapter - b.chapter)
-            .map((d) => {
-              const s = statMap.get(d.id);
-              const acc = s?.accuracy ? Number(s.accuracy) : null;
-              return (
-                <li
-                  key={d.id}
-                  className="rounded-xl p-3 ring-1 ring-slate-200 dark:ring-slate-700"
-                >
-                  <div className="flex items-start justify-between gap-2">
-                    <Link href={`/materias/${d.slug}`} className="font-medium hover:underline">
-                      {d.name}
-                    </Link>
-                    <Badge className={PRIORITY_CLASS[d.priority as keyof typeof PRIORITY_CLASS]}>
-                      {PRIORITY_LABEL[d.priority as keyof typeof PRIORITY_LABEL].replace('Prioridade ', '')}
-                    </Badge>
-                  </div>
-                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                    {d.question_count ? `${d.question_count} questões (${d.weight}%)` : 'redação'} ·{' '}
-                    {s?.answered ?? 0} respondidas
-                  </p>
-                  <div className="mt-2 flex items-center gap-2">
-                    <Bar percent={acc ?? 0} tone="auto" />
-                    <span className="w-14 shrink-0 text-right text-xs font-semibold tabular-nums">
-                      {acc === null ? '—' : `${acc}%`}
-                    </span>
-                  </div>
-                </li>
-              );
-            })}
-        </ul>
-
-        <div className="hidden overflow-x-auto md:block">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-slate-200 text-left text-[0.7rem] tracking-wider text-slate-500 uppercase dark:border-slate-700 dark:text-slate-400">
-                <th className="py-2.5 pr-3 font-semibold">Disciplina</th>
-                <th className="py-2.5 pr-3 font-semibold">Questões na prova</th>
-                <th className="py-2.5 pr-3 font-semibold">Respondidas</th>
-                <th className="py-2.5 pr-3 font-semibold">Acerto</th>
-                <th className="py-2.5 font-semibold">Prioridade</th>
-              </tr>
-            </thead>
-            <tbody>
-              {(disciplines ?? [])
-                .slice()
-                .sort((a, b) => b.question_count - a.question_count || a.chapter - b.chapter)
-                .map((d) => {
-                  const s = statMap.get(d.id);
-                  const acc = s?.accuracy ? Number(s.accuracy) : null;
-                  return (
-                    <tr
-                      key={d.id}
-                      className="border-b border-slate-100 last:border-0 dark:border-slate-800"
-                    >
-                      <td className="py-3 pr-3">
-                        <Link href={`/materias/${d.slug}`} className="font-medium hover:underline">
-                          {d.name}
-                        </Link>
-                      </td>
-                      <td className="py-3 pr-3 text-slate-600 tabular-nums dark:text-slate-400">
-                        {d.question_count || '—'}
-                        {d.question_count ? (
-                          <span className="ml-1 text-xs text-slate-400">({d.weight}%)</span>
-                        ) : null}
-                      </td>
-                      <td className="py-3 pr-3 text-slate-600 tabular-nums dark:text-slate-400">
-                        {s?.answered ?? 0}
-                      </td>
-                      <td className="w-48 py-3 pr-3">
-                        {acc === null ? (
-                          <span className="text-slate-400">sem dados</span>
-                        ) : (
-                          <div className="flex items-center gap-2">
-                            <Bar percent={acc} tone="auto" />
-                            <span className="w-12 text-right font-semibold tabular-nums">{acc}%</span>
-                          </div>
-                        )}
-                      </td>
-                      <td className="py-3">
-                        <Badge className={PRIORITY_CLASS[d.priority as keyof typeof PRIORITY_CLASS]}>
-                          {PRIORITY_LABEL[d.priority as keyof typeof PRIORITY_LABEL]}
-                        </Badge>
-                      </td>
-                    </tr>
-                  );
-                })}
-            </tbody>
-          </table>
-        </div>
+        <PesoDaProva
+          itens={ordenadas.map((d) => ({
+            nome: d.name,
+            questoes: d.question_count,
+            acerto: statMap.get(d.id)?.accuracy ? Number(statMap.get(d.id)!.accuracy) : null,
+            slug: d.slug,
+          }))}
+        />
       </Card>
 
-      {zeradas.length > 0 && (
-        <Aviso title="Atenção: disciplinas sem nenhuma questão respondida">
-          <p>Zerar uma única disciplina elimina o candidato, mesmo com nota alta nas demais.</p>
-          <ul className="mt-3 flex flex-wrap gap-2">
-            {zeradas.map((d) => (
+      {/* ---------------- desempenho ---------------- */}
+      <Card
+        title="Seu acerto por disciplina"
+        subtitle="Ordenado pelo peso na prova · a marca na barra é a meta de 70%"
+        icon={TrendingUp}
+      >
+        <ul className="space-y-4">
+          {ordenadas.map((d) => {
+            const s = statMap.get(d.id);
+            const acc = s?.accuracy ? Number(s.accuracy) : null;
+            return (
               <li key={d.id}>
-                <Link
-                  href={`/questoes?disciplina=${d.slug}`}
-                  className="inline-flex items-center rounded-lg bg-white/70 px-3 py-1.5 text-sm font-medium ring-1 ring-amber-300 hover:bg-white dark:bg-slate-900/60 dark:ring-amber-800"
-                >
-                  {d.name} →
-                </Link>
+                <Medidor
+                  valor={acc}
+                  meta={70}
+                  destaque
+                  label={
+                    <Link
+                      href={`/materias/${d.slug}`}
+                      className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 hover:underline"
+                    >
+                      {d.name}
+                      <span
+                        className={`rounded-full px-2 py-0.5 text-[0.65rem] font-semibold ring-1 ring-inset ${
+                          PRIORITY_CLASS[d.priority as keyof typeof PRIORITY_CLASS]
+                        }`}
+                      >
+                        {PRIORITY_LABEL[d.priority as keyof typeof PRIORITY_LABEL].replace(
+                          'Prioridade ',
+                          ''
+                        )}
+                      </span>
+                    </Link>
+                  }
+                  sublabel={`${d.question_count} questões na prova (${d.weight}% do total) · ${s?.answered ?? 0} respondidas${
+                    acc !== null ? ` · ${s!.correct} acertos` : ''
+                  }`}
+                />
               </li>
-            ))}
-          </ul>
-        </Aviso>
-      )}
+            );
+          })}
+        </ul>
+      </Card>
 
+      {/* ---------------- rodapé do painel ---------------- */}
       <div className="grid gap-4 lg:grid-cols-2">
-        <Card title="Últimas sessões" icon={TrendingUp}>
+        <Card title="Últimas sessões" icon={CheckCircle2}>
           {!ultimas?.length ? (
             <Empty>Nenhuma sessão concluída ainda. Comece por um treino de questões.</Empty>
           ) : (
@@ -292,27 +301,27 @@ export default async function Dashboard() {
                 return (
                   <li key={s.id} className="flex items-center justify-between gap-3 py-2.5">
                     <span className="capitalize">{s.kind}</span>
-                    <span className="text-slate-500 dark:text-slate-400">
+                    <span className="text-xs text-slate-500 dark:text-slate-400">
                       {new Date(s.finished_at!).toLocaleDateString('pt-BR')}
                     </span>
                     <span className="font-semibold tabular-nums">
-                      {s.correct}/{s.total}{' '}
-                      <span
-                        className={
-                          pct >= 70
-                            ? 'text-emerald-600 dark:text-emerald-400'
-                            : pct >= 50
-                              ? 'text-amber-600 dark:text-amber-400'
-                              : 'text-red-600 dark:text-red-400'
-                        }
-                      >
-                        ({pct}%)
+                      {s.correct}/{s.total}
+                      <span className="ml-1.5 rounded-md bg-slate-100 px-1.5 py-0.5 text-xs dark:bg-slate-800">
+                        {pct}%
                       </span>
                     </span>
                   </li>
                 );
               })}
             </ul>
+          )}
+          {(errosAbertos.count ?? 0) > 0 && (
+            <Link
+              href="/erros"
+              className="mt-3 inline-flex text-sm font-medium text-brand-600 hover:underline dark:text-brand-300"
+            >
+              {errosAbertos.count} erros abertos no caderno →
+            </Link>
           )}
         </Card>
 
@@ -322,6 +331,15 @@ export default async function Dashboard() {
             {GOLDEN_RULE}
           </p>
         </Card>
+      </div>
+
+      <div className="flex items-start gap-2 rounded-xl bg-slate-100 p-3 text-xs leading-5 text-slate-600 dark:bg-slate-800/60 dark:text-slate-400">
+        <Play size={14} className="mt-0.5 shrink-0" />
+        <span>
+          A projeção multiplica seu percentual de acerto em cada disciplina pelo número de questões
+          que ela tem na prova. Disciplinas ainda não treinadas ficam de fora da conta — por isso a
+          cobertura de {cobertura}% aparece ao lado do número.
+        </span>
       </div>
     </div>
   );
