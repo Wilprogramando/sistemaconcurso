@@ -1,0 +1,37 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-brand-50: #eef5ff;
+  --color-brand-100: #d9e7ff;
+  --color-brand-500: #1f4f8b;
+  --color-brand-600: #1a4477;
+  --color-brand-700: #143659;
+  --color-brand-900: #0b2038;
+  --font-sans: ui-sans-serif, system-ui, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: #f6f7f9;
+  color: #0f172a;
+}
+
+/* Texto da apostila: preserva as tabelas em layout de colunas do PDF */
+.apostila {
+  white-space: pre-wrap;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.65;
+  font-size: 0.9375rem;
+  overflow-x: auto;
+}
+
+.apostila-mono {
+  white-space: pre;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  overflow-x: auto;
+}
