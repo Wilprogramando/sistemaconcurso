@@ -11,6 +11,8 @@ export type Nota = {
   topic_id: number | null;
   tag: Tag;
   pinned: boolean;
+  /** caminhos no bucket privado `anotacoes` */
+  images: string[];
   created_at: string;
   updated_at: string;
 };

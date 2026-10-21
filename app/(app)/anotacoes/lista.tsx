@@ -5,6 +5,7 @@ import { useMemo, useState } from 'react';
 import { Pin, Plus, Search } from 'lucide-react';
 import EditorNota, { type Opcao } from '@/components/editor-nota';
 import { Card, Empty } from '@/components/ui';
+import ImagensDaNota from '@/components/imagens-nota';
 import { ORDEM_TAGS, TAGS, type Nota, type Tag } from '@/lib/notas';
 
 type NotaComContexto = Nota & {
@@ -268,6 +269,12 @@ function Cartao({
         <p className="mt-1 text-sm leading-7 whitespace-pre-wrap text-slate-700 dark:text-slate-300">
           {nota.body}
         </p>
+      )}
+
+      {nota.images?.length > 0 && (
+        <div className="mt-3">
+          <ImagensDaNota caminhos={nota.images} somenteLeitura />
+        </div>
       )}
 
       <p className="mt-2 text-xs text-slate-400">

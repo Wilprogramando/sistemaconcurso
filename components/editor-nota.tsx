@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Check, Pin, PinOff, Trash2, X } from 'lucide-react';
 import { useSessao } from '@/components/sessao';
+import ImagensDaNota from '@/components/imagens-nota';
 import { ORDEM_TAGS, TAGS, type Nota, type Tag } from '@/lib/notas';
 
 export type Opcao = { id: number; nome: string };
@@ -36,21 +37,23 @@ export default function EditorNota({
     nota?.discipline_id ?? disciplinaFixa ?? null
   );
   const [fixada, setFixada] = useState(nota?.pinned ?? false);
+  const [imagens, setImagens] = useState<string[]>(nota?.images ?? []);
   const [salvando, setSalvando] = useState(false);
 
-  const vazia = !titulo.trim() && !corpo.trim();
+  const vazia = !titulo.trim() && !corpo.trim() && imagens.length === 0;
 
   async function salvar() {
     if (vazia) return;
     setSalvando(true);
 
     const dados = {
-      title: titulo.trim() || corpo.trim().slice(0, 60),
+      title: titulo.trim() || corpo.trim().slice(0, 60) || 'Imagem',
       body: corpo.trim(),
       tag,
       discipline_id: disciplina,
       topic_id: nota?.topic_id ?? topicoFixo ?? null,
       pinned: fixada,
+      images: imagens,
     };
 
     if (nota) {
@@ -59,6 +62,7 @@ export default function EditorNota({
       await supabase.from('notes').insert({ ...dados, user_id: userId });
       setTitulo('');
       setCorpo('');
+      setImagens([]);
     }
 
     setSalvando(false);
@@ -76,7 +80,7 @@ export default function EditorNota({
   }
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-3" data-area-nota>
       <input
         value={titulo}
         onChange={(e) => setTitulo(e.target.value)}
@@ -92,6 +96,8 @@ export default function EditorNota({
         placeholder="Escreva aqui. Ex.: inquérito — 10 dias preso, 30 solto. O delegado NUNCA arquiva."
         className="w-full resize-y rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm leading-7 outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-100 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:focus:ring-brand-900"
       />
+
+      <ImagensDaNota caminhos={imagens} onChange={setImagens} />
 
       <div className="flex flex-wrap gap-1.5">
         {ORDEM_TAGS.map((t) => {

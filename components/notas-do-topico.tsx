@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { ChevronDown, NotebookPen, Plus } from 'lucide-react';
 import EditorNota from '@/components/editor-nota';
+import ImagensDaNota from '@/components/imagens-nota';
 import { TAGS, type Nota } from '@/lib/notas';
 
 /**
@@ -117,6 +118,11 @@ export default function NotasDoTopico({
                   <p className="mt-0.5 text-sm leading-7 whitespace-pre-wrap text-slate-700 dark:text-slate-300">
                     {n.body}
                   </p>
+                )}
+                {n.images?.length > 0 && (
+                  <div className="mt-2">
+                    <ImagensDaNota caminhos={n.images} somenteLeitura />
+                  </div>
                 )}
               </article>
             );
