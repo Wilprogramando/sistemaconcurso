@@ -108,7 +108,7 @@ export const ACOMPANHAR: Item[] = [
   },
 ];
 
-const PAINEL: Item = {
+export const PAINEL: Item = {
   href: '/dashboard',
   label: 'Painel',
   curto: 'Painel',
@@ -119,37 +119,6 @@ const PAINEL: Item = {
 export const TODOS: Item[] = [PAINEL, ...ESTUDAR, ...AVALIAR, ...ACOMPANHAR];
 
 const ehAtivo = (path: string, href: string) => path === href || path.startsWith(href + '/');
-
-/** Barra do topo (tablet e desktop). */
-export function NavTopo() {
-  const path = usePathname();
-
-  return (
-    <nav className="mx-auto hidden max-w-6xl px-4 md:block">
-      <ul className="flex gap-1 overflow-x-auto pb-2 text-sm whitespace-nowrap">
-        {TODOS.map(({ href, label, icone: Icone }) => {
-          const ativo = ehAtivo(path, href);
-          return (
-            <li key={href}>
-              <Link
-                href={href}
-                aria-current={ativo ? 'page' : undefined}
-                className={`flex items-center gap-2 rounded-lg px-3 py-2 font-medium transition ${
-                  ativo
-                    ? 'bg-white/15 text-white'
-                    : 'text-brand-100 hover:bg-white/10 hover:text-white'
-                }`}
-              >
-                <Icone size={16} />
-                {label}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-    </nav>
-  );
-}
 
 /** Barra inferior fixa (celular): 4 destinos + "Mais". */
 export function NavInferior() {

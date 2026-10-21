@@ -42,9 +42,9 @@ Peso real de cada disciplina (Tabela 8.1 do edital): Institucional 10, Constituc
 Penal 6, Processo Penal 6, Penal Militar 6, Legislação Especial 6, Trânsito 5, Informática 5 = 60
 questões + 20 pontos de redação. Aprovação exige 50% do total e **nenhuma disciplina zerada**.
 
-### No celular
+### Navegação
 
-Barra inferior fixa com as seções principais, alvos de toque de 44px, tema claro/escuro com
+No computador, barra lateral fixa com as seções agrupadas em Estudar, Avaliar e Acompanhar, e o usuário, o tema e o sair no rodapé dela. No celular, barra inferior fixa com as seções principais, alvos de toque de 44px, tema claro/escuro com
 alternância no cabeçalho, tabelas com rolagem própria e cartões no lugar de tabelas nas telas
 estreitas.
 
@@ -138,7 +138,9 @@ app/
 components/
   question-runner   motor de questões (CE e múltipla escolha, correção comentada)
   blocos            renderizador da teoria estruturada
-  navegacao, ui, tema, graficos, sessao
+  nav-lateral       barra lateral do desktop
+  navegacao         itens do menu e barra inferior do celular
+  ui, tema, graficos, sessao
 lib/
   supabase/         clients de browser e server (@supabase/ssr)
   srs.ts            revisão espaçada
