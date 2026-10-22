@@ -8,11 +8,26 @@
       "topicoRef": "6.6",
       "enunciado": "Durante fiscalização, o condutor é flagrado dirigindo com o direito de dirigir suspenso. De acordo com o CTB, a consequência administrativa é a",
       "alternativas": [
-        { "letra": "A", "texto": "advertência por escrito, por se tratar de primeira ocorrência." },
-        { "letra": "B", "texto": "cassação do documento de habilitação." },
-        { "letra": "C", "texto": "multa de natureza leve, com três pontos." },
-        { "letra": "D", "texto": "retenção do veículo até a apresentação de condutor habilitado, sem outra penalidade." },
-        { "letra": "E", "texto": "nova suspensão do direito de dirigir por trinta dias." }
+        {
+          "letra": "A",
+          "texto": "advertência por escrito, por se tratar de primeira ocorrência."
+        },
+        {
+          "letra": "B",
+          "texto": "cassação do documento de habilitação."
+        },
+        {
+          "letra": "C",
+          "texto": "multa de natureza leve, com três pontos."
+        },
+        {
+          "letra": "D",
+          "texto": "retenção do veículo até a apresentação de condutor habilitado, sem outra penalidade."
+        },
+        {
+          "letra": "E",
+          "texto": "nova suspensão do direito de dirigir por trinta dias."
+        }
       ],
       "resposta": "B",
       "justificativa": "Art. 263, I, do CTB: a cassação do documento de habilitação ocorre quando o condutor, estando com o direito de dirigir suspenso, vier a dirigir veículo automotor. A cassação também incide na reincidência, em doze meses, nas infrações dos arts. 162, I, 163, 164, 165, 173, 174 e 175, e quando o condutor é condenado judicialmente por delito de trânsito. Guarde a diferença: a SUSPENSÃO é temporária e por pontuação ou infração autônoma; a CASSAÇÃO retira o documento e exige novo processo de habilitação depois de dois anos."
@@ -23,11 +38,26 @@
       "topicoRef": "6.7",
       "enunciado": "Sobre o crime de racha previsto no art. 308 do CTB, assinale a opção correta.",
       "alternativas": [
-        { "letra": "A", "texto": "Exige resultado de lesão ou morte para se configurar." },
-        { "letra": "B", "texto": "Configura-se com a participação em corrida ou competição não autorizada em via pública, gerando situação de risco à incolumidade pública ou privada." },
-        { "letra": "C", "texto": "Somente se configura em vias federais." },
-        { "letra": "D", "texto": "É punido com detenção de um a três meses." },
-        { "letra": "E", "texto": "É crime de menor potencial ofensivo, sujeito a transação penal em qualquer hipótese." }
+        {
+          "letra": "A",
+          "texto": "Exige resultado de lesão ou morte para se configurar."
+        },
+        {
+          "letra": "B",
+          "texto": "Configura-se com a participação em corrida ou competição não autorizada em via pública, gerando situação de risco à incolumidade pública ou privada."
+        },
+        {
+          "letra": "C",
+          "texto": "Somente se configura em vias federais."
+        },
+        {
+          "letra": "D",
+          "texto": "É punido com detenção de um a três meses."
+        },
+        {
+          "letra": "E",
+          "texto": "É crime de menor potencial ofensivo, sujeito a transação penal em qualquer hipótese."
+        }
       ],
       "resposta": "B",
       "justificativa": "O art. 308 pune participar, na direção de veículo automotor, em via pública, de corrida, disputa ou competição automobilística ou exibição e demonstração de perícia em manobra, não autorizadas, gerando situação de risco à incolumidade pública ou privada. É crime de perigo CONCRETO: exige a situação de risco, mas não exige lesão ou morte — estas são qualificadoras dos §§1º e 2º, com penas que chegam a reclusão de 5 a 10 anos no caso de morte. C: aplica-se a qualquer via pública. D e E: a pena base é de detenção de 6 meses a 3 anos, multa e suspensão, o que afasta o menor potencial ofensivo."
@@ -38,11 +68,26 @@
       "topicoRef": "6.2",
       "enunciado": "Uma viatura policial em deslocamento de urgência, com sinalização luminosa e sonora acionada, aproxima-se de um cruzamento. Conforme o CTB, os veículos de prestação de serviço de urgência",
       "alternativas": [
-        { "letra": "A", "texto": "gozam de livre circulação, estacionamento e parada, quando em serviço de urgência e devidamente identificados, respeitadas as demais normas de segurança." },
-        { "letra": "B", "texto": "não têm prioridade alguma, devendo obedecer integralmente à sinalização." },
-        { "letra": "C", "texto": "têm prioridade apenas em vias de trânsito rápido." },
-        { "letra": "D", "texto": "podem trafegar em qualquer velocidade, sem limite, quando em serviço." },
-        { "letra": "E", "texto": "só têm prioridade mediante autorização prévia da autoridade de trânsito." }
+        {
+          "letra": "A",
+          "texto": "gozam de livre circulação, estacionamento e parada, quando em serviço de urgência e devidamente identificados, respeitadas as demais normas de segurança."
+        },
+        {
+          "letra": "B",
+          "texto": "não têm prioridade alguma, devendo obedecer integralmente à sinalização."
+        },
+        {
+          "letra": "C",
+          "texto": "têm prioridade apenas em vias de trânsito rápido."
+        },
+        {
+          "letra": "D",
+          "texto": "podem trafegar em qualquer velocidade, sem limite, quando em serviço."
+        },
+        {
+          "letra": "E",
+          "texto": "só têm prioridade mediante autorização prévia da autoridade de trânsito."
+        }
       ],
       "resposta": "A",
       "justificativa": "Art. 29, VII, do CTB: os veículos destinados a socorro de incêndio e salvamento, os de polícia, os de fiscalização e operação de trânsito e as ambulâncias gozam de livre circulação, estacionamento e parada quando em serviço de urgência e devidamente identificados por dispositivos regulamentares de alarme sonoro e iluminação vermelha intermitente. A prioridade não é absoluta: o §1º exige que o deslocamento se faça com a devida cautela e segurança, respeitadas as normas de circulação — a sirene não autoriza atropelar ninguém, e D está errada por isso."
@@ -53,11 +98,26 @@
       "topicoRef": "6.6",
       "enunciado": "Após constatar a infração, o agente lavra o auto de infração. Segundo o art. 280 do CTB, é elemento obrigatório do auto a",
       "alternativas": [
-        { "letra": "A", "texto": "assinatura do infrator, sob pena de nulidade do auto." },
-        { "letra": "B", "texto": "identificação do órgão ou entidade e da autoridade ou agente autuador." },
-        { "letra": "C", "texto": "indicação do valor exato da multa já atualizado." },
-        { "letra": "D", "texto": "presença de duas testemunhas em qualquer hipótese." },
-        { "letra": "E", "texto": "prova pericial do fato." }
+        {
+          "letra": "A",
+          "texto": "assinatura do infrator, sob pena de nulidade do auto."
+        },
+        {
+          "letra": "B",
+          "texto": "identificação do órgão ou entidade e da autoridade ou agente autuador."
+        },
+        {
+          "letra": "C",
+          "texto": "indicação do valor exato da multa já atualizado."
+        },
+        {
+          "letra": "D",
+          "texto": "presença de duas testemunhas em qualquer hipótese."
+        },
+        {
+          "letra": "E",
+          "texto": "prova pericial do fato."
+        }
       ],
       "resposta": "B",
       "justificativa": "O art. 280 exige, entre outros elementos, a tipificação da infração, o local, a data e a hora do cometimento, os caracteres da placa, a identificação do órgão ou entidade e da autoridade ou agente autuador, e a assinatura do infrator SEMPRE QUE POSSÍVEL — o que afasta A, pois a recusa em assinar não anula o auto. C: o valor é apurado depois, na notificação de penalidade. D e E: não há exigência de testemunhas nem de perícia para a lavratura."
@@ -68,11 +128,26 @@
       "topicoRef": "6.5",
       "enunciado": "Quanto ao exame toxicológico de larga janela de detecção previsto no CTB, é correto afirmar que é exigido dos condutores das categorias",
       "alternativas": [
-        { "letra": "A", "texto": "A e B, na habilitação e na renovação." },
-        { "letra": "B", "texto": "B, C e D, apenas na primeira habilitação." },
-        { "letra": "C", "texto": "C, D e E, na habilitação e na renovação, além de periodicamente no caso de motorista profissional." },
-        { "letra": "D", "texto": "de todas as categorias, a cada cinco anos." },
-        { "letra": "E", "texto": "A e E, por envolverem maior risco." }
+        {
+          "letra": "A",
+          "texto": "A e B, na habilitação e na renovação."
+        },
+        {
+          "letra": "B",
+          "texto": "B, C e D, apenas na primeira habilitação."
+        },
+        {
+          "letra": "C",
+          "texto": "C, D e E, na habilitação e na renovação, além de periodicamente no caso de motorista profissional."
+        },
+        {
+          "letra": "D",
+          "texto": "de todas as categorias, a cada cinco anos."
+        },
+        {
+          "letra": "E",
+          "texto": "A e E, por envolverem maior risco."
+        }
       ],
       "resposta": "C",
       "justificativa": "Art. 148-A do CTB: os condutores das categorias C, D e E devem submeter-se a exame toxicológico de larga janela de detecção para a habilitação e para a renovação, e os motoristas profissionais dessas categorias também periodicamente, na forma da lei. A lógica é o risco envolvido no transporte de carga pesada e de passageiros — justamente as categorias C, D e E. Não confunda com o teste de alcoolemia do art. 277, que é aplicado na fiscalização de qualquer condutor."
@@ -83,11 +158,26 @@
       "topicoRef": "6.2",
       "enunciado": "De acordo com o CTB, nas vias rurais de pista dupla, na ausência de sinalização regulamentadora, a velocidade máxima permitida para automóveis e camionetas é de",
       "alternativas": [
-        { "letra": "A", "texto": "80 km/h." },
-        { "letra": "B", "texto": "90 km/h." },
-        { "letra": "C", "texto": "100 km/h." },
-        { "letra": "D", "texto": "110 km/h." },
-        { "letra": "E", "texto": "120 km/h." }
+        {
+          "letra": "A",
+          "texto": "80 km/h."
+        },
+        {
+          "letra": "B",
+          "texto": "90 km/h."
+        },
+        {
+          "letra": "C",
+          "texto": "100 km/h."
+        },
+        {
+          "letra": "D",
+          "texto": "110 km/h."
+        },
+        {
+          "letra": "E",
+          "texto": "120 km/h."
+        }
       ],
       "resposta": "D",
       "justificativa": "Art. 61, §1º, II, do CTB: nas vias rurais, 110 km/h para automóveis, camionetas e motocicletas nas rodovias de pista dupla; 90 km/h nas rodovias de pista simples; e 60 km/h nas estradas (vias rurais não pavimentadas). Para ônibus e caminhões os limites caem para 90 e 80 km/h nas rodovias. Decore a escada rural 110-90-60 ao lado da urbana 80-60-40-30."
@@ -98,11 +188,26 @@
       "topicoRef": "6.7",
       "enunciado": "Condutor envolvido em acidente com vítima foge do local para evitar responsabilização. Essa conduta configura",
       "alternativas": [
-        { "letra": "A", "texto": "apenas infração administrativa, sem repercussão penal." },
-        { "letra": "B", "texto": "o crime do art. 305 do CTB, com pena de detenção de seis meses a um ano, ou multa." },
-        { "letra": "C", "texto": "o crime de omissão de socorro do art. 135 do Código Penal, exclusivamente." },
-        { "letra": "D", "texto": "fato atípico, por força do princípio da não autoincriminação." },
-        { "letra": "E", "texto": "o crime do art. 304 do CTB, com pena de reclusão." }
+        {
+          "letra": "A",
+          "texto": "apenas infração administrativa, sem repercussão penal."
+        },
+        {
+          "letra": "B",
+          "texto": "o crime do art. 305 do CTB, com pena de detenção de seis meses a um ano, ou multa."
+        },
+        {
+          "letra": "C",
+          "texto": "o crime de omissão de socorro do art. 135 do Código Penal, exclusivamente."
+        },
+        {
+          "letra": "D",
+          "texto": "fato atípico, por força do princípio da não autoincriminação."
+        },
+        {
+          "letra": "E",
+          "texto": "o crime do art. 304 do CTB, com pena de reclusão."
+        }
       ],
       "resposta": "B",
       "justificativa": "Art. 305 do CTB: afastar-se o condutor do veículo do local do acidente, para fugir à responsabilidade penal ou civil que lhe possa ser atribuída, é punido com detenção de seis meses a um ano, ou multa. O STF já reconheceu a constitucionalidade do tipo, afastando a tese de violação à não autoincriminação (D). Não confunda com o art. 304, que pune deixar de prestar imediato socorro à vítima — ali o verbo é omitir socorro; aqui, é fugir do local."
@@ -113,11 +218,26 @@
       "topicoRef": "6.6",
       "enunciado": "Sobre as medidas administrativas aplicáveis na fiscalização de trânsito, assinale a opção correta.",
       "alternativas": [
-        { "letra": "A", "texto": "A remoção do veículo é penalidade, e não medida administrativa." },
-        { "letra": "B", "texto": "O recolhimento da CNH é penalidade autônoma prevista no art. 256." },
-        { "letra": "C", "texto": "A retenção do veículo pode ser sanada no local, quando a irregularidade puder ali ser corrigida." },
-        { "letra": "D", "texto": "O transbordo de excesso de carga é penalidade de natureza grave." },
-        { "letra": "E", "texto": "As medidas administrativas só podem ser aplicadas após decisão judicial." }
+        {
+          "letra": "A",
+          "texto": "A remoção do veículo é penalidade, e não medida administrativa."
+        },
+        {
+          "letra": "B",
+          "texto": "O recolhimento da CNH é penalidade autônoma prevista no art. 256."
+        },
+        {
+          "letra": "C",
+          "texto": "A retenção do veículo pode ser sanada no local, quando a irregularidade puder ali ser corrigida."
+        },
+        {
+          "letra": "D",
+          "texto": "O transbordo de excesso de carga é penalidade de natureza grave."
+        },
+        {
+          "letra": "E",
+          "texto": "As medidas administrativas só podem ser aplicadas após decisão judicial."
+        }
       ],
       "resposta": "C",
       "justificativa": "Art. 270, §1º, do CTB: quando a irregularidade puder ser sanada no local, o veículo será liberado tão logo regularizada a situação. Retenção, remoção, recolhimento da CNH, da PPD, do CRLV e do CRV e transbordo de excesso de carga são todas MEDIDAS ADMINISTRATIVAS do art. 269 — nenhuma delas é penalidade, o que elimina A, B e D. E: as medidas administrativas são aplicadas pelo agente no ato da fiscalização, sem necessidade de decisão judicial."
@@ -128,11 +248,26 @@
       "topicoRef": "6.3",
       "enunciado": "Quanto à sinalização de trânsito, assinale a opção correta.",
       "alternativas": [
-        { "letra": "A", "texto": "É permitida a afixação de publicidade sobre a sinalização, desde que não a oculte totalmente." },
-        { "letra": "B", "texto": "A sinalização vertical de regulamentação informa condições e recomendações, sem caráter obrigatório." },
-        { "letra": "C", "texto": "O semáforo prevalece sobre os sinais de parada obrigatória." },
-        { "letra": "D", "texto": "É vedada a utilização de qualquer elemento que possa prejudicar a visibilidade, a visualização e a interpretação da sinalização." },
-        { "letra": "E", "texto": "As marcas viárias são sinalização vertical." }
+        {
+          "letra": "A",
+          "texto": "É permitida a afixação de publicidade sobre a sinalização, desde que não a oculte totalmente."
+        },
+        {
+          "letra": "B",
+          "texto": "A sinalização vertical de regulamentação informa condições e recomendações, sem caráter obrigatório."
+        },
+        {
+          "letra": "C",
+          "texto": "O semáforo prevalece sobre os sinais de parada obrigatória."
+        },
+        {
+          "letra": "D",
+          "texto": "É vedada a utilização de qualquer elemento que possa prejudicar a visibilidade, a visualização e a interpretação da sinalização."
+        },
+        {
+          "letra": "E",
+          "texto": "As marcas viárias são sinalização vertical."
+        }
       ],
       "resposta": "D",
       "justificativa": "Art. 80 do CTB: é vedada a utilização de qualquer elemento que prejudique a visibilidade, a visualização e a interpretação da sinalização — o que já elimina A. B: a sinalização de REGULAMENTAÇÃO impõe obrigações, limitações e proibições; quem informa e recomenda é a de indicação e a de advertência. C: o art. 89 ressalva expressamente os sinais de parada obrigatória, que prevalecem sobre o semáforo. E: as marcas viárias são sinalização HORIZONTAL (pintadas no pavimento)."
@@ -143,11 +278,26 @@
       "topicoRef": "6.5",
       "enunciado": "Em relação à Permissão para Dirigir e à CNH, assinale a opção correta.",
       "alternativas": [
-        { "letra": "A", "texto": "O permissionário obtém a CNH ao fim de um ano, desde que não tenha cometido nenhuma infração de natureza grave ou gravíssima, nem seja reincidente em infração média." },
-        { "letra": "B", "texto": "O permissionário obtém a CNH automaticamente ao fim de um ano, independentemente do histórico de infrações." },
-        { "letra": "C", "texto": "A Permissão para Dirigir permite dirigir qualquer categoria de veículo." },
-        { "letra": "D", "texto": "O porte do documento de habilitação é dispensado em todo o território nacional." },
-        { "letra": "E", "texto": "A CNH tem validade de cinco anos para condutores de qualquer idade." }
+        {
+          "letra": "A",
+          "texto": "O permissionário obtém a CNH ao fim de um ano, desde que não tenha cometido nenhuma infração de natureza grave ou gravíssima, nem seja reincidente em infração média."
+        },
+        {
+          "letra": "B",
+          "texto": "O permissionário obtém a CNH automaticamente ao fim de um ano, independentemente do histórico de infrações."
+        },
+        {
+          "letra": "C",
+          "texto": "A Permissão para Dirigir permite dirigir qualquer categoria de veículo."
+        },
+        {
+          "letra": "D",
+          "texto": "O porte do documento de habilitação é dispensado em todo o território nacional."
+        },
+        {
+          "letra": "E",
+          "texto": "A CNH tem validade de cinco anos para condutores de qualquer idade."
+        }
       ],
       "resposta": "A",
       "justificativa": "Art. 148, §3º, do CTB: ao fim de um ano, obtém a CNH o condutor que não tenha cometido nenhuma infração de natureza grave ou gravíssima nem seja reincidente em infração média durante o período de permissão. B ignora essa condição, que é o núcleo do instituto. C: a permissão é concedida para a categoria em que o candidato foi habilitado. D: o porte é obrigatório, admitido o meio digital (CNH-e). E: a validade varia com a idade — 10 anos até 49, 5 anos de 50 a 70 e 3 anos acima de 70."
@@ -158,11 +308,26 @@
       "topicoRef": "6.1",
       "enunciado": "Conforme o art. 1º do CTB, o trânsito em condições seguras é",
       "alternativas": [
-        { "letra": "A", "texto": "um direito de todos e um dever dos órgãos e entidades componentes do Sistema Nacional de Trânsito." },
-        { "letra": "B", "texto": "um dever exclusivo do condutor." },
-        { "letra": "C", "texto": "uma faculdade da administração pública." },
-        { "letra": "D", "texto": "responsabilidade apenas dos municípios." },
-        { "letra": "E", "texto": "atribuição privativa da Polícia Rodoviária Federal." }
+        {
+          "letra": "A",
+          "texto": "um direito de todos e um dever dos órgãos e entidades componentes do Sistema Nacional de Trânsito."
+        },
+        {
+          "letra": "B",
+          "texto": "um dever exclusivo do condutor."
+        },
+        {
+          "letra": "C",
+          "texto": "uma faculdade da administração pública."
+        },
+        {
+          "letra": "D",
+          "texto": "responsabilidade apenas dos municípios."
+        },
+        {
+          "letra": "E",
+          "texto": "atribuição privativa da Polícia Rodoviária Federal."
+        }
       ],
       "resposta": "A",
       "justificativa": "Art. 1º, §2º, do CTB: o trânsito em condições seguras é um direito de todos e um dever dos órgãos e entidades componentes do Sistema Nacional de Trânsito, a estes cabendo, no âmbito das respectivas competências, adotar as medidas destinadas a assegurar esse direito. O §3º acrescenta que esses órgãos respondem objetivamente por danos causados aos cidadãos em virtude de ação, omissão ou erro na execução de medidas que garantam o trânsito seguro."
@@ -173,11 +338,26 @@
       "topicoRef": "6.6",
       "enunciado": "Condutor é flagrado com concentração de álcool no sangue inferior ao limite do crime, mas detectável. Segundo o CTB, essa situação caracteriza",
       "alternativas": [
-        { "letra": "A", "texto": "fato atípico e irrelevante, administrativa e penalmente." },
-        { "letra": "B", "texto": "o crime do art. 306, independentemente da concentração." },
-        { "letra": "C", "texto": "a infração administrativa gravíssima do art. 165, que se configura com qualquer concentração de álcool por litro de sangue." },
-        { "letra": "D", "texto": "apenas advertência por escrito." },
-        { "letra": "E", "texto": "infração de natureza média, com quatro pontos." }
+        {
+          "letra": "A",
+          "texto": "fato atípico e irrelevante, administrativa e penalmente."
+        },
+        {
+          "letra": "B",
+          "texto": "o crime do art. 306, independentemente da concentração."
+        },
+        {
+          "letra": "C",
+          "texto": "a infração administrativa gravíssima do art. 165, que se configura com qualquer concentração de álcool por litro de sangue."
+        },
+        {
+          "letra": "D",
+          "texto": "apenas advertência por escrito."
+        },
+        {
+          "letra": "E",
+          "texto": "infração de natureza média, com quatro pontos."
+        }
       ],
       "resposta": "C",
       "justificativa": "A distinção entre a esfera administrativa e a penal é o coração do tema. A infração do art. 165 configura-se com QUALQUER concentração de álcool por litro de sangue, e é gravíssima, com multa multiplicada por dez e suspensão por doze meses. Já o CRIME do art. 306 exige concentração igual ou superior a 6 decigramas por litro de sangue (ou 0,3 mg/L de ar alveolar) OU sinais que indiquem alteração da capacidade psicomotora. Ou seja: pode haver infração administrativa sem crime, mas todo crime do art. 306 também é infração do art. 165."
@@ -188,11 +368,26 @@
       "topicoRef": "5.5",
       "enunciado": "Sobre o tráfico de drogas previsto no art. 33 da Lei n.º 11.343/2006, assinale a opção correta.",
       "alternativas": [
-        { "letra": "A", "texto": "O tipo penal é de ação única, exigindo a prática de venda da substância." },
-        { "letra": "B", "texto": "O tipo é de ação múltipla, bastando a prática de um dos vários verbos previstos, como importar, guardar, ter em depósito ou transportar." },
-        { "letra": "C", "texto": "Exige-se sempre a apreensão da substância em poder do agente." },
-        { "letra": "D", "texto": "A pena é de detenção de dois a cinco anos." },
-        { "letra": "E", "texto": "O crime admite fiança por não ser equiparado a hediondo." }
+        {
+          "letra": "A",
+          "texto": "O tipo penal é de ação única, exigindo a prática de venda da substância."
+        },
+        {
+          "letra": "B",
+          "texto": "O tipo é de ação múltipla, bastando a prática de um dos vários verbos previstos, como importar, guardar, ter em depósito ou transportar."
+        },
+        {
+          "letra": "C",
+          "texto": "Exige-se sempre a apreensão da substância em poder do agente."
+        },
+        {
+          "letra": "D",
+          "texto": "A pena é de detenção de dois a cinco anos."
+        },
+        {
+          "letra": "E",
+          "texto": "O crime admite fiança por não ser equiparado a hediondo."
+        }
       ],
       "resposta": "B",
       "justificativa": "O art. 33 é tipo misto alternativo (ação múltipla), com dezoito verbos — importar, exportar, remeter, preparar, produzir, fabricar, adquirir, vender, expor à venda, oferecer, ter em depósito, transportar, trazer consigo, guardar, prescrever, ministrar, entregar a consumo ou fornecer drogas. Praticar mais de um deles no mesmo contexto gera crime único. D: a pena é de RECLUSÃO de 5 a 15 anos e multa. E: o tráfico é equiparado a hediondo, sendo inafiançável e insuscetível de graça ou anistia."
@@ -203,11 +398,26 @@
       "topicoRef": "5.8",
       "enunciado": "Policial militar atende ocorrência de violência doméstica. Segundo a Lei Maria da Penha, entre as providências que a autoridade policial deve adotar está",
       "alternativas": [
-        { "letra": "A", "texto": "aguardar ordem judicial para garantir proteção policial à ofendida." },
-        { "letra": "B", "texto": "garantir proteção policial à ofendida quando necessário, e encaminhá-la ao hospital ou posto de saúde e ao Instituto Médico Legal." },
-        { "letra": "C", "texto": "promover a conciliação entre as partes antes de qualquer registro." },
-        { "letra": "D", "texto": "exigir representação por escrito da vítima para registrar a ocorrência de lesão corporal." },
-        { "letra": "E", "texto": "encaminhar o agressor diretamente ao juizado especial criminal." }
+        {
+          "letra": "A",
+          "texto": "aguardar ordem judicial para garantir proteção policial à ofendida."
+        },
+        {
+          "letra": "B",
+          "texto": "garantir proteção policial à ofendida quando necessário, e encaminhá-la ao hospital ou posto de saúde e ao Instituto Médico Legal."
+        },
+        {
+          "letra": "C",
+          "texto": "promover a conciliação entre as partes antes de qualquer registro."
+        },
+        {
+          "letra": "D",
+          "texto": "exigir representação por escrito da vítima para registrar a ocorrência de lesão corporal."
+        },
+        {
+          "letra": "E",
+          "texto": "encaminhar o agressor diretamente ao juizado especial criminal."
+        }
       ],
       "resposta": "B",
       "justificativa": "Art. 11 da Lei 11.340/2006: no atendimento à mulher em situação de violência doméstica, a autoridade policial deverá, entre outras providências, garantir proteção policial quando necessário, encaminhar a ofendida ao hospital, posto de saúde e ao Instituto Médico Legal, fornecer transporte para local seguro e acompanhá-la para retirar seus pertences. A: a proteção é imediata, não depende de ordem judicial. C: a lei veda a banalização do conflito, e a conciliação não substitui o registro. D: a lesão corporal é de ação pública incondicionada (Súmula 542 do STJ). E: o art. 41 afasta a aplicação da Lei 9.099/95."
@@ -218,11 +428,26 @@
       "topicoRef": "5.9",
       "enunciado": "Adolescente de dezesseis anos é apreendido em flagrante de ato infracional análogo a roubo. De acordo com o ECA, a autoridade policial deve",
       "alternativas": [
-        { "letra": "A", "texto": "lavrar auto de prisão em flagrante e recolhê-lo a estabelecimento prisional." },
-        { "letra": "B", "texto": "lavrar auto de apreensão, comunicar imediatamente à autoridade judiciária competente e à família ou pessoa indicada pelo adolescente." },
-        { "letra": "C", "texto": "liberá-lo imediatamente, por ser inimputável." },
-        { "letra": "D", "texto": "encaminhá-lo ao juizado especial criminal." },
-        { "letra": "E", "texto": "aplicar diretamente a medida socioeducativa de internação." }
+        {
+          "letra": "A",
+          "texto": "lavrar auto de prisão em flagrante e recolhê-lo a estabelecimento prisional."
+        },
+        {
+          "letra": "B",
+          "texto": "lavrar auto de apreensão, comunicar imediatamente à autoridade judiciária competente e à família ou pessoa indicada pelo adolescente."
+        },
+        {
+          "letra": "C",
+          "texto": "liberá-lo imediatamente, por ser inimputável."
+        },
+        {
+          "letra": "D",
+          "texto": "encaminhá-lo ao juizado especial criminal."
+        },
+        {
+          "letra": "E",
+          "texto": "aplicar diretamente a medida socioeducativa de internação."
+        }
       ],
       "resposta": "B",
       "justificativa": "Art. 107 do ECA: a apreensão de qualquer adolescente e o local onde se encontra recolhido serão incontinenti comunicados à autoridade judiciária competente e à família do apreendido ou à pessoa por ele indicada. A: adolescente não é preso em flagrante nem recolhido a estabelecimento prisional — ele é apreendido e encaminhado a entidade de atendimento. C: a inimputabilidade penal não afasta a responsabilização por ato infracional, com medidas socioeducativas. D: ato infracional não vai a juizado criminal. E: a medida socioeducativa é aplicada pelo JUIZ, após o devido processo, nunca pela autoridade policial."
@@ -233,11 +458,26 @@
       "topicoRef": "5.7",
       "enunciado": "Quanto ao porte de arma de fogo pelo policial militar, de acordo com a Lei n.º 10.826/2003, é correto afirmar que",
       "alternativas": [
-        { "letra": "A", "texto": "o porte é garantido apenas em serviço e dentro do território do município onde serve." },
-        { "letra": "B", "texto": "os integrantes das polícias militares têm porte de arma de fogo garantido por lei, nos termos do regulamento e observados os requisitos legais, inclusive fora de serviço." },
-        { "letra": "C", "texto": "o policial militar precisa de autorização individual da Polícia Federal para portar arma institucional." },
-        { "letra": "D", "texto": "o porte é vedado ao policial militar da reserva em qualquer hipótese." },
-        { "letra": "E", "texto": "o porte depende de renovação anual perante o juízo criminal." }
+        {
+          "letra": "A",
+          "texto": "o porte é garantido apenas em serviço e dentro do território do município onde serve."
+        },
+        {
+          "letra": "B",
+          "texto": "os integrantes das polícias militares têm porte de arma de fogo garantido por lei, nos termos do regulamento e observados os requisitos legais, inclusive fora de serviço."
+        },
+        {
+          "letra": "C",
+          "texto": "o policial militar precisa de autorização individual da Polícia Federal para portar arma institucional."
+        },
+        {
+          "letra": "D",
+          "texto": "o porte é vedado ao policial militar da reserva em qualquer hipótese."
+        },
+        {
+          "letra": "E",
+          "texto": "o porte depende de renovação anual perante o juízo criminal."
+        }
       ],
       "resposta": "B",
       "justificativa": "O art. 6º do Estatuto do Desarmamento, ao vedar o porte em regra, ressalva expressamente os integrantes das Forças Armadas e das polícias federal, rodoviária federal, civis e MILITARES, bem como dos corpos de bombeiros militares, com porte garantido nos termos do regulamento e condicionado à comprovação periódica de aptidão psicológica e de capacidade técnica. A: o porte dos policiais militares abrange, nos termos do regulamento, também o período fora de serviço. C: o porte decorre da lei e do regulamento da corporação, e não de autorização individual da PF. D: integrantes das PMs transferidos para a inatividade podem ter o porte mantido, observados os requisitos."
@@ -248,11 +488,26 @@
       "topicoRef": "5.1",
       "enunciado": "Assinale a opção que apresenta somente crimes considerados hediondos ou a eles equiparados.",
       "alternativas": [
-        { "letra": "A", "texto": "furto qualificado, estelionato e receptação." },
-        { "letra": "B", "texto": "latrocínio, estupro e tortura." },
-        { "letra": "C", "texto": "lesão corporal leve, ameaça e dano." },
-        { "letra": "D", "texto": "desacato, resistência e desobediência." },
-        { "letra": "E", "texto": "apropriação indébita, peculato e concussão." }
+        {
+          "letra": "A",
+          "texto": "furto qualificado, estelionato e receptação."
+        },
+        {
+          "letra": "B",
+          "texto": "latrocínio, estupro e tortura."
+        },
+        {
+          "letra": "C",
+          "texto": "lesão corporal leve, ameaça e dano."
+        },
+        {
+          "letra": "D",
+          "texto": "desacato, resistência e desobediência."
+        },
+        {
+          "letra": "E",
+          "texto": "apropriação indébita, peculato e concussão."
+        }
       ],
       "resposta": "B",
       "justificativa": "Latrocínio (roubo seguido de morte) e estupro integram o rol taxativo dos hediondos da Lei 8.072/1990; a tortura é EQUIPARADA a hediondo pelo art. 5º, XLIII, da CF, ao lado do tráfico e do terrorismo. As demais alternativas trazem crimes comuns que não integram o rol — e lembre que o rol é taxativo: a hediondez nunca decorre da gravidade concreta do fato, apenas de previsão legal expressa."
@@ -263,11 +518,26 @@
       "topicoRef": "5.6",
       "enunciado": "Sobre os sujeitos da Lei de Abuso de Autoridade, assinale a opção correta.",
       "alternativas": [
-        { "letra": "A", "texto": "Alcança apenas servidores do Poder Executivo federal." },
-        { "letra": "B", "texto": "Alcança qualquer agente público, servidor ou não, da administração direta, indireta ou fundacional de qualquer dos Poderes e de todos os entes da Federação." },
-        { "letra": "C", "texto": "Exclui expressamente os militares estaduais, por terem regulamento disciplinar próprio." },
-        { "letra": "D", "texto": "Alcança apenas quem exerce cargo efetivo, excluídos os comissionados." },
-        { "letra": "E", "texto": "Alcança somente membros do Ministério Público e da magistratura." }
+        {
+          "letra": "A",
+          "texto": "Alcança apenas servidores do Poder Executivo federal."
+        },
+        {
+          "letra": "B",
+          "texto": "Alcança qualquer agente público, servidor ou não, da administração direta, indireta ou fundacional de qualquer dos Poderes e de todos os entes da Federação."
+        },
+        {
+          "letra": "C",
+          "texto": "Exclui expressamente os militares estaduais, por terem regulamento disciplinar próprio."
+        },
+        {
+          "letra": "D",
+          "texto": "Alcança apenas quem exerce cargo efetivo, excluídos os comissionados."
+        },
+        {
+          "letra": "E",
+          "texto": "Alcança somente membros do Ministério Público e da magistratura."
+        }
       ],
       "resposta": "B",
       "justificativa": "Art. 2º da Lei 13.869/2019: é sujeito ativo qualquer agente público, servidor ou não, da administração direta, indireta ou fundacional de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios, abrangendo quem exerce, ainda que transitoriamente ou sem remuneração, cargo, emprego ou função. Isso inclui expressamente os militares — e é justamente por isso que a lei é leitura obrigatória para o policial militar. A responsabilização penal convive com a disciplinar, porque as instâncias são independentes."
@@ -278,11 +548,26 @@
       "topicoRef": "5.3",
       "enunciado": "Policial militar, durante custódia de preso, permite que terceiros submetam o custodiado a sofrimento físico intenso, nada fazendo para impedir. Segundo a Lei de Tortura, essa conduta",
       "alternativas": [
-        { "letra": "A", "texto": "é atípica, pois ele não praticou diretamente a agressão." },
-        { "letra": "B", "texto": "configura o crime de omissão de socorro do Código Penal." },
-        { "letra": "C", "texto": "configura o crime de tortura por omissão, de quem tinha o dever de evitá-la ou apurá-la." },
-        { "letra": "D", "texto": "configura apenas transgressão disciplinar." },
-        { "letra": "E", "texto": "configura prevaricação, com pena de detenção de três meses a um ano." }
+        {
+          "letra": "A",
+          "texto": "é atípica, pois ele não praticou diretamente a agressão."
+        },
+        {
+          "letra": "B",
+          "texto": "configura o crime de omissão de socorro do Código Penal."
+        },
+        {
+          "letra": "C",
+          "texto": "configura o crime de tortura por omissão, de quem tinha o dever de evitá-la ou apurá-la."
+        },
+        {
+          "letra": "D",
+          "texto": "configura apenas transgressão disciplinar."
+        },
+        {
+          "letra": "E",
+          "texto": "configura prevaricação, com pena de detenção de três meses a um ano."
+        }
       ],
       "resposta": "C",
       "justificativa": "Art. 1º, §2º, da Lei 9.455/1997: aquele que se omite em face dessas condutas, quando tinha o dever de evitá-las ou apurá-las, incorre na pena de detenção de um a quatro anos. É a chamada tortura-omissão, que atinge diretamente quem tem a custódia do preso. A alternativa A ignora a posição de garantidor; a D ignora que a responsabilidade penal e a disciplinar são independentes e cumuláveis. Lembre ainda que a condenação por tortura acarreta perda do cargo como efeito AUTOMÁTICO."
@@ -293,11 +578,26 @@
       "topicoRef": "5.10",
       "enunciado": "De acordo com o Estatuto da Pessoa Idosa, assinale a opção correta.",
       "alternativas": [
-        { "letra": "A", "texto": "A gratuidade no transporte coletivo urbano é assegurada a partir dos 60 anos." },
-        { "letra": "B", "texto": "A gratuidade no transporte coletivo urbano é assegurada a partir dos 65 anos." },
-        { "letra": "C", "texto": "Abandonar pessoa idosa em hospitais é conduta atípica." },
-        { "letra": "D", "texto": "Os crimes do Estatuto são todos de ação penal privada." },
-        { "letra": "E", "texto": "A prioridade de atendimento não alcança processos judiciais." }
+        {
+          "letra": "A",
+          "texto": "A gratuidade no transporte coletivo urbano é assegurada a partir dos 60 anos."
+        },
+        {
+          "letra": "B",
+          "texto": "A gratuidade no transporte coletivo urbano é assegurada a partir dos 65 anos."
+        },
+        {
+          "letra": "C",
+          "texto": "Abandonar pessoa idosa em hospitais é conduta atípica."
+        },
+        {
+          "letra": "D",
+          "texto": "Os crimes do Estatuto são todos de ação penal privada."
+        },
+        {
+          "letra": "E",
+          "texto": "A prioridade de atendimento não alcança processos judiciais."
+        }
       ],
       "resposta": "B",
       "justificativa": "Art. 39 do Estatuto: aos maiores de 65 anos fica assegurada a gratuidade dos transportes coletivos públicos urbanos e semiurbanos. Esse é o ponto em que a idade do benefício (65) se descola da definição de pessoa idosa (60 anos, art. 1º) — e é exatamente aí que a banca arma a troca. C: abandonar pessoa idosa em hospitais, casas de saúde ou entidades de longa permanência é crime com pena de detenção de 6 meses a 3 anos e multa. D: os crimes do Estatuto são de ação penal pública incondicionada. E: há prioridade na tramitação de processos e procedimentos em que figure como parte ou interveniente pessoa idosa."
@@ -308,11 +608,26 @@
       "topicoRef": "5.4",
       "enunciado": "Quanto aos meios de obtenção de prova da Lei n.º 12.850/2013, assinale a opção correta.",
       "alternativas": [
-        { "letra": "A", "texto": "A infiltração de agentes independe de autorização judicial." },
-        { "letra": "B", "texto": "A colaboração premiada pode ser celebrada pelo delegado de polícia, nos autos do inquérito, com manifestação do Ministério Público." },
-        { "letra": "C", "texto": "A ação controlada depende de autorização judicial prévia e expressa em todos os casos." },
-        { "letra": "D", "texto": "A colaboração premiada, isoladamente, basta para fundamentar sentença condenatória." },
-        { "letra": "E", "texto": "O acesso a registros telefônicos e cadastrais exige sempre autorização judicial." }
+        {
+          "letra": "A",
+          "texto": "A infiltração de agentes independe de autorização judicial."
+        },
+        {
+          "letra": "B",
+          "texto": "A colaboração premiada pode ser celebrada pelo delegado de polícia, nos autos do inquérito, com manifestação do Ministério Público."
+        },
+        {
+          "letra": "C",
+          "texto": "A ação controlada depende de autorização judicial prévia e expressa em todos os casos."
+        },
+        {
+          "letra": "D",
+          "texto": "A colaboração premiada, isoladamente, basta para fundamentar sentença condenatória."
+        },
+        {
+          "letra": "E",
+          "texto": "O acesso a registros telefônicos e cadastrais exige sempre autorização judicial."
+        }
       ],
       "resposta": "B",
       "justificativa": "Art. 4º, §6º, da Lei 12.850/2013: o delegado de polícia pode celebrar acordo de colaboração nos autos do inquérito policial, com manifestação do Ministério Público. A: a infiltração de agentes exige autorização judicial circunstanciada e motivada (art. 10). C: a ação controlada depende de prévia COMUNICAÇÃO ao juiz, que pode fixar limites — não de autorização prévia (art. 8º, §1º). D: o §16 veda expressamente a condenação fundada apenas nas declarações do colaborador. E: dados cadastrais que informem qualificação, filiação e endereço podem ser acessados independentemente de autorização judicial (art. 15)."
@@ -323,11 +638,26 @@
       "topicoRef": "5.11",
       "enunciado": "Durante abordagem, o indivíduo apresenta documento de identidade que contém rasura evidente. Conforme a Lei n.º 12.037/2009, nessa situação",
       "alternativas": [
-        { "letra": "A", "texto": "é vedada a identificação criminal, por já haver identificação civil." },
-        { "letra": "B", "texto": "é admitida a identificação criminal, por se tratar de hipótese legal expressa." },
-        { "letra": "C", "texto": "a identificação criminal depende de prévia autorização judicial." },
-        { "letra": "D", "texto": "o abordado deve ser preso por uso de documento falso, independentemente de perícia." },
-        { "letra": "E", "texto": "a identificação só pode ser feita por processo datiloscópico, vedada a fotográfica." }
+        {
+          "letra": "A",
+          "texto": "é vedada a identificação criminal, por já haver identificação civil."
+        },
+        {
+          "letra": "B",
+          "texto": "é admitida a identificação criminal, por se tratar de hipótese legal expressa."
+        },
+        {
+          "letra": "C",
+          "texto": "a identificação criminal depende de prévia autorização judicial."
+        },
+        {
+          "letra": "D",
+          "texto": "o abordado deve ser preso por uso de documento falso, independentemente de perícia."
+        },
+        {
+          "letra": "E",
+          "texto": "a identificação só pode ser feita por processo datiloscópico, vedada a fotográfica."
+        }
       ],
       "resposta": "B",
       "justificativa": "Art. 3º, I, da Lei 12.037/2009: o civilmente identificado poderá ser submetido a identificação criminal quando o documento apresentar rasura ou tiver indício de falsificação. Das seis hipóteses do artigo, apenas uma — a identificação criminal essencial às investigações — exige decisão da autoridade judiciária, o que afasta C. E: a identificação criminal inclui o processo datiloscópico e o fotográfico (art. 5º). D: a tipificação de uso de documento falso depende de exame e de elementos concretos, não decorre automaticamente da rasura."
@@ -338,11 +668,26 @@
       "topicoRef": "5.5",
       "enunciado": "Quanto ao chamado tráfico privilegiado (art. 33, §4º, da Lei n.º 11.343/2006), é correto afirmar que exige que o agente seja",
       "alternativas": [
-        { "letra": "A", "texto": "primário, de bons antecedentes, que não se dedique a atividades criminosas nem integre organização criminosa." },
-        { "letra": "B", "texto": "primário, bastando esse requisito isolado." },
-        { "letra": "C", "texto": "menor de 21 anos na data do fato." },
-        { "letra": "D", "texto": "reincidente específico, com confissão espontânea." },
-        { "letra": "E", "texto": "usuário de drogas comprovadamente dependente." }
+        {
+          "letra": "A",
+          "texto": "primário, de bons antecedentes, que não se dedique a atividades criminosas nem integre organização criminosa."
+        },
+        {
+          "letra": "B",
+          "texto": "primário, bastando esse requisito isolado."
+        },
+        {
+          "letra": "C",
+          "texto": "menor de 21 anos na data do fato."
+        },
+        {
+          "letra": "D",
+          "texto": "reincidente específico, com confissão espontânea."
+        },
+        {
+          "letra": "E",
+          "texto": "usuário de drogas comprovadamente dependente."
+        }
       ],
       "resposta": "A",
       "justificativa": "O §4º do art. 33 exige quatro requisitos CUMULATIVOS: agente primário, de bons antecedentes, que não se dedique a atividades criminosas e que não integre organização criminosa. Presentes todos, a pena é reduzida de um sexto a dois terços. É por essa cumulatividade que o STJ nega o benefício a quem é condenado também por associação para o tráfico. Complete o tema lembrando que o tráfico privilegiado NÃO é hediondo."
@@ -353,11 +698,26 @@
       "topicoRef": "5.2",
       "enunciado": "Sobre a Lei n.º 7.716/1989, assinale a opção correta.",
       "alternativas": [
-        { "letra": "A", "texto": "Pune apenas condutas praticadas por agentes públicos." },
-        { "letra": "B", "texto": "Pune os crimes resultantes de discriminação ou preconceito de raça, cor, etnia, religião ou procedência nacional." },
-        { "letra": "C", "texto": "Aplica-se somente a condutas praticadas em estabelecimentos comerciais." },
-        { "letra": "D", "texto": "Prevê apenas penas de multa." },
-        { "letra": "E", "texto": "É lei de menor potencial ofensivo, sujeita a transação penal." }
+        {
+          "letra": "A",
+          "texto": "Pune apenas condutas praticadas por agentes públicos."
+        },
+        {
+          "letra": "B",
+          "texto": "Pune os crimes resultantes de discriminação ou preconceito de raça, cor, etnia, religião ou procedência nacional."
+        },
+        {
+          "letra": "C",
+          "texto": "Aplica-se somente a condutas praticadas em estabelecimentos comerciais."
+        },
+        {
+          "letra": "D",
+          "texto": "Prevê apenas penas de multa."
+        },
+        {
+          "letra": "E",
+          "texto": "É lei de menor potencial ofensivo, sujeita a transação penal."
+        }
       ],
       "resposta": "B",
       "justificativa": "Art. 1º da Lei 7.716/1989: serão punidos, na forma da lei, os crimes resultantes de discriminação ou preconceito de raça, cor, etnia, religião ou procedência nacional. A: o crime é comum, podendo ser praticado por qualquer pessoa, embora a condição de agente público possa agravar. C: a lei alcança diversas situações — emprego, estabelecimentos comerciais, transporte, entre outras. D e E: as penas são de reclusão, e a Constituição classifica o racismo como inafiançável e imprescritível, o que afasta o menor potencial ofensivo."
@@ -365,14 +725,29 @@
     {
       "extId": "inedita:const:004",
       "disciplina": "direito-constitucional",
-      "topicoRef": "1.6",
+      "topicoRef": "1.23",
       "enunciado": "A respeito da responsabilidade civil do Estado por ato de policial militar em serviço, segundo a Constituição Federal, é correto afirmar que",
       "alternativas": [
-        { "letra": "A", "texto": "é subjetiva, exigindo a prova de dolo ou culpa do agente pela vítima." },
-        { "letra": "B", "texto": "é objetiva, assegurado ao Estado o direito de regresso contra o agente nos casos de dolo ou culpa." },
-        { "letra": "C", "texto": "é objetiva, sem direito de regresso contra o agente." },
-        { "letra": "D", "texto": "não existe, por se tratar de ato de império." },
-        { "letra": "E", "texto": "recai diretamente sobre o agente, excluída a responsabilidade do Estado." }
+        {
+          "letra": "A",
+          "texto": "é subjetiva, exigindo a prova de dolo ou culpa do agente pela vítima."
+        },
+        {
+          "letra": "B",
+          "texto": "é objetiva, assegurado ao Estado o direito de regresso contra o agente nos casos de dolo ou culpa."
+        },
+        {
+          "letra": "C",
+          "texto": "é objetiva, sem direito de regresso contra o agente."
+        },
+        {
+          "letra": "D",
+          "texto": "não existe, por se tratar de ato de império."
+        },
+        {
+          "letra": "E",
+          "texto": "recai diretamente sobre o agente, excluída a responsabilidade do Estado."
+        }
       ],
       "resposta": "B",
       "justificativa": "Art. 37, §6º, da CF: as pessoas jurídicas de direito público respondem pelos danos que seus agentes, nessa qualidade, causarem a terceiros — responsabilidade OBJETIVA, que dispensa a prova de culpa e exige apenas conduta, dano e nexo causal —, assegurado o direito de REGRESSO contra o responsável nos casos de dolo ou culpa. Para o policial militar, a consequência prática é direta: a vítima aciona o Estado, e o Estado depois cobra do agente se houver dolo ou culpa."
@@ -380,14 +755,29 @@
     {
       "extId": "inedita:const:005",
       "disciplina": "direito-constitucional",
-      "topicoRef": "1.5",
+      "topicoRef": "1.12",
       "enunciado": "Sobre os remédios constitucionais, assinale a opção correta.",
       "alternativas": [
-        { "letra": "A", "texto": "O habeas corpus protege o direito líquido e certo não amparado por habeas data." },
-        { "letra": "B", "texto": "O habeas corpus protege a liberdade de locomoção, sempre que alguém sofrer ou se achar ameaçado de sofrer violência ou coação em sua liberdade de locomoção, por ilegalidade ou abuso de poder." },
-        { "letra": "C", "texto": "O mandado de segurança é cabível contra ato do qual caiba habeas corpus ou habeas data." },
-        { "letra": "D", "texto": "O habeas data serve para corrigir dados de terceiros." },
-        { "letra": "E", "texto": "A ação popular só pode ser proposta pelo Ministério Público." }
+        {
+          "letra": "A",
+          "texto": "O habeas corpus protege o direito líquido e certo não amparado por habeas data."
+        },
+        {
+          "letra": "B",
+          "texto": "O habeas corpus protege a liberdade de locomoção, sempre que alguém sofrer ou se achar ameaçado de sofrer violência ou coação em sua liberdade de locomoção, por ilegalidade ou abuso de poder."
+        },
+        {
+          "letra": "C",
+          "texto": "O mandado de segurança é cabível contra ato do qual caiba habeas corpus ou habeas data."
+        },
+        {
+          "letra": "D",
+          "texto": "O habeas data serve para corrigir dados de terceiros."
+        },
+        {
+          "letra": "E",
+          "texto": "A ação popular só pode ser proposta pelo Ministério Público."
+        }
       ],
       "resposta": "B",
       "justificativa": "Art. 5º, LXVIII, da CF: conceder-se-á habeas corpus sempre que alguém sofrer ou se achar ameaçado de sofrer violência ou coação em sua liberdade de locomoção, por ilegalidade ou abuso de poder. A e C invertem o sistema: o mandado de segurança é residual, cabível para proteger direito líquido e certo NÃO amparado por habeas corpus ou habeas data. D: o habeas data assegura o conhecimento e a retificação de informações relativas à PRÓPRIA pessoa do impetrante. E: a ação popular é proposta por qualquer CIDADÃO (art. 5º, LXXIII)."
@@ -395,14 +785,29 @@
     {
       "extId": "inedita:const:006",
       "disciplina": "direito-constitucional",
-      "topicoRef": "1.8",
+      "topicoRef": "1.30",
       "enunciado": "De acordo com a Constituição Federal, compete à Justiça Militar estadual julgar",
       "alternativas": [
-        { "letra": "A", "texto": "civis que praticarem crimes contra as instituições militares estaduais." },
-        { "letra": "B", "texto": "os militares dos Estados nos crimes militares definidos em lei e as ações judiciais contra atos disciplinares militares." },
-        { "letra": "C", "texto": "qualquer crime praticado por policial militar, inclusive os comuns." },
-        { "letra": "D", "texto": "os crimes dolosos contra a vida praticados por militar estadual contra civil." },
-        { "letra": "E", "texto": "exclusivamente os crimes praticados por oficiais." }
+        {
+          "letra": "A",
+          "texto": "civis que praticarem crimes contra as instituições militares estaduais."
+        },
+        {
+          "letra": "B",
+          "texto": "os militares dos Estados nos crimes militares definidos em lei e as ações judiciais contra atos disciplinares militares."
+        },
+        {
+          "letra": "C",
+          "texto": "qualquer crime praticado por policial militar, inclusive os comuns."
+        },
+        {
+          "letra": "D",
+          "texto": "os crimes dolosos contra a vida praticados por militar estadual contra civil."
+        },
+        {
+          "letra": "E",
+          "texto": "exclusivamente os crimes praticados por oficiais."
+        }
       ],
       "resposta": "B",
       "justificativa": "Art. 125, §4º, da CF: compete à Justiça Militar estadual processar e julgar os militares dos Estados nos crimes militares definidos em lei e as ações judiciais contra atos disciplinares militares, ressalvada a competência do júri quando a vítima for civil — o que elimina D. A: a Justiça Militar ESTADUAL não julga civis (diferentemente da Justiça Militar da União). C: crime comum praticado por policial militar é julgado pela Justiça comum. E: julga oficiais e praças; o que muda é o órgão julgador dentro dela."
@@ -410,14 +815,29 @@
     {
       "extId": "inedita:const:007",
       "disciplina": "direito-constitucional",
-      "topicoRef": "1.5",
+      "topicoRef": "1.11",
       "enunciado": "Quanto à inviolabilidade do sigilo das comunicações, assinale a opção correta.",
       "alternativas": [
-        { "letra": "A", "texto": "O sigilo das comunicações telefônicas é absoluto e não admite exceção." },
-        { "letra": "B", "texto": "É permitida a interceptação das comunicações telefônicas por ordem judicial, nas hipóteses e na forma que a lei estabelecer, para fins de investigação criminal ou instrução processual penal." },
-        { "letra": "C", "texto": "A autoridade policial pode determinar a interceptação telefônica em caso de urgência." },
-        { "letra": "D", "texto": "A interceptação é admitida para instruir processo administrativo disciplinar." },
-        { "letra": "E", "texto": "O sigilo da correspondência pode ser quebrado por decisão da autoridade policial." }
+        {
+          "letra": "A",
+          "texto": "O sigilo das comunicações telefônicas é absoluto e não admite exceção."
+        },
+        {
+          "letra": "B",
+          "texto": "É permitida a interceptação das comunicações telefônicas por ordem judicial, nas hipóteses e na forma que a lei estabelecer, para fins de investigação criminal ou instrução processual penal."
+        },
+        {
+          "letra": "C",
+          "texto": "A autoridade policial pode determinar a interceptação telefônica em caso de urgência."
+        },
+        {
+          "letra": "D",
+          "texto": "A interceptação é admitida para instruir processo administrativo disciplinar."
+        },
+        {
+          "letra": "E",
+          "texto": "O sigilo da correspondência pode ser quebrado por decisão da autoridade policial."
+        }
       ],
       "resposta": "B",
       "justificativa": "Art. 5º, XII, da CF: é inviolável o sigilo da correspondência e das comunicações telegráficas, de dados e das comunicações telefônicas, salvo, no último caso, por ORDEM JUDICIAL, nas hipóteses e na forma que a lei estabelecer, para fins de investigação criminal ou instrução processual penal. Note que a ressalva alcança apenas as comunicações TELEFÔNICAS. A: nenhum direito fundamental é absoluto. C e E: a quebra exige sempre ordem judicial. D: a finalidade constitucional é penal; prova emprestada para o disciplinar é tema distinto e depende da licitude original."
@@ -428,11 +848,26 @@
       "topicoRef": "3.6",
       "enunciado": "Sobre a prisão em flagrante, assinale a opção correta.",
       "alternativas": [
-        { "letra": "A", "texto": "Qualquer do povo deverá prender quem se encontre em flagrante delito." },
-        { "letra": "B", "texto": "Qualquer do povo poderá, e as autoridades policiais e seus agentes deverão, prender quem se encontre em flagrante delito." },
-        { "letra": "C", "texto": "Somente a autoridade policial pode efetuar prisão em flagrante." },
-        { "letra": "D", "texto": "A prisão em flagrante dispensa comunicação ao juiz quando o preso é liberado mediante fiança." },
-        { "letra": "E", "texto": "O flagrante preparado é válido, desde que haja prova da conduta." }
+        {
+          "letra": "A",
+          "texto": "Qualquer do povo deverá prender quem se encontre em flagrante delito."
+        },
+        {
+          "letra": "B",
+          "texto": "Qualquer do povo poderá, e as autoridades policiais e seus agentes deverão, prender quem se encontre em flagrante delito."
+        },
+        {
+          "letra": "C",
+          "texto": "Somente a autoridade policial pode efetuar prisão em flagrante."
+        },
+        {
+          "letra": "D",
+          "texto": "A prisão em flagrante dispensa comunicação ao juiz quando o preso é liberado mediante fiança."
+        },
+        {
+          "letra": "E",
+          "texto": "O flagrante preparado é válido, desde que haja prova da conduta."
+        }
       ],
       "resposta": "B",
       "justificativa": "Art. 301 do CPP: qualquer do povo PODERÁ e as autoridades policiais e seus agentes DEVERÃO prender quem quer que seja encontrado em flagrante delito. A troca de 'poderá' por 'deverá' no flagrante facultativo é a pegadinha mais repetida do tema. D: a prisão deve ser comunicada imediatamente ao juiz, ao MP e à família, e o auto remetido em até 24 horas, independentemente de fiança. E: o flagrante preparado ou provocado é nulo (Súmula 145 do STF); o ESPERADO é que é válido."
@@ -443,11 +878,26 @@
       "topicoRef": "3.2",
       "enunciado": "Sobre as características do inquérito policial, assinale a opção INCORRETA.",
       "alternativas": [
-        { "letra": "A", "texto": "É escrito e sigiloso." },
-        { "letra": "B", "texto": "É dispensável, podendo a denúncia apoiar-se em outras peças de informação." },
-        { "letra": "C", "texto": "É inquisitivo, não havendo contraditório pleno em sua fase." },
-        { "letra": "D", "texto": "É indisponível, não podendo a autoridade policial mandar arquivá-lo." },
-        { "letra": "E", "texto": "É obrigatório para o oferecimento da denúncia em qualquer crime." }
+        {
+          "letra": "A",
+          "texto": "É escrito e sigiloso."
+        },
+        {
+          "letra": "B",
+          "texto": "É dispensável, podendo a denúncia apoiar-se em outras peças de informação."
+        },
+        {
+          "letra": "C",
+          "texto": "É inquisitivo, não havendo contraditório pleno em sua fase."
+        },
+        {
+          "letra": "D",
+          "texto": "É indisponível, não podendo a autoridade policial mandar arquivá-lo."
+        },
+        {
+          "letra": "E",
+          "texto": "É obrigatório para o oferecimento da denúncia em qualquer crime."
+        }
       ],
       "resposta": "E",
       "justificativa": "A assertiva E é a incorreta — e é justamente o que a questão pede. O inquérito é DISPENSÁVEL: se o Ministério Público já dispuser de elementos suficientes (peças de informação, termo circunstanciado, documentos), pode denunciar sem ele. As demais características estão corretas: escrito, sigiloso, inquisitivo, oficioso, discricionário e indisponível — esta última significando que a autoridade policial, uma vez instaurado, não pode mandar arquivar (art. 17)."
@@ -458,11 +908,26 @@
       "topicoRef": "3.5",
       "enunciado": "Sobre a busca domiciliar no processo penal, assinale a opção correta.",
       "alternativas": [
-        { "letra": "A", "texto": "Pode ser realizada a qualquer hora do dia ou da noite, mediante mandado." },
-        { "letra": "B", "texto": "Em regra depende de mandado judicial e deve ser executada durante o dia, salvo consentimento do morador." },
-        { "letra": "C", "texto": "Dispensa mandado sempre que houver denúncia anônima." },
-        { "letra": "D", "texto": "O consentimento do morador é irrelevante." },
-        { "letra": "E", "texto": "Independe de qualquer formalidade quando realizada por policial militar." }
+        {
+          "letra": "A",
+          "texto": "Pode ser realizada a qualquer hora do dia ou da noite, mediante mandado."
+        },
+        {
+          "letra": "B",
+          "texto": "Em regra depende de mandado judicial e deve ser executada durante o dia, salvo consentimento do morador."
+        },
+        {
+          "letra": "C",
+          "texto": "Dispensa mandado sempre que houver denúncia anônima."
+        },
+        {
+          "letra": "D",
+          "texto": "O consentimento do morador é irrelevante."
+        },
+        {
+          "letra": "E",
+          "texto": "Independe de qualquer formalidade quando realizada por policial militar."
+        }
       ],
       "resposta": "B",
       "justificativa": "Art. 5º, XI, da CF, combinado com o art. 245 do CPP: as buscas domiciliares serão executadas de dia, salvo se o morador consentir que se realizem à noite. Sem consentimento, o ingresso noturno só se admite nas hipóteses constitucionais de flagrante delito, desastre ou socorro. C: denúncia anônima isolada não autoriza o ingresso — o STF e o STJ exigem justa causa prévia e aferível, sob pena de nulidade da prova. D: o consentimento é relevante e, quando existente, deve ser documentado, preferencialmente em vídeo, segundo a jurisprudência atual."
@@ -473,11 +938,26 @@
       "topicoRef": "8.4",
       "enunciado": "Assinale a opção em que a regência verbal está de acordo com a norma-padrão.",
       "alternativas": [
-        { "letra": "A", "texto": "O policial assistiu o filme sobre segurança pública." },
-        { "letra": "B", "texto": "O comandante visou o documento antes de encaminhá-lo." },
-        { "letra": "C", "texto": "Prefiro trabalhar na rua do que no escritório." },
-        { "letra": "D", "texto": "A guarnição chegou na ocorrência rapidamente." },
-        { "letra": "E", "texto": "O soldado obedeceu ao superior sem hesitar." }
+        {
+          "letra": "A",
+          "texto": "O policial assistiu o filme sobre segurança pública."
+        },
+        {
+          "letra": "B",
+          "texto": "O comandante visou o documento antes de encaminhá-lo."
+        },
+        {
+          "letra": "C",
+          "texto": "Prefiro trabalhar na rua do que no escritório."
+        },
+        {
+          "letra": "D",
+          "texto": "A guarnição chegou na ocorrência rapidamente."
+        },
+        {
+          "letra": "E",
+          "texto": "O soldado obedeceu ao superior sem hesitar."
+        }
       ],
       "resposta": "E",
       "justificativa": "Obedecer é verbo transitivo INDIRETO e exige a preposição 'a': obedecer AO superior. A: no sentido de ver, assistir pede preposição — 'assistiu AO filme'; sem preposição significa prestar assistência. B: 'visar' no sentido de pôr visto é transitivo direto, então 'visou o documento' estaria certo nesse sentido — mas a questão cobra o uso padrão de cada verbo e a alternativa E é inequívoca. C: preferir é transitivo direto e indireto e não admite 'do que' — o correto é 'prefiro trabalhar na rua A trabalhar no escritório'. D: chegar pede a preposição 'a', não 'em' — 'chegou À ocorrência'."
@@ -488,11 +968,26 @@
       "topicoRef": "8.6",
       "enunciado": "Em “A ordem pública é dever do Estado; portanto, exige atuação integrada das instituições”, o conectivo destacado estabelece relação de",
       "alternativas": [
-        { "letra": "A", "texto": "condição." },
-        { "letra": "B", "texto": "concessão." },
-        { "letra": "C", "texto": "conclusão." },
-        { "letra": "D", "texto": "finalidade." },
-        { "letra": "E", "texto": "proporção." }
+        {
+          "letra": "A",
+          "texto": "condição."
+        },
+        {
+          "letra": "B",
+          "texto": "concessão."
+        },
+        {
+          "letra": "C",
+          "texto": "conclusão."
+        },
+        {
+          "letra": "D",
+          "texto": "finalidade."
+        },
+        {
+          "letra": "E",
+          "texto": "proporção."
+        }
       ],
       "resposta": "C",
       "justificativa": "'Portanto' é conjunção coordenativa CONCLUSIVA: a segunda oração apresenta a conclusão lógica da primeira. Guarde os grupos que a banca embaralha: conclusão (portanto, logo, pois posposto, por conseguinte, assim); condição (se, caso, desde que, contanto que); concessão (embora, ainda que, conquanto, apesar de); finalidade (a fim de que, para que); proporção (à medida que, ao passo que). Trocar o conectivo muda a relação lógica — e é exatamente isso que as questões de reescrita testam."
@@ -503,11 +998,26 @@
       "topicoRef": "8.5",
       "enunciado": "Assinale a opção em que a vírgula foi empregada corretamente.",
       "alternativas": [
-        { "letra": "A", "texto": "O policial militar, deve zelar pela ordem pública." },
-        { "letra": "B", "texto": "Durante a abordagem, o condutor apresentou os documentos." },
-        { "letra": "C", "texto": "O comandante determinou, que a guarnição permanecesse no local." },
-        { "letra": "D", "texto": "Todos os militares da unidade, participaram da instrução." },
-        { "letra": "E", "texto": "A viatura chegou ao local e, o policial iniciou o atendimento." }
+        {
+          "letra": "A",
+          "texto": "O policial militar, deve zelar pela ordem pública."
+        },
+        {
+          "letra": "B",
+          "texto": "Durante a abordagem, o condutor apresentou os documentos."
+        },
+        {
+          "letra": "C",
+          "texto": "O comandante determinou, que a guarnição permanecesse no local."
+        },
+        {
+          "letra": "D",
+          "texto": "Todos os militares da unidade, participaram da instrução."
+        },
+        {
+          "letra": "E",
+          "texto": "A viatura chegou ao local e, o policial iniciou o atendimento."
+        }
       ],
       "resposta": "B",
       "justificativa": "Em B a vírgula separa o adjunto adverbial deslocado para o início do período ('Durante a abordagem'), emprego clássico e correto. Os demais itens trazem os três erros de vírgula mais cobrados: A e D separam o SUJEITO do predicado; C separa o verbo do seu COMPLEMENTO (a oração substantiva objetiva direta); E isola indevidamente o sujeito depois da conjunção. A regra de ouro: não se separa sujeito de verbo, nem verbo de complemento, por vírgula."
@@ -518,11 +1028,26 @@
       "topicoRef": "8.3",
       "enunciado": "Em “Os policiais agiram com serenidade”, o termo destacado é, morfologicamente, um",
       "alternativas": [
-        { "letra": "A", "texto": "adjetivo." },
-        { "letra": "B", "texto": "advérbio." },
-        { "letra": "C", "texto": "substantivo abstrato." },
-        { "letra": "D", "texto": "pronome." },
-        { "letra": "E", "texto": "numeral." }
+        {
+          "letra": "A",
+          "texto": "adjetivo."
+        },
+        {
+          "letra": "B",
+          "texto": "advérbio."
+        },
+        {
+          "letra": "C",
+          "texto": "substantivo abstrato."
+        },
+        {
+          "letra": "D",
+          "texto": "pronome."
+        },
+        {
+          "letra": "E",
+          "texto": "numeral."
+        }
       ],
       "resposta": "C",
       "justificativa": "'Serenidade' é SUBSTANTIVO abstrato: nomeia uma qualidade, que só existe em função de um ser. Cuidado com a confusão entre morfologia e sintaxe: do ponto de vista sintático, a locução 'com serenidade' funciona como adjunto adverbial de modo, equivalente a 'serenamente'. A questão pergunta a CLASSE da palavra, não sua função — distinguir as duas perguntas é metade do caminho em morfossintaxe."
@@ -533,11 +1058,26 @@
       "topicoRef": "9.6",
       "enunciado": "Sobre os princípios básicos da segurança da informação, assinale a opção correta.",
       "alternativas": [
-        { "letra": "A", "texto": "Confidencialidade garante que a informação não seja alterada indevidamente." },
-        { "letra": "B", "texto": "Integridade garante que a informação esteja disponível quando necessária." },
-        { "letra": "C", "texto": "Disponibilidade garante que apenas pessoas autorizadas acessem a informação." },
-        { "letra": "D", "texto": "Confidencialidade, integridade e disponibilidade são, respectivamente, acesso restrito a autorizados, não alteração indevida e acesso quando necessário." },
-        { "letra": "E", "texto": "Autenticidade e irretratabilidade são sinônimos de disponibilidade." }
+        {
+          "letra": "A",
+          "texto": "Confidencialidade garante que a informação não seja alterada indevidamente."
+        },
+        {
+          "letra": "B",
+          "texto": "Integridade garante que a informação esteja disponível quando necessária."
+        },
+        {
+          "letra": "C",
+          "texto": "Disponibilidade garante que apenas pessoas autorizadas acessem a informação."
+        },
+        {
+          "letra": "D",
+          "texto": "Confidencialidade, integridade e disponibilidade são, respectivamente, acesso restrito a autorizados, não alteração indevida e acesso quando necessário."
+        },
+        {
+          "letra": "E",
+          "texto": "Autenticidade e irretratabilidade são sinônimos de disponibilidade."
+        }
       ],
       "resposta": "D",
       "justificativa": "A tríade CID: CONFIDENCIALIDADE é o acesso restrito a quem está autorizado; INTEGRIDADE é a garantia de que a informação não foi alterada indevidamente; DISPONIBILIDADE é a garantia de que ela está acessível quando necessária. As alternativas A, B e C trocam as definições entre si, que é exatamente como a banca monta a questão. Complete com autenticidade (a origem é quem diz ser) e irretratabilidade ou não repúdio (o autor não pode negar a autoria)."
@@ -548,11 +1088,26 @@
       "topicoRef": "9.3",
       "enunciado": "No LibreOffice Calc, a fórmula =SOMA(A1:A10) retorna",
       "alternativas": [
-        { "letra": "A", "texto": "a soma dos valores das células A1 e A10 apenas." },
-        { "letra": "B", "texto": "a soma de todos os valores do intervalo contínuo de A1 até A10." },
-        { "letra": "C", "texto": "a média dos valores de A1 a A10." },
-        { "letra": "D", "texto": "a quantidade de células preenchidas entre A1 e A10." },
-        { "letra": "E", "texto": "um erro, pois a função correta é ADICIONAR." }
+        {
+          "letra": "A",
+          "texto": "a soma dos valores das células A1 e A10 apenas."
+        },
+        {
+          "letra": "B",
+          "texto": "a soma de todos os valores do intervalo contínuo de A1 até A10."
+        },
+        {
+          "letra": "C",
+          "texto": "a média dos valores de A1 a A10."
+        },
+        {
+          "letra": "D",
+          "texto": "a quantidade de células preenchidas entre A1 e A10."
+        },
+        {
+          "letra": "E",
+          "texto": "um erro, pois a função correta é ADICIONAR."
+        }
       ],
       "resposta": "B",
       "justificativa": "Os dois-pontos indicam INTERVALO contínuo: A1:A10 abrange as dez células. Se a intenção fosse somar apenas duas células específicas, usar-se-ia o ponto e vírgula, que separa argumentos: =SOMA(A1;A10). Essa diferença entre ':' (intervalo) e ';' (lista de argumentos) é cobrada com frequência. C seria =MÉDIA(A1:A10) e D seria =CONT.NÚM(A1:A10) para números ou =CONT.VALORES(A1:A10) para células não vazias."
@@ -563,11 +1118,26 @@
       "topicoRef": "9.5",
       "enunciado": "Sobre computação em nuvem, assinale a opção correta.",
       "alternativas": [
-        { "letra": "A", "texto": "No modelo SaaS, o usuário gerencia o sistema operacional e a infraestrutura." },
-        { "letra": "B", "texto": "No modelo IaaS, o provedor entrega infraestrutura como servidores, armazenamento e rede, cabendo ao cliente gerenciar sistema operacional e aplicações." },
-        { "letra": "C", "texto": "No modelo PaaS, o cliente é responsável pelo hardware físico." },
-        { "letra": "D", "texto": "A computação em nuvem dispensa qualquer preocupação com segurança da informação." },
-        { "letra": "E", "texto": "Nuvem privada e nuvem pública são expressões sinônimas." }
+        {
+          "letra": "A",
+          "texto": "No modelo SaaS, o usuário gerencia o sistema operacional e a infraestrutura."
+        },
+        {
+          "letra": "B",
+          "texto": "No modelo IaaS, o provedor entrega infraestrutura como servidores, armazenamento e rede, cabendo ao cliente gerenciar sistema operacional e aplicações."
+        },
+        {
+          "letra": "C",
+          "texto": "No modelo PaaS, o cliente é responsável pelo hardware físico."
+        },
+        {
+          "letra": "D",
+          "texto": "A computação em nuvem dispensa qualquer preocupação com segurança da informação."
+        },
+        {
+          "letra": "E",
+          "texto": "Nuvem privada e nuvem pública são expressões sinônimas."
+        }
       ],
       "resposta": "B",
       "justificativa": "IaaS (Infraestrutura como Serviço) entrega os recursos de base — servidores, armazenamento e rede — e deixa com o cliente a gestão do sistema operacional, do middleware e das aplicações. No PaaS o provedor também cuida do sistema operacional e da plataforma, e o cliente só desenvolve e gerencia suas aplicações. No SaaS o provedor entrega o software pronto e o usuário apenas o utiliza, o que torna A incorreta. D: a responsabilidade é compartilhada, e a segurança continua sendo preocupação do cliente. E: nuvem privada é de uso exclusivo de uma organização; a pública é compartilhada entre vários clientes."

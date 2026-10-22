@@ -10,11 +10,12 @@ para estudar pelo celular.
 
 | Fonte | O que é | Quantidade |
 | --- | --- | --- |
-| **Apostila PM SC 2026** | Teoria por tópico + questões comentadas + simulado final | 78 tópicos, 92 questões, 30 do simulado |
+| **Apostila PM SC 2026** | Teoria por tópico + questões comentadas + simulado final | 69 tópicos, 82 questões, 30 do simulado |
+| **Apostila de Direito Constitucional 2026** | Material refeito do zero, um tópico por subseção dos 8 módulos | 39 tópicos, 20 questões A–E |
 | **Prova oficial 2023 — Soldado** | Cebraspe, 27/8/2023, 5 alternativas | 45 questões |
 | **Prova oficial 2023 — Oficial** | Cebraspe, 13/8/2023 — mesma legislação de SC | 47 questões |
 | **Inéditas** | Múltipla escolha no estilo da banca, a partir do Anexo II do edital | 130 questões |
-| | | **344 questões** |
+| | | **354 questões** |
 
 As questões da prova oficial vêm da banca; o **gabarito é o definitivo do Cebraspe**, e as
 justificativas foram escritas para este sistema (a banca publica só a letra). Questões anuladas, as
@@ -30,7 +31,7 @@ treinando.
 | **Vídeo-aulas** | Menu por matéria e por tópico que abre a busca do YouTube já ordenada por visualizações, mais indicações e canais. |
 | **Painel** | Meta diária, revisões vencidas, projeção de nota na objetiva (acurácia × peso de cada disciplina), dias até a prova, etapa de hoje no plano de 30 dias e alerta de disciplina zerada. |
 | **Anotações** | Caderno livre com busca, filtro por matéria e etiquetas (nota, macete, dúvida, número, letra de lei). Pode anotar de dentro do tópico, sem sair da leitura. |
-| **Matérias** | Aula didática de cada um dos 78 tópicos — em uma frase, explicação em linguagem direta, exemplo do serviço policial, o que a banca troca e resumo para a véspera — com o texto da apostila logo abaixo. Guia de cada matéria: a pergunta que ela responde, o que é, para que serve, o que estudar, um exemplo concreto, como estudar, armadilhas e números-chave e de cada tópico, antes da teoria. Teoria renderizada em tipografia de verdade — tabelas, listas, destaques "No edital" / "Atenção" / "Dica de prova" — com referências legais e prazos em negrito, tempo de leitura e marcação do que já estudou. |
+| **Matérias** | Aula didática de 69 dos 108 tópicos — em uma frase, explicação em linguagem direta, exemplo do serviço policial, o que a banca troca e resumo para a véspera — com o texto da apostila logo abaixo. Guia de cada matéria: a pergunta que ela responde, o que é, para que serve, o que estudar, um exemplo concreto, como estudar, armadilhas e números-chave e de cada tópico, antes da teoria. Teoria renderizada em tipografia de verdade — tabelas, listas, destaques "No edital" / "Atenção" / "Dica de prova" — com referências legais e prazos em negrito, tempo de leitura e marcação do que já estudou. |
 | **Questões** | Certo/Errado e múltipla escolha A–E. Ao errar, mostra **sua resposta, a resposta correta e o porquê**. Filtros por disciplina, só prova oficial, ou focado nos seus erros. |
 | **Revisão** | Revisão espaçada (SM-2 simplificado): acertou → 3, 7, 16+ dias; errou → volta amanhã. |
 | **Simulado** | Prova oficial de 2023 (2h), simulado ponderado de 60 questões na distribuição da Tabela 8.1 (2h) e o simulado da apostila (1h). Gabarito comentado só no fim, como na prova. |
@@ -152,7 +153,7 @@ lib/
   treino.ts         seleção das 20 questões do dia
   videos.ts         menu de vídeo-aulas e buscas prontas no YouTube
 content/            textos extraídos dos PDFs, JSONs estruturados, aulas (aulas-*.json) e questões autorais
-scripts/            parse-apostila, parse-provas, validar-conteudo, seed, lib/estrutura
+scripts/            parse-apostila, parse-constitucional, parse-provas, validar-conteudo, seed, lib/estrutura
 supabase/migrations/
 ```
 

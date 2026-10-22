@@ -1,0 +1,1634 @@
+{
+  "fonte": "Apostila de Direito Constitucional — PMSC Soldado 2026 (Instituto AOCP, Edital nº 002/CCP/2026)",
+  "disciplina": "direito-constitucional",
+  "topicos": [
+    {
+      "ref": "1.1",
+      "order": 1,
+      "slug": "como-estudar-direito-constitucional",
+      "title": "Como estudar Direito Constitucional",
+      "modulo": "Antes de começar",
+      "resumo": "Estude uma aula por vez.",
+      "paraQue": null,
+      "body": "NO EDITAL: Teoria da Constituição; Poder Constituinte; Constituição Federal de 1988, arts. 1º a 42, 44 a 100 e 122 a 144; Constituição do Estado de Santa Catarina, arts. 1º a 40, 50 a 76, 90 e 105 a 109-C. São 8 questões na prova objetiva (Tabela 8.1 do Edital nº 002/CCP/2026 — Instituto AOCP).\n\nEstude uma aula por vez. Leia a explicação, consulte o artigo constitucional indicado, responda às questões sem olhar o gabarito e registre os erros. A apostila é um guia de estudo: a legislação oficial e o edital prevalecem em caso de divergência.\n\nO edital prevê 8 questões de Direito Constitucional. Isso torna a disciplina relevante, mas não é seguro apostar em um único tema: o conteúdo programático deve ser coberto integralmente.\n\nRotina de 60 minutos\n\n• 20 minutos — teoria: leia o módulo e sublinhe palavras-chave.\n• 15 minutos — lei seca: abra a Constituição oficial e leia os artigos indicados.\n• 20 minutos — questões: responda sem consultar o material.\n• 5 minutos — revisão: anote a regra que errou e explique-a com suas palavras.\n\nMapa dos módulos\n\nMódulo — Conteúdo\n1 — Teoria da Constituição e Poder Constituinte\n2 — Princípios fundamentais — CF, arts. 1º a 4º\n3 — Direitos e garantias fundamentais — CF, arts. 5º a 17\n4 — Organização do Estado — CF, arts. 18 a 36\n5 — Administração Pública e militares estaduais — CF, arts. 37 a 42\n6 — Organização dos Poderes — CF, arts. 44 a 100\n7 — Justiça Militar, defesa do Estado e segurança pública — CF, arts. 122 a 144\n8 — Constituição de Santa Catarina — artigos expressamente indicados\n9 — Simulado final, gabarito e plano de revisão\n\nREGRA DE OURO: Não confunda uma previsão pedagógica com garantia de cobrança. Os destaques de prioridade são recomendações de estudo; o edital determina o conteúdo exigido.",
+      "blocks": [
+        {
+          "type": "callout",
+          "variant": "edital",
+          "title": "NO EDITAL",
+          "body": "Teoria da Constituição; Poder Constituinte; Constituição Federal de 1988, arts. 1º a 42, 44 a 100 e 122 a 144; Constituição do Estado de Santa Catarina, arts. 1º a 40, 50 a 76, 90 e 105 a 109-C. São 8 questões na prova objetiva (Tabela 8.1 do Edital nº 002/CCP/2026 — Instituto AOCP)."
+        },
+        {
+          "type": "paragraph",
+          "text": "Estude uma aula por vez. Leia a explicação, consulte o artigo constitucional indicado, responda às questões sem olhar o gabarito e registre os erros. A apostila é um guia de estudo: a legislação oficial e o edital prevalecem em caso de divergência."
+        },
+        {
+          "type": "paragraph",
+          "text": "O edital prevê 8 questões de Direito Constitucional. Isso torna a disciplina relevante, mas não é seguro apostar em um único tema: o conteúdo programático deve ser coberto integralmente."
+        },
+        {
+          "type": "heading",
+          "text": "Rotina de 60 minutos"
+        },
+        {
+          "type": "list",
+          "items": [
+            "20 minutos — teoria: leia o módulo e sublinhe palavras-chave.",
+            "15 minutos — lei seca: abra a Constituição oficial e leia os artigos indicados.",
+            "20 minutos — questões: responda sem consultar o material.",
+            "5 minutos — revisão: anote a regra que errou e explique-a com suas palavras."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Mapa dos módulos"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Módulo",
+            "Conteúdo"
+          ],
+          "rows": [
+            [
+              "1",
+              "Teoria da Constituição e Poder Constituinte"
+            ],
+            [
+              "2",
+              "Princípios fundamentais — CF, arts. 1º a 4º"
+            ],
+            [
+              "3",
+              "Direitos e garantias fundamentais — CF, arts. 5º a 17"
+            ],
+            [
+              "4",
+              "Organização do Estado — CF, arts. 18 a 36"
+            ],
+            [
+              "5",
+              "Administração Pública e militares estaduais — CF, arts. 37 a 42"
+            ],
+            [
+              "6",
+              "Organização dos Poderes — CF, arts. 44 a 100"
+            ],
+            [
+              "7",
+              "Justiça Militar, defesa do Estado e segurança pública — CF, arts. 122 a 144"
+            ],
+            [
+              "8",
+              "Constituição de Santa Catarina — artigos expressamente indicados"
+            ],
+            [
+              "9",
+              "Simulado final, gabarito e plano de revisão"
+            ]
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "atencao",
+          "title": "REGRA DE OURO",
+          "body": "Não confunda uma previsão pedagógica com garantia de cobrança. Os destaques de prioridade são recomendações de estudo; o edital determina o conteúdo exigido."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.2",
+      "order": 2,
+      "slug": "conceito-e-funcoes",
+      "title": "Conceito e funções",
+      "modulo": "Módulo 1 — Teoria da Constituição e Poder Constituinte",
+      "resumo": "A Constituição define a estrutura do Estado, estabelece como os Poderes são organizados, delimita competências e protege direitos fundamentais.",
+      "paraQue": "Está no recorte do edital: Anexo II, item 1 e item 2 (Módulo 1 — Teoria da Constituição e Poder Constituinte).",
+      "body": "NO EDITAL: Anexo II, item 1 e item 2. — Antes de estudar artigos específicos, entenda o que é uma Constituição e de onde vem sua autoridade. A Constituição é a norma fundamental que organiza o Estado, distribui competências, limita o poder público e reconhece direitos.\n\nA Constituição define a estrutura do Estado, estabelece como os Poderes são organizados, delimita competências e protege direitos fundamentais. Ela ocupa posição superior às demais normas do ordenamento jurídico.\n\nSupremacia constitucional significa que leis e atos estatais devem ser compatíveis com a Constituição. Uma norma inferior incompatível pode ser questionada por inconstitucionalidade, conforme os mecanismos previstos no sistema jurídico.",
+      "blocks": [
+        {
+          "type": "callout",
+          "variant": "edital",
+          "title": "NO EDITAL",
+          "body": "Anexo II, item 1 e item 2. — Antes de estudar artigos específicos, entenda o que é uma Constituição e de onde vem sua autoridade. A Constituição é a norma fundamental que organiza o Estado, distribui competências, limita o poder público e reconhece direitos."
+        },
+        {
+          "type": "paragraph",
+          "text": "A Constituição define a estrutura do Estado, estabelece como os Poderes são organizados, delimita competências e protege direitos fundamentais. Ela ocupa posição superior às demais normas do ordenamento jurídico."
+        },
+        {
+          "type": "paragraph",
+          "text": "Supremacia constitucional significa que leis e atos estatais devem ser compatíveis com a Constituição. Uma norma inferior incompatível pode ser questionada por inconstitucionalidade, conforme os mecanismos previstos no sistema jurídico."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.3",
+      "order": 3,
+      "slug": "estrutura-da-constituicao-federal",
+      "title": "Estrutura da Constituição Federal",
+      "modulo": "Módulo 1 — Teoria da Constituição e Poder Constituinte",
+      "resumo": "A Constituição de 1988 contém preâmbulo, texto permanente organizado em títulos e capítulos e Ato das Disposições Constitucionais Transitórias (ADCT).",
+      "paraQue": "Está no recorte do edital: Anexo II, item 1 e item 2 (Módulo 1 — Teoria da Constituição e Poder Constituinte).",
+      "body": "A Constituição de 1988 contém preâmbulo, texto permanente organizado em títulos e capítulos e Ato das Disposições Constitucionais Transitórias (ADCT). O preâmbulo apresenta valores e intenções; não deve ser tratado como se cada frase fosse uma regra autônoma com a mesma força dos dispositivos constitucionais.\n\nOs artigos são divididos em caput, parágrafos, incisos e alíneas. Em prova, identifique exatamente o dispositivo citado: uma alternativa pode reproduzir uma regra correta, mas atribuí-la ao artigo errado.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A Constituição de 1988 contém preâmbulo, texto permanente organizado em títulos e capítulos e Ato das Disposições Constitucionais Transitórias (ADCT). O preâmbulo apresenta valores e intenções; não deve ser tratado como se cada frase fosse uma regra autônoma com a mesma força dos dispositivos constitucionais."
+        },
+        {
+          "type": "paragraph",
+          "text": "Os artigos são divididos em caput, parágrafos, incisos e alíneas. Em prova, identifique exatamente o dispositivo citado: uma alternativa pode reproduzir uma regra correta, mas atribuí-la ao artigo errado."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.4",
+      "order": 4,
+      "slug": "classificacoes-importantes",
+      "title": "Classificações importantes",
+      "modulo": "Módulo 1 — Teoria da Constituição e Poder Constituinte",
+      "resumo": "Quanto à forma: escrita ou não escrita.",
+      "paraQue": "Está no recorte do edital: Anexo II, item 1 e item 2 (Módulo 1 — Teoria da Constituição e Poder Constituinte).",
+      "body": "Quanto à forma: escrita ou não escrita. Quanto à origem: promulgada/democrática ou outorgada. Quanto à estabilidade: rígida, flexível ou semirrígida. Quanto à extensão: analítica ou sintética. Quanto ao conteúdo: formal ou material.\n\nA Constituição Federal de 1988 é escrita, promulgada, formal, analítica e rígida. É rígida porque sua alteração exige procedimento mais difícil do que o processo legislativo ordinário.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Quanto à forma: escrita ou não escrita. Quanto à origem: promulgada/democrática ou outorgada. Quanto à estabilidade: rígida, flexível ou semirrígida. Quanto à extensão: analítica ou sintética. Quanto ao conteúdo: formal ou material."
+        },
+        {
+          "type": "paragraph",
+          "text": "A Constituição Federal de 1988 é escrita, promulgada, formal, analítica e rígida. É rígida porque sua alteração exige procedimento mais difícil do que o processo legislativo ordinário."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.5",
+      "order": 5,
+      "slug": "poder-constituinte",
+      "title": "Poder Constituinte",
+      "modulo": "Módulo 1 — Teoria da Constituição e Poder Constituinte",
+      "resumo": "Originário: cria uma nova Constituição e inaugura uma nova ordem constitucional.",
+      "paraQue": "Está no recorte do edital: Anexo II, item 1 e item 2 (Módulo 1 — Teoria da Constituição e Poder Constituinte).",
+      "body": "Originário: cria uma nova Constituição e inaugura uma nova ordem constitucional. Na teoria clássica, é inicial, autônomo e juridicamente ilimitado em relação à ordem anterior, sem significar liberdade política ou moral absoluta.\n\nDerivado reformador: altera o texto por emendas constitucionais, obedecendo às regras e limitações do art. 60 da CF.\n\nDerivado decorrente: permite aos estados elaborarem suas Constituições estaduais, respeitados os princípios da Constituição Federal.\n\nDerivado revisor: foi previsto no ADCT para revisão após cinco anos da promulgação; trata-se de mecanismo histórico já realizado, não de um procedimento ordinário disponível a qualquer momento.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Originário: cria uma nova Constituição e inaugura uma nova ordem constitucional. Na teoria clássica, é inicial, autônomo e juridicamente ilimitado em relação à ordem anterior, sem significar liberdade política ou moral absoluta."
+        },
+        {
+          "type": "paragraph",
+          "text": "Derivado reformador: altera o texto por emendas constitucionais, obedecendo às regras e limitações do art. 60 da CF."
+        },
+        {
+          "type": "paragraph",
+          "text": "Derivado decorrente: permite aos estados elaborarem suas Constituições estaduais, respeitados os princípios da Constituição Federal."
+        },
+        {
+          "type": "paragraph",
+          "text": "Derivado revisor: foi previsto no ADCT para revisão após cinco anos da promulgação; trata-se de mecanismo histórico já realizado, não de um procedimento ordinário disponível a qualquer momento."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.6",
+      "order": 6,
+      "slug": "emendas-e-limites",
+      "title": "Emendas e limites",
+      "modulo": "Módulo 1 — Teoria da Constituição e Poder Constituinte",
+      "resumo": "A proposta de emenda pode ser apresentada pelos legitimados do art.",
+      "paraQue": "Está no recorte do edital: Anexo II, item 1 e item 2 (Módulo 1 — Teoria da Constituição e Poder Constituinte).",
+      "body": "A proposta de emenda pode ser apresentada pelos legitimados do art. 60. A aprovação exige votação em dois turnos em cada Casa do Congresso Nacional e três quintos dos votos dos respectivos membros.\n\nNão será objeto de deliberação proposta de emenda tendente a abolir: a forma federativa de Estado; o voto direto, secreto, universal e periódico; a separação dos Poderes; e os direitos e garantias individuais. São as chamadas cláusulas pétreas.\n\nA Constituição também impede emenda durante intervenção federal, estado de defesa ou estado de sítio. Não se deve confundir impossibilidade circunstancial com cláusula pétrea.\n\nPEGADINHAS E CONFUSÕES COMUNS: A Constituição de 1988 é promulgada, não outorgada. · Rígida não significa imutável: significa que sua alteração segue procedimento mais exigente. · Cláusulas pétreas impedem propostas tendentes a abolir certos núcleos, não qualquer alteração relacionada a eles. · Poder Constituinte derivado está sujeito às limitações constitucionais.\n\nREVISÃO RÁPIDA: CF/88: escrita, promulgada, formal, analítica e rígida • Art. 60: emenda em dois turnos por Casa, 3/5 dos membros • Cláusulas pétreas: federação, voto, separação dos Poderes e direitos e garantias individuais",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A proposta de emenda pode ser apresentada pelos legitimados do art. 60. A aprovação exige votação em dois turnos em cada Casa do Congresso Nacional e três quintos dos votos dos respectivos membros."
+        },
+        {
+          "type": "paragraph",
+          "text": "Não será objeto de deliberação proposta de emenda tendente a abolir: a forma federativa de Estado; o voto direto, secreto, universal e periódico; a separação dos Poderes; e os direitos e garantias individuais. São as chamadas cláusulas pétreas."
+        },
+        {
+          "type": "paragraph",
+          "text": "A Constituição também impede emenda durante intervenção federal, estado de defesa ou estado de sítio. Não se deve confundir impossibilidade circunstancial com cláusula pétrea."
+        },
+        {
+          "type": "callout",
+          "variant": "atencao",
+          "title": "PEGADINHAS E CONFUSÕES COMUNS",
+          "body": "A Constituição de 1988 é promulgada, não outorgada. · Rígida não significa imutável: significa que sua alteração segue procedimento mais exigente. · Cláusulas pétreas impedem propostas tendentes a abolir certos núcleos, não qualquer alteração relacionada a eles. · Poder Constituinte derivado está sujeito às limitações constitucionais."
+        },
+        {
+          "type": "callout",
+          "variant": "dica",
+          "title": "REVISÃO RÁPIDA",
+          "body": "CF/88: escrita, promulgada, formal, analítica e rígida • Art. 60: emenda em dois turnos por Casa, 3/5 dos membros • Cláusulas pétreas: federação, voto, separação dos Poderes e direitos e garantias individuais"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.7",
+      "order": 7,
+      "slug": "art-1-fundamentos-da-republica",
+      "title": "Art. 1º — Fundamentos da República",
+      "modulo": "Módulo 2 — Princípios Fundamentais",
+      "resumo": "A República Federativa do Brasil é formada pela união indissolúvel dos estados, municípios e Distrito Federal e constitui Estado Democrático de Direito.",
+      "paraQue": "Está no recorte do edital: CF, arts. 1º a 4º (Módulo 2 — Princípios Fundamentais).",
+      "body": "NO EDITAL: CF, arts. 1º a 4º. — Esses quatro artigos são curtos e cheios de conceitos que podem ser misturados em alternativas. Aprenda a separar fundamentos, organização dos Poderes, objetivos fundamentais e princípios das relações internacionais.\n\nA República Federativa do Brasil é formada pela união indissolúvel dos estados, municípios e Distrito Federal e constitui Estado Democrático de Direito. Os cinco fundamentos são: soberania; cidadania; dignidade da pessoa humana; valores sociais do trabalho e da livre iniciativa; pluralismo político. Macete: SO-CI-DI-VA-PLU. O parágrafo único afirma que todo poder emana do povo, que o exerce por representantes eleitos ou diretamente, nos termos da Constituição.",
+      "blocks": [
+        {
+          "type": "callout",
+          "variant": "edital",
+          "title": "NO EDITAL",
+          "body": "CF, arts. 1º a 4º. — Esses quatro artigos são curtos e cheios de conceitos que podem ser misturados em alternativas. Aprenda a separar fundamentos, organização dos Poderes, objetivos fundamentais e princípios das relações internacionais."
+        },
+        {
+          "type": "paragraph",
+          "text": "A República Federativa do Brasil é formada pela união indissolúvel dos estados, municípios e Distrito Federal e constitui Estado Democrático de Direito. Os cinco fundamentos são: soberania; cidadania; dignidade da pessoa humana; valores sociais do trabalho e da livre iniciativa; pluralismo político. Macete: SO-CI-DI-VA-PLU. O parágrafo único afirma que todo poder emana do povo, que o exerce por representantes eleitos ou diretamente, nos termos da Constituição."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.8",
+      "order": 8,
+      "slug": "art-2-separacao-dos-poderes",
+      "title": "Art. 2º — Separação dos Poderes",
+      "modulo": "Módulo 2 — Princípios Fundamentais",
+      "resumo": "São Poderes da União, independentes e harmônicos entre si: Legislativo, Executivo e Judiciário.",
+      "paraQue": "Está no recorte do edital: CF, arts. 1º a 4º (Módulo 2 — Princípios Fundamentais).",
+      "body": "São Poderes da União, independentes e harmônicos entre si: Legislativo, Executivo e Judiciário. Independência não significa isolamento absoluto: a Constituição prevê controles recíprocos e funções atípicas.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "São Poderes da União, independentes e harmônicos entre si: Legislativo, Executivo e Judiciário. Independência não significa isolamento absoluto: a Constituição prevê controles recíprocos e funções atípicas."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.9",
+      "order": 9,
+      "slug": "art-3-objetivos-fundamentais",
+      "title": "Art. 3º — Objetivos fundamentais",
+      "modulo": "Módulo 2 — Princípios Fundamentais",
+      "resumo": "I — construir uma sociedade livre, justa e solidária; II — garantir o desenvolvimento nacional; III — erradicar a pobreza e a marginalização e reduzir as desigualdades sociais e regionais; IV — promover o bem de todos, sem preconceitos e outras formas de discriminação.",
+      "paraQue": "Está no recorte do edital: CF, arts. 1º a 4º (Módulo 2 — Princípios Fundamentais).",
+      "body": "I — construir uma sociedade livre, justa e solidária; II — garantir o desenvolvimento nacional; III — erradicar a pobreza e a marginalização e reduzir as desigualdades sociais e regionais; IV — promover o bem de todos, sem preconceitos e outras formas de discriminação. Macete de revisão: objetivos são metas a perseguir. Erradicar a pobreza é objetivo, não fundamento.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "I — construir uma sociedade livre, justa e solidária; II — garantir o desenvolvimento nacional; III — erradicar a pobreza e a marginalização e reduzir as desigualdades sociais e regionais; IV — promover o bem de todos, sem preconceitos e outras formas de discriminação. Macete de revisão: objetivos são metas a perseguir. Erradicar a pobreza é objetivo, não fundamento."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.10",
+      "order": 10,
+      "slug": "art-4-relacoes-internacionais",
+      "title": "Art. 4º — Relações internacionais",
+      "modulo": "Módulo 2 — Princípios Fundamentais",
+      "resumo": "Princípios: independência nacional; prevalência dos direitos humanos; autodeterminação dos povos; não intervenção; igualdade entre os Estados; defesa da paz; solução pacífica dos conflitos; repúdio ao terrorismo e ao racismo; cooperação entre os povos; concessão de asilo político.",
+      "paraQue": "Está no recorte do edital: CF, arts. 1º a 4º (Módulo 2 — Princípios Fundamentais).",
+      "body": "Princípios: independência nacional; prevalência dos direitos humanos; autodeterminação dos povos; não intervenção; igualdade entre os Estados; defesa da paz; solução pacífica dos conflitos; repúdio ao terrorismo e ao racismo; cooperação entre os povos; concessão de asilo político. O parágrafo único prevê a busca de integração econômica, política, social e cultural dos povos da América Latina, visando formar uma comunidade latino-americana de nações.\n\nPEGADINHAS E CONFUSÕES COMUNS: Dignidade da pessoa humana = fundamento do art. 1º; erradicação da pobreza = objetivo do art. 3º. · Pluralismo político não é princípio das relações internacionais. · A República rege suas relações internacionais pelos princípios do art. 4º. · A separação dos Poderes está no art. 2º.\n\nREVISÃO RÁPIDA: Art. 1º = fundamentos • Art. 2º = Poderes • Art. 3º = objetivos • Art. 4º = relações internacionais",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Princípios: independência nacional; prevalência dos direitos humanos; autodeterminação dos povos; não intervenção; igualdade entre os Estados; defesa da paz; solução pacífica dos conflitos; repúdio ao terrorismo e ao racismo; cooperação entre os povos; concessão de asilo político. O parágrafo único prevê a busca de integração econômica, política, social e cultural dos povos da América Latina, visando formar uma comunidade latino-americana de nações."
+        },
+        {
+          "type": "callout",
+          "variant": "atencao",
+          "title": "PEGADINHAS E CONFUSÕES COMUNS",
+          "body": "Dignidade da pessoa humana = fundamento do art. 1º; erradicação da pobreza = objetivo do art. 3º. · Pluralismo político não é princípio das relações internacionais. · A República rege suas relações internacionais pelos princípios do art. 4º. · A separação dos Poderes está no art. 2º."
+        },
+        {
+          "type": "callout",
+          "variant": "dica",
+          "title": "REVISÃO RÁPIDA",
+          "body": "Art. 1º = fundamentos • Art. 2º = Poderes • Art. 3º = objetivos • Art. 4º = relações internacionais"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.11",
+      "order": 11,
+      "slug": "art-5-direitos-individuais-e-coletivos",
+      "title": "Art. 5º — direitos individuais e coletivos",
+      "modulo": "Módulo 3 — Direitos e Garantias Fundamentais",
+      "resumo": "O caput protege vida, liberdade, igualdade, segurança e propriedade.",
+      "paraQue": "Está no recorte do edital: CF, arts. 5º a 17 (Módulo 3 — Direitos e Garantias Fundamentais).",
+      "body": "NO EDITAL: CF, arts. 5º a 17. — Direitos fundamentais protegem a pessoa e limitam o poder estatal. Para a prova, leia o texto constitucional e preste atenção às exceções, aos sujeitos protegidos e às expressões temporais.\n\nO caput protege vida, liberdade, igualdade, segurança e propriedade. O art. 5º contém regras sobre legalidade, proibição de tortura, liberdade de manifestação, direito de resposta, crença, inviolabilidade da intimidade, domicílio e comunicações, reunião, associação, acesso à Justiça, devido processo legal, contraditório e ampla defesa.\n\nLegalidade (II): ninguém será obrigado a fazer ou deixar de fazer algo senão em virtude de lei. Manifestação do pensamento (IV): é livre, mas o anonimato é vedado. Tortura (III): ninguém será submetido a tortura nem a tratamento desumano ou degradante.\n\nDomicílio (XI): a casa é asilo inviolável. Pode haver ingresso sem consentimento em caso de flagrante delito, desastre ou para prestar socorro, a qualquer hora; por determinação judicial, durante o dia.\n\nPrisão (LXI): ninguém será preso senão em flagrante delito ou por ordem escrita e fundamentada de autoridade judiciária competente, ressalvadas as hipóteses constitucionais específicas, como transgressão militar ou crime propriamente militar definidos em lei.\n\nGarantias processuais: devido processo legal, contraditório e ampla defesa são conceitos relacionados, mas não idênticos. Contraditório envolve ciência e possibilidade de reação; ampla defesa assegura meios de defesa admitidos.",
+      "blocks": [
+        {
+          "type": "callout",
+          "variant": "edital",
+          "title": "NO EDITAL",
+          "body": "CF, arts. 5º a 17. — Direitos fundamentais protegem a pessoa e limitam o poder estatal. Para a prova, leia o texto constitucional e preste atenção às exceções, aos sujeitos protegidos e às expressões temporais."
+        },
+        {
+          "type": "paragraph",
+          "text": "O caput protege vida, liberdade, igualdade, segurança e propriedade. O art. 5º contém regras sobre legalidade, proibição de tortura, liberdade de manifestação, direito de resposta, crença, inviolabilidade da intimidade, domicílio e comunicações, reunião, associação, acesso à Justiça, devido processo legal, contraditório e ampla defesa."
+        },
+        {
+          "type": "paragraph",
+          "text": "Legalidade (II): ninguém será obrigado a fazer ou deixar de fazer algo senão em virtude de lei. Manifestação do pensamento (IV): é livre, mas o anonimato é vedado. Tortura (III): ninguém será submetido a tortura nem a tratamento desumano ou degradante."
+        },
+        {
+          "type": "paragraph",
+          "text": "Domicílio (XI): a casa é asilo inviolável. Pode haver ingresso sem consentimento em caso de flagrante delito, desastre ou para prestar socorro, a qualquer hora; por determinação judicial, durante o dia."
+        },
+        {
+          "type": "paragraph",
+          "text": "Prisão (LXI): ninguém será preso senão em flagrante delito ou por ordem escrita e fundamentada de autoridade judiciária competente, ressalvadas as hipóteses constitucionais específicas, como transgressão militar ou crime propriamente militar definidos em lei."
+        },
+        {
+          "type": "paragraph",
+          "text": "Garantias processuais: devido processo legal, contraditório e ampla defesa são conceitos relacionados, mas não idênticos. Contraditório envolve ciência e possibilidade de reação; ampla defesa assegura meios de defesa admitidos."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.12",
+      "order": 12,
+      "slug": "remedios-constitucionais",
+      "title": "Remédios constitucionais",
+      "modulo": "Módulo 3 — Direitos e Garantias Fundamentais",
+      "resumo": "Habeas corpus: protege a liberdade de locomoção contra ilegalidade ou abuso de poder.",
+      "paraQue": "Está no recorte do edital: CF, arts. 5º a 17 (Módulo 3 — Direitos e Garantias Fundamentais).",
+      "body": "Habeas corpus: protege a liberdade de locomoção contra ilegalidade ou abuso de poder. Pode ser preventivo ou repressivo.\n\nMandado de segurança: protege direito líquido e certo não amparado por habeas corpus ou habeas data, diante de ilegalidade ou abuso de poder de autoridade pública ou agente no exercício de atribuições públicas.\n\nHabeas data: permite conhecer informações relativas à pessoa do impetrante em registros ou bancos de dados governamentais ou de caráter público e, nas hipóteses legais, retificá-las.\n\nMandado de injunção: aplicável quando a falta de norma regulamentadora inviabiliza o exercício de direitos e liberdades constitucionais ou prerrogativas ligadas à nacionalidade, soberania e cidadania.\n\nAção popular: cidadão pode buscar anular ato lesivo ao patrimônio público, moralidade administrativa, meio ambiente e patrimônio histórico-cultural, observados os requisitos constitucionais e legais.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Habeas corpus: protege a liberdade de locomoção contra ilegalidade ou abuso de poder. Pode ser preventivo ou repressivo."
+        },
+        {
+          "type": "paragraph",
+          "text": "Mandado de segurança: protege direito líquido e certo não amparado por habeas corpus ou habeas data, diante de ilegalidade ou abuso de poder de autoridade pública ou agente no exercício de atribuições públicas."
+        },
+        {
+          "type": "paragraph",
+          "text": "Habeas data: permite conhecer informações relativas à pessoa do impetrante em registros ou bancos de dados governamentais ou de caráter público e, nas hipóteses legais, retificá-las."
+        },
+        {
+          "type": "paragraph",
+          "text": "Mandado de injunção: aplicável quando a falta de norma regulamentadora inviabiliza o exercício de direitos e liberdades constitucionais ou prerrogativas ligadas à nacionalidade, soberania e cidadania."
+        },
+        {
+          "type": "paragraph",
+          "text": "Ação popular: cidadão pode buscar anular ato lesivo ao patrimônio público, moralidade administrativa, meio ambiente e patrimônio histórico-cultural, observados os requisitos constitucionais e legais."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.13",
+      "order": 13,
+      "slug": "art-6-direitos-sociais",
+      "title": "Art. 6º — direitos sociais",
+      "modulo": "Módulo 3 — Direitos e Garantias Fundamentais",
+      "resumo": "Incluem educação, saúde, alimentação, trabalho, moradia, transporte, lazer, segurança, previdência social, proteção à maternidade e à infância e assistência aos desamparados, nos termos do texto constitucional vigente.",
+      "paraQue": "Está no recorte do edital: CF, arts. 5º a 17 (Módulo 3 — Direitos e Garantias Fundamentais).",
+      "body": "Incluem educação, saúde, alimentação, trabalho, moradia, transporte, lazer, segurança, previdência social, proteção à maternidade e à infância e assistência aos desamparados, nos termos do texto constitucional vigente.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Incluem educação, saúde, alimentação, trabalho, moradia, transporte, lazer, segurança, previdência social, proteção à maternidade e à infância e assistência aos desamparados, nos termos do texto constitucional vigente."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.14",
+      "order": 14,
+      "slug": "arts-12-e-13-nacionalidade-e-idioma",
+      "title": "Arts. 12 e 13 — nacionalidade e idioma",
+      "modulo": "Módulo 3 — Direitos e Garantias Fundamentais",
+      "resumo": "A Constituição distingue brasileiros natos e naturalizados e estabelece hipóteses de aquisição e perda da nacionalidade.",
+      "paraQue": "Está no recorte do edital: CF, arts. 5º a 17 (Módulo 3 — Direitos e Garantias Fundamentais).",
+      "body": "A Constituição distingue brasileiros natos e naturalizados e estabelece hipóteses de aquisição e perda da nacionalidade. Leia o art. 12 diretamente na versão atualizada, pois houve alterações constitucionais. O idioma oficial é a língua portuguesa; os símbolos nacionais são bandeira, hino, armas e selo nacionais.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A Constituição distingue brasileiros natos e naturalizados e estabelece hipóteses de aquisição e perda da nacionalidade. Leia o art. 12 diretamente na versão atualizada, pois houve alterações constitucionais. O idioma oficial é a língua portuguesa; os símbolos nacionais são bandeira, hino, armas e selo nacionais."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.15",
+      "order": 15,
+      "slug": "arts-14-a-17-direitos-politicos-e-partidos",
+      "title": "Arts. 14 a 17 — direitos políticos e partidos",
+      "modulo": "Módulo 3 — Direitos e Garantias Fundamentais",
+      "resumo": "A soberania popular é exercida por sufrágio universal e voto direto e secreto, com valor igual para todos, e também por plebiscito, referendo e iniciativa popular, conforme a lei.",
+      "paraQue": "Está no recorte do edital: CF, arts. 5º a 17 (Módulo 3 — Direitos e Garantias Fundamentais).",
+      "body": "A soberania popular é exercida por sufrágio universal e voto direto e secreto, com valor igual para todos, e também por plebiscito, referendo e iniciativa popular, conforme a lei. Diferencie alistamento/voto obrigatório e facultativo, condições de elegibilidade, inelegibilidades e hipóteses de perda ou suspensão dos direitos políticos. A Constituição veda a cassação de direitos políticos. O art. 17 estabelece regras constitucionais sobre partidos políticos, incluindo caráter nacional, proibição de recebimento de recursos financeiros de entidade ou governo estrangeiros e prestação de contas à Justiça Eleitoral, conforme o texto vigente.\n\nPEGADINHAS E CONFUSÕES COMUNS: Determinação judicial autoriza ingresso domiciliar durante o dia, não automaticamente à noite. · Denúncia anônima, por si só, não é uma exceção constitucional autônoma à inviolabilidade do domicílio. · Habeas corpus protege locomoção; habeas data trata de informações pessoais em bancos de dados. · Plebiscito é consulta prévia; referendo é consulta posterior a ato legislativo ou administrativo. · A Constituição veda a cassação de direitos políticos; perda e suspensão só nas hipóteses constitucionais.\n\nREVISÃO RÁPIDA: Art. 5º: direitos e garantias • Art. 6º: direitos sociais • Art. 12: nacionalidade • Art. 14: soberania popular • HC = locomoção; HD = dados pessoais",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A soberania popular é exercida por sufrágio universal e voto direto e secreto, com valor igual para todos, e também por plebiscito, referendo e iniciativa popular, conforme a lei. Diferencie alistamento/voto obrigatório e facultativo, condições de elegibilidade, inelegibilidades e hipóteses de perda ou suspensão dos direitos políticos. A Constituição veda a cassação de direitos políticos. O art. 17 estabelece regras constitucionais sobre partidos políticos, incluindo caráter nacional, proibição de recebimento de recursos financeiros de entidade ou governo estrangeiros e prestação de contas à Justiça Eleitoral, conforme o texto vigente."
+        },
+        {
+          "type": "callout",
+          "variant": "atencao",
+          "title": "PEGADINHAS E CONFUSÕES COMUNS",
+          "body": "Determinação judicial autoriza ingresso domiciliar durante o dia, não automaticamente à noite. · Denúncia anônima, por si só, não é uma exceção constitucional autônoma à inviolabilidade do domicílio. · Habeas corpus protege locomoção; habeas data trata de informações pessoais em bancos de dados. · Plebiscito é consulta prévia; referendo é consulta posterior a ato legislativo ou administrativo. · A Constituição veda a cassação de direitos políticos; perda e suspensão só nas hipóteses constitucionais."
+        },
+        {
+          "type": "callout",
+          "variant": "dica",
+          "title": "REVISÃO RÁPIDA",
+          "body": "Art. 5º: direitos e garantias • Art. 6º: direitos sociais • Art. 12: nacionalidade • Art. 14: soberania popular • HC = locomoção; HD = dados pessoais"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.16",
+      "order": 16,
+      "slug": "organizacao-politico-administrativa",
+      "title": "Organização político-administrativa",
+      "modulo": "Módulo 4 — Organização do Estado",
+      "resumo": "A organização compreende União, estados, Distrito Federal e municípios, todos autônomos nos termos da Constituição.",
+      "paraQue": "Está no recorte do edital: CF, arts. 18 a 36 (Módulo 4 — Organização do Estado).",
+      "body": "NO EDITAL: CF, arts. 18 a 36. — O Brasil adota uma Federação. União, estados, Distrito Federal e municípios são entes autônomos; não são soberanos. A soberania pertence à República Federativa do Brasil.\n\nA organização compreende União, estados, Distrito Federal e municípios, todos autônomos nos termos da Constituição. Brasília é a Capital Federal. Territórios federais, se existentes, integram a União e não são entes federativos autônomos. Autonomia envolve auto-organização, autogoverno, autoadministração e competências próprias, sempre dentro dos limites constitucionais.",
+      "blocks": [
+        {
+          "type": "callout",
+          "variant": "edital",
+          "title": "NO EDITAL",
+          "body": "CF, arts. 18 a 36. — O Brasil adota uma Federação. União, estados, Distrito Federal e municípios são entes autônomos; não são soberanos. A soberania pertence à República Federativa do Brasil."
+        },
+        {
+          "type": "paragraph",
+          "text": "A organização compreende União, estados, Distrito Federal e municípios, todos autônomos nos termos da Constituição. Brasília é a Capital Federal. Territórios federais, se existentes, integram a União e não são entes federativos autônomos. Autonomia envolve auto-organização, autogoverno, autoadministração e competências próprias, sempre dentro dos limites constitucionais."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.17",
+      "order": 17,
+      "slug": "competencias-como-diferenciar",
+      "title": "Competências — como diferenciar",
+      "modulo": "Módulo 4 — Organização do Estado",
+      "resumo": "Competência administrativa/material exclusiva da União (art.",
+      "paraQue": "Está no recorte do edital: CF, arts. 18 a 36 (Módulo 4 — Organização do Estado).",
+      "body": "Competência administrativa/material exclusiva da União (art. 21): envolve tarefas como relações exteriores, defesa nacional e emissão de moeda. Competência legislativa privativa da União (art. 22): a União legisla sobre matérias listadas, como direito civil, penal, processual e do trabalho; a Constituição admite autorização aos estados por lei complementar para questões específicas. Competência comum (art. 23): atuação administrativa compartilhada entre União, estados, Distrito Federal e municípios em matérias como saúde, proteção ambiental e preservação do patrimônio. Competência legislativa concorrente (art. 24): União estabelece normas gerais; estados e Distrito Federal suplementam. Na ausência de norma geral federal, os estados exercem competência legislativa plena para atender suas peculiaridades, e lei federal superveniente suspende a eficácia da lei estadual no que lhe for contrário.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Competência administrativa/material exclusiva da União (art. 21): envolve tarefas como relações exteriores, defesa nacional e emissão de moeda. Competência legislativa privativa da União (art. 22): a União legisla sobre matérias listadas, como direito civil, penal, processual e do trabalho; a Constituição admite autorização aos estados por lei complementar para questões específicas. Competência comum (art. 23): atuação administrativa compartilhada entre União, estados, Distrito Federal e municípios em matérias como saúde, proteção ambiental e preservação do patrimônio. Competência legislativa concorrente (art. 24): União estabelece normas gerais; estados e Distrito Federal suplementam. Na ausência de norma geral federal, os estados exercem competência legislativa plena para atender suas peculiaridades, e lei federal superveniente suspende a eficácia da lei estadual no que lhe for contrário."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.18",
+      "order": 18,
+      "slug": "estados-municipios-e-distrito-federal",
+      "title": "Estados, municípios e Distrito Federal",
+      "modulo": "Módulo 4 — Organização do Estado",
+      "resumo": "Os estados organizam-se por suas Constituições e leis, observados os princípios da Constituição Federal.",
+      "paraQue": "Está no recorte do edital: CF, arts. 18 a 36 (Módulo 4 — Organização do Estado).",
+      "body": "Os estados organizam-se por suas Constituições e leis, observados os princípios da Constituição Federal. Os municípios regem-se por leis orgânicas aprovadas conforme o art. 29. O Distrito Federal acumula competências legislativas reservadas aos estados e municípios, com as limitações constitucionais.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Os estados organizam-se por suas Constituições e leis, observados os princípios da Constituição Federal. Os municípios regem-se por leis orgânicas aprovadas conforme o art. 29. O Distrito Federal acumula competências legislativas reservadas aos estados e municípios, com as limitações constitucionais."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.19",
+      "order": 19,
+      "slug": "intervencao",
+      "title": "Intervenção",
+      "modulo": "Módulo 4 — Organização do Estado",
+      "resumo": "A intervenção é medida excepcional que limita temporariamente a autonomia de um ente federativo para proteger a ordem constitucional.",
+      "paraQue": "Está no recorte do edital: CF, arts. 18 a 36 (Módulo 4 — Organização do Estado).",
+      "body": "A intervenção é medida excepcional que limita temporariamente a autonomia de um ente federativo para proteger a ordem constitucional. A Constituição disciplina hipóteses de intervenção federal nos estados/DF e intervenção estadual nos municípios. Em prova, diferencie a regra de autonomia das hipóteses taxativas de intervenção.\n\nPEGADINHAS E CONFUSÕES COMUNS: Soberania não é sinônimo de autonomia. · Municípios são entes federativos autônomos; territórios federais não são. · Competência comum (art. 23) é administrativa; concorrente (art. 24) é legislativa. · Competência privativa da União pode admitir delegação legislativa específica aos estados nas condições do art. 22, parágrafo único.\n\nREVISÃO RÁPIDA: Art. 18: entes autônomos • Art. 21: tarefas da União • Art. 22: legislação privativa • Art. 23: atuação administrativa comum • Art. 24: legislação concorrente",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A intervenção é medida excepcional que limita temporariamente a autonomia de um ente federativo para proteger a ordem constitucional. A Constituição disciplina hipóteses de intervenção federal nos estados/DF e intervenção estadual nos municípios. Em prova, diferencie a regra de autonomia das hipóteses taxativas de intervenção."
+        },
+        {
+          "type": "callout",
+          "variant": "atencao",
+          "title": "PEGADINHAS E CONFUSÕES COMUNS",
+          "body": "Soberania não é sinônimo de autonomia. · Municípios são entes federativos autônomos; territórios federais não são. · Competência comum (art. 23) é administrativa; concorrente (art. 24) é legislativa. · Competência privativa da União pode admitir delegação legislativa específica aos estados nas condições do art. 22, parágrafo único."
+        },
+        {
+          "type": "callout",
+          "variant": "dica",
+          "title": "REVISÃO RÁPIDA",
+          "body": "Art. 18: entes autônomos • Art. 21: tarefas da União • Art. 22: legislação privativa • Art. 23: atuação administrativa comum • Art. 24: legislação concorrente"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.20",
+      "order": 20,
+      "slug": "art-37-principios-expressos",
+      "title": "Art. 37 — princípios expressos",
+      "modulo": "Módulo 5 — Administração Pública e Militares Estaduais",
+      "resumo": "LIMPE: legalidade, impessoalidade, moralidade, publicidade e eficiência.",
+      "paraQue": "Está no recorte do edital: CF, arts. 37 a 42 (Módulo 5 — Administração Pública e Militares Estaduais).",
+      "body": "NO EDITAL: CF, arts. 37 a 42. — Este módulo é especialmente útil para compreender os princípios que orientam a atuação estatal e as regras constitucionais aplicáveis aos servidores e militares estaduais.\n\nLIMPE: legalidade, impessoalidade, moralidade, publicidade e eficiência. A legalidade administrativa exige atuação dentro da ordem jurídica; a impessoalidade veda favorecimento e perseguição; a moralidade exige probidade; a publicidade promove transparência; a eficiência busca boa prestação do serviço. Os princípios não funcionam isoladamente. A publicidade pode sofrer restrições legalmente justificadas, como para proteger intimidade ou segurança, mas o sigilo não substitui a publicidade como princípio expresso.",
+      "blocks": [
+        {
+          "type": "callout",
+          "variant": "edital",
+          "title": "NO EDITAL",
+          "body": "CF, arts. 37 a 42. — Este módulo é especialmente útil para compreender os princípios que orientam a atuação estatal e as regras constitucionais aplicáveis aos servidores e militares estaduais."
+        },
+        {
+          "type": "paragraph",
+          "text": "LIMPE: legalidade, impessoalidade, moralidade, publicidade e eficiência. A legalidade administrativa exige atuação dentro da ordem jurídica; a impessoalidade veda favorecimento e perseguição; a moralidade exige probidade; a publicidade promove transparência; a eficiência busca boa prestação do serviço. Os princípios não funcionam isoladamente. A publicidade pode sofrer restrições legalmente justificadas, como para proteger intimidade ou segurança, mas o sigilo não substitui a publicidade como princípio expresso."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.21",
+      "order": 21,
+      "slug": "concurso-publico-e-cargos",
+      "title": "Concurso público e cargos",
+      "modulo": "Módulo 5 — Administração Pública e Militares Estaduais",
+      "resumo": "A investidura em cargo ou emprego público depende, em regra, de aprovação prévia em concurso de provas ou de provas e títulos, conforme natureza e complexidade do cargo, ressalvados cargos em comissão declarados em lei como de livre nomeação e exoneração.",
+      "paraQue": "Está no recorte do edital: CF, arts. 37 a 42 (Módulo 5 — Administração Pública e Militares Estaduais).",
+      "body": "A investidura em cargo ou emprego público depende, em regra, de aprovação prévia em concurso de provas ou de provas e títulos, conforme natureza e complexidade do cargo, ressalvados cargos em comissão declarados em lei como de livre nomeação e exoneração. O prazo de validade do concurso é de até dois anos, prorrogável uma vez por igual período. A aprovação não deve ser confundida automaticamente com nomeação imediata em toda situação; direitos e prioridades dependem das regras constitucionais, edital e jurisprudência aplicável.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A investidura em cargo ou emprego público depende, em regra, de aprovação prévia em concurso de provas ou de provas e títulos, conforme natureza e complexidade do cargo, ressalvados cargos em comissão declarados em lei como de livre nomeação e exoneração. O prazo de validade do concurso é de até dois anos, prorrogável uma vez por igual período. A aprovação não deve ser confundida automaticamente com nomeação imediata em toda situação; direitos e prioridades dependem das regras constitucionais, edital e jurisprudência aplicável."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.22",
+      "order": 22,
+      "slug": "acumulacao-de-cargos",
+      "title": "Acumulação de cargos",
+      "modulo": "Módulo 5 — Administração Pública e Militares Estaduais",
+      "resumo": "A Constituição estabelece vedação geral à acumulação remunerada de cargos públicos, com exceções expressas e desde que haja compatibilidade de horários.",
+      "paraQue": "Está no recorte do edital: CF, arts. 37 a 42 (Módulo 5 — Administração Pública e Militares Estaduais).",
+      "body": "A Constituição estabelece vedação geral à acumulação remunerada de cargos públicos, com exceções expressas e desde que haja compatibilidade de horários. Estude a redação vigente do art. 37, XVI e XVII, e as regras específicas aplicáveis a profissionais de saúde, professores e cargos técnicos ou científicos.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A Constituição estabelece vedação geral à acumulação remunerada de cargos públicos, com exceções expressas e desde que haja compatibilidade de horários. Estude a redação vigente do art. 37, XVI e XVII, e as regras específicas aplicáveis a profissionais de saúde, professores e cargos técnicos ou científicos."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.23",
+      "order": 23,
+      "slug": "responsabilidade-civil-do-estado",
+      "title": "Responsabilidade civil do Estado",
+      "modulo": "Módulo 5 — Administração Pública e Militares Estaduais",
+      "resumo": "Pessoas jurídicas de direito público e pessoas jurídicas de direito privado prestadoras de serviços públicos respondem pelos danos que seus agentes, nessa qualidade, causarem a terceiros, assegurado o direito de regresso contra o responsável nos casos de dolo ou culpa (art.",
+      "paraQue": "Está no recorte do edital: CF, arts. 37 a 42 (Módulo 5 — Administração Pública e Militares Estaduais).",
+      "body": "Pessoas jurídicas de direito público e pessoas jurídicas de direito privado prestadoras de serviços públicos respondem pelos danos que seus agentes, nessa qualidade, causarem a terceiros, assegurado o direito de regresso contra o responsável nos casos de dolo ou culpa (art. 37, § 6º).\n\nA responsabilidade perante a vítima é, em regra, objetiva: exige dano e nexo causal com a atuação estatal. O regresso contra o agente exige dolo ou culpa. Situações concretas podem envolver excludentes ou atenuantes de nexo causal.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Pessoas jurídicas de direito público e pessoas jurídicas de direito privado prestadoras de serviços públicos respondem pelos danos que seus agentes, nessa qualidade, causarem a terceiros, assegurado o direito de regresso contra o responsável nos casos de dolo ou culpa (art. 37, § 6º)."
+        },
+        {
+          "type": "paragraph",
+          "text": "A responsabilidade perante a vítima é, em regra, objetiva: exige dano e nexo causal com a atuação estatal. O regresso contra o agente exige dolo ou culpa. Situações concretas podem envolver excludentes ou atenuantes de nexo causal."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.24",
+      "order": 24,
+      "slug": "servidores-e-militares-estaduais",
+      "title": "Servidores e militares estaduais",
+      "modulo": "Módulo 5 — Administração Pública e Militares Estaduais",
+      "resumo": "Os arts.",
+      "paraQue": "Está no recorte do edital: CF, arts. 37 a 42 (Módulo 5 — Administração Pública e Militares Estaduais).",
+      "body": "Os arts. 39 a 41 tratam de aspectos do regime de servidores públicos, remuneração e estabilidade, observadas as regras constitucionais e legais. Estabilidade não é adquirida automaticamente por qualquer pessoa que trabalhe para o Estado: o art. 41 estabelece requisitos para servidores nomeados para cargo efetivo em virtude de concurso público. O art. 42 trata dos membros das Polícias Militares e Corpos de Bombeiros Militares como militares dos estados, do Distrito Federal e dos territórios, com regime constitucional próprio e aplicação de dispositivos previstos na Constituição.\n\nPEGADINHAS E CONFUSÕES COMUNS: LIMPE é a lista expressa do caput do art. 37. · Concurso: validade de até dois anos, prorrogável uma vez por igual período. · Responsabilidade objetiva do Estado não significa responsabilidade automática sem dano e nexo causal. · Estabilidade do art. 41 exige cargo efetivo, concurso e cumprimento dos requisitos constitucionais.\n\nREVISÃO RÁPIDA: LIMPE • Concurso: até 2 anos + uma prorrogação igual • Art. 37, § 6º: Estado responde e pode regressar contra agente com dolo/culpa • Arts. 42: militares estaduais",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Os arts. 39 a 41 tratam de aspectos do regime de servidores públicos, remuneração e estabilidade, observadas as regras constitucionais e legais. Estabilidade não é adquirida automaticamente por qualquer pessoa que trabalhe para o Estado: o art. 41 estabelece requisitos para servidores nomeados para cargo efetivo em virtude de concurso público. O art. 42 trata dos membros das Polícias Militares e Corpos de Bombeiros Militares como militares dos estados, do Distrito Federal e dos territórios, com regime constitucional próprio e aplicação de dispositivos previstos na Constituição."
+        },
+        {
+          "type": "callout",
+          "variant": "atencao",
+          "title": "PEGADINHAS E CONFUSÕES COMUNS",
+          "body": "LIMPE é a lista expressa do caput do art. 37. · Concurso: validade de até dois anos, prorrogável uma vez por igual período. · Responsabilidade objetiva do Estado não significa responsabilidade automática sem dano e nexo causal. · Estabilidade do art. 41 exige cargo efetivo, concurso e cumprimento dos requisitos constitucionais."
+        },
+        {
+          "type": "callout",
+          "variant": "dica",
+          "title": "REVISÃO RÁPIDA",
+          "body": "LIMPE • Concurso: até 2 anos + uma prorrogação igual • Art. 37, § 6º: Estado responde e pode regressar contra agente com dolo/culpa • Arts. 42: militares estaduais"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.25",
+      "order": 25,
+      "slug": "poder-legislativo-arts-44-a-75",
+      "title": "Poder Legislativo — arts. 44 a 75",
+      "modulo": "Módulo 6 — Organização dos Poderes",
+      "resumo": "O Congresso Nacional é composto pela Câmara dos Deputados e pelo Senado Federal.",
+      "paraQue": "Está no recorte do edital: CF, arts. 44 a 100 (Módulo 6 — Organização dos Poderes).",
+      "body": "NO EDITAL: CF, arts. 44 a 100. — O programa abrange a parte da Constituição dedicada aos Poderes da União, com intervalo que inclui Legislativo, Executivo, Judiciário e disposições sobre funções essenciais à Justiça. Estude os artigos exatamente dentro do recorte do edital.\n\nO Congresso Nacional é composto pela Câmara dos Deputados e pelo Senado Federal. A Câmara representa o povo; o Senado representa os estados e o Distrito Federal. A Câmara tem representantes eleitos pelo sistema proporcional; o Senado, pelo sistema majoritário. O processo legislativo inclui elaboração de emendas constitucionais, leis complementares, leis ordinárias, leis delegadas, medidas provisórias, decretos legislativos e resoluções, conforme os arts. 59 e seguintes. Comissões parlamentares de inquérito têm poderes de investigação próprios das autoridades judiciais e outros previstos em lei, mas não exercem jurisdição nem podem ultrapassar limites constitucionais.",
+      "blocks": [
+        {
+          "type": "callout",
+          "variant": "edital",
+          "title": "NO EDITAL",
+          "body": "CF, arts. 44 a 100. — O programa abrange a parte da Constituição dedicada aos Poderes da União, com intervalo que inclui Legislativo, Executivo, Judiciário e disposições sobre funções essenciais à Justiça. Estude os artigos exatamente dentro do recorte do edital."
+        },
+        {
+          "type": "paragraph",
+          "text": "O Congresso Nacional é composto pela Câmara dos Deputados e pelo Senado Federal. A Câmara representa o povo; o Senado representa os estados e o Distrito Federal. A Câmara tem representantes eleitos pelo sistema proporcional; o Senado, pelo sistema majoritário. O processo legislativo inclui elaboração de emendas constitucionais, leis complementares, leis ordinárias, leis delegadas, medidas provisórias, decretos legislativos e resoluções, conforme os arts. 59 e seguintes. Comissões parlamentares de inquérito têm poderes de investigação próprios das autoridades judiciais e outros previstos em lei, mas não exercem jurisdição nem podem ultrapassar limites constitucionais."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.26",
+      "order": 26,
+      "slug": "poder-executivo-arts-76-a-91",
+      "title": "Poder Executivo — arts. 76 a 91",
+      "modulo": "Módulo 6 — Organização dos Poderes",
+      "resumo": "O Poder Executivo federal é exercido pelo Presidente da República, auxiliado pelos Ministros de Estado.",
+      "paraQue": "Está no recorte do edital: CF, arts. 44 a 100 (Módulo 6 — Organização dos Poderes).",
+      "body": "O Poder Executivo federal é exercido pelo Presidente da República, auxiliado pelos Ministros de Estado. Estude eleição, mandato, substituição e sucessão, competências presidenciais, responsabilidade do Presidente e funções dos Ministros. Não confunda substituição temporária com sucessão definitiva. A ordem constitucional para substituição do Presidente inclui Vice-Presidente e, nas hipóteses constitucionais, presidentes da Câmara, do Senado e do STF.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "O Poder Executivo federal é exercido pelo Presidente da República, auxiliado pelos Ministros de Estado. Estude eleição, mandato, substituição e sucessão, competências presidenciais, responsabilidade do Presidente e funções dos Ministros. Não confunda substituição temporária com sucessão definitiva. A ordem constitucional para substituição do Presidente inclui Vice-Presidente e, nas hipóteses constitucionais, presidentes da Câmara, do Senado e do STF."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.27",
+      "order": 27,
+      "slug": "poder-judiciario-arts-92-a-100",
+      "title": "Poder Judiciário — arts. 92 a 100",
+      "modulo": "Módulo 6 — Organização dos Poderes",
+      "resumo": "O Poder Judiciário é composto pelos órgãos previstos no art.",
+      "paraQue": "Está no recorte do edital: CF, arts. 44 a 100 (Módulo 6 — Organização dos Poderes).",
+      "body": "O Poder Judiciário é composto pelos órgãos previstos no art. 92. O STF é o guardião da Constituição; o STJ exerce funções de uniformização da interpretação da legislação federal infraconstitucional, nos termos constitucionais.\n\nA Justiça Militar integra a organização do Judiciário, mas sua disciplina específica também aparece no intervalo dos arts. 122 a 124. O art. 100 trata do regime de precatórios para pagamentos devidos pelas Fazendas Públicas, observadas as exceções e regras constitucionais.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "O Poder Judiciário é composto pelos órgãos previstos no art. 92. O STF é o guardião da Constituição; o STJ exerce funções de uniformização da interpretação da legislação federal infraconstitucional, nos termos constitucionais."
+        },
+        {
+          "type": "paragraph",
+          "text": "A Justiça Militar integra a organização do Judiciário, mas sua disciplina específica também aparece no intervalo dos arts. 122 a 124. O art. 100 trata do regime de precatórios para pagamentos devidos pelas Fazendas Públicas, observadas as exceções e regras constitucionais."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.28",
+      "order": 28,
+      "slug": "funcoes-essenciais-a-justica",
+      "title": "Funções essenciais à Justiça",
+      "modulo": "Módulo 6 — Organização dos Poderes",
+      "resumo": "Ministério Público, Advocacia Pública, advocacia e Defensoria Pública são instituições essenciais à função jurisdicional, com atribuições próprias.",
+      "paraQue": "Está no recorte do edital: CF, arts. 44 a 100 (Módulo 6 — Organização dos Poderes).",
+      "body": "Ministério Público, Advocacia Pública, advocacia e Defensoria Pública são instituições essenciais à função jurisdicional, com atribuições próprias. O Ministério Público defende a ordem jurídica, o regime democrático e interesses sociais e individuais indisponíveis, nos termos do art. 127.\n\nPEGADINHAS E CONFUSÕES COMUNS: Câmara dos Deputados representa o povo; Senado representa estados e DF. · STF e STJ têm competências diferentes. · CPI investiga, mas não julga criminalmente nem substitui o Ministério Público. · Funções essenciais à Justiça não são todas órgãos do Poder Judiciário.\n\nREVISÃO RÁPIDA: Art. 44: Congresso = Câmara + Senado • Art. 76: Executivo federal • Art. 92: órgãos do Judiciário • Art. 127: Ministério Público • Art. 100: precatórios",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Ministério Público, Advocacia Pública, advocacia e Defensoria Pública são instituições essenciais à função jurisdicional, com atribuições próprias. O Ministério Público defende a ordem jurídica, o regime democrático e interesses sociais e individuais indisponíveis, nos termos do art. 127."
+        },
+        {
+          "type": "callout",
+          "variant": "atencao",
+          "title": "PEGADINHAS E CONFUSÕES COMUNS",
+          "body": "Câmara dos Deputados representa o povo; Senado representa estados e DF. · STF e STJ têm competências diferentes. · CPI investiga, mas não julga criminalmente nem substitui o Ministério Público. · Funções essenciais à Justiça não são todas órgãos do Poder Judiciário."
+        },
+        {
+          "type": "callout",
+          "variant": "dica",
+          "title": "REVISÃO RÁPIDA",
+          "body": "Art. 44: Congresso = Câmara + Senado • Art. 76: Executivo federal • Art. 92: órgãos do Judiciário • Art. 127: Ministério Público • Art. 100: precatórios"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.29",
+      "order": 29,
+      "slug": "justica-militar-da-uniao-arts-122-a-124",
+      "title": "Justiça Militar da União — arts. 122 a 124",
+      "modulo": "Módulo 7 — Justiça Militar, Defesa do Estado e Segurança Pública",
+      "resumo": "A Justiça Militar da União é composta pelos órgãos previstos no art.",
+      "paraQue": "Está no recorte do edital: CF, arts. 122 a 144 (Módulo 7 — Justiça Militar, Defesa do Estado e Segurança Pública).",
+      "body": "NO EDITAL: CF, arts. 122 a 144. — Este bloco é importante para a formação de um futuro policial militar. A prova pode explorar a competência da Justiça Militar, os instrumentos constitucionais de defesa e a distribuição de atribuições entre os órgãos de segurança pública.\n\nA Justiça Militar da União é composta pelos órgãos previstos no art. 122. O art. 124 atribui a ela o processamento e julgamento dos crimes militares definidos em lei. Não confunda Justiça Militar da União com Justiça Militar estadual, disciplinada também pelo art. 125.",
+      "blocks": [
+        {
+          "type": "callout",
+          "variant": "edital",
+          "title": "NO EDITAL",
+          "body": "CF, arts. 122 a 144. — Este bloco é importante para a formação de um futuro policial militar. A prova pode explorar a competência da Justiça Militar, os instrumentos constitucionais de defesa e a distribuição de atribuições entre os órgãos de segurança pública."
+        },
+        {
+          "type": "paragraph",
+          "text": "A Justiça Militar da União é composta pelos órgãos previstos no art. 122. O art. 124 atribui a ela o processamento e julgamento dos crimes militares definidos em lei. Não confunda Justiça Militar da União com Justiça Militar estadual, disciplinada também pelo art. 125."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.30",
+      "order": 30,
+      "slug": "justica-estadual-e-militar-estadual-art-125",
+      "title": "Justiça estadual e militar estadual — art. 125",
+      "modulo": "Módulo 7 — Justiça Militar, Defesa do Estado e Segurança Pública",
+      "resumo": "Os estados organizam sua Justiça, observados os princípios constitucionais.",
+      "paraQue": "Está no recorte do edital: CF, arts. 122 a 144 (Módulo 7 — Justiça Militar, Defesa do Estado e Segurança Pública).",
+      "body": "Os estados organizam sua Justiça, observados os princípios constitucionais. A Justiça Militar estadual pode ser constituída, nos termos constitucionais, por juízes de direito e Conselhos de Justiça em primeiro grau e pelo Tribunal de Justiça ou Tribunal de Justiça Militar, onde existir, em segundo grau. A competência envolve crimes militares definidos em lei e ações judiciais contra atos disciplinares militares, ressalvadas as competências constitucionais do júri quando a vítima for civil e demais disposições do art. 125.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Os estados organizam sua Justiça, observados os princípios constitucionais. A Justiça Militar estadual pode ser constituída, nos termos constitucionais, por juízes de direito e Conselhos de Justiça em primeiro grau e pelo Tribunal de Justiça ou Tribunal de Justiça Militar, onde existir, em segundo grau. A competência envolve crimes militares definidos em lei e ações judiciais contra atos disciplinares militares, ressalvadas as competências constitucionais do júri quando a vítima for civil e demais disposições do art. 125."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.31",
+      "order": 31,
+      "slug": "estado-de-defesa-e-estado-de-sitio-arts-136-a-141",
+      "title": "Estado de defesa e estado de sítio — arts. 136 a 141",
+      "modulo": "Módulo 7 — Justiça Militar, Defesa do Estado e Segurança Pública",
+      "resumo": "São mecanismos excepcionais de preservação ou restabelecimento da ordem constitucional.",
+      "paraQue": "Está no recorte do edital: CF, arts. 122 a 144 (Módulo 7 — Justiça Militar, Defesa do Estado e Segurança Pública).",
+      "body": "São mecanismos excepcionais de preservação ou restabelecimento da ordem constitucional. O estado de defesa é decretado pelo Presidente da República após ouvir os conselhos constitucionais, nas hipóteses e limites do art. 136. O estado de sítio depende de autorização do Congresso Nacional nas hipóteses do art. 137. São medidas excepcionais, temporárias e sujeitas a controle político e jurídico. Memorize quem decreta, quem autoriza ou aprova, as hipóteses e os direitos que podem sofrer restrições nos limites constitucionais.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "São mecanismos excepcionais de preservação ou restabelecimento da ordem constitucional. O estado de defesa é decretado pelo Presidente da República após ouvir os conselhos constitucionais, nas hipóteses e limites do art. 136. O estado de sítio depende de autorização do Congresso Nacional nas hipóteses do art. 137. São medidas excepcionais, temporárias e sujeitas a controle político e jurídico. Memorize quem decreta, quem autoriza ou aprova, as hipóteses e os direitos que podem sofrer restrições nos limites constitucionais."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.32",
+      "order": 32,
+      "slug": "forcas-armadas-art-142",
+      "title": "Forças Armadas — art. 142",
+      "modulo": "Módulo 7 — Justiça Militar, Defesa do Estado e Segurança Pública",
+      "resumo": "As Forças Armadas são constituídas pela Marinha, pelo Exército e pela Aeronáutica, instituições nacionais permanentes e regulares, organizadas com base na hierarquia e disciplina, sob autoridade suprema do Presidente da República.",
+      "paraQue": "Está no recorte do edital: CF, arts. 122 a 144 (Módulo 7 — Justiça Militar, Defesa do Estado e Segurança Pública).",
+      "body": "As Forças Armadas são constituídas pela Marinha, pelo Exército e pela Aeronáutica, instituições nacionais permanentes e regulares, organizadas com base na hierarquia e disciplina, sob autoridade suprema do Presidente da República. Suas destinações constitucionais incluem defesa da Pátria, garantia dos poderes constitucionais e, por iniciativa de qualquer destes, da lei e da ordem, nos termos da Constituição e da legislação.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "As Forças Armadas são constituídas pela Marinha, pelo Exército e pela Aeronáutica, instituições nacionais permanentes e regulares, organizadas com base na hierarquia e disciplina, sob autoridade suprema do Presidente da República. Suas destinações constitucionais incluem defesa da Pátria, garantia dos poderes constitucionais e, por iniciativa de qualquer destes, da lei e da ordem, nos termos da Constituição e da legislação."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.33",
+      "order": 33,
+      "slug": "seguranca-publica-art-144",
+      "title": "Segurança pública — art. 144",
+      "modulo": "Módulo 7 — Justiça Militar, Defesa do Estado e Segurança Pública",
+      "resumo": "A segurança pública é dever do Estado, direito e responsabilidade de todos e é exercida para preservação da ordem pública e da incolumidade das pessoas e do patrimônio.",
+      "paraQue": "Está no recorte do edital: CF, arts. 122 a 144 (Módulo 7 — Justiça Militar, Defesa do Estado e Segurança Pública).",
+      "body": "A segurança pública é dever do Estado, direito e responsabilidade de todos e é exercida para preservação da ordem pública e da incolumidade das pessoas e do patrimônio.\n\nO art. 144 enumera os órgãos de segurança pública. Entre eles estão Polícia Federal, Polícia Rodoviária Federal, Polícia Ferroviária Federal, polícias civis, polícias militares, corpos de bombeiros militares, polícias penais federal, estaduais e distrital.\n\nPolícia Militar: polícia ostensiva e preservação da ordem pública (art. 144, § 5º). Polícia Civil: funções de polícia judiciária estadual e apuração de infrações penais, exceto as militares, ressalvada a competência da União. Polícia Federal: atribuições descritas no § 1º, incluindo polícia judiciária da União e apuração de infrações de competência federal nos termos constitucionais.\n\nPEGADINHAS E CONFUSÕES COMUNS: Polícia Militar: polícia ostensiva e preservação da ordem pública; não é a polícia judiciária da União. · Polícia Civil investiga infrações penais, exceto as militares e ressalvada a competência da União. · Estado de defesa e estado de sítio não são sinônimos; requisitos e participação do Congresso diferem. · Forças Armadas e órgãos de segurança pública são tratados em dispositivos diferentes.\n\nREVISÃO RÁPIDA: Art. 124: Justiça Militar da União julga crimes militares definidos em lei • Arts. 136–141: defesa e sítio\n\n• Art. 142: Forças Armadas • Art. 144: segurança pública • PM = ostensiva + ordem pública",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A segurança pública é dever do Estado, direito e responsabilidade de todos e é exercida para preservação da ordem pública e da incolumidade das pessoas e do patrimônio."
+        },
+        {
+          "type": "paragraph",
+          "text": "O art. 144 enumera os órgãos de segurança pública. Entre eles estão Polícia Federal, Polícia Rodoviária Federal, Polícia Ferroviária Federal, polícias civis, polícias militares, corpos de bombeiros militares, polícias penais federal, estaduais e distrital."
+        },
+        {
+          "type": "paragraph",
+          "text": "Polícia Militar: polícia ostensiva e preservação da ordem pública (art. 144, § 5º). Polícia Civil: funções de polícia judiciária estadual e apuração de infrações penais, exceto as militares, ressalvada a competência da União. Polícia Federal: atribuições descritas no § 1º, incluindo polícia judiciária da União e apuração de infrações de competência federal nos termos constitucionais."
+        },
+        {
+          "type": "callout",
+          "variant": "atencao",
+          "title": "PEGADINHAS E CONFUSÕES COMUNS",
+          "body": "Polícia Militar: polícia ostensiva e preservação da ordem pública; não é a polícia judiciária da União. · Polícia Civil investiga infrações penais, exceto as militares e ressalvada a competência da União. · Estado de defesa e estado de sítio não são sinônimos; requisitos e participação do Congresso diferem. · Forças Armadas e órgãos de segurança pública são tratados em dispositivos diferentes."
+        },
+        {
+          "type": "callout",
+          "variant": "dica",
+          "title": "REVISÃO RÁPIDA",
+          "body": "Art. 124: Justiça Militar da União julga crimes militares definidos em lei • Arts. 136–141: defesa e sítio\n\n• Art. 142: Forças Armadas • Art. 144: segurança pública • PM = ostensiva + ordem pública"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.34",
+      "order": 34,
+      "slug": "arts-1-a-40-fundamentos-direitos-organizacao-e-administracao",
+      "title": "Arts. 1º a 40 — fundamentos, direitos, organização e Administração",
+      "modulo": "Módulo 8 — Constituição do Estado de Santa Catarina",
+      "resumo": "O art.",
+      "paraQue": "Está no recorte do edital: CE/SC, arts. 1º a 40, 50 a 76, 90 e 105 a 109-C (Módulo 8 — Constituição do Estado de Santa Catarina).",
+      "body": "NO EDITAL: CE/SC, arts. 1º a 40, 50 a 76, 90 e 105 a 109-C. — A Constituição estadual é parte expressa do edital. Não basta estudar apenas a Constituição Federal. Utilize sempre a versão oficial atualizada da ALESC e respeite os limites exatos de artigos indicados no edital.\n\nO art. 1º da Constituição catarinense apresenta os fundamentos do Estado, incluindo soberania nacional, autonomia estadual, cidadania, dignidade da pessoa humana, valores sociais do trabalho e da livre iniciativa e pluralismo político.\n\nOs artigos iniciais tratam também de soberania popular, símbolos estaduais, direitos e garantias, organização político-administrativa, competências estaduais, bens, Administração Pública e regras relativas aos agentes públicos. Leia os artigos incluídos no recorte integralmente.\n\nNo capítulo de Administração Pública, compare os princípios estaduais com o art. 37 da Constituição Federal. A Constituição estadual pode prever redações e regras próprias, desde que respeite a Constituição Federal.",
+      "blocks": [
+        {
+          "type": "callout",
+          "variant": "edital",
+          "title": "NO EDITAL",
+          "body": "CE/SC, arts. 1º a 40, 50 a 76, 90 e 105 a 109-C. — A Constituição estadual é parte expressa do edital. Não basta estudar apenas a Constituição Federal. Utilize sempre a versão oficial atualizada da ALESC e respeite os limites exatos de artigos indicados no edital."
+        },
+        {
+          "type": "paragraph",
+          "text": "O art. 1º da Constituição catarinense apresenta os fundamentos do Estado, incluindo soberania nacional, autonomia estadual, cidadania, dignidade da pessoa humana, valores sociais do trabalho e da livre iniciativa e pluralismo político."
+        },
+        {
+          "type": "paragraph",
+          "text": "Os artigos iniciais tratam também de soberania popular, símbolos estaduais, direitos e garantias, organização político-administrativa, competências estaduais, bens, Administração Pública e regras relativas aos agentes públicos. Leia os artigos incluídos no recorte integralmente."
+        },
+        {
+          "type": "paragraph",
+          "text": "No capítulo de Administração Pública, compare os princípios estaduais com o art. 37 da Constituição Federal. A Constituição estadual pode prever redações e regras próprias, desde que respeite a Constituição Federal."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.35",
+      "order": 35,
+      "slug": "arts-50-a-76-poder-legislativo-e-poder-executivo-estaduais",
+      "title": "Arts. 50 a 76 — Poder Legislativo e Poder Executivo estaduais",
+      "modulo": "Módulo 8 — Constituição do Estado de Santa Catarina",
+      "resumo": "O recorte inclui dispositivos relativos à organização e ao funcionamento dos Poderes estaduais.",
+      "paraQue": "Está no recorte do edital: CE/SC, arts. 1º a 40, 50 a 76, 90 e 105 a 109-C (Módulo 8 — Constituição do Estado de Santa Catarina).",
+      "body": "O recorte inclui dispositivos relativos à organização e ao funcionamento dos Poderes estaduais. Estude a composição e as competências da Assembleia Legislativa, o processo legislativo estadual, as atribuições do Governador e do Vice-Governador, substituição e responsabilidade conforme o artigo específico.\n\nNão transfira automaticamente regras federais para o plano estadual: use a Constituição catarinense para detalhes da Assembleia Legislativa e do Governo estadual.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "O recorte inclui dispositivos relativos à organização e ao funcionamento dos Poderes estaduais. Estude a composição e as competências da Assembleia Legislativa, o processo legislativo estadual, as atribuições do Governador e do Vice-Governador, substituição e responsabilidade conforme o artigo específico."
+        },
+        {
+          "type": "paragraph",
+          "text": "Não transfira automaticamente regras federais para o plano estadual: use a Constituição catarinense para detalhes da Assembleia Legislativa e do Governo estadual."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.36",
+      "order": 36,
+      "slug": "art-90",
+      "title": "Art. 90",
+      "modulo": "Módulo 8 — Constituição do Estado de Santa Catarina",
+      "resumo": "Leia o art.",
+      "paraQue": "Está no recorte do edital: CE/SC, arts. 1º a 40, 50 a 76, 90 e 105 a 109-C (Módulo 8 — Constituição do Estado de Santa Catarina).",
+      "body": "Leia o art. 90 diretamente na versão atualizada da Constituição estadual e registre seu texto, seus incisos e eventuais parágrafos. Como o edital menciona especificamente esse artigo, não o substitua por um resumo genérico de todo o título.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Leia o art. 90 diretamente na versão atualizada da Constituição estadual e registre seu texto, seus incisos e eventuais parágrafos. Como o edital menciona especificamente esse artigo, não o substitua por um resumo genérico de todo o título."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.37",
+      "order": 37,
+      "slug": "arts-105-a-109-c-seguranca-publica-e-instituicoes-estaduais",
+      "title": "Arts. 105 a 109-C — Segurança pública e instituições estaduais",
+      "modulo": "Módulo 8 — Constituição do Estado de Santa Catarina",
+      "resumo": "Este trecho é particularmente relevante para o contexto policial.",
+      "paraQue": "Está no recorte do edital: CE/SC, arts. 1º a 40, 50 a 76, 90 e 105 a 109-C (Módulo 8 — Constituição do Estado de Santa Catarina).",
+      "body": "Este trecho é particularmente relevante para o contexto policial. Estude a estrutura constitucional da segurança pública estadual, as instituições envolvidas, as atribuições e as regras específicas da Polícia Militar e dos demais órgãos citados nos dispositivos.\n\nA Constituição Federal, art. 144, e a Constituição estadual devem ser lidas em conjunto. Se houver aparente diferença, observe a hierarquia normativa e os limites de competência de cada ente.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Este trecho é particularmente relevante para o contexto policial. Estude a estrutura constitucional da segurança pública estadual, as instituições envolvidas, as atribuições e as regras específicas da Polícia Militar e dos demais órgãos citados nos dispositivos."
+        },
+        {
+          "type": "paragraph",
+          "text": "A Constituição Federal, art. 144, e a Constituição estadual devem ser lidas em conjunto. Se houver aparente diferença, observe a hierarquia normativa e os limites de competência de cada ente."
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.38",
+      "order": 38,
+      "slug": "metodo-de-leitura-da-constituicao-estadual",
+      "title": "Método de leitura da Constituição estadual",
+      "modulo": "Módulo 8 — Constituição do Estado de Santa Catarina",
+      "resumo": "Para cada artigo do edital, faça uma ficha com quatro campos: (1) texto do artigo; (2) resumo em suas palavras; (3) palavras que podem ser trocadas em uma questão; (4) uma pergunta de revisão.",
+      "paraQue": "Está no recorte do edital: CE/SC, arts. 1º a 40, 50 a 76, 90 e 105 a 109-C (Módulo 8 — Constituição do Estado de Santa Catarina).",
+      "body": "Para cada artigo do edital, faça uma ficha com quatro campos: (1) texto do artigo; (2) resumo em suas palavras; (3) palavras que podem ser trocadas em uma questão; (4) uma pergunta de revisão. Esse método ajuda a estudar uma Constituição menos familiar sem decorar páginas inteiras.\n\nPEGADINHAS E CONFUSÕES COMUNS: A Constituição de Santa Catarina está expressamente no edital. · Não presuma que todos os artigos estaduais repetem literalmente a Constituição Federal. · Artigos pontualmente indicados (como o art. 90) precisam ser lidos integralmente, inclusive incisos e parágrafos. · A versão oficial consultada da ALESC é atualizada por emendas; o edital fixa a legislação aplicável na data de publicação.\n\nREVISÃO RÁPIDA: Fonte oficial: ALESC • Estudar somente os intervalos previstos não dispensa ler todos os incisos e parágrafos dentro deles • Comparar CF/88 e CE/SC sem confundir competências",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Para cada artigo do edital, faça uma ficha com quatro campos: (1) texto do artigo; (2) resumo em suas palavras; (3) palavras que podem ser trocadas em uma questão; (4) uma pergunta de revisão. Esse método ajuda a estudar uma Constituição menos familiar sem decorar páginas inteiras."
+        },
+        {
+          "type": "callout",
+          "variant": "atencao",
+          "title": "PEGADINHAS E CONFUSÕES COMUNS",
+          "body": "A Constituição de Santa Catarina está expressamente no edital. · Não presuma que todos os artigos estaduais repetem literalmente a Constituição Federal. · Artigos pontualmente indicados (como o art. 90) precisam ser lidos integralmente, inclusive incisos e parágrafos. · A versão oficial consultada da ALESC é atualizada por emendas; o edital fixa a legislação aplicável na data de publicação."
+        },
+        {
+          "type": "callout",
+          "variant": "dica",
+          "title": "REVISÃO RÁPIDA",
+          "body": "Fonte oficial: ALESC • Estudar somente os intervalos previstos não dispensa ler todos os incisos e parágrafos dentro deles • Comparar CF/88 e CE/SC sem confundir competências"
+        }
+      ],
+      "readingMinutes": 2
+    },
+    {
+      "ref": "1.39",
+      "order": 39,
+      "slug": "plano-de-revisao-de-4-semanas-e-checklist-de-dominio",
+      "title": "Plano de revisão de 4 semanas e checklist de domínio",
+      "modulo": "Fechamento",
+      "resumo": "Use este plano como estrutura repetível.",
+      "paraQue": null,
+      "body": "Use este plano como estrutura repetível. Se algum módulo exigir mais tempo, ajuste o ritmo sem deixar de revisar os demais tópicos do edital.\n\nSemana — Foco principal — Atividade de fixação\n1 — Teoria da Constituição; Poder Constituinte; CF, arts. 1º–17 — Resumo de uma página + 20 questões\n2 — CF, arts. 18–42 — Quadro de competências + 20 questões\n3 — CF, arts. 44–100 e 122–144 — Mapa dos Poderes + segurança pública + 25 questões\n4 — Constituição de SC nos intervalos do edital + revisão geral — Simulado de 8 questões de Constitucional e caderno de erros\n\nChecklist de domínio\n\n• ☐ Consigo explicar a diferença entre fundamentos, objetivos e princípios internacionais.\n• ☐ Sei diferenciar habeas corpus, habeas data, mandado de segurança, mandado de injunção e ação popular.\n• ☐ Sei distinguir competência comum, privativa e concorrente.\n• ☐ Consigo explicar o LIMPE e a regra do concurso público.\n• ☐ Sei diferenciar Câmara dos Deputados e Senado Federal.\n• ☐ Sei resumir as atribuições constitucionais da Polícia Militar.\n• ☐ Li os artigos estaduais exatos previstos no edital e conferi a versão atualizada.\n• ☐ Registrei meus erros e refiz as questões erradas depois de alguns dias.\n\nFontes oficiais para consulta\n\n• Edital nº 002/CCP/2026 — Instituto AOCP: https://institutoaocp.selecao.net.br/informacoes/3\n• Constituição Federal de 1988 — texto compilado, Portal Planalto: https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm\n• Constituição do Estado de Santa Catarina — ALESC, texto atualizado: https://leis.alesc.sc.gov.br/ato-normativo/52785\n\nAVISO DE ATUALIZAÇÃO: A legislação aplicável é a vigente na data de publicação do edital de abertura. Esta apostila resume e explica os tópicos, mas não substitui a leitura da legislação oficial — confira as retificações do edital e memorize a redação exata pelos textos do Planalto e da ALESC.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Use este plano como estrutura repetível. Se algum módulo exigir mais tempo, ajuste o ritmo sem deixar de revisar os demais tópicos do edital."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Semana",
+            "Foco principal",
+            "Atividade de fixação"
+          ],
+          "rows": [
+            [
+              "1",
+              "Teoria da Constituição; Poder Constituinte; CF, arts. 1º–17",
+              "Resumo de uma página + 20 questões"
+            ],
+            [
+              "2",
+              "CF, arts. 18–42",
+              "Quadro de competências + 20 questões"
+            ],
+            [
+              "3",
+              "CF, arts. 44–100 e 122–144",
+              "Mapa dos Poderes + segurança pública + 25 questões"
+            ],
+            [
+              "4",
+              "Constituição de SC nos intervalos do edital + revisão geral",
+              "Simulado de 8 questões de Constitucional e caderno de erros"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Checklist de domínio"
+        },
+        {
+          "type": "list",
+          "items": [
+            "☐ Consigo explicar a diferença entre fundamentos, objetivos e princípios internacionais.",
+            "☐ Sei diferenciar habeas corpus, habeas data, mandado de segurança, mandado de injunção e ação popular.",
+            "☐ Sei distinguir competência comum, privativa e concorrente.",
+            "☐ Consigo explicar o LIMPE e a regra do concurso público.",
+            "☐ Sei diferenciar Câmara dos Deputados e Senado Federal.",
+            "☐ Sei resumir as atribuições constitucionais da Polícia Militar.",
+            "☐ Li os artigos estaduais exatos previstos no edital e conferi a versão atualizada.",
+            "☐ Registrei meus erros e refiz as questões erradas depois de alguns dias."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Fontes oficiais para consulta"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Edital nº 002/CCP/2026 — Instituto AOCP: https://institutoaocp.selecao.net.br/informacoes/3",
+            "Constituição Federal de 1988 — texto compilado, Portal Planalto: https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
+            "Constituição do Estado de Santa Catarina — ALESC, texto atualizado: https://leis.alesc.sc.gov.br/ato-normativo/52785"
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "atencao",
+          "title": "AVISO DE ATUALIZAÇÃO",
+          "body": "A legislação aplicável é a vigente na data de publicação do edital de abertura. Esta apostila resume e explica os tópicos, mas não substitui a leitura da legislação oficial — confira as retificações do edital e memorize a redação exata pelos textos do Planalto e da ALESC."
+        }
+      ],
+      "readingMinutes": 2
+    }
+  ],
+  "questoes": [
+    {
+      "numero": 1,
+      "topicoRef": "1.4",
+      "enunciado": "A Constituição Federal de 1988 é classificada, quanto à origem, como:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Outorgada, pois foi imposta unilateralmente pelo governante."
+        },
+        {
+          "letra": "B",
+          "texto": "Promulgada, pois foi elaborada por Assembleia Nacional Constituinte."
+        },
+        {
+          "letra": "C",
+          "texto": "Flexível, pois pode ser alterada pelo mesmo procedimento de uma lei ordinária."
+        },
+        {
+          "letra": "D",
+          "texto": "Costumeira, pois não possui texto escrito."
+        },
+        {
+          "letra": "E",
+          "texto": "Imutável, pois não admite emendas."
+        }
+      ],
+      "resposta": "B",
+      "justificativa": "Foi promulgada por uma Assembleia Nacional Constituinte. Também é escrita, rígida, formal e analítica."
+    },
+    {
+      "numero": 2,
+      "topicoRef": "1.7",
+      "enunciado": "Assinale a alternativa que contém apenas fundamentos da República previstos no art. 1º da CF.",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Erradicar a pobreza e garantir o desenvolvimento nacional."
+        },
+        {
+          "letra": "B",
+          "texto": "Soberania, cidadania e dignidade da pessoa humana."
+        },
+        {
+          "letra": "C",
+          "texto": "Defesa da paz, não intervenção e igualdade entre os Estados."
+        },
+        {
+          "letra": "D",
+          "texto": "Construir sociedade livre, justa e solidária e promover o bem de todos."
+        },
+        {
+          "letra": "E",
+          "texto": "Legalidade, impessoalidade e eficiência."
+        }
+      ],
+      "resposta": "B",
+      "justificativa": "Soberania, cidadania e dignidade são fundamentos. As demais opções misturam objetivos, princípios internacionais ou princípios administrativos."
+    },
+    {
+      "numero": 3,
+      "topicoRef": "1.11",
+      "enunciado": "Segundo o art. 5º, XI, da Constituição Federal, a entrada em casa sem consentimento do morador é permitida:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Por ordem judicial, em qualquer horário."
+        },
+        {
+          "letra": "B",
+          "texto": "Em flagrante delito, desastre ou para prestar socorro, a qualquer hora."
+        },
+        {
+          "letra": "C",
+          "texto": "Sempre que houver denúncia anônima, durante a noite."
+        },
+        {
+          "letra": "D",
+          "texto": "Apenas com autorização escrita do morador."
+        },
+        {
+          "letra": "E",
+          "texto": "Somente durante o dia, inclusive em caso de flagrante."
+        }
+      ],
+      "resposta": "B",
+      "justificativa": "A Constituição prevê flagrante delito, desastre e socorro a qualquer hora; por determinação judicial, durante o dia."
+    },
+    {
+      "numero": 4,
+      "topicoRef": "1.12",
+      "enunciado": "Qual remédio constitucional é destinado à proteção da liberdade de locomoção?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Habeas data."
+        },
+        {
+          "letra": "B",
+          "texto": "Mandado de injunção."
+        },
+        {
+          "letra": "C",
+          "texto": "Ação popular."
+        },
+        {
+          "letra": "D",
+          "texto": "Habeas corpus."
+        },
+        {
+          "letra": "E",
+          "texto": "Mandado de segurança coletivo."
+        }
+      ],
+      "resposta": "D",
+      "justificativa": "O habeas corpus protege a liberdade de locomoção contra ilegalidade ou abuso de poder."
+    },
+    {
+      "numero": 5,
+      "topicoRef": "1.16",
+      "enunciado": "No federalismo brasileiro, União, estados, Distrito Federal e municípios são:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Soberanos em suas relações recíprocas."
+        },
+        {
+          "letra": "B",
+          "texto": "Autônomos, nos termos da Constituição."
+        },
+        {
+          "letra": "C",
+          "texto": "Órgãos subordinados ao Congresso Nacional."
+        },
+        {
+          "letra": "D",
+          "texto": "Entes sem competências próprias."
+        },
+        {
+          "letra": "E",
+          "texto": "Entidades que podem deixar livremente a Federação."
+        }
+      ],
+      "resposta": "B",
+      "justificativa": "Os entes federativos são autônomos. A soberania pertence à República Federativa do Brasil."
+    },
+    {
+      "numero": 6,
+      "topicoRef": "1.17",
+      "enunciado": "A competência comum prevista no art. 23 da CF refere-se, principalmente, a:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Competência administrativa compartilhada entre os entes federativos."
+        },
+        {
+          "letra": "B",
+          "texto": "Competência legislativa exclusiva da União."
+        },
+        {
+          "letra": "C",
+          "texto": "Competência exclusiva dos municípios para editar códigos penais."
+        },
+        {
+          "letra": "D",
+          "texto": "Competência jurisdicional do STF."
+        },
+        {
+          "letra": "E",
+          "texto": "Competência para reformar a Constituição."
+        }
+      ],
+      "resposta": "A",
+      "justificativa": "O art. 23 trata de competências materiais/administrativas comuns."
+    },
+    {
+      "numero": 7,
+      "topicoRef": "1.20",
+      "enunciado": "Os princípios expressos no caput do art. 37 da Constituição Federal são:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Legalidade, igualdade, moralidade, produtividade e eficiência."
+        },
+        {
+          "letra": "B",
+          "texto": "Legalidade, impessoalidade, moralidade, publicidade e eficiência."
+        },
+        {
+          "letra": "C",
+          "texto": "Legitimidade, imparcialidade, publicidade, sigilo e economicidade."
+        },
+        {
+          "letra": "D",
+          "texto": "Impessoalidade, proporcionalidade, razoabilidade, transparência e motivação."
+        },
+        {
+          "letra": "E",
+          "texto": "Legalidade, hierarquia, disciplina, publicidade e eficiência."
+        }
+      ],
+      "resposta": "B",
+      "justificativa": "A lista expressa é LIMPE: legalidade, impessoalidade, moralidade, publicidade e eficiência."
+    },
+    {
+      "numero": 8,
+      "topicoRef": "1.21",
+      "enunciado": "Em regra, o prazo de validade de concurso público é de:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Até um ano, sem prorrogação."
+        },
+        {
+          "letra": "B",
+          "texto": "Até dois anos, prorrogável uma vez por igual período."
+        },
+        {
+          "letra": "C",
+          "texto": "Quatro anos, prorrogável duas vezes."
+        },
+        {
+          "letra": "D",
+          "texto": "Dois anos, prorrogável por prazo indeterminado."
+        },
+        {
+          "letra": "E",
+          "texto": "Cinco anos, sem exceções."
+        }
+      ],
+      "resposta": "B",
+      "justificativa": "É a regra do art. 37, III, da CF."
+    },
+    {
+      "numero": 9,
+      "topicoRef": "1.33",
+      "enunciado": "A atribuição constitucional da Polícia Militar prevista no art. 144, § 5º, é:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Exercer a polícia judiciária da União."
+        },
+        {
+          "letra": "B",
+          "texto": "Apurar todos os crimes comuns estaduais."
+        },
+        {
+          "letra": "C",
+          "texto": "Exercer a polícia ostensiva e preservar a ordem pública."
+        },
+        {
+          "letra": "D",
+          "texto": "Julgar crimes militares cometidos por qualquer pessoa."
+        },
+        {
+          "letra": "E",
+          "texto": "Executar exclusivamente perícias criminais."
+        }
+      ],
+      "resposta": "C",
+      "justificativa": "A Constituição atribui às Polícias Militares a polícia ostensiva e a preservação da ordem pública."
+    },
+    {
+      "numero": 10,
+      "topicoRef": "1.6",
+      "enunciado": "A respeito das cláusulas pétreas, assinale a alternativa correta.",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Nenhuma emenda constitucional pode alterar qualquer palavra da Constituição."
+        },
+        {
+          "letra": "B",
+          "texto": "A Constituição proíbe toda emenda durante qualquer sessão legislativa."
+        },
+        {
+          "letra": "C",
+          "texto": "A proposta tendente a abolir a forma federativa de Estado não pode ser objeto de deliberação."
+        },
+        {
+          "letra": "D",
+          "texto": "Apenas o voto indireto é protegido como cláusula pétrea."
+        },
+        {
+          "letra": "E",
+          "texto": "Direitos e garantias individuais podem ser abolidos por maioria simples."
+        }
+      ],
+      "resposta": "C",
+      "justificativa": "O art. 60, § 4º, impede deliberação de proposta tendente a abolir as matérias protegidas."
+    },
+    {
+      "numero": 11,
+      "topicoRef": "1.25",
+      "enunciado": "O Senado Federal representa:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "O povo, pelo sistema proporcional."
+        },
+        {
+          "letra": "B",
+          "texto": "Os estados e o Distrito Federal."
+        },
+        {
+          "letra": "C",
+          "texto": "Os municípios, por eleição indireta."
+        },
+        {
+          "letra": "D",
+          "texto": "O Poder Judiciário."
+        },
+        {
+          "letra": "E",
+          "texto": "Os partidos políticos, em número igual."
+        }
+      ],
+      "resposta": "B",
+      "justificativa": "A Câmara representa o povo; o Senado representa os estados e o Distrito Federal."
+    },
+    {
+      "numero": 12,
+      "topicoRef": "1.23",
+      "enunciado": "Qual afirmação sobre a responsabilidade civil do Estado está correta, conforme art. 37, § 6º?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "O Estado nunca responde por atos de seus agentes."
+        },
+        {
+          "letra": "B",
+          "texto": "A vítima deve sempre provar dolo do agente público."
+        },
+        {
+          "letra": "C",
+          "texto": "O Estado responde pelos danos causados por seus agentes nessa qualidade, assegurado regresso contra o responsável em caso de dolo ou culpa."
+        },
+        {
+          "letra": "D",
+          "texto": "A responsabilidade existe mesmo sem dano ou nexo causal."
+        },
+        {
+          "letra": "E",
+          "texto": "Somente servidores efetivos podem causar responsabilidade estatal."
+        }
+      ],
+      "resposta": "C",
+      "justificativa": "A regra prevê responsabilidade estatal e direito de regresso contra o agente se houver dolo ou culpa."
+    },
+    {
+      "numero": 13,
+      "topicoRef": "1.10",
+      "enunciado": "A Constituição Federal define como princípios das relações internacionais, entre outros:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Cidadania e pluralismo político."
+        },
+        {
+          "letra": "B",
+          "texto": "Legalidade e eficiência."
+        },
+        {
+          "letra": "C",
+          "texto": "Independência nacional e prevalência dos direitos humanos."
+        },
+        {
+          "letra": "D",
+          "texto": "Garantia do desenvolvimento nacional e erradicação da pobreza."
+        },
+        {
+          "letra": "E",
+          "texto": "Separação dos Poderes e autonomia municipal."
+        }
+      ],
+      "resposta": "C",
+      "justificativa": "Independência nacional e prevalência dos direitos humanos constam do art. 4º."
+    },
+    {
+      "numero": 14,
+      "topicoRef": "1.11",
+      "enunciado": "Sobre a inviolabilidade do domicílio, assinale a alternativa correta.",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "A ordem judicial permite ingresso noturno sem consentimento."
+        },
+        {
+          "letra": "B",
+          "texto": "O ingresso para prestar socorro pode ocorrer a qualquer hora."
+        },
+        {
+          "letra": "C",
+          "texto": "A denúncia anônima é uma exceção expressa e independente no art. 5º, XI."
+        },
+        {
+          "letra": "D",
+          "texto": "A inviolabilidade impede entrada até mesmo em desastre."
+        },
+        {
+          "letra": "E",
+          "texto": "Apenas a polícia pode entrar durante o dia, ainda que não haja ordem judicial."
+        }
+      ],
+      "resposta": "B",
+      "justificativa": "Prestar socorro é uma das exceções expressas à inviolabilidade domiciliar."
+    },
+    {
+      "numero": 15,
+      "topicoRef": "1.17",
+      "enunciado": "No âmbito da competência legislativa concorrente do art. 24, cabe à União:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Impedir os estados de suplementar qualquer norma."
+        },
+        {
+          "letra": "B",
+          "texto": "Editar normas gerais, nos termos constitucionais."
+        },
+        {
+          "letra": "C",
+          "texto": "Legislar exclusivamente sobre todas as matérias estaduais."
+        },
+        {
+          "letra": "D",
+          "texto": "Substituir automaticamente toda lei estadual por lei federal, ainda que não haja conflito."
+        },
+        {
+          "letra": "E",
+          "texto": "Exercer competência judicial."
+        }
+      ],
+      "resposta": "B",
+      "justificativa": "Na competência concorrente, a União estabelece normas gerais e os estados suplementam; lei federal superveniente suspende eficácia da estadual no que lhe for contrário."
+    },
+    {
+      "numero": 16,
+      "topicoRef": "1.15",
+      "enunciado": "Qual alternativa diferencia corretamente plebiscito e referendo?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Plebiscito é sempre judicial; referendo é administrativo."
+        },
+        {
+          "letra": "B",
+          "texto": "Plebiscito é consulta prévia; referendo é consulta posterior a ato."
+        },
+        {
+          "letra": "C",
+          "texto": "Ambos são formas de nomeação de representantes."
+        },
+        {
+          "letra": "D",
+          "texto": "Referendo é votação interna do Congresso sem participação popular."
+        },
+        {
+          "letra": "E",
+          "texto": "Plebiscito e referendo não estão previstos na Constituição."
+        }
+      ],
+      "resposta": "B",
+      "justificativa": "Ambos são formas de exercício direto da soberania popular; em regra, plebiscito é prévio e referendo posterior."
+    },
+    {
+      "numero": 17,
+      "topicoRef": "1.20",
+      "enunciado": "O princípio da impessoalidade na Administração Pública impede, entre outras condutas:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "A publicação de atos oficiais."
+        },
+        {
+          "letra": "B",
+          "texto": "A prestação de serviços públicos."
+        },
+        {
+          "letra": "C",
+          "texto": "O favorecimento pessoal ou perseguição indevida no exercício da função."
+        },
+        {
+          "letra": "D",
+          "texto": "A realização de concurso público."
+        },
+        {
+          "letra": "E",
+          "texto": "A aplicação da lei."
+        }
+      ],
+      "resposta": "C",
+      "justificativa": "Impessoalidade exige atuação voltada ao interesse público, sem favorecimentos ou perseguições."
+    },
+    {
+      "numero": 18,
+      "topicoRef": "1.29",
+      "enunciado": "A Justiça Militar da União processa e julga:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Qualquer infração administrativa cometida por servidor civil."
+        },
+        {
+          "letra": "B",
+          "texto": "Crimes militares definidos em lei, nos termos constitucionais."
+        },
+        {
+          "letra": "C",
+          "texto": "Todas as ações de família."
+        },
+        {
+          "letra": "D",
+          "texto": "Somente crimes praticados por civis contra civis."
+        },
+        {
+          "letra": "E",
+          "texto": "Recursos eleitorais."
+        }
+      ],
+      "resposta": "B",
+      "justificativa": "O art. 124 prevê a competência da Justiça Militar da União para crimes militares definidos em lei."
+    },
+    {
+      "numero": 19,
+      "topicoRef": "1.15",
+      "enunciado": "Sobre os direitos políticos, a Constituição Federal:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Autoriza a cassação livre dos direitos políticos."
+        },
+        {
+          "letra": "B",
+          "texto": "Prevê que a soberania popular pode ser exercida por plebiscito, referendo e iniciativa popular."
+        },
+        {
+          "letra": "C",
+          "texto": "Determina voto facultativo a todas as pessoas."
+        },
+        {
+          "letra": "D",
+          "texto": "Proíbe partidos políticos."
+        },
+        {
+          "letra": "E",
+          "texto": "Não admite voto direto."
+        }
+      ],
+      "resposta": "B",
+      "justificativa": "O art. 14 prevê essas formas de exercício da soberania popular; a cassação de direitos políticos é vedada."
+    },
+    {
+      "numero": 20,
+      "topicoRef": "1.38",
+      "enunciado": "Ao estudar a Constituição do Estado de Santa Catarina para este concurso, o candidato deve:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Ignorá-la, pois apenas a Constituição Federal é cobrada."
+        },
+        {
+          "letra": "B",
+          "texto": "Estudar somente o preâmbulo estadual."
+        },
+        {
+          "letra": "C",
+          "texto": "Estudar os intervalos e o artigo específico indicados no Anexo II, consultando o texto oficial atualizado."
+        },
+        {
+          "letra": "D",
+          "texto": "Usar apenas resumos de terceiros, sem consultar a legislação."
+        },
+        {
+          "letra": "E",
+          "texto": "Presumir que todos os artigos estaduais são idênticos aos federais."
+        }
+      ],
+      "resposta": "C",
+      "justificativa": "O edital exige expressamente trechos da Constituição estadual; a fonte oficial atualizada deve ser consultada."
+    }
+  ]
+}

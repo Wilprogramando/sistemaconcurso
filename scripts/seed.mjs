@@ -60,6 +60,22 @@ async function upsertEmLotes(tabela, linhas, opcoes, tamanho = 100) {
 }
 
 const apostila = ler('content/apostila.json');
+
+// Direito Constitucional foi refeito a partir da Apostila de Direito
+// Constitucional — PMSC Soldado 2026 (content/apostila-constitucional.txt).
+// O conteudo vive em content/constitucional.json e SUBSTITUI o que vem de
+// content/apostila.json para essa disciplina: topicos e questoes.
+const constitucional = existsSync(join(root, 'content/constitucional.json'))
+  ? ler('content/constitucional.json')
+  : null;
+
+if (constitucional) {
+  const d = apostila.disciplines.find((x) => x.slug === constitucional.disciplina);
+  if (d) {
+    d.topics = constitucional.topicos;
+    d.questions = [];
+  }
+}
 const provas = ler('content/provas.json');
 const comentarios = ler('content/provas-comentarios.json').comentarios;
 const comentariosApostila = ler('content/apostila-comentarios.json').comentarios;
@@ -154,8 +170,8 @@ for (const d of apostila.disciplines) {
     body: t.body,
     blocks: t.blocks ?? null,
     reading_minutes: t.readingMinutes ?? null,
-    summary: resumos.topicos[`${d.slug}:${t.ref}`]?.resumo ?? null,
-    what_for: resumos.topicos[`${d.slug}:${t.ref}`]?.paraQue ?? null,
+    summary: resumos.topicos[`${d.slug}:${t.ref}`]?.resumo ?? t.resumo ?? null,
+    what_for: resumos.topicos[`${d.slug}:${t.ref}`]?.paraQue ?? t.paraQue ?? null,
     ...(aulasDisponiveis ? { lesson: aulas[`${d.slug}:${t.ref}`] ?? null } : {}),
   }));
   await upsertEmLotes('topics', linhas, { onConflict: 'discipline_id,ref', defaultToNull: false }, 25);
@@ -216,6 +232,34 @@ for (const d of apostila.disciplines) {
       passage_id: null,
     });
   }
+}
+
+// 3a-bis. questoes da apostila de Direito Constitucional (multipla escolha A-E)
+if (constitucional) {
+  for (const q of constitucional.questoes) {
+    questoes.push({
+      ext_id: `constitucional:2026:${String(q.numero).padStart(2, '0')}`,
+      source: 'apostila',
+      origin: 'apostila',
+      origin_label: `Apostila de Direito Constitucional 2026 · Q${q.numero}`,
+      discipline_id: idPorSlug.get(constitucional.disciplina),
+      topic_id: q.topicoRef
+        ? (idTopico.get(`${constitucional.disciplina}:${q.topicoRef}`) ?? null)
+        : null,
+      number: q.numero,
+      kind: 'mc',
+      type: 'ce',
+      options: q.alternativas.map((a) => ({ letter: a.letra, text: a.texto })),
+      statement: q.enunciado,
+      answer: q.resposta,
+      explanation: q.justificativa,
+      year: null,
+      banca: null,
+      source_url: null,
+      passage_id: null,
+    });
+  }
+  console.log(`questoes da apostila de constitucional: ${constitucional.questoes.length}`);
 }
 
 // 3b. simulado final da apostila
@@ -302,6 +346,47 @@ for (const q of ineditas) {
 }
 
 await upsertEmLotes('questions', questoes, { onConflict: 'ext_id', defaultToNull: false }, 50);
+
+// =====================================================================
+// 4. Limpeza do conteudo antigo de Direito Constitucional
+// =====================================================================
+// A disciplina foi refeita: topicos e questoes que nao existem mais no
+// material novo sao apagados, senao sobrariam no banco de quem ja rodou o
+// seed na versao anterior.
+if (constitucional) {
+  const idConst = idPorSlug.get(constitucional.disciplina);
+  const refsAtuais = constitucional.topicos.map((t) => t.ref);
+
+  const { data: antigos, error: eAntigos } = await db
+    .from('topics')
+    .select('id, ref')
+    .eq('discipline_id', idConst);
+  die('reler topicos de constitucional', eAntigos);
+
+  const sobrando = (antigos ?? []).filter((t) => !refsAtuais.includes(t.ref));
+  if (sobrando.length) {
+    // questions.topic_id e notes.topic_id sao "on delete set null" e
+    // topic_progress e "on delete cascade": apagar o topico nao perde questao
+    const ids = sobrando.map((t) => t.id);
+    die('apagar topicos antigos', (await db.from('topics').delete().in('id', ids)).error);
+    console.log(`topicos antigos de constitucional removidos: ${sobrando.length}`);
+  }
+
+  const { data: qAntigas, error: eQ } = await db
+    .from('questions')
+    .select('id, ext_id')
+    .eq('source', 'apostila')
+    .eq('discipline_id', idConst);
+  die('reler questoes de constitucional', eQ);
+
+  const idsQ = (qAntigas ?? [])
+    .filter((q) => !q.ext_id.startsWith('constitucional:2026:'))
+    .map((q) => q.id);
+  if (idsQ.length) {
+    die('apagar questoes antigas', (await db.from('questions').delete().in('id', idsQ)).error);
+    console.log(`questoes antigas de constitucional removidas: ${idsQ.length}`);
+  }
+}
 
 // =====================================================================
 // Resumo

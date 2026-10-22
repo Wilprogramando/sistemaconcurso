@@ -1,0 +1,840 @@
+          APOSTILA DE DIREITO
+              CONSTITUCIONAL
+
+                                       PMSC — Soldado 2026
+
+    Material didático para iniciantes • Conteúdo orientado pelo Edital nº
+                                 002/CCP/2026 • Instituto AOCP
+
+      Como usar esta apostila
+      Estude uma aula por vez. Leia a explicação, consulte o artigo constitucional indicado, responda às
+      questões sem olhar o gabarito e registre os erros. A apostila é um guia de estudo: a legislação oficial
+      e o edital prevalecem em caso de divergência.
+
+Escopo do edital
+
+Teoria da Constituição; Poder Constituinte; Constituição Federal de 1988, arts. 1º a 42, 44 a 100 e 122 a
+144; Constituição do Estado de Santa Catarina, arts. 1º a 40, 50 a 76, 90 e 105 a 109-C.
+
+Versão de estudo preparada em 22 de outubro de 2026
+
+Apostila de Direito Constitucional — PMSC Soldado 2026  Página 1
+Como estudar com esta apostila
+
+O edital prevê 8 questões de Direito Constitucional na prova objetiva. Isso torna a disciplina relevante, mas
+não é seguro apostar em um único tema: o conteúdo programático deve ser coberto integralmente.
+
+Rotina de 60 minutos
+
+ • 20 minutos — teoria: leia o módulo e sublinhe palavras-chave.
+ • 15 minutos — lei seca: abra a Constituição oficial e leia os artigos indicados.
+ • 20 minutos — questões: responda sem consultar o material.
+ • 5 minutos — revisão: anote a regra que errou e explique-a com suas palavras.
+
+Mapa dos módulos
+
+Módulo  Conteúdo
+1       Teoria da Constituição e Poder Constituinte
+
+2       Princípios fundamentais — CF, arts. 1º a 4º
+
+3       Direitos e garantias fundamentais — CF, arts. 5º a 17
+
+4       Organização do Estado — CF, arts. 18 a 36
+
+5       Administração Pública e militares estaduais — CF, arts. 37 a 42
+
+6       Organização dos Poderes — CF, arts. 44 a 100
+
+7       Justiça Militar, defesa do Estado e segurança pública — CF, arts. 122 a 144
+
+8       Constituição de Santa Catarina — artigos expressamente indicados
+
+9       Simulado final, gabarito e plano de revisão
+
+   Regra de ouro
+   Não confunda uma previsão pedagógica com garantia de cobrança. Os destaques de prioridade são
+   recomendações de estudo; o edital determina o conteúdo exigido.
+
+Apostila de Direito Constitucional — PMSC Soldado 2026                                            Página 2
+Módulo 1 — Teoria da Constituição e Poder
+Constituinte
+
+Base do edital: Anexo II, item 1 e item 2.
+
+Antes de estudar artigos específicos, entenda o que é uma Constituição e de onde vem sua autoridade. A
+Constituição é a norma fundamental que organiza o Estado, distribui competências, limita o poder público e
+reconhece direitos.
+
+1.1 Conceito e funções
+
+A Constituição define a estrutura do Estado, estabelece como os Poderes são organizados, delimita
+competências e protege direitos fundamentais. Ela ocupa posição superior às demais normas do
+ordenamento jurídico.
+
+Supremacia constitucional significa que leis e atos estatais devem ser compatíveis com a Constituição.
+Uma norma inferior incompatível pode ser questionada por inconstitucionalidade, conforme os mecanismos
+previstos no sistema jurídico.
+
+1.2 Estrutura da Constituição Federal
+
+A Constituição de 1988 contém preâmbulo, texto permanente organizado em títulos e capítulos e Ato das
+Disposições Constitucionais Transitórias (ADCT). O preâmbulo apresenta valores e intenções; não deve ser
+tratado como se cada frase fosse uma regra autônoma com a mesma força dos dispositivos constitucionais.
+
+Os artigos são divididos em caput, parágrafos, incisos e alíneas. Em prova, identifique exatamente o
+dispositivo citado: uma alternativa pode reproduzir uma regra correta, mas atribuí-la ao artigo errado.
+
+1.3 Classificações importantes
+
+Quanto à forma: escrita ou não escrita. Quanto à origem: promulgada/democrática ou outorgada. Quanto à
+estabilidade: rígida, flexível ou semirrígida. Quanto à extensão: analítica ou sintética. Quanto ao conteúdo:
+formal ou material.
+
+A Constituição Federal de 1988 é escrita, promulgada, formal, analítica e rígida. É rígida porque sua
+alteração exige procedimento mais difícil do que o processo legislativo ordinário.
+
+1.4 Poder Constituinte
+
+Originário: cria uma nova Constituição e inaugura uma nova ordem constitucional. Na teoria clássica, é
+inicial, autônomo e juridicamente ilimitado em relação à ordem anterior, sem significar liberdade política ou
+moral absoluta.
+
+Derivado reformador: altera o texto por emendas constitucionais, obedecendo às regras e limitações do
+art. 60 da CF.
+
+Derivado decorrente: permite aos estados elaborarem suas Constituições estaduais, respeitados os
+princípios da Constituição Federal.
+
+Derivado revisor: foi previsto no ADCT para revisão após cinco anos da promulgação; trata-se de
+mecanismo histórico já realizado, não de um procedimento ordinário disponível a qualquer momento.
+
+1.5 Emendas e limites
+
+A proposta de emenda pode ser apresentada pelos legitimados do art. 60. A aprovação exige votação em
+dois turnos em cada Casa do Congresso Nacional e três quintos dos votos dos respectivos membros.
+
+Não será objeto de deliberação proposta de emenda tendente a abolir: a forma federativa de Estado; o voto
+direto, secreto, universal e periódico; a separação dos Poderes; e os direitos e garantias individuais. São as
+chamadas cláusulas pétreas.
+
+A Constituição também impede emenda durante intervenção federal, estado de defesa ou estado de sítio.
+Não se deve confundir impossibilidade circunstancial com cláusula pétrea.
+
+Apostila de Direito Constitucional — PMSC Soldado 2026  Página 3
+Pegadinhas e confusões comuns
+
+ • A Constituição de 1988 é promulgada, não outorgada.
+ • Rígida não significa imutável: significa que sua alteração segue procedimento mais exigente.
+ • Cláusulas pétreas impedem propostas tendentes a abolir certos núcleos, não qualquer alteração
+
+    relacionada a eles.
+ • Poder Constituinte derivado está sujeito às limitações constitucionais.
+
+      Revisão rápida
+      CF/88: escrita, promulgada, formal, analítica e rígida • Art. 60: emenda em dois turnos por Casa, 3/5
+      dos membros • Cláusulas pétreas: federação, voto, separação dos Poderes e direitos e garantias
+      individuais
+
+Módulo 2 — Princípios Fundamentais
+
+Base do edital: CF, arts. 1º a 4º.
+
+Esses quatro artigos são curtos e cheios de conceitos que podem ser misturados em alternativas. Aprenda
+a separar fundamentos, organização dos Poderes, objetivos fundamentais e princípios das relações
+internacionais.
+
+2.1 Art. 1º — Fundamentos da República
+
+A República Federativa do Brasil é formada pela união indissolúvel dos estados, municípios e Distrito
+Federal e constitui Estado Democrático de Direito.
+Os cinco fundamentos são: soberania; cidadania; dignidade da pessoa humana; valores sociais do trabalho
+e da livre iniciativa; pluralismo político. Macete: SO-CI-DI-VA-PLU.
+O parágrafo único afirma que todo poder emana do povo, que o exerce por representantes eleitos ou
+diretamente, nos termos da Constituição.
+
+2.2 Art. 2º — Separação dos Poderes
+
+São Poderes da União, independentes e harmônicos entre si: Legislativo, Executivo e Judiciário.
+Independência não significa isolamento absoluto: a Constituição prevê controles recíprocos e funções
+atípicas.
+
+2.3 Art. 3º — Objetivos fundamentais
+
+I — construir uma sociedade livre, justa e solidária; II — garantir o desenvolvimento nacional; III — erradicar
+a pobreza e a marginalização e reduzir as desigualdades sociais e regionais; IV — promover o bem de
+todos, sem preconceitos e outras formas de discriminação.
+Macete de revisão: objetivos são metas a perseguir. Erradicar a pobreza é objetivo, não fundamento.
+
+2.4 Art. 4º — Relações internacionais
+
+Princípios: independência nacional; prevalência dos direitos humanos; autodeterminação dos povos; não
+intervenção; igualdade entre os Estados; defesa da paz; solução pacífica dos conflitos; repúdio ao
+terrorismo e ao racismo; cooperação entre os povos; concessão de asilo político.
+O parágrafo único prevê a busca de integração econômica, política, social e cultural dos povos da América
+Latina, visando formar uma comunidade latino-americana de nações.
+
+Pegadinhas e confusões comuns
+
+ • Dignidade da pessoa humana = fundamento do art. 1º; erradicação da pobreza = objetivo do art. 3º.
+ • Pluralismo político não é princípio das relações internacionais.
+ • A República rege suas relações internacionais pelos princípios do art. 4º.
+ • A separação dos Poderes está no art. 2º.
+
+Apostila de Direito Constitucional — PMSC Soldado 2026  Página 4
+      Revisão rápida
+      Art. 1º = fundamentos • Art. 2º = Poderes • Art. 3º = objetivos • Art. 4º = relações internacionais
+
+Módulo 3 — Direitos e Garantias Fundamentais
+
+Base do edital: CF, arts. 5º a 17.
+
+Direitos fundamentais protegem a pessoa e limitam o poder estatal. Para a prova, leia o texto
+constitucional e preste atenção às exceções, aos sujeitos protegidos e às expressões temporais.
+
+3.1 Art. 5º — direitos individuais e coletivos
+
+O caput protege vida, liberdade, igualdade, segurança e propriedade. O art. 5º contém regras sobre
+legalidade, proibição de tortura, liberdade de manifestação, direito de resposta, crença, inviolabilidade da
+intimidade, domicílio e comunicações, reunião, associação, acesso à Justiça, devido processo legal,
+contraditório e ampla defesa.
+
+Legalidade (II): ninguém será obrigado a fazer ou deixar de fazer algo senão em virtude de lei.
+Manifestação do pensamento (IV): é livre, mas o anonimato é vedado. Tortura (III): ninguém será
+submetido a tortura nem a tratamento desumano ou degradante.
+
+Domicílio (XI): a casa é asilo inviolável. Pode haver ingresso sem consentimento em caso de flagrante
+delito, desastre ou para prestar socorro, a qualquer hora; por determinação judicial, durante o dia.
+
+Prisão (LXI): ninguém será preso senão em flagrante delito ou por ordem escrita e fundamentada de
+autoridade judiciária competente, ressalvadas as hipóteses constitucionais específicas, como transgressão
+militar ou crime propriamente militar definidos em lei.
+
+Garantias processuais: devido processo legal, contraditório e ampla defesa são conceitos relacionados,
+mas não idênticos. Contraditório envolve ciência e possibilidade de reação; ampla defesa assegura meios
+de defesa admitidos.
+
+3.2 Remédios constitucionais
+
+Habeas corpus: protege a liberdade de locomoção contra ilegalidade ou abuso de poder. Pode ser
+preventivo ou repressivo.
+
+Mandado de segurança: protege direito líquido e certo não amparado por habeas corpus ou habeas data,
+diante de ilegalidade ou abuso de poder de autoridade pública ou agente no exercício de atribuições
+públicas.
+
+Habeas data: permite conhecer informações relativas à pessoa do impetrante em registros ou bancos de
+dados governamentais ou de caráter público e, nas hipóteses legais, retificá-las.
+
+Mandado de injunção: aplicável quando a falta de norma regulamentadora inviabiliza o exercício de direitos
+e liberdades constitucionais ou prerrogativas ligadas à nacionalidade, soberania e cidadania.
+
+Ação popular: cidadão pode buscar anular ato lesivo ao patrimônio público, moralidade administrativa,
+meio ambiente e patrimônio histórico-cultural, observados os requisitos constitucionais e legais.
+
+3.3 Art. 6º — direitos sociais
+
+Incluem educação, saúde, alimentação, trabalho, moradia, transporte, lazer, segurança, previdência social,
+proteção à maternidade e à infância e assistência aos desamparados, nos termos do texto constitucional
+vigente.
+
+3.4 Arts. 12 e 13 — nacionalidade e idioma
+
+A Constituição distingue brasileiros natos e naturalizados e estabelece hipóteses de aquisição e perda da
+nacionalidade. Leia o art. 12 diretamente na versão atualizada, pois houve alterações constitucionais. O
+idioma oficial é a língua portuguesa; os símbolos nacionais são bandeira, hino, armas e selo nacionais.
+
+Apostila de Direito Constitucional — PMSC Soldado 2026  Página 5
+3.5 Arts. 14 a 17 — direitos políticos e partidos
+
+A soberania popular é exercida por sufrágio universal e voto direto e secreto, com valor igual para todos, e
+também por plebiscito, referendo e iniciativa popular, conforme a lei.
+Diferencie alistamento/voto obrigatório e facultativo, condições de elegibilidade, inelegibilidades e
+hipóteses de perda ou suspensão dos direitos políticos. A Constituição veda a cassação de direitos políticos.
+O art. 17 estabelece regras constitucionais sobre partidos políticos, incluindo caráter nacional, proibição de
+recebimento de recursos financeiros de entidade ou governo estrangeiros e prestação de contas à Justiça
+Eleitoral, conforme o texto vigente.
+
+Pegadinhas e confusões comuns
+
+ • Determinação judicial autoriza ingresso domiciliar durante o dia, não automaticamente à noite.
+ • Denúncia anônima, por si só, não é uma exceção constitucional autônoma à inviolabilidade do domicílio.
+ • Habeas corpus protege locomoção; habeas data trata de informações pessoais em bancos de dados.
+ • Plebiscito é consulta prévia; referendo é consulta posterior a ato legislativo ou administrativo.
+ • A Constituição veda a cassação de direitos políticos; perda e suspensão só nas hipóteses constitucionais.
+
+      Revisão rápida
+      Art. 5º: direitos e garantias • Art. 6º: direitos sociais • Art. 12: nacionalidade • Art. 14: soberania
+      popular • HC = locomoção; HD = dados pessoais
+
+Módulo 4 — Organização do Estado
+
+Base do edital: CF, arts. 18 a 36.
+
+O Brasil adota uma Federação. União, estados, Distrito Federal e municípios são entes autônomos; não são
+soberanos. A soberania pertence à República Federativa do Brasil.
+
+4.1 Organização político-administrativa
+
+A organização compreende União, estados, Distrito Federal e municípios, todos autônomos nos termos da
+Constituição. Brasília é a Capital Federal. Territórios federais, se existentes, integram a União e não são
+entes federativos autônomos.
+Autonomia envolve auto-organização, autogoverno, autoadministração e competências próprias, sempre
+dentro dos limites constitucionais.
+
+4.2 Competências — como diferenciar
+
+Competência administrativa/material exclusiva da União (art. 21): envolve tarefas como relações
+exteriores, defesa nacional e emissão de moeda.
+Competência legislativa privativa da União (art. 22): a União legisla sobre matérias listadas, como direito
+civil, penal, processual e do trabalho; a Constituição admite autorização aos estados por lei complementar
+para questões específicas.
+Competência comum (art. 23): atuação administrativa compartilhada entre União, estados, Distrito Federal
+e municípios em matérias como saúde, proteção ambiental e preservação do patrimônio.
+Competência legislativa concorrente (art. 24): União estabelece normas gerais; estados e Distrito Federal
+suplementam. Na ausência de norma geral federal, os estados exercem competência legislativa plena para
+atender suas peculiaridades, e lei federal superveniente suspende a eficácia da lei estadual no que lhe for
+contrário.
+
+4.3 Estados, municípios e Distrito Federal
+
+Os estados organizam-se por suas Constituições e leis, observados os princípios da Constituição Federal.
+Os municípios regem-se por leis orgânicas aprovadas conforme o art. 29. O Distrito Federal acumula
+competências legislativas reservadas aos estados e municípios, com as limitações constitucionais.
+
+Apostila de Direito Constitucional — PMSC Soldado 2026  Página 6
+4.4 Intervenção
+
+A intervenção é medida excepcional que limita temporariamente a autonomia de um ente federativo para
+proteger a ordem constitucional. A Constituição disciplina hipóteses de intervenção federal nos estados/DF
+e intervenção estadual nos municípios. Em prova, diferencie a regra de autonomia das hipóteses taxativas
+de intervenção.
+
+Pegadinhas e confusões comuns
+
+ • Soberania não é sinônimo de autonomia.
+ • Municípios são entes federativos autônomos; territórios federais não são.
+ • Competência comum (art. 23) é administrativa; concorrente (art. 24) é legislativa.
+ • Competência privativa da União pode admitir delegação legislativa específica aos estados nas condições
+
+    do art. 22, parágrafo único.
+
+      Revisão rápida
+      Art. 18: entes autônomos • Art. 21: tarefas da União • Art. 22: legislação privativa • Art. 23: atuação
+      administrativa comum • Art. 24: legislação concorrente
+
+Módulo 5 — Administração Pública e Militares
+Estaduais
+
+Base do edital: CF, arts. 37 a 42.
+
+Este módulo é especialmente útil para compreender os princípios que orientam a atuação estatal e as
+regras constitucionais aplicáveis aos servidores e militares estaduais.
+
+5.1 Art. 37 — princípios expressos
+
+LIMPE: legalidade, impessoalidade, moralidade, publicidade e eficiência. A legalidade administrativa exige
+atuação dentro da ordem jurídica; a impessoalidade veda favorecimento e perseguição; a moralidade exige
+probidade; a publicidade promove transparência; a eficiência busca boa prestação do serviço.
+Os princípios não funcionam isoladamente. A publicidade pode sofrer restrições legalmente justificadas,
+como para proteger intimidade ou segurança, mas o sigilo não substitui a publicidade como princípio
+expresso.
+
+5.2 Concurso público e cargos
+
+A investidura em cargo ou emprego público depende, em regra, de aprovação prévia em concurso de
+provas ou de provas e títulos, conforme natureza e complexidade do cargo, ressalvados cargos em
+comissão declarados em lei como de livre nomeação e exoneração.
+O prazo de validade do concurso é de até dois anos, prorrogável uma vez por igual período. A aprovação
+não deve ser confundida automaticamente com nomeação imediata em toda situação; direitos e
+prioridades dependem das regras constitucionais, edital e jurisprudência aplicável.
+
+5.3 Acumulação de cargos
+
+A Constituição estabelece vedação geral à acumulação remunerada de cargos públicos, com exceções
+expressas e desde que haja compatibilidade de horários. Estude a redação vigente do art. 37, XVI e XVII, e
+as regras específicas aplicáveis a profissionais de saúde, professores e cargos técnicos ou científicos.
+
+5.4 Responsabilidade civil do Estado
+
+Pessoas jurídicas de direito público e pessoas jurídicas de direito privado prestadoras de serviços públicos
+respondem pelos danos que seus agentes, nessa qualidade, causarem a terceiros, assegurado o direito de
+regresso contra o responsável nos casos de dolo ou culpa (art. 37, § 6º).
+
+Apostila de Direito Constitucional — PMSC Soldado 2026  Página 7
+A responsabilidade perante a vítima é, em regra, objetiva: exige dano e nexo causal com a atuação estatal.
+O regresso contra o agente exige dolo ou culpa. Situações concretas podem envolver excludentes ou
+atenuantes de nexo causal.
+
+5.5 Servidores e militares estaduais
+
+Os arts. 39 a 41 tratam de aspectos do regime de servidores públicos, remuneração e estabilidade,
+observadas as regras constitucionais e legais. Estabilidade não é adquirida automaticamente por qualquer
+pessoa que trabalhe para o Estado: o art. 41 estabelece requisitos para servidores nomeados para cargo
+efetivo em virtude de concurso público.
+O art. 42 trata dos membros das Polícias Militares e Corpos de Bombeiros Militares como militares dos
+estados, do Distrito Federal e dos territórios, com regime constitucional próprio e aplicação de dispositivos
+previstos na Constituição.
+
+Pegadinhas e confusões comuns
+
+ • LIMPE é a lista expressa do caput do art. 37.
+ • Concurso: validade de até dois anos, prorrogável uma vez por igual período.
+ • Responsabilidade objetiva do Estado não significa responsabilidade automática sem dano e nexo causal.
+ • Estabilidade do art. 41 exige cargo efetivo, concurso e cumprimento dos requisitos constitucionais.
+
+      Revisão rápida
+      LIMPE • Concurso: até 2 anos + uma prorrogação igual • Art. 37, § 6º: Estado responde e pode
+      regressar contra agente com dolo/culpa • Arts. 42: militares estaduais
+
+Módulo 6 — Organização dos Poderes
+
+Base do edital: CF, arts. 44 a 100.
+
+O programa abrange a parte da Constituição dedicada aos Poderes da União, com intervalo que inclui
+Legislativo, Executivo, Judiciário e disposições sobre funções essenciais à Justiça. Estude os artigos
+exatamente dentro do recorte do edital.
+
+6.1 Poder Legislativo — arts. 44 a 75
+
+O Congresso Nacional é composto pela Câmara dos Deputados e pelo Senado Federal. A Câmara
+representa o povo; o Senado representa os estados e o Distrito Federal. A Câmara tem representantes
+eleitos pelo sistema proporcional; o Senado, pelo sistema majoritário.
+O processo legislativo inclui elaboração de emendas constitucionais, leis complementares, leis ordinárias,
+leis delegadas, medidas provisórias, decretos legislativos e resoluções, conforme os arts. 59 e seguintes.
+Comissões parlamentares de inquérito têm poderes de investigação próprios das autoridades judiciais e
+outros previstos em lei, mas não exercem jurisdição nem podem ultrapassar limites constitucionais.
+
+6.2 Poder Executivo — arts. 76 a 91
+
+O Poder Executivo federal é exercido pelo Presidente da República, auxiliado pelos Ministros de Estado.
+Estude eleição, mandato, substituição e sucessão, competências presidenciais, responsabilidade do
+Presidente e funções dos Ministros.
+Não confunda substituição temporária com sucessão definitiva. A ordem constitucional para substituição do
+Presidente inclui Vice-Presidente e, nas hipóteses constitucionais, presidentes da Câmara, do Senado e do
+STF.
+
+6.3 Poder Judiciário — arts. 92 a 100
+
+O Poder Judiciário é composto pelos órgãos previstos no art. 92. O STF é o guardião da Constituição; o STJ
+exerce funções de uniformização da interpretação da legislação federal infraconstitucional, nos termos
+constitucionais.
+
+Apostila de Direito Constitucional — PMSC Soldado 2026  Página 8
+A Justiça Militar integra a organização do Judiciário, mas sua disciplina específica também aparece no
+intervalo dos arts. 122 a 124. O art. 100 trata do regime de precatórios para pagamentos devidos pelas
+Fazendas Públicas, observadas as exceções e regras constitucionais.
+
+6.4 Funções essenciais à Justiça
+
+Ministério Público, Advocacia Pública, advocacia e Defensoria Pública são instituições essenciais à função
+jurisdicional, com atribuições próprias. O Ministério Público defende a ordem jurídica, o regime democrático
+e interesses sociais e individuais indisponíveis, nos termos do art. 127.
+
+Pegadinhas e confusões comuns
+
+ • Câmara dos Deputados representa o povo; Senado representa estados e DF.
+ • STF e STJ têm competências diferentes.
+ • CPI investiga, mas não julga criminalmente nem substitui o Ministério Público.
+ • Funções essenciais à Justiça não são todas órgãos do Poder Judiciário.
+
+      Revisão rápida
+      Art. 44: Congresso = Câmara + Senado • Art. 76: Executivo federal • Art. 92: órgãos do Judiciário •
+      Art. 127: Ministério Público • Art. 100: precatórios
+
+Módulo 7 — Justiça Militar, Defesa do Estado e
+Segurança Pública
+
+Base do edital: CF, arts. 122 a 144.
+
+Este bloco é importante para a formação de um futuro policial militar. A prova pode explorar a competência
+da Justiça Militar, os instrumentos constitucionais de defesa e a distribuição de atribuições entre os órgãos
+de segurança pública.
+
+7.1 Justiça Militar da União — arts. 122 a 124
+
+A Justiça Militar da União é composta pelos órgãos previstos no art. 122. O art. 124 atribui a ela o
+processamento e julgamento dos crimes militares definidos em lei. Não confunda Justiça Militar da União
+com Justiça Militar estadual, disciplinada também pelo art. 125.
+
+7.2 Justiça estadual e militar estadual — art. 125
+
+Os estados organizam sua Justiça, observados os princípios constitucionais. A Justiça Militar estadual pode
+ser constituída, nos termos constitucionais, por juízes de direito e Conselhos de Justiça em primeiro grau e
+pelo Tribunal de Justiça ou Tribunal de Justiça Militar, onde existir, em segundo grau.
+A competência envolve crimes militares definidos em lei e ações judiciais contra atos disciplinares
+militares, ressalvadas as competências constitucionais do júri quando a vítima for civil e demais
+disposições do art. 125.
+
+7.3 Estado de defesa e estado de sítio — arts. 136 a 141
+
+São mecanismos excepcionais de preservação ou restabelecimento da ordem constitucional. O estado de
+defesa é decretado pelo Presidente da República após ouvir os conselhos constitucionais, nas hipóteses e
+limites do art. 136. O estado de sítio depende de autorização do Congresso Nacional nas hipóteses do art.
+137.
+São medidas excepcionais, temporárias e sujeitas a controle político e jurídico. Memorize quem decreta,
+quem autoriza ou aprova, as hipóteses e os direitos que podem sofrer restrições nos limites constitucionais.
+
+Apostila de Direito Constitucional — PMSC Soldado 2026  Página 9
+7.4 Forças Armadas — art. 142
+
+As Forças Armadas são constituídas pela Marinha, pelo Exército e pela Aeronáutica, instituições nacionais
+permanentes e regulares, organizadas com base na hierarquia e disciplina, sob autoridade suprema do
+Presidente da República. Suas destinações constitucionais incluem defesa da Pátria, garantia dos poderes
+constitucionais e, por iniciativa de qualquer destes, da lei e da ordem, nos termos da Constituição e da
+legislação.
+
+7.5 Segurança pública — art. 144
+
+A segurança pública é dever do Estado, direito e responsabilidade de todos e é exercida para preservação
+da ordem pública e da incolumidade das pessoas e do patrimônio.
+
+O art. 144 enumera os órgãos de segurança pública. Entre eles estão Polícia Federal, Polícia Rodoviária
+Federal, Polícia Ferroviária Federal, polícias civis, polícias militares, corpos de bombeiros militares, polícias
+penais federal, estaduais e distrital.
+
+Polícia Militar: polícia ostensiva e preservação da ordem pública (art. 144, § 5º). Polícia Civil: funções de
+polícia judiciária estadual e apuração de infrações penais, exceto as militares, ressalvada a competência da
+União. Polícia Federal: atribuições descritas no § 1º, incluindo polícia judiciária da União e apuração de
+infrações de competência federal nos termos constitucionais.
+
+Pegadinhas e confusões comuns
+
+ • Polícia Militar: polícia ostensiva e preservação da ordem pública; não é a polícia judiciária da União.
+ • Polícia Civil investiga infrações penais, exceto as militares e ressalvada a competência da União.
+ • Estado de defesa e estado de sítio não são sinônimos; requisitos e participação do Congresso diferem.
+ • Forças Armadas e órgãos de segurança pública são tratados em dispositivos diferentes.
+
+      Revisão rápida
+      Art. 124: Justiça Militar da União julga crimes militares definidos em lei • Arts. 136–141: defesa e sítio
+      • Art. 142: Forças Armadas • Art. 144: segurança pública • PM = ostensiva + ordem pública
+
+Módulo 8 — Constituição do Estado de Santa
+Catarina
+
+Base do edital: CE/SC, arts. 1º a 40, 50 a 76, 90 e 105 a 109-C.
+
+A Constituição estadual é parte expressa do edital. Não basta estudar apenas a Constituição Federal. Utilize
+sempre a versão oficial atualizada da ALESC e respeite os limites exatos de artigos indicados no edital.
+
+8.1 Arts. 1º a 40 — fundamentos, direitos, organização e
+Administração
+
+O art. 1º da Constituição catarinense apresenta os fundamentos do Estado, incluindo soberania nacional,
+autonomia estadual, cidadania, dignidade da pessoa humana, valores sociais do trabalho e da livre
+iniciativa e pluralismo político.
+
+Os artigos iniciais tratam também de soberania popular, símbolos estaduais, direitos e garantias,
+organização político-administrativa, competências estaduais, bens, Administração Pública e regras
+relativas aos agentes públicos. Leia os artigos incluídos no recorte integralmente.
+
+No capítulo de Administração Pública, compare os princípios estaduais com o art. 37 da Constituição
+Federal. A Constituição estadual pode prever redações e regras próprias, desde que respeite a Constituição
+Federal.
+
+Apostila de Direito Constitucional — PMSC Soldado 2026  Página 10
+8.2 Arts. 50 a 76 — Poder Legislativo e Poder Executivo estaduais
+
+O recorte inclui dispositivos relativos à organização e ao funcionamento dos Poderes estaduais. Estude a
+composição e as competências da Assembleia Legislativa, o processo legislativo estadual, as atribuições do
+Governador e do Vice-Governador, substituição e responsabilidade conforme o artigo específico.
+
+Não transfira automaticamente regras federais para o plano estadual: use a Constituição catarinense para
+detalhes da Assembleia Legislativa e do Governo estadual.
+
+8.3 Art. 90
+
+Leia o art. 90 diretamente na versão atualizada da Constituição estadual e registre seu texto, seus incisos e
+eventuais parágrafos. Como o edital menciona especificamente esse artigo, não o substitua por um resumo
+genérico de todo o título.
+
+8.4 Arts. 105 a 109-C — Segurança pública e instituições estaduais
+
+Este trecho é particularmente relevante para o contexto policial. Estude a estrutura constitucional da
+segurança pública estadual, as instituições envolvidas, as atribuições e as regras específicas da Polícia
+Militar e dos demais órgãos citados nos dispositivos.
+
+A Constituição Federal, art. 144, e a Constituição estadual devem ser lidas em conjunto. Se houver
+aparente diferença, observe a hierarquia normativa e os limites de competência de cada ente.
+
+8.5 Método de leitura da Constituição estadual
+
+Para cada artigo do edital, faça uma ficha com quatro campos: (1) texto do artigo; (2) resumo em suas
+palavras; (3) palavras que podem ser trocadas em uma questão; (4) uma pergunta de revisão. Esse método
+ajuda a estudar uma Constituição menos familiar sem decorar páginas inteiras.
+
+Pegadinhas e confusões comuns
+
+ • A Constituição de Santa Catarina está expressamente no edital.
+ • Não presuma que todos os artigos estaduais repetem literalmente a Constituição Federal.
+ • Artigos pontualmente indicados (como o art. 90) precisam ser lidos integralmente, inclusive incisos e
+
+    parágrafos.
+ • A versão oficial consultada da ALESC é atualizada por emendas; o edital fixa a legislação aplicável na data
+
+    de publicação.
+
+      Revisão rápida
+      Fonte oficial: ALESC • Estudar somente os intervalos previstos não dispensa ler todos os incisos e
+      parágrafos dentro deles • Comparar CF/88 e CE/SC sem confundir competências
+
+Apostila de Direito Constitucional — PMSC Soldado 2026  Página 11
+Módulo 9 — Questões inéditas de treinamento
+
+As questões a seguir são autorais e inspiradas em formatos comuns de múltipla escolha. Não são questões
+oficiais da AOCP e não representam previsão garantida do conteúdo da prova. Tente responder antes de ler
+o gabarito comentado.
+
+1. A Constituição Federal de 1988 é classificada, quanto à origem, como:
+
+    A) Outorgada, pois foi imposta unilateralmente pelo governante.
+    B) Promulgada, pois foi elaborada por Assembleia Nacional Constituinte.
+    C) Flexível, pois pode ser alterada pelo mesmo procedimento de uma lei ordinária.
+    D) Costumeira, pois não possui texto escrito.
+    E) Imutável, pois não admite emendas.
+Gabarito: B — Foi promulgada por uma Assembleia Nacional Constituinte. Também é escrita, rígida, formal e
+analítica.
+
+2. Assinale a alternativa que contém apenas fundamentos da República previstos no art. 1º
+da CF.
+
+    A) Erradicar a pobreza e garantir o desenvolvimento nacional.
+    B) Soberania, cidadania e dignidade da pessoa humana.
+    C) Defesa da paz, não intervenção e igualdade entre os Estados.
+    D) Construir sociedade livre, justa e solidária e promover o bem de todos.
+    E) Legalidade, impessoalidade e eficiência.
+Gabarito: B — Soberania, cidadania e dignidade são fundamentos. As demais opções misturam objetivos, princípios
+internacionais ou princípios administrativos.
+
+3. Segundo o art. 5º, XI, da Constituição Federal, a entrada em casa sem consentimento do
+morador é permitida:
+
+    A) Por ordem judicial, em qualquer horário.
+    B) Em flagrante delito, desastre ou para prestar socorro, a qualquer hora.
+    C) Sempre que houver denúncia anônima, durante a noite.
+    D) Apenas com autorização escrita do morador.
+    E) Somente durante o dia, inclusive em caso de flagrante.
+Gabarito: B — A Constituição prevê flagrante delito, desastre e socorro a qualquer hora; por determinação judicial,
+durante o dia.
+
+4. Qual remédio constitucional é destinado à proteção da liberdade de locomoção?
+
+    A) Habeas data.
+    B) Mandado de injunção.
+    C) Ação popular.
+    D) Habeas corpus.
+    E) Mandado de segurança coletivo.
+Gabarito: D — O habeas corpus protege a liberdade de locomoção contra ilegalidade ou abuso de poder.
+
+5. No federalismo brasileiro, União, estados, Distrito Federal e municípios são:
+
+    A) Soberanos em suas relações recíprocas.
+    B) Autônomos, nos termos da Constituição.
+    C) Órgãos subordinados ao Congresso Nacional.
+    D) Entes sem competências próprias.
+    E) Entidades que podem deixar livremente a Federação.
+Gabarito: B — Os entes federativos são autônomos. A soberania pertence à República Federativa do Brasil.
+
+6. A competência comum prevista no art. 23 da CF refere-se, principalmente, a:
+
+    A) Competência administrativa compartilhada entre os entes federativos.
+    B) Competência legislativa exclusiva da União.
+    C) Competência exclusiva dos municípios para editar códigos penais.
+    D) Competência jurisdicional do STF.
+
+Apostila de Direito Constitucional — PMSC Soldado 2026  Página 12
+    E) Competência para reformar a Constituição.
+Gabarito: A — O art. 23 trata de competências materiais/administrativas comuns.
+
+7. Os princípios expressos no caput do art. 37 da Constituição Federal são:
+
+    A) Legalidade, igualdade, moralidade, produtividade e eficiência.
+    B) Legalidade, impessoalidade, moralidade, publicidade e eficiência.
+    C) Legitimidade, imparcialidade, publicidade, sigilo e economicidade.
+    D) Impessoalidade, proporcionalidade, razoabilidade, transparência e motivação.
+    E) Legalidade, hierarquia, disciplina, publicidade e eficiência.
+Gabarito: B — A lista expressa é LIMPE: legalidade, impessoalidade, moralidade, publicidade e eficiência.
+
+8. Em regra, o prazo de validade de concurso público é de:
+
+    A) Até um ano, sem prorrogação.
+    B) Até dois anos, prorrogável uma vez por igual período.
+    C) Quatro anos, prorrogável duas vezes.
+    D) Dois anos, prorrogável por prazo indeterminado.
+    E) Cinco anos, sem exceções.
+Gabarito: B — É a regra do art. 37, III, da CF.
+
+9. A atribuição constitucional da Polícia Militar prevista no art. 144, § 5º, é:
+
+    A) Exercer a polícia judiciária da União.
+    B) Apurar todos os crimes comuns estaduais.
+    C) Exercer a polícia ostensiva e preservar a ordem pública.
+    D) Julgar crimes militares cometidos por qualquer pessoa.
+    E) Executar exclusivamente perícias criminais.
+Gabarito: C — A Constituição atribui às Polícias Militares a polícia ostensiva e a preservação da ordem pública.
+
+10. A respeito das cláusulas pétreas, assinale a alternativa correta.
+
+    A) Nenhuma emenda constitucional pode alterar qualquer palavra da Constituição.
+    B) A Constituição proíbe toda emenda durante qualquer sessão legislativa.
+    C) A proposta tendente a abolir a forma federativa de Estado não pode ser objeto de deliberação.
+    D) Apenas o voto indireto é protegido como cláusula pétrea.
+    E) Direitos e garantias individuais podem ser abolidos por maioria simples.
+Gabarito: C — O art. 60, § 4º, impede deliberação de proposta tendente a abolir as matérias protegidas.
+
+11. O Senado Federal representa:
+
+    A) O povo, pelo sistema proporcional.
+    B) Os estados e o Distrito Federal.
+    C) Os municípios, por eleição indireta.
+    D) O Poder Judiciário.
+    E) Os partidos políticos, em número igual.
+Gabarito: B — A Câmara representa o povo; o Senado representa os estados e o Distrito Federal.
+
+12. Qual afirmação sobre a responsabilidade civil do Estado está correta, conforme art. 37,
+§ 6º?
+
+    A) O Estado nunca responde por atos de seus agentes.
+    B) A vítima deve sempre provar dolo do agente público.
+    C) O Estado responde pelos danos causados por seus agentes nessa qualidade, assegurado regresso contra o
+    responsável em caso de dolo ou culpa.
+    D) A responsabilidade existe mesmo sem dano ou nexo causal.
+    E) Somente servidores efetivos podem causar responsabilidade estatal.
+Gabarito: C — A regra prevê responsabilidade estatal e direito de regresso contra o agente se houver dolo ou
+culpa.
+
+13. A Constituição Federal define como princípios das relações internacionais, entre
+outros:
+
+Apostila de Direito Constitucional — PMSC Soldado 2026  Página 13
+    A) Cidadania e pluralismo político.
+    B) Legalidade e eficiência.
+    C) Independência nacional e prevalência dos direitos humanos.
+    D) Garantia do desenvolvimento nacional e erradicação da pobreza.
+    E) Separação dos Poderes e autonomia municipal.
+Gabarito: C — Independência nacional e prevalência dos direitos humanos constam do art. 4º.
+
+14. Sobre a inviolabilidade do domicílio, assinale a alternativa correta.
+
+    A) A ordem judicial permite ingresso noturno sem consentimento.
+    B) O ingresso para prestar socorro pode ocorrer a qualquer hora.
+    C) A denúncia anônima é uma exceção expressa e independente no art. 5º, XI.
+    D) A inviolabilidade impede entrada até mesmo em desastre.
+    E) Apenas a polícia pode entrar durante o dia, ainda que não haja ordem judicial.
+Gabarito: B — Prestar socorro é uma das exceções expressas à inviolabilidade domiciliar.
+
+15. No âmbito da competência legislativa concorrente do art. 24, cabe à União:
+
+    A) Impedir os estados de suplementar qualquer norma.
+    B) Editar normas gerais, nos termos constitucionais.
+    C) Legislar exclusivamente sobre todas as matérias estaduais.
+    D) Substituir automaticamente toda lei estadual por lei federal, ainda que não haja conflito.
+    E) Exercer competência judicial.
+Gabarito: B — Na competência concorrente, a União estabelece normas gerais e os estados suplementam; lei
+federal superveniente suspende eficácia da estadual no que lhe for contrário.
+
+16. Qual alternativa diferencia corretamente plebiscito e referendo?
+
+    A) Plebiscito é sempre judicial; referendo é administrativo.
+    B) Plebiscito é consulta prévia; referendo é consulta posterior a ato.
+    C) Ambos são formas de nomeação de representantes.
+    D) Referendo é votação interna do Congresso sem participação popular.
+    E) Plebiscito e referendo não estão previstos na Constituição.
+Gabarito: B — Ambos são formas de exercício direto da soberania popular; em regra, plebiscito é prévio e
+referendo posterior.
+
+17. O princípio da impessoalidade na Administração Pública impede, entre outras
+condutas:
+
+    A) A publicação de atos oficiais.
+    B) A prestação de serviços públicos.
+    C) O favorecimento pessoal ou perseguição indevida no exercício da função.
+    D) A realização de concurso público.
+    E) A aplicação da lei.
+Gabarito: C — Impessoalidade exige atuação voltada ao interesse público, sem favorecimentos ou perseguições.
+
+18. A Justiça Militar da União processa e julga:
+
+    A) Qualquer infração administrativa cometida por servidor civil.
+    B) Crimes militares definidos em lei, nos termos constitucionais.
+    C) Todas as ações de família.
+    D) Somente crimes praticados por civis contra civis.
+    E) Recursos eleitorais.
+Gabarito: B — O art. 124 prevê a competência da Justiça Militar da União para crimes militares definidos em lei.
+
+19. Sobre os direitos políticos, a Constituição Federal:
+
+    A) Autoriza a cassação livre dos direitos políticos.
+    B) Prevê que a soberania popular pode ser exercida por plebiscito, referendo e iniciativa popular.
+    C) Determina voto facultativo a todas as pessoas.
+    D) Proíbe partidos políticos.
+    E) Não admite voto direto.
+
+Apostila de Direito Constitucional — PMSC Soldado 2026  Página 14
+Gabarito: B — O art. 14 prevê essas formas de exercício da soberania popular; a cassação de direitos políticos é
+vedada.
+
+20. Ao estudar a Constituição do Estado de Santa Catarina para este concurso, o candidato
+deve:
+
+    A) Ignorá-la, pois apenas a Constituição Federal é cobrada.
+    B) Estudar somente o preâmbulo estadual.
+    C) Estudar os intervalos e o artigo específico indicados no Anexo II, consultando o texto oficial atualizado.
+    D) Usar apenas resumos de terceiros, sem consultar a legislação.
+    E) Presumir que todos os artigos estaduais são idênticos aos federais.
+Gabarito: C — O edital exige expressamente trechos da Constituição estadual; a fonte oficial atualizada deve ser
+consultada.
+
+Apostila de Direito Constitucional — PMSC Soldado 2026  Página 15
+Plano de revisão — 4 semanas
+
+Use este plano como estrutura repetível. Se algum módulo exigir mais tempo, ajuste o ritmo sem deixar de
+revisar os demais tópicos do edital.
+
+Seman  Foco principal                                   Atividade de fixação
+a
+
+1      Teoria da Constituição; Poder Constituinte; CF   Resumo de uma página + 20 questões
+
+       arts. 1º–17
+
+2      CF arts. 18–42                                   Quadro de competências + 20 questões
+
+3      CF arts. 44–100 e 122–144                        Mapa dos Poderes + segurança pública + 25 questões
+
+4      Constituição de SC nos intervalos do edital +    Simulado de 8 questões de Constitucional e caderno
+
+       revisão geral                                    de erros
+
+Checklist de domínio
+
+ • ☐ Consigo explicar a diferença entre fundamentos, objetivos e princípios internacionais.
+ • ☐ Sei diferenciar habeas corpus, habeas data, mandado de segurança, mandado de injunção e ação
+
+    popular.
+ • ☐ Sei distinguir competência comum, privativa e concorrente.
+ • ☐ Consigo explicar o LIMPE e a regra do concurso público.
+ • ☐ Sei diferenciar Câmara dos Deputados e Senado Federal.
+ • ☐ Sei resumir as atribuições constitucionais da Polícia Militar.
+ • ☐ Li os artigos estaduais exatos previstos no edital e conferi a versão atualizada.
+ • ☐ Registrei meus erros e refiz as questões erradas depois de alguns dias.
+
+Gabarito rápido
+
+1-B • 2-B • 3-B • 4-D • 5-B • 6-A • 7-B • 8-B • 9-C • 10-C • 11-B • 12-C • 13-C • 14-B • 15-B • 16-B • 17-C •
+18-B • 19-B • 20-C
+
+Fontes oficiais para consulta
+
+1. Edital nº 002/CCP/2026 — Instituto AOCP: https://institutoaocp.selecao.net.br/informacoes/3
+2. Constituição Federal de 1988 — texto compilado, Portal Planalto:
+https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm
+3. Constituição do Estado de Santa Catarina — ALESC, texto atualizado: https://leis.alesc.sc.gov.br/ato-normativo/52785
+
+      Aviso de atualização
+      O edital informa que a legislação aplicável é a vigente na data de publicação do edital de abertura.
+      Esta apostila resume e explica os tópicos, mas não substitui a leitura da legislação oficial. Confira
+      retificações do edital e use os textos oficiais para memorizar a redação exata.
+
+Apostila de Direito Constitucional — PMSC Soldado 2026                                        Página 16
+

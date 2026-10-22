@@ -8,6 +8,20 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const ler = (p) => JSON.parse(readFileSync(join(root, p), 'utf8'));
 
 const apostila = ler('content/apostila.json');
+
+// mesma substituicao que o seed faz: Direito Constitucional vem do material
+// refeito em content/constitucional.json
+const constitucional = existsSync(join(root, 'content/constitucional.json'))
+  ? ler('content/constitucional.json')
+  : null;
+if (constitucional) {
+  const d = apostila.disciplines.find((x) => x.slug === constitucional.disciplina);
+  if (d) {
+    d.topics = constitucional.topicos;
+    d.questions = [];
+  }
+}
+
 const provas = ler('content/provas.json');
 const comentarios = ler('content/provas-comentarios.json').comentarios;
 const comentariosApostila = ler('content/apostila-comentarios.json').comentarios;
@@ -113,6 +127,24 @@ for (const q of ineditas) {
   }
 }
 
+// ---------- questoes da apostila de constitucional ----------
+for (const q of constitucional?.questoes ?? []) {
+  const id = `constitucional:2026:${q.numero}`;
+  if (!Array.isArray(q.alternativas) || q.alternativas.length !== 5) {
+    erros.push(`${id}: precisa de 5 alternativas`);
+    continue;
+  }
+  const letras = q.alternativas.map((a) => a.letra).join('');
+  if (letras !== 'ABCDE') erros.push(`${id}: letras fora de ordem (${letras})`);
+  if (!q.alternativas.some((a) => a.letra === q.resposta))
+    erros.push(`${id}: gabarito ${q.resposta} ausente nas alternativas`);
+  if (!q.justificativa || q.justificativa.length < 30)
+    erros.push(`${id}: justificativa ausente ou curta`);
+  if (q.enunciado.length < 20) erros.push(`${id}: enunciado curto`);
+  if (q.topicoRef && !refsPorSlug.get(constitucional.disciplina)?.has(q.topicoRef))
+    erros.push(`${id}: topico ${q.topicoRef} nao existe em ${constitucional.disciplina}`);
+}
+
 // ---------- resumos didaticos ----------
 for (const d of apostila.disciplines) {
   if (!resumos.disciplinas[d.slug]) erros.push(`resumo ausente para a disciplina ${d.slug}`);
@@ -123,7 +155,8 @@ for (const d of apostila.disciplines) {
       erros.push(`guia incompleto em ${d.slug}`);
   }
   for (const t of d.topics) {
-    if (!resumos.topicos[`${d.slug}:${t.ref}`])
+    // o topico pode trazer o proprio resumo (constitucional.json)
+    if (!resumos.topicos[`${d.slug}:${t.ref}`] && !t.resumo)
       erros.push(`resumo ausente para o topico ${d.slug}:${t.ref}`);
   }
 }
@@ -153,10 +186,13 @@ const soma = (slug, n) => porDisciplina.set(slug, (porDisciplina.get(slug) ?? 0)
 for (const d of apostila.disciplines) soma(d.slug, d.questions.length);
 for (const uteis of uteisPorExame.values()) for (const q of uteis) soma(q.slug, 1);
 for (const q of ineditas) soma(q.disciplina, 1);
+const totalConst = constitucional?.questoes.length ?? 0;
+if (constitucional) soma(constitucional.disciplina, totalConst);
 
 const totalApostila = apostila.disciplines.reduce((a, d) => a + d.questions.length, 0);
 const totalProvas = [...uteisPorExame.values()].reduce((a, u) => a + u.length, 0);
-const total = totalApostila + apostila.simulado.length + totalProvas + ineditas.length;
+const total =
+  totalApostila + totalConst + apostila.simulado.length + totalProvas + ineditas.length;
 
 console.log('--- banco de questoes por disciplina ---');
 for (const d of apostila.disciplines) {
@@ -167,6 +203,7 @@ for (const d of apostila.disciplines) {
 
 console.log('\n--- por origem ---');
 console.log(`  apostila: ${totalApostila} comentadas + ${apostila.simulado.length} do simulado`);
+if (constitucional) console.log(`  apostila de Direito Constitucional 2026: ${totalConst}`);
 for (const exame of provas.exames) {
   console.log(`  ${exame.nome}: ${uteisPorExame.get(exame.id).length}`);
 }
