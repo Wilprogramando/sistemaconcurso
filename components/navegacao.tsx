@@ -164,12 +164,12 @@ export function NavInferior() {
         role="dialog"
         aria-label="Mais seções"
         aria-modal={aberto}
-        className={`fixed inset-x-0 bottom-0 z-50 rounded-t-3xl bg-white p-4 pb-20 shadow-2xl transition-transform duration-200 md:hidden dark:bg-slate-900 ${
+        className={`fixed inset-x-0 bottom-0 z-50 flex max-h-[85dvh] flex-col rounded-t-3xl bg-white p-4 shadow-2xl transition-transform duration-200 md:hidden dark:bg-slate-900 ${
           aberto ? 'translate-y-0' : 'pointer-events-none translate-y-full'
         }`}
         style={{ paddingBottom: 'calc(5rem + env(safe-area-inset-bottom))' }}
       >
-        <div className="mb-3 flex items-center justify-between">
+        <div className="mb-3 flex shrink-0 items-center justify-between">
           <h2 className="font-semibold text-slate-900 dark:text-slate-100">Mais seções</h2>
           <button
             type="button"
@@ -180,7 +180,7 @@ export function NavInferior() {
             <X size={18} />
           </button>
         </div>
-        <ul className="grid gap-2">
+        <ul className="grid gap-2 overflow-y-auto overscroll-contain">
           {extras.map(({ href, label, icone: Icone, descricao }) => (
             <li key={href}>
               <Link
