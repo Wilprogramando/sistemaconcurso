@@ -1,21 +1,25 @@
 import Link from 'next/link';
 import {
   AlertTriangle,
+  BarChart3,
   BookOpen,
   CalendarDays,
   CheckCircle2,
+  FileText,
   Flame,
   ListChecks,
   MonitorPlay,
   PenLine,
   Play,
   RefreshCw,
+  ScrollText,
   Target,
   TrendingUp,
 } from 'lucide-react';
 import { createClient, getUser } from '@/lib/supabase/server';
 import { Aviso, Card, Empty, Stat } from '@/components/ui';
 import { Medidor, PesoDaProva } from '@/components/graficos';
+import { visualDe } from '@/lib/disciplinas-visual';
 import { PRIORITY_CLASS, PRIORITY_LABEL, type DisciplineStats } from '@/lib/types';
 import { GOLDEN_RULE, PLAN_30 } from '@/lib/plans';
 import ExamDateForm from './exam-date-form';
@@ -250,48 +254,106 @@ export default async function Dashboard() {
       </Card>
 
       {/* ---------------- desempenho ---------------- */}
-      <Card
-        title="Seu acerto por disciplina"
-        subtitle="Ordenado pelo peso na prova · a marca na barra é a meta de 70%"
-        icon={TrendingUp}
-      >
-        <ul className="space-y-4">
+      <section className="rounded-2xl bg-white p-4 ring-1 ring-slate-200/80 sm:p-5 dark:bg-slate-900 dark:ring-slate-700/70">
+        <header className="flex flex-wrap items-center gap-4 rounded-2xl bg-brand-50/70 p-4 sm:p-5 dark:bg-brand-950/30">
+          <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-brand-100 text-brand-700 dark:bg-brand-900/60 dark:text-brand-300">
+            <TrendingUp size={24} />
+          </span>
+          <div className="min-w-0 flex-1">
+            <h2 className="text-xl leading-tight font-bold text-slate-900 sm:text-2xl dark:text-slate-100">
+              Seu acerto por disciplina
+            </h2>
+            <p className="mt-0.5 text-sm text-slate-500 dark:text-slate-400">
+              Ordenado pelo peso na prova · a marca na barra é a meta de 70%
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="inline-flex items-center gap-2 rounded-xl bg-white px-3.5 py-2 ring-1 ring-brand-100 dark:bg-slate-900 dark:ring-brand-900">
+              <Target size={18} className="shrink-0 text-brand-600 dark:text-brand-300" />
+              <span className="leading-tight">
+                <span className="block text-[0.7rem] font-medium text-slate-500 dark:text-slate-400">
+                  Meta por disciplina
+                </span>
+                <span className="block text-base font-bold text-slate-900 dark:text-slate-100">
+                  70%
+                </span>
+              </span>
+            </span>
+
+            <Link
+              href="/edital"
+              className="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700"
+            >
+              <ScrollText size={16} /> Edital
+            </Link>
+
+            <a
+              href="/edital-002-2026.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 ring-1 ring-slate-300 transition hover:bg-slate-50 dark:bg-slate-800 dark:text-slate-200 dark:ring-slate-600"
+            >
+              <FileText size={16} /> Ver o PDF
+            </a>
+          </div>
+        </header>
+
+        <ul className="mt-3 space-y-2.5">
           {ordenadas.map((d) => {
             const s = statMap.get(d.id);
             const acc = s?.accuracy ? Number(s.accuracy) : null;
+            const visual = visualDe(d.slug);
+            const Icone = visual.icone;
             return (
-              <li key={d.id}>
-                <Medidor
-                  valor={acc}
-                  meta={70}
-                  destaque
-                  label={
-                    <Link
-                      href={`/materias/${d.slug}`}
-                      className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 hover:underline"
-                    >
-                      {d.name}
-                      <span
-                        className={`rounded-full px-2 py-0.5 text-[0.65rem] font-semibold ring-1 ring-inset ${
-                          PRIORITY_CLASS[d.priority as keyof typeof PRIORITY_CLASS]
-                        }`}
+              <li
+                key={d.id}
+                className="flex items-center gap-3 rounded-2xl p-3 ring-1 ring-slate-200/80 transition hover:ring-brand-300 sm:gap-4 sm:p-3.5 dark:ring-slate-700/70"
+              >
+                <span
+                  className={`grid h-10 w-10 shrink-0 place-items-center rounded-xl sm:h-11 sm:w-11 ${visual.tile}`}
+                >
+                  <Icone size={20} />
+                </span>
+
+                <div className="min-w-0 flex-1">
+                  <Medidor
+                    valor={acc}
+                    meta={70}
+                    destaque
+                    label={
+                      <Link
+                        href={`/materias/${d.slug}`}
+                        className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 hover:underline"
                       >
-                        {PRIORITY_LABEL[d.priority as keyof typeof PRIORITY_LABEL].replace(
-                          'Prioridade ',
-                          ''
-                        )}
-                      </span>
-                    </Link>
-                  }
-                  sublabel={`${d.question_count} questões na prova (${d.weight}% do total) · ${s?.answered ?? 0} respondidas${
-                    acc !== null ? ` · ${s!.correct} acertos` : ''
-                  }`}
-                />
+                        {d.name}
+                        <span
+                          className={`rounded-full px-2 py-0.5 text-[0.65rem] font-semibold ring-1 ring-inset ${
+                            PRIORITY_CLASS[d.priority as keyof typeof PRIORITY_CLASS]
+                          }`}
+                        >
+                          {PRIORITY_LABEL[d.priority as keyof typeof PRIORITY_LABEL].replace(
+                            'Prioridade ',
+                            ''
+                          )}
+                        </span>
+                      </Link>
+                    }
+                    sublabel={`${d.question_count} questões na prova (${d.weight}% do total) · ${s?.answered ?? 0} respondidas${
+                      acc !== null ? ` · ${s!.correct} acertos` : ''
+                    }`}
+                  />
+                </div>
+
+                <span className="hidden shrink-0 items-center gap-1.5 rounded-xl bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-600 sm:inline-flex dark:bg-slate-800 dark:text-slate-300">
+                  <BarChart3 size={14} className="text-slate-400" />
+                  {acc !== null ? `${Math.round(acc)}%` : 'sem dados'}
+                </span>
               </li>
             );
           })}
         </ul>
-      </Card>
+      </section>
 
       {/* ---------------- rodapé do painel ---------------- */}
       <div className="grid gap-4 lg:grid-cols-2">
