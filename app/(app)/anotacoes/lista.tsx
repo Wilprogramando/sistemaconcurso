@@ -53,6 +53,7 @@ export default function ListaDeNotas({
     return (
       <Grade
         disciplinas={disciplinas}
+        opcoes={opcoes}
         resumo={resumo}
         total={notas.length}
         onAbrir={setSelecao}
@@ -81,24 +82,44 @@ export default function ListaDeNotas({
 
 function Grade({
   disciplinas,
+  opcoes,
   resumo,
   total,
   onAbrir,
 }: {
   disciplinas: Materia[];
+  opcoes: Opcao[];
   resumo: Map<number | 'sem', { total: number; ultima: string | null; fixadas: number }>;
   total: number;
   onAbrir: (s: Selecao) => void;
 }) {
   const soltas = resumo.get('sem');
+  const [criando, setCriando] = useState(false);
 
   return (
     <div className="space-y-4">
-      <p className="text-sm text-slate-500 dark:text-slate-400">
-        {total
-          ? `${total} ${total === 1 ? 'anotação' : 'anotações'} no caderno. Clique numa matéria para ver as suas.`
-          : 'Escolha uma matéria para começar a anotar.'}
-      </p>
+      <div className="flex flex-wrap items-center gap-3">
+        <p className="min-w-0 flex-1 text-sm text-slate-500 dark:text-slate-400">
+          {total
+            ? `${total} ${total === 1 ? 'anotação' : 'anotações'} no caderno. Clique numa matéria para ver as suas.`
+            : 'Escolha uma matéria para começar a anotar.'}
+        </p>
+        {!criando && (
+          <button
+            type="button"
+            onClick={() => setCriando(true)}
+            className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700"
+          >
+            <Plus size={16} /> Nova anotação
+          </button>
+        )}
+      </div>
+
+      {criando && (
+        <Card title="Nova anotação">
+          <EditorNota disciplinas={opcoes} onFechar={() => setCriando(false)} />
+        </Card>
+      )}
 
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {disciplinas.map((d) => {
