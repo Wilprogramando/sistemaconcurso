@@ -2,8 +2,10 @@
 
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
-import { ArrowLeft, NotebookPen, Pin, Plus, Search } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { ArrowLeft, NotebookPen, Pin, Plus, Search, Trash2 } from 'lucide-react';
 import EditorNota, { type Opcao } from '@/components/editor-nota';
+import { useSessao } from '@/components/sessao';
 import { Card, Empty } from '@/components/ui';
 import ImagensDaNota from '@/components/imagens-nota';
 import { visualDe } from '@/lib/disciplinas-visual';
@@ -424,6 +426,18 @@ function Cartao({
 }) {
   const info = TAGS[nota.tag];
   const Icone = info.icone;
+  const { supabase } = useSessao();
+  const router = useRouter();
+  const [confirmando, setConfirmando] = useState(false);
+  const [excluindo, setExcluindo] = useState(false);
+
+  async function excluir() {
+    setExcluindo(true);
+    await supabase.from('notes').delete().eq('id', nota.id);
+    setExcluindo(false);
+    setConfirmando(false);
+    router.refresh();
+  }
 
   if (editando) {
     return (
@@ -453,14 +467,47 @@ function Cartao({
 
         {nota.pinned && <Pin size={13} className="text-brand-500" />}
 
-        <button
-          type="button"
-          onClick={abrir}
-          className="ml-auto rounded-lg px-2.5 py-1 text-xs font-medium text-brand-600 transition hover:bg-brand-50 dark:text-brand-300 dark:hover:bg-slate-800"
-        >
-          Editar
-        </button>
+        <div className="ml-auto flex items-center gap-1">
+          <button
+            type="button"
+            onClick={abrir}
+            className="rounded-lg px-2.5 py-1 text-xs font-medium text-brand-600 transition hover:bg-brand-50 dark:text-brand-300 dark:hover:bg-slate-800"
+          >
+            Editar
+          </button>
+          <button
+            type="button"
+            onClick={() => setConfirmando(true)}
+            title="Excluir anotação"
+            aria-label="Excluir anotação"
+            className="rounded-lg p-1.5 text-slate-400 transition hover:bg-red-50 hover:text-red-600 dark:hover:bg-red-950/40 dark:hover:text-red-400"
+          >
+            <Trash2 size={14} />
+          </button>
+        </div>
       </div>
+
+      {confirmando && (
+        <div className="mt-2 flex flex-wrap items-center gap-2 rounded-xl bg-red-50 px-3 py-2 text-xs text-red-800 dark:bg-red-950/40 dark:text-red-300">
+          <span className="min-w-0 flex-1">Excluir esta anotação? Não dá para desfazer.</span>
+          <button
+            type="button"
+            onClick={() => setConfirmando(false)}
+            disabled={excluindo}
+            className="rounded-lg px-2.5 py-1 font-medium text-slate-600 transition hover:bg-white disabled:opacity-60 dark:text-slate-300 dark:hover:bg-slate-800"
+          >
+            Cancelar
+          </button>
+          <button
+            type="button"
+            onClick={excluir}
+            disabled={excluindo}
+            className="inline-flex items-center gap-1.5 rounded-lg bg-red-600 px-3 py-1 font-semibold text-white transition hover:bg-red-700 disabled:opacity-60"
+          >
+            <Trash2 size={12} /> {excluindo ? 'Excluindo…' : 'Excluir'}
+          </button>
+        </div>
+      )}
 
       {nota.title && (
         <h3 className="mt-2 font-semibold text-slate-900 dark:text-slate-100">{nota.title}</h3>
