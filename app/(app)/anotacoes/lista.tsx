@@ -2,10 +2,11 @@
 
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
-import { Pin, Plus, Search } from 'lucide-react';
+import { ArrowLeft, NotebookPen, Pin, Plus, Search } from 'lucide-react';
 import EditorNota, { type Opcao } from '@/components/editor-nota';
 import { Card, Empty } from '@/components/ui';
 import ImagensDaNota from '@/components/imagens-nota';
+import { visualDe } from '@/lib/disciplinas-visual';
 import { ORDEM_TAGS, TAGS, type Nota, type Tag } from '@/lib/notas';
 
 type NotaComContexto = Nota & {
@@ -15,16 +16,184 @@ type NotaComContexto = Nota & {
   topicoTitulo: string | null;
 };
 
+export type Materia = { id: number; nome: string; slug: string };
+
+/** chave da matéria selecionada: id da disciplina, ou `sem` para as soltas */
+type Selecao = number | 'sem' | null;
+
 export default function ListaDeNotas({
   notas,
   disciplinas,
 }: {
   notas: NotaComContexto[];
+  disciplinas: Materia[];
+}) {
+  const [selecao, setSelecao] = useState<Selecao>(null);
+
+  const opcoes: Opcao[] = useMemo(
+    () => disciplinas.map((d) => ({ id: d.id, nome: d.nome })),
+    [disciplinas],
+  );
+
+  /** quantas anotações cada matéria tem e quando foi a última */
+  const resumo = useMemo(() => {
+    const m = new Map<number | 'sem', { total: number; ultima: string | null; fixadas: number }>();
+    for (const n of notas) {
+      const chave: number | 'sem' = n.discipline_id ?? 'sem';
+      const e = m.get(chave) ?? { total: 0, ultima: null, fixadas: 0 };
+      e.total += 1;
+      if (n.pinned) e.fixadas += 1;
+      if (!e.ultima || n.updated_at > e.ultima) e.ultima = n.updated_at;
+      m.set(chave, e);
+    }
+    return m;
+  }, [notas]);
+
+  if (selecao === null) {
+    return (
+      <Grade
+        disciplinas={disciplinas}
+        resumo={resumo}
+        total={notas.length}
+        onAbrir={setSelecao}
+      />
+    );
+  }
+
+  const daMateria = notas.filter((n) => (n.discipline_id ?? 'sem') === selecao);
+  const materia = typeof selecao === 'number' ? disciplinas.find((d) => d.id === selecao) : null;
+
+  return (
+    <Detalhe
+      titulo={materia?.nome ?? 'Sem matéria'}
+      slug={materia?.slug ?? null}
+      notas={daMateria}
+      disciplinas={opcoes}
+      disciplinaFixa={typeof selecao === 'number' ? selecao : null}
+      voltar={() => setSelecao(null)}
+    />
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* grade de matérias                                                   */
+/* ------------------------------------------------------------------ */
+
+function Grade({
+  disciplinas,
+  resumo,
+  total,
+  onAbrir,
+}: {
+  disciplinas: Materia[];
+  resumo: Map<number | 'sem', { total: number; ultima: string | null; fixadas: number }>;
+  total: number;
+  onAbrir: (s: Selecao) => void;
+}) {
+  const soltas = resumo.get('sem');
+
+  return (
+    <div className="space-y-4">
+      <p className="text-sm text-slate-500 dark:text-slate-400">
+        {total
+          ? `${total} ${total === 1 ? 'anotação' : 'anotações'} no caderno. Clique numa matéria para ver as suas.`
+          : 'Escolha uma matéria para começar a anotar.'}
+      </p>
+
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {disciplinas.map((d) => {
+          const info = resumo.get(d.id);
+          const visual = visualDe(d.slug);
+          const Icone = visual.icone;
+
+          return (
+            <button
+              key={d.id}
+              type="button"
+              onClick={() => onAbrir(d.id)}
+              className="flex h-full flex-col items-start rounded-2xl bg-white p-4 text-left ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:ring-brand-400 dark:bg-slate-900 dark:ring-slate-700"
+            >
+              <div className="flex w-full items-start gap-3">
+                <span
+                  className={`grid h-11 w-11 shrink-0 place-items-center rounded-2xl ${visual.tile}`}
+                >
+                  <Icone size={21} />
+                </span>
+                <h2 className="min-w-0 flex-1 text-sm leading-snug font-bold text-slate-900 dark:text-slate-100">
+                  {d.nome}
+                </h2>
+                {!!info?.fixadas && <Pin size={14} className="shrink-0 text-brand-500" />}
+              </div>
+
+              <p className="mt-3 text-2xl font-bold text-slate-900 tabular-nums dark:text-slate-100">
+                {info?.total ?? 0}
+                <span className="ml-1.5 text-xs font-medium text-slate-500 dark:text-slate-400">
+                  {(info?.total ?? 0) === 1 ? 'anotação' : 'anotações'}
+                </span>
+              </p>
+
+              <p className="mt-0.5 text-xs text-slate-400">
+                {info?.ultima
+                  ? `Última em ${new Date(info.ultima).toLocaleDateString('pt-BR', {
+                      day: '2-digit',
+                      month: '2-digit',
+                      year: '2-digit',
+                    })}`
+                  : 'Nenhuma anotação ainda'}
+              </p>
+            </button>
+          );
+        })}
+
+        {!!soltas && (
+          <button
+            type="button"
+            onClick={() => onAbrir('sem')}
+            className="flex h-full flex-col items-start rounded-2xl bg-white p-4 text-left ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:ring-brand-400 dark:bg-slate-900 dark:ring-slate-700"
+          >
+            <div className="flex w-full items-start gap-3">
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-slate-500 text-white">
+                <NotebookPen size={21} />
+              </span>
+              <h2 className="min-w-0 flex-1 text-sm leading-snug font-bold text-slate-900 dark:text-slate-100">
+                Sem matéria
+              </h2>
+            </div>
+            <p className="mt-3 text-2xl font-bold text-slate-900 tabular-nums dark:text-slate-100">
+              {soltas.total}
+              <span className="ml-1.5 text-xs font-medium text-slate-500 dark:text-slate-400">
+                {soltas.total === 1 ? 'anotação' : 'anotações'}
+              </span>
+            </p>
+            <p className="mt-0.5 text-xs text-slate-400">Anotações soltas, sem amarração</p>
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* anotações de uma matéria                                            */
+/* ------------------------------------------------------------------ */
+
+function Detalhe({
+  titulo,
+  slug,
+  notas,
+  disciplinas,
+  disciplinaFixa,
+  voltar,
+}: {
+  titulo: string;
+  slug: string | null;
+  notas: NotaComContexto[];
   disciplinas: Opcao[];
+  disciplinaFixa: number | null;
+  voltar: () => void;
 }) {
   const [busca, setBusca] = useState('');
   const [filtroTag, setFiltroTag] = useState<Tag | 'todas'>('todas');
-  const [filtroDisciplina, setFiltroDisciplina] = useState<number | 'todas'>('todas');
   const [criando, setCriando] = useState(false);
   const [editando, setEditando] = useState<string | null>(null);
 
@@ -32,15 +201,10 @@ export default function ListaDeNotas({
     const termo = busca.trim().toLowerCase();
     return notas.filter((n) => {
       if (filtroTag !== 'todas' && n.tag !== filtroTag) return false;
-      if (filtroDisciplina !== 'todas' && n.discipline_id !== filtroDisciplina) return false;
       if (!termo) return true;
-      return (
-        n.title.toLowerCase().includes(termo) ||
-        n.body.toLowerCase().includes(termo) ||
-        (n.disciplinaNome ?? '').toLowerCase().includes(termo)
-      );
+      return n.title.toLowerCase().includes(termo) || n.body.toLowerCase().includes(termo);
     });
-  }, [notas, busca, filtroTag, filtroDisciplina]);
+  }, [notas, busca, filtroTag]);
 
   const contagem = useMemo(() => {
     const c: Record<string, number> = {};
@@ -51,13 +215,54 @@ export default function ListaDeNotas({
   const fixadas = filtradas.filter((n) => n.pinned);
   const demais = filtradas.filter((n) => !n.pinned);
 
+  const visual = slug ? visualDe(slug) : null;
+  const Icone = visual?.icone ?? NotebookPen;
+
   return (
     <div className="space-y-4">
+      {/* ---------------- cabeçalho da matéria ---------------- */}
+      <div className="flex flex-wrap items-center gap-3">
+        <button
+          type="button"
+          onClick={voltar}
+          className="inline-flex items-center gap-1.5 rounded-xl px-2.5 py-1.5 text-sm font-medium text-slate-600 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+        >
+          <ArrowLeft size={16} /> Matérias
+        </button>
+
+        <span
+          className={`grid h-10 w-10 shrink-0 place-items-center rounded-2xl ${
+            visual?.tile ?? 'bg-slate-500 text-white'
+          }`}
+        >
+          <Icone size={19} />
+        </span>
+
+        <div className="min-w-0">
+          <h2 className="text-lg leading-tight font-bold text-slate-900 dark:text-slate-100">
+            {titulo}
+          </h2>
+          <p className="text-xs text-slate-500 dark:text-slate-400">
+            {notas.length} {notas.length === 1 ? 'anotação' : 'anotações'}
+          </p>
+        </div>
+
+        {slug && (
+          <Link
+            href={`/materias/${slug}`}
+            className="ml-auto text-xs font-medium text-brand-600 hover:underline dark:text-brand-300"
+          >
+            Abrir a matéria
+          </Link>
+        )}
+      </div>
+
       {/* ---------------- nova anotação ---------------- */}
       {criando ? (
         <Card title="Nova anotação">
           <EditorNota
             disciplinas={disciplinas}
+            disciplinaFixa={disciplinaFixa}
             onFechar={() => setCriando(false)}
           />
         </Card>
@@ -67,7 +272,7 @@ export default function ListaDeNotas({
           onClick={() => setCriando(true)}
           className="flex w-full items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-slate-300 py-4 text-sm font-semibold text-slate-600 transition hover:border-brand-400 hover:text-brand-700 dark:border-slate-700 dark:text-slate-400 dark:hover:border-brand-500"
         >
-          <Plus size={17} /> Nova anotação
+          <Plus size={17} /> Nova anotação em {titulo}
         </button>
       )}
 
@@ -93,31 +298,14 @@ export default function ListaDeNotas({
             </Chip>
             {ORDEM_TAGS.filter((t) => contagem[t]).map((t) => {
               const info = TAGS[t];
-              const Icone = info.icone;
+              const IconeTag = info.icone;
               return (
                 <Chip key={t} ativo={filtroTag === t} onClick={() => setFiltroTag(t)}>
-                  <Icone size={12} /> {info.label} ({contagem[t]})
+                  <IconeTag size={12} /> {info.label} ({contagem[t]})
                 </Chip>
               );
             })}
           </div>
-
-          {disciplinas.length > 0 && (
-            <select
-              value={filtroDisciplina}
-              onChange={(e) =>
-                setFiltroDisciplina(e.target.value === 'todas' ? 'todas' : Number(e.target.value))
-              }
-              className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm outline-none focus:border-brand-500 sm:w-auto dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100"
-            >
-              <option value="todas">Todas as matérias</option>
-              {disciplinas.map((d) => (
-                <option key={d.id} value={d.id}>
-                  {d.nome}
-                </option>
-              ))}
-            </select>
-          )}
         </div>
       )}
 
@@ -127,16 +315,16 @@ export default function ListaDeNotas({
           <Empty>
             {notas.length
               ? 'Nenhuma anotação com esses filtros.'
-              : 'Nenhuma anotação ainda. Crie a primeira acima, ou use o botão Anotações dentro de um tópico.'}
+              : 'Nenhuma anotação nesta matéria ainda. Crie a primeira acima.'}
           </Empty>
         </Card>
       ) : (
         <div className="space-y-4">
           {fixadas.length > 0 && (
             <section className="space-y-2">
-              <h2 className="flex items-center gap-1.5 text-xs font-bold tracking-wider text-slate-500 uppercase dark:text-slate-400">
+              <h3 className="flex items-center gap-1.5 text-xs font-bold tracking-wider text-slate-500 uppercase dark:text-slate-400">
                 <Pin size={12} /> Fixadas
-              </h2>
+              </h3>
               {fixadas.map((n) => (
                 <Cartao
                   key={n.id}
@@ -153,9 +341,9 @@ export default function ListaDeNotas({
           {demais.length > 0 && (
             <section className="space-y-2">
               {fixadas.length > 0 && (
-                <h2 className="text-xs font-bold tracking-wider text-slate-500 uppercase dark:text-slate-400">
+                <h3 className="text-xs font-bold tracking-wider text-slate-500 uppercase dark:text-slate-400">
                   Demais anotações
-                </h2>
+                </h3>
               )}
               {demais.map((n) => (
                 <Cartao
@@ -232,15 +420,6 @@ function Cartao({
         >
           <Icone size={12} /> {info.label}
         </span>
-
-        {nota.disciplinaNome && nota.disciplinaSlug && (
-          <Link
-            href={`/materias/${nota.disciplinaSlug}`}
-            className="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-600 transition hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300"
-          >
-            {nota.disciplinaNome}
-          </Link>
-        )}
 
         {nota.topicoRef && nota.disciplinaSlug && (
           <Link

@@ -41,20 +41,31 @@ export default async function AnotacoesPage() {
 
   return (
     <div className="space-y-5">
-      <div>
-        <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl dark:text-slate-100">
-          Anotações
-        </h1>
-        <p className="mt-1 max-w-2xl text-sm text-slate-500 dark:text-slate-400">
-          Seu caderno livre: macetes, números que não grudam, dúvidas para tirar depois. Diferente
-          do caderno de erros, aqui entra o que você escreve com as suas palavras — e você pode
-          amarrar cada anotação a uma matéria ou a um tópico.
-        </p>
-      </div>
+      <header className="relative overflow-hidden rounded-2xl bg-brand-900 px-5 py-6 text-white sm:px-7 dark:bg-slate-900">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -top-8 -right-10 h-48 w-64 rotate-12 opacity-[0.07]"
+          style={{
+            backgroundImage: 'repeating-linear-gradient(135deg, #fff 0 3px, transparent 3px 22px)',
+          }}
+        />
+        <div className="relative flex items-center gap-4">
+          <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-white/15">
+            <NotebookPen size={24} />
+          </span>
+          <div className="min-w-0">
+            <h1 className="text-2xl leading-tight font-bold sm:text-3xl">Anotações</h1>
+            <p className="mt-1 max-w-2xl text-sm text-brand-100">
+              Seu caderno livre: macetes, números que não grudam, dúvidas para tirar depois. Cada
+              matéria tem o seu caderno — clique no card para abrir.
+            </p>
+          </div>
+        </div>
+      </header>
 
       <ListaDeNotas
         notas={comContexto}
-        disciplinas={(disciplinas ?? []).map((d) => ({ id: d.id, nome: d.name }))}
+        disciplinas={(disciplinas ?? []).map((d) => ({ id: d.id, nome: d.name, slug: d.slug }))}
       />
     </div>
   );
