@@ -65,6 +65,8 @@ export default function EditorRico({
   const [menu, setMenu] = useState<'texto' | 'fundo' | 'link' | null>(null);
   const [urlLink, setUrlLink] = useState('');
   const [enviando, setEnviando] = useState(false);
+  /** quantos trechos estão marcados com Ctrl, só para mostrar na barra */
+  const [marcados, setMarcados] = useState(0);
 
   // o conteúdo é escrito direto no DOM; só semeia na montagem para não
   // embaralhar o cursor a cada tecla
@@ -98,11 +100,96 @@ export default function EditorRico({
     sel.addRange(intervalo.current);
   }
 
-  function comando(nome: string, argumento?: string) {
-    restaurarIntervalo();
-    document.execCommand('styleWithCSS', false, 'true');
-    document.execCommand(nome, false, argumento);
+  /* ---------------- seleção de vários trechos (Ctrl) ---------------- */
+
+  /** marcas vivas no texto, na ordem em que aparecem */
+  const marcas = () => [...(ref.current?.querySelectorAll<HTMLElement>('[data-trecho]') ?? [])];
+
+  /** tira as marcas, devolvendo o texto para onde estava */
+  const limparMarcas = useCallback(() => {
+    for (const marca of marcas()) {
+      const pai = marca.parentNode;
+      if (!pai) continue;
+      while (marca.firstChild) pai.insertBefore(marca.firstChild, marca);
+      pai.removeChild(marca);
+      pai.normalize();
+    }
+    setMarcados(0);
+  }, []);
+
+  /**
+   * Guarda o trecho selecionado como mais um da lista. O Chrome só aceita
+   * uma seleção por vez, então cada trecho vira um `<span data-trecho>`
+   * destacado — é ele que segura o lugar até o comando ser aplicado.
+   */
+  function marcarTrecho() {
+    const sel = window.getSelection();
+    if (!sel || !sel.rangeCount) return;
+
+    // Ctrl + clique sem arrastar: pega a palavra inteira debaixo do cursor
+    if (sel.isCollapsed) {
+      const comModify = sel as Selection & {
+        modify?: (alter: string, direction: string, granularity: string) => void;
+      };
+      if (!comModify.modify) return;
+      comModify.modify('move', 'backward', 'word');
+      comModify.modify('extend', 'forward', 'word');
+    }
+    if (sel.isCollapsed || !sel.toString().trim()) return;
+
+    const intervaloAtual = sel.getRangeAt(0);
+    // não deixa marcar dentro de uma marca que já existe
+    const dentro = (no: Node | null) =>
+      no instanceof Element ? no.closest('[data-trecho]') : no?.parentElement?.closest('[data-trecho]');
+    if (dentro(intervaloAtual.startContainer) || dentro(intervaloAtual.endContainer)) return;
+
+    const marca = document.createElement('span');
+    marca.setAttribute('data-trecho', '');
+    marca.className = 'trecho-marcado';
+    try {
+      marca.append(intervaloAtual.extractContents());
+      intervaloAtual.insertNode(marca);
+    } catch {
+      return; // seleção atravessando blocos: ignora em vez de quebrar o texto
+    }
+    sel.removeAllRanges();
+    setMarcados(marcas().length);
+  }
+
+  /**
+   * Roda o comando em cada trecho marcado, um por vez, e depois tira as
+   * marcas. Sem trechos marcados, vale a seleção comum.
+   */
+  function emCadaTrecho(acao: () => void) {
+    const lista = marcas();
+    if (!lista.length) {
+      restaurarIntervalo();
+      acao();
+      avisar();
+      return;
+    }
+
+    ref.current?.focus();
+    const sel = window.getSelection();
+    for (const marca of marcas()) {
+      if (!sel) break;
+      const intervaloDaMarca = document.createRange();
+      intervaloDaMarca.selectNodeContents(marca);
+      sel.removeAllRanges();
+      sel.addRange(intervaloDaMarca);
+      acao();
+    }
+    limparMarcas();
+    sel?.removeAllRanges();
+    intervalo.current = null;
     avisar();
+  }
+
+  function comando(nome: string, argumento?: string) {
+    emCadaTrecho(() => {
+      document.execCommand('styleWithCSS', false, 'true');
+      document.execCommand(nome, false, argumento);
+    });
   }
 
   function inserirHtml(html: string) {
@@ -117,7 +204,10 @@ export default function EditorRico({
    * botão faz a ida e a volta.
    */
   function alternarCaixa() {
-    restaurarIntervalo();
+    emCadaTrecho(caixaNaSelecao);
+  }
+
+  function caixaNaSelecao() {
     const sel = window.getSelection();
     if (!sel || sel.isCollapsed || !sel.rangeCount) return;
 
@@ -140,7 +230,6 @@ export default function EditorRico({
     const caixa = document.createElement('div');
     caixa.append(fragmento);
     document.execCommand('insertHTML', false, sanitizarHtml(caixa.innerHTML));
-    avisar();
   }
 
   function aplicarLink() {
@@ -332,11 +421,15 @@ export default function EditorRico({
           <Eraser size={15} />
         </Ferramenta>
 
-        {enviando && (
+        {enviando ? (
           <span className="ml-auto pr-1 text-xs text-slate-500 dark:text-slate-400">
             enviando imagem…
           </span>
-        )}
+        ) : marcados > 0 ? (
+          <span className="ml-auto pr-1 text-xs font-medium text-blue-700 dark:text-blue-300">
+            {marcados} {marcados === 1 ? 'trecho marcado' : 'trechos marcados'} — clique num botão
+          </span>
+        ) : null}
       </div>
 
       {/* ---------------- paletas e campo de link ---------------- */}
@@ -405,7 +498,17 @@ export default function EditorRico({
           avisar();
         }}
         onKeyUp={guardarIntervalo}
-        onMouseUp={guardarIntervalo}
+        onMouseUp={(e) => {
+          // com Ctrl segurado, o trecho entra na lista em vez de substituir
+          // a seleção anterior — é assim que se pinta várias palavras de uma vez
+          if (e.ctrlKey || e.metaKey) {
+            marcarTrecho();
+            avisar();
+            return;
+          }
+          if (marcas().length) limparMarcas();
+          guardarIntervalo();
+        }}
         onPaste={aoColar}
         onKeyDown={aoTeclar}
         onDragOver={(e) => e.preventDefault()}

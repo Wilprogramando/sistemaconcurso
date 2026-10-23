@@ -202,3 +202,14 @@ code,
 .tabular-nums {
   overflow-wrap: anywhere;
 }
+
+/* trecho guardado com Ctrl, esperando o comando da barra */
+.trecho-marcado {
+  border-radius: 0.2rem;
+  background: #bfdbfe;
+  box-shadow: 0 0 0 1px #60a5fa;
+}
+html.dark .trecho-marcado {
+  background: #1e3a8a;
+  box-shadow: 0 0 0 1px #3b82f6;
+}
