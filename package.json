@@ -13,7 +13,8 @@
     "conteudo": "npm run parse && npm run validar && npm run seed",
     "comprimir-pdf": "node scripts/comprimir-pdf.mjs",
     "migrar": "node scripts/migrar-supabase.mjs",
-    "backup": "node scripts/migrar-supabase.mjs --exportar"
+    "backup": "node scripts/migrar-supabase.mjs --exportar",
+    "restaurar": "node scripts/migrar-supabase.mjs --importar"
   },
   "dependencies": {
     "@supabase/ssr": "^0.5.2",

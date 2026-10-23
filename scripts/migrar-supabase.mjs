@@ -17,12 +17,13 @@
  *
  * Uso:
  *   node scripts/migrar-supabase.mjs --exportar <pasta>  baixa tudo para o computador
+ *   node scripts/migrar-supabase.mjs --importar <pasta>  sobe o backup para o destino
  *   node scripts/migrar-supabase.mjs --conferir   só compara as contagens
  *   node scripts/migrar-supabase.mjs              copia tabelas e arquivos
  *   node scripts/migrar-supabase.mjs --so-dados   copia só as tabelas
  *   node scripts/migrar-supabase.mjs --so-arquivos
  */
-import { readFileSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { readFileSync, existsSync, mkdirSync, writeFileSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { createClient } from '@supabase/supabase-js';
 
@@ -36,10 +37,13 @@ if (existsSync('.env.local')) {
 }
 
 const soExportar = process.argv.includes('--exportar');
+const soImportar = process.argv.includes('--importar');
 
 const exigidas = soExportar
   ? ['ORIGEM_URL', 'ORIGEM_SERVICE_KEY']
-  : ['ORIGEM_URL', 'ORIGEM_SERVICE_KEY', 'DESTINO_URL', 'DESTINO_SERVICE_KEY'];
+  : soImportar
+    ? ['DESTINO_URL', 'DESTINO_SERVICE_KEY']
+    : ['ORIGEM_URL', 'ORIGEM_SERVICE_KEY', 'DESTINO_URL', 'DESTINO_SERVICE_KEY'];
 const faltando = exigidas.filter((k) => !process.env[k]);
 if (faltando.length) {
   console.error('faltam variáveis no .env.local:', faltando.join(', '));
@@ -58,7 +62,9 @@ if (typeof globalThis.WebSocket === 'undefined') {
 }
 
 const opcoes = { auth: { persistSession: false }, realtime: { params: {} } };
-const origem = createClient(process.env.ORIGEM_URL, process.env.ORIGEM_SERVICE_KEY, opcoes);
+const origem = soImportar
+  ? null
+  : createClient(process.env.ORIGEM_URL, process.env.ORIGEM_SERVICE_KEY, opcoes);
 const destino = soExportar
   ? null
   : createClient(process.env.DESTINO_URL, process.env.DESTINO_SERVICE_KEY, opcoes);
@@ -283,11 +289,120 @@ async function exportar(pasta) {
   console.log('\nPronto. Backup em', pasta);
 }
 
+/* ---------------- do computador para o projeto novo ---------------- */
+
+/** Caminhos de todos os arquivos dentro da pasta, recursivamente. */
+function listarLocal(raiz, prefixo = '') {
+  const base = join(raiz, prefixo);
+  if (!existsSync(base)) return [];
+
+  const achados = [];
+  for (const item of readdirSync(base, { withFileTypes: true })) {
+    const relativo = prefixo ? `${prefixo}/${item.name}` : item.name;
+    if (item.isDirectory()) achados.push(...listarLocal(raiz, relativo));
+    else achados.push(relativo);
+  }
+  return achados;
+}
+
+const TIPOS_POR_EXTENSAO = {
+  png: 'image/png',
+  jpg: 'image/jpeg',
+  jpeg: 'image/jpeg',
+  webp: 'image/webp',
+  gif: 'image/gif',
+  pdf: 'application/pdf',
+};
+
+/**
+ * Sobe para o projeto novo o que está guardado no computador.
+ *
+ * É o caminho de quem precisou apagar o projeto antigo antes de criar o
+ * novo: os dois nunca existem ao mesmo tempo, então a ponte é o backup.
+ */
+async function importar(pasta) {
+  if (!existsSync(join(pasta, 'tabelas'))) {
+    console.error(`não achei ${join(pasta, 'tabelas')} — confira a pasta do backup`);
+    process.exit(1);
+  }
+
+  console.log('Tabelas ←', pasta);
+  for (const { nome, conflito, doUsuario } of TABELAS) {
+    const arquivo = join(pasta, 'tabelas', `${nome}.json`);
+    if (!existsSync(arquivo)) {
+      console.log(`  ${nome}: sem arquivo no backup, pulando`);
+      continue;
+    }
+
+    const linhas = JSON.parse(readFileSync(arquivo, 'utf8'));
+    if (!linhas.length) {
+      console.log(`  ${nome}: vazia`);
+      continue;
+    }
+
+    const prontas =
+      DE && PARA && doUsuario
+        ? linhas.map((l) => (l[doUsuario] === DE ? { ...l, [doUsuario]: PARA } : l))
+        : linhas;
+
+    for (let i = 0; i < prontas.length; i += LOTE) {
+      const { error } = await destino
+        .from(nome)
+        .upsert(prontas.slice(i, i + LOTE), { onConflict: conflito, defaultToNull: false });
+      if (error) throw new Error(`${nome}: ${error.message}`);
+    }
+    console.log(`  ${nome}: ${prontas.length} linhas`);
+  }
+
+  console.log('Arquivos do bucket');
+  const arquivos = listarLocal(join(pasta, 'arquivos'));
+  let n = 0;
+  for (const caminho of arquivos) {
+    const extensao = caminho.split('.').pop()?.toLowerCase() ?? '';
+    const destinoCaminho = DE && PARA ? caminho.replace(new RegExp(`^${DE}/`), `${PARA}/`) : caminho;
+
+    const { error } = await destino.storage
+      .from(BUCKET)
+      .upload(destinoCaminho, readFileSync(join(pasta, 'arquivos', caminho)), {
+        contentType: TIPOS_POR_EXTENSAO[extensao] ?? 'application/octet-stream',
+        upsert: true,
+      });
+    if (error) {
+      console.log(`  falhou: ${destinoCaminho} — ${error.message}`);
+      continue;
+    }
+    n += 1;
+    process.stdout.write(`  ${n}/${arquivos.length}\r`);
+  }
+  console.log(`  ${n}/${arquivos.length} arquivos`.padEnd(40));
+
+  console.log('\nConferindo o que entrou:');
+  for (const { nome } of TABELAS) {
+    const arquivo = join(pasta, 'tabelas', `${nome}.json`);
+    const esperado = existsSync(arquivo) ? JSON.parse(readFileSync(arquivo, 'utf8')).length : 0;
+    const agora = await contar(destino, nome);
+    const marca = esperado === agora ? '' : '  <-- diferente';
+    console.log(
+      nome.padEnd(18),
+      String(esperado).padStart(8),
+      String(agora ?? '—').padStart(9),
+      marca,
+    );
+  }
+}
+
 /* ---------------- roteiro ---------------- */
 
 const args = process.argv.slice(2);
 
-if (args.includes('--exportar')) {
+const pastaDe = (bandeira, padrao) => {
+  const i = args.indexOf(bandeira);
+  return args[i + 1] && !args[i + 1].startsWith('--') ? args[i + 1] : padrao;
+};
+
+if (args.includes('--importar')) {
+  await importar(pastaDe('--importar', 'backup-supabase'));
+} else if (args.includes('--exportar')) {
   const i = args.indexOf('--exportar');
   await exportar(args[i + 1] && !args[i + 1].startsWith('--') ? args[i + 1] : 'backup-supabase');
 } else if (args.includes('--conferir')) {
