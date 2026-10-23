@@ -353,7 +353,7 @@ function Lixeira({ notas, voltar }: { notas: NotaComContexto[]; voltar: () => vo
                   </span>
                 </div>
 
-                <h3 className="mt-2.5 leading-snug font-semibold text-slate-700 line-through dark:text-slate-300">
+                <h3 className="mt-2.5 leading-snug font-semibold tracking-wide text-slate-700 uppercase line-through dark:text-slate-300">
                   {n.title || 'Sem título'}
                 </h3>
 
@@ -807,7 +807,7 @@ function JanelaNota({
         </header>
 
         <div className="max-h-[75vh] overflow-y-auto px-6 py-4">
-          <h2 className="text-lg leading-snug font-bold text-slate-900 dark:text-slate-100">
+          <h2 className="text-lg leading-snug font-bold tracking-wide text-slate-900 uppercase dark:text-slate-100">
             {nota.title || 'Sem título'}
           </h2>
 
@@ -1131,7 +1131,7 @@ function Cartao({
         title="Ver a anotação"
         className="mt-2.5 flex w-full items-start gap-2 text-left"
       >
-        <h3 className="min-w-0 flex-1 leading-snug font-semibold text-slate-900 dark:text-slate-100">
+        <h3 className="min-w-0 flex-1 leading-snug font-semibold tracking-wide text-slate-900 uppercase dark:text-slate-100">
           {nota.title || 'Sem título'}
         </h3>
         <Marcas nota={nota} />

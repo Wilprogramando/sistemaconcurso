@@ -1,7 +1,15 @@
+import { cache } from 'react';
 import { createServerClient, type CookieOptions } from '@supabase/ssr';
 import { cookies } from 'next/headers';
 
-export async function createClient() {
+/**
+ * Cliente do Supabase para esta requisição.
+ *
+ * Vem embrulhado em `cache()`: o layout e a página montavam um cliente cada
+ * um, e cada chamada de `getUser` custava uma ida à rede. Agora é uma só por
+ * requisição.
+ */
+export const createClient = cache(async () => {
   const cookieStore = await cookies();
 
   return createServerClient(
@@ -24,13 +32,13 @@ export async function createClient() {
       },
     }
   );
-}
+});
 
-/** Usuario logado ou null. */
-export async function getUser() {
+/** Usuário logado ou null — uma verificação por requisição, não uma por tela. */
+export const getUser = cache(async () => {
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
   return user;
-}
+});

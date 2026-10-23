@@ -16,17 +16,19 @@ export default async function ErrosPage({
   const user = (await getUser())!;
   const supabase = await createClient();
 
-  const { data: notes } = await supabase
-    .from('error_notes')
-    .select(
-      'id, note, resolved, created_at, question_id, questions ( id, statement, answer, explanation, discipline_id )'
-    )
-    .eq('user_id', user.id)
-    .eq('resolved', mostrarResolvidos)
-    .order('created_at', { ascending: false })
-    .limit(200);
-
-  const { data: disciplines } = await supabase.from('disciplines').select('id, name, slug');
+  // as duas consultas são independentes: uma espera da outra era meia tela parada
+  const [{ data: notes }, { data: disciplines }] = await Promise.all([
+    supabase
+      .from('error_notes')
+      .select(
+        'id, note, resolved, created_at, question_id, questions ( id, statement, answer, explanation, discipline_id )'
+      )
+      .eq('user_id', user.id)
+      .eq('resolved', mostrarResolvidos)
+      .order('created_at', { ascending: false })
+      .limit(200),
+    supabase.from('disciplines').select('id, name, slug'),
+  ]);
   const nomeDisciplina = new Map((disciplines ?? []).map((d) => [d.id, d]));
 
   // agrupa por questão para não repetir a mesma dezenas de vezes

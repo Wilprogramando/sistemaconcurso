@@ -188,7 +188,7 @@ export default function EditorNota({
         value={titulo}
         onChange={(e) => setTitulo(e.target.value)}
         placeholder="Título da anotação — é o que aparece no card"
-        className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm font-semibold outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-100 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:focus:ring-brand-900"
+        className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm font-semibold tracking-wide uppercase outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-100 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:focus:ring-brand-900"
       />
 
       {prontoParaEditar ? (

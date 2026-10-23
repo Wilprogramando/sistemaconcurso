@@ -199,7 +199,7 @@ export default function NotasDoTopico({
                   type="button"
                   onClick={() => alternar(n.id)}
                   aria-expanded={expandida}
-                  className="mt-1.5 block w-full text-left text-sm font-semibold text-slate-900 dark:text-slate-100"
+                  className="mt-1.5 block w-full text-left text-sm font-semibold tracking-wide text-slate-900 uppercase dark:text-slate-100"
                 >
                   {n.title || 'Sem título'}
                 </button>
