@@ -95,6 +95,20 @@ const TABELAS = [
   { nome: 'essays', conflito: 'id', doUsuario: 'user_id' },
 ];
 
+/**
+ * Troca o dono da linha e, junto, os caminhos do bucket guardados dentro
+ * dela. A pasta de cada arquivo começa pelo id do usuário, e esses caminhos
+ * aparecem em images, attachments e nos data-path do corpo da anotação — se
+ * só a coluna user_id mudasse, as imagens apontariam para uma pasta que não
+ * é mais a dela e não carregariam.
+ */
+function trocarDono(linha, coluna, de, para) {
+  const texto = JSON.stringify(linha).split(de + '/').join(para + '/');
+  const nova = JSON.parse(texto);
+  if (coluna && nova[coluna] === de) nova[coluna] = para;
+  return nova;
+}
+
 const BUCKET = 'anotacoes';
 const LOTE = 500;
 
@@ -135,10 +149,7 @@ async function copiarTabela({ nome, conflito, doUsuario }) {
     if (!data?.length) break;
 
     // a conta nova tem outro id: troca na hora de gravar
-    const linhas =
-      DE && PARA && doUsuario
-        ? data.map((l) => (l[doUsuario] === DE ? { ...l, [doUsuario]: PARA } : l))
-        : data;
+    const linhas = DE && PARA ? data.map((l) => trocarDono(l, doUsuario, DE, PARA)) : data;
 
     const { error: erroGravar } = await destino
       .from(nome)
@@ -340,10 +351,7 @@ async function importar(pasta) {
       continue;
     }
 
-    const prontas =
-      DE && PARA && doUsuario
-        ? linhas.map((l) => (l[doUsuario] === DE ? { ...l, [doUsuario]: PARA } : l))
-        : linhas;
+    const prontas = DE && PARA ? linhas.map((l) => trocarDono(l, doUsuario, DE, PARA)) : linhas;
 
     for (let i = 0; i < prontas.length; i += LOTE) {
       const { error } = await destino
