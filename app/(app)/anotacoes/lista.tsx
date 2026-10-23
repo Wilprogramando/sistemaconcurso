@@ -1,14 +1,13 @@
 'use client';
 
 import Link from 'next/link';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import {
   ArrowLeft,
   ChevronDown,
   ChevronUp,
   Eye,
-  EyeOff,
   FileText,
   Folder,
   GripVertical,
@@ -20,6 +19,7 @@ import {
   Plus,
   Search,
   Trash2,
+  X,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import EditorNota, { type Opcao } from '@/components/editor-nota';
@@ -239,7 +239,8 @@ function Detalhe({
   const [filtroTag, setFiltroTag] = useState<Tag | 'todas'>('todas');
   const [criando, setCriando] = useState(false);
   const [editando, setEditando] = useState<string | null>(null);
-  const [abertas, setAbertas] = useState<Set<string>>(new Set());
+  /** id da anotação aberta na janela */
+  const [vendo, setVendo] = useState<string | null>(null);
   /** id da anotação sendo arrastada e a que está embaixo do cursor */
   const [arrastando, setArrastando] = useState<string | null>(null);
   const [sobre, setSobre] = useState<string | null>(null);
@@ -261,15 +262,6 @@ function Detalhe({
 
   function esquecer(id: string) {
     setRemovidas((atual) => new Set(atual).add(id));
-  }
-
-  function alternar(id: string) {
-    setAbertas((atual) => {
-      const nova = new Set(atual);
-      if (nova.has(id)) nova.delete(id);
-      else nova.add(id);
-      return nova;
-    });
   }
 
   /**
@@ -342,6 +334,8 @@ function Detalhe({
   // reordenar só faz sentido vendo a lista inteira: com filtro, as setas
   // mexeriam em vizinhas que estão escondidas
   const podeOrdenar = !busca.trim() && filtroTag === 'todas';
+
+  const notaAberta = vendo ? (filtradas.find((n) => n.id === vendo) ?? null) : null;
 
   const visual = slug ? visualDe(slug) : null;
   const Icone = visual?.icone ?? NotebookPen;
@@ -469,8 +463,7 @@ function Detalhe({
                     editando={editando === n.id}
                     abrir={() => setEditando(n.id)}
                     fechar={() => setEditando(null)}
-                    aberta={abertas.has(n.id)}
-                    alternar={() => alternar(n.id)}
+                    ver={() => setVendo(n.id)}
                     podeArrastar={podeOrdenar}
                     arrastando={arrastando === n.id}
                     alvo={sobre === n.id && arrastando !== n.id}
@@ -504,8 +497,7 @@ function Detalhe({
                     editando={editando === n.id}
                     abrir={() => setEditando(n.id)}
                     fechar={() => setEditando(null)}
-                    aberta={abertas.has(n.id)}
-                    alternar={() => alternar(n.id)}
+                    ver={() => setVendo(n.id)}
                     podeArrastar={podeOrdenar}
                     arrastando={arrastando === n.id}
                     alvo={sobre === n.id && arrastando !== n.id}
@@ -528,6 +520,139 @@ function Detalhe({
           )}
         </div>
       )}
+
+      {notaAberta && (
+        <JanelaNota
+          nota={notaAberta}
+          fechar={() => setVendo(null)}
+          editar={() => {
+            setVendo(null);
+            setEditando(notaAberta.id);
+          }}
+        />
+      )}
+    </div>
+  );
+}
+
+/**
+ * Anotação inteira numa janela sobre a tela, com o fundo embaçado: título,
+ * corpo formatado, imagens, PDFs e de onde ela veio. Fecha no Esc, no X ou
+ * clicando fora.
+ */
+function JanelaNota({
+  nota,
+  fechar,
+  editar,
+}: {
+  nota: NotaComContexto;
+  fechar: () => void;
+  editar: () => void;
+}) {
+  const info = TAGS[nota.tag];
+  const Icone = info.icone;
+
+  // Esc fecha, e a página atrás não rola enquanto a janela está aberta
+  useEffect(() => {
+    const aoTeclar = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') fechar();
+    };
+    document.addEventListener('keydown', aoTeclar);
+    const rolagem = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', aoTeclar);
+      document.body.style.overflow = rolagem;
+    };
+  }, [fechar]);
+
+  return (
+    <div
+      className="fixed inset-0 z-40 flex items-start justify-center overflow-y-auto bg-slate-900/50 p-4 backdrop-blur-sm sm:p-8 dark:bg-slate-950/70"
+      onClick={fechar}
+      role="dialog"
+      aria-modal="true"
+      aria-label={nota.title || 'Anotação'}
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="relative my-auto w-full max-w-3xl overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-700"
+      >
+        <span aria-hidden className={`absolute inset-y-0 left-0 w-1.5 ${info.barra}`} />
+
+        <header className="flex flex-wrap items-center gap-2 border-b border-slate-200 py-3 pr-3 pl-6 dark:border-slate-700">
+          <span
+            className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold ${info.solido}`}
+          >
+            <Icone size={12} /> {info.label}
+          </span>
+          {nota.pinned && <Pin size={13} className="text-brand-500 dark:text-emerald-400" />}
+
+          <div className="ml-auto flex items-center gap-1">
+            <button
+              type="button"
+              onClick={editar}
+              title="Editar anotação"
+              aria-label="Editar anotação"
+              className="rounded-lg p-2 text-slate-500 transition hover:bg-brand-50 hover:text-brand-700 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-emerald-300"
+            >
+              <Pencil size={16} />
+            </button>
+            <button
+              type="button"
+              onClick={fechar}
+              title="Fechar"
+              aria-label="Fechar"
+              className="rounded-lg p-2 text-slate-500 transition hover:bg-slate-100 hover:text-slate-800 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-100"
+            >
+              <X size={18} />
+            </button>
+          </div>
+        </header>
+
+        <div className="max-h-[75vh] overflow-y-auto px-6 py-4">
+          <h2 className="text-lg leading-snug font-bold text-slate-900 dark:text-slate-100">
+            {nota.title || 'Sem título'}
+          </h2>
+
+          <CorpoNota html={nota.body_html} texto={nota.body} className="mt-2" />
+
+          {nota.images?.length > 0 && (
+            <div className="mt-4">
+              <ImagensDaNota caminhos={nota.images} somenteLeitura />
+            </div>
+          )}
+
+          {nota.attachments?.length > 0 && (
+            <div className="mt-4">
+              <AnexosDaNota anexos={nota.attachments} somenteLeitura />
+            </div>
+          )}
+        </div>
+
+        <footer className="flex flex-wrap items-center gap-2 border-t border-slate-200 px-6 py-3 text-xs text-slate-500 dark:border-slate-700 dark:text-slate-400">
+          <Folder size={13} className="shrink-0 text-slate-400 dark:text-slate-500" />
+          {nota.topicoRef && nota.disciplinaSlug ? (
+            <Link
+              href={`/materias/${nota.disciplinaSlug}/${nota.topicoRef}`}
+              className="truncate hover:underline"
+            >
+              {nota.disciplinaNome ?? 'Sem matéria'} · {nota.topicoRef} {nota.topicoTitulo}
+            </Link>
+          ) : (
+            <span className="truncate">{nota.disciplinaNome ?? 'Sem matéria'}</span>
+          )}
+          <span className="ml-auto shrink-0">
+            {new Date(nota.updated_at).toLocaleString('pt-BR', {
+              day: '2-digit',
+              month: '2-digit',
+              year: '2-digit',
+              hour: '2-digit',
+              minute: '2-digit',
+            })}
+          </span>
+        </footer>
+      </div>
     </div>
   );
 }
@@ -598,8 +723,7 @@ function Cartao({
   editando,
   abrir,
   fechar,
-  aberta,
-  alternar,
+  ver,
   podeArrastar,
   arrastando,
   alvo,
@@ -618,9 +742,8 @@ function Cartao({
   editando: boolean;
   abrir: () => void;
   fechar: () => void;
-  /** card expandido: mostra o corpo, os anexos e a data */
-  aberta: boolean;
-  alternar: () => void;
+  /** abre a anotação inteira na janela sobre a tela */
+  ver: () => void;
   podeArrastar: boolean;
   /** este card é o que está sendo arrastado */
   arrastando: boolean;
@@ -754,17 +877,12 @@ function Cartao({
           </button>
           <button
             type="button"
-            onClick={alternar}
-            aria-expanded={aberta}
-            title={aberta ? 'Esconder a anotação' : 'Ver a anotação'}
-            aria-label={aberta ? 'Esconder a anotação' : 'Ver a anotação'}
-            className={`rounded-lg p-1.5 transition ${
-              aberta
-                ? 'bg-brand-600 text-white dark:bg-emerald-600'
-                : 'text-slate-400 hover:bg-brand-50 hover:text-brand-700 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-emerald-300'
-            }`}
+            onClick={ver}
+            title="Ver a anotação"
+            aria-label="Ver a anotação"
+            className="rounded-lg p-1.5 text-slate-400 transition hover:bg-brand-50 hover:text-brand-700 dark:hover:bg-slate-800 dark:hover:text-emerald-300"
           >
-            {aberta ? <EyeOff size={15} /> : <Eye size={15} />}
+            <Eye size={15} />
           </button>
           <button
             type="button"
@@ -807,46 +925,18 @@ function Cartao({
         </div>
       )}
 
-      {/* fechado mostra só o título; o olho abre o conteúdo */}
+      {/* o card mostra só o título; o olho abre a anotação inteira na janela */}
       <button
         type="button"
-        onClick={alternar}
-        aria-expanded={aberta}
+        onClick={ver}
+        title="Ver a anotação"
         className="mt-2.5 flex w-full items-start gap-2 text-left"
       >
         <h3 className="min-w-0 flex-1 leading-snug font-semibold text-slate-900 dark:text-slate-100">
           {nota.title || 'Sem título'}
         </h3>
-        {!aberta && <Marcas nota={nota} />}
+        <Marcas nota={nota} />
       </button>
-
-      {aberta && (
-        <>
-          <CorpoNota html={nota.body_html} texto={nota.body} className="mt-1.5" />
-
-          {nota.images?.length > 0 && (
-            <div className="mt-3">
-              <ImagensDaNota caminhos={nota.images} somenteLeitura />
-            </div>
-          )}
-
-          {nota.attachments?.length > 0 && (
-            <div className="mt-3">
-              <AnexosDaNota anexos={nota.attachments} somenteLeitura />
-            </div>
-          )}
-
-          <p className="mt-2 text-xs text-slate-400 dark:text-slate-500">
-            {new Date(nota.updated_at).toLocaleString('pt-BR', {
-              day: '2-digit',
-              month: '2-digit',
-              year: '2-digit',
-              hour: '2-digit',
-              minute: '2-digit',
-            })}
-          </p>
-        </>
-      )}
 
       {/* rodapé: de onde a anotação veio */}
       <div className="mt-3 flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">
