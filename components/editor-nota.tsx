@@ -140,6 +140,13 @@ export default function EditorNota({
 
     if (nota) {
       await supabase.from('notes').update(dados).eq('id', nota.id);
+
+      // imagem tirada do meio do texto ficava órfã no bucket, ocupando espaço
+      // para sempre: sai junto com a anotação salva
+      const antes = caminhosNoHtml(nota.body_html ?? '');
+      const agora = new Set(caminhosNoHtml(html));
+      const orfas = antes.filter((c) => !agora.has(c));
+      if (orfas.length) await supabase.storage.from(BUCKET).remove(orfas);
     } else {
       // a nota nova entra no topo da matéria
       const { data: primeira } = await supabase

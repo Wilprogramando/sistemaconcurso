@@ -10,7 +10,8 @@
     "parse": "node scripts/parse-apostila.mjs && node scripts/parse-provas.mjs",
     "seed": "node scripts/seed.mjs",
     "validar": "node scripts/validar-conteudo.mjs",
-    "conteudo": "npm run parse && npm run validar && npm run seed"
+    "conteudo": "npm run parse && npm run validar && npm run seed",
+    "comprimir-pdf": "node scripts/comprimir-pdf.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.5.2",
@@ -25,6 +26,7 @@
     "@types/node": "^22.10.5",
     "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.3",
+    "mupdf": "^1.28.1",
     "tailwindcss": "^4.0.0",
     "typescript": "^5.7.3"
   }
