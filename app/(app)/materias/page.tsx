@@ -178,17 +178,19 @@ export default async function MateriasPage() {
                 </span>
               </div>
 
-              <div className="mt-4 flex flex-wrap gap-2">
+              {/* celular: um botão por linha quando não couber; computador:
+                  os três lado a lado, sem quebrar */}
+              <div className="mt-4 flex flex-wrap gap-2 sm:flex-nowrap">
                 <Link
                   href={`/materias/${d.slug}`}
-                  className="inline-flex min-w-[8.5rem] flex-1 items-center justify-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 ring-1 ring-slate-300 transition hover:bg-slate-50 sm:flex-none dark:bg-slate-800 dark:text-slate-200 dark:ring-slate-600"
+                  className="inline-flex min-w-[8.5rem] flex-1 items-center justify-center gap-2 overflow-hidden rounded-xl whitespace-nowrap sm:min-w-0 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 ring-1 ring-slate-300 transition hover:bg-slate-50 sm:flex-[0_1_auto] sm:px-3.5 dark:bg-slate-800 dark:text-slate-200 dark:ring-slate-600"
                 >
                   <BookOpen size={16} /> Estudar
                 </Link>
                 {questoes > 0 && (
                   <Link
                     href={`/questoes?disciplina=${d.slug}`}
-                    className="inline-flex min-w-[8.5rem] flex-1 items-center justify-center gap-2 rounded-xl bg-brand-700 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-800 sm:flex-none"
+                    className="inline-flex min-w-[8.5rem] flex-1 items-center justify-center gap-2 overflow-hidden rounded-xl whitespace-nowrap sm:min-w-0 bg-brand-700 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-800 sm:flex-[0_1_auto] sm:px-3.5"
                   >
                     <ListChecks size={16} /> {questoes} questões
                   </Link>
@@ -203,7 +205,7 @@ export default async function MateriasPage() {
                         ? `Questões da AOCP no QConcursos — ${qc.observacao}`
                         : 'Questões desta matéria aplicadas pela AOCP, no QConcursos'
                     }
-                    className="inline-flex min-w-[8.5rem] flex-1 items-center justify-center gap-2 rounded-xl bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-700 sm:flex-none"
+                    className="inline-flex min-w-[8.5rem] flex-1 items-center justify-center gap-2 overflow-hidden rounded-xl whitespace-nowrap sm:min-w-0 bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-700 sm:flex-[0_1_auto] sm:px-3.5"
                   >
                     <ExternalLink size={16} /> Simulado AOCP
                   </a>
