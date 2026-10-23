@@ -10,6 +10,7 @@ import {
   Eye,
   EyeOff,
   FileText,
+  GripVertical,
   ImageIcon,
   Link2,
   NotebookPen,
@@ -237,6 +238,9 @@ function Detalhe({
   const [editando, setEditando] = useState<string | null>(null);
   const [abertas, setAbertas] = useState<Set<string>>(new Set());
   const [reordenando, setReordenando] = useState(false);
+  /** id da anotação sendo arrastada e a que está embaixo do cursor */
+  const [arrastando, setArrastando] = useState<string | null>(null);
+  const [sobre, setSobre] = useState<string | null>(null);
   const { supabase } = useSessao();
   const router = useRouter();
 
@@ -258,23 +262,38 @@ function Detalhe({
     });
   }
 
-  /**
-   * Troca a anotação de lugar com a vizinha e regrava a ordem do grupo inteiro
-   * em 1..n, para não depender de posições antigas repetidas.
-   */
-  async function mover(grupo: NotaComContexto[], indice: number, passo: -1 | 1) {
-    const destino = indice + passo;
-    if (destino < 0 || destino >= grupo.length || reordenando) return;
-
-    const ordem = [...grupo];
-    [ordem[indice], ordem[destino]] = [ordem[destino], ordem[indice]];
-
+  /** Grava a ordem do grupo inteiro em 1..n, sem depender das posições antigas. */
+  async function gravarOrdem(ordem: NotaComContexto[]) {
     setReordenando(true);
     await Promise.all(
       ordem.map((n, i) => supabase.from('notes').update({ position: i + 1 }).eq('id', n.id)),
     );
     setReordenando(false);
     router.refresh();
+  }
+
+  /** Troca a anotação de lugar com a vizinha — é o caminho do celular. */
+  async function mover(grupo: NotaComContexto[], indice: number, passo: -1 | 1) {
+    const destino = indice + passo;
+    if (destino < 0 || destino >= grupo.length || reordenando) return;
+
+    const ordem = [...grupo];
+    [ordem[indice], ordem[destino]] = [ordem[destino], ordem[indice]];
+    await gravarOrdem(ordem);
+  }
+
+  /** Solta a anotação arrastada na posição da que está embaixo do cursor. */
+  async function soltar(grupo: NotaComContexto[], alvoId: string) {
+    const de = grupo.findIndex((n) => n.id === arrastando);
+    const para = grupo.findIndex((n) => n.id === alvoId);
+    setArrastando(null);
+    setSobre(null);
+    if (de === -1 || para === -1 || de === para || reordenando) return;
+
+    const ordem = [...grupo];
+    const [movida] = ordem.splice(de, 1);
+    ordem.splice(para, 0, movida);
+    await gravarOrdem(ordem);
   }
 
   const contagem = useMemo(() => {
@@ -384,6 +403,13 @@ function Detalhe({
         </div>
       )}
 
+      {podeOrdenar && filtradas.length > 1 && (
+        <p className="flex items-center gap-1.5 text-xs text-slate-400">
+          <GripVertical size={13} /> Arraste o card pela pegada para mudar a ordem. No celular, use
+          as setas.
+        </p>
+      )}
+
       {/* ---------------- lista ---------------- */}
       {!filtradas.length ? (
         <Card>
@@ -400,22 +426,34 @@ function Detalhe({
               <h3 className="flex items-center gap-1.5 text-xs font-bold tracking-wider text-slate-500 uppercase dark:text-slate-400">
                 <Pin size={12} /> Fixadas
               </h3>
-              {fixadas.map((n, i) => (
-                <Cartao
-                  key={n.id}
-                  nota={n}
-                  disciplinas={disciplinas}
-                  editando={editando === n.id}
-                  abrir={() => setEditando(n.id)}
-                  fechar={() => setEditando(null)}
-                  aberta={abertas.has(n.id)}
-                  alternar={() => alternar(n.id)}
-                  podeSubir={podeOrdenar && i > 0}
-                  podeDescer={podeOrdenar && i < fixadas.length - 1}
-                  subir={() => void mover(fixadas, i, -1)}
-                  descer={() => void mover(fixadas, i, 1)}
-                />
-              ))}
+              <div className="grid items-start gap-3 sm:grid-cols-2 xl:grid-cols-3">
+                {fixadas.map((n, i) => (
+                  <Cartao
+                    key={n.id}
+                    nota={n}
+                    disciplinas={disciplinas}
+                    editando={editando === n.id}
+                    abrir={() => setEditando(n.id)}
+                    fechar={() => setEditando(null)}
+                    aberta={abertas.has(n.id)}
+                    alternar={() => alternar(n.id)}
+                    podeArrastar={podeOrdenar}
+                    arrastando={arrastando === n.id}
+                    alvo={sobre === n.id && arrastando !== n.id}
+                    iniciarArrasto={() => setArrastando(n.id)}
+                    passarPorCima={() => setSobre(n.id)}
+                    soltar={() => void soltar(fixadas, n.id)}
+                    encerrarArrasto={() => {
+                      setArrastando(null);
+                      setSobre(null);
+                    }}
+                    podeSubir={podeOrdenar && i > 0}
+                    podeDescer={podeOrdenar && i < fixadas.length - 1}
+                    subir={() => void mover(fixadas, i, -1)}
+                    descer={() => void mover(fixadas, i, 1)}
+                  />
+                ))}
+              </div>
             </section>
           )}
 
@@ -426,22 +464,34 @@ function Detalhe({
                   Demais anotações
                 </h3>
               )}
-              {demais.map((n, i) => (
-                <Cartao
-                  key={n.id}
-                  nota={n}
-                  disciplinas={disciplinas}
-                  editando={editando === n.id}
-                  abrir={() => setEditando(n.id)}
-                  fechar={() => setEditando(null)}
-                  aberta={abertas.has(n.id)}
-                  alternar={() => alternar(n.id)}
-                  podeSubir={podeOrdenar && i > 0}
-                  podeDescer={podeOrdenar && i < demais.length - 1}
-                  subir={() => void mover(demais, i, -1)}
-                  descer={() => void mover(demais, i, 1)}
-                />
-              ))}
+              <div className="grid items-start gap-3 sm:grid-cols-2 xl:grid-cols-3">
+                {demais.map((n, i) => (
+                  <Cartao
+                    key={n.id}
+                    nota={n}
+                    disciplinas={disciplinas}
+                    editando={editando === n.id}
+                    abrir={() => setEditando(n.id)}
+                    fechar={() => setEditando(null)}
+                    aberta={abertas.has(n.id)}
+                    alternar={() => alternar(n.id)}
+                    podeArrastar={podeOrdenar}
+                    arrastando={arrastando === n.id}
+                    alvo={sobre === n.id && arrastando !== n.id}
+                    iniciarArrasto={() => setArrastando(n.id)}
+                    passarPorCima={() => setSobre(n.id)}
+                    soltar={() => void soltar(demais, n.id)}
+                    encerrarArrasto={() => {
+                      setArrastando(null);
+                      setSobre(null);
+                    }}
+                    podeSubir={podeOrdenar && i > 0}
+                    podeDescer={podeOrdenar && i < demais.length - 1}
+                    subir={() => void mover(demais, i, -1)}
+                    descer={() => void mover(demais, i, 1)}
+                  />
+                ))}
+              </div>
             </section>
           )}
         </div>
@@ -483,6 +533,13 @@ function Cartao({
   fechar,
   aberta,
   alternar,
+  podeArrastar,
+  arrastando,
+  alvo,
+  iniciarArrasto,
+  passarPorCima,
+  soltar,
+  encerrarArrasto,
   podeSubir,
   podeDescer,
   subir,
@@ -496,6 +553,15 @@ function Cartao({
   /** card expandido: mostra o corpo, os anexos e a data */
   aberta: boolean;
   alternar: () => void;
+  podeArrastar: boolean;
+  /** este card é o que está sendo arrastado */
+  arrastando: boolean;
+  /** o card arrastado está em cima deste */
+  alvo: boolean;
+  iniciarArrasto: () => void;
+  passarPorCima: () => void;
+  soltar: () => void;
+  encerrarArrasto: () => void;
   podeSubir: boolean;
   podeDescer: boolean;
   subir: () => void;
@@ -506,6 +572,8 @@ function Cartao({
   const { supabase } = useSessao();
   const router = useRouter();
   const [confirmando, setConfirmando] = useState(false);
+  /** a pegada do arrasto está sendo segurada */
+  const [pegou, setPegou] = useState(false);
   const [excluindo, setExcluindo] = useState(false);
 
   async function excluir() {
@@ -517,16 +585,64 @@ function Cartao({
   }
 
   if (editando) {
+    // em edição o card ocupa a largura toda da grade: o editor precisa de espaço
     return (
-      <Card>
-        <EditorNota nota={nota} disciplinas={disciplinas} onFechar={fechar} />
-      </Card>
+      <div className="sm:col-span-2 xl:col-span-3">
+        <Card>
+          <EditorNota nota={nota} disciplinas={disciplinas} onFechar={fechar} />
+        </Card>
+      </div>
     );
   }
 
   return (
-    <article className="rounded-2xl bg-white p-4 ring-1 ring-slate-200 transition hover:ring-brand-300 dark:bg-slate-900 dark:ring-slate-700">
+    <article
+      // o arrasto só liga quando a pegada é segurada: assim o texto do card
+      // aberto continua selecionável
+      draggable={podeArrastar && pegou}
+      onDragStart={(e) => {
+        e.dataTransfer.effectAllowed = 'move';
+        // o Firefox só começa o arrasto com algum dado no pacote
+        e.dataTransfer.setData('text/plain', nota.id);
+        iniciarArrasto();
+      }}
+      onDragOver={(e) => {
+        if (!podeArrastar) return;
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        passarPorCima();
+      }}
+      onDrop={(e) => {
+        if (!podeArrastar) return;
+        e.preventDefault();
+        soltar();
+      }}
+      onDragEnd={() => {
+        setPegou(false);
+        encerrarArrasto();
+      }}
+      className={`rounded-2xl bg-white p-4 ring-1 transition dark:bg-slate-900 ${
+        arrastando
+          ? 'opacity-40 ring-brand-400'
+          : alvo
+            ? 'ring-2 ring-brand-500'
+            : 'ring-slate-200 hover:ring-brand-300 dark:ring-slate-700'
+      }`}
+    >
       <div className="flex flex-wrap items-center gap-2">
+        {podeArrastar && (
+          <span
+            title="Arraste daqui para mudar a ordem"
+            aria-hidden
+            onMouseDown={() => setPegou(true)}
+            onMouseUp={() => setPegou(false)}
+            onTouchStart={() => setPegou(true)}
+            onTouchEnd={() => setPegou(false)}
+            className="-ml-1 cursor-grab text-slate-300 transition hover:text-slate-500 active:cursor-grabbing dark:text-slate-600 dark:hover:text-slate-400"
+          >
+            <GripVertical size={15} />
+          </span>
+        )}
         <span
           className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-semibold ring-1 ring-inset ${info.classe}`}
         >
@@ -551,7 +667,7 @@ function Cartao({
             disabled={!podeSubir}
             title="Subir na lista"
             aria-label="Subir na lista"
-            className="rounded-lg p-1.5 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700 disabled:opacity-30 disabled:hover:bg-transparent dark:hover:bg-slate-800 dark:hover:text-slate-200"
+            className="rounded-lg sm:hidden p-1.5 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700 disabled:opacity-30 disabled:hover:bg-transparent dark:hover:bg-slate-800 dark:hover:text-slate-200"
           >
             <ChevronUp size={15} />
           </button>
@@ -561,7 +677,7 @@ function Cartao({
             disabled={!podeDescer}
             title="Descer na lista"
             aria-label="Descer na lista"
-            className="rounded-lg p-1.5 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700 disabled:opacity-30 disabled:hover:bg-transparent dark:hover:bg-slate-800 dark:hover:text-slate-200"
+            className="rounded-lg sm:hidden p-1.5 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700 disabled:opacity-30 disabled:hover:bg-transparent dark:hover:bg-slate-800 dark:hover:text-slate-200"
           >
             <ChevronDown size={15} />
           </button>
