@@ -14,7 +14,13 @@ export default async function MateriasPage() {
 
   const [{ data: disciplines }, { data: topics }, { data: progress }, { data: counts }] =
     await Promise.all([
-      supabase.from('disciplines').select('*').order('chapter'),
+      // ordem de estudo: o que mais cai na prova primeiro; empate volta ao
+      // capítulo da apostila. A redação fica no fim por não ter questões.
+      supabase
+        .from('disciplines')
+        .select('*')
+        .order('question_count', { ascending: false })
+        .order('chapter'),
       supabase.from('topics').select('id, discipline_id, reading_minutes'),
       supabase.from('topic_progress').select('topic_id, status').eq('user_id', user.id),
       supabase.from('questions').select('discipline_id').neq('source', 'simulado'),
@@ -58,7 +64,7 @@ export default async function MateriasPage() {
             <h1 className="text-2xl leading-tight font-bold sm:text-3xl">Matérias</h1>
             <p className="mt-1 text-sm text-brand-100">
               Teoria da apostila dividida por tópico, com aula didática, tabelas e marcação do que
-              você já estudou.
+              você já estudou. A lista vem na ordem do que mais vale na prova.
             </p>
           </div>
         </div>
@@ -83,7 +89,7 @@ export default async function MateriasPage() {
 
       {/* ---------------- grade de matérias ---------------- */}
       <div className="grid gap-4 lg:grid-cols-2">
-        {(disciplines ?? []).map((d) => {
+        {(disciplines ?? []).map((d, i) => {
           const info = porDisciplina.get(d.id) ?? { ids: [], minutos: 0 };
           const read = info.ids.filter((id) => lidos.has(id)).length;
           const pct = info.ids.length ? Math.round((100 * read) / info.ids.length) : 0;
@@ -104,7 +110,9 @@ export default async function MateriasPage() {
                 </span>
 
                 <div className="min-w-0 flex-1">
-                  <p className="text-xs font-semibold text-slate-400">Capítulo {d.chapter}</p>
+                  <p className="text-xs font-semibold text-slate-400">
+                    {d.question_count ? `º em peso · ` : ''}Capítulo {d.chapter}
+                  </p>
                   <h2 className="text-lg leading-snug font-bold text-slate-900 dark:text-slate-100">
                     <Link href={`/materias/${d.slug}`} className="hover:underline">
                       {d.name}
