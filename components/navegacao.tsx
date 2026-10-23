@@ -229,7 +229,7 @@ export function NavInferior() {
                   >
                     <Icone size={19} />
                   </span>
-                  {curto}
+                  <span className="w-full truncate px-0.5 text-center">{curto}</span>
                 </Link>
               </li>
             );
@@ -252,7 +252,7 @@ export function NavInferior() {
               >
                 <LayoutGrid size={19} />
               </span>
-              Mais
+              <span className="w-full truncate px-0.5 text-center">Mais</span>
             </button>
           </li>
         </ul>

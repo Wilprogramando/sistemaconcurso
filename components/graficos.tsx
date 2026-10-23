@@ -31,7 +31,7 @@ export function Medidor({
             destaque ? 'text-lg' : 'text-sm'
           } ${valor === null ? 'text-slate-400' : 'text-slate-900 dark:text-slate-100'}`}
         >
-          {valor === null ? 'sem dados' : `${valor}%`}
+          {valor === null ? 'sem dados' : `${Math.round(valor)}%`}
         </span>
       </div>
 

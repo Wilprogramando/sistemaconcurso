@@ -112,7 +112,7 @@ export default async function MateriasPage() {
               key={d.id}
               className="flex flex-col rounded-2xl bg-white p-5 ring-1 ring-slate-200 transition hover:ring-brand-400 dark:bg-slate-900 dark:ring-slate-700"
             >
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-3 sm:gap-4">
                 <span
                   className={`grid h-12 w-12 shrink-0 place-items-center rounded-2xl ${visual.tile}`}
                 >
@@ -181,14 +181,14 @@ export default async function MateriasPage() {
               <div className="mt-4 flex flex-wrap gap-2">
                 <Link
                   href={`/materias/${d.slug}`}
-                  className="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 ring-1 ring-slate-300 transition hover:bg-slate-50 dark:bg-slate-800 dark:text-slate-200 dark:ring-slate-600"
+                  className="inline-flex min-w-[8.5rem] flex-1 items-center justify-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 ring-1 ring-slate-300 transition hover:bg-slate-50 sm:flex-none dark:bg-slate-800 dark:text-slate-200 dark:ring-slate-600"
                 >
                   <BookOpen size={16} /> Estudar
                 </Link>
                 {questoes > 0 && (
                   <Link
                     href={`/questoes?disciplina=${d.slug}`}
-                    className="inline-flex items-center gap-2 rounded-xl bg-brand-700 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-800"
+                    className="inline-flex min-w-[8.5rem] flex-1 items-center justify-center gap-2 rounded-xl bg-brand-700 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-800 sm:flex-none"
                   >
                     <ListChecks size={16} /> {questoes} questões
                   </Link>
@@ -203,7 +203,7 @@ export default async function MateriasPage() {
                         ? `Questões da AOCP no QConcursos — ${qc.observacao}`
                         : 'Questões desta matéria aplicadas pela AOCP, no QConcursos'
                     }
-                    className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-700"
+                    className="inline-flex min-w-[8.5rem] flex-1 items-center justify-center gap-2 rounded-xl bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-700 sm:flex-none"
                   >
                     <ExternalLink size={16} /> Simulado AOCP
                   </a>

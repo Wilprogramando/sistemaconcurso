@@ -39,7 +39,7 @@ export default async function RevisaoPage({
 
     return (
       <div className="space-y-6">
-        <div>
+        <div className="min-w-0 flex-1">
           <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl dark:text-slate-100">Revisão espaçada</h1>
           <p className="text-sm text-slate-500 dark:text-slate-400">
             As questões voltam em 1, 3, 7 dias e assim por diante — e no dia seguinte quando você
@@ -69,7 +69,7 @@ export default async function RevisaoPage({
   if (iniciar !== '1') {
     return (
       <div className="space-y-6">
-        <div>
+        <div className="min-w-0 flex-1">
           <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl dark:text-slate-100">Revisão espaçada</h1>
           <p className="text-sm text-slate-500 dark:text-slate-400">
             {ids.length} {ids.length === 1 ? 'questão' : 'questões'} vencidas para hoje.

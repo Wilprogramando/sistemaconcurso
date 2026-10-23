@@ -248,7 +248,7 @@ export default function QuestionRunner({
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <div>
+        <div className="min-w-0 flex-1">
           <h1 className="text-lg font-bold text-slate-900 sm:text-xl dark:text-slate-100">{titulo}</h1>
           <p className="text-sm text-slate-500 dark:text-slate-400">
             Questão {index + 1} de {total}
@@ -339,7 +339,7 @@ export default function QuestionRunner({
                     >
                       {op.letter}
                     </span>
-                    <span className="text-slate-800 dark:text-slate-200">{op.text}</span>
+                    <span className="min-w-0 flex-1 text-slate-800 dark:text-slate-200">{op.text}</span>
                   </button>
                 </li>
               );

@@ -157,8 +157,8 @@ export default async function Dashboard() {
             </p>
           </div>
 
-          {/* três números do dia, sempre encostados à direita e em uma linha */}
-          <dl className="ml-auto grid shrink-0 grid-cols-3 gap-5 text-center sm:gap-8">
+          {/* três números do dia: à direita no computador, linha inteira no celular */}
+          <dl className="grid w-full grid-cols-3 gap-3 text-center sm:ml-auto sm:w-auto sm:shrink-0 sm:gap-8">
             {[
               ['Hoje', `${respondidasHoje}/${metaDiaria}`, `${acertosHoje} acertos`],
               ['Revisões', revisoesHoje, 'para hoje'],
@@ -169,7 +169,7 @@ export default async function Dashboard() {
               ],
             ].map(([k, v, hint]) => (
               <div key={String(k)}>
-                <dt className="text-[0.65rem] font-semibold tracking-wider text-brand-200 uppercase">
+                <dt className="text-[0.6rem] leading-4 font-semibold tracking-wide text-brand-200 uppercase sm:text-[0.65rem] sm:tracking-wider">
                   {k}
                 </dt>
                 <dd className="mt-0.5 text-2xl font-bold tabular-nums">{v}</dd>
@@ -196,7 +196,7 @@ export default async function Dashboard() {
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex w-full flex-wrap items-center gap-2 sm:w-auto">
             <span className="inline-flex items-center gap-2 rounded-xl bg-white px-3.5 py-2 ring-1 ring-brand-100 dark:bg-slate-900 dark:ring-brand-900">
               <Target size={18} className="shrink-0 text-brand-600 dark:text-brand-300" />
               <span className="leading-tight">
@@ -211,7 +211,7 @@ export default async function Dashboard() {
 
             <Link
               href="/edital"
-              className="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700"
+              className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700 sm:flex-none"
             >
               <ScrollText size={16} /> Edital
             </Link>
@@ -220,7 +220,7 @@ export default async function Dashboard() {
               href="/edital-002-2026.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 ring-1 ring-slate-300 transition hover:bg-slate-50 dark:bg-slate-800 dark:text-slate-200 dark:ring-slate-600"
+              className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 ring-1 ring-slate-300 transition hover:bg-slate-50 sm:flex-none dark:bg-slate-800 dark:text-slate-200 dark:ring-slate-600"
             >
               <FileText size={16} /> Ver o PDF
             </a>

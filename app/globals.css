@@ -171,3 +171,34 @@ html.dark .nota-rica code {
 .nota-rica {
   overflow-wrap: break-word;
 }
+
+/* ---------------------------------------------------------------
+   Rede de proteção para o celular: palavra comprida (nome de lei,
+   URL, PALAVRA EM CAIXA ALTA) quebra em vez de furar o cartão, e
+   nenhuma tela rola de lado.
+   --------------------------------------------------------------- */
+html,
+body {
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+dt,
+dd,
+label,
+summary,
+a,
+button {
+  overflow-wrap: break-word;
+}
+
+/* número e código quebram em qualquer ponto, senão estouram sozinhos */
+code,
+.tabular-nums {
+  overflow-wrap: anywhere;
+}

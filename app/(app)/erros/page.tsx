@@ -41,7 +41,7 @@ export default async function ErrosPage({
   return (
     <div className="space-y-6">
       <div className="flex flex-wrap items-end justify-between gap-3">
-        <div>
+        <div className="min-w-0 flex-1">
           <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl dark:text-slate-100">Caderno de erros</h1>
           <p className="text-sm text-slate-500 dark:text-slate-400">
             Toda questão errada cai aqui automaticamente. Anote o motivo do erro — é nele que está a

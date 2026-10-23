@@ -36,7 +36,7 @@ export default async function VideosPage({
   if (!alvo) {
     return (
       <div className="space-y-5">
-        <div>
+        <div className="min-w-0 flex-1">
           <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl dark:text-slate-100">
             Vídeo-aulas
           </h1>
