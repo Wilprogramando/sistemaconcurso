@@ -46,7 +46,18 @@ if (faltando.length) {
   process.exit(1);
 }
 
-const opcoes = { auth: { persistSession: false } };
+// O supabase-js monta um cliente de tempo real mesmo sem ninguém usar, e
+// ele exige WebSocket nativo (Node 22+). Aqui nada escuta mudanças, então um
+// substituto vazio basta para o cliente nascer no Node 20.
+if (typeof globalThis.WebSocket === 'undefined') {
+  globalThis.WebSocket = class WebSocketInexistente {
+    constructor() {
+      throw new Error('tempo real não é usado neste script');
+    }
+  };
+}
+
+const opcoes = { auth: { persistSession: false }, realtime: { params: {} } };
 const origem = createClient(process.env.ORIGEM_URL, process.env.ORIGEM_SERVICE_KEY, opcoes);
 const destino = soExportar
   ? null
