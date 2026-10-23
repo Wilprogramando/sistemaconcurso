@@ -1333,8 +1333,11 @@ function Marcas({ nota }: { nota: NotaComContexto }) {
         </span>
       )}
       {temImagem && (
-        <span title="tem imagem">
-          <ImageIcon size={13} />
+        <span
+          title="tem imagem"
+          className="grid h-6 w-6 place-items-center rounded-md bg-brand-100 text-brand-700 ring-1 ring-brand-300 dark:bg-brand-900 dark:text-brand-200 dark:ring-brand-700"
+        >
+          <ImageIcon size={15} strokeWidth={2.25} />
         </span>
       )}
       {temPdf && (
