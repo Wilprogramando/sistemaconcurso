@@ -237,21 +237,28 @@ function Detalhe({
   const [criando, setCriando] = useState(false);
   const [editando, setEditando] = useState<string | null>(null);
   const [abertas, setAbertas] = useState<Set<string>>(new Set());
-  const [reordenando, setReordenando] = useState(false);
   /** id da anotação sendo arrastada e a que está embaixo do cursor */
   const [arrastando, setArrastando] = useState<string | null>(null);
   const [sobre, setSobre] = useState<string | null>(null);
+  /** ordem já aplicada na tela, antes de o banco confirmar */
+  const [posLocal, setPosLocal] = useState<Record<string, number>>({});
+  /** ids já excluídos na tela, antes de o banco confirmar */
+  const [removidas, setRemovidas] = useState<Set<string>>(new Set());
   const { supabase } = useSessao();
-  const router = useRouter();
 
   const filtradas = useMemo(() => {
     const termo = busca.trim().toLowerCase();
     return notas.filter((n) => {
+      if (removidas.has(n.id)) return false;
       if (filtroTag !== 'todas' && n.tag !== filtroTag) return false;
       if (!termo) return true;
       return n.title.toLowerCase().includes(termo) || n.body.toLowerCase().includes(termo);
     });
-  }, [notas, busca, filtroTag]);
+  }, [notas, busca, filtroTag, removidas]);
+
+  function esquecer(id: string) {
+    setRemovidas((atual) => new Set(atual).add(id));
+  }
 
   function alternar(id: string) {
     setAbertas((atual) => {
@@ -262,38 +269,54 @@ function Detalhe({
     });
   }
 
-  /** Grava a ordem do grupo inteiro em 1..n, sem depender das posições antigas. */
-  async function gravarOrdem(ordem: NotaComContexto[]) {
-    setReordenando(true);
-    await Promise.all(
-      ordem.map((n, i) => supabase.from('notes').update({ position: i + 1 }).eq('id', n.id)),
-    );
-    setReordenando(false);
-    router.refresh();
+  /**
+   * A tela assume a nova ordem na hora e o banco é avisado depois, numa só
+   * chamada. Sem `router.refresh()`: refazer a página no servidor a cada
+   * troca era o que travava o arrasto.
+   */
+  function gravarOrdem(ordem: NotaComContexto[]) {
+    setPosLocal((atual) => {
+      const nova = { ...atual };
+      ordem.forEach((n, i) => {
+        nova[n.id] = i + 1;
+      });
+      return nova;
+    });
+
+    const ids = ordem.map((n) => n.id);
+    void (async () => {
+      const { error } = await supabase.rpc('reordenar_notas', { p_ids: ids });
+      // banco sem a migração 0008: cai no update por anotação
+      if (error) {
+        await Promise.all(
+          ids.map((id, i) => supabase.from('notes').update({ position: i + 1 }).eq('id', id)),
+        );
+      }
+    })();
   }
 
   /** Troca a anotação de lugar com a vizinha — é o caminho do celular. */
-  async function mover(grupo: NotaComContexto[], indice: number, passo: -1 | 1) {
+  function mover(grupo: NotaComContexto[], indice: number, passo: -1 | 1) {
     const destino = indice + passo;
-    if (destino < 0 || destino >= grupo.length || reordenando) return;
+    if (destino < 0 || destino >= grupo.length) return;
 
     const ordem = [...grupo];
     [ordem[indice], ordem[destino]] = [ordem[destino], ordem[indice]];
-    await gravarOrdem(ordem);
+    gravarOrdem(ordem);
   }
 
   /** Solta a anotação arrastada na posição da que está embaixo do cursor. */
-  async function soltar(grupo: NotaComContexto[], alvoId: string) {
+  function soltar(grupo: NotaComContexto[], alvoId: string) {
     const de = grupo.findIndex((n) => n.id === arrastando);
     const para = grupo.findIndex((n) => n.id === alvoId);
     setArrastando(null);
     setSobre(null);
-    if (de === -1 || para === -1 || de === para || reordenando) return;
+    if (de === -1 || para === -1 || de === para) return;
 
     const ordem = [...grupo];
     const [movida] = ordem.splice(de, 1);
     ordem.splice(para, 0, movida);
-    await gravarOrdem(ordem);
+    gravarOrdem(ordem);
   }
 
   const contagem = useMemo(() => {
@@ -302,8 +325,16 @@ function Detalhe({
     return c;
   }, [notas]);
 
-  const fixadas = filtradas.filter((n) => n.pinned);
-  const demais = filtradas.filter((n) => !n.pinned);
+  // a ordem local manda enquanto o banco não responde
+  const ordenadas = useMemo(() => {
+    if (!Object.keys(posLocal).length) return filtradas;
+    return [...filtradas].sort(
+      (a, b) => (posLocal[a.id] ?? a.position) - (posLocal[b.id] ?? b.position),
+    );
+  }, [filtradas, posLocal]);
+
+  const fixadas = ordenadas.filter((n) => n.pinned);
+  const demais = ordenadas.filter((n) => !n.pinned);
 
   // reordenar só faz sentido vendo a lista inteira: com filtro, as setas
   // mexeriam em vizinhas que estão escondidas
@@ -442,15 +473,16 @@ function Detalhe({
                     alvo={sobre === n.id && arrastando !== n.id}
                     iniciarArrasto={() => setArrastando(n.id)}
                     passarPorCima={() => setSobre(n.id)}
-                    soltar={() => void soltar(fixadas, n.id)}
+                    soltar={() => soltar(fixadas, n.id)}
                     encerrarArrasto={() => {
                       setArrastando(null);
                       setSobre(null);
                     }}
                     podeSubir={podeOrdenar && i > 0}
                     podeDescer={podeOrdenar && i < fixadas.length - 1}
-                    subir={() => void mover(fixadas, i, -1)}
-                    descer={() => void mover(fixadas, i, 1)}
+                    subir={() => mover(fixadas, i, -1)}
+                    descer={() => mover(fixadas, i, 1)}
+                    aoExcluir={() => esquecer(n.id)}
                   />
                 ))}
               </div>
@@ -480,15 +512,16 @@ function Detalhe({
                     alvo={sobre === n.id && arrastando !== n.id}
                     iniciarArrasto={() => setArrastando(n.id)}
                     passarPorCima={() => setSobre(n.id)}
-                    soltar={() => void soltar(demais, n.id)}
+                    soltar={() => soltar(demais, n.id)}
                     encerrarArrasto={() => {
                       setArrastando(null);
                       setSobre(null);
                     }}
                     podeSubir={podeOrdenar && i > 0}
                     podeDescer={podeOrdenar && i < demais.length - 1}
-                    subir={() => void mover(demais, i, -1)}
-                    descer={() => void mover(demais, i, 1)}
+                    subir={() => mover(demais, i, -1)}
+                    descer={() => mover(demais, i, 1)}
+                    aoExcluir={() => esquecer(n.id)}
                   />
                 ))}
               </div>
@@ -544,6 +577,7 @@ function Cartao({
   podeDescer,
   subir,
   descer,
+  aoExcluir,
 }: {
   nota: NotaComContexto;
   disciplinas: Opcao[];
@@ -566,22 +600,21 @@ function Cartao({
   podeDescer: boolean;
   subir: () => void;
   descer: () => void;
+  /** tira o card da tela antes de o banco responder */
+  aoExcluir: () => void;
 }) {
   const info = TAGS[nota.tag];
   const Icone = info.icone;
   const { supabase } = useSessao();
-  const router = useRouter();
   const [confirmando, setConfirmando] = useState(false);
   /** a pegada do arrasto está sendo segurada */
   const [pegou, setPegou] = useState(false);
-  const [excluindo, setExcluindo] = useState(false);
 
-  async function excluir() {
-    setExcluindo(true);
-    await supabase.from('notes').delete().eq('id', nota.id);
-    setExcluindo(false);
+  /** o card sai da tela na hora; o banco é avisado em seguida */
+  function excluir() {
     setConfirmando(false);
-    router.refresh();
+    aoExcluir();
+    void supabase.from('notes').delete().eq('id', nota.id);
   }
 
   if (editando) {
@@ -720,7 +753,6 @@ function Cartao({
           <button
             type="button"
             onClick={() => setConfirmando(false)}
-            disabled={excluindo}
             className="rounded-lg px-2.5 py-1 font-medium text-slate-600 transition hover:bg-white disabled:opacity-60 dark:text-slate-300 dark:hover:bg-slate-800"
           >
             Cancelar
@@ -728,10 +760,9 @@ function Cartao({
           <button
             type="button"
             onClick={excluir}
-            disabled={excluindo}
             className="inline-flex items-center gap-1.5 rounded-lg bg-red-600 px-3 py-1 font-semibold text-white transition hover:bg-red-700 disabled:opacity-60"
           >
-            <Trash2 size={12} /> {excluindo ? 'Excluindo…' : 'Excluir'}
+            <Trash2 size={12} /> Excluir
           </button>
         </div>
       )}

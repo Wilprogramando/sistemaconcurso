@@ -1,8 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useMemo, useState } from 'react';
 import { ChevronDown, ChevronUp, Eye, EyeOff, NotebookPen, Plus } from 'lucide-react';
 import EditorNota from '@/components/editor-nota';
 import ImagensDaNota from '@/components/imagens-nota';
@@ -30,9 +29,17 @@ export default function NotasDoTopico({
   const [criando, setCriando] = useState(false);
   const [editando, setEditando] = useState<string | null>(null);
   const [abertas, setAbertas] = useState<Set<string>>(new Set());
-  const [reordenando, setReordenando] = useState(false);
+  /** ordem já aplicada na tela, antes de o banco confirmar */
+  const [ordemLocal, setOrdemLocal] = useState<string[] | null>(null);
   const { supabase } = useSessao();
-  const router = useRouter();
+
+  const lista = useMemo(() => {
+    if (!ordemLocal) return notas;
+    const posicao = new Map(ordemLocal.map((id, i) => [id, i]));
+    return [...notas].sort(
+      (a, b) => (posicao.get(a.id) ?? 0) - (posicao.get(b.id) ?? 0),
+    );
+  }, [notas, ordemLocal]);
 
   function alternar(id: string) {
     setAbertas((atual) => {
@@ -43,20 +50,28 @@ export default function NotasDoTopico({
     });
   }
 
-  /** troca de lugar com a vizinha e regrava a ordem do tópico em 1..n */
-  async function mover(indice: number, passo: -1 | 1) {
+  /**
+   * Troca de lugar com a vizinha: a tela muda na hora e o banco é avisado
+   * depois, numa só chamada. Sem `router.refresh()`, que era o que travava.
+   */
+  function mover(indice: number, passo: -1 | 1) {
     const destino = indice + passo;
-    if (destino < 0 || destino >= notas.length || reordenando) return;
+    if (destino < 0 || destino >= lista.length) return;
 
-    const ordem = [...notas];
+    const ordem = [...lista];
     [ordem[indice], ordem[destino]] = [ordem[destino], ordem[indice]];
+    setOrdemLocal(ordem.map((n) => n.id));
 
-    setReordenando(true);
-    await Promise.all(
-      ordem.map((n, i) => supabase.from('notes').update({ position: i + 1 }).eq('id', n.id)),
-    );
-    setReordenando(false);
-    router.refresh();
+    const ids = ordem.map((n) => n.id);
+    void (async () => {
+      const { error } = await supabase.rpc('reordenar_notas', { p_ids: ids });
+      // banco sem a migração 0008: cai no update por anotação
+      if (error) {
+        await Promise.all(
+          ids.map((id, i) => supabase.from('notes').update({ position: i + 1 }).eq('id', id)),
+        );
+      }
+    })();
   }
 
   if (indisponivel) {
@@ -102,7 +117,7 @@ export default function NotasDoTopico({
 
       {aberto && (
         <div className="space-y-3 border-t border-slate-200 px-4 py-4 dark:border-slate-700">
-          {notas.map((n, i) => {
+          {lista.map((n, i) => {
             const info = TAGS[n.tag];
             const Icone = info.icone;
             const expandida = abertas.has(n.id);
@@ -138,7 +153,7 @@ export default function NotasDoTopico({
                   <div className="ml-auto flex items-center gap-1">
                     <button
                       type="button"
-                      onClick={() => void mover(i, -1)}
+                      onClick={() => mover(i, -1)}
                       disabled={i === 0}
                       title="Subir"
                       aria-label="Subir"
@@ -148,8 +163,8 @@ export default function NotasDoTopico({
                     </button>
                     <button
                       type="button"
-                      onClick={() => void mover(i, 1)}
-                      disabled={i === notas.length - 1}
+                      onClick={() => mover(i, 1)}
+                      disabled={i === lista.length - 1}
                       title="Descer"
                       aria-label="Descer"
                       className="rounded-lg p-1 text-slate-400 transition hover:bg-white hover:text-slate-700 disabled:opacity-30 dark:hover:bg-slate-700 dark:hover:text-slate-200"

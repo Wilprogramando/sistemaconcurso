@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Check, Loader2, Pin, PinOff, Trash2, X } from 'lucide-react';
 import { useSessao } from '@/components/sessao';
@@ -59,7 +59,30 @@ export default function EditorNota({
   const prontoParaEditar = caminhosIniciais.every((c) => urlsIniciais[c]);
 
   const [titulo, setTitulo] = useState(nota?.title ?? '');
-  const [corpo, setCorpo] = useState(htmlInicial);
+
+  // o corpo fica num ref: guardar cada tecla em `useState` fazia o formulário
+  // inteiro renderizar a cada letra, e a digitação engasgava em nota grande.
+  // Só o "tem conteúdo?" vira estado, com folga de 400 ms.
+  const corpoRef = useRef(htmlInicial);
+  const [temConteudo, setTemConteudo] = useState(!htmlVazio(htmlInicial));
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const aoMudarCorpo = useCallback((html: string) => {
+    corpoRef.current = html;
+    if (timer.current) clearTimeout(timer.current);
+    timer.current = setTimeout(() => {
+      const cheio = !htmlVazio(html);
+      setTemConteudo((antes) => (antes === cheio ? antes : cheio));
+    }, 400);
+  }, []);
+
+  useEffect(
+    () => () => {
+      if (timer.current) clearTimeout(timer.current);
+    },
+    [],
+  );
+
   const [tag, setTag] = useState<Tag>(nota?.tag ?? 'nota');
   const [disciplina, setDisciplina] = useState<number | null>(
     nota?.discipline_id ?? disciplinaFixa ?? null,
@@ -68,9 +91,10 @@ export default function EditorNota({
   const [imagens, setImagens] = useState<string[]>(nota?.images ?? []);
   const [anexos, setAnexos] = useState<Anexo[]>(nota?.attachments ?? []);
   const [salvando, setSalvando] = useState(false);
+  /** muda depois de salvar uma nota nova, para o editor nascer limpo */
+  const [geracao, setGeracao] = useState(0);
 
-  const vazia =
-    !titulo.trim() && htmlVazio(corpo) && imagens.length === 0 && anexos.length === 0;
+  const vazia = !titulo.trim() && !temConteudo && imagens.length === 0 && anexos.length === 0;
 
   /** comprime, sobe a imagem e devolve a tag pronta para entrar no texto */
   async function inserirImagens(originais: File[]) {
@@ -99,7 +123,7 @@ export default function EditorNota({
     setSalvando(true);
 
     // o src assinado expira em uma hora: o que fica gravado é o `data-path`
-    const html = removerUrlsAssinadas(sanitizarHtml(corpo));
+    const html = removerUrlsAssinadas(sanitizarHtml(corpoRef.current));
     const texto = textoDoHtml(html);
 
     const dados = {
@@ -133,7 +157,9 @@ export default function EditorNota({
       });
 
       setTitulo('');
-      setCorpo('');
+      corpoRef.current = '';
+      setTemConteudo(false);
+      setGeracao((g) => g + 1);
       setImagens([]);
       setAnexos([]);
     }
@@ -163,8 +189,9 @@ export default function EditorNota({
 
       {prontoParaEditar ? (
         <EditorRico
+          key={geracao}
           valor={aplicarUrls(htmlInicial, urlsIniciais)}
-          onChange={setCorpo}
+          onChange={aoMudarCorpo}
           onInserirImagem={inserirImagens}
           autoFocus={!nota}
           placeholder="Escreva aqui. Ex.: inquérito — 10 dias preso, 30 solto. O delegado NUNCA arquiva."
