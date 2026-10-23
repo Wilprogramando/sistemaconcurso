@@ -11,7 +11,8 @@
     "seed": "node scripts/seed.mjs",
     "validar": "node scripts/validar-conteudo.mjs",
     "conteudo": "npm run parse && npm run validar && npm run seed",
-    "comprimir-pdf": "node scripts/comprimir-pdf.mjs"
+    "comprimir-pdf": "node scripts/comprimir-pdf.mjs",
+    "migrar": "node scripts/migrar-supabase.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.5.2",
