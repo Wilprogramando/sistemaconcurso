@@ -16,12 +16,14 @@
  *   PARA_USER_ID=<id da sua conta no projeto novo>     (opcional)
  *
  * Uso:
+ *   node scripts/migrar-supabase.mjs --exportar <pasta>  baixa tudo para o computador
  *   node scripts/migrar-supabase.mjs --conferir   só compara as contagens
  *   node scripts/migrar-supabase.mjs              copia tabelas e arquivos
  *   node scripts/migrar-supabase.mjs --so-dados   copia só as tabelas
  *   node scripts/migrar-supabase.mjs --so-arquivos
  */
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
 import { createClient } from '@supabase/supabase-js';
 
 /* ---------------- ambiente ---------------- */
@@ -33,9 +35,12 @@ if (existsSync('.env.local')) {
   }
 }
 
-const faltando = ['ORIGEM_URL', 'ORIGEM_SERVICE_KEY', 'DESTINO_URL', 'DESTINO_SERVICE_KEY'].filter(
-  (k) => !process.env[k],
-);
+const soExportar = process.argv.includes('--exportar');
+
+const exigidas = soExportar
+  ? ['ORIGEM_URL', 'ORIGEM_SERVICE_KEY']
+  : ['ORIGEM_URL', 'ORIGEM_SERVICE_KEY', 'DESTINO_URL', 'DESTINO_SERVICE_KEY'];
+const faltando = exigidas.filter((k) => !process.env[k]);
 if (faltando.length) {
   console.error('faltam variáveis no .env.local:', faltando.join(', '));
   process.exit(1);
@@ -43,7 +48,9 @@ if (faltando.length) {
 
 const opcoes = { auth: { persistSession: false } };
 const origem = createClient(process.env.ORIGEM_URL, process.env.ORIGEM_SERVICE_KEY, opcoes);
-const destino = createClient(process.env.DESTINO_URL, process.env.DESTINO_SERVICE_KEY, opcoes);
+const destino = soExportar
+  ? null
+  : createClient(process.env.DESTINO_URL, process.env.DESTINO_SERVICE_KEY, opcoes);
 
 const DE = process.env.DE_USER_ID || null;
 const PARA = process.env.PARA_USER_ID || null;
@@ -190,11 +197,89 @@ async function copiarArquivos() {
   console.log(`  copiados: ${n}/${arquivos.length}`.padEnd(40));
 }
 
+/* ---------------- cópia para o computador ---------------- */
+
+/** Lê a tabela inteira da origem, em lotes. */
+async function lerTudo(tabela) {
+  const tudo = [];
+  for (let inicio = 0; ; inicio += LOTE) {
+    const { data, error } = await origem
+      .from(tabela)
+      .select('*')
+      .range(inicio, inicio + LOTE - 1);
+    if (error) {
+      if (/does not exist/.test(error.message)) return null;
+      throw new Error(`${tabela}: ${error.message}`);
+    }
+    if (!data?.length) break;
+    tudo.push(...data);
+    if (data.length < LOTE) break;
+  }
+  return tudo;
+}
+
+/**
+ * Guarda no computador uma cópia completa: um JSON por tabela e os arquivos
+ * do bucket, com a mesma estrutura de pastas. É o backup que fica com você,
+ * independente do que aconteça com o projeto no Supabase.
+ */
+async function exportar(pasta) {
+  mkdirSync(join(pasta, 'tabelas'), { recursive: true });
+  console.log('Tabelas →', pasta);
+
+  const resumo = {};
+  for (const { nome } of TABELAS) {
+    const linhas = await lerTudo(nome);
+    if (linhas === null) {
+      console.log(`  ${nome}: não existe, pulando`);
+      continue;
+    }
+    writeFileSync(join(pasta, 'tabelas', `${nome}.json`), JSON.stringify(linhas, null, 2));
+    resumo[nome] = linhas.length;
+    console.log(`  ${nome}: ${linhas.length} linhas`);
+  }
+
+  console.log('Arquivos do bucket');
+  const arquivos = await listarArquivos();
+  let n = 0;
+  for (const caminho of arquivos) {
+    const { data, error } = await origem.storage.from(BUCKET).download(caminho);
+    if (error) {
+      console.log(`  falhou: ${caminho} — ${error.message}`);
+      continue;
+    }
+    const destinoLocal = join(pasta, 'arquivos', caminho);
+    mkdirSync(dirname(destinoLocal), { recursive: true });
+    writeFileSync(destinoLocal, Buffer.from(await data.arrayBuffer()));
+    n += 1;
+    process.stdout.write(`  ${n}/${arquivos.length}\r`);
+  }
+  console.log(`  ${n}/${arquivos.length} arquivos`.padEnd(40));
+
+  writeFileSync(
+    join(pasta, 'resumo.json'),
+    JSON.stringify(
+      {
+        quando: new Date().toISOString(),
+        origem: process.env.ORIGEM_URL,
+        tabelas: resumo,
+        arquivos: n,
+      },
+      null,
+      2,
+    ),
+  );
+  console.log('\nPronto. Backup em', pasta);
+}
+
 /* ---------------- roteiro ---------------- */
 
 const args = process.argv.slice(2);
 
-if (args.includes('--conferir')) {
+if (args.includes('--exportar')) {
+  const i = args.indexOf('--exportar');
+  await exportar(args[i + 1] && !args[i + 1].startsWith('--') ? args[i + 1] : 'backup-supabase');
+} else if (args.includes('--conferir')) {
   await conferir();
 } else {
   if (!args.includes('--so-arquivos')) {
