@@ -8,7 +8,7 @@ import {
   SignalHigh,
   Target,
 } from 'lucide-react';
-import { createClient, getUser } from '@/lib/supabase/server';
+import { createClient, getUserId } from '@/lib/supabase/server';
 import { Card } from '@/components/ui';
 import { PRIORITY_CLASS, PRIORITY_LABEL } from '@/lib/types';
 import { visualDe } from '@/lib/disciplinas-visual';
@@ -18,7 +18,7 @@ export const metadata = { title: 'Matérias — Estudo PM SC 2026' };
 export const dynamic = 'force-dynamic';
 
 export default async function MateriasPage() {
-  const user = (await getUser())!;
+  const user = { id: (await getUserId())! };
   const supabase = await createClient();
 
   const [{ data: disciplines }, { data: topics }, { data: progress }, { data: counts }] =

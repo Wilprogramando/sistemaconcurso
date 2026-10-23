@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { createClient, getUser } from '@/lib/supabase/server';
+import { createClient, getUserId } from '@/lib/supabase/server';
 import { Card, Empty } from '@/components/ui';
 import ErrorItem from './error-item';
 
@@ -13,7 +13,7 @@ export default async function ErrosPage({
 }) {
   const { ver } = await searchParams;
   const mostrarResolvidos = ver === 'resolvidos';
-  const user = (await getUser())!;
+  const user = { id: (await getUserId())! };
   const supabase = await createClient();
 
   // as duas consultas são independentes: uma espera da outra era meia tela parada

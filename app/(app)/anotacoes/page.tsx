@@ -1,5 +1,5 @@
 import { NotebookPen } from 'lucide-react';
-import { createClient, getUser } from '@/lib/supabase/server';
+import { createClient, getUserId } from '@/lib/supabase/server';
 import { Card } from '@/components/ui';
 import { ehTabelaAusente, type Nota } from '@/lib/notas';
 import ListaDeNotas from './lista';
@@ -8,7 +8,7 @@ export const metadata = { title: 'Anotações — Estudo PM SC 2026' };
 export const dynamic = 'force-dynamic';
 
 export default async function AnotacoesPage() {
-  const user = (await getUser())!;
+  const user = { id: (await getUserId())! };
   const supabase = await createClient();
 
   const [{ data: notas, error }, { data: disciplinas }, { data: topicos }] = await Promise.all([

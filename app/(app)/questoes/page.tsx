@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Flag, Shuffle, Target } from 'lucide-react';
-import { createClient, getUser } from '@/lib/supabase/server';
+import { createClient, getUserId } from '@/lib/supabase/server';
 import QuestionRunner from '@/components/question-runner';
 import { Badge, Card } from '@/components/ui';
 import { PRIORITY_CLASS, PRIORITY_LABEL, type Question } from '@/lib/types';
@@ -15,7 +15,7 @@ export default async function QuestoesPage({
   searchParams: Promise<{ disciplina?: string; n?: string; foco?: string; origem?: string }>;
 }) {
   const { disciplina, n, foco, origem } = await searchParams;
-  const user = (await getUser())!;
+  const user = { id: (await getUserId())! };
   const supabase = await createClient();
 
   const { data: disciplines } = await supabase

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { createClient, getUser } from '@/lib/supabase/server';
+import { createClient, getUserId } from '@/lib/supabase/server';
 import QuestionRunner from '@/components/question-runner';
 import { Card, Empty } from '@/components/ui';
 import type { Question } from '@/lib/types';
@@ -14,7 +14,7 @@ export default async function RevisaoPage({
   searchParams: Promise<{ iniciar?: string }>;
 }) {
   const { iniciar } = await searchParams;
-  const user = (await getUser())!;
+  const user = { id: (await getUserId())! };
   const supabase = await createClient();
   const hoje = new Date().toISOString().slice(0, 10);
 

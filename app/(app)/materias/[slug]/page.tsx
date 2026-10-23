@@ -12,7 +12,7 @@ import {
   ShieldAlert,
   Target,
 } from 'lucide-react';
-import { createClient, getUser } from '@/lib/supabase/server';
+import { createClient, getUserId } from '@/lib/supabase/server';
 import { Badge, Card } from '@/components/ui';
 import { Medidor } from '@/components/graficos';
 import { PRIORITY_CLASS, PRIORITY_LABEL } from '@/lib/types';
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function DisciplinaPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const user = (await getUser())!;
+  const user = { id: (await getUserId())! };
   const supabase = await createClient();
 
   const { data: d } = await supabase.from('disciplines').select('*').eq('slug', slug).maybeSingle();

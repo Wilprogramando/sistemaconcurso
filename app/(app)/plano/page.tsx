@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { createClient, getUser } from '@/lib/supabase/server';
+import { createClient, getUserId } from '@/lib/supabase/server';
 import { Card } from '@/components/ui';
 import { BANCA_TIPS, GOLDEN_RULE, PLAN_12, PLAN_30 } from '@/lib/plans';
 import DayCheck from './day-check';
@@ -14,7 +14,7 @@ export default async function PlanoPage({
 }) {
   const { plano } = await searchParams;
   const atual = plano === '12' ? '12' : '30';
-  const user = (await getUser())!;
+  const user = { id: (await getUserId())! };
   const supabase = await createClient();
 
   const [{ data: dias }, { data: profile }, { data: disciplines }] = await Promise.all([

@@ -16,7 +16,7 @@ import {
   Target,
   TrendingUp,
 } from 'lucide-react';
-import { createClient, getUser } from '@/lib/supabase/server';
+import { createClient, getUserId } from '@/lib/supabase/server';
 import { Aviso, Card, Empty, Stat } from '@/components/ui';
 import { Medidor, PesoDaProva } from '@/components/graficos';
 import { visualDe } from '@/lib/disciplinas-visual';
@@ -28,7 +28,7 @@ export const metadata = { title: 'Painel — Estudo PM SC 2026' };
 export const dynamic = 'force-dynamic';
 
 export default async function Dashboard() {
-  const user = (await getUser())!;
+  const user = { id: (await getUserId())! };
   const supabase = await createClient();
 
   const agora = new Date();

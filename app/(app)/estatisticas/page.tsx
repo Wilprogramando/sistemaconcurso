@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Activity, CalendarCheck, Flame, Target, TrendingUp, Trophy } from 'lucide-react';
-import { createClient, getUser } from '@/lib/supabase/server';
+import { createClient, getUserId } from '@/lib/supabase/server';
 import { Card, Empty, Stat } from '@/components/ui';
 import { BarrasDiarias, LinhaEvolucao, Medidor, type Dia, type Ponto } from '@/components/graficos';
 import type { DisciplineStats } from '@/lib/types';
@@ -9,7 +9,7 @@ export const metadata = { title: 'Estatísticas — Estudo PM SC 2026' };
 export const dynamic = 'force-dynamic';
 
 export default async function EstatisticasPage() {
-  const user = (await getUser())!;
+  const user = { id: (await getUserId())! };
   const supabase = await createClient();
   const desde = new Date(Date.now() - 29 * 86400000).toISOString();
 

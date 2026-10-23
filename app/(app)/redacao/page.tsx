@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { PenLine, TrendingUp } from 'lucide-react';
-import { createClient, getUser } from '@/lib/supabase/server';
+import { createClient, getUserId } from '@/lib/supabase/server';
 import { Card, Empty } from '@/components/ui';
 import { TEMAS, sortearTema } from '@/lib/redacao/temas';
 import Editor from './editor';
@@ -9,7 +9,7 @@ export const metadata = { title: 'Redação — Estudo PM SC 2026' };
 export const dynamic = 'force-dynamic';
 
 export default async function RedacaoPage() {
-  const user = (await getUser())!;
+  const user = { id: (await getUserId())! };
   const supabase = await createClient();
 
   const { data: anteriores } = await supabase

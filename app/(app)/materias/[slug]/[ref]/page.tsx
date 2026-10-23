@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowRight, Clock, FileText, ListChecks, Target } from 'lucide-react';
-import { createClient, getUser } from '@/lib/supabase/server';
+import { createClient, getUserId } from '@/lib/supabase/server';
 import Blocos, { type Bloco } from '@/components/blocos';
 import TopicStatus from './topic-status';
 import NotasDoTopico from '@/components/notas-do-topico';
@@ -21,7 +21,7 @@ export default async function TopicoPage({
   params: Promise<{ slug: string; ref: string }>;
 }) {
   const { slug, ref } = await params;
-  const user = (await getUser())!;
+  const user = { id: (await getUserId())! };
   const supabase = await createClient();
 
   const { data: d } = await supabase

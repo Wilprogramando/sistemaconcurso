@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ExternalLink, Info, Play, Search, Tv } from 'lucide-react';
-import { createClient, getUser } from '@/lib/supabase/server';
+import { createClient, getUserId } from '@/lib/supabase/server';
 import { Badge, Card } from '@/components/ui';
 import { PRIORITY_CLASS, PRIORITY_LABEL } from '@/lib/types';
 import { buscaDoTopico, buscaYoutube, guiaDe } from '@/lib/videos';
@@ -14,7 +14,7 @@ export default async function VideosPage({
   searchParams: Promise<{ disciplina?: string }>;
 }) {
   const { disciplina } = await searchParams;
-  await getUser();
+  await getUserId();
   const supabase = await createClient();
 
   const { data: disciplines } = await supabase

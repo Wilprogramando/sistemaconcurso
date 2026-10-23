@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { FileText, Flag, Scale } from 'lucide-react';
-import { createClient, getUser } from '@/lib/supabase/server';
+import { createClient, getUserId } from '@/lib/supabase/server';
 import QuestionRunner from '@/components/question-runner';
 import { Card } from '@/components/ui';
 import type { Question } from '@/lib/types';
@@ -15,7 +15,7 @@ export default async function SimuladoPage({
   searchParams: Promise<{ modo?: string }>;
 }) {
   const { modo } = await searchParams;
-  await getUser();
+  await getUserId();
   const supabase = await createClient();
 
   if (!modo) {

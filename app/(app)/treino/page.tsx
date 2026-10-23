@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { CalendarCheck, CheckCircle2, Flame, Target } from 'lucide-react';
-import { createClient, getUser } from '@/lib/supabase/server';
+import { createClient, getUserId } from '@/lib/supabase/server';
 import QuestionRunner from '@/components/question-runner';
 import { Card, Stat } from '@/components/ui';
 import { Medidor } from '@/components/graficos';
@@ -17,7 +17,7 @@ export default async function TreinoPage({
   searchParams: Promise<{ iniciar?: string }>;
 }) {
   const { iniciar } = await searchParams;
-  const user = (await getUser())!;
+  const user = { id: (await getUserId())! };
   const supabase = await createClient();
 
   const { data: profile } = await supabase

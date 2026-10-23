@@ -1,26 +1,17 @@
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { LogOut, ShieldCheck } from 'lucide-react';
-import { createClient, getUser } from '@/lib/supabase/server';
+import { Suspense } from 'react';
+import { createClient, getUser, getUserId } from '@/lib/supabase/server';
 import { NavInferior } from '@/components/navegacao';
 import NavLateral from '@/components/nav-lateral';
 import { ProvedorSessao } from '@/components/sessao';
 import BotaoTema from '@/components/tema';
 
 export default async function AppLayout({ children }: { children: React.ReactNode }) {
-  const user = await getUser();
-  if (!user) redirect('/login');
-
-  // o nome enfeita o rodapé da barra lateral; se o perfil ainda não tem
-  // nome, o começo do e-mail serve
-  const supabase = await createClient();
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('name')
-    .eq('id', user.id)
-    .maybeSingle();
-
-  const nome = profile?.name ?? user.email?.split('@')[0] ?? 'candidato';
+  // id direto do cookie: o middleware já validou a sessão nesta requisição
+  const userId = await getUserId();
+  if (!userId) redirect('/login');
 
   async function sair() {
     'use server';
@@ -29,13 +20,16 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     redirect('/login');
   }
 
-  /** Vai no pé da barra lateral, no desktop. */
+  /**
+   * Vai no pé da barra lateral, no desktop. O nome vem do banco, então fica
+   * dentro de um Suspense: buscá-lo segurava a página inteira a cada troca
+   * de tela, por causa de um enfeite.
+   */
   const rodapeLateral = (
     <div className="flex items-center gap-2">
-      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white/15 text-sm font-bold uppercase">
-        {nome.slice(0, 2)}
-      </span>
-      <span className="min-w-0 flex-1 truncate text-sm text-brand-100">{nome}</span>
+      <Suspense fallback={<EsqueletoDoNome />}>
+        <NomeDoUsuario userId={userId} />
+      </Suspense>
       <BotaoTema />
       <form action={sair}>
         <button
@@ -50,7 +44,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   );
 
   return (
-    <ProvedorSessao userId={user.id} nome={nome}>
+    <ProvedorSessao userId={userId} nome="">
       <div className="min-h-screen md:pl-60">
         <NavLateral rodape={rodapeLateral} />
 
@@ -84,5 +78,38 @@ export default async function AppLayout({ children }: { children: React.ReactNod
         <NavInferior />
       </div>
     </ProvedorSessao>
+  );
+}
+
+/** Enquanto o nome não chega, o espaço dele já fica reservado. */
+function EsqueletoDoNome() {
+  return (
+    <div className="flex min-w-0 flex-1 items-center gap-2">
+      <span className="h-9 w-9 shrink-0 animate-pulse rounded-full bg-white/15" />
+      <span className="h-3 w-20 animate-pulse rounded bg-white/15" />
+    </div>
+  );
+}
+
+/**
+ * Nome de quem está logado. Roda fora do caminho crítico: a tela aparece
+ * antes, e este pedaço chega quando o banco responder.
+ */
+async function NomeDoUsuario({ userId }: { userId: string }) {
+  const supabase = await createClient();
+  const [{ data: profile }, user] = await Promise.all([
+    supabase.from('profiles').select('name').eq('id', userId).maybeSingle(),
+    getUser(),
+  ]);
+
+  const nome = profile?.name ?? user?.email?.split('@')[0] ?? 'candidato';
+
+  return (
+    <>
+      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white/15 text-sm font-bold uppercase">
+        {nome.slice(0, 2)}
+      </span>
+      <span className="min-w-0 flex-1 truncate text-sm text-brand-100">{nome}</span>
+    </>
   );
 }
