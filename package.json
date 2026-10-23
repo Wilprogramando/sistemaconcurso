@@ -16,7 +16,8 @@
     "backup": "node scripts/migrar-supabase.mjs --exportar",
     "restaurar": "node scripts/migrar-supabase.mjs --importar",
     "schema": "node scripts/juntar-migracoes.mjs",
-    "comprimir-bucket": "node scripts/comprimir-bucket.mjs"
+    "comprimir-bucket": "node scripts/comprimir-bucket.mjs",
+    "encolher-pdf": "node scripts/encolher-imagens-pdf.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.5.2",
