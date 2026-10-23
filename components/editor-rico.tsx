@@ -153,11 +153,27 @@ export default function EditorRico({
   /** marcas vivas no texto, na ordem em que aparecem */
   const marcas = () => [...(ref.current?.querySelectorAll<HTMLElement>('[data-trecho]') ?? [])];
 
-  /** tira as marcas, devolvendo o texto para onde estava */
+  /**
+   * Tira as marcas e devolve o texto para onde estava.
+   *
+   * Pegadinha: quando a seleção cobre a marca inteira, o Chrome aplica o
+   * negrito no próprio elemento da marca, em vez de embrulhar o conteúdo.
+   * Desmanchar o elemento jogava fora justamente o estilo recém-aplicado —
+   * era por isso que o negrito "não pegava". Então, se a marca ficou com
+   * style, ela vira um span comum em vez de sumir.
+   */
   const limparMarcas = useCallback(() => {
     for (const marca of marcas()) {
       const pai = marca.parentNode;
       if (!pai) continue;
+
+      if (marca.getAttribute('style')) {
+        marca.removeAttribute('data-trecho');
+        marca.classList.remove('trecho-marcado');
+        if (!marca.className) marca.removeAttribute('class');
+        continue;
+      }
+
       while (marca.firstChild) pai.insertBefore(marca.firstChild, marca);
       pai.removeChild(marca);
       pai.normalize();

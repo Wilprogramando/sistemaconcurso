@@ -57,8 +57,25 @@ const PROPS_STYLE = new Set([
   'text-decoration',
 ]);
 
+/** começo de entidade HTML válida: &nbsp;, &#160;, &#xA0;, &amp; … */
+const ENTIDADE = /^&(#\d{1,7}|#[xX][0-9a-fA-F]{1,6}|[a-zA-Z][a-zA-Z0-9]{1,31});/;
+
+/**
+ * Escapa o texto sem reescapar o que já é entidade.
+ *
+ * O saneador roda ao colar, ao salvar e ao exibir. Como todo "e comercial"
+ * virava entidade a cada passada, um espaço fixo colado do Word ganhava um
+ * "amp;" por rodada e a anotação acabava mostrando a entidade crua na tela.
+ * A primeira troca desfaz o que já se acumulou nas anotações antigas.
+ */
 const escaparTexto = (s: string) =>
-  s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  s
+    .replace(/&(?:amp;)+(?=#?[a-zA-Z0-9]{1,31};)/g, '&')
+    .replace(/&/g, (_m, posicao: number, todo: string) =>
+      ENTIDADE.test(todo.slice(posicao)) ? '&' : '&amp;',
+    )
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
 
 const escaparAtributo = (s: string) =>
   escaparTexto(s).replace(/"/g, '&quot;').replace(/'/g, '&#39;');
