@@ -23,6 +23,8 @@ export type Nota = {
   attachments: Anexo[];
   /** ordem escolhida à mão dentro da matéria; menor vem primeiro */
   position: number;
+  /** quando foi para a lixeira; fica nulo enquanto a anotação está em uso */
+  deleted_at: string | null;
   created_at: string;
   updated_at: string;
 };

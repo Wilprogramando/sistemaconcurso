@@ -169,10 +169,14 @@ export default function EditorNota({
     onFechar?.();
   }
 
+  /** vai para a lixeira, de onde dá para restaurar ou apagar de vez */
   async function excluir() {
     if (!nota) return;
     setSalvando(true);
-    await supabase.from('notes').delete().eq('id', nota.id);
+    await supabase
+      .from('notes')
+      .update({ deleted_at: new Date().toISOString() })
+      .eq('id', nota.id);
     setSalvando(false);
     router.refresh();
     onFechar?.();

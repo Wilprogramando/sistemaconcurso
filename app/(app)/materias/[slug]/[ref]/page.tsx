@@ -54,6 +54,7 @@ export default async function TopicoPage({
       .select('*')
       .eq('user_id', user.id)
       .eq('topic_id', topic.id)
+      .is('deleted_at', null)
       .order('position', { ascending: true })
       .order('updated_at', { ascending: false }),
   ]);

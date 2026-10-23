@@ -17,6 +17,7 @@ import {
   Pencil,
   Pin,
   Plus,
+  RotateCcw,
   Search,
   Trash2,
   X,
@@ -28,6 +29,8 @@ import { Card, Empty } from '@/components/ui';
 import ImagensDaNota from '@/components/imagens-nota';
 import AnexosDaNota from '@/components/anexos-nota';
 import CorpoNota from '@/components/corpo-nota';
+import { BUCKET } from '@/components/urls-assinadas';
+import { caminhosNoHtml } from '@/lib/html-nota';
 import { visualDe } from '@/lib/disciplinas-visual';
 import { ORDEM_TAGS, TAGS, type Nota, type Tag } from '@/lib/notas';
 
@@ -44,13 +47,24 @@ export type Materia = { id: number; nome: string; slug: string };
 type Selecao = number | 'sem' | null;
 
 export default function ListaDeNotas({
-  notas,
+  notas: todas,
   disciplinas,
 }: {
   notas: NotaComContexto[];
   disciplinas: Materia[];
 }) {
   const [selecao, setSelecao] = useState<Selecao>(null);
+  const [naLixeira, setNaLixeira] = useState(false);
+
+  // o que está na lixeira some das matérias e vive na própria tela
+  const notas = useMemo(() => todas.filter((n) => !n.deleted_at), [todas]);
+  const excluidas = useMemo(
+    () =>
+      todas
+        .filter((n) => n.deleted_at)
+        .sort((x, y) => (y.deleted_at ?? '').localeCompare(x.deleted_at ?? '')),
+    [todas],
+  );
 
   const opcoes: Opcao[] = useMemo(
     () => disciplinas.map((d) => ({ id: d.id, nome: d.nome })),
@@ -71,6 +85,10 @@ export default function ListaDeNotas({
     return m;
   }, [notas]);
 
+  if (naLixeira) {
+    return <Lixeira notas={excluidas} voltar={() => setNaLixeira(false)} />;
+  }
+
   if (selecao === null) {
     return (
       <Grade
@@ -79,6 +97,8 @@ export default function ListaDeNotas({
         resumo={resumo}
         total={notas.length}
         onAbrir={setSelecao}
+        naLixeira={excluidas.length}
+        abrirLixeira={() => setNaLixeira(true)}
       />
     );
   }
@@ -108,12 +128,17 @@ function Grade({
   resumo,
   total,
   onAbrir,
+  naLixeira,
+  abrirLixeira,
 }: {
   disciplinas: Materia[];
   opcoes: Opcao[];
   resumo: Map<number | 'sem', { total: number; ultima: string | null; fixadas: number }>;
   total: number;
   onAbrir: (s: Selecao) => void;
+  /** quantas anotações estão na lixeira */
+  naLixeira: number;
+  abrirLixeira: () => void;
 }) {
   const soltas = resumo.get('sem');
   const [criando, setCriando] = useState(false);
@@ -126,6 +151,15 @@ function Grade({
             ? `${total} ${total === 1 ? 'anotação' : 'anotações'} no caderno. Clique numa matéria para ver as suas.`
             : 'Escolha uma matéria para começar a anotar.'}
         </p>
+        {naLixeira > 0 && (
+          <button
+            type="button"
+            onClick={abrirLixeira}
+            className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-slate-600 ring-1 ring-slate-300 transition hover:bg-slate-50 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-600"
+          >
+            <Trash2 size={16} /> Lixeira ({naLixeira})
+          </button>
+        )}
         {!criando && (
           <button
             type="button"
@@ -212,6 +246,168 @@ function Grade({
           </button>
         )}
       </div>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* lixeira                                                             */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Anotações excluídas. Elas saem da matéria mas continuam no banco com
+ * `deleted_at` preenchido, até serem restauradas ou apagadas de vez.
+ */
+function Lixeira({ notas, voltar }: { notas: NotaComContexto[]; voltar: () => void }) {
+  const { supabase } = useSessao();
+  const router = useRouter();
+  const [sumiram, setSumiram] = useState<Set<string>>(new Set());
+  const [confirmando, setConfirmando] = useState<string | null>(null);
+
+  const lista = notas.filter((n) => !sumiram.has(n.id));
+
+  function esquecer(id: string) {
+    setSumiram((atual) => new Set(atual).add(id));
+  }
+
+  /** devolve a anotação para a matéria de onde veio */
+  function restaurar(nota: NotaComContexto) {
+    esquecer(nota.id);
+    void (async () => {
+      await supabase.from('notes').update({ deleted_at: null }).eq('id', nota.id);
+      router.refresh();
+    })();
+  }
+
+  /** apaga de vez, junto com as imagens e os PDFs no bucket */
+  function apagarDeVez(nota: NotaComContexto) {
+    setConfirmando(null);
+    esquecer(nota.id);
+    void (async () => {
+      const arquivos = [
+        ...(nota.images ?? []),
+        ...(nota.attachments ?? []).map((a) => a.path),
+        ...caminhosNoHtml(nota.body_html ?? ''),
+      ];
+      if (arquivos.length) await supabase.storage.from(BUCKET).remove(arquivos);
+      await supabase.from('notes').delete().eq('id', nota.id);
+      router.refresh();
+    })();
+  }
+
+  return (
+    <div className="space-y-4">
+      <div className="flex flex-wrap items-center gap-3">
+        <button
+          type="button"
+          onClick={voltar}
+          className="inline-flex items-center gap-1.5 rounded-xl px-2.5 py-1.5 text-sm font-medium text-slate-600 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+        >
+          <ArrowLeft size={16} /> Matérias
+        </button>
+
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-slate-500 text-white">
+          <Trash2 size={19} />
+        </span>
+
+        <div className="min-w-0">
+          <h2 className="text-lg leading-tight font-bold tracking-wide text-slate-900 uppercase dark:text-slate-100">
+            Lixeira
+          </h2>
+          <p className="text-xs text-slate-500 dark:text-slate-400">
+            {lista.length} {lista.length === 1 ? 'anotação excluída' : 'anotações excluídas'}
+          </p>
+        </div>
+      </div>
+
+      {!lista.length ? (
+        <Card>
+          <Empty>A lixeira está vazia.</Empty>
+        </Card>
+      ) : (
+        <div className="grid items-start gap-3 sm:grid-cols-2 xl:grid-cols-3">
+          {lista.map((n) => {
+            const info = TAGS[n.tag];
+            const Icone = info.icone;
+
+            return (
+              <article
+                key={n.id}
+                className="relative overflow-hidden rounded-2xl bg-white p-4 pl-5 opacity-90 ring-1 ring-slate-200 dark:bg-slate-900/80 dark:ring-slate-700/70"
+              >
+                <span
+                  aria-hidden
+                  className={`absolute inset-y-3 left-0 w-1 rounded-r-full ${info.barra} opacity-60`}
+                />
+
+                <div className="flex flex-wrap items-center gap-2">
+                  <span
+                    className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold ${info.solido} opacity-80`}
+                  >
+                    <Icone size={12} /> {info.label}
+                  </span>
+                  <span className="text-xs text-slate-400">
+                    {n.deleted_at
+                      ? `excluída em ${new Date(n.deleted_at).toLocaleDateString('pt-BR')}`
+                      : ''}
+                  </span>
+                </div>
+
+                <h3 className="mt-2.5 leading-snug font-semibold text-slate-700 line-through dark:text-slate-300">
+                  {n.title || 'Sem título'}
+                </h3>
+
+                <p className="mt-1 flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">
+                  <Folder size={13} className="shrink-0 text-slate-400" />
+                  <span className="truncate">{n.disciplinaNome ?? 'Sem matéria'}</span>
+                </p>
+
+                {confirmando === n.id ? (
+                  <div className="mt-3 rounded-xl bg-red-50 px-3 py-2.5 text-xs text-red-800 dark:bg-red-950/40 dark:text-red-300">
+                    <p>
+                      Apagar de vez? As imagens e os PDFs desta anotação saem do servidor junto, e
+                      não há como desfazer.
+                    </p>
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      <button
+                        type="button"
+                        onClick={() => setConfirmando(null)}
+                        className="rounded-lg px-2.5 py-1 font-medium text-slate-600 transition hover:bg-white dark:text-slate-300 dark:hover:bg-slate-800"
+                      >
+                        Cancelar
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => apagarDeVez(n)}
+                        className="inline-flex items-center gap-1.5 rounded-lg bg-red-600 px-3 py-1 font-semibold text-white transition hover:bg-red-700"
+                      >
+                        <Trash2 size={12} /> Apagar de vez
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    <button
+                      type="button"
+                      onClick={() => restaurar(n)}
+                      className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-white px-3 py-2 text-sm font-semibold text-brand-700 ring-1 ring-slate-300 transition hover:bg-slate-50 dark:bg-slate-800 dark:text-brand-200 dark:ring-slate-600"
+                    >
+                      <RotateCcw size={14} /> Restaurar
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setConfirmando(n.id)}
+                      className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-red-600 px-3 py-2 text-sm font-semibold text-white transition hover:bg-red-700"
+                    >
+                      <Trash2 size={14} /> Excluir de vez
+                    </button>
+                  </div>
+                )}
+              </article>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
@@ -767,11 +963,14 @@ function Cartao({
   /** a pegada do arrasto está sendo segurada */
   const [pegou, setPegou] = useState(false);
 
-  /** o card sai da tela na hora; o banco é avisado em seguida */
+  /** o card sai da tela na hora e a anotação vai para a lixeira */
   function excluir() {
     setConfirmando(false);
     aoExcluir();
-    void supabase.from('notes').delete().eq('id', nota.id);
+    void supabase
+      .from('notes')
+      .update({ deleted_at: new Date().toISOString() })
+      .eq('id', nota.id);
   }
 
   if (editando) {
@@ -907,7 +1106,7 @@ function Cartao({
 
       {confirmando && (
         <div className="mt-2 flex flex-wrap items-center gap-2 rounded-xl bg-red-50 px-3 py-2 text-xs text-red-800 dark:bg-red-950/40 dark:text-red-300">
-          <span className="min-w-0 flex-1">Excluir esta anotação? Não dá para desfazer.</span>
+          <span className="min-w-0 flex-1">Mandar esta anotação para a lixeira?</span>
           <button
             type="button"
             onClick={() => setConfirmando(false)}
