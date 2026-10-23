@@ -1,9 +1,18 @@
 import Link from 'next/link';
-import { BookOpen, Clock, ListChecks, Scale, SignalHigh, Target } from 'lucide-react';
+import {
+  BookOpen,
+  Clock,
+  ExternalLink,
+  ListChecks,
+  Scale,
+  SignalHigh,
+  Target,
+} from 'lucide-react';
 import { createClient, getUser } from '@/lib/supabase/server';
 import { Card } from '@/components/ui';
 import { PRIORITY_CLASS, PRIORITY_LABEL } from '@/lib/types';
 import { visualDe } from '@/lib/disciplinas-visual';
+import { linkQConcursos } from '@/lib/qconcursos';
 
 export const metadata = { title: 'Matérias — Estudo PM SC 2026' };
 export const dynamic = 'force-dynamic';
@@ -96,6 +105,7 @@ export default async function MateriasPage() {
           const visual = visualDe(d.slug);
           const Icone = visual.icone;
           const questoes = qCount.get(d.id) ?? 0;
+          const qc = linkQConcursos(d.slug);
 
           return (
             <section
@@ -111,7 +121,7 @@ export default async function MateriasPage() {
 
                 <div className="min-w-0 flex-1">
                   <p className="text-xs font-semibold text-slate-400">
-                    {d.question_count ? `º em peso · ` : ''}Capítulo {d.chapter}
+                    {d.question_count ? `${i + 1}º em peso · ` : ''}Capítulo {d.chapter}
                   </p>
                   <h2 className="text-lg leading-snug font-bold text-slate-900 dark:text-slate-100">
                     <Link href={`/materias/${d.slug}`} className="hover:underline">
@@ -182,6 +192,21 @@ export default async function MateriasPage() {
                   >
                     <ListChecks size={16} /> {questoes} questões
                   </Link>
+                )}
+                {qc && (
+                  <a
+                    href={qc.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={
+                      qc.observacao
+                        ? `Questões da AOCP no QConcursos — ${qc.observacao}`
+                        : 'Questões desta matéria aplicadas pela AOCP, no QConcursos'
+                    }
+                    className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-700"
+                  >
+                    <ExternalLink size={16} /> Simulado AOCP
+                  </a>
                 )}
               </div>
             </section>
