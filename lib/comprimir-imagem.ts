@@ -10,11 +10,11 @@
  */
 
 /** maior lado da imagem depois de redimensionar */
-const LADO_MAXIMO = 1600;
-/** qualidade do WebP; 0.82 é o ponto em que texto de print continua legível */
-const QUALIDADE = 0.82;
+const LADO_MAXIMO = 1280;
+/** qualidade do WebP; 0.72 ainda deixa texto de print legível e pesa bem menos */
+const QUALIDADE = 0.72;
 /** abaixo disso não vale a pena recomprimir */
-const PISO = 150 * 1024;
+const PISO = 60 * 1024;
 
 export type Comprimida = { arquivo: File; antes: number; depois: number };
 
