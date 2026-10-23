@@ -60,12 +60,36 @@ export default function AnexosDaNota({
             : error.message,
         );
       } else {
-        novos.push({ path: caminho, name: arquivo.name, size: arquivo.size });
+        // o servidor reescreve o arquivo no lugar, bem menor; se falhar, o
+        // anexo continua valendo do jeito que subiu
+        const tamanho = await comprimirNoServidor(caminho, arquivo.size);
+        novos.push({ path: caminho, name: arquivo.name, size: tamanho });
       }
       setEnviando((n) => n - 1);
     }
 
     if (novos.length) onChange([...anexos, ...novos]);
+  }
+
+  /** Manda o servidor comprimir o PDF e devolve o tamanho que ficou. */
+  async function comprimirNoServidor(caminho: string, tamanhoOriginal: number) {
+    try {
+      const { data } = await supabase.auth.getSession();
+      const token = data.session?.access_token;
+      if (!token) return tamanhoOriginal;
+
+      const r = await fetch('/api/comprimir-pdf', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+        body: JSON.stringify({ caminho }),
+      });
+      if (!r.ok) return tamanhoOriginal;
+
+      const { depois } = (await r.json()) as { depois?: number };
+      return typeof depois === 'number' && depois > 0 ? depois : tamanhoOriginal;
+    } catch {
+      return tamanhoOriginal;
+    }
   }
 
   function remover(caminho: string) {

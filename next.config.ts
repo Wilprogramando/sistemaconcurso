@@ -1,6 +1,9 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
+  // o mupdf carrega WebAssembly: tem de ficar fora do empacotamento do servidor
+  serverExternalPackages: ['mupdf'],
+
   experimental: {
     serverActions: { bodySizeLimit: '2mb' },
 
