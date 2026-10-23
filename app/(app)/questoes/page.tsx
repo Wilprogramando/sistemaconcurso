@@ -4,7 +4,7 @@ import { createClient, getUserId } from '@/lib/supabase/server';
 import QuestionRunner from '@/components/question-runner';
 import { Badge, Card } from '@/components/ui';
 import { PRIORITY_CLASS, PRIORITY_LABEL, type Question } from '@/lib/types';
-import { COLUNAS, comTextosDeApoio, embaralhar } from '@/lib/questions';
+import { COLUNAS, comTextosDeApoio, embaralhar, limparBusca } from '@/lib/questions';
 
 export const metadata = { title: 'Questões — Estudo PM SC 2026' };
 export const dynamic = 'force-dynamic';
@@ -219,18 +219,6 @@ export default async function QuestoesPage({
 
 /** quantas questões a busca traz de uma vez */
 const MAX_BUSCA = 50;
-
-/**
- * Deixa só o que é seguro dentro do filtro `ilike`: curingas (% e _), aspas,
- * barra e os separadores do `or` viram espaço.
- */
-function limparBusca(q?: string) {
-  return (q ?? '')
-    .replace(/[%_"\,()*]/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim()
-    .slice(0, 120);
-}
 
 function FormBusca({ valor = '' }: { valor?: string }) {
   return (

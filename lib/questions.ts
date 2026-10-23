@@ -30,3 +30,15 @@ export function embaralhar<T>(lista: T[]): T[] {
   }
   return a;
 }
+
+/**
+ * Deixa só o que é seguro dentro do filtro `ilike`: curingas (% e _), aspas,
+ * barra e os separadores do `or` viram espaço.
+ */
+export function limparBusca(q?: string | null) {
+  return (q ?? '')
+    .replace(/[%_"\,()*]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, 120);
+}
