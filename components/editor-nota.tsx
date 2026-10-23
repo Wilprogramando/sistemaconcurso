@@ -8,6 +8,7 @@ import ImagensDaNota from '@/components/imagens-nota';
 import AnexosDaNota from '@/components/anexos-nota';
 import EditorRico from '@/components/editor-rico';
 import { BUCKET, useUrlsAssinadas } from '@/components/urls-assinadas';
+import { comprimirImagem } from '@/lib/comprimir-imagem';
 import {
   aplicarUrls,
   caminhosNoHtml,
@@ -23,7 +24,7 @@ export type Opcao = { id: number; nome: string };
 
 const extensaoDe = (tipo: string) =>
   ({ 'image/png': 'png', 'image/jpeg': 'jpg', 'image/webp': 'webp', 'image/gif': 'gif' })[tipo] ??
-  'png';
+  'webp';
 
 /**
  * Formulário único para criar e editar anotação. Quando `nota` vem preenchida
@@ -71,10 +72,13 @@ export default function EditorNota({
   const vazia =
     !titulo.trim() && htmlVazio(corpo) && imagens.length === 0 && anexos.length === 0;
 
-  /** sobe a imagem e devolve a tag pronta para entrar no texto */
-  async function inserirImagens(arquivos: File[]) {
+  /** comprime, sobe a imagem e devolve a tag pronta para entrar no texto */
+  async function inserirImagens(originais: File[]) {
     const htmls: string[] = [];
-    for (const arquivo of arquivos) {
+    for (const original of originais) {
+      // redimensiona e reescreve em WebP antes de subir: print de apostila
+      // sai de megabytes para algumas centenas de KB
+      const { arquivo } = await comprimirImagem(original);
       const caminho = `${userId}/${crypto.randomUUID()}.${extensaoDe(arquivo.type)}`;
       const { error } = await supabase.storage
         .from(BUCKET)

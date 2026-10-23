@@ -4,13 +4,14 @@ import { useCallback, useRef, useState } from 'react';
 import { ImagePlus, Loader2, Maximize2, Trash2, X } from 'lucide-react';
 import { useSessao } from '@/components/sessao';
 import { BUCKET, useUrlsAssinadas } from '@/components/urls-assinadas';
+import { comprimirImagem } from '@/lib/comprimir-imagem';
 
 const TAMANHO_MAXIMO = 8 * 1024 * 1024;
 const TIPOS = ['image/png', 'image/jpeg', 'image/webp', 'image/gif'];
 
 const extensaoDe = (tipo: string) =>
   ({ 'image/png': 'png', 'image/jpeg': 'jpg', 'image/webp': 'webp', 'image/gif': 'gif' })[tipo] ??
-  'png';
+  'webp';
 
 /**
  * Galeria de imagens soltas da anotação: print da apostila, foto do caderno.
@@ -44,15 +45,19 @@ export default function ImagensDaNota({
       if (!validos.length) return;
 
       setErro(null);
-      if (validos.some((f) => f.size > TAMANHO_MAXIMO)) {
-        setErro('Cada imagem pode ter no máximo 8 MB.');
-        return;
-      }
-
       setEnviando((n) => n + validos.length);
       const novos: string[] = [];
 
-      for (const arquivo of validos) {
+      for (const original of validos) {
+        // redimensiona e reescreve em WebP: só o arquivo leve vai para o bucket
+        const { arquivo } = await comprimirImagem(original);
+
+        if (arquivo.size > TAMANHO_MAXIMO) {
+          setErro('Esta imagem passa de 8 MB mesmo depois de comprimida.');
+          setEnviando((n) => n - 1);
+          continue;
+        }
+
         const caminho = `${userId}/${crypto.randomUUID()}.${extensaoDe(arquivo.type)}`;
         const { error } = await supabase.storage
           .from(BUCKET)
