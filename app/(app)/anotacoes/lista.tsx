@@ -10,15 +10,18 @@ import {
   Eye,
   EyeOff,
   FileText,
+  Folder,
   GripVertical,
   ImageIcon,
   Link2,
   NotebookPen,
+  Pencil,
   Pin,
   Plus,
   Search,
   Trash2,
 } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import EditorNota, { type Opcao } from '@/components/editor-nota';
 import { useSessao } from '@/components/sessao';
 import { Card, Empty } from '@/components/ui';
@@ -401,35 +404,35 @@ function Detalhe({
         </button>
       )}
 
-      {/* ---------------- filtros ---------------- */}
+      {/* ---------------- filtros: chips à esquerda, busca à direita ---------------- */}
       {notas.length > 0 && (
-        <div className="space-y-2.5">
-          <div className="relative">
-            <Search
-              size={16}
-              className="pointer-events-none absolute top-1/2 left-3 -translate-y-1/2 text-slate-400"
-            />
-            <input
-              value={busca}
-              onChange={(e) => setBusca(e.target.value)}
-              placeholder="Buscar nas anotações"
-              className="w-full rounded-xl border border-slate-300 bg-white py-2.5 pr-3 pl-9 text-sm outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-100 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:focus:ring-brand-900"
-            />
-          </div>
-
-          <div className="flex flex-wrap gap-1.5">
+        <div className="flex flex-wrap items-center gap-2">
+          <div className="flex min-w-0 flex-wrap items-center gap-2">
             <Chip ativo={filtroTag === 'todas'} onClick={() => setFiltroTag('todas')}>
-              Todas ({notas.length})
+              <NotebookPen size={13} /> Todas ({notas.length})
             </Chip>
             {ORDEM_TAGS.filter((t) => contagem[t]).map((t) => {
               const info = TAGS[t];
               const IconeTag = info.icone;
               return (
                 <Chip key={t} ativo={filtroTag === t} onClick={() => setFiltroTag(t)}>
-                  <IconeTag size={12} /> {info.label} ({contagem[t]})
+                  <IconeTag size={13} /> {info.label} ({contagem[t]})
                 </Chip>
               );
             })}
+          </div>
+
+          <div className="relative ml-auto w-full sm:w-72">
+            <Search
+              size={16}
+              className="pointer-events-none absolute top-1/2 left-3.5 -translate-y-1/2 text-slate-400"
+            />
+            <input
+              value={busca}
+              onChange={(e) => setBusca(e.target.value)}
+              placeholder="Buscar anotações…"
+              className="w-full rounded-full border border-slate-300 bg-white py-2.5 pr-4 pl-10 text-sm outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-100 dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:border-emerald-500 dark:focus:ring-emerald-900/50"
+            />
           </div>
         </div>
       )}
@@ -454,9 +457,9 @@ function Detalhe({
         <div className="space-y-4">
           {fixadas.length > 0 && (
             <section className="space-y-2">
-              <h3 className="flex items-center gap-1.5 text-xs font-bold tracking-wider text-slate-500 uppercase dark:text-slate-400">
-                <Pin size={12} /> Fixadas
-              </h3>
+              <Secao icone={Pin} destaque>
+                Fixadas
+              </Secao>
               <div className="grid items-start gap-3 sm:grid-cols-2 xl:grid-cols-3">
                 {fixadas.map((n, i) => (
                   <Cartao
@@ -491,11 +494,7 @@ function Detalhe({
 
           {demais.length > 0 && (
             <section className="space-y-2">
-              {fixadas.length > 0 && (
-                <h3 className="text-xs font-bold tracking-wider text-slate-500 uppercase dark:text-slate-400">
-                  Demais anotações
-                </h3>
-              )}
+              {fixadas.length > 0 && <Secao icone={NotebookPen}>Demais anotações</Secao>}
               <div className="grid items-start gap-3 sm:grid-cols-2 xl:grid-cols-3">
                 {demais.map((n, i) => (
                   <Cartao
@@ -547,14 +546,49 @@ function Chip({
       type="button"
       onClick={onClick}
       aria-pressed={ativo}
-      className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition ${
+      className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition ${
         ativo
-          ? 'bg-brand-600 text-white'
-          : 'bg-white text-slate-600 ring-1 ring-slate-200 hover:bg-slate-50 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700'
+          ? 'bg-brand-600 text-white shadow-sm dark:bg-emerald-600 dark:text-white dark:shadow-[0_0_18px_-4px_#10b981]'
+          : 'bg-white text-slate-600 ring-1 ring-slate-200 hover:bg-slate-50 dark:bg-slate-900/70 dark:text-slate-300 dark:ring-slate-700 dark:hover:bg-slate-800'
       }`}
     >
       {children}
     </button>
+  );
+}
+
+/** Cabeçalho de seção: ícone, nome e um fio que atravessa a largura. */
+function Secao({
+  icone: Icone,
+  destaque = false,
+  children,
+}: {
+  icone: LucideIcon;
+  /** a seção das fixadas vem com a cor de destaque */
+  destaque?: boolean;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="flex items-center gap-2.5">
+      <Icone
+        size={15}
+        className={
+          destaque
+            ? 'shrink-0 text-brand-600 dark:text-emerald-400'
+            : 'shrink-0 text-slate-400 dark:text-emerald-500/70'
+        }
+      />
+      <h3
+        className={`shrink-0 text-xs font-bold tracking-[0.12em] uppercase ${
+          destaque
+            ? 'text-brand-700 dark:text-emerald-300'
+            : 'text-slate-500 dark:text-slate-300'
+        }`}
+      >
+        {children}
+      </h3>
+      <span className="h-px flex-1 bg-slate-200 dark:bg-slate-700/70" />
+    </div>
   );
 }
 
@@ -654,14 +688,29 @@ function Cartao({
         setPegou(false);
         encerrarArrasto();
       }}
-      className={`rounded-2xl bg-white p-4 ring-1 transition dark:bg-slate-900 ${
+      className={`relative overflow-hidden rounded-2xl p-4 pl-5 ring-1 transition ${
+        nota.pinned
+          ? 'bg-brand-50/70 ring-brand-200 dark:bg-gradient-to-br dark:from-emerald-950/70 dark:via-slate-900 dark:to-slate-900 dark:ring-emerald-800/60'
+          : 'bg-white ring-slate-200 dark:bg-slate-900/80 dark:ring-slate-700/70'
+      } ${
         arrastando
           ? 'opacity-40 ring-brand-400'
           : alvo
-            ? 'ring-2 ring-brand-500'
-            : 'ring-slate-200 hover:ring-brand-300 dark:ring-slate-700'
+            ? 'ring-2 ring-brand-500 dark:ring-emerald-400'
+            : 'hover:ring-brand-300 hover:shadow-sm dark:hover:ring-slate-600'
       }`}
     >
+      {/* faixa de cor da etiqueta na lateral esquerda */}
+      <span aria-hidden className={`absolute inset-y-3 left-0 w-1 rounded-r-full ${info.barra}`} />
+
+      {nota.pinned && (
+        <Pin
+          size={13}
+          aria-label="Fixada"
+          className="absolute top-3 right-3 text-brand-500 dark:text-emerald-400"
+        />
+      )}
+
       <div className="flex flex-wrap items-center gap-2">
         {podeArrastar && (
           <span
@@ -671,29 +720,18 @@ function Cartao({
             onMouseUp={() => setPegou(false)}
             onTouchStart={() => setPegou(true)}
             onTouchEnd={() => setPegou(false)}
-            className="-ml-1 cursor-grab text-slate-300 transition hover:text-slate-500 active:cursor-grabbing dark:text-slate-600 dark:hover:text-slate-400"
+            className="-ml-1.5 cursor-grab text-slate-300 transition hover:text-slate-500 active:cursor-grabbing dark:text-slate-600 dark:hover:text-slate-400"
           >
             <GripVertical size={15} />
           </span>
         )}
         <span
-          className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-semibold ring-1 ring-inset ${info.classe}`}
+          className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold ${info.solido}`}
         >
           <Icone size={12} /> {info.label}
         </span>
 
-        {nota.topicoRef && nota.disciplinaSlug && (
-          <Link
-            href={`/materias/${nota.disciplinaSlug}/${nota.topicoRef}`}
-            className="truncate text-xs text-brand-600 hover:underline dark:text-brand-300"
-          >
-            {nota.topicoRef} {nota.topicoTitulo}
-          </Link>
-        )}
-
-        {nota.pinned && <Pin size={13} className="text-brand-500" />}
-
-        <div className="ml-auto flex items-center gap-1">
+        <div className="ml-auto flex items-center gap-0.5">
           <button
             type="button"
             onClick={subir}
@@ -722,8 +760,8 @@ function Cartao({
             aria-label={aberta ? 'Esconder a anotação' : 'Ver a anotação'}
             className={`rounded-lg p-1.5 transition ${
               aberta
-                ? 'bg-brand-600 text-white'
-                : 'text-slate-500 hover:bg-brand-50 hover:text-brand-700 dark:text-slate-400 dark:hover:bg-slate-800'
+                ? 'bg-brand-600 text-white dark:bg-emerald-600'
+                : 'text-slate-400 hover:bg-brand-50 hover:text-brand-700 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-emerald-300'
             }`}
           >
             {aberta ? <EyeOff size={15} /> : <Eye size={15} />}
@@ -731,9 +769,11 @@ function Cartao({
           <button
             type="button"
             onClick={abrir}
-            className="rounded-lg px-2.5 py-1 text-xs font-medium text-brand-600 transition hover:bg-brand-50 dark:text-brand-300 dark:hover:bg-slate-800"
+            title="Editar anotação"
+            aria-label="Editar anotação"
+            className="rounded-lg p-1.5 text-slate-400 transition hover:bg-brand-50 hover:text-brand-700 dark:hover:bg-slate-800 dark:hover:text-emerald-300"
           >
-            Editar
+            <Pencil size={14} />
           </button>
           <button
             type="button"
@@ -772,9 +812,9 @@ function Cartao({
         type="button"
         onClick={alternar}
         aria-expanded={aberta}
-        className="mt-2 flex w-full items-center gap-2 text-left"
+        className="mt-2.5 flex w-full items-start gap-2 text-left"
       >
-        <h3 className="min-w-0 flex-1 font-semibold text-slate-900 dark:text-slate-100">
+        <h3 className="min-w-0 flex-1 leading-snug font-semibold text-slate-900 dark:text-slate-100">
           {nota.title || 'Sem título'}
         </h3>
         {!aberta && <Marcas nota={nota} />}
@@ -796,7 +836,7 @@ function Cartao({
             </div>
           )}
 
-          <p className="mt-2 text-xs text-slate-400">
+          <p className="mt-2 text-xs text-slate-400 dark:text-slate-500">
             {new Date(nota.updated_at).toLocaleString('pt-BR', {
               day: '2-digit',
               month: '2-digit',
@@ -807,6 +847,21 @@ function Cartao({
           </p>
         </>
       )}
+
+      {/* rodapé: de onde a anotação veio */}
+      <div className="mt-3 flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">
+        <Folder size={13} className="shrink-0 text-slate-400 dark:text-slate-500" />
+        {nota.topicoRef && nota.disciplinaSlug ? (
+          <Link
+            href={`/materias/${nota.disciplinaSlug}/${nota.topicoRef}`}
+            className="truncate hover:underline"
+          >
+            {nota.disciplinaNome ?? 'Sem matéria'} · {nota.topicoRef} {nota.topicoTitulo}
+          </Link>
+        ) : (
+          <span className="truncate">{nota.disciplinaNome ?? 'Sem matéria'}</span>
+        )}
+      </div>
     </article>
   );
 }

@@ -41,8 +41,10 @@ export default async function AnotacoesPage() {
   });
 
   return (
-    <div className="space-y-5">
-      <header className="relative overflow-hidden rounded-2xl bg-brand-900 px-5 py-6 text-white sm:px-7 dark:bg-slate-900">
+    // o caderno tem fundo próprio: azulado de dia, quase preto esverdeado à
+    // noite, como no painel desenhado para esta tela
+    <div className="-mx-2 space-y-5 rounded-3xl bg-[radial-gradient(900px_500px_at_15%_-10%,#e7eefc_0%,transparent_60%)] px-2 py-2 sm:-mx-4 sm:px-4 dark:bg-[radial-gradient(1100px_600px_at_15%_-10%,#06231b_0%,transparent_62%)]">
+      <header className="relative overflow-hidden rounded-2xl bg-brand-900 px-5 py-6 text-white sm:px-7 dark:bg-gradient-to-br dark:from-emerald-950 dark:via-slate-900 dark:to-slate-950 dark:ring-1 dark:ring-emerald-900/40">
         <div
           aria-hidden
           className="pointer-events-none absolute -top-8 -right-10 h-48 w-64 rotate-12 opacity-[0.07]"
@@ -56,7 +58,7 @@ export default async function AnotacoesPage() {
           </span>
           <div className="min-w-0">
             <h1 className="text-2xl leading-tight font-bold sm:text-3xl">Anotações</h1>
-            <p className="mt-1 max-w-2xl text-sm text-brand-100">
+            <p className="mt-1 max-w-2xl text-sm text-brand-100 dark:text-emerald-100/80">
               Seu caderno livre: macetes, números que não grudam, dúvidas para tirar depois. Cada
               matéria tem o seu caderno — clique no card para abrir.
             </p>
