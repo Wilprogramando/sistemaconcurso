@@ -565,7 +565,9 @@ export default function EditorRico({
           guardarIntervalo();
           void enviarImagens(arquivos);
         }}
-        className="nota-rica min-h-40 w-full px-3 py-2.5 text-sm leading-7 outline-none dark:text-slate-100"
+        // 18 linhas de 1.75rem: passou disso, rola por dentro em vez de
+        // esticar a página
+        className="nota-rica max-h-[31.5rem] min-h-40 w-full overflow-y-auto overscroll-contain px-3 py-2.5 text-sm leading-7 outline-none dark:text-slate-100"
       />
 
       {onInserirImagem && (

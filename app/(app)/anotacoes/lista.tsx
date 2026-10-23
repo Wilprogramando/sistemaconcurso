@@ -806,7 +806,7 @@ function JanelaNota({
           </div>
         </header>
 
-        <div className="max-h-[75vh] overflow-y-auto px-6 py-4">
+        <div className="rolagem-nota max-h-[min(75vh,31.5rem)] overflow-y-auto overscroll-contain px-6 py-4">
           <h2 className="text-lg leading-snug font-bold tracking-wide text-slate-900 uppercase dark:text-slate-100">
             {nota.title || 'Sem título'}
           </h2>

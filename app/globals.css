@@ -213,3 +213,30 @@ html.dark .trecho-marcado {
   background: #1e3a8a;
   box-shadow: 0 0 0 1px #3b82f6;
 }
+
+/* barra de rolagem fina dentro da anotação, para não roubar espaço do texto */
+.nota-rica,
+.rolagem-nota {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+html.dark .nota-rica,
+html.dark .rolagem-nota {
+  scrollbar-color: #475569 transparent;
+}
+.nota-rica::-webkit-scrollbar,
+.rolagem-nota::-webkit-scrollbar {
+  width: 10px;
+}
+.nota-rica::-webkit-scrollbar-thumb,
+.rolagem-nota::-webkit-scrollbar-thumb {
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background: #cbd5e1;
+  background-clip: content-box;
+}
+html.dark .nota-rica::-webkit-scrollbar-thumb,
+html.dark .rolagem-nota::-webkit-scrollbar-thumb {
+  background: #475569;
+  background-clip: content-box;
+}

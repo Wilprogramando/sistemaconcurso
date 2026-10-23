@@ -206,7 +206,10 @@ export default function NotasDoTopico({
 
                 {expandida && (
                   <>
-                    <CorpoNota html={n.body_html} texto={n.body} className="mt-0.5" />
+                    {/* 18 linhas; o resto rola dentro da própria anotação */}
+                    <div className="rolagem-nota max-h-[31.5rem] overflow-y-auto overscroll-contain">
+                      <CorpoNota html={n.body_html} texto={n.body} className="mt-0.5" />
+                    </div>
                     {n.images?.length > 0 && (
                       <div className="mt-2">
                         <ImagensDaNota caminhos={n.images} somenteLeitura />
