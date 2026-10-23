@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import {
   Bold,
+  CaseUpper,
   Eraser,
   Highlighter,
   ImagePlus,
@@ -110,6 +111,38 @@ export default function EditorRico({
     avisar();
   }
 
+  /**
+   * CAIXA ALTA no trecho selecionado, mantendo negrito, cor e links. Se o
+   * trecho já estiver todo em maiúsculas, volta para minúsculas — o mesmo
+   * botão faz a ida e a volta.
+   */
+  function alternarCaixa() {
+    restaurarIntervalo();
+    const sel = window.getSelection();
+    if (!sel || sel.isCollapsed || !sel.rangeCount) return;
+
+    const intervaloAtual = sel.getRangeAt(0);
+    const texto = sel.toString();
+    if (!texto.trim()) return;
+
+    const temMinuscula = texto !== texto.toUpperCase();
+    const transformar = (t: string) => (temMinuscula ? t.toUpperCase() : t.toLowerCase());
+
+    // mexe só nos nós de texto: as tags de formatação ficam onde estão
+    const fragmento = intervaloAtual.cloneContents();
+    const caminhante = document.createTreeWalker(fragmento, NodeFilter.SHOW_TEXT);
+    let no = caminhante.nextNode();
+    while (no) {
+      no.nodeValue = transformar(no.nodeValue ?? '');
+      no = caminhante.nextNode();
+    }
+
+    const caixa = document.createElement('div');
+    caixa.append(fragmento);
+    document.execCommand('insertHTML', false, sanitizarHtml(caixa.innerHTML));
+    avisar();
+  }
+
   function aplicarLink() {
     const bruto = urlLink.trim();
     if (!bruto) return;
@@ -213,6 +246,13 @@ export default function EditorRico({
           guardar={guardarIntervalo}
         >
           <Strikethrough size={15} />
+        </Ferramenta>
+        <Ferramenta
+          titulo="CAIXA ALTA — selecione o texto; clicando de novo, volta ao normal"
+          aoClicar={alternarCaixa}
+          guardar={guardarIntervalo}
+        >
+          <CaseUpper size={17} />
         </Ferramenta>
 
         <Separador />

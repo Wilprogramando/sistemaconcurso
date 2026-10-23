@@ -254,7 +254,7 @@ export default async function Dashboard() {
                         href={`/materias/${d.slug}`}
                         className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 hover:underline"
                       >
-                        {d.name}
+                        <span className="tracking-wide uppercase">{d.name}</span>
                         <span
                           className={`rounded-full px-2 py-0.5 text-[0.65rem] font-semibold ring-1 ring-inset ${
                             PRIORITY_CLASS[d.priority as keyof typeof PRIORITY_CLASS]

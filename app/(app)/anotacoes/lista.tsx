@@ -162,7 +162,7 @@ function Grade({
                 >
                   <Icone size={21} />
                 </span>
-                <h2 className="min-w-0 flex-1 text-sm leading-snug font-bold text-slate-900 dark:text-slate-100">
+                <h2 className="min-w-0 flex-1 text-sm leading-snug font-bold tracking-wide text-slate-900 uppercase dark:text-slate-100">
                   {d.nome}
                 </h2>
                 {!!info?.fixadas && <Pin size={14} className="shrink-0 text-brand-500" />}
@@ -361,7 +361,7 @@ function Detalhe({
         </span>
 
         <div className="min-w-0">
-          <h2 className="text-lg leading-tight font-bold text-slate-900 dark:text-slate-100">
+          <h2 className="text-lg leading-tight font-bold tracking-wide text-slate-900 uppercase dark:text-slate-100">
             {titulo}
           </h2>
           <p className="text-xs text-slate-500 dark:text-slate-400">

@@ -58,7 +58,9 @@ export default async function VideosPage({
                 className="flex items-start justify-between gap-3 rounded-2xl bg-white p-4 ring-1 ring-slate-200 transition hover:ring-brand-400 dark:bg-slate-900 dark:ring-slate-700"
               >
                 <div className="min-w-0">
-                  <p className="font-semibold text-slate-900 dark:text-slate-100">{d.name}</p>
+                  <p className="font-semibold tracking-wide text-slate-900 uppercase dark:text-slate-100">
+                    {d.name}
+                  </p>
                   <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
                     {guia?.buscas.length ?? 0} temas de busca
                     {guia?.indicacoes.length ? ` · ${guia.indicacoes.length} indicações` : ''}

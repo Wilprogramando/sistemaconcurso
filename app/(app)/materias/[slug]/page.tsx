@@ -82,7 +82,7 @@ export default async function DisciplinaPage({ params }: { params: Promise<{ slu
         </Link>
 
         <div className="mt-3 flex flex-wrap items-center gap-3">
-          <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl dark:text-slate-100">
+          <h1 className="text-2xl font-bold tracking-wide text-slate-900 uppercase sm:text-3xl dark:text-slate-100">
             {d.name}
           </h1>
           <Badge className={PRIORITY_CLASS[d.priority as keyof typeof PRIORITY_CLASS]}>

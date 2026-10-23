@@ -90,7 +90,9 @@ export default async function QuestoesPage({
                 className="flex items-center justify-between gap-3 rounded-2xl bg-white px-4 py-3.5 ring-1 ring-slate-200 transition hover:ring-brand-400 dark:bg-slate-900 dark:ring-slate-700"
               >
                 <div className="min-w-0">
-                  <p className="font-medium text-slate-900 dark:text-slate-100">{d.name}</p>
+                  <p className="font-semibold tracking-wide text-slate-900 uppercase dark:text-slate-100">
+                    {d.name}
+                  </p>
                   <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
                     {porDisciplina.get(d.id)} questões · {d.question_count} na prova ({d.weight}%)
                   </p>
