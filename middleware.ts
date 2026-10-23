@@ -4,6 +4,13 @@ import { NextResponse, type NextRequest } from 'next/server';
 const PUBLIC = ['/login', '/auth'];
 
 export async function middleware(request: NextRequest) {
+  // O Next busca as telas vizinhas de antemão. Essas buscas não precisam de
+  // guarda — elas não navegam ninguém — e cada uma custava uma ida à rede
+  // para o Supabase, atrasando a requisição de verdade que vinha junto.
+  if (request.headers.get('next-router-prefetch') === '1') {
+    return NextResponse.next({ request });
+  }
+
   let response = NextResponse.next({ request });
 
   const supabase = createServerClient(
@@ -50,5 +57,9 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!_next/static|_next/image|favicon.ico|.*\.(?:svg|png|jpg|jpeg|gif|webp)$).*)'],
+  // arquivo estático não passa pela guarda: o PDF do edital e as fontes
+  // disparavam uma verificação de login cada um
+  matcher: [
+    '/((?!_next/static|_next/image|favicon.ico|.*\.(?:svg|png|jpg|jpeg|gif|webp|pdf|ico|woff2?)$).*)',
+  ],
 };

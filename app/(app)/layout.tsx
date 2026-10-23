@@ -11,6 +11,8 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   const user = await getUser();
   if (!user) redirect('/login');
 
+  // o nome enfeita o rodapé da barra lateral; se o perfil ainda não tem
+  // nome, o começo do e-mail serve
   const supabase = await createClient();
   const { data: profile } = await supabase
     .from('profiles')
