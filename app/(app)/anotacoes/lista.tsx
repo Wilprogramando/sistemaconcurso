@@ -7,6 +7,7 @@ import {
   AlertTriangle,
   ArrowLeft,
   ChevronDown,
+  ChevronRight,
   ChevronUp,
   Eye,
   FileText,
@@ -144,28 +145,43 @@ function Grade({
   const soltas = resumo.get('sem');
   const [criando, setCriando] = useState(false);
 
+  /** data curta da última anotação, ou o aviso de caderno vazio */
+  const ultima = (quando: string | null | undefined) =>
+    quando
+      ? `última em ${new Date(quando).toLocaleDateString('pt-BR', {
+          day: '2-digit',
+          month: '2-digit',
+          year: '2-digit',
+        })}`
+      : 'nada anotado ainda';
+
   return (
     <div className="space-y-4">
-      <div className="flex flex-wrap items-center gap-3">
-        <p className="min-w-0 flex-1 text-sm text-slate-500 dark:text-slate-400">
+      {/* ---------------- barra de ações ---------------- */}
+      <div className="flex flex-wrap items-center gap-2">
+        <p className="order-last w-full text-sm text-slate-500 sm:order-first sm:w-auto sm:min-w-0 sm:flex-1 dark:text-slate-400">
           {total
-            ? `${total} ${total === 1 ? 'anotação' : 'anotações'} no caderno. Clique numa matéria para ver as suas.`
+            ? `${total} ${total === 1 ? 'anotação' : 'anotações'} no caderno.`
             : 'Escolha uma matéria para começar a anotar.'}
         </p>
+
         {naLixeira > 0 && (
           <button
             type="button"
             onClick={abrirLixeira}
-            className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-slate-600 ring-1 ring-slate-300 transition hover:bg-slate-50 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-600"
+            title={`Lixeira — ${naLixeira} ${naLixeira === 1 ? 'anotação' : 'anotações'}`}
+            className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-white px-3.5 py-2.5 text-sm font-semibold text-slate-600 ring-1 ring-slate-300 transition hover:bg-slate-50 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-600"
           >
-            <Trash2 size={16} /> Lixeira ({naLixeira})
+            <Trash2 size={16} />
+            <span className="sr-only sm:not-sr-only">Lixeira</span> ({naLixeira})
           </button>
         )}
+
         {!criando && (
           <button
             type="button"
             onClick={() => setCriando(true)}
-            className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700"
+            className="inline-flex min-w-0 flex-1 items-center justify-center gap-2 rounded-xl bg-brand-600 px-4 py-2.5 text-sm font-semibold whitespace-nowrap text-white transition hover:bg-brand-700 sm:flex-none"
           >
             <Plus size={16} /> Nova anotação
           </button>
@@ -178,47 +194,55 @@ function Grade({
         </Card>
       )}
 
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      {/* ---------------- matérias ----------------
+          No celular cada matéria é uma linha: ícone, nome e o número à
+          direita. Nome comprido em caixa alta quebrava em três linhas no
+          formato de cartão. No computador o cartão volta. */}
+      <div className="grid gap-2 sm:grid-cols-2 sm:gap-3 lg:grid-cols-3">
         {disciplinas.map((d) => {
           const info = resumo.get(d.id);
           const visual = visualDe(d.slug);
           const Icone = visual.icone;
+          const quantas = info?.total ?? 0;
 
           return (
             <button
               key={d.id}
               type="button"
               onClick={() => onAbrir(d.id)}
-              className="flex h-full flex-col items-start rounded-2xl bg-white p-4 text-left ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:ring-brand-400 dark:bg-slate-900 dark:ring-slate-700"
+              className="flex w-full items-center gap-3 rounded-2xl bg-white p-3 text-left ring-1 ring-slate-200 transition hover:ring-brand-400 sm:h-full sm:flex-col sm:items-start sm:p-4 sm:hover:-translate-y-0.5 dark:bg-slate-900 dark:ring-slate-700"
             >
-              <div className="flex w-full items-start gap-3">
-                <span
-                  className={`grid h-11 w-11 shrink-0 place-items-center rounded-2xl ${visual.tile}`}
-                >
-                  <Icone size={21} />
-                </span>
-                <h2 className="min-w-0 flex-1 text-sm leading-snug font-bold tracking-wide text-slate-900 uppercase dark:text-slate-100">
-                  {d.nome}
-                </h2>
-                {!!info?.fixadas && <Pin size={14} className="shrink-0 text-brand-500" />}
-              </div>
+              <span
+                className={`grid h-10 w-10 shrink-0 place-items-center rounded-xl sm:h-11 sm:w-11 sm:rounded-2xl ${visual.tile}`}
+              >
+                <Icone size={20} />
+              </span>
 
-              <p className="mt-3 text-2xl font-bold text-slate-900 tabular-nums dark:text-slate-100">
-                {info?.total ?? 0}
-                <span className="ml-1.5 text-xs font-medium text-slate-500 dark:text-slate-400">
-                  {(info?.total ?? 0) === 1 ? 'anotação' : 'anotações'}
+              <span className="min-w-0 flex-1 sm:w-full sm:flex-none">
+                <span className="flex items-center gap-1.5">
+                  <h2 className="min-w-0 flex-1 text-sm leading-snug font-bold tracking-wide text-slate-900 uppercase sm:mt-3 sm:text-[0.8rem] dark:text-slate-100">
+                    {d.nome}
+                  </h2>
+                  {!!info?.fixadas && <Pin size={13} className="shrink-0 text-brand-500" />}
                 </span>
-              </p>
 
-              <p className="mt-0.5 text-xs text-slate-400">
-                {info?.ultima
-                  ? `Última em ${new Date(info.ultima).toLocaleDateString('pt-BR', {
-                      day: '2-digit',
-                      month: '2-digit',
-                      year: '2-digit',
-                    })}`
-                  : 'Nenhuma anotação ainda'}
-              </p>
+                {/* no computador o número ganha destaque embaixo do nome */}
+                <span className="mt-0.5 hidden text-2xl font-bold text-slate-900 tabular-nums sm:mt-2 sm:block dark:text-slate-100">
+                  {quantas}
+                  <span className="ml-1.5 text-xs font-medium text-slate-500 dark:text-slate-400">
+                    {quantas === 1 ? 'anotação' : 'anotações'}
+                  </span>
+                </span>
+
+                <span className="block text-xs text-slate-400 sm:mt-0.5">
+                  <span className="sm:hidden">
+                    {quantas} {quantas === 1 ? 'anotação' : 'anotações'} ·{' '}
+                  </span>
+                  {ultima(info?.ultima)}
+                </span>
+              </span>
+
+              <ChevronRight size={18} className="shrink-0 text-slate-300 sm:hidden" />
             </button>
           );
         })}
@@ -227,23 +251,31 @@ function Grade({
           <button
             type="button"
             onClick={() => onAbrir('sem')}
-            className="flex h-full flex-col items-start rounded-2xl bg-white p-4 text-left ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:ring-brand-400 dark:bg-slate-900 dark:ring-slate-700"
+            className="flex w-full items-center gap-3 rounded-2xl bg-white p-3 text-left ring-1 ring-slate-200 transition hover:ring-brand-400 sm:h-full sm:flex-col sm:items-start sm:p-4 sm:hover:-translate-y-0.5 dark:bg-slate-900 dark:ring-slate-700"
           >
-            <div className="flex w-full items-start gap-3">
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-slate-500 text-white">
-                <NotebookPen size={21} />
-              </span>
-              <h2 className="min-w-0 flex-1 text-sm leading-snug font-bold text-slate-900 dark:text-slate-100">
+            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-slate-500 text-white sm:h-11 sm:w-11 sm:rounded-2xl">
+              <NotebookPen size={20} />
+            </span>
+
+            <span className="min-w-0 flex-1 sm:w-full sm:flex-none">
+              <h2 className="text-sm leading-snug font-bold tracking-wide text-slate-900 uppercase sm:mt-3 sm:text-[0.8rem] dark:text-slate-100">
                 Sem matéria
               </h2>
-            </div>
-            <p className="mt-3 text-2xl font-bold text-slate-900 tabular-nums dark:text-slate-100">
-              {soltas.total}
-              <span className="ml-1.5 text-xs font-medium text-slate-500 dark:text-slate-400">
-                {soltas.total === 1 ? 'anotação' : 'anotações'}
+              <span className="mt-0.5 hidden text-2xl font-bold text-slate-900 tabular-nums sm:mt-2 sm:block dark:text-slate-100">
+                {soltas.total}
+                <span className="ml-1.5 text-xs font-medium text-slate-500 dark:text-slate-400">
+                  {soltas.total === 1 ? 'anotação' : 'anotações'}
+                </span>
               </span>
-            </p>
-            <p className="mt-0.5 text-xs text-slate-400">Anotações soltas, sem amarração</p>
+              <span className="block text-xs text-slate-400 sm:mt-0.5">
+                <span className="sm:hidden">
+                  {soltas.total} {soltas.total === 1 ? 'anotação' : 'anotações'} ·{' '}
+                </span>
+                soltas, sem amarração
+              </span>
+            </span>
+
+            <ChevronRight size={18} className="shrink-0 text-slate-300 sm:hidden" />
           </button>
         )}
       </div>
