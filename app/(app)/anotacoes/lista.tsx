@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import {
   AlertTriangle,
@@ -58,14 +58,33 @@ export default function ListaDeNotas({
   const [selecao, setSelecao] = useState<Selecao>(null);
   const [naLixeira, setNaLixeira] = useState(false);
 
+  /**
+   * O que mudou de lado nesta visita, antes de o servidor devolver a página
+   * nova: sem isso a anotação sumia do card mas a lixeira só mostrava a conta
+   * certa depois de recarregar.
+   */
+  const [idaParaLixeira, setIdaParaLixeira] = useState<Record<string, string>>({});
+  const [voltouDaLixeira, setVoltouDaLixeira] = useState<Set<string>>(new Set());
+  const [apagadasDeVez, setApagadasDeVez] = useState<Set<string>>(new Set());
+
+  const naLixeiraAgora = (n: NotaComContexto) =>
+    !voltouDaLixeira.has(n.id) && (!!n.deleted_at || !!idaParaLixeira[n.id]);
+
   // o que está na lixeira some das matérias e vive na própria tela
-  const notas = useMemo(() => todas.filter((n) => !n.deleted_at), [todas]);
+  const notas = useMemo(
+    () => todas.filter((n) => !naLixeiraAgora(n)),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [todas, idaParaLixeira, voltouDaLixeira],
+  );
+
   const excluidas = useMemo(
     () =>
       todas
-        .filter((n) => n.deleted_at)
+        .filter((n) => naLixeiraAgora(n) && !apagadasDeVez.has(n.id))
+        .map((n) => ({ ...n, deleted_at: n.deleted_at ?? idaParaLixeira[n.id] ?? null }))
         .sort((x, y) => (y.deleted_at ?? '').localeCompare(x.deleted_at ?? '')),
-    [todas],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [todas, idaParaLixeira, voltouDaLixeira, apagadasDeVez],
   );
 
   const opcoes: Opcao[] = useMemo(
@@ -88,7 +107,17 @@ export default function ListaDeNotas({
   }, [notas]);
 
   if (naLixeira) {
-    return <Lixeira notas={excluidas} voltar={() => setNaLixeira(false)} />;
+    return (
+      <Lixeira
+        notas={excluidas}
+        voltar={() => setNaLixeira(false)}
+        aoRestaurar={(id) => {
+          setVoltouDaLixeira((atual) => new Set(atual).add(id));
+          setIdaParaLixeira(({ [id]: _fora, ...resto }) => resto);
+        }}
+        aoApagarDeVez={(id) => setApagadasDeVez((atual) => new Set(atual).add(id))}
+      />
+    );
   }
 
   if (selecao === null) {
@@ -116,6 +145,11 @@ export default function ListaDeNotas({
       disciplinas={opcoes}
       disciplinaFixa={typeof selecao === 'number' ? selecao : null}
       voltar={() => setSelecao(null)}
+      aoMandarParaLixeira={(id) =>
+        setIdaParaLixeira((atual) => ({ ...atual, [id]: new Date().toISOString() }))
+      }
+      lixeira={excluidas.length}
+      abrirLixeira={() => setNaLixeira(true)}
     />
   );
 }
@@ -291,7 +325,17 @@ function Grade({
  * Anotações excluídas. Elas saem da matéria mas continuam no banco com
  * `deleted_at` preenchido, até serem restauradas ou apagadas de vez.
  */
-function Lixeira({ notas, voltar }: { notas: NotaComContexto[]; voltar: () => void }) {
+function Lixeira({
+  notas,
+  voltar,
+  aoRestaurar,
+  aoApagarDeVez,
+}: {
+  notas: NotaComContexto[];
+  voltar: () => void;
+  aoRestaurar: (id: string) => void;
+  aoApagarDeVez: (id: string) => void;
+}) {
   const { supabase } = useSessao();
   const router = useRouter();
   const [sumiram, setSumiram] = useState<Set<string>>(new Set());
@@ -306,6 +350,7 @@ function Lixeira({ notas, voltar }: { notas: NotaComContexto[]; voltar: () => vo
   /** devolve a anotação para a matéria de onde veio */
   function restaurar(nota: NotaComContexto) {
     esquecer(nota.id);
+    aoRestaurar(nota.id);
     void (async () => {
       await supabase.from('notes').update({ deleted_at: null }).eq('id', nota.id);
       router.refresh();
@@ -316,6 +361,7 @@ function Lixeira({ notas, voltar }: { notas: NotaComContexto[]; voltar: () => vo
   function apagarDeVez(nota: NotaComContexto) {
     setConfirmando(null);
     esquecer(nota.id);
+    aoApagarDeVez(nota.id);
     void (async () => {
       const arquivos = [
         ...(nota.images ?? []),
@@ -456,6 +502,9 @@ function Detalhe({
   disciplinas,
   disciplinaFixa,
   voltar,
+  aoMandarParaLixeira,
+  lixeira,
+  abrirLixeira,
 }: {
   titulo: string;
   slug: string | null;
@@ -463,6 +512,10 @@ function Detalhe({
   disciplinas: Opcao[];
   disciplinaFixa: number | null;
   voltar: () => void;
+  /** avisa a tela de cima, para a lixeira contar certo na hora */
+  aoMandarParaLixeira: (id: string) => void;
+  lixeira: number;
+  abrirLixeira: () => void;
 }) {
   const [busca, setBusca] = useState('');
   const [filtroTag, setFiltroTag] = useState<Tag | 'todas'>('todas');
@@ -493,6 +546,7 @@ function Detalhe({
 
   function esquecer(id: string) {
     setRemovidas((atual) => new Set(atual).add(id));
+    aoMandarParaLixeira(id);
   }
 
   /** o banco recusou a exclusão: o card volta para a lista e a tela avisa */
@@ -614,10 +668,23 @@ function Detalhe({
           </p>
         </div>
 
+        {/* a anotação excluída vai para cá; o contador muda na hora */}
+        {lixeira > 0 && (
+          <button
+            type="button"
+            onClick={abrirLixeira}
+            className="ml-auto inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 ring-1 ring-slate-300 transition hover:bg-slate-50 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-600"
+          >
+            <Trash2 size={14} /> Lixeira ({lixeira})
+          </button>
+        )}
+
         {slug && (
           <Link
             href={`/materias/${slug}`}
-            className="ml-auto text-xs font-medium text-brand-600 hover:underline dark:text-brand-300"
+            className={`text-xs font-medium text-brand-600 hover:underline dark:text-brand-300 ${
+              lixeira > 0 ? '' : 'ml-auto'
+            }`}
           >
             Abrir a matéria
           </Link>
@@ -1031,6 +1098,7 @@ function Cartao({
   const [confirmando, setConfirmando] = useState(false);
   /** a pegada do arrasto está sendo segurada */
   const [pegou, setPegou] = useState(false);
+  const cardRef = useRef<HTMLElement>(null);
 
   /** o card sai da tela na hora e a anotação vai para a lixeira */
   function excluir() {
@@ -1060,6 +1128,7 @@ function Cartao({
 
   return (
     <article
+      ref={cardRef}
       // o arrasto só liga quando a pegada é segurada: assim o texto do card
       // aberto continua selecionável
       draggable={podeArrastar && pegou}
@@ -1067,6 +1136,18 @@ function Cartao({
         e.dataTransfer.effectAllowed = 'move';
         // o Firefox só começa o arrasto com algum dado no pacote
         e.dataTransfer.setData('text/plain', nota.id);
+
+        // a miniatura que segue o cursor passa a ser o próprio card, presa no
+        // ponto onde o dedo está. Sem isso o navegador às vezes arrasta um
+        // retângulo transparente e parece que nada está acontecendo.
+        const caixa = cardRef.current?.getBoundingClientRect();
+        if (cardRef.current && caixa) {
+          e.dataTransfer.setDragImage(
+            cardRef.current,
+            e.clientX - caixa.left,
+            e.clientY - caixa.top,
+          );
+        }
         iniciarArrasto();
       }}
       onDragOver={(e) => {
@@ -1090,12 +1171,19 @@ function Cartao({
           : 'bg-white ring-slate-200 dark:bg-slate-900/80 dark:ring-slate-700/70'
       } ${
         arrastando
-          ? 'opacity-40 ring-brand-400'
+          ? 'scale-[0.98] opacity-40 ring-2 ring-brand-400'
           : alvo
-            ? 'ring-2 ring-brand-500 dark:ring-emerald-400'
+            ? 'translate-y-1 shadow-lg ring-2 ring-brand-500 dark:ring-emerald-400'
             : 'hover:ring-brand-300 hover:shadow-sm dark:hover:ring-slate-600'
       }`}
     >
+      {/* linha de chegada: diz em que lugar o card arrastado vai entrar */}
+      {alvo && (
+        <span
+          aria-hidden
+          className="absolute inset-x-3 top-0 h-1 rounded-b-full bg-brand-500 dark:bg-emerald-400"
+        />
+      )}
       {/* faixa de cor da etiqueta na lateral esquerda */}
       <span aria-hidden className={`absolute inset-y-3 left-0 w-1 rounded-r-full ${info.barra}`} />
 
