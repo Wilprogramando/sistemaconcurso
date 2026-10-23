@@ -157,7 +157,8 @@ export default async function Dashboard() {
             </p>
           </div>
 
-          <dl className="grid grid-cols-3 gap-5 text-center sm:gap-8">
+          {/* três números do dia, sempre encostados à direita e em uma linha */}
+          <dl className="ml-auto grid shrink-0 grid-cols-3 gap-5 text-center sm:gap-8">
             {[
               ['Hoje', `${respondidasHoje}/${metaDiaria}`, `${acertosHoje} acertos`],
               ['Revisões', revisoesHoje, 'para hoje'],
@@ -179,79 +180,6 @@ export default async function Dashboard() {
         </div>
       </section>
 
-      {/* ---------------- alertas ---------------- */}
-      {zeradas.length > 0 && (
-        <Aviso title={`Atenção: ${zeradas.length} disciplina(s) sem nenhuma questão respondida`}>
-          <p className="flex items-start gap-2">
-            <AlertTriangle size={16} className="mt-0.5 shrink-0" />
-            <span>Zerar uma única disciplina elimina o candidato, mesmo com nota alta nas demais.</span>
-          </p>
-          <ul className="mt-3 flex flex-wrap gap-2">
-            {zeradas.map((d) => (
-              <li key={d.id}>
-                <Link
-                  href={`/questoes?disciplina=${d.slug}`}
-                  className="inline-flex items-center rounded-lg bg-white/70 px-3 py-1.5 text-sm font-medium ring-1 ring-amber-300 transition hover:bg-white dark:bg-slate-900/60 dark:ring-amber-800"
-                >
-                  {d.name} →
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </Aviso>
-      )}
-
-      {/* ---------------- etapa do plano ---------------- */}
-      {blocoAtual && (
-        <Card
-          title={`Plano de 30 dias — ${blocoAtual.range}`}
-          subtitle="Esta é a sua etapa de hoje"
-          icon={CalendarDays}
-          action={
-            <Link
-              href="/plano"
-              className="text-sm font-medium text-brand-600 hover:underline dark:text-brand-300"
-            >
-              ver plano →
-            </Link>
-          }
-        >
-          <dl className="grid gap-3 sm:grid-cols-2">
-            <div className="rounded-xl bg-brand-50 p-3.5 dark:bg-brand-950/50">
-              <dt className="text-xs font-bold tracking-wide text-brand-700 uppercase dark:text-brand-300">
-                Manhã (2h)
-              </dt>
-              <dd className="mt-1 text-sm leading-6 text-slate-700 dark:text-slate-300">
-                {blocoAtual.morning}
-              </dd>
-            </div>
-            <div className="rounded-xl bg-slate-50 p-3.5 dark:bg-slate-800/60">
-              <dt className="text-xs font-bold tracking-wide text-slate-600 uppercase dark:text-slate-400">
-                Noite (2h)
-              </dt>
-              <dd className="mt-1 text-sm leading-6 text-slate-700 dark:text-slate-300">
-                {blocoAtual.night}
-              </dd>
-            </div>
-          </dl>
-        </Card>
-      )}
-
-      {/* ---------------- peso da prova ---------------- */}
-      <Card
-        title="Como os 60 pontos estão distribuídos"
-        subtitle="Tabela 8.1 do edital — cada faixa é uma disciplina"
-        icon={Target}
-      >
-        <PesoDaProva
-          itens={ordenadas.map((d) => ({
-            nome: d.name,
-            questoes: d.question_count,
-            acerto: statMap.get(d.id)?.accuracy ? Number(statMap.get(d.id)!.accuracy) : null,
-            slug: d.slug,
-          }))}
-        />
-      </Card>
 
       {/* ---------------- desempenho ---------------- */}
       <section className="rounded-2xl bg-white p-4 ring-1 ring-slate-200/80 sm:p-5 dark:bg-slate-900 dark:ring-slate-700/70">
@@ -355,6 +283,59 @@ export default async function Dashboard() {
         </ul>
       </section>
 
+      {/* ---------------- etapa do plano ---------------- */}
+      {blocoAtual && (
+        <Card
+          title={`Plano de 30 dias — ${blocoAtual.range}`}
+          subtitle="Esta é a sua etapa de hoje"
+          icon={CalendarDays}
+          action={
+            <Link
+              href="/plano"
+              className="text-sm font-medium text-brand-600 hover:underline dark:text-brand-300"
+            >
+              ver plano →
+            </Link>
+          }
+        >
+          <dl className="grid gap-3 sm:grid-cols-2">
+            <div className="rounded-xl bg-brand-50 p-3.5 dark:bg-brand-950/50">
+              <dt className="text-xs font-bold tracking-wide text-brand-700 uppercase dark:text-brand-300">
+                Manhã (2h)
+              </dt>
+              <dd className="mt-1 text-sm leading-6 text-slate-700 dark:text-slate-300">
+                {blocoAtual.morning}
+              </dd>
+            </div>
+            <div className="rounded-xl bg-slate-50 p-3.5 dark:bg-slate-800/60">
+              <dt className="text-xs font-bold tracking-wide text-slate-600 uppercase dark:text-slate-400">
+                Noite (2h)
+              </dt>
+              <dd className="mt-1 text-sm leading-6 text-slate-700 dark:text-slate-300">
+                {blocoAtual.night}
+              </dd>
+            </div>
+          </dl>
+        </Card>
+      )}
+
+      {/* ---------------- peso da prova ---------------- */}
+      <Card
+        title="Como os 60 pontos estão distribuídos"
+        subtitle="Tabela 8.1 do edital — a cor mostra o tamanho da fatia, a legenda diz qual é qual"
+        icon={Target}
+      >
+        <PesoDaProva
+          itens={ordenadas.map((d) => ({
+            nome: d.name,
+            questoes: d.question_count,
+            acerto: statMap.get(d.id)?.accuracy ? Number(statMap.get(d.id)!.accuracy) : null,
+            slug: d.slug,
+          }))}
+        />
+      </Card>
+
+
       {/* ---------------- rodapé do painel ---------------- */}
       <div className="grid gap-4 lg:grid-cols-2">
         <Card title="Últimas sessões" icon={CheckCircle2}>
@@ -398,6 +379,28 @@ export default async function Dashboard() {
           </p>
         </Card>
       </div>
+
+      {/* ---------------- alertas ---------------- */}
+      {zeradas.length > 0 && (
+        <Aviso title={`Atenção: ${zeradas.length} disciplina(s) sem nenhuma questão respondida`}>
+          <p className="flex items-start gap-2">
+            <AlertTriangle size={16} className="mt-0.5 shrink-0" />
+            <span>Zerar uma única disciplina elimina o candidato, mesmo com nota alta nas demais.</span>
+          </p>
+          <ul className="mt-3 flex flex-wrap gap-2">
+            {zeradas.map((d) => (
+              <li key={d.id}>
+                <Link
+                  href={`/questoes?disciplina=${d.slug}`}
+                  className="inline-flex items-center rounded-lg bg-white/70 px-3 py-1.5 text-sm font-medium ring-1 ring-amber-300 transition hover:bg-white dark:bg-slate-900/60 dark:ring-amber-800"
+                >
+                  {d.name} →
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Aviso>
+      )}
 
       <div className="flex items-start gap-2 rounded-xl bg-slate-100 p-3 text-xs leading-5 text-slate-600 dark:bg-slate-800/60 dark:text-slate-400">
         <Play size={14} className="mt-0.5 shrink-0" />

@@ -274,33 +274,84 @@ export function PesoDaProva({
   const [ativo, setAtivo] = useState<string | null>(null);
   const total = itens.reduce((a, i) => a + i.questoes, 0) || 1;
 
-  const degraus = ['var(--viz-seq-600)', 'var(--viz-seq-450)', 'var(--viz-seq-250)', 'var(--viz-seq-100)'];
+  // Uma matiz só, do mais pesado ao mais leve: a cor diz tamanho, não
+  // identidade. Nove matizes diferentes viraria arco-íris e ninguém liga
+  // cor a disciplina numa faixa dessas — quem identifica é a legenda.
+  const degrau = (questoes: number) => {
+    if (questoes >= 9) return 'var(--viz-seq-600)';
+    if (questoes >= 7) return 'var(--viz-seq-450)';
+    if (questoes >= 6) return 'var(--viz-seq-250)';
+    return 'var(--viz-seq-100)';
+  };
+
+  const ordenados = [...itens].sort((a, b) => b.questoes - a.questoes);
+  const destaque = ordenados.find((i) => i.slug === ativo) ?? null;
+  const pct = (q: number) => Math.round((100 * q) / total);
 
   return (
     <div className="viz">
-      <div className="flex h-7 w-full gap-[2px] overflow-hidden rounded-lg">
-        {itens.map((i, idx) => (
-          <div
+      {/* faixa: cada pedaço é uma disciplina, proporcional às questões */}
+      <div className="flex h-8 w-full gap-[2px] overflow-hidden rounded-lg">
+        {ordenados.map((i) => (
+          <button
             key={i.slug}
+            type="button"
             title={`${i.nome}: ${i.questoes} de ${total} questões`}
+            aria-label={`${i.nome}, ${i.questoes} questões, ${pct(i.questoes)}% da prova`}
             onMouseEnter={() => setAtivo(i.slug)}
             onMouseLeave={() => setAtivo(null)}
-            className="h-full transition-opacity first:rounded-l-lg last:rounded-r-lg"
+            onFocus={() => setAtivo(i.slug)}
+            onBlur={() => setAtivo(null)}
+            className="h-full min-h-0 transition-opacity first:rounded-l-lg last:rounded-r-lg"
             style={{
               width: `${(i.questoes / total) * 100}%`,
-              background: degraus[idx % degraus.length],
-              opacity: ativo && ativo !== i.slug ? 0.45 : 1,
+              background: degrau(i.questoes),
+              opacity: ativo && ativo !== i.slug ? 0.35 : 1,
             }}
           />
         ))}
       </div>
-      <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
-        {ativo
-          ? (() => {
-              const i = itens.find((x) => x.slug === ativo)!;
-              return `${i.nome}: ${i.questoes} questões (${Math.round((100 * i.questoes) / total)}% da prova)`;
-            })()
-          : `${total} questões objetivas distribuídas entre ${itens.length} disciplinas`}
+
+      <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+        {destaque
+          ? `${destaque.nome}: ${destaque.questoes} questões — ${pct(destaque.questoes)}% da prova objetiva`
+          : `${total} questões objetivas, 1 ponto cada, divididas entre ${itens.length} disciplinas. Quanto maior o pedaço, mais ponto está em jogo ali.`}
+      </p>
+
+      {/* legenda: é ela que diz qual disciplina é qual */}
+      <ul className="mt-3 grid gap-x-5 gap-y-1.5 sm:grid-cols-2">
+        {ordenados.map((i) => (
+          <li
+            key={i.slug}
+            onMouseEnter={() => setAtivo(i.slug)}
+            onMouseLeave={() => setAtivo(null)}
+            className={`flex items-center gap-2 rounded-lg px-1.5 py-1 text-sm transition ${
+              ativo === i.slug ? 'bg-slate-100 dark:bg-slate-800' : ''
+            }`}
+          >
+            <span
+              aria-hidden
+              className="h-3 w-3 shrink-0 rounded-sm"
+              style={{ background: degrau(i.questoes) }}
+            />
+            <span className="min-w-0 flex-1 truncate text-slate-700 dark:text-slate-300">
+              {i.nome}
+            </span>
+            <span className="shrink-0 font-semibold text-slate-900 tabular-nums dark:text-slate-100">
+              {i.questoes} questões
+            </span>
+            <span className="w-12 shrink-0 text-right text-xs text-slate-500 tabular-nums dark:text-slate-400">
+              {pct(i.questoes)}%
+            </span>
+          </li>
+        ))}
+      </ul>
+
+      <p className="mt-3 rounded-xl bg-slate-50 px-3.5 py-2.5 text-xs leading-5 text-slate-600 dark:bg-slate-800/60 dark:text-slate-400">
+        Como ler: a soma dá {total} pontos na objetiva, e a redação vale outros 20. Para passar são
+        50% do total — e <strong className="font-semibold">zerar uma disciplina elimina</strong>,
+        mesmo com nota alta no resto. Por isso a maior faixa é onde mais se ganha, mas a menor é
+        onde mais se perde.
       </p>
     </div>
   );
