@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Flag, Shuffle, Target } from 'lucide-react';
+import { Flag, Search, Shuffle, Target } from 'lucide-react';
 import { createClient, getUserId } from '@/lib/supabase/server';
 import QuestionRunner from '@/components/question-runner';
 import { Badge, Card } from '@/components/ui';
@@ -12,9 +12,15 @@ export const dynamic = 'force-dynamic';
 export default async function QuestoesPage({
   searchParams,
 }: {
-  searchParams: Promise<{ disciplina?: string; n?: string; foco?: string; origem?: string }>;
+  searchParams: Promise<{
+    disciplina?: string;
+    n?: string;
+    foco?: string;
+    origem?: string;
+    q?: string;
+  }>;
 }) {
-  const { disciplina, n, foco, origem } = await searchParams;
+  const { disciplina, n, foco, origem, q } = await searchParams;
   const user = { id: (await getUserId())! };
   const supabase = await createClient();
 
@@ -22,6 +28,57 @@ export default async function QuestoesPage({
     .from('disciplines')
     .select('*')
     .order('question_count', { ascending: false });
+
+  // ---------- busca por palavra-chave ----------
+  const busca = limparBusca(q);
+  if (busca) {
+    // aspas duplas protegem o valor dentro do filtro `or` do PostgREST
+    const padrao = `"%${busca}%"`;
+    const { data: achadas, count } = await supabase
+      .from('questions')
+      .select(COLUNAS, { count: 'exact' })
+      .neq('source', 'simulado')
+      .or(`statement.ilike.${padrao},explanation.ilike.${padrao}`)
+      .order('id')
+      .limit(MAX_BUSCA);
+
+    const encontradas = await comTextosDeApoio(supabase, (achadas ?? []) as unknown as Question[]);
+    const total = count ?? encontradas.length;
+
+    return (
+      <div className="space-y-4">
+        <Link
+          href="/questoes"
+          className="text-sm font-medium text-brand-600 hover:underline dark:text-brand-300"
+        >
+          ← escolher outro filtro
+        </Link>
+        <FormBusca valor={busca} />
+        {encontradas.length === 0 ? (
+          <Card>
+            <p className="text-sm text-slate-600 dark:text-slate-300">
+              Nenhuma questão com “{busca}”. Tente uma palavra mais curta ou sem acento.
+            </p>
+          </Card>
+        ) : (
+          <>
+            <p className="text-sm text-slate-500 dark:text-slate-400">
+              {total} {total === 1 ? 'questão encontrada' : 'questões encontradas'} para “{busca}”
+              {total > encontradas.length ? ` — mostrando as ${encontradas.length} primeiras` : ''}.
+            </p>
+            <QuestionRunner
+              key={busca}
+              questions={encontradas}
+              kind="treino"
+              instant
+              titulo={`Busca: ${busca}`}
+              voltarHref="/questoes"
+            />
+          </>
+        )}
+      </div>
+    );
+  }
 
   // ---------- tela de seleção ----------
   if (!disciplina) {
@@ -51,6 +108,8 @@ export default async function QuestoesPage({
             a revisão espaçada.
           </p>
         </div>
+
+        <FormBusca />
 
         <Card title="Treino rápido" icon={Shuffle}>
           <div className="flex flex-wrap gap-2">
@@ -155,5 +214,45 @@ export default async function QuestoesPage({
         voltarHref="/questoes"
       />
     </div>
+  );
+}
+
+/** quantas questões a busca traz de uma vez */
+const MAX_BUSCA = 50;
+
+/**
+ * Deixa só o que é seguro dentro do filtro `ilike`: curingas (% e _), aspas,
+ * barra e os separadores do `or` viram espaço.
+ */
+function limparBusca(q?: string) {
+  return (q ?? '')
+    .replace(/[%_"\,()*]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, 120);
+}
+
+function FormBusca({ valor = '' }: { valor?: string }) {
+  return (
+    <form action="/questoes" className="flex gap-2">
+      <div className="relative min-w-0 flex-1">
+        <Search
+          size={16}
+          className="pointer-events-none absolute top-1/2 left-3 -translate-y-1/2 text-slate-400"
+        />
+        <input
+          type="search"
+          name="q"
+          defaultValue={valor}
+          minLength={2}
+          required
+          placeholder="Pesquisar questões por palavra-chave"
+          className="w-full rounded-xl border border-slate-300 bg-white py-2.5 pr-3 pl-9 text-sm outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:focus:ring-brand-900"
+        />
+      </div>
+      <button className="rounded-xl bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700">
+        Buscar
+      </button>
+    </form>
   );
 }

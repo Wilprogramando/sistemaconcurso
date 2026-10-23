@@ -1,6 +1,6 @@
 'use client';
 
-import { useId, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 
 /* =====================================================================
    Medidor — uma razão contra um limite (acerto da disciplina × meta).
@@ -62,89 +62,196 @@ export function Medidor({
 
 /* =====================================================================
    Barras diárias — parte-do-todo por dia (acertos dentro do total).
-   Duas séries categóricas, com legenda, 2px de folga entre os segmentos
-   e tooltip no toque/hover.
+   Colunas em grade (cabem na tela sem rolar), eixo com linhas de guia,
+   dois segmentos separados por 2px e tooltip que nunca sai do gráfico.
    ===================================================================== */
 export type Dia = { dia: string; total: number; acertos: number };
 
-export function BarrasDiarias({ dias, altura = 132 }: { dias: Dia[]; altura?: number }) {
-  const [ativo, setAtivo] = useState<number | null>(null);
-  const max = Math.max(1, ...dias.map((d) => d.total));
+/** passo "redondo" para o eixo: 1, 2, 5, 10, 20, 50… */
+function tetoDoEixo(max: number) {
+  if (max <= 4) return 4;
+  const base = 10 ** Math.floor(Math.log10(max));
+  for (const m of [1, 2, 2.5, 5, 10]) if (m * base >= max) return m * base;
+  return max;
+}
 
-  const rotulo = (iso: string) =>
-    new Date(iso + 'T12:00:00').toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' });
+export function BarrasDiarias({ dias, altura = 160 }: { dias: Dia[]; altura?: number }) {
+  const [ativo, setAtivo] = useState<number | null>(null);
+  const teto = tetoDoEixo(Math.max(1, ...dias.map((d) => d.total)));
+  const guias = [teto, teto / 2, 0];
+
+  const total = dias.reduce((a, d) => a + d.total, 0);
+  const acertos = dias.reduce((a, d) => a + d.acertos, 0);
+  const hoje = dias[dias.length - 1]?.dia;
+
+  const data = (iso: string) => new Date(iso + 'T12:00:00');
+  const curto = (iso: string) =>
+    data(iso).toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' });
+  const semana = (iso: string) =>
+    data(iso).toLocaleDateString('pt-BR', { weekday: 'short' }).replace('.', '');
 
   return (
     <div className="viz">
-      <Legenda itens={[['var(--viz-s1)', 'acertos'], ['var(--viz-s2)', 'erros']]} />
+      <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
+        <Legenda
+          itens={[
+            ['var(--viz-s1)', 'acertos'],
+            ['var(--viz-s2)', 'erros'],
+          ]}
+        />
+        <p className="text-xs text-slate-500 tabular-nums dark:text-slate-400">
+          {total} questões no período
+          {total > 0 && (
+            <>
+              {' · '}
+              <span className="font-semibold text-slate-700 dark:text-slate-200">
+                {Math.round((100 * acertos) / total)}% de acerto
+              </span>
+            </>
+          )}
+        </p>
+      </div>
 
-      <div className="relative mt-3 overflow-x-auto pb-1">
-        <ul className="flex min-w-full items-end gap-1.5" style={{ height: altura + 34 }}>
-          {dias.map((d, i) => {
-            const h = Math.round((d.total / max) * altura);
-            const hAcertos = d.total ? Math.round((d.acertos / d.total) * h) : 0;
-            const hErros = Math.max(0, h - hAcertos);
-            const erros = d.total - d.acertos;
+      <div className="mt-4 flex gap-2">
+        {/* eixo vertical */}
+        <div
+          className="relative w-7 shrink-0 text-right text-[0.65rem] text-slate-400 tabular-nums"
+          style={{ height: altura }}
+          aria-hidden
+        >
+          {guias.map((g) => (
+            <span
+              key={g}
+              className="absolute right-0 -translate-y-1/2 leading-none"
+              style={{ top: `${(1 - g / teto) * 100}%` }}
+            >
+              {Number.isInteger(g) ? g : g.toFixed(1)}
+            </span>
+          ))}
+        </div>
 
-            return (
+        <div className="min-w-0 flex-1">
+          {/* área das barras */}
+          <div className="relative" style={{ height: altura }}>
+            {guias.map((g) => (
+              <span
+                key={g}
+                aria-hidden
+                className="absolute inset-x-0 h-px"
+                style={{
+                  top: `${(1 - g / teto) * 100}%`,
+                  background: 'var(--viz-grid)',
+                }}
+              />
+            ))}
+
+            <ul
+              className="absolute inset-0 grid items-end gap-1 sm:gap-1.5"
+              style={{ gridTemplateColumns: `repeat(${dias.length}, minmax(0, 1fr))` }}
+              onMouseLeave={() => setAtivo(null)}
+            >
+              {dias.map((d, i) => {
+                const erros = d.total - d.acertos;
+                const pctTotal = (d.total / teto) * 100;
+                const pctAcertos = d.total ? (d.acertos / d.total) * pctTotal : 0;
+                const pctErros = pctTotal - pctAcertos;
+                // as colunas das pontas alinham o tooltip para dentro
+                const lado =
+                  i < 2 ? 'left-0' : i > dias.length - 3 ? 'right-0' : 'left-1/2 -translate-x-1/2';
+
+                return (
+                  <li
+                    key={d.dia}
+                    className="relative flex h-full items-end"
+                    onMouseEnter={() => setAtivo(i)}
+                  >
+                    {ativo === i && (
+                      <div
+                        className={`pointer-events-none absolute z-20 w-max rounded-lg bg-slate-900 px-2.5 py-1.5 text-xs leading-5 text-white shadow-lg dark:bg-slate-700 ${lado}`}
+                        style={{ bottom: `calc(${pctTotal}% + 8px)` }}
+                      >
+                        <p className="font-semibold capitalize">
+                          {semana(d.dia)}, {curto(d.dia)}
+                        </p>
+                        {d.total > 0 ? (
+                          <>
+                            <p className="tabular-nums">
+                              {d.acertos} acertos · {erros} erros
+                            </p>
+                            <p className="text-slate-300 tabular-nums">
+                              {Math.round((100 * d.acertos) / d.total)}% de {d.total}
+                            </p>
+                          </>
+                        ) : (
+                          <p className="text-slate-300">sem questões</p>
+                        )}
+                      </div>
+                    )}
+
+                    <button
+                      type="button"
+                      aria-label={`${curto(d.dia)}: ${d.total} questões, ${d.acertos} acertos`}
+                      onFocus={() => setAtivo(i)}
+                      onBlur={() => setAtivo(null)}
+                      className={`flex h-full w-full flex-col justify-end rounded-t-md outline-none transition-opacity focus-visible:ring-2 focus-visible:ring-brand-500 ${
+                        ativo !== null && ativo !== i ? 'opacity-50' : ''
+                      }`}
+                    >
+                      {d.total === 0 ? (
+                        <span
+                          className="block w-full rounded-full"
+                          style={{ height: 3, background: 'var(--viz-grid)' }}
+                        />
+                      ) : (
+                        <>
+                          {pctErros > 0 && (
+                            <span
+                              className="block w-full rounded-t-md"
+                              style={{ height: `${pctErros}%`, background: 'var(--viz-s2)' }}
+                            />
+                          )}
+                          {pctAcertos > 0 && (
+                            <span
+                              className="block w-full"
+                              style={{
+                                height: `${pctAcertos}%`,
+                                background: 'var(--viz-s1)',
+                                // 2px de superfície separando os dois segmentos
+                                marginTop: pctErros > 0 ? 2 : 0,
+                                borderRadius: pctErros > 0 ? 0 : '6px 6px 0 0',
+                              }}
+                            />
+                          )}
+                        </>
+                      )}
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+
+          {/* rótulos: dia da semana + data; no celular, só de dois em dois */}
+          <ul
+            className="mt-1.5 grid gap-1 sm:gap-1.5"
+            style={{ gridTemplateColumns: `repeat(${dias.length}, minmax(0, 1fr))` }}
+            aria-hidden
+          >
+            {dias.map((d, i) => (
               <li
                 key={d.dia}
-                className="relative flex flex-1 flex-col items-center justify-end gap-1"
-                style={{ minWidth: 26 }}
-                onMouseEnter={() => setAtivo(i)}
-                onMouseLeave={() => setAtivo(null)}
-                onFocus={() => setAtivo(i)}
-                onBlur={() => setAtivo(null)}
+                className={`text-center text-[0.6rem] leading-tight tabular-nums sm:text-[0.65rem] ${
+                  d.dia === hoje
+                    ? 'font-bold text-slate-900 dark:text-slate-100'
+                    : 'text-slate-400'
+                } ${(dias.length - 1 - i) % 2 === 1 ? 'max-sm:invisible' : ''}`}
               >
-                {ativo === i && d.total > 0 && (
-                  <div className="pointer-events-none absolute bottom-full z-10 mb-1 w-max max-w-[11rem] rounded-lg bg-slate-900 px-2.5 py-1.5 text-xs leading-5 text-white shadow-lg dark:bg-slate-700">
-                    <p className="font-semibold">{rotulo(d.dia)}</p>
-                    <p className="tabular-nums">
-                      {d.acertos} acertos · {erros} erros
-                    </p>
-                    <p className="tabular-nums text-slate-300">
-                      {Math.round((100 * d.acertos) / d.total)}% de acerto
-                    </p>
-                  </div>
-                )}
-
-                <button
-                  type="button"
-                  aria-label={`${rotulo(d.dia)}: ${d.total} questões, ${d.acertos} acertos`}
-                  className="flex w-full flex-col justify-end rounded-t-[4px] outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
-                  style={{ height: altura }}
-                >
-                  {hErros > 0 && (
-                    <span
-                      className="block w-full rounded-t-[4px]"
-                      style={{ height: hErros, background: 'var(--viz-s2)' }}
-                    />
-                  )}
-                  {hAcertos > 0 && (
-                    <span
-                      className="block w-full"
-                      style={{
-                        height: hAcertos,
-                        background: 'var(--viz-s1)',
-                        // 2px de superfície separando os dois segmentos
-                        marginTop: hErros > 0 ? 2 : 0,
-                        borderRadius: hErros > 0 ? 0 : '4px 4px 0 0',
-                      }}
-                    />
-                  )}
-                  {h === 0 && (
-                    <span
-                      className="block w-full rounded-t-[4px]"
-                      style={{ height: 3, background: 'var(--viz-grid)' }}
-                    />
-                  )}
-                </button>
-
-                <span className="text-[0.62rem] text-slate-400 tabular-nums">{rotulo(d.dia)}</span>
+                <span className="hidden capitalize sm:block">{semana(d.dia)}</span>
+                {curto(d.dia).slice(0, 2)}
               </li>
-            );
-          })}
-        </ul>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
@@ -152,112 +259,182 @@ export function BarrasDiarias({ dias, altura = 132 }: { dias: Dia[]; altura?: nu
 
 /* =====================================================================
    Linha de evolução — tendência do acerto ao longo das sessões.
-   Série única, 2px, marcadores de 8px, crosshair no hover.
+   O SVG acompanha a largura real da caixa (sem esticar texto nem bolinhas),
+   com área suave embaixo, meta tracejada, crosshair e tooltip que segue o
+   ponteiro mais próximo.
    ===================================================================== */
 export type Ponto = { rotulo: string; valor: number; detalhe?: string };
 
 export function LinhaEvolucao({ pontos, meta = 70 }: { pontos: Ponto[]; meta?: number }) {
   const [ativo, setAtivo] = useState<number | null>(null);
-  const id = useId();
+  const [largura, setLargura] = useState(560);
+  const caixa = useRef<HTMLDivElement>(null);
+  const id = useId().replace(/:/g, '');
 
+  // mede a caixa: o desenho nasce no tamanho certo em vez de ser esticado
+  useEffect(() => {
+    const el = caixa.current;
+    if (!el) return;
+    const medir = () => setLargura(Math.max(260, Math.round(el.clientWidth)));
+    medir();
+    const obs = new ResizeObserver(medir);
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  const H = 220;
   const L = 34;
-  const R = 8;
-  const T = 10;
-  const B = 24;
-  const W = 520;
-  const H = 180;
+  const R = 14;
+  const T = 14;
+  const B = 28;
+  const W = largura;
   const larguraPlot = W - L - R;
   const alturaPlot = H - T - B;
+  const n = pontos.length;
 
-  const x = (i: number) =>
-    L + (pontos.length === 1 ? larguraPlot / 2 : (i / (pontos.length - 1)) * larguraPlot);
+  const x = (i: number) => L + (n === 1 ? larguraPlot / 2 : (i / (n - 1)) * larguraPlot);
   const y = (v: number) => T + alturaPlot - (Math.max(0, Math.min(100, v)) / 100) * alturaPlot;
 
-  const caminho = pontos.map((p, i) => `${i === 0 ? 'M' : 'L'} ${x(i)} ${y(p.valor)}`).join(' ');
+  const linha = pontos.map((p, i) => `${i === 0 ? 'M' : 'L'} ${x(i)} ${y(p.valor)}`).join(' ');
+  const area = `${linha} L ${x(n - 1)} ${y(0)} L ${x(0)} ${y(0)} Z`;
+
+  // até ~6 rótulos no eixo x, sempre incluindo o primeiro e o último
+  const passo = Math.max(1, Math.ceil(n / Math.max(2, Math.floor(larguraPlot / 70))));
+  const mostrar = (i: number) => i === 0 || i === n - 1 || (i % passo === 0 && n - 1 - i >= passo);
+
+  const ultimo = pontos[n - 1];
+  const media = Math.round(pontos.reduce((a, p) => a + p.valor, 0) / n);
+
+  function aoMover(e: React.PointerEvent<SVGSVGElement>) {
+    const caixaSvg = e.currentTarget.getBoundingClientRect();
+    const px = e.clientX - caixaSvg.left;
+    let melhor = 0;
+    for (let i = 1; i < n; i++) if (Math.abs(x(i) - px) < Math.abs(x(melhor) - px)) melhor = i;
+    setAtivo(melhor);
+  }
+
+  const dica = ativo !== null ? pontos[ativo] : null;
+  const dicaX = ativo !== null ? x(ativo) : 0;
 
   return (
-    <div className="viz relative">
-      <svg
-        viewBox={`0 0 ${W} ${H}`}
-        className="w-full"
-        style={{ height: 200 }}
-        role="img"
-        aria-label="Evolução do percentual de acerto por sessão"
-        onMouseLeave={() => setAtivo(null)}
-      >
-        {[0, 25, 50, 75, 100].map((g) => (
-          <g key={g}>
-            <line
-              x1={L}
-              x2={W - R}
-              y1={y(g)}
-              y2={y(g)}
-              stroke="var(--viz-grid)"
-              strokeWidth={1}
-            />
-            <text x={L - 6} y={y(g) + 3.5} textAnchor="end" fontSize={9} fill="var(--viz-eixo)">
-              {g}
-            </text>
-          </g>
-        ))}
-
-        <line
-          x1={L}
-          x2={W - R}
-          y1={y(meta)}
-          y2={y(meta)}
-          stroke="var(--viz-meta)"
-          strokeWidth={1.5}
-          strokeDasharray="4 4"
+    <div className="viz">
+      <div className="mb-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
+        <Legenda
+          itens={[
+            ['var(--viz-s1)', 'acerto por sessão'],
+            ['var(--viz-meta)', `meta ${meta}%`],
+          ]}
         />
-        <text x={W - R} y={y(meta) - 4} textAnchor="end" fontSize={9} fill="var(--viz-meta)">
-          meta {meta}%
-        </text>
+        <p className="text-xs text-slate-500 tabular-nums dark:text-slate-400">
+          última sessão{' '}
+          <span className="font-semibold text-slate-700 dark:text-slate-200">{ultimo.valor}%</span>
+          {' · '}média {media}%
+        </p>
+      </div>
 
-        <path d={caminho} fill="none" stroke="var(--viz-s1)" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+      <div ref={caixa} className="relative w-full">
+        <svg
+          width={W}
+          height={H}
+          viewBox={`0 0 ${W} ${H}`}
+          className="block touch-pan-y select-none"
+          role="img"
+          aria-label={`Evolução do percentual de acerto por sessão. Última sessão: ${ultimo.valor}%`}
+          onPointerMove={aoMover}
+          onPointerDown={aoMover}
+          onPointerLeave={() => setAtivo(null)}
+        >
+          <defs>
+            <linearGradient id={`${id}-area`} x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="var(--viz-s1)" stopOpacity={0.28} />
+              <stop offset="100%" stopColor="var(--viz-s1)" stopOpacity={0} />
+            </linearGradient>
+          </defs>
 
-        {pontos.map((p, i) => (
-          <g key={`${id}-${i}`}>
+          {[0, 25, 50, 75, 100].map((g) => (
+            <g key={g}>
+              <line x1={L} x2={W - R} y1={y(g)} y2={y(g)} stroke="var(--viz-grid)" strokeWidth={1} />
+              <text x={L - 8} y={y(g) + 3.5} textAnchor="end" fontSize={10} fill="var(--viz-eixo)">
+                {g}%
+              </text>
+            </g>
+          ))}
+
+          <line
+            x1={L}
+            x2={W - R}
+            y1={y(meta)}
+            y2={y(meta)}
+            stroke="var(--viz-meta)"
+            strokeWidth={1.5}
+            strokeDasharray="5 4"
+          />
+
+          {n > 1 && <path d={area} fill={`url(#${id}-area)`} />}
+          <path
+            d={linha}
+            fill="none"
+            stroke="var(--viz-s1)"
+            strokeWidth={2.5}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+
+          {ativo !== null && (
+            <line
+              x1={dicaX}
+              x2={dicaX}
+              y1={T}
+              y2={T + alturaPlot}
+              stroke="var(--viz-meta)"
+              strokeWidth={1}
+              strokeDasharray="3 3"
+            />
+          )}
+
+          {pontos.map((p, i) => (
             <circle
+              key={i}
               cx={x(i)}
               cy={y(p.valor)}
-              r={ativo === i ? 6 : 4}
+              r={ativo === i ? 6 : i === n - 1 ? 5 : 3.5}
               fill="var(--viz-s1)"
               stroke="var(--viz-surface)"
               strokeWidth={2}
             />
-            <rect
-              x={x(i) - larguraPlot / Math.max(1, pontos.length) / 2}
-              y={T}
-              width={Math.max(18, larguraPlot / Math.max(1, pontos.length))}
-              height={alturaPlot}
-              fill="transparent"
-              onMouseEnter={() => setAtivo(i)}
-            />
-          </g>
-        ))}
+          ))}
 
-        {pontos.length > 1 && (
-          <>
-            <text x={L} y={H - 7} fontSize={9} fill="var(--viz-eixo)">
-              {pontos[0].rotulo}
-            </text>
-            <text x={W - R} y={H - 7} textAnchor="end" fontSize={9} fill="var(--viz-eixo)">
-              {pontos[pontos.length - 1].rotulo}
-            </text>
-          </>
+          {pontos.map((p, i) =>
+            mostrar(i) ? (
+              <text
+                key={i}
+                x={x(i)}
+                y={H - 8}
+                textAnchor={i === 0 ? 'start' : i === n - 1 ? 'end' : 'middle'}
+                fontSize={10}
+                fill="var(--viz-eixo)"
+              >
+                {p.rotulo}
+              </text>
+            ) : null,
+          )}
+        </svg>
+
+        {dica && (
+          <div
+            className="pointer-events-none absolute z-10 w-max max-w-[12rem] rounded-lg bg-slate-900 px-2.5 py-1.5 text-xs leading-5 text-white shadow-lg dark:bg-slate-700"
+            style={{
+              left: Math.min(Math.max(dicaX, 70), W - 70),
+              top: Math.max(0, y(dica.valor) - 58),
+              transform: 'translateX(-50%)',
+            }}
+          >
+            <p className="font-semibold tabular-nums">{dica.valor}% de acerto</p>
+            <p className="text-slate-300 capitalize">{dica.detalhe ?? dica.rotulo}</p>
+            <p className="text-slate-400 tabular-nums">{dica.rotulo}</p>
+          </div>
         )}
-      </svg>
-
-      {ativo !== null && (
-        <div
-          className="pointer-events-none absolute top-2 rounded-lg bg-slate-900 px-2.5 py-1.5 text-xs text-white shadow-lg dark:bg-slate-700"
-          style={{ left: `${(x(ativo) / W) * 100}%`, transform: 'translateX(-50%)' }}
-        >
-          <p className="font-semibold tabular-nums">{pontos[ativo].valor}% de acerto</p>
-          <p className="text-slate-300">{pontos[ativo].detalhe ?? pontos[ativo].rotulo}</p>
-        </div>
-      )}
+      </div>
     </div>
   );
 }

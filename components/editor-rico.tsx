@@ -221,31 +221,88 @@ export default function EditorRico({
   }
 
   /**
-   * Roda o comando em cada trecho marcado, um por vez, e depois tira as
-   * marcas. Sem trechos marcados, vale a seleção comum.
+   * Onde a seleção está, em caracteres desde o começo do texto. Os comandos
+   * (negrito, CAIXA ALTA, lista…) reescrevem o DOM e o navegador costuma
+   * largar a seleção no caminho; a posição em caracteres sobrevive a isso.
+   */
+  function posicaoDaSelecao(): { ini: number; fim: number } | null {
+    const sel = window.getSelection();
+    const caixa = ref.current;
+    if (!sel || !sel.rangeCount || sel.isCollapsed || !caixa) return null;
+    const r = sel.getRangeAt(0);
+    if (!caixa.contains(r.commonAncestorContainer)) return null;
+
+    const ate = document.createRange();
+    ate.selectNodeContents(caixa);
+    ate.setEnd(r.startContainer, r.startOffset);
+    const ini = ate.toString().length;
+    return { ini, fim: ini + r.toString().length };
+  }
+
+  /** devolve a seleção à posição guardada, se o comando a tiver desfeito */
+  function repor(posicao: { ini: number; fim: number } | null) {
+    const sel = window.getSelection();
+    const caixa = ref.current;
+    if (!posicao || !sel || !caixa) return;
+    if (
+      sel.rangeCount &&
+      !sel.isCollapsed &&
+      caixa.contains(sel.getRangeAt(0).commonAncestorContainer)
+    ) {
+      return; // o navegador manteve a seleção
+    }
+
+    const r = document.createRange();
+    const caminhante = document.createTreeWalker(caixa, NodeFilter.SHOW_TEXT);
+    let visto = 0;
+    let iniciou = false;
+    for (let no = caminhante.nextNode(); no; no = caminhante.nextNode()) {
+      const tam = no.nodeValue?.length ?? 0;
+      if (!iniciou && posicao.ini < visto + tam) {
+        r.setStart(no, posicao.ini - visto);
+        iniciou = true;
+      }
+      if (iniciou && posicao.fim <= visto + tam) {
+        r.setEnd(no, posicao.fim - visto);
+        sel.removeAllRanges();
+        sel.addRange(r);
+        return;
+      }
+      visto += tam;
+    }
+  }
+
+  /**
+   * Roda o comando em cada trecho marcado, um por vez. Sem trechos marcados,
+   * vale a seleção comum.
+   *
+   * A seleção (ou as marcas azuis, no caso de vários trechos) continua depois
+   * do comando, para empilhar outro em seguida: negrito, depois cor, depois
+   * marca-texto. As marcas só caem num clique comum dentro do texto.
    */
   function emCadaTrecho(acao: () => void) {
     const lista = marcas();
     if (!lista.length) {
       restaurarIntervalo();
+      const posicao = posicaoDaSelecao();
       acao();
+      repor(posicao);
       avisar();
       return;
     }
 
     ref.current?.focus();
     const sel = window.getSelection();
-    for (const marca of marcas()) {
-      if (!sel) break;
+    for (const marca of lista) {
+      if (!sel || !marca.isConnected) continue;
       const intervaloDaMarca = document.createRange();
       intervaloDaMarca.selectNodeContents(marca);
       sel.removeAllRanges();
       sel.addRange(intervaloDaMarca);
       acao();
     }
-    limparMarcas();
     sel?.removeAllRanges();
-    intervalo.current = null;
+    setMarcados(marcas().length);
     avisar();
   }
 

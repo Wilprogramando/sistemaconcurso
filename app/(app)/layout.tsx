@@ -3,6 +3,7 @@ import { redirect } from 'next/navigation';
 import { LogOut, ShieldCheck } from 'lucide-react';
 import { Suspense } from 'react';
 import { createClient, getUser, getUserId } from '@/lib/supabase/server';
+import MenuPesquisa from '@/components/menu-pesquisa';
 import { NavInferior } from '@/components/navegacao';
 import NavLateral from '@/components/nav-lateral';
 import { ProvedorSessao } from '@/components/sessao';
@@ -76,6 +77,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
         </div>
 
         <NavInferior />
+        <MenuPesquisa />
       </div>
     </ProvedorSessao>
   );
