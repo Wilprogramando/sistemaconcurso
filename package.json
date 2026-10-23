@@ -14,7 +14,8 @@
     "comprimir-pdf": "node scripts/comprimir-pdf.mjs",
     "migrar": "node scripts/migrar-supabase.mjs",
     "backup": "node scripts/migrar-supabase.mjs --exportar",
-    "restaurar": "node scripts/migrar-supabase.mjs --importar"
+    "restaurar": "node scripts/migrar-supabase.mjs --importar",
+    "schema": "node scripts/juntar-migracoes.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.5.2",
