@@ -3,11 +3,27 @@
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { ArrowLeft, NotebookPen, Pin, Plus, Search, Trash2 } from 'lucide-react';
+import {
+  ArrowLeft,
+  ChevronDown,
+  ChevronUp,
+  Eye,
+  EyeOff,
+  FileText,
+  ImageIcon,
+  Link2,
+  NotebookPen,
+  Pin,
+  Plus,
+  Search,
+  Trash2,
+} from 'lucide-react';
 import EditorNota, { type Opcao } from '@/components/editor-nota';
 import { useSessao } from '@/components/sessao';
 import { Card, Empty } from '@/components/ui';
 import ImagensDaNota from '@/components/imagens-nota';
+import AnexosDaNota from '@/components/anexos-nota';
+import CorpoNota from '@/components/corpo-nota';
 import { visualDe } from '@/lib/disciplinas-visual';
 import { ORDEM_TAGS, TAGS, type Nota, type Tag } from '@/lib/notas';
 
@@ -219,6 +235,10 @@ function Detalhe({
   const [filtroTag, setFiltroTag] = useState<Tag | 'todas'>('todas');
   const [criando, setCriando] = useState(false);
   const [editando, setEditando] = useState<string | null>(null);
+  const [abertas, setAbertas] = useState<Set<string>>(new Set());
+  const [reordenando, setReordenando] = useState(false);
+  const { supabase } = useSessao();
+  const router = useRouter();
 
   const filtradas = useMemo(() => {
     const termo = busca.trim().toLowerCase();
@@ -229,6 +249,34 @@ function Detalhe({
     });
   }, [notas, busca, filtroTag]);
 
+  function alternar(id: string) {
+    setAbertas((atual) => {
+      const nova = new Set(atual);
+      if (nova.has(id)) nova.delete(id);
+      else nova.add(id);
+      return nova;
+    });
+  }
+
+  /**
+   * Troca a anotação de lugar com a vizinha e regrava a ordem do grupo inteiro
+   * em 1..n, para não depender de posições antigas repetidas.
+   */
+  async function mover(grupo: NotaComContexto[], indice: number, passo: -1 | 1) {
+    const destino = indice + passo;
+    if (destino < 0 || destino >= grupo.length || reordenando) return;
+
+    const ordem = [...grupo];
+    [ordem[indice], ordem[destino]] = [ordem[destino], ordem[indice]];
+
+    setReordenando(true);
+    await Promise.all(
+      ordem.map((n, i) => supabase.from('notes').update({ position: i + 1 }).eq('id', n.id)),
+    );
+    setReordenando(false);
+    router.refresh();
+  }
+
   const contagem = useMemo(() => {
     const c: Record<string, number> = {};
     for (const n of notas) c[n.tag] = (c[n.tag] ?? 0) + 1;
@@ -237,6 +285,10 @@ function Detalhe({
 
   const fixadas = filtradas.filter((n) => n.pinned);
   const demais = filtradas.filter((n) => !n.pinned);
+
+  // reordenar só faz sentido vendo a lista inteira: com filtro, as setas
+  // mexeriam em vizinhas que estão escondidas
+  const podeOrdenar = !busca.trim() && filtroTag === 'todas';
 
   const visual = slug ? visualDe(slug) : null;
   const Icone = visual?.icone ?? NotebookPen;
@@ -348,7 +400,7 @@ function Detalhe({
               <h3 className="flex items-center gap-1.5 text-xs font-bold tracking-wider text-slate-500 uppercase dark:text-slate-400">
                 <Pin size={12} /> Fixadas
               </h3>
-              {fixadas.map((n) => (
+              {fixadas.map((n, i) => (
                 <Cartao
                   key={n.id}
                   nota={n}
@@ -356,6 +408,12 @@ function Detalhe({
                   editando={editando === n.id}
                   abrir={() => setEditando(n.id)}
                   fechar={() => setEditando(null)}
+                  aberta={abertas.has(n.id)}
+                  alternar={() => alternar(n.id)}
+                  podeSubir={podeOrdenar && i > 0}
+                  podeDescer={podeOrdenar && i < fixadas.length - 1}
+                  subir={() => void mover(fixadas, i, -1)}
+                  descer={() => void mover(fixadas, i, 1)}
                 />
               ))}
             </section>
@@ -368,7 +426,7 @@ function Detalhe({
                   Demais anotações
                 </h3>
               )}
-              {demais.map((n) => (
+              {demais.map((n, i) => (
                 <Cartao
                   key={n.id}
                   nota={n}
@@ -376,6 +434,12 @@ function Detalhe({
                   editando={editando === n.id}
                   abrir={() => setEditando(n.id)}
                   fechar={() => setEditando(null)}
+                  aberta={abertas.has(n.id)}
+                  alternar={() => alternar(n.id)}
+                  podeSubir={podeOrdenar && i > 0}
+                  podeDescer={podeOrdenar && i < demais.length - 1}
+                  subir={() => void mover(demais, i, -1)}
+                  descer={() => void mover(demais, i, 1)}
                 />
               ))}
             </section>
@@ -417,12 +481,25 @@ function Cartao({
   editando,
   abrir,
   fechar,
+  aberta,
+  alternar,
+  podeSubir,
+  podeDescer,
+  subir,
+  descer,
 }: {
   nota: NotaComContexto;
   disciplinas: Opcao[];
   editando: boolean;
   abrir: () => void;
   fechar: () => void;
+  /** card expandido: mostra o corpo, os anexos e a data */
+  aberta: boolean;
+  alternar: () => void;
+  podeSubir: boolean;
+  podeDescer: boolean;
+  subir: () => void;
+  descer: () => void;
 }) {
   const info = TAGS[nota.tag];
   const Icone = info.icone;
@@ -470,6 +547,40 @@ function Cartao({
         <div className="ml-auto flex items-center gap-1">
           <button
             type="button"
+            onClick={subir}
+            disabled={!podeSubir}
+            title="Subir na lista"
+            aria-label="Subir na lista"
+            className="rounded-lg p-1.5 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700 disabled:opacity-30 disabled:hover:bg-transparent dark:hover:bg-slate-800 dark:hover:text-slate-200"
+          >
+            <ChevronUp size={15} />
+          </button>
+          <button
+            type="button"
+            onClick={descer}
+            disabled={!podeDescer}
+            title="Descer na lista"
+            aria-label="Descer na lista"
+            className="rounded-lg p-1.5 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700 disabled:opacity-30 disabled:hover:bg-transparent dark:hover:bg-slate-800 dark:hover:text-slate-200"
+          >
+            <ChevronDown size={15} />
+          </button>
+          <button
+            type="button"
+            onClick={alternar}
+            aria-expanded={aberta}
+            title={aberta ? 'Esconder a anotação' : 'Ver a anotação'}
+            aria-label={aberta ? 'Esconder a anotação' : 'Ver a anotação'}
+            className={`rounded-lg p-1.5 transition ${
+              aberta
+                ? 'bg-brand-600 text-white'
+                : 'text-slate-500 hover:bg-brand-50 hover:text-brand-700 dark:text-slate-400 dark:hover:bg-slate-800'
+            }`}
+          >
+            {aberta ? <EyeOff size={15} /> : <Eye size={15} />}
+          </button>
+          <button
+            type="button"
             onClick={abrir}
             className="rounded-lg px-2.5 py-1 text-xs font-medium text-brand-600 transition hover:bg-brand-50 dark:text-brand-300 dark:hover:bg-slate-800"
           >
@@ -509,30 +620,75 @@ function Cartao({
         </div>
       )}
 
-      {nota.title && (
-        <h3 className="mt-2 font-semibold text-slate-900 dark:text-slate-100">{nota.title}</h3>
-      )}
-      {nota.body && (
-        <p className="mt-1 text-sm leading-7 whitespace-pre-wrap text-slate-700 dark:text-slate-300">
-          {nota.body}
-        </p>
-      )}
+      {/* fechado mostra só o título; o olho abre o conteúdo */}
+      <button
+        type="button"
+        onClick={alternar}
+        aria-expanded={aberta}
+        className="mt-2 flex w-full items-center gap-2 text-left"
+      >
+        <h3 className="min-w-0 flex-1 font-semibold text-slate-900 dark:text-slate-100">
+          {nota.title || 'Sem título'}
+        </h3>
+        {!aberta && <Marcas nota={nota} />}
+      </button>
 
-      {nota.images?.length > 0 && (
-        <div className="mt-3">
-          <ImagensDaNota caminhos={nota.images} somenteLeitura />
-        </div>
-      )}
+      {aberta && (
+        <>
+          <CorpoNota html={nota.body_html} texto={nota.body} className="mt-1.5" />
 
-      <p className="mt-2 text-xs text-slate-400">
-        {new Date(nota.updated_at).toLocaleString('pt-BR', {
-          day: '2-digit',
-          month: '2-digit',
-          year: '2-digit',
-          hour: '2-digit',
-          minute: '2-digit',
-        })}
-      </p>
+          {nota.images?.length > 0 && (
+            <div className="mt-3">
+              <ImagensDaNota caminhos={nota.images} somenteLeitura />
+            </div>
+          )}
+
+          {nota.attachments?.length > 0 && (
+            <div className="mt-3">
+              <AnexosDaNota anexos={nota.attachments} somenteLeitura />
+            </div>
+          )}
+
+          <p className="mt-2 text-xs text-slate-400">
+            {new Date(nota.updated_at).toLocaleString('pt-BR', {
+              day: '2-digit',
+              month: '2-digit',
+              year: '2-digit',
+              hour: '2-digit',
+              minute: '2-digit',
+            })}
+          </p>
+        </>
+      )}
     </article>
+  );
+}
+
+/** Pistas do que tem dentro da anotação enquanto o card está fechado. */
+function Marcas({ nota }: { nota: NotaComContexto }) {
+  const temImagem = nota.images?.length > 0 || /<img[\s>/]/i.test(nota.body_html ?? '');
+  const temPdf = nota.attachments?.length > 0;
+  const temLink = /<a\s/i.test(nota.body_html ?? '');
+
+  if (!temImagem && !temPdf && !temLink) return null;
+
+  return (
+    <span className="flex shrink-0 items-center gap-1.5 text-slate-400">
+      {temLink && (
+        <span title="tem link">
+          <Link2 size={13} />
+        </span>
+      )}
+      {temImagem && (
+        <span title="tem imagem">
+          <ImageIcon size={13} />
+        </span>
+      )}
+      {temPdf && (
+        <span title="tem PDF">
+          <FileText size={13} />
+        </span>
+      )}
+    </span>
   );
 }

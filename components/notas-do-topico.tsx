@@ -2,9 +2,13 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { ChevronDown, NotebookPen, Plus } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { ChevronDown, ChevronUp, Eye, EyeOff, NotebookPen, Plus } from 'lucide-react';
 import EditorNota from '@/components/editor-nota';
 import ImagensDaNota from '@/components/imagens-nota';
+import AnexosDaNota from '@/components/anexos-nota';
+import CorpoNota from '@/components/corpo-nota';
+import { useSessao } from '@/components/sessao';
 import { TAGS, type Nota } from '@/lib/notas';
 
 /**
@@ -25,6 +29,35 @@ export default function NotasDoTopico({
   const [aberto, setAberto] = useState(false);
   const [criando, setCriando] = useState(false);
   const [editando, setEditando] = useState<string | null>(null);
+  const [abertas, setAbertas] = useState<Set<string>>(new Set());
+  const [reordenando, setReordenando] = useState(false);
+  const { supabase } = useSessao();
+  const router = useRouter();
+
+  function alternar(id: string) {
+    setAbertas((atual) => {
+      const nova = new Set(atual);
+      if (nova.has(id)) nova.delete(id);
+      else nova.add(id);
+      return nova;
+    });
+  }
+
+  /** troca de lugar com a vizinha e regrava a ordem do tópico em 1..n */
+  async function mover(indice: number, passo: -1 | 1) {
+    const destino = indice + passo;
+    if (destino < 0 || destino >= notas.length || reordenando) return;
+
+    const ordem = [...notas];
+    [ordem[indice], ordem[destino]] = [ordem[destino], ordem[indice]];
+
+    setReordenando(true);
+    await Promise.all(
+      ordem.map((n, i) => supabase.from('notes').update({ position: i + 1 }).eq('id', n.id)),
+    );
+    setReordenando(false);
+    router.refresh();
+  }
 
   if (indisponivel) {
     return (
@@ -69,9 +102,10 @@ export default function NotasDoTopico({
 
       {aberto && (
         <div className="space-y-3 border-t border-slate-200 px-4 py-4 dark:border-slate-700">
-          {notas.map((n) => {
+          {notas.map((n, i) => {
             const info = TAGS[n.tag];
             const Icone = info.icone;
+            const expandida = abertas.has(n.id);
 
             if (editando === n.id) {
               return (
@@ -101,28 +135,74 @@ export default function NotasDoTopico({
                   >
                     <Icone size={11} /> {info.label}
                   </span>
-                  <button
-                    type="button"
-                    onClick={() => setEditando(n.id)}
-                    className="ml-auto text-xs font-medium text-brand-600 hover:underline dark:text-brand-300"
-                  >
-                    editar
-                  </button>
-                </div>
-                {n.title && (
-                  <h4 className="mt-1.5 text-sm font-semibold text-slate-900 dark:text-slate-100">
-                    {n.title}
-                  </h4>
-                )}
-                {n.body && (
-                  <p className="mt-0.5 text-sm leading-7 whitespace-pre-wrap text-slate-700 dark:text-slate-300">
-                    {n.body}
-                  </p>
-                )}
-                {n.images?.length > 0 && (
-                  <div className="mt-2">
-                    <ImagensDaNota caminhos={n.images} somenteLeitura />
+                  <div className="ml-auto flex items-center gap-1">
+                    <button
+                      type="button"
+                      onClick={() => void mover(i, -1)}
+                      disabled={i === 0}
+                      title="Subir"
+                      aria-label="Subir"
+                      className="rounded-lg p-1 text-slate-400 transition hover:bg-white hover:text-slate-700 disabled:opacity-30 dark:hover:bg-slate-700 dark:hover:text-slate-200"
+                    >
+                      <ChevronUp size={14} />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => void mover(i, 1)}
+                      disabled={i === notas.length - 1}
+                      title="Descer"
+                      aria-label="Descer"
+                      className="rounded-lg p-1 text-slate-400 transition hover:bg-white hover:text-slate-700 disabled:opacity-30 dark:hover:bg-slate-700 dark:hover:text-slate-200"
+                    >
+                      <ChevronDown size={14} />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => alternar(n.id)}
+                      aria-expanded={expandida}
+                      title={expandida ? 'Esconder a anotação' : 'Ver a anotação'}
+                      aria-label={expandida ? 'Esconder a anotação' : 'Ver a anotação'}
+                      className={`rounded-lg p-1 transition ${
+                        expandida
+                          ? 'bg-brand-600 text-white'
+                          : 'text-slate-500 hover:bg-white hover:text-brand-700 dark:text-slate-400 dark:hover:bg-slate-700'
+                      }`}
+                    >
+                      {expandida ? <EyeOff size={14} /> : <Eye size={14} />}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setEditando(n.id)}
+                      className="text-xs font-medium text-brand-600 hover:underline dark:text-brand-300"
+                    >
+                      editar
+                    </button>
                   </div>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => alternar(n.id)}
+                  aria-expanded={expandida}
+                  className="mt-1.5 block w-full text-left text-sm font-semibold text-slate-900 dark:text-slate-100"
+                >
+                  {n.title || 'Sem título'}
+                </button>
+
+                {expandida && (
+                  <>
+                    <CorpoNota html={n.body_html} texto={n.body} className="mt-0.5" />
+                    {n.images?.length > 0 && (
+                      <div className="mt-2">
+                        <ImagensDaNota caminhos={n.images} somenteLeitura />
+                      </div>
+                    )}
+                    {n.attachments?.length > 0 && (
+                      <div className="mt-2">
+                        <AnexosDaNota anexos={n.attachments} somenteLeitura />
+                      </div>
+                    )}
+                  </>
                 )}
               </article>
             );

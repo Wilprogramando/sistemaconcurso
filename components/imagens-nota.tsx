@@ -1,10 +1,10 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { ImagePlus, Loader2, Maximize2, Trash2, X } from 'lucide-react';
 import { useSessao } from '@/components/sessao';
+import { BUCKET, useUrlsAssinadas } from '@/components/urls-assinadas';
 
-export const BUCKET = 'anotacoes';
 const TAMANHO_MAXIMO = 8 * 1024 * 1024;
 const TIPOS = ['image/png', 'image/jpeg', 'image/webp', 'image/gif'];
 
@@ -13,9 +13,12 @@ const extensaoDe = (tipo: string) =>
   'png';
 
 /**
- * Anexos de imagem da anotação: print da apostila, foto do caderno, recorte
- * de uma questão. O bucket é privado, então o caminho é o que fica guardado
- * e a URL é assinada na hora de exibir.
+ * Galeria de imagens soltas da anotação: print da apostila, foto do caderno.
+ * Para amarrar a imagem ao texto da questão, o caminho é a imagem dentro do
+ * corpo (botão de imagem do editor) — aqui é só anexo.
+ *
+ * O bucket é privado, então o caminho é o que fica guardado e a URL é
+ * assinada na hora de exibir.
  */
 export default function ImagensDaNota({
   caminhos,
@@ -27,32 +30,12 @@ export default function ImagensDaNota({
   somenteLeitura?: boolean;
 }) {
   const { userId, supabase } = useSessao();
-  const [urls, setUrls] = useState<Record<string, string>>({});
   const [enviando, setEnviando] = useState(0);
   const [erro, setErro] = useState<string | null>(null);
   const [ampliada, setAmpliada] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // assina as URLs sempre que a lista muda
-  useEffect(() => {
-    const faltando = caminhos.filter((c) => !urls[c]);
-    if (!faltando.length) return;
-
-    let cancelado = false;
-    (async () => {
-      const { data } = await supabase.storage.from(BUCKET).createSignedUrls(faltando, 3600);
-      if (cancelado || !data) return;
-      const novas: Record<string, string> = {};
-      for (const item of data) {
-        if (item.signedUrl && item.path) novas[item.path] = item.signedUrl;
-      }
-      setUrls((u) => ({ ...u, ...novas }));
-    })();
-
-    return () => {
-      cancelado = true;
-    };
-  }, [caminhos, urls, supabase]);
+  const urls = useUrlsAssinadas(caminhos);
 
   const enviar = useCallback(
     async (arquivos: File[]) => {
@@ -61,8 +44,7 @@ export default function ImagensDaNota({
       if (!validos.length) return;
 
       setErro(null);
-      const grandes = validos.filter((f) => f.size > TAMANHO_MAXIMO);
-      if (grandes.length) {
+      if (validos.some((f) => f.size > TAMANHO_MAXIMO)) {
         setErro('Cada imagem pode ter no máximo 8 MB.');
         return;
       }
@@ -80,7 +62,7 @@ export default function ImagensDaNota({
           setErro(
             /bucket/i.test(error.message)
               ? 'O bucket de imagens ainda não existe. Rode a migração 0006 no Supabase.'
-              : error.message
+              : error.message,
           );
         } else {
           novos.push(caminho);
@@ -90,23 +72,8 @@ export default function ImagensDaNota({
 
       if (novos.length) onChange([...caminhos, ...novos]);
     },
-    [caminhos, onChange, somenteLeitura, supabase, userId]
+    [caminhos, onChange, somenteLeitura, supabase, userId],
   );
-
-  // colar print direto do Ctrl+V
-  useEffect(() => {
-    if (somenteLeitura || !onChange) return;
-    const aoColar = (e: ClipboardEvent) => {
-      const alvo = e.target as HTMLElement | null;
-      if (!alvo?.closest?.('[data-area-nota]')) return;
-      const arquivos = [...(e.clipboardData?.files ?? [])];
-      if (!arquivos.length) return;
-      e.preventDefault();
-      void enviar(arquivos);
-    };
-    document.addEventListener('paste', aoColar);
-    return () => document.removeEventListener('paste', aoColar);
-  }, [enviar, onChange, somenteLeitura]);
 
   function remover(caminho: string) {
     if (!onChange) return;
@@ -133,9 +100,9 @@ export default function ImagensDaNota({
             onClick={() => inputRef.current?.click()}
             className="inline-flex items-center gap-1.5 rounded-lg bg-white px-3 py-1.5 text-sm font-medium text-brand-700 ring-1 ring-slate-300 transition hover:bg-slate-50 dark:bg-slate-800 dark:text-brand-200 dark:ring-slate-600"
           >
-            <ImagePlus size={15} /> Adicionar imagem
+            <ImagePlus size={15} /> Imagem em anexo
           </button>
-          <span>ou cole um print com Ctrl + V, ou arraste o arquivo aqui</span>
+          <span>ou arraste o arquivo aqui — para colar no meio do texto, use Ctrl + V no corpo</span>
           <input
             ref={inputRef}
             type="file"

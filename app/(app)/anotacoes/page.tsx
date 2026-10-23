@@ -17,6 +17,7 @@ export default async function AnotacoesPage() {
       .select('*')
       .eq('user_id', user.id)
       .order('pinned', { ascending: false })
+      .order('position', { ascending: true })
       .order('updated_at', { ascending: false }),
     supabase.from('disciplines').select('id, name, slug').order('chapter'),
     supabase.from('topics').select('id, ref, title'),

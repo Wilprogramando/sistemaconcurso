@@ -1,13 +1,29 @@
 'use client';
 
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Check, Pin, PinOff, Trash2, X } from 'lucide-react';
+import { Check, Loader2, Pin, PinOff, Trash2, X } from 'lucide-react';
 import { useSessao } from '@/components/sessao';
 import ImagensDaNota from '@/components/imagens-nota';
-import { ORDEM_TAGS, TAGS, type Nota, type Tag } from '@/lib/notas';
+import AnexosDaNota from '@/components/anexos-nota';
+import EditorRico from '@/components/editor-rico';
+import { BUCKET, useUrlsAssinadas } from '@/components/urls-assinadas';
+import {
+  aplicarUrls,
+  caminhosNoHtml,
+  htmlVazio,
+  removerUrlsAssinadas,
+  sanitizarHtml,
+  textoDoHtml,
+  textoParaHtml,
+} from '@/lib/html-nota';
+import { ORDEM_TAGS, TAGS, type Anexo, type Nota, type Tag } from '@/lib/notas';
 
 export type Opcao = { id: number; nome: string };
+
+const extensaoDe = (tipo: string) =>
+  ({ 'image/png': 'png', 'image/jpeg': 'jpg', 'image/webp': 'webp', 'image/gif': 'gif' })[tipo] ??
+  'png';
 
 /**
  * Formulário único para criar e editar anotação. Quando `nota` vem preenchida
@@ -30,39 +46,92 @@ export default function EditorNota({
   const { userId, supabase } = useSessao();
   const router = useRouter();
 
+  const htmlInicial = useMemo(
+    () => sanitizarHtml(nota?.body_html || textoParaHtml(nota?.body ?? '')),
+    [nota?.body_html, nota?.body],
+  );
+
+  // as imagens que já estão no meio do texto precisam de URL assinada para
+  // aparecerem dentro do editor
+  const caminhosIniciais = useMemo(() => caminhosNoHtml(htmlInicial), [htmlInicial]);
+  const urlsIniciais = useUrlsAssinadas(caminhosIniciais);
+  const prontoParaEditar = caminhosIniciais.every((c) => urlsIniciais[c]);
+
   const [titulo, setTitulo] = useState(nota?.title ?? '');
-  const [corpo, setCorpo] = useState(nota?.body ?? '');
+  const [corpo, setCorpo] = useState(htmlInicial);
   const [tag, setTag] = useState<Tag>(nota?.tag ?? 'nota');
   const [disciplina, setDisciplina] = useState<number | null>(
-    nota?.discipline_id ?? disciplinaFixa ?? null
+    nota?.discipline_id ?? disciplinaFixa ?? null,
   );
   const [fixada, setFixada] = useState(nota?.pinned ?? false);
   const [imagens, setImagens] = useState<string[]>(nota?.images ?? []);
+  const [anexos, setAnexos] = useState<Anexo[]>(nota?.attachments ?? []);
   const [salvando, setSalvando] = useState(false);
 
-  const vazia = !titulo.trim() && !corpo.trim() && imagens.length === 0;
+  const vazia =
+    !titulo.trim() && htmlVazio(corpo) && imagens.length === 0 && anexos.length === 0;
+
+  /** sobe a imagem e devolve a tag pronta para entrar no texto */
+  async function inserirImagens(arquivos: File[]) {
+    const htmls: string[] = [];
+    for (const arquivo of arquivos) {
+      const caminho = `${userId}/${crypto.randomUUID()}.${extensaoDe(arquivo.type)}`;
+      const { error } = await supabase.storage
+        .from(BUCKET)
+        .upload(caminho, arquivo, { contentType: arquivo.type, upsert: false });
+      if (error) continue;
+
+      const { data } = await supabase.storage.from(BUCKET).createSignedUrl(caminho, 3600);
+      if (!data?.signedUrl) continue;
+      htmls.push(
+        `<img src="${data.signedUrl}" data-path="${caminho}" alt="Imagem da anotação" />`,
+      );
+    }
+    return htmls;
+  }
 
   async function salvar() {
     if (vazia) return;
     setSalvando(true);
 
+    // o src assinado expira em uma hora: o que fica gravado é o `data-path`
+    const html = removerUrlsAssinadas(sanitizarHtml(corpo));
+    const texto = textoDoHtml(html);
+
     const dados = {
-      title: titulo.trim() || corpo.trim().slice(0, 60) || 'Imagem',
-      body: corpo.trim(),
+      title: titulo.trim() || texto.split('\n')[0]?.slice(0, 60) || 'Anotação',
+      body: texto,
+      body_html: html || null,
       tag,
       discipline_id: disciplina,
       topic_id: nota?.topic_id ?? topicoFixo ?? null,
       pinned: fixada,
       images: imagens,
+      attachments: anexos,
     };
 
     if (nota) {
       await supabase.from('notes').update(dados).eq('id', nota.id);
     } else {
-      await supabase.from('notes').insert({ ...dados, user_id: userId });
+      // a nota nova entra no topo da matéria
+      const { data: primeira } = await supabase
+        .from('notes')
+        .select('position')
+        .eq('user_id', userId)
+        .order('position', { ascending: true })
+        .limit(1)
+        .maybeSingle();
+
+      await supabase.from('notes').insert({
+        ...dados,
+        user_id: userId,
+        position: (primeira?.position ?? 1) - 1,
+      });
+
       setTitulo('');
       setCorpo('');
       setImagens([]);
+      setAnexos([]);
     }
 
     setSalvando(false);
@@ -84,20 +153,27 @@ export default function EditorNota({
       <input
         value={titulo}
         onChange={(e) => setTitulo(e.target.value)}
-        placeholder="Título (opcional)"
+        placeholder="Título da anotação — é o que aparece no card"
         className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm font-semibold outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-100 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:focus:ring-brand-900"
       />
 
-      <textarea
-        value={corpo}
-        onChange={(e) => setCorpo(e.target.value)}
-        rows={5}
-        autoFocus={!nota}
-        placeholder="Escreva aqui. Ex.: inquérito — 10 dias preso, 30 solto. O delegado NUNCA arquiva."
-        className="w-full resize-y rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm leading-7 outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-100 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:focus:ring-brand-900"
-      />
+      {prontoParaEditar ? (
+        <EditorRico
+          valor={aplicarUrls(htmlInicial, urlsIniciais)}
+          onChange={setCorpo}
+          onInserirImagem={inserirImagens}
+          autoFocus={!nota}
+          placeholder="Escreva aqui. Ex.: inquérito — 10 dias preso, 30 solto. O delegado NUNCA arquiva."
+        />
+      ) : (
+        <div className="grid min-h-40 place-items-center rounded-xl border border-slate-300 dark:border-slate-600">
+          <Loader2 size={18} className="animate-spin text-slate-400" />
+        </div>
+      )}
 
       <ImagensDaNota caminhos={imagens} onChange={setImagens} />
+
+      <AnexosDaNota anexos={anexos} onChange={setAnexos} />
 
       <div className="flex flex-wrap gap-1.5">
         {ORDEM_TAGS.map((t) => {

@@ -3,16 +3,26 @@ import type { LucideIcon } from 'lucide-react';
 
 export type Tag = 'nota' | 'macete' | 'duvida' | 'numero' | 'lei';
 
+/** PDF anexado: caminho no bucket privado `anotacoes` + nome original */
+export type Anexo = { path: string; name: string; size: number };
+
 export type Nota = {
   id: string;
   title: string;
+  /** cópia em texto puro do corpo: serve para busca e prévia */
   body: string;
+  /** corpo formatado — negrito, cores, links e imagens no meio do texto */
+  body_html: string | null;
   discipline_id: number | null;
   topic_id: number | null;
   tag: Tag;
   pinned: boolean;
   /** caminhos no bucket privado `anotacoes` */
   images: string[];
+  /** PDFs anexados */
+  attachments: Anexo[];
+  /** ordem escolhida à mão dentro da matéria; menor vem primeiro */
+  position: number;
   created_at: string;
   updated_at: string;
 };
