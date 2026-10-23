@@ -85,10 +85,16 @@ export default function EditorRico({
    * porque quem seleciona até o fim da linha solta o botão fora dela.
    */
   const aoSoltarRef = useRef<(e: MouseEvent) => void>(() => {});
+  const aoApertarRef = useRef<(e: MouseEvent) => void>(() => {});
   useEffect(() => {
     const aoSoltar = (e: MouseEvent) => aoSoltarRef.current(e);
+    const aoApertar = (e: MouseEvent) => aoApertarRef.current(e);
     document.addEventListener('mouseup', aoSoltar);
-    return () => document.removeEventListener('mouseup', aoSoltar);
+    document.addEventListener('mousedown', aoApertar);
+    return () => {
+      document.removeEventListener('mouseup', aoSoltar);
+      document.removeEventListener('mousedown', aoApertar);
+    };
   }, []);
 
   const avisar = useCallback(() => {
@@ -354,6 +360,31 @@ export default function EditorRico({
     }
   }
 
+  /**
+   * Ctrl apertado começando um novo arrasto: a seleção que ainda está na tela
+   * é a anterior, e é agora ou nunca para guardá-la — no instante seguinte o
+   * navegador a desfaz para começar a nova. Sem isso, o primeiro trecho se
+   * perdia e o negrito só pegava no último.
+   */
+  aoApertarRef.current = (e: MouseEvent) => {
+    const alvo = e.target as Node | null;
+    if (!ref.current?.contains(alvo)) return;
+
+    // clique comum dentro do texto desmancha o que estava marcado
+    if (!(e.ctrlKey || e.metaKey)) {
+      if (marcas().length) {
+        limparMarcas();
+        avisar();
+      }
+      return;
+    }
+
+    const sel = document.getSelection();
+    if (!sel || sel.isCollapsed || !ref.current.contains(sel.anchorNode)) return;
+    marcarTrecho();
+    avisar();
+  };
+
   aoSoltarRef.current = (e: MouseEvent) => {
     const sel = document.getSelection();
     const dentroDaCaixa = ref.current?.contains(sel?.anchorNode ?? null);
@@ -362,10 +393,9 @@ export default function EditorRico({
     if (e.ctrlKey || e.metaKey) {
       marcarTrecho();
       avisar();
-      return;
     }
-    if (marcas().length && !sel?.isCollapsed) return; // seleção nova, marcas seguem
-    if (marcas().length && sel?.isCollapsed) limparMarcas();
+    // sem Ctrl não mexe nas marcas aqui: quem limpa é o clique que começa a
+    // seleção nova, no mousedown
   };
 
   return (
