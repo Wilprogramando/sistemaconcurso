@@ -53,12 +53,92 @@ export default function QuestionRunner({
   const [seconds, setSeconds] = useState(0);
   const [saving, setSaving] = useState(false);
   const [marcadas, setMarcadas] = useState<Set<number>>(new Set());
+  /** enquanto não leu o que ficou guardado, não grava por cima */
+  const [restaurado, setRestaurado] = useState(false);
+  /** quantas vieram do andamento guardado, só para avisar na tela */
+  const [retomadas, setRetomadas] = useState(0);
 
   const startedAt = useRef<number>(Date.now());
   const { userId, supabase } = useSessao();
 
-  const q = questions[index];
-  const total = questions.length;
+  /**
+   * Uma chave por conjunto de questões, para um treino não herdar o andamento
+   * de outro. Os ids vão em ordem crescente porque questões livres e simulado
+   * embaralham a cada visita — a chave precisa reconhecer o mesmo conjunto.
+   */
+  const chave = `andamento:${kind}:${diaDoTreino ?? 'livre'}:${questions
+    .map((x) => x.id)
+    .slice()
+    .sort((a, b) => a - b)
+    .join('-')}`;
+
+  /** ordem em que as questões aparecem nesta sessão */
+  const [fila, setFila] = useState<Question[]>(questions);
+
+  // ---------- retomar de onde parou ----------
+  useEffect(() => {
+    try {
+      const bruto = localStorage.getItem(chave);
+      if (bruto) {
+        const salvo = JSON.parse(bruto) as {
+          respostas: { id: number; chosen: string | null; correct: boolean }[];
+          iniciadoEm: number;
+        };
+        const porId = new Map(questions.map((x) => [x.id, x]));
+        const registro: Resposta[] = [];
+        for (const r of salvo.respostas ?? []) {
+          const question = porId.get(r.id);
+          if (question) registro.push({ question, chosen: r.chosen, correct: r.correct });
+        }
+        if (registro.length && registro.length < questions.length) {
+          // as já respondidas voltam na frente, na ordem em que foram feitas,
+          // para o retorno continuar exatamente da próxima
+          const respondidas = new Set(registro.map((r) => r.question.id));
+          setFila([
+            ...registro.map((r) => r.question),
+            ...questions.filter((x) => !respondidas.has(x.id)),
+          ]);
+          setLog(registro);
+          setIndex(registro.length);
+          setRetomadas(registro.length);
+          if (salvo.iniciadoEm) startedAt.current = salvo.iniciadoEm;
+        }
+      }
+    } catch {
+      // armazenamento bloqueado: segue do zero, sem quebrar a tela
+    }
+    setRestaurado(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // ---------- guardar o andamento a cada resposta ----------
+  useEffect(() => {
+    if (!restaurado || finished) return;
+    try {
+      if (!log.length) return;
+      localStorage.setItem(
+        chave,
+        JSON.stringify({
+          respostas: log.map((r) => ({ id: r.question.id, chosen: r.chosen, correct: r.correct })),
+          iniciadoEm: startedAt.current,
+        }),
+      );
+    } catch {
+      // sem armazenamento, o treino só não é retomável
+    }
+  }, [log, finished, restaurado, chave]);
+
+  /** o andamento guardado não serve mais depois que a sessão fecha */
+  const limparAndamento = useCallback(() => {
+    try {
+      localStorage.removeItem(chave);
+    } catch {
+      // nada a fazer
+    }
+  }, [chave]);
+
+  const q = fila[index];
+  const total = fila.length;
 
   useEffect(() => {
     if (finished) return;
@@ -73,6 +153,7 @@ export default function QuestionRunner({
     async (registro: Resposta[]) => {
       setFinished(true);
       setSaving(true);
+      limparAndamento();
 
 
       const duration = Math.floor((Date.now() - startedAt.current) / 1000);
@@ -173,7 +254,7 @@ export default function QuestionRunner({
 
       setSaving(false);
     },
-    [diaDoTreino, disciplineId, kind, supabase, userId]
+    [diaDoTreino, disciplineId, kind, limparAndamento, supabase, userId]
   );
 
   useEffect(() => {
@@ -267,6 +348,12 @@ export default function QuestionRunner({
           {fmt(restante ?? seconds)}
         </div>
       </div>
+
+      {retomadas > 0 && log.length === retomadas && (
+        <p className="rounded-xl bg-brand-50 px-3.5 py-2.5 text-sm text-brand-900 ring-1 ring-brand-100 dark:bg-brand-950/50 dark:text-brand-100 dark:ring-brand-900">
+          Retomando de onde você parou: {retomadas} de {total} já respondidas.
+        </p>
+      )}
 
       <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
         <div
