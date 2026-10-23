@@ -79,6 +79,18 @@ export default function EditorRico({
     if (autoFocus) ref.current?.focus();
   }, [autoFocus]);
 
+  /**
+   * Fim do arrasto, ouvido no documento: com Ctrl, o trecho vai para a lista;
+   * sem Ctrl, as marcas antigas caem. O `mouseup` da própria caixa não serve,
+   * porque quem seleciona até o fim da linha solta o botão fora dela.
+   */
+  const aoSoltarRef = useRef<(e: MouseEvent) => void>(() => {});
+  useEffect(() => {
+    const aoSoltar = (e: MouseEvent) => aoSoltarRef.current(e);
+    document.addEventListener('mouseup', aoSoltar);
+    return () => document.removeEventListener('mouseup', aoSoltar);
+  }, []);
+
   const avisar = useCallback(() => {
     if (ref.current) onChange(ref.current.innerHTML);
   }, [onChange]);
@@ -86,11 +98,41 @@ export default function EditorRico({
   /** guarda onde estava o cursor antes de clicar num botão de menu */
   function guardarIntervalo() {
     const sel = window.getSelection();
-    if (sel && sel.rangeCount) intervalo.current = sel.getRangeAt(0).cloneRange();
+    if (sel && sel.rangeCount && ref.current?.contains(sel.anchorNode)) {
+      intervalo.current = sel.getRangeAt(0).cloneRange();
+    }
   }
+
+  /**
+   * O intervalo é guardado a cada mudança de seleção, no documento inteiro.
+   *
+   * Antes isso só acontecia no `mouseup` de dentro da caixa de texto — e quem
+   * arrasta até o fim da linha costuma soltar o botão fora dela. O intervalo
+   * ficava velho e o negrito ia parar no lugar errado, ou em lugar nenhum.
+   */
+  useEffect(() => {
+    const aoMudarSelecao = () => {
+      const sel = document.getSelection();
+      if (!sel || !sel.rangeCount) return;
+      if (!ref.current?.contains(sel.anchorNode)) return;
+      intervalo.current = sel.getRangeAt(0).cloneRange();
+    };
+    document.addEventListener('selectionchange', aoMudarSelecao);
+    return () => document.removeEventListener('selectionchange', aoMudarSelecao);
+  }, []);
 
   function restaurarIntervalo() {
     const sel = window.getSelection();
+
+    // seleção viva dentro da caixa manda mais do que a guardada: repor uma
+    // cópia velha por cima era o que fazia o negrito cair no vazio
+    const viva =
+      sel && sel.rangeCount && !sel.isCollapsed && ref.current?.contains(sel.anchorNode);
+    if (viva) {
+      ref.current?.focus();
+      return;
+    }
+
     if (!sel || !intervalo.current) {
       ref.current?.focus();
       return;
@@ -312,6 +354,20 @@ export default function EditorRico({
     }
   }
 
+  aoSoltarRef.current = (e: MouseEvent) => {
+    const sel = document.getSelection();
+    const dentroDaCaixa = ref.current?.contains(sel?.anchorNode ?? null);
+    if (!dentroDaCaixa) return;
+
+    if (e.ctrlKey || e.metaKey) {
+      marcarTrecho();
+      avisar();
+      return;
+    }
+    if (marcas().length && !sel?.isCollapsed) return; // seleção nova, marcas seguem
+    if (marcas().length && sel?.isCollapsed) limparMarcas();
+  };
+
   return (
     <div className="rounded-xl border border-slate-300 bg-white transition focus-within:border-brand-500 focus-within:ring-2 focus-within:ring-brand-100 dark:border-slate-600 dark:bg-slate-800 dark:focus-within:ring-brand-900">
       {/* ---------------- barra de ferramentas ---------------- */}
@@ -498,17 +554,7 @@ export default function EditorRico({
           avisar();
         }}
         onKeyUp={guardarIntervalo}
-        onMouseUp={(e) => {
-          // com Ctrl segurado, o trecho entra na lista em vez de substituir
-          // a seleção anterior — é assim que se pinta várias palavras de uma vez
-          if (e.ctrlKey || e.metaKey) {
-            marcarTrecho();
-            avisar();
-            return;
-          }
-          if (marcas().length) limparMarcas();
-          guardarIntervalo();
-        }}
+        onMouseUp={guardarIntervalo}
         onPaste={aoColar}
         onKeyDown={aoTeclar}
         onDragOver={(e) => e.preventDefault()}
