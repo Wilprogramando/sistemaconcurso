@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import {
+  AlertTriangle,
   ArrowLeft,
   ChevronDown,
   ChevronUp,
@@ -444,6 +445,8 @@ function Detalhe({
   const [posLocal, setPosLocal] = useState<Record<string, number>>({});
   /** ids já excluídos na tela, antes de o banco confirmar */
   const [removidas, setRemovidas] = useState<Set<string>>(new Set());
+  /** recado de erro vindo do banco */
+  const [erro, setErro] = useState<string | null>(null);
   const { supabase } = useSessao();
 
   const filtradas = useMemo(() => {
@@ -458,6 +461,20 @@ function Detalhe({
 
   function esquecer(id: string) {
     setRemovidas((atual) => new Set(atual).add(id));
+  }
+
+  /** o banco recusou a exclusão: o card volta para a lista e a tela avisa */
+  function falhou(id: string, motivo: string) {
+    setRemovidas((atual) => {
+      const nova = new Set(atual);
+      nova.delete(id);
+      return nova;
+    });
+    setErro(
+      /deleted_at|column|schema cache/i.test(motivo)
+        ? 'A lixeira ainda não existe no banco. Rode supabase/migrations/0009_lixeira_anotacoes.sql no SQL Editor do Supabase.'
+        : `Não foi possível excluir: ${motivo}`,
+    );
   }
 
   /**
@@ -634,6 +651,21 @@ function Detalhe({
         </p>
       )}
 
+      {erro && (
+        <p className="flex items-start gap-2 rounded-xl bg-red-50 px-3.5 py-2.5 text-sm leading-6 text-red-800 ring-1 ring-red-200 dark:bg-red-950/40 dark:text-red-200 dark:ring-red-900">
+          <AlertTriangle size={16} className="mt-0.5 shrink-0" />
+          <span className="min-w-0 flex-1">{erro}</span>
+          <button
+            type="button"
+            onClick={() => setErro(null)}
+            aria-label="Fechar aviso"
+            className="shrink-0 rounded-lg p-1 hover:bg-white/60 dark:hover:bg-slate-800"
+          >
+            <X size={15} />
+          </button>
+        </p>
+      )}
+
       {/* ---------------- lista ---------------- */}
       {!filtradas.length ? (
         <Card>
@@ -675,6 +707,7 @@ function Detalhe({
                     subir={() => mover(fixadas, i, -1)}
                     descer={() => mover(fixadas, i, 1)}
                     aoExcluir={() => esquecer(n.id)}
+                    aoFalhar={(motivo) => falhou(n.id, motivo)}
                   />
                 ))}
               </div>
@@ -709,6 +742,7 @@ function Detalhe({
                     subir={() => mover(demais, i, -1)}
                     descer={() => mover(demais, i, 1)}
                     aoExcluir={() => esquecer(n.id)}
+                    aoFalhar={(motivo) => falhou(n.id, motivo)}
                   />
                 ))}
               </div>
@@ -932,6 +966,7 @@ function Cartao({
   subir,
   descer,
   aoExcluir,
+  aoFalhar,
 }: {
   nota: NotaComContexto;
   disciplinas: Opcao[];
@@ -955,6 +990,8 @@ function Cartao({
   descer: () => void;
   /** tira o card da tela antes de o banco responder */
   aoExcluir: () => void;
+  /** devolve o card e conta o motivo quando o banco recusa */
+  aoFalhar: (motivo: string) => void;
 }) {
   const info = TAGS[nota.tag];
   const Icone = info.icone;
@@ -967,10 +1004,15 @@ function Cartao({
   function excluir() {
     setConfirmando(false);
     aoExcluir();
-    void supabase
-      .from('notes')
-      .update({ deleted_at: new Date().toISOString() })
-      .eq('id', nota.id);
+    void (async () => {
+      const { error } = await supabase
+        .from('notes')
+        .update({ deleted_at: new Date().toISOString() })
+        .eq('id', nota.id);
+      // o banco recusou: o card volta e a tela explica, em vez de a anotação
+      // sumir da lista sem ter ido para lugar nenhum
+      if (error) aoFalhar(error.message);
+    })();
   }
 
   if (editando) {

@@ -91,6 +91,8 @@ export default function EditorNota({
   const [imagens, setImagens] = useState<string[]>(nota?.images ?? []);
   const [anexos, setAnexos] = useState<Anexo[]>(nota?.attachments ?? []);
   const [salvando, setSalvando] = useState(false);
+  /** recado quando o banco recusa salvar ou excluir */
+  const [erro, setErro] = useState<string | null>(null);
   /** muda depois de salvar uma nota nova, para o editor nascer limpo */
   const [geracao, setGeracao] = useState(0);
 
@@ -180,11 +182,21 @@ export default function EditorNota({
   async function excluir() {
     if (!nota) return;
     setSalvando(true);
-    await supabase
+    const { error } = await supabase
       .from('notes')
       .update({ deleted_at: new Date().toISOString() })
       .eq('id', nota.id);
     setSalvando(false);
+
+    if (error) {
+      setErro(
+        /deleted_at|column|schema cache/i.test(error.message)
+          ? 'A lixeira ainda não existe no banco. Rode supabase/migrations/0009_lixeira_anotacoes.sql no SQL Editor do Supabase.'
+          : error.message,
+      );
+      return;
+    }
+
     router.refresh();
     onFechar?.();
   }
@@ -216,6 +228,12 @@ export default function EditorNota({
       <ImagensDaNota caminhos={imagens} onChange={setImagens} />
 
       <AnexosDaNota anexos={anexos} onChange={setAnexos} />
+
+      {erro && (
+        <p className="rounded-xl bg-red-50 px-3.5 py-2.5 text-sm leading-6 text-red-800 ring-1 ring-red-200 dark:bg-red-950/40 dark:text-red-200 dark:ring-red-900">
+          {erro}
+        </p>
+      )}
 
       <div className="flex flex-wrap gap-1.5">
         {ORDEM_TAGS.map((t) => {
