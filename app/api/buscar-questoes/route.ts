@@ -22,7 +22,7 @@ export async function GET(request: Request) {
   const supabase = await createClient();
   const { data, count, error } = await supabase
     .from('questions')
-    .select('id, kind, options, statement, answer, explanation, origin_label, year, banca', {
+    .select('id, topic_id, kind, options, statement, answer, explanation, origin_label, year, banca', {
       count: 'exact',
     })
     .neq('source', 'simulado')
