@@ -128,13 +128,14 @@ export const TODOS: Item[] = [PAINEL, ...ESTUDAR, ...AVALIAR, ...ACOMPANHAR];
 
 const ehAtivo = (path: string, href: string) => path === href || path.startsWith(href + '/');
 
-/** Barra inferior fixa (celular): 4 destinos + "Mais". */
+/** Barra inferior fixa (celular): 4 destinos + "Mais". Anotações fica à mão; Questões vai para o "Mais". */
 export function NavInferior() {
   const path = usePathname();
   const [aberto, setAberto] = useState(false);
 
-  const principais = [PAINEL, ESTUDAR[0], ESTUDAR[1], ESTUDAR[2]];
-  const extras = [ESTUDAR[3], ESTUDAR[4], ...AVALIAR, ...ACOMPANHAR];
+  const [anotacoes, ...outrosAcompanhar] = ACOMPANHAR;
+  const principais = [PAINEL, ESTUDAR[0], ESTUDAR[1], anotacoes];
+  const extras = [ESTUDAR[2], ESTUDAR[3], ESTUDAR[4], ...AVALIAR, ...outrosAcompanhar];
   const extraAtivo = extras.some((i) => ehAtivo(path, i.href));
 
   // fecha a gaveta ao navegar
