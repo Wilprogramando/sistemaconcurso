@@ -404,7 +404,7 @@ function Lixeira({
           <Empty>A lixeira está vazia.</Empty>
         </Card>
       ) : (
-        <div className="grid items-start gap-3 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="grid items-stretch gap-3 sm:grid-cols-2 xl:grid-cols-3">
           {lista.map((n) => {
             const info = TAGS[n.tag];
             const Icone = info.icone;
@@ -781,7 +781,7 @@ function Detalhe({
               <Secao icone={Pin} destaque>
                 Fixadas
               </Secao>
-              <div className="grid items-start gap-3 sm:grid-cols-2 xl:grid-cols-3">
+              <div className="grid items-stretch gap-3 sm:grid-cols-2 xl:grid-cols-3">
                 {fixadas.map((n, i) => (
                   <Cartao
                     key={n.id}
@@ -816,7 +816,7 @@ function Detalhe({
           {demais.length > 0 && (
             <section className="space-y-2">
               {fixadas.length > 0 && <Secao icone={NotebookPen}>Demais anotações</Secao>}
-              <div className="grid items-start gap-3 sm:grid-cols-2 xl:grid-cols-3">
+              <div className="grid items-stretch gap-3 sm:grid-cols-2 xl:grid-cols-3">
                 {demais.map((n, i) => (
                   <Cartao
                     key={n.id}
@@ -1165,7 +1165,7 @@ function Cartao({
         setPegou(false);
         encerrarArrasto();
       }}
-      className={`relative overflow-hidden rounded-2xl p-4 pl-5 ring-1 transition ${
+      className={`relative flex h-full flex-col overflow-hidden rounded-2xl p-4 pl-5 ring-1 transition ${
         nota.pinned
           ? 'bg-brand-50/70 ring-brand-200 dark:bg-gradient-to-br dark:from-emerald-950/70 dark:via-slate-900 dark:to-slate-900 dark:ring-emerald-800/60'
           : 'bg-white ring-slate-200 dark:bg-slate-900/80 dark:ring-slate-700/70'
@@ -1290,17 +1290,18 @@ function Cartao({
       <button
         type="button"
         onClick={ver}
-        title="Ver a anotação"
+        title={nota.title || 'Ver a anotação'}
         className="mt-2.5 flex w-full items-start gap-2 text-left"
       >
-        <h3 className="min-w-0 flex-1 leading-snug font-semibold tracking-wide text-slate-900 uppercase dark:text-slate-100">
+        {/* todos os cards têm a mesma altura: o título ocupa 3 linhas e o que passar disso vira "…" */}
+        <h3 className="line-clamp-3 min-h-[4.125rem] min-w-0 flex-1 leading-snug font-semibold tracking-wide break-words text-slate-900 uppercase dark:text-slate-100">
           {nota.title || 'Sem título'}
         </h3>
         <Marcas nota={nota} />
       </button>
 
       {/* rodapé: de onde a anotação veio */}
-      <div className="mt-3 flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">
+      <div className="mt-auto flex items-center gap-1.5 pt-3 text-xs text-slate-500 dark:text-slate-400">
         <Folder size={13} className="shrink-0 text-slate-400 dark:text-slate-500" />
         {nota.topicoRef && nota.disciplinaSlug ? (
           <Link
