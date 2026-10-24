@@ -36,18 +36,10 @@ export default function BarraEspaco() {
     };
   }, []);
 
-  if (!uso) return <div className="h-7" aria-hidden />;
+  if (!uso) return null;
 
-  if ('indisponivel' in uso) {
-    return (
-      <p
-        className="flex h-7 items-center gap-1.5 text-xs text-slate-400"
-        title="Rode supabase/migrations/0010_vinculos_e_espaco.sql no SQL Editor para ligar o medidor."
-      >
-        <Database size={13} /> espaço indisponível
-      </p>
-    );
-  }
+  // medidor desligado (migração 0010 não rodou): não mostra nada
+  if ('indisponivel' in uso) return null;
 
   const pct = Math.min(100, (uso.banco / uso.limiteBanco) * 100);
   const cor = pct >= 90 ? 'bg-red-500' : pct >= 70 ? 'bg-amber-500' : 'bg-brand-500';
