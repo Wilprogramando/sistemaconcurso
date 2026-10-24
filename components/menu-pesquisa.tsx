@@ -1,7 +1,6 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { useRouter } from 'next/navigation';
 import { Copy, Eye, EyeOff, Loader2, Scissors, Search, X } from 'lucide-react';
 import type { Alternativa } from '@/lib/types';
 
@@ -33,7 +32,6 @@ const MAX = 120;
  * colar segue no Ctrl+V.
  */
 export default function MenuPesquisa() {
-  const router = useRouter();
   const [aberto, setAberto] = useState<Aberto | null>(null);
   /** palavra com o pop-up de resultados aberto */
   const [busca, setBusca] = useState<string | null>(null);
@@ -95,10 +93,6 @@ export default function MenuPesquisa() {
       <PopupQuestoes
         busca={busca}
         aoFechar={fecharBusca}
-        aoProcurarMais={() => {
-          router.push(`/questoes?q=${encodeURIComponent(busca)}`);
-          setBusca(null);
-        }}
       />
     ) : null;
 
@@ -189,36 +183,64 @@ function Realce({ texto, termo }: { texto: string; termo: string }) {
 type Estado =
   | { fase: 'carregando' }
   | { fase: 'erro' }
-  | { fase: 'ok'; total: number; questoes: Previa[] };
+  | { fase: 'ok'; total: number; questoes: Previa[]; buscando: boolean };
 
 /**
  * Pop-up com as primeiras questões da palavra. A pessoa continua na tela
- * onde estava; o botão de baixo leva à busca completa.
+ * onde estava; o botão de baixo traz mais questões para dentro do próprio
+ * pop-up, que continua aberto.
  */
 function PopupQuestoes({
   busca,
   aoFechar,
-  aoProcurarMais,
 }: {
   busca: string;
   aoFechar: () => void;
-  aoProcurarMais: () => void;
 }) {
   const [estado, setEstado] = useState<Estado>({ fase: 'carregando' });
   const [gabaritos, setGabaritos] = useState<Set<number>>(new Set());
 
+  const [falhouMais, setFalhouMais] = useState(false);
+  const ctl = useRef<AbortController | null>(null);
+
+  /** busca uma página a partir de `de`; na primeira troca o estado, nas outras soma */
+  const buscar = useCallback(
+    (de: number) => {
+      ctl.current?.abort();
+      const c = new AbortController();
+      ctl.current = c;
+      setFalhouMais(false);
+      if (de > 0) setEstado((e) => (e.fase === 'ok' ? { ...e, buscando: true } : e));
+
+      fetch(`/api/buscar-questoes?q=${encodeURIComponent(busca)}&de=${de}`, { signal: c.signal })
+        .then((r) => (r.ok ? r.json() : Promise.reject(new Error('falha'))))
+        .then((d: { total: number; questoes: Previa[] }) =>
+          setEstado((e) => ({
+            fase: 'ok',
+            total: d.total,
+            questoes: de > 0 && e.fase === 'ok' ? [...e.questoes, ...d.questoes] : d.questoes,
+            buscando: false,
+          })),
+        )
+        .catch((err) => {
+          if (err?.name === 'AbortError') return;
+          if (de > 0) {
+            setFalhouMais(true);
+            setEstado((e) => (e.fase === 'ok' ? { ...e, buscando: false } : e));
+          } else {
+            setEstado({ fase: 'erro' });
+          }
+        });
+    },
+    [busca],
+  );
+
   useEffect(() => {
-    const ctl = new AbortController();
     setEstado({ fase: 'carregando' });
     setGabaritos(new Set());
-    fetch(`/api/buscar-questoes?q=${encodeURIComponent(busca)}`, { signal: ctl.signal })
-      .then((r) => (r.ok ? r.json() : Promise.reject(new Error('falha'))))
-      .then((d) => setEstado({ fase: 'ok', total: d.total, questoes: d.questoes }))
-      .catch((e) => {
-        if (e?.name !== 'AbortError') setEstado({ fase: 'erro' });
-      });
-    return () => ctl.abort();
-  }, [busca]);
+    buscar(0);
+    return () => ctl.current?.abort();
+  }, [buscar]);
 
   useEffect(() => {
     const aoTeclar = (e: KeyboardEvent) => {
@@ -268,7 +290,7 @@ function PopupQuestoes({
               {estado.fase === 'ok' &&
                 (estado.total === 0
                   ? 'nenhuma questão encontrada'
-                  : `${estado.total} ${estado.total === 1 ? 'questão' : 'questões'} no banco — mostrando as ${estado.questoes.length} primeiras`)}
+                  : `${estado.total} ${estado.total === 1 ? 'questão' : 'questões'} no banco — mostrando ${estado.questoes.length}`)}
             </p>
           </div>
           <button
@@ -357,20 +379,36 @@ function PopupQuestoes({
         </div>
 
         <footer className="flex flex-wrap items-center justify-end gap-2 border-t border-slate-200 px-4 py-3 dark:border-slate-700">
+          {falhouMais && (
+            <span className="mr-auto text-xs text-red-600 dark:text-red-400">
+              Não deu certo, tente de novo.
+            </span>
+          )}
           <button
             type="button"
             onClick={aoFechar}
             className="rounded-xl px-4 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
           >
-            Continuar aqui
+            Fechar
           </button>
-          <button
-            type="button"
-            onClick={aoProcurarMais}
-            className="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-700"
-          >
-            <Search size={15} /> Procurar mais questões com “{busca}”
-          </button>
+          {estado.fase === 'ok' && estado.questoes.length < estado.total && (
+            <button
+              type="button"
+              disabled={estado.buscando}
+              onClick={() => buscar(estado.questoes.length)}
+              className="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-700 disabled:opacity-70"
+            >
+              {estado.buscando ? (
+                <Loader2 size={15} className="animate-spin" />
+              ) : (
+                <Search size={15} />
+              )}
+              Procurar mais questões com “{busca}”
+              <span className="font-normal opacity-80">
+                ({estado.total - estado.questoes.length} restantes)
+              </span>
+            </button>
+          )}
         </footer>
       </div>
     </div>
