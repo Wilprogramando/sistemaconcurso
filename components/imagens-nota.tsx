@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { ImagePlus, Loader2, Maximize2, Trash2, X } from 'lucide-react';
 import { useSessao } from '@/components/sessao';
 import { BUCKET, useUrlsAssinadas } from '@/components/urls-assinadas';
@@ -15,8 +15,9 @@ const extensaoDe = (tipo: string) =>
 
 /**
  * Galeria de imagens soltas da anotação: print da apostila, foto do caderno.
- * Para amarrar a imagem ao texto da questão, o caminho é a imagem dentro do
- * corpo (botão de imagem do editor) — aqui é só anexo.
+ * Ctrl + V com uma imagem na área de transferência, em qualquer ponto da
+ * anotação (inclusive no corpo), manda a imagem para cá, e não para o meio do
+ * texto. Para amarrar a imagem ao texto, use o botão de imagem do editor.
  *
  * O bucket é privado, então o caminho é o que fica guardado e a URL é
  * assinada na hora de exibir.
@@ -35,6 +36,7 @@ export default function ImagensDaNota({
   const [erro, setErro] = useState<string | null>(null);
   const [ampliada, setAmpliada] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const raiz = useRef<HTMLDivElement>(null);
 
   const urls = useUrlsAssinadas(caminhos);
 
@@ -80,6 +82,32 @@ export default function ImagensDaNota({
     [caminhos, onChange, somenteLeitura, supabase, userId],
   );
 
+  // o enviar muda a cada imagem; o ouvinte de colagem lê sempre o mais novo
+  const enviarRef = useRef(enviar);
+  enviarRef.current = enviar;
+
+  /**
+   * Ouve a colagem na área inteira da anotação, na fase de captura: chega
+   * antes do campo de texto, que colaria a imagem no meio do corpo.
+   */
+  useEffect(() => {
+    if (somenteLeitura) return;
+    const area = raiz.current?.closest('[data-area-nota]');
+    if (!area) return;
+
+    const aoColar = (e: Event) => {
+      const arquivos = [...((e as ClipboardEvent).clipboardData?.files ?? [])].filter((f) =>
+        TIPOS.includes(f.type),
+      );
+      if (!arquivos.length) return;
+      e.preventDefault();
+      e.stopPropagation();
+      void enviarRef.current(arquivos);
+    };
+    area.addEventListener('paste', aoColar, true);
+    return () => area.removeEventListener('paste', aoColar, true);
+  }, [somenteLeitura]);
+
   function remover(caminho: string) {
     if (!onChange) return;
     onChange(caminhos.filter((c) => c !== caminho));
@@ -90,7 +118,7 @@ export default function ImagensDaNota({
   if (somenteLeitura && vazio) return null;
 
   return (
-    <div className="space-y-2">
+    <div ref={raiz} className="space-y-2">
       {!somenteLeitura && (
         <div
           onDragOver={(e) => e.preventDefault()}
@@ -107,7 +135,10 @@ export default function ImagensDaNota({
           >
             <ImagePlus size={15} /> Imagem em anexo
           </button>
-          <span>ou arraste o arquivo aqui — para colar no meio do texto, use Ctrl + V no corpo</span>
+          <span>
+            ou arraste o arquivo aqui — ou use <strong>Ctrl + V</strong> com a imagem copiada:
+            ela vem para cá, e é só clicar nela para ampliar
+          </span>
           <input
             ref={inputRef}
             type="file"
