@@ -1,7 +1,8 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Check, Copy, Eye, EyeOff, Loader2, Scissors, Search, X } from 'lucide-react';
+import { Check, Copy, ExternalLink, Eye, EyeOff, Loader2, Scissors, Search, X } from 'lucide-react';
+import { linkQConcursosGeral } from '@/lib/qconcursos';
 import { useSessao } from '@/components/sessao';
 import { nextReview, type ReviewState } from '@/lib/srs';
 import type { Alternativa } from '@/lib/types';
@@ -478,6 +479,17 @@ function PopupQuestoes({
               Não deu certo, tente de novo.
             </span>
           )}
+          <a
+            href={linkQConcursosGeral()}
+            target="_blank"
+            rel="noopener noreferrer"
+            // a palavra vai para a área de transferência: é só colar na busca do site
+            onClick={() => void navigator.clipboard?.writeText(busca)}
+            title={`Abre o QConcursos em outra aba (banca AOCP) e copia “${busca}” para você colar na busca do site`}
+            className="mr-auto inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-sm font-medium text-brand-700 transition hover:bg-brand-50 dark:text-brand-300 dark:hover:bg-slate-800"
+          >
+            <ExternalLink size={14} /> Ver mais no QConcursos
+          </a>
           <button
             type="button"
             onClick={aoFechar}

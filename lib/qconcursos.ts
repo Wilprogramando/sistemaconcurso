@@ -63,3 +63,15 @@ export function linkQConcursos(slug: string): LinkQConcursos | null {
   const caminho = alvo.caminho ? `${alvo.caminho}/questoes` : 'questoes';
   return { url: `${BASE}/${caminho}?${params}`, observacao: alvo.observacao };
 }
+
+/**
+ * Treino geral na banca do concurso, sem filtro de matéria: serve de atalho
+ * quando a busca por palavra-chave não está presa a uma disciplina só.
+ */
+export function linkQConcursosGeral(): string {
+  const params = new URLSearchParams();
+  params.append('examining_board_ids[]', String(BANCA_AOCP));
+  params.append('exclude_nullified', 'true');
+  params.append('exclude_outdated', 'true');
+  return `${BASE}/questoes?${params}`;
+}
