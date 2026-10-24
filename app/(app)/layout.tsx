@@ -52,7 +52,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
         <NavLateral rodape={rodapeLateral} />
 
         {/* cabeçalho só no celular — no desktop tudo vive na barra lateral */}
-        <header className="sticky top-0 z-30 bg-brand-900 text-white md:hidden dark:bg-slate-950">
+        <header className="fundo-marca sticky top-0 z-30 bg-brand-900 text-white md:hidden dark:bg-slate-950">
           <div className="flex items-center gap-3 px-4 py-3">
             <Marca tamanho={20} />
             <div className="ml-auto flex items-center gap-2 text-sm">

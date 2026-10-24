@@ -22,7 +22,7 @@ export default function NavLateral({ rodape }: { rodape: React.ReactNode }) {
   const path = usePathname();
 
   return (
-    <aside className="fixed inset-y-0 left-0 z-40 hidden w-60 flex-col bg-brand-900 text-white md:flex dark:bg-slate-950">
+    <aside className="fundo-marca fixed inset-y-0 left-0 z-40 hidden w-60 flex-col bg-brand-900 text-white md:flex dark:bg-slate-950">
       <div className="px-5 py-5">
         <Marca />
       </div>

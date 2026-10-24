@@ -208,6 +208,19 @@ html[data-sem-titulo] .marca-titulo {
   display: none;
 }
 
+/* cores com degradê leve (ex.: verde escuro): barra lateral e cabeçalho do celular */
+html[data-degrade] .fundo-marca {
+  background-image: linear-gradient(
+    165deg,
+    var(--color-brand-800) 0%,
+    var(--color-brand-900) 55%,
+    var(--color-brand-950) 100%
+  );
+}
+html.dark[data-degrade] .fundo-marca {
+  background-image: linear-gradient(165deg, var(--color-brand-950) 0%, #020617 100%);
+}
+
 /* trecho guardado com Ctrl, esperando o comando da barra */
 .trecho-marcado {
   border-radius: 0.2rem;

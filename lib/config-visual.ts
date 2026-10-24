@@ -9,7 +9,7 @@
 
 export const CHAVE_CONFIG = 'pmsc-config';
 
-export type CorId = 'azul' | 'verde' | 'roxo' | 'vermelho' | 'laranja' | 'rosa' | 'grafite';
+export type CorId = 'azul' | 'verde' | 'floresta' | 'roxo' | 'vermelho' | 'laranja' | 'rosa' | 'grafite';
 
 export type Config = {
   cor: CorId;
@@ -21,9 +21,18 @@ export type Config = {
 export const CONFIG_PADRAO: Config = { cor: 'azul', logo: null, esconderTitulo: false };
 
 /** matiz e saturação de cada cor; o azul é o do tema original e não se mexe */
-export const CORES: { id: CorId; nome: string; h: number; s: number; amostra: string }[] = [
+export const CORES: {
+  id: CorId;
+  nome: string;
+  h: number;
+  s: number;
+  amostra: string;
+  /** barra lateral e cabeçalho ganham um degradê leve em vez de cor chapada */
+  degrade?: boolean;
+}[] = [
   { id: 'azul', nome: 'Azul', h: 221, s: 76, amostra: '#2f6fe4' },
   { id: 'verde', nome: 'Verde', h: 152, s: 62, amostra: '#1f9d63' },
+  { id: 'floresta', nome: 'Verde escuro', h: 160, s: 74, amostra: '#0b5a40', degrade: true },
   { id: 'roxo', nome: 'Roxo', h: 266, s: 62, amostra: '#7c4fd8' },
   { id: 'vermelho', nome: 'Vermelho', h: 354, s: 68, amostra: '#d63a50' },
   { id: 'laranja', nome: 'Laranja', h: 24, s: 88, amostra: '#ec7424' },
@@ -78,6 +87,8 @@ export function aplicarConfig(c: Config) {
   }
   if (c.esconderTitulo) raiz.setAttribute('data-sem-titulo', '');
   else raiz.removeAttribute('data-sem-titulo');
+  if (cor?.degrade) raiz.setAttribute('data-degrade', '');
+  else raiz.removeAttribute('data-degrade');
 }
 
 /** Script inline: aplica cor e título antes da primeira pintura, sem piscar. */
@@ -94,6 +105,7 @@ export const scriptConfig = `
     var r = document.documentElement;
     if (P[c.cor]) for (var k in P[c.cor]) r.style.setProperty('--color-brand-' + k, P[c.cor][k]);
     if (c.esconderTitulo) r.setAttribute('data-sem-titulo', '');
+    if (${JSON.stringify(CORES.filter((x) => x.degrade).map((x) => x.id))}.indexOf(c.cor) >= 0) r.setAttribute('data-degrade', '');
   } catch (e) {}
 })();
 `;
