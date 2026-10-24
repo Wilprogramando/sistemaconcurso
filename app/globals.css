@@ -203,6 +203,11 @@ code,
   overflow-wrap: anywhere;
 }
 
+/* "Esconder título" nas configurações: o atributo vem no <html> antes da pintura */
+html[data-sem-titulo] .marca-titulo {
+  display: none;
+}
+
 /* trecho guardado com Ctrl, esperando o comando da barra */
 .trecho-marcado {
   border-radius: 0.2rem;

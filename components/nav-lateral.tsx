@@ -1,8 +1,8 @@
 'use client';
 
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ShieldCheck } from 'lucide-react';
+import Link from 'next/link';
+import { Marca } from '@/components/configuracoes';
 import { ACOMPANHAR, AVALIAR, ESTUDAR, PAINEL, type Item } from '@/components/navegacao';
 
 const GRUPOS: { titulo: string | null; itens: Item[] }[] = [
@@ -23,12 +23,8 @@ export default function NavLateral({ rodape }: { rodape: React.ReactNode }) {
 
   return (
     <aside className="fixed inset-y-0 left-0 z-40 hidden w-60 flex-col bg-brand-900 text-white md:flex dark:bg-slate-950">
-      <div className="flex items-center gap-2.5 px-5 py-5">
-        <ShieldCheck size={22} className="shrink-0 text-brand-300" />
-        <Link href="/dashboard" className="min-w-0 leading-tight">
-          <span className="block font-bold">PM SC 2026</span>
-          <span className="block text-xs text-brand-200">Soldado QPPM</span>
-        </Link>
+      <div className="px-5 py-5">
+        <Marca />
       </div>
 
       <nav className="flex-1 overflow-y-auto px-3 pb-4">

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { scriptTema } from '@/components/tema';
+import { scriptConfig } from '@/lib/config-visual';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -24,6 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="pt-BR" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: scriptTema }} />
+        <script dangerouslySetInnerHTML={{ __html: scriptConfig }} />
       </head>
       <body className="min-h-screen font-sans text-slate-900 antialiased dark:text-slate-100">
         {children}

@@ -21,6 +21,8 @@ export type Nota = {
   images: string[];
   /** PDFs anexados */
   attachments: Anexo[];
+  /** ids das anotações a que esta aponta (migração 0010) */
+  linked_ids?: string[];
   /** ordem escolhida à mão dentro da matéria; menor vem primeiro */
   position: number;
   /** quando foi para a lixeira; fica nulo enquanto a anotação está em uso */

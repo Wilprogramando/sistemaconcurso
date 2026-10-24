@@ -15,6 +15,7 @@ import {
   GripVertical,
   ImageIcon,
   Link2,
+  Network,
   NotebookPen,
   Pencil,
   Pin,
@@ -142,6 +143,7 @@ export default function ListaDeNotas({
       titulo={materia?.nome ?? 'Sem matéria'}
       slug={materia?.slug ?? null}
       notas={daMateria}
+      todasNotas={notas}
       disciplinas={opcoes}
       disciplinaFixa={typeof selecao === 'number' ? selecao : null}
       voltar={() => setSelecao(null)}
@@ -499,6 +501,7 @@ function Detalhe({
   titulo,
   slug,
   notas,
+  todasNotas,
   disciplinas,
   disciplinaFixa,
   voltar,
@@ -509,6 +512,8 @@ function Detalhe({
   titulo: string;
   slug: string | null;
   notas: NotaComContexto[];
+  /** todas as anotações vivas, de qualquer matéria: os vínculos atravessam matérias */
+  todasNotas: NotaComContexto[];
   disciplinas: Opcao[];
   disciplinaFixa: number | null;
   voltar: () => void;
@@ -634,7 +639,17 @@ function Detalhe({
   // mexeriam em vizinhas que estão escondidas
   const podeOrdenar = !busca.trim() && filtroTag === 'todas';
 
-  const notaAberta = vendo ? (filtradas.find((n) => n.id === vendo) ?? null) : null;
+  const notaAberta = vendo ? (todasNotas.find((n) => n.id === vendo) ?? null) : null;
+
+  // para onde a anotação aberta aponta, e quem aponta para ela
+  const vinculadas = notaAberta
+    ? (notaAberta.linked_ids ?? [])
+        .map((id) => todasNotas.find((n) => n.id === id))
+        .filter((n): n is NotaComContexto => !!n)
+    : [];
+  const citadaEm = notaAberta
+    ? todasNotas.filter((n) => n.id !== notaAberta.id && n.linked_ids?.includes(notaAberta.id))
+    : [];
 
   const visual = slug ? visualDe(slug) : null;
   const Icone = visual?.icone ?? NotebookPen;
@@ -853,6 +868,9 @@ function Detalhe({
       {notaAberta && (
         <JanelaNota
           nota={notaAberta}
+          vinculadas={vinculadas}
+          citadaEm={citadaEm}
+          irPara={setVendo}
           fechar={() => setVendo(null)}
           editar={() => {
             setVendo(null);
@@ -871,10 +889,18 @@ function Detalhe({
  */
 function JanelaNota({
   nota,
+  vinculadas,
+  citadaEm,
+  irPara,
   fechar,
   editar,
 }: {
   nota: NotaComContexto;
+  /** anotações a que esta aponta */
+  vinculadas: NotaComContexto[];
+  /** anotações que apontam para esta */
+  citadaEm: NotaComContexto[];
+  irPara: (id: string) => void;
   fechar: () => void;
   editar: () => void;
 }) {
@@ -956,6 +982,13 @@ function JanelaNota({
             <div className="mt-4">
               <AnexosDaNota anexos={nota.attachments} somenteLeitura />
             </div>
+          )}
+
+          {vinculadas.length > 0 && (
+            <AtalhosDeNotas titulo="Anotações vinculadas" notas={vinculadas} irPara={irPara} />
+          )}
+          {citadaEm.length > 0 && (
+            <AtalhosDeNotas titulo="Citada em" notas={citadaEm} irPara={irPara} />
           )}
         </div>
 
@@ -1323,8 +1356,11 @@ function Marcas({ nota }: { nota: NotaComContexto }) {
   const temImagem = nota.images?.length > 0 || /<img[\s>/]/i.test(nota.body_html ?? '');
   const temPdf = nota.attachments?.length > 0;
   const temLink = /<a\s/i.test(nota.body_html ?? '');
+  const vinculos = nota.linked_ids?.length ?? 0;
+  const fotos =
+    (nota.images?.length ?? 0) + (nota.body_html?.match(/<img[\s>/]/gi)?.length ?? 0);
 
-  if (!temImagem && !temPdf && !temLink) return null;
+  if (!temImagem && !temPdf && !temLink && !vinculos) return null;
 
   return (
     <span className="flex shrink-0 items-center gap-1.5 text-slate-400">
@@ -1333,12 +1369,23 @@ function Marcas({ nota }: { nota: NotaComContexto }) {
           <Link2 size={13} />
         </span>
       )}
+      {vinculos > 0 && (
+        <span
+          title={`vinculada a ${vinculos} ${vinculos === 1 ? 'anotação' : 'anotações'}`}
+          className="inline-flex items-center gap-0.5 text-brand-600 dark:text-brand-300"
+        >
+          <Network size={14} />
+          {vinculos > 1 && <span className="text-[0.7rem] font-bold tabular-nums">{vinculos}</span>}
+        </span>
+      )}
       {temImagem && (
         <span
-          title="tem imagem"
-          className="grid h-6 w-6 place-items-center rounded-md bg-brand-100 text-brand-700 ring-1 ring-brand-300 dark:bg-brand-900 dark:text-brand-200 dark:ring-brand-700"
+          title={fotos > 1 ? `tem ${fotos} imagens` : 'tem imagem'}
+          // laranja sólido: aparece de longe, qualquer que seja a cor do layout
+          className="inline-flex h-6 items-center gap-1 rounded-md bg-orange-500 px-1.5 text-[0.7rem] font-bold text-white shadow-sm ring-2 ring-orange-200 dark:ring-orange-400/40"
         >
-          <ImageIcon size={15} strokeWidth={2.25} />
+          <ImageIcon size={15} strokeWidth={2.5} />
+          {fotos > 1 && <span className="tabular-nums">{fotos}</span>}
         </span>
       )}
       {temPdf && (
@@ -1347,5 +1394,42 @@ function Marcas({ nota }: { nota: NotaComContexto }) {
         </span>
       )}
     </span>
+  );
+}
+
+/** Atalhos para outras anotações dentro da janela: o clique troca a anotação aberta. */
+function AtalhosDeNotas({
+  titulo,
+  notas,
+  irPara,
+}: {
+  titulo: string;
+  notas: NotaComContexto[];
+  irPara: (id: string) => void;
+}) {
+  return (
+    <section className="mt-5">
+      <h3 className="mb-1.5 flex items-center gap-1.5 text-xs font-bold tracking-wider text-slate-500 uppercase dark:text-slate-400">
+        <Network size={13} /> {titulo}
+      </h3>
+      <ul className="flex flex-wrap gap-2">
+        {notas.map((n) => {
+          const info = TAGS[n.tag];
+          return (
+            <li key={n.id} className="max-w-full">
+              <button
+                type="button"
+                onClick={() => irPara(n.id)}
+                title={n.title}
+                className="flex max-w-full items-center gap-2 rounded-xl bg-slate-50 px-3 py-1.5 text-left text-sm font-medium text-slate-800 ring-1 ring-slate-200 transition hover:bg-brand-50 hover:ring-brand-300 dark:bg-slate-800 dark:text-slate-100 dark:ring-slate-700 dark:hover:bg-slate-700"
+              >
+                <span aria-hidden className={`h-2.5 w-2.5 shrink-0 rounded-full ${info.barra}`} />
+                <span className="min-w-0 truncate">{n.title || 'Sem título'}</span>
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
   );
 }

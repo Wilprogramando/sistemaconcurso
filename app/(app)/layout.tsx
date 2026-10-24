@@ -1,8 +1,9 @@
-import Link from 'next/link';
 import { redirect } from 'next/navigation';
-import { LogOut, ShieldCheck } from 'lucide-react';
+import { LogOut } from 'lucide-react';
 import { Suspense } from 'react';
 import { createClient, getUser, getUserId } from '@/lib/supabase/server';
+import BarraEspaco from '@/components/barra-espaco';
+import { BotaoConfig, Marca } from '@/components/configuracoes';
 import MenuPesquisa from '@/components/menu-pesquisa';
 import { NavInferior } from '@/components/navegacao';
 import NavLateral from '@/components/nav-lateral';
@@ -31,6 +32,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       <Suspense fallback={<EsqueletoDoNome />}>
         <NomeDoUsuario userId={userId} />
       </Suspense>
+      <BotaoConfig />
       <BotaoTema />
       <form action={sair}>
         <button
@@ -52,11 +54,9 @@ export default async function AppLayout({ children }: { children: React.ReactNod
         {/* cabeçalho só no celular — no desktop tudo vive na barra lateral */}
         <header className="sticky top-0 z-30 bg-brand-900 text-white md:hidden dark:bg-slate-950">
           <div className="flex items-center gap-3 px-4 py-3">
-            <Link href="/dashboard" className="flex items-center gap-2 font-bold">
-              <ShieldCheck size={20} className="text-brand-300" />
-              PM SC 2026
-            </Link>
+            <Marca tamanho={20} />
             <div className="ml-auto flex items-center gap-2 text-sm">
+              <BotaoConfig />
               <BotaoTema />
               <form action={sair}>
                 <button className="rounded-lg bg-white/10 px-3 py-1.5 font-medium transition hover:bg-white/20">
@@ -68,7 +68,10 @@ export default async function AppLayout({ children }: { children: React.ReactNod
         </header>
 
         <div className="pb-20 md:pb-0">
-          <main className="mx-auto max-w-5xl px-4 py-5 sm:px-6">{children}</main>
+          <div className="mx-auto flex max-w-5xl justify-end px-4 pt-3 sm:px-6">
+            <BarraEspaco />
+          </div>
+          <main className="mx-auto max-w-5xl px-4 py-5 pt-2 sm:px-6">{children}</main>
 
           <footer className="mx-auto max-w-5xl px-4 pb-8 text-xs leading-5 text-slate-500 sm:px-6 dark:text-slate-400">
             Conteúdo da Apostila PM SC 2026 (Edital nº 002/CCP/2026) e das provas oficiais de

@@ -6,6 +6,7 @@ import { Check, Loader2, Pin, PinOff, Trash2, X } from 'lucide-react';
 import { useSessao } from '@/components/sessao';
 import ImagensDaNota from '@/components/imagens-nota';
 import AnexosDaNota from '@/components/anexos-nota';
+import VinculosDaNota from '@/components/vinculos-nota';
 import EditorRico from '@/components/editor-rico';
 import { BUCKET, useUrlsAssinadas } from '@/components/urls-assinadas';
 import { comprimirImagem } from '@/lib/comprimir-imagem';
@@ -90,6 +91,7 @@ export default function EditorNota({
   const [fixada, setFixada] = useState(nota?.pinned ?? false);
   const [imagens, setImagens] = useState<string[]>(nota?.images ?? []);
   const [anexos, setAnexos] = useState<Anexo[]>(nota?.attachments ?? []);
+  const [vinculos, setVinculos] = useState<string[]>(nota?.linked_ids ?? []);
   const [salvando, setSalvando] = useState(false);
   /** recado quando o banco recusa salvar ou excluir */
   const [erro, setErro] = useState<string | null>(null);
@@ -138,6 +140,9 @@ export default function EditorNota({
       pinned: fixada,
       images: imagens,
       attachments: anexos,
+      // a coluna vem da migração 0010: sem vínculo nenhum, nem toca nela, para
+      // que salvar continue funcionando em quem ainda não rodou a migração
+      ...(vinculos.length || nota?.linked_ids?.length ? { linked_ids: vinculos } : {}),
     };
 
     if (nota) {
@@ -171,6 +176,7 @@ export default function EditorNota({
       setGeracao((g) => g + 1);
       setImagens([]);
       setAnexos([]);
+      setVinculos([]);
     }
 
     setSalvando(false);
@@ -228,6 +234,8 @@ export default function EditorNota({
       <ImagensDaNota caminhos={imagens} onChange={setImagens} />
 
       <AnexosDaNota anexos={anexos} onChange={setAnexos} />
+
+      <VinculosDaNota ids={vinculos} onChange={setVinculos} proprioId={nota?.id} />
 
       {erro && (
         <p className="rounded-xl bg-red-50 px-3.5 py-2.5 text-sm leading-6 text-red-800 ring-1 ring-red-200 dark:bg-red-950/40 dark:text-red-200 dark:ring-red-900">
