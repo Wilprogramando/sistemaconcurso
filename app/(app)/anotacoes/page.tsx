@@ -1,34 +1,33 @@
-import { NotebookPen } from "lucide-react";
-import { createClient, getUserId } from "@/lib/supabase/server";
-import { Card } from "@/components/ui";
-import { ehTabelaAusente, type Nota } from "@/lib/notas";
-import ListaDeNotas from "./lista";
+import { NotebookPen } from 'lucide-react';
+import { createClient, getUserId } from '@/lib/supabase/server';
+import { Card } from '@/components/ui';
+import { ehTabelaAusente, type Nota } from '@/lib/notas';
+import ListaDeNotas from './lista';
 
-export const metadata = { title: "Anotações — Estudo PM SC 2026" };
-export const dynamic = "force-dynamic";
+export const metadata = { title: 'Anotações — Estudo PM SC 2026' };
+export const dynamic = 'force-dynamic';
 
 export default async function AnotacoesPage() {
   const user = { id: (await getUserId())! };
   const supabase = await createClient();
 
-  const [{ data: notas, error }, { data: disciplinas }, { data: topicos }] =
-    await Promise.all([
-      supabase
-        .from("notes")
-        .select("*")
-        .eq("user_id", user.id)
-        .order("pinned", { ascending: false })
-        .order("position", { ascending: true })
-        .order("updated_at", { ascending: false }),
-      // as matérias vêm na ordem do peso na prova: a que vale mais ponto
-      // aparece primeiro no caderno
-      supabase
-        .from("disciplines")
-        .select("id, name, slug, weight")
-        .order("weight", { ascending: false })
-        .order("chapter"),
-      supabase.from("topics").select("id, ref, title"),
-    ]);
+  const [{ data: notas, error }, { data: disciplinas }, { data: topicos }] = await Promise.all([
+    supabase
+      .from('notes')
+      .select('*')
+      .eq('user_id', user.id)
+      .order('pinned', { ascending: false })
+      .order('position', { ascending: true })
+      .order('updated_at', { ascending: false }),
+    // as matérias vêm na ordem do peso na prova: a que vale mais ponto
+    // aparece primeiro no caderno
+    supabase
+      .from('disciplines')
+      .select('id, name, slug, weight')
+      .order('weight', { ascending: false })
+      .order('chapter'),
+    supabase.from('topics').select('id, ref, title'),
+  ]);
 
   if (error && ehTabelaAusente(error.message)) return <FaltaMigracao />;
 
@@ -56,8 +55,7 @@ export default async function AnotacoesPage() {
           aria-hidden
           className="pointer-events-none absolute -top-8 -right-10 h-48 w-64 rotate-12 opacity-[0.07]"
           style={{
-            backgroundImage:
-              "repeating-linear-gradient(135deg, #fff 0 3px, transparent 3px 22px)",
+            backgroundImage: 'repeating-linear-gradient(135deg, #fff 0 3px, transparent 3px 22px)',
           }}
         />
         <div className="relative flex items-center gap-4">
@@ -65,15 +63,12 @@ export default async function AnotacoesPage() {
             <NotebookPen size={22} />
           </span>
           <div className="min-w-0">
-            <h1 className="text-2xl leading-tight font-bold sm:text-3xl">
-              Anotações
-            </h1>
+            <h1 className="text-2xl leading-tight font-bold sm:text-3xl">Anotações</h1>
             <p className="mt-1 max-w-2xl text-sm text-brand-100 dark:text-emerald-100/80">
-              Seu caderno livre: macetes, números que não grudam, dúvidas para
-              tirar depois.
+              Seu caderno livre: macetes, números que não grudam, dúvidas para tirar depois.
               {/* a segunda frase sobra na tela do celular */}
               <span className="hidden sm:inline">
-                {" "}
+                {' '}
                 Cada matéria tem o seu caderno — toque para abrir.
               </span>
             </p>
@@ -102,11 +97,10 @@ function FaltaMigracao() {
       </h1>
       <Card title="Falta um passo no banco de dados" icon={NotebookPen}>
         <p className="text-sm leading-7 text-slate-700 dark:text-slate-300">
-          As anotações ficam guardadas numa tabela que ainda não existe no seu
-          Supabase. Rode{" "}
+          As anotações ficam guardadas numa tabela que ainda não existe no seu Supabase. Rode{' '}
           <code className="rounded bg-slate-100 px-1.5 py-0.5 text-xs dark:bg-slate-800">
             supabase/migrations/0005_anotacoes_e_aulas.sql
-          </code>{" "}
+          </code>{' '}
           no SQL Editor e recarregue esta página.
         </p>
       </Card>
