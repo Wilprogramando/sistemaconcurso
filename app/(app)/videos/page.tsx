@@ -4,6 +4,7 @@ import { createClient, getUserId } from '@/lib/supabase/server';
 import { Badge, Card } from '@/components/ui';
 import { PRIORITY_CLASS, PRIORITY_LABEL } from '@/lib/types';
 import { buscaDoTopico, buscaYoutube, guiaDe } from '@/lib/videos';
+import { visualDe } from '@/lib/disciplinas-visual';
 
 export const metadata = { title: 'Vídeo-aulas — Estudo PM SC 2026' };
 export const dynamic = 'force-dynamic';
@@ -35,7 +36,7 @@ export default async function VideosPage({
   // ---------------- lista de disciplinas ----------------
   if (!alvo) {
     return (
-      <div className="space-y-5">
+      <div className="entra space-y-5">
         <div className="min-w-0 flex-1">
           <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl dark:text-slate-100">
             Vídeo-aulas
@@ -52,27 +53,44 @@ export default async function VideosPage({
           {(disciplines ?? []).map((d) => {
             const guia = guiaDe(d.slug);
             return (
+              // a matéria entra com o ícone que ela tem no resto do app, e o
+              // número de temas vira dado, não legenda
               <Link
                 key={d.id}
                 href={`/videos?disciplina=${d.slug}`}
-                className="flex items-start justify-between gap-3 rounded-2xl bg-white p-4 ring-1 ring-slate-200 transition hover:ring-brand-400 dark:bg-slate-900 dark:ring-slate-700"
+                className="flex items-start gap-3.5 rounded-2xl bg-white p-4 ring-1 ring-slate-200 transition hover:ring-brand-400 dark:bg-slate-900 dark:ring-slate-700"
               >
-                <div className="min-w-0">
-                  <p className="font-semibold tracking-wide text-slate-900 uppercase dark:text-slate-100">
-                    {d.name}
-                  </p>
-                  <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
-                    {guia?.buscas.length ?? 0} temas de busca
+                <span
+                  className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl ${visualDe(d.slug).tile}`}
+                >
+                  <Play size={18} />
+                </span>
+
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-wrap items-start justify-between gap-2">
+                    <p className="min-w-0 font-semibold text-slate-900 dark:text-slate-100">
+                      {d.name}
+                    </p>
+                    <Badge className={PRIORITY_CLASS[d.priority as keyof typeof PRIORITY_CLASS]}>
+                      {PRIORITY_LABEL[d.priority as keyof typeof PRIORITY_LABEL].replace(
+                        'Prioridade ',
+                        ''
+                      )}
+                    </Badge>
+                  </div>
+                  <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
+                    <span className="text-base font-bold text-slate-900 tabular-nums dark:text-slate-100">
+                      {guia?.buscas.length ?? 0}
+                    </span>{' '}
+                    temas de busca
                     {guia?.indicacoes.length ? ` · ${guia.indicacoes.length} indicações` : ''}
-                    {d.question_count ? ` · ${d.question_count} questões na prova` : ''}
+                  </p>
+                  <p className="mt-0.5 text-xs text-slate-500 tabular-nums dark:text-slate-400">
+                    {d.question_count
+                      ? `${d.question_count} questões na prova · ${d.weight}%`
+                      : 'prova de redação'}
                   </p>
                 </div>
-                <Badge className={PRIORITY_CLASS[d.priority as keyof typeof PRIORITY_CLASS]}>
-                  {PRIORITY_LABEL[d.priority as keyof typeof PRIORITY_LABEL].replace(
-                    'Prioridade ',
-                    ''
-                  )}
-                </Badge>
               </Link>
             );
           })}
@@ -85,7 +103,7 @@ export default async function VideosPage({
   const guia = guiaDe(alvo.slug);
 
   return (
-    <div className="space-y-5">
+    <div className="entra space-y-5">
       <div>
         <Link
           href="/videos"

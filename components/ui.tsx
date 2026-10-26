@@ -76,7 +76,7 @@ export function Stat({
           </span>
         )}
         <div className="min-w-0">
-          <p className="text-[0.7rem] font-semibold tracking-wider text-slate-500 uppercase dark:text-slate-400">
+          <p className="text-xs font-medium text-slate-500 dark:text-slate-400">
             {label}
           </p>
           <p className={`mt-0.5 text-2xl leading-tight font-bold tabular-nums ${t.texto}`}>{value}</p>
@@ -201,7 +201,10 @@ export function Bar({ percent, tone = 'brand' }: { percent: number; tone?: 'bran
       aria-valuemin={0}
       aria-valuemax={100}
     >
-      <div className={`h-full rounded-full transition-all ${cor}`} style={{ width: `${p}%` }} />
+      <div
+        className={`cresce h-full rounded-full transition-all ${cor}`}
+        style={{ width: `${p}%` }}
+      />
     </div>
   );
 }

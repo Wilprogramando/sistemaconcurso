@@ -25,7 +25,7 @@ export default async function RedacaoPage() {
     : null;
 
   return (
-    <div className="space-y-5">
+    <div className="entra space-y-5">
       <div>
         <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl dark:text-slate-100">Redação</h1>
         <p className="mt-1 max-w-3xl text-sm text-slate-500 dark:text-slate-400">
@@ -38,19 +38,19 @@ export default async function RedacaoPage() {
       {historico.length > 0 && (
         <div className="grid gap-3 sm:grid-cols-3">
           <Card>
-            <p className="text-[0.7rem] font-semibold tracking-wider text-slate-500 uppercase dark:text-slate-400">
+            <p className="text-xs font-medium text-slate-500 dark:text-slate-400">
               Redações escritas
             </p>
             <p className="mt-1 text-2xl font-bold tabular-nums">{historico.length}</p>
           </Card>
           <Card>
-            <p className="text-[0.7rem] font-semibold tracking-wider text-slate-500 uppercase dark:text-slate-400">
+            <p className="text-xs font-medium text-slate-500 dark:text-slate-400">
               Nota média
             </p>
             <p className="mt-1 text-2xl font-bold tabular-nums">{media}/20</p>
           </Card>
           <Card>
-            <p className="text-[0.7rem] font-semibold tracking-wider text-slate-500 uppercase dark:text-slate-400">
+            <p className="text-xs font-medium text-slate-500 dark:text-slate-400">
               Última nota
             </p>
             <p className="mt-1 text-2xl font-bold tabular-nums">{historico[0].score}/20</p>
@@ -93,7 +93,7 @@ export default async function RedacaoPage() {
               key={t.id}
               className="rounded-xl bg-slate-50 p-3 text-sm leading-6 text-slate-700 dark:bg-slate-800/60 dark:text-slate-300"
             >
-              <span className="mb-1 block text-[0.7rem] font-semibold tracking-wide text-slate-400 uppercase">
+              <span className="mb-1 block text-xs font-medium text-slate-400">
                 {t.eixo}
               </span>
               {t.titulo}

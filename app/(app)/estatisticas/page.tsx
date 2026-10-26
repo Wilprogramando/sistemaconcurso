@@ -261,7 +261,7 @@ export default async function EstatisticasPage() {
             <div className="hidden overflow-x-auto sm:block">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-slate-200 text-left text-[0.7rem] tracking-wider text-slate-500 uppercase dark:border-slate-700 dark:text-slate-400">
+                  <tr className="border-b border-slate-200 text-left text-xs font-medium text-slate-500 dark:border-slate-700 dark:text-slate-400">
                     <th className="py-2.5 pr-3 font-semibold">Data</th>
                     <th className="py-2.5 pr-3 font-semibold">Tipo</th>
                     <th className="py-2.5 pr-3 font-semibold">Resultado</th>

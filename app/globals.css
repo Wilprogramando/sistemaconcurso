@@ -538,3 +538,32 @@ html.dark .rolagem-nota::-webkit-scrollbar-thumb {
 .surge {
   animation: entrar 0.25s cubic-bezier(0.2, 0.7, 0.3, 1) both;
 }
+
+/* ---------------------------------------------------------------
+   Esqueleto de carregamento.
+
+   Em vez de pulsar (que pisca a tela inteira junto), uma faixa de luz
+   varre cada osso da esquerda para a direita: diz que algo está vindo,
+   sem chamar mais atenção que o conteúdo que vai chegar.
+   --------------------------------------------------------------- */
+:root {
+  --brilho: rgba(255, 255, 255, 0.7);
+}
+
+html.dark {
+  --brilho: rgba(255, 255, 255, 0.07);
+}
+
+@keyframes varrer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.osso {
+  background-image: linear-gradient(100deg, transparent 25%, var(--brilho) 50%, transparent 75%);
+  background-size: 200% 100%;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  animation: varrer 1.5s linear infinite;
+}

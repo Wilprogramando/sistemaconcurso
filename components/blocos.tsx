@@ -140,7 +140,7 @@ export default function Blocos({ blocos }: { blocos: Bloco[] }) {
             const Icone = estilo.icon;
             return (
               <aside key={i} className={`rounded-xl border p-4 ${estilo.box}`}>
-                <p className={`flex items-center gap-2 text-xs font-bold tracking-wide uppercase ${estilo.title}`}>
+                <p className={`flex items-center gap-2 text-sm font-semibold ${estilo.title}`}>
                   <Icone size={15} />
                   {b.title}
                 </p>

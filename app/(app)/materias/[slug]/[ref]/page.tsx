@@ -69,7 +69,7 @@ export default async function TopicoPage({
   const aula = (topic.lesson as Aula | null) ?? null;
 
   return (
-    <article className="space-y-5">
+    <article className="entra space-y-5">
       <div>
         <Link
           href={`/materias/${d.slug}`}
@@ -96,7 +96,7 @@ export default async function TopicoPage({
         <section className="rounded-2xl border-l-4 border-brand-500 bg-brand-50/70 p-4 sm:p-5 dark:bg-brand-950/40">
           {topic.summary && (
             <>
-              <h2 className="text-xs font-bold tracking-wider text-brand-700 uppercase dark:text-brand-300">
+              <h2 className="text-sm font-semibold text-brand-700 dark:text-brand-300">
                 O que é este tópico
               </h2>
               <p className="mt-1.5 text-[0.95rem] leading-7 text-slate-700 dark:text-slate-200">

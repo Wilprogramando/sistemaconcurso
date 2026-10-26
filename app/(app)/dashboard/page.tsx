@@ -17,7 +17,8 @@ import {
   TrendingUp,
 } from 'lucide-react';
 import { createClient, getUserId } from '@/lib/supabase/server';
-import { Aviso, Card, Empty, Stat } from '@/components/ui';
+import { Aviso, Card, Empty } from '@/components/ui';
+import Contador from '@/components/contador';
 import { Medidor, PesoDaProva } from '@/components/graficos';
 import { visualDe } from '@/lib/disciplinas-visual';
 import { PRIORITY_CLASS, PRIORITY_LABEL, type DisciplineStats } from '@/lib/types';
@@ -105,7 +106,7 @@ export default async function Dashboard() {
   ];
 
   return (
-    <div className="space-y-5">
+    <div className="entra space-y-5">
       {/* ---------------- cabeçalho ---------------- */}
       <div>
         <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl dark:text-slate-100">
@@ -134,16 +135,52 @@ export default async function Dashboard() {
       {/* ---------------- projeção em destaque ---------------- */}
       <section className="overflow-hidden rounded-2xl bg-gradient-to-br from-brand-900 to-brand-700 p-5 text-white sm:p-6 dark:from-slate-900 dark:to-slate-800">
         <div className="flex flex-wrap items-end justify-between gap-6">
-          <div>
-            <p className="flex items-center gap-2 text-xs font-bold tracking-wider text-brand-100 uppercase">
-              <Target size={14} /> Projeção na prova objetiva
+          <div className="min-w-0 flex-1">
+            <p className="flex items-center gap-2 text-sm font-medium text-brand-100">
+              <Target size={15} /> Projeção na prova objetiva
             </p>
             <p className="mt-2 flex items-baseline gap-2">
               <span className="text-5xl leading-none font-bold tabular-nums sm:text-6xl">
-                {projecao === null ? '—' : projecao}
+                {projecao === null ? '—' : <Contador para={projecao} />}
               </span>
               <span className="text-2xl font-semibold text-brand-200">/60</span>
             </p>
+
+            {/* A régua põe o número em escala: 30 é o mínimo da etapa, 42 é
+                onde a aprovação deixa de depender da redação. Sem as marcas,
+                "38 de 60" não diz se é bom. */}
+            {projecao !== null && (
+              <div className="mt-3 max-w-md">
+                <div className="relative h-2 w-full overflow-hidden rounded-full bg-white/20">
+                  <div
+                    className="cresce h-full rounded-full bg-white"
+                    style={{ width: `${Math.min(100, (projecao / 60) * 100)}%` }}
+                    role="progressbar"
+                    aria-valuenow={projecao}
+                    aria-valuemin={0}
+                    aria-valuemax={60}
+                    aria-label="projeção de pontos na prova objetiva"
+                  />
+                  {[30, 42].map((marca) => (
+                    <span
+                      key={marca}
+                      aria-hidden
+                      className="absolute top-0 h-full w-0.5 bg-brand-950/60"
+                      style={{ left: `${(marca / 60) * 100}%` }}
+                    />
+                  ))}
+                </div>
+                <div className="relative mt-1 h-4 text-[0.65rem] text-brand-200 tabular-nums">
+                  <span className="absolute -translate-x-1/2" style={{ left: '50%' }}>
+                    30 mínimo
+                  </span>
+                  <span className="absolute -translate-x-1/2" style={{ left: '70%' }}>
+                    42 seguro
+                  </span>
+                </div>
+              </div>
+            )}
+
             <p className="mt-2 max-w-md text-sm text-brand-100">
               {projecao === null
                 ? 'Responda questões em cada disciplina para o sistema calcular sua projeção.'
@@ -169,9 +206,7 @@ export default async function Dashboard() {
               ],
             ].map(([k, v, hint]) => (
               <div key={String(k)}>
-                <dt className="text-[0.6rem] leading-4 font-semibold tracking-wide text-brand-200 uppercase sm:text-[0.65rem] sm:tracking-wider">
-                  {k}
-                </dt>
+                <dt className="text-xs leading-4 font-medium text-brand-200">{k}</dt>
                 <dd className="mt-0.5 text-2xl font-bold tabular-nums">{v}</dd>
                 {hint ? <dd className="text-[0.65rem] text-brand-200">{hint}</dd> : null}
               </div>
@@ -197,18 +232,6 @@ export default async function Dashboard() {
           </div>
 
           <div className="flex w-full flex-wrap items-center gap-2 sm:w-auto">
-            <span className="inline-flex items-center gap-2 rounded-xl bg-white px-3.5 py-2 ring-1 ring-brand-100 dark:bg-slate-900 dark:ring-brand-900">
-              <Target size={18} className="shrink-0 text-brand-600 dark:text-brand-300" />
-              <span className="leading-tight">
-                <span className="block text-[0.7rem] font-medium text-slate-500 dark:text-slate-400">
-                  Meta por disciplina
-                </span>
-                <span className="block text-base font-bold text-slate-900 dark:text-slate-100">
-                  70%
-                </span>
-              </span>
-            </span>
-
             <Link
               href="/edital"
               className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700 sm:flex-none"
@@ -234,49 +257,50 @@ export default async function Dashboard() {
             const visual = visualDe(d.slug);
             const Icone = visual.icone;
             return (
-              <li
-                key={d.id}
-                className="flex items-center gap-3 rounded-2xl p-3 ring-1 ring-slate-200/80 transition hover:ring-brand-300 sm:gap-4 sm:p-3.5 dark:ring-slate-700/70"
-              >
-                <span
-                  className={`grid h-10 w-10 shrink-0 place-items-center rounded-xl sm:h-11 sm:w-11 ${visual.tile}`}
+              // a linha inteira leva para a matéria: antes só o nome era
+              // clicável, mas a linha toda já reagia ao mouse
+              <li key={d.id}>
+                <Link
+                  href={`/materias/${d.slug}`}
+                  className="flex items-center gap-3 rounded-2xl p-3 ring-1 ring-slate-200/80 transition hover:bg-brand-50/50 hover:ring-brand-300 sm:gap-4 sm:p-3.5 dark:ring-slate-700/70 dark:hover:bg-slate-800/50"
                 >
-                  <Icone size={20} />
-                </span>
+                  <span
+                    className={`grid h-10 w-10 shrink-0 place-items-center rounded-xl sm:h-11 sm:w-11 ${visual.tile}`}
+                  >
+                    <Icone size={20} />
+                  </span>
 
-                <div className="min-w-0 flex-1">
-                  <Medidor
-                    valor={acc}
-                    meta={70}
-                    destaque
-                    label={
-                      <Link
-                        href={`/materias/${d.slug}`}
-                        className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 hover:underline"
-                      >
-                        <span className="tracking-wide uppercase">{d.name}</span>
-                        <span
-                          className={`rounded-full px-2 py-0.5 text-[0.65rem] font-semibold ring-1 ring-inset ${
-                            PRIORITY_CLASS[d.priority as keyof typeof PRIORITY_CLASS]
-                          }`}
-                        >
-                          {PRIORITY_LABEL[d.priority as keyof typeof PRIORITY_LABEL].replace(
-                            'Prioridade ',
-                            ''
-                          )}
+                  <div className="min-w-0 flex-1">
+                    <Medidor
+                      valor={acc}
+                      meta={70}
+                      destaque
+                      label={
+                        <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1">
+                          <span className="font-semibold">{d.name}</span>
+                          <span
+                            className={`rounded-full px-2 py-0.5 text-[0.65rem] font-semibold ring-1 ring-inset ${
+                              PRIORITY_CLASS[d.priority as keyof typeof PRIORITY_CLASS]
+                            }`}
+                          >
+                            {PRIORITY_LABEL[d.priority as keyof typeof PRIORITY_LABEL].replace(
+                              'Prioridade ',
+                              ''
+                            )}
+                          </span>
                         </span>
-                      </Link>
-                    }
-                    sublabel={`${d.question_count} questões na prova (${d.weight}% do total) · ${s?.answered ?? 0} respondidas${
-                      acc !== null ? ` · ${s!.correct} acertos` : ''
-                    }`}
-                  />
-                </div>
+                      }
+                      sublabel={`${d.question_count} questões na prova (${d.weight}% do total) · ${s?.answered ?? 0} respondidas${
+                        acc !== null ? ` · ${s!.correct} acertos` : ''
+                      }`}
+                    />
+                  </div>
 
-                <span className="hidden shrink-0 items-center gap-1.5 rounded-xl bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-600 sm:inline-flex dark:bg-slate-800 dark:text-slate-300">
-                  <BarChart3 size={14} className="text-slate-400" />
-                  {acc !== null ? `${Math.round(acc)}%` : 'sem dados'}
-                </span>
+                  <span className="hidden shrink-0 items-center gap-1.5 rounded-xl bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-600 sm:inline-flex dark:bg-slate-800 dark:text-slate-300">
+                    <BarChart3 size={14} className="text-slate-400" />
+                    {acc !== null ? `${Math.round(acc)}%` : 'sem dados'}
+                  </span>
+                </Link>
               </li>
             );
           })}
@@ -294,22 +318,22 @@ export default async function Dashboard() {
               href="/plano"
               className="text-sm font-medium text-brand-600 hover:underline dark:text-brand-300"
             >
-              ver plano →
+              ver plano
             </Link>
           }
         >
           <dl className="grid gap-3 sm:grid-cols-2">
             <div className="rounded-xl bg-brand-50 p-3.5 dark:bg-brand-950/50">
-              <dt className="text-xs font-bold tracking-wide text-brand-700 uppercase dark:text-brand-300">
-                Manhã (2h)
+              <dt className="text-xs font-semibold text-brand-700 dark:text-brand-300">
+                Manhã · 2h
               </dt>
               <dd className="mt-1 text-sm leading-6 text-slate-700 dark:text-slate-300">
                 {blocoAtual.morning}
               </dd>
             </div>
             <div className="rounded-xl bg-slate-50 p-3.5 dark:bg-slate-800/60">
-              <dt className="text-xs font-bold tracking-wide text-slate-600 uppercase dark:text-slate-400">
-                Noite (2h)
+              <dt className="text-xs font-semibold text-slate-600 dark:text-slate-400">
+                Noite · 2h
               </dt>
               <dd className="mt-1 text-sm leading-6 text-slate-700 dark:text-slate-300">
                 {blocoAtual.night}
@@ -367,7 +391,7 @@ export default async function Dashboard() {
               href="/erros"
               className="mt-3 inline-flex text-sm font-medium text-brand-600 hover:underline dark:text-brand-300"
             >
-              {errosAbertos.count} erros abertos no caderno →
+              {errosAbertos.count} erros abertos no caderno
             </Link>
           )}
         </Card>
@@ -394,7 +418,7 @@ export default async function Dashboard() {
                   href={`/questoes?disciplina=${d.slug}`}
                   className="inline-flex items-center rounded-lg bg-white/70 px-3 py-1.5 text-sm font-medium ring-1 ring-amber-300 transition hover:bg-white dark:bg-slate-900/60 dark:ring-amber-800"
                 >
-                  {d.name} →
+                  {d.name}
                 </Link>
               </li>
             ))}

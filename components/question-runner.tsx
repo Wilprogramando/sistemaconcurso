@@ -355,14 +355,24 @@ export default function QuestionRunner({
         </p>
       )}
 
-      <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
+      <div className="h-2 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
         <div
-          className="h-full rounded-full bg-brand-500 transition-all"
+          className="h-full rounded-full bg-brand-500 transition-[width] duration-500 ease-out"
           style={{ width: `${(index / total) * 100}%` }}
+          role="progressbar"
+          aria-valuenow={index}
+          aria-valuemin={0}
+          aria-valuemax={total}
+          aria-label="questões concluídas"
         />
       </div>
 
-      <article className="rounded-2xl bg-white p-5 ring-1 ring-slate-200 sm:p-6 dark:bg-slate-900 dark:ring-slate-700">
+      {/* `key` por questão: ao avançar, o cartão remonta e a entrada toca de
+          novo — é o sinal de que o conteúdo da tela mudou */}
+      <article
+        key={q.id}
+        className="surge rounded-2xl bg-white p-5 ring-1 ring-slate-200 sm:p-6 dark:bg-slate-900 dark:ring-slate-700"
+      >
         <div className="mb-3 flex items-start justify-between gap-3">
           <Origem q={q} />
           <button
@@ -384,7 +394,7 @@ export default function QuestionRunner({
             className="mb-4 rounded-xl bg-slate-50 p-4 ring-1 ring-slate-200 dark:bg-slate-800/60 dark:ring-slate-700"
             open
           >
-            <summary className="cursor-pointer text-xs font-bold tracking-wide text-slate-500 uppercase">
+            <summary className="cursor-pointer text-sm font-medium text-slate-500 dark:text-slate-400">
               {q.passage_label ?? 'Texto de apoio'}
             </summary>
             <p className="mt-2 text-sm leading-7 whitespace-pre-line text-slate-700 dark:text-slate-300">
@@ -473,7 +483,7 @@ export default function QuestionRunner({
 
             {q.explanation && (
               <div className="rounded-xl bg-slate-50 p-4 ring-1 ring-slate-200 dark:bg-slate-800/60 dark:ring-slate-700">
-                <p className="mb-1.5 flex items-center gap-1.5 text-xs font-bold tracking-wide text-slate-500 uppercase dark:text-slate-400">
+                <p className="mb-1.5 flex items-center gap-1.5 text-sm font-semibold text-slate-600 dark:text-slate-300">
                   <CircleAlert size={13} /> Fundamento
                 </p>
                 <p className="text-sm leading-7 text-slate-700 dark:text-slate-300">{q.explanation}</p>
@@ -632,7 +642,7 @@ function Resultado({
   return (
     <div className="space-y-5">
       <div className="rounded-2xl bg-white p-6 text-center ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-700">
-        <p className="text-xs font-bold tracking-wider text-slate-500 uppercase dark:text-slate-400">
+        <p className="text-sm font-medium text-slate-500 dark:text-slate-400">
           Resultado
         </p>
         <p

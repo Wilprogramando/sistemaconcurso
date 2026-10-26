@@ -428,7 +428,7 @@ function PopupQuestoes({
                   className="rounded-xl p-3 text-sm ring-1 ring-slate-200 dark:ring-slate-700"
                 >
                   {(q.origin_label || q.banca) && (
-                    <p className="mb-1 text-[0.7rem] font-semibold tracking-wide text-slate-500 uppercase dark:text-slate-400">
+                    <p className="mb-1 text-xs font-medium text-slate-500 dark:text-slate-400">
                       {[q.origin_label, q.banca, q.year].filter(Boolean).join(' · ')}
                     </p>
                   )}

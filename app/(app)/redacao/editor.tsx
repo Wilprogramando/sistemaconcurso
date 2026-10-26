@@ -122,7 +122,7 @@ export default function Editor({ temaInicial }: { temaInicial: Tema }) {
       <Card>
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div className="min-w-0 flex-1">
-            <span className="inline-flex items-center rounded-full bg-brand-50 px-2.5 py-1 text-[0.7rem] font-bold tracking-wide text-brand-700 uppercase dark:bg-brand-950 dark:text-brand-300">
+            <span className="inline-flex items-center rounded-full bg-brand-50 px-2.5 py-1 text-xs font-semibold text-brand-700 dark:bg-brand-950 dark:text-brand-300">
               {tema.eixo}
             </span>
             <h2 className="mt-2 text-lg leading-snug font-bold text-slate-900 sm:text-xl dark:text-slate-100">
@@ -139,7 +139,7 @@ export default function Editor({ temaInicial }: { temaInicial: Tema }) {
         </div>
 
         <div className="mt-4 rounded-xl bg-slate-50 p-4 dark:bg-slate-800/60">
-          <p className="text-xs font-bold tracking-wide text-slate-500 uppercase dark:text-slate-400">
+          <p className="text-xs font-medium text-slate-500 dark:text-slate-400 dark:text-slate-400">
             Texto motivador
           </p>
           <p className="mt-1.5 text-sm leading-7 text-slate-700 dark:text-slate-300">
@@ -148,7 +148,7 @@ export default function Editor({ temaInicial }: { temaInicial: Tema }) {
         </div>
 
         <details className="mt-3 rounded-xl bg-sky-50 p-4 dark:bg-sky-950/40">
-          <summary className="cursor-pointer text-xs font-bold tracking-wide text-sky-900 uppercase dark:text-sky-200">
+          <summary className="cursor-pointer text-sm font-semibold text-sky-900 dark:text-sky-200">
             Repertório que você pode usar
           </summary>
           <ul className="mt-2 space-y-1.5">
@@ -240,7 +240,7 @@ export default function Editor({ temaInicial }: { temaInicial: Tema }) {
           <Card>
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div>
-                <p className="text-[0.7rem] font-bold tracking-wider text-slate-500 uppercase dark:text-slate-400">
+                <p className="text-xs font-medium text-slate-500 dark:text-slate-400">
                   Nota estimada
                 </p>
                 <p className="mt-1 text-4xl font-bold tabular-nums text-slate-900 dark:text-slate-100">
@@ -331,7 +331,7 @@ export default function Editor({ temaInicial }: { temaInicial: Tema }) {
                   <li key={i} className={`rounded-xl border p-4 ${e.caixa}`}>
                     <p className={`flex items-center gap-2 text-sm font-semibold ${e.titulo}`}>
                       <Icone size={16} />
-                      <span className="text-[0.65rem] font-bold tracking-wider uppercase opacity-70">
+                      <span className="text-xs font-medium opacity-80">
                         {e.rotulo}
                       </span>
                       {a.titulo}

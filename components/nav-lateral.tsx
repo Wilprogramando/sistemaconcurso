@@ -31,7 +31,7 @@ export default function NavLateral({ rodape }: { rodape: React.ReactNode }) {
         {GRUPOS.map((grupo, i) => (
           <div key={grupo.titulo ?? i} className={grupo.titulo ? 'mt-5' : ''}>
             {grupo.titulo && (
-              <p className="px-3 pb-1.5 text-[0.65rem] font-bold tracking-[0.12em] text-brand-300 uppercase">
+              <p className="px-3 pb-1.5 text-xs font-semibold text-brand-200">
                 {grupo.titulo}
               </p>
             )}

@@ -5,6 +5,7 @@ import QuestionRunner from '@/components/question-runner';
 import { Badge, Card } from '@/components/ui';
 import { PRIORITY_CLASS, PRIORITY_LABEL, type Question } from '@/lib/types';
 import { COLUNAS, comTextosDeApoio, embaralhar, limparBusca } from '@/lib/questions';
+import { visualDe } from '@/lib/disciplinas-visual';
 
 export const metadata = { title: 'Questões — Estudo PM SC 2026' };
 export const dynamic = 'force-dynamic';
@@ -97,7 +98,7 @@ export default async function QuestoesPage({
     }
 
     return (
-      <div className="space-y-5">
+      <div className="entra space-y-5">
         <div className="min-w-0 flex-1">
           <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl dark:text-slate-100">
             Treinar questões
@@ -139,28 +140,63 @@ export default async function QuestoesPage({
           </div>
         </Card>
 
+        {/* Cada matéria com o ícone que ela tem no resto do app, o número de
+            questões disponíveis em tamanho de dado e uma régua com o peso
+            dela na prova — é esse peso que decide onde treinar primeiro. */}
         <div className="grid gap-3 sm:grid-cols-2">
           {(disciplines ?? [])
             .filter((d) => (porDisciplina.get(d.id) ?? 0) > 0)
-            .map((d) => (
-              <Link
-                key={d.id}
-                href={`/questoes?disciplina=${d.slug}`}
-                className="flex items-center justify-between gap-3 rounded-2xl bg-white px-4 py-3.5 ring-1 ring-slate-200 transition hover:ring-brand-400 dark:bg-slate-900 dark:ring-slate-700"
-              >
-                <div className="min-w-0">
-                  <p className="font-semibold tracking-wide text-slate-900 uppercase dark:text-slate-100">
-                    {d.name}
-                  </p>
-                  <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
-                    {porDisciplina.get(d.id)} questões · {d.question_count} na prova ({d.weight}%)
-                  </p>
-                </div>
-                <Badge className={PRIORITY_CLASS[d.priority as keyof typeof PRIORITY_CLASS]}>
-                  {PRIORITY_LABEL[d.priority as keyof typeof PRIORITY_LABEL].replace('Prioridade ', '')}
-                </Badge>
-              </Link>
-            ))}
+            .map((d) => {
+              const visual = visualDe(d.slug);
+              const Icone = visual.icone;
+              const disponiveis = porDisciplina.get(d.id) ?? 0;
+              return (
+                <Link
+                  key={d.id}
+                  href={`/questoes?disciplina=${d.slug}`}
+                  className="group flex items-start gap-3.5 rounded-2xl bg-white px-4 py-3.5 ring-1 ring-slate-200 transition hover:ring-brand-400 dark:bg-slate-900 dark:ring-slate-700"
+                >
+                  <span
+                    className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl ${visual.tile}`}
+                  >
+                    <Icone size={20} />
+                  </span>
+
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-wrap items-start justify-between gap-2">
+                      <p className="min-w-0 font-semibold text-slate-900 dark:text-slate-100">
+                        {d.name}
+                      </p>
+                      <Badge className={PRIORITY_CLASS[d.priority as keyof typeof PRIORITY_CLASS]}>
+                        {PRIORITY_LABEL[d.priority as keyof typeof PRIORITY_LABEL].replace(
+                          'Prioridade ',
+                          ''
+                        )}
+                      </Badge>
+                    </div>
+
+                    <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
+                      <span className="text-base font-bold text-slate-900 tabular-nums dark:text-slate-100">
+                        {disponiveis}
+                      </span>{' '}
+                      questões para treinar
+                    </p>
+
+                    <div className="mt-2 flex items-center gap-2">
+                      <span className="h-1.5 min-w-0 flex-1 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
+                        <span
+                          className="cresce block h-full rounded-full bg-brand-500"
+                          style={{ width: `${Math.min(100, d.weight)}%` }}
+                        />
+                      </span>
+                      <span className="shrink-0 text-xs text-slate-500 tabular-nums dark:text-slate-400">
+                        {d.question_count} na prova · {d.weight}%
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
         </div>
       </div>
     );

@@ -48,7 +48,7 @@ export default function TopicStatus({
 
   return (
     <div className="flex flex-wrap items-center gap-2 rounded-2xl bg-white p-3 ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-700">
-      <span className="mr-1 text-xs font-semibold tracking-wide text-slate-400 uppercase">
+      <span className="mr-1 text-xs font-medium text-slate-400">
         Meu progresso
       </span>
       {OPCOES.map(({ valor, label, icone: Icone, ativo }) => {

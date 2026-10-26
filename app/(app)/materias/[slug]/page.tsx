@@ -82,7 +82,7 @@ export default async function DisciplinaPage({ params }: { params: Promise<{ slu
         </Link>
 
         <div className="mt-3 flex flex-wrap items-center gap-3">
-          <h1 className="text-2xl font-bold tracking-wide text-slate-900 uppercase sm:text-3xl dark:text-slate-100">
+          <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl dark:text-slate-100">
             {d.name}
           </h1>
           <Badge className={PRIORITY_CLASS[d.priority as keyof typeof PRIORITY_CLASS]}>
@@ -116,7 +116,7 @@ export default async function DisciplinaPage({ params }: { params: Promise<{ slu
         <Card>
           <div className="grid gap-5 md:grid-cols-2">
             <div>
-              <h2 className="text-xs font-bold tracking-wider text-brand-600 uppercase dark:text-brand-300">
+              <h2 className="text-sm font-semibold text-brand-700 dark:text-brand-300">
                 O que é esta matéria
               </h2>
               <p className="mt-2 text-[0.95rem] leading-7 text-slate-700 dark:text-slate-300">
@@ -125,7 +125,7 @@ export default async function DisciplinaPage({ params }: { params: Promise<{ slu
             </div>
             {d.what_for && (
               <div>
-                <h2 className="text-xs font-bold tracking-wider text-emerald-700 uppercase dark:text-emerald-400">
+                <h2 className="text-sm font-semibold text-emerald-700 dark:text-emerald-400">
                   Para que serve na prática
                 </h2>
                 <p className="mt-2 text-[0.95rem] leading-7 text-slate-700 dark:text-slate-300">
@@ -137,7 +137,7 @@ export default async function DisciplinaPage({ params }: { params: Promise<{ slu
 
           {d.how_it_falls && (
             <div className="mt-5 rounded-xl bg-slate-50 p-4 dark:bg-slate-800/60">
-              <h2 className="flex items-center gap-2 text-xs font-bold tracking-wider text-slate-600 uppercase dark:text-slate-400">
+              <h2 className="flex items-center gap-2 text-sm font-semibold text-slate-700 dark:text-slate-300">
                 <Target size={14} /> Como a banca cobra
               </h2>
               <p className="mt-1.5 text-sm leading-7 text-slate-700 dark:text-slate-300">
@@ -167,7 +167,7 @@ export default async function DisciplinaPage({ params }: { params: Promise<{ slu
             </Card>
           )}
 
-          <div className="space-y-4">
+          <div className="entra space-y-4">
             {d.example && (
               <Card title="Na prática" icon={Lightbulb}>
                 <p className="text-[0.95rem] leading-7 text-slate-700 dark:text-slate-300">

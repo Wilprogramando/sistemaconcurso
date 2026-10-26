@@ -54,7 +54,7 @@ export default async function MateriasPage() {
   const pctGeral = totalTopicos ? Math.round((100 * totalLidos) / totalTopicos) : 0;
 
   return (
-    <div className="space-y-4">
+    <div className="entra space-y-4">
       {/* ---------------- faixa de título ---------------- */}
       <header className="relative overflow-hidden rounded-2xl bg-brand-900 px-5 py-6 text-white sm:px-7 dark:bg-slate-900">
         <div
@@ -123,7 +123,7 @@ export default async function MateriasPage() {
                   <p className="text-xs font-semibold text-slate-400">
                     {d.question_count ? `${i + 1}º em peso · ` : ''}Capítulo {d.chapter}
                   </p>
-                  <h2 className="text-lg leading-snug font-bold tracking-wide text-slate-900 uppercase dark:text-slate-100">
+                  <h2 className="text-lg leading-snug font-bold text-slate-900 dark:text-slate-100">
                     <Link href={`/materias/${d.slug}`} className="hover:underline">
                       {d.name}
                     </Link>

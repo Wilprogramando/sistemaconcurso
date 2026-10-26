@@ -35,7 +35,7 @@ const TOTAL_QUESTOES = 60;
 
 export default function EditalPage() {
   return (
-    <div className="space-y-5">
+    <div className="entra space-y-5">
       {/* ---------------- faixa de título ---------------- */}
       <header className="relative overflow-hidden rounded-2xl bg-brand-900 px-5 py-6 text-white sm:px-7 dark:bg-slate-900">
         <div
@@ -94,7 +94,7 @@ export default function EditalPage() {
             key={n.rotulo}
             className="rounded-2xl bg-white p-4 ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-700"
           >
-            <p className="text-xs font-bold tracking-wider text-slate-400 uppercase">{n.rotulo}</p>
+            <p className="text-xs font-medium text-slate-500 dark:text-slate-400">{n.rotulo}</p>
             <p className="mt-1 text-xl font-bold text-slate-900 dark:text-slate-100">{n.valor}</p>
             <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">{n.detalhe}</p>
           </div>
@@ -289,13 +289,13 @@ export default function EditalPage() {
       >
         <dl className="grid gap-3 sm:grid-cols-2">
           <div className="rounded-xl bg-slate-50 p-3.5 dark:bg-slate-800/60">
-            <dt className="text-xs font-bold tracking-wide text-slate-500 uppercase">Formato</dt>
+            <dt className="text-xs font-medium text-slate-500 dark:text-slate-400">Formato</dt>
             <dd className="mt-1 text-sm leading-6 text-slate-700 dark:text-slate-300">
               {REDACAO.tipo}. {REDACAO.linhas}.
             </dd>
           </div>
           <div className="rounded-xl bg-slate-50 p-3.5 dark:bg-slate-800/60">
-            <dt className="text-xs font-bold tracking-wide text-slate-500 uppercase">
+            <dt className="text-xs font-medium text-slate-500 dark:text-slate-400">
               Como a nota é calculada
             </dt>
             <dd className="mt-1 text-sm leading-6 text-slate-700 dark:text-slate-300">
@@ -304,7 +304,7 @@ export default function EditalPage() {
           </div>
         </dl>
 
-        <p className="mt-4 text-xs font-bold tracking-wider text-slate-500 uppercase dark:text-slate-400">
+        <p className="mt-4 text-xs font-medium text-slate-500 dark:text-slate-400">
           Temas possíveis — ordem pública
         </p>
         <ul className="mt-2 flex flex-wrap gap-1.5">
@@ -336,7 +336,7 @@ export default function EditalPage() {
           <div className="-mx-1 overflow-x-auto">
             <table className="w-full min-w-[22rem] text-sm">
               <thead>
-                <tr className="text-left text-xs tracking-wide text-slate-500 uppercase dark:text-slate-400">
+                <tr className="text-left text-xs font-medium text-slate-500 dark:text-slate-400">
                   <th className="pb-2 font-semibold">Teste</th>
                   <th className="pb-2 font-semibold">Mínimo</th>
                 </tr>
