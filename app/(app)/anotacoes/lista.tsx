@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import Link from "next/link";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   AlertTriangle,
   ArrowLeft,
@@ -24,18 +24,18 @@ import {
   Search,
   Trash2,
   X,
-} from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
-import EditorNota, { type Opcao } from '@/components/editor-nota';
-import { useSessao } from '@/components/sessao';
-import { Card, Empty } from '@/components/ui';
-import ImagensDaNota from '@/components/imagens-nota';
-import AnexosDaNota from '@/components/anexos-nota';
-import CorpoNota from '@/components/corpo-nota';
-import { BUCKET } from '@/components/urls-assinadas';
-import { caminhosNoHtml } from '@/lib/html-nota';
-import { visualDe } from '@/lib/disciplinas-visual';
-import { ORDEM_TAGS, TAGS, type Nota, type Tag } from '@/lib/notas';
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import EditorNota, { type Opcao } from "@/components/editor-nota";
+import { useSessao } from "@/components/sessao";
+import { Card, Empty } from "@/components/ui";
+import ImagensDaNota from "@/components/imagens-nota";
+import AnexosDaNota from "@/components/anexos-nota";
+import CorpoNota from "@/components/corpo-nota";
+import { BUCKET } from "@/components/urls-assinadas";
+import { caminhosNoHtml } from "@/lib/html-nota";
+import { visualDe } from "@/lib/disciplinas-visual";
+import { ORDEM_TAGS, TAGS, type Nota, type Tag } from "@/lib/notas";
 
 type NotaComContexto = Nota & {
   disciplinaNome: string | null;
@@ -44,10 +44,11 @@ type NotaComContexto = Nota & {
   topicoTitulo: string | null;
 };
 
-export type Materia = { id: number; nome: string; slug: string };
+/** `peso` é a fatia da prova que a matéria ocupa, em por cento */
+export type Materia = { id: number; nome: string; slug: string; peso: number };
 
 /** chave da matéria selecionada: id da disciplina, ou `sem` para as soltas */
-type Selecao = number | 'sem' | null;
+type Selecao = number | "sem" | null;
 
 export default function ListaDeNotas({
   notas: todas,
@@ -64,8 +65,12 @@ export default function ListaDeNotas({
    * nova: sem isso a anotação sumia do card mas a lixeira só mostrava a conta
    * certa depois de recarregar.
    */
-  const [idaParaLixeira, setIdaParaLixeira] = useState<Record<string, string>>({});
-  const [voltouDaLixeira, setVoltouDaLixeira] = useState<Set<string>>(new Set());
+  const [idaParaLixeira, setIdaParaLixeira] = useState<Record<string, string>>(
+    {},
+  );
+  const [voltouDaLixeira, setVoltouDaLixeira] = useState<Set<string>>(
+    new Set(),
+  );
   const [apagadasDeVez, setApagadasDeVez] = useState<Set<string>>(new Set());
 
   const naLixeiraAgora = (n: NotaComContexto) =>
@@ -82,8 +87,11 @@ export default function ListaDeNotas({
     () =>
       todas
         .filter((n) => naLixeiraAgora(n) && !apagadasDeVez.has(n.id))
-        .map((n) => ({ ...n, deleted_at: n.deleted_at ?? idaParaLixeira[n.id] ?? null }))
-        .sort((x, y) => (y.deleted_at ?? '').localeCompare(x.deleted_at ?? '')),
+        .map((n) => ({
+          ...n,
+          deleted_at: n.deleted_at ?? idaParaLixeira[n.id] ?? null,
+        }))
+        .sort((x, y) => (y.deleted_at ?? "").localeCompare(x.deleted_at ?? "")),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [todas, idaParaLixeira, voltouDaLixeira, apagadasDeVez],
   );
@@ -95,9 +103,12 @@ export default function ListaDeNotas({
 
   /** quantas anotações cada matéria tem e quando foi a última */
   const resumo = useMemo(() => {
-    const m = new Map<number | 'sem', { total: number; ultima: string | null; fixadas: number }>();
+    const m = new Map<
+      number | "sem",
+      { total: number; ultima: string | null; fixadas: number }
+    >();
     for (const n of notas) {
-      const chave: number | 'sem' = n.discipline_id ?? 'sem';
+      const chave: number | "sem" = n.discipline_id ?? "sem";
       const e = m.get(chave) ?? { total: 0, ultima: null, fixadas: 0 };
       e.total += 1;
       if (n.pinned) e.fixadas += 1;
@@ -116,7 +127,9 @@ export default function ListaDeNotas({
           setVoltouDaLixeira((atual) => new Set(atual).add(id));
           setIdaParaLixeira(({ [id]: _fora, ...resto }) => resto);
         }}
-        aoApagarDeVez={(id) => setApagadasDeVez((atual) => new Set(atual).add(id))}
+        aoApagarDeVez={(id) =>
+          setApagadasDeVez((atual) => new Set(atual).add(id))
+        }
       />
     );
   }
@@ -135,20 +148,27 @@ export default function ListaDeNotas({
     );
   }
 
-  const daMateria = notas.filter((n) => (n.discipline_id ?? 'sem') === selecao);
-  const materia = typeof selecao === 'number' ? disciplinas.find((d) => d.id === selecao) : null;
+  const daMateria = notas.filter((n) => (n.discipline_id ?? "sem") === selecao);
+  const materia =
+    typeof selecao === "number"
+      ? disciplinas.find((d) => d.id === selecao)
+      : null;
 
   return (
     <Detalhe
-      titulo={materia?.nome ?? 'Sem matéria'}
+      titulo={materia?.nome ?? "Sem matéria"}
+      peso={materia?.peso ?? 0}
       slug={materia?.slug ?? null}
       notas={daMateria}
       todasNotas={notas}
       disciplinas={opcoes}
-      disciplinaFixa={typeof selecao === 'number' ? selecao : null}
+      disciplinaFixa={typeof selecao === "number" ? selecao : null}
       voltar={() => setSelecao(null)}
       aoMandarParaLixeira={(id) =>
-        setIdaParaLixeira((atual) => ({ ...atual, [id]: new Date().toISOString() }))
+        setIdaParaLixeira((atual) => ({
+          ...atual,
+          [id]: new Date().toISOString(),
+        }))
       }
       lixeira={excluidas.length}
       abrirLixeira={() => setNaLixeira(true)}
@@ -171,25 +191,28 @@ function Grade({
 }: {
   disciplinas: Materia[];
   opcoes: Opcao[];
-  resumo: Map<number | 'sem', { total: number; ultima: string | null; fixadas: number }>;
+  resumo: Map<
+    number | "sem",
+    { total: number; ultima: string | null; fixadas: number }
+  >;
   total: number;
   onAbrir: (s: Selecao) => void;
   /** quantas anotações estão na lixeira */
   naLixeira: number;
   abrirLixeira: () => void;
 }) {
-  const soltas = resumo.get('sem');
+  const soltas = resumo.get("sem");
   const [criando, setCriando] = useState(false);
 
   /** data curta da última anotação, ou o aviso de caderno vazio */
   const ultima = (quando: string | null | undefined) =>
     quando
-      ? `última em ${new Date(quando).toLocaleDateString('pt-BR', {
-          day: '2-digit',
-          month: '2-digit',
-          year: '2-digit',
+      ? `última em ${new Date(quando).toLocaleDateString("pt-BR", {
+          day: "2-digit",
+          month: "2-digit",
+          year: "2-digit",
         })}`
-      : 'nada anotado ainda';
+      : "nada anotado ainda";
 
   return (
     <div className="space-y-4">
@@ -197,19 +220,20 @@ function Grade({
       <div className="flex flex-wrap items-center gap-2">
         <p className="order-last w-full text-sm text-slate-500 sm:order-first sm:w-auto sm:min-w-0 sm:flex-1 dark:text-slate-400">
           {total
-            ? `${total} ${total === 1 ? 'anotação' : 'anotações'} no caderno.`
-            : 'Escolha uma matéria para começar a anotar.'}
+            ? `${total} ${total === 1 ? "anotação" : "anotações"} no caderno. Matérias em ordem de peso na prova.`
+            : "Escolha uma matéria para começar a anotar — as que valem mais ponto vêm primeiro."}
         </p>
 
         {naLixeira > 0 && (
           <button
             type="button"
             onClick={abrirLixeira}
-            title={`Lixeira — ${naLixeira} ${naLixeira === 1 ? 'anotação' : 'anotações'}`}
+            title={`Lixeira — ${naLixeira} ${naLixeira === 1 ? "anotação" : "anotações"}`}
             className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-white px-3.5 py-2.5 text-sm font-semibold text-slate-600 ring-1 ring-slate-300 transition hover:bg-slate-50 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-600"
           >
             <Trash2 size={16} />
-            <span className="sr-only sm:not-sr-only">Lixeira</span> ({naLixeira})
+            <span className="sr-only sm:not-sr-only">Lixeira</span> ({naLixeira}
+            )
           </button>
         )}
 
@@ -235,58 +259,73 @@ function Grade({
           direita. Nome comprido em caixa alta quebrava em três linhas no
           formato de cartão. No computador o cartão volta. */}
       <div className="grid gap-2 sm:grid-cols-2 sm:gap-3 lg:grid-cols-3">
-        {disciplinas.map((d) => {
-          const info = resumo.get(d.id);
-          const visual = visualDe(d.slug);
-          const Icone = visual.icone;
-          const quantas = info?.total ?? 0;
+        {[...disciplinas]
+          .sort((a, b) => b.peso - a.peso)
+          .map((d) => {
+            const info = resumo.get(d.id);
+            const visual = visualDe(d.slug);
+            const Icone = visual.icone;
+            const quantas = info?.total ?? 0;
 
-          return (
-            <button
-              key={d.id}
-              type="button"
-              onClick={() => onAbrir(d.id)}
-              className="flex w-full items-center gap-3 rounded-2xl bg-white p-3 text-left ring-1 ring-slate-200 transition hover:ring-brand-400 sm:h-full sm:flex-col sm:items-start sm:p-4 sm:hover:-translate-y-0.5 dark:bg-slate-900 dark:ring-slate-700"
-            >
-              <span
-                className={`grid h-10 w-10 shrink-0 place-items-center rounded-xl sm:h-11 sm:w-11 sm:rounded-2xl ${visual.tile}`}
+            return (
+              <button
+                key={d.id}
+                type="button"
+                onClick={() => onAbrir(d.id)}
+                className="flex w-full items-center gap-3 rounded-2xl bg-white p-3 text-left ring-1 ring-slate-200 transition hover:ring-brand-400 sm:h-full sm:flex-col sm:items-start sm:p-4 sm:hover:-translate-y-0.5 dark:bg-slate-900 dark:ring-slate-700"
               >
-                <Icone size={20} />
-              </span>
-
-              <span className="min-w-0 flex-1 sm:w-full sm:flex-none">
-                <span className="flex items-center gap-1.5">
-                  <h2 className="min-w-0 flex-1 text-sm leading-snug font-bold tracking-wide text-slate-900 uppercase sm:mt-3 sm:text-[0.8rem] dark:text-slate-100">
-                    {d.nome}
-                  </h2>
-                  {!!info?.fixadas && <Pin size={13} className="shrink-0 text-brand-500" />}
+                <span
+                  className={`grid h-10 w-10 shrink-0 place-items-center rounded-xl sm:h-11 sm:w-11 sm:rounded-2xl ${visual.tile}`}
+                >
+                  <Icone size={20} />
                 </span>
 
-                {/* no computador o número ganha destaque embaixo do nome */}
-                <span className="mt-0.5 hidden text-2xl font-bold text-slate-900 tabular-nums sm:mt-2 sm:block dark:text-slate-100">
-                  {quantas}
-                  <span className="ml-1.5 text-xs font-medium text-slate-500 dark:text-slate-400">
-                    {quantas === 1 ? 'anotação' : 'anotações'}
+                <span className="min-w-0 flex-1 sm:w-full sm:flex-none">
+                  <span className="flex items-center gap-1.5">
+                    <h2 className="min-w-0 flex-1 text-sm leading-snug font-bold tracking-wide text-slate-900 uppercase sm:mt-3 sm:text-[0.8rem] dark:text-slate-100">
+                      {d.nome}
+                    </h2>
+                    {!!info?.fixadas && (
+                      <Pin size={13} className="shrink-0 text-brand-500" />
+                    )}
                   </span>
-                </span>
 
-                <span className="block text-xs text-slate-400 sm:mt-0.5">
-                  <span className="sm:hidden">
-                    {quantas} {quantas === 1 ? 'anotação' : 'anotações'} ·{' '}
+                  {/* no computador o número ganha destaque embaixo do nome */}
+                  <span className="mt-0.5 hidden text-2xl font-bold text-slate-900 tabular-nums sm:mt-2 sm:block dark:text-slate-100">
+                    {quantas}
+                    <span className="ml-1.5 text-xs font-medium text-slate-500 dark:text-slate-400">
+                      {quantas === 1 ? "anotação" : "anotações"}
+                    </span>
                   </span>
-                  {ultima(info?.ultima)}
-                </span>
-              </span>
 
-              <ChevronRight size={18} className="shrink-0 text-slate-300 sm:hidden" />
-            </button>
-          );
-        })}
+                  <span className="block text-xs text-slate-400 sm:mt-0.5">
+                    <span className="sm:hidden">
+                      {quantas} {quantas === 1 ? "anotação" : "anotações"}{" "}
+                      ·{" "}
+                    </span>
+                    {ultima(info?.ultima)}
+                  </span>
+
+                  {/* o peso explica por que a matéria está nesta posição */}
+                  {!!d.peso && (
+                    <span className="mt-1 inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-[0.7rem] font-semibold text-slate-600 tabular-nums dark:bg-slate-800 dark:text-slate-300">
+                      {d.peso}% da prova
+                    </span>
+                  )}
+                </span>
+
+                <ChevronRight
+                  size={18}
+                  className="shrink-0 text-slate-300 sm:hidden"
+                />
+              </button>
+            );
+          })}
 
         {!!soltas && (
           <button
             type="button"
-            onClick={() => onAbrir('sem')}
+            onClick={() => onAbrir("sem")}
             className="flex w-full items-center gap-3 rounded-2xl bg-white p-3 text-left ring-1 ring-slate-200 transition hover:ring-brand-400 sm:h-full sm:flex-col sm:items-start sm:p-4 sm:hover:-translate-y-0.5 dark:bg-slate-900 dark:ring-slate-700"
           >
             <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-slate-500 text-white sm:h-11 sm:w-11 sm:rounded-2xl">
@@ -300,18 +339,22 @@ function Grade({
               <span className="mt-0.5 hidden text-2xl font-bold text-slate-900 tabular-nums sm:mt-2 sm:block dark:text-slate-100">
                 {soltas.total}
                 <span className="ml-1.5 text-xs font-medium text-slate-500 dark:text-slate-400">
-                  {soltas.total === 1 ? 'anotação' : 'anotações'}
+                  {soltas.total === 1 ? "anotação" : "anotações"}
                 </span>
               </span>
               <span className="block text-xs text-slate-400 sm:mt-0.5">
                 <span className="sm:hidden">
-                  {soltas.total} {soltas.total === 1 ? 'anotação' : 'anotações'} ·{' '}
+                  {soltas.total} {soltas.total === 1 ? "anotação" : "anotações"}{" "}
+                  ·{" "}
                 </span>
                 soltas, sem amarração
               </span>
             </span>
 
-            <ChevronRight size={18} className="shrink-0 text-slate-300 sm:hidden" />
+            <ChevronRight
+              size={18}
+              className="shrink-0 text-slate-300 sm:hidden"
+            />
           </button>
         )}
       </div>
@@ -354,7 +397,10 @@ function Lixeira({
     esquecer(nota.id);
     aoRestaurar(nota.id);
     void (async () => {
-      await supabase.from('notes').update({ deleted_at: null }).eq('id', nota.id);
+      await supabase
+        .from("notes")
+        .update({ deleted_at: null })
+        .eq("id", nota.id);
       router.refresh();
     })();
   }
@@ -368,10 +414,10 @@ function Lixeira({
       const arquivos = [
         ...(nota.images ?? []),
         ...(nota.attachments ?? []).map((a) => a.path),
-        ...caminhosNoHtml(nota.body_html ?? ''),
+        ...caminhosNoHtml(nota.body_html ?? ""),
       ];
       if (arquivos.length) await supabase.storage.from(BUCKET).remove(arquivos);
-      await supabase.from('notes').delete().eq('id', nota.id);
+      await supabase.from("notes").delete().eq("id", nota.id);
       router.refresh();
     })();
   }
@@ -396,7 +442,8 @@ function Lixeira({
             Lixeira
           </h2>
           <p className="text-xs text-slate-500 dark:text-slate-400">
-            {lista.length} {lista.length === 1 ? 'anotação excluída' : 'anotações excluídas'}
+            {lista.length}{" "}
+            {lista.length === 1 ? "anotação excluída" : "anotações excluídas"}
           </p>
         </div>
       </div>
@@ -429,25 +476,27 @@ function Lixeira({
                   </span>
                   <span className="text-xs text-slate-400">
                     {n.deleted_at
-                      ? `excluída em ${new Date(n.deleted_at).toLocaleDateString('pt-BR')}`
-                      : ''}
+                      ? `excluída em ${new Date(n.deleted_at).toLocaleDateString("pt-BR")}`
+                      : ""}
                   </span>
                 </div>
 
                 <h3 className="mt-2.5 leading-snug font-semibold tracking-wide text-slate-700 uppercase line-through dark:text-slate-300">
-                  {n.title || 'Sem título'}
+                  {n.title || "Sem título"}
                 </h3>
 
                 <p className="mt-1 flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">
                   <Folder size={13} className="shrink-0 text-slate-400" />
-                  <span className="truncate">{n.disciplinaNome ?? 'Sem matéria'}</span>
+                  <span className="truncate">
+                    {n.disciplinaNome ?? "Sem matéria"}
+                  </span>
                 </p>
 
                 {confirmando === n.id ? (
                   <div className="mt-3 rounded-xl bg-red-50 px-3 py-2.5 text-xs text-red-800 dark:bg-red-950/40 dark:text-red-300">
                     <p>
-                      Apagar de vez? As imagens e os PDFs desta anotação saem do servidor junto, e
-                      não há como desfazer.
+                      Apagar de vez? As imagens e os PDFs desta anotação saem do
+                      servidor junto, e não há como desfazer.
                     </p>
                     <div className="mt-2 flex flex-wrap gap-2">
                       <button
@@ -499,6 +548,7 @@ function Lixeira({
 
 function Detalhe({
   titulo,
+  peso,
   slug,
   notas,
   todasNotas,
@@ -510,6 +560,8 @@ function Detalhe({
   abrirLixeira,
 }: {
   titulo: string;
+  /** fatia da prova, em por cento; 0 nas anotações sem matéria */
+  peso: number;
   slug: string | null;
   notas: NotaComContexto[];
   /** todas as anotações vivas, de qualquer matéria: os vínculos atravessam matérias */
@@ -522,8 +574,8 @@ function Detalhe({
   lixeira: number;
   abrirLixeira: () => void;
 }) {
-  const [busca, setBusca] = useState('');
-  const [filtroTag, setFiltroTag] = useState<Tag | 'todas'>('todas');
+  const [busca, setBusca] = useState("");
+  const [filtroTag, setFiltroTag] = useState<Tag | "todas">("todas");
   const [criando, setCriando] = useState(false);
   const [editando, setEditando] = useState<string | null>(null);
   /** id da anotação aberta na janela */
@@ -543,9 +595,12 @@ function Detalhe({
     const termo = busca.trim().toLowerCase();
     return notas.filter((n) => {
       if (removidas.has(n.id)) return false;
-      if (filtroTag !== 'todas' && n.tag !== filtroTag) return false;
+      if (filtroTag !== "todas" && n.tag !== filtroTag) return false;
       if (!termo) return true;
-      return n.title.toLowerCase().includes(termo) || n.body.toLowerCase().includes(termo);
+      return (
+        n.title.toLowerCase().includes(termo) ||
+        n.body.toLowerCase().includes(termo)
+      );
     });
   }, [notas, busca, filtroTag, removidas]);
 
@@ -563,7 +618,7 @@ function Detalhe({
     });
     setErro(
       /deleted_at|column|schema cache/i.test(motivo)
-        ? 'A lixeira ainda não existe no banco. Rode supabase/migrations/0009_lixeira_anotacoes.sql no SQL Editor do Supabase.'
+        ? "A lixeira ainda não existe no banco. Rode supabase/migrations/0009_lixeira_anotacoes.sql no SQL Editor do Supabase."
         : `Não foi possível excluir: ${motivo}`,
     );
   }
@@ -584,11 +639,16 @@ function Detalhe({
 
     const ids = ordem.map((n) => n.id);
     void (async () => {
-      const { error } = await supabase.rpc('reordenar_notas', { p_ids: ids });
+      const { error } = await supabase.rpc("reordenar_notas", { p_ids: ids });
       // banco sem a migração 0008: cai no update por anotação
       if (error) {
         await Promise.all(
-          ids.map((id, i) => supabase.from('notes').update({ position: i + 1 }).eq('id', id)),
+          ids.map((id, i) =>
+            supabase
+              .from("notes")
+              .update({ position: i + 1 })
+              .eq("id", id),
+          ),
         );
       }
     })();
@@ -637,9 +697,11 @@ function Detalhe({
 
   // reordenar só faz sentido vendo a lista inteira: com filtro, as setas
   // mexeriam em vizinhas que estão escondidas
-  const podeOrdenar = !busca.trim() && filtroTag === 'todas';
+  const podeOrdenar = !busca.trim() && filtroTag === "todas";
 
-  const notaAberta = vendo ? (todasNotas.find((n) => n.id === vendo) ?? null) : null;
+  const notaAberta = vendo
+    ? (todasNotas.find((n) => n.id === vendo) ?? null)
+    : null;
 
   // para onde a anotação aberta aponta, e quem aponta para ela
   const vinculadas = notaAberta
@@ -648,7 +710,9 @@ function Detalhe({
         .filter((n): n is NotaComContexto => !!n)
     : [];
   const citadaEm = notaAberta
-    ? todasNotas.filter((n) => n.id !== notaAberta.id && n.linked_ids?.includes(notaAberta.id))
+    ? todasNotas.filter(
+        (n) => n.id !== notaAberta.id && n.linked_ids?.includes(notaAberta.id),
+      )
     : [];
 
   const visual = slug ? visualDe(slug) : null;
@@ -668,7 +732,7 @@ function Detalhe({
 
         <span
           className={`grid h-10 w-10 shrink-0 place-items-center rounded-2xl ${
-            visual?.tile ?? 'bg-slate-500 text-white'
+            visual?.tile ?? "bg-slate-500 text-white"
           }`}
         >
           <Icone size={19} />
@@ -679,7 +743,8 @@ function Detalhe({
             {titulo}
           </h2>
           <p className="text-xs text-slate-500 dark:text-slate-400">
-            {notas.length} {notas.length === 1 ? 'anotação' : 'anotações'}
+            {notas.length} {notas.length === 1 ? "anotação" : "anotações"}
+            {!!peso && ` · ${peso}% da prova`}
           </p>
         </div>
 
@@ -698,7 +763,7 @@ function Detalhe({
           <Link
             href={`/materias/${slug}`}
             className={`text-xs font-medium text-brand-600 hover:underline dark:text-brand-300 ${
-              lixeira > 0 ? '' : 'ml-auto'
+              lixeira > 0 ? "" : "ml-auto"
             }`}
           >
             Abrir a matéria
@@ -729,14 +794,21 @@ function Detalhe({
       {notas.length > 0 && (
         <div className="flex flex-wrap items-center gap-2">
           <div className="flex min-w-0 flex-wrap items-center gap-2">
-            <Chip ativo={filtroTag === 'todas'} onClick={() => setFiltroTag('todas')}>
+            <Chip
+              ativo={filtroTag === "todas"}
+              onClick={() => setFiltroTag("todas")}
+            >
               <NotebookPen size={13} /> Todas ({notas.length})
             </Chip>
             {ORDEM_TAGS.filter((t) => contagem[t]).map((t) => {
               const info = TAGS[t];
               const IconeTag = info.icone;
               return (
-                <Chip key={t} ativo={filtroTag === t} onClick={() => setFiltroTag(t)}>
+                <Chip
+                  key={t}
+                  ativo={filtroTag === t}
+                  onClick={() => setFiltroTag(t)}
+                >
                   <IconeTag size={13} /> {info.label} ({contagem[t]})
                 </Chip>
               );
@@ -760,8 +832,8 @@ function Detalhe({
 
       {podeOrdenar && filtradas.length > 1 && (
         <p className="flex items-center gap-1.5 text-xs text-slate-400">
-          <GripVertical size={13} /> Arraste o card pela pegada para mudar a ordem. No celular, use
-          as setas.
+          <GripVertical size={13} /> Arraste o card pela pegada para mudar a
+          ordem. No celular, use as setas.
         </p>
       )}
 
@@ -785,8 +857,8 @@ function Detalhe({
         <Card>
           <Empty>
             {notas.length
-              ? 'Nenhuma anotação com esses filtros.'
-              : 'Nenhuma anotação nesta matéria ainda. Crie a primeira acima.'}
+              ? "Nenhuma anotação com esses filtros."
+              : "Nenhuma anotação nesta matéria ainda. Crie a primeira acima."}
           </Empty>
         </Card>
       ) : (
@@ -830,7 +902,9 @@ function Detalhe({
 
           {demais.length > 0 && (
             <section className="space-y-2">
-              {fixadas.length > 0 && <Secao icone={NotebookPen}>Demais anotações</Secao>}
+              {fixadas.length > 0 && (
+                <Secao icone={NotebookPen}>Demais anotações</Secao>
+              )}
               <div className="grid items-stretch gap-3 sm:grid-cols-2 xl:grid-cols-3">
                 {demais.map((n, i) => (
                   <Cartao
@@ -910,13 +984,13 @@ function JanelaNota({
   // Esc fecha, e a página atrás não rola enquanto a janela está aberta
   useEffect(() => {
     const aoTeclar = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') fechar();
+      if (e.key === "Escape") fechar();
     };
-    document.addEventListener('keydown', aoTeclar);
+    document.addEventListener("keydown", aoTeclar);
     const rolagem = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
     return () => {
-      document.removeEventListener('keydown', aoTeclar);
+      document.removeEventListener("keydown", aoTeclar);
       document.body.style.overflow = rolagem;
     };
   }, [fechar]);
@@ -927,13 +1001,16 @@ function JanelaNota({
       onClick={fechar}
       role="dialog"
       aria-modal="true"
-      aria-label={nota.title || 'Anotação'}
+      aria-label={nota.title || "Anotação"}
     >
       <div
         onClick={(e) => e.stopPropagation()}
         className="relative my-auto w-full max-w-3xl overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-700"
       >
-        <span aria-hidden className={`absolute inset-y-0 left-0 w-1.5 ${info.barra}`} />
+        <span
+          aria-hidden
+          className={`absolute inset-y-0 left-0 w-1.5 ${info.barra}`}
+        />
 
         <header className="flex flex-wrap items-center gap-2 border-b border-slate-200 py-3 pr-3 pl-6 dark:border-slate-700">
           <span
@@ -941,7 +1018,9 @@ function JanelaNota({
           >
             <Icone size={12} /> {info.label}
           </span>
-          {nota.pinned && <Pin size={13} className="text-brand-500 dark:text-emerald-400" />}
+          {nota.pinned && (
+            <Pin size={13} className="text-brand-500 dark:text-emerald-400" />
+          )}
 
           <div className="ml-auto flex items-center gap-1">
             <button
@@ -967,7 +1046,7 @@ function JanelaNota({
 
         <div className="rolagem-nota max-h-[min(75vh,31.5rem)] overflow-y-auto overscroll-contain px-6 py-4">
           <h2 className="text-lg leading-snug font-bold tracking-wide text-slate-900 uppercase dark:text-slate-100">
-            {nota.title || 'Sem título'}
+            {nota.title || "Sem título"}
           </h2>
 
           <CorpoNota html={nota.body_html} texto={nota.body} className="mt-2" />
@@ -985,32 +1064,46 @@ function JanelaNota({
           )}
 
           {vinculadas.length > 0 && (
-            <AtalhosDeNotas titulo="Anotações vinculadas" notas={vinculadas} irPara={irPara} />
+            <AtalhosDeNotas
+              titulo="Anotações vinculadas"
+              notas={vinculadas}
+              irPara={irPara}
+            />
           )}
           {citadaEm.length > 0 && (
-            <AtalhosDeNotas titulo="Citada em" notas={citadaEm} irPara={irPara} />
+            <AtalhosDeNotas
+              titulo="Citada em"
+              notas={citadaEm}
+              irPara={irPara}
+            />
           )}
         </div>
 
         <footer className="flex flex-wrap items-center gap-2 border-t border-slate-200 px-6 py-3 text-xs text-slate-500 dark:border-slate-700 dark:text-slate-400">
-          <Folder size={13} className="shrink-0 text-slate-400 dark:text-slate-500" />
+          <Folder
+            size={13}
+            className="shrink-0 text-slate-400 dark:text-slate-500"
+          />
           {nota.topicoRef && nota.disciplinaSlug ? (
             <Link
               href={`/materias/${nota.disciplinaSlug}/${nota.topicoRef}`}
               className="truncate hover:underline"
             >
-              {nota.disciplinaNome ?? 'Sem matéria'} · {nota.topicoRef} {nota.topicoTitulo}
+              {nota.disciplinaNome ?? "Sem matéria"} · {nota.topicoRef}{" "}
+              {nota.topicoTitulo}
             </Link>
           ) : (
-            <span className="truncate">{nota.disciplinaNome ?? 'Sem matéria'}</span>
+            <span className="truncate">
+              {nota.disciplinaNome ?? "Sem matéria"}
+            </span>
           )}
           <span className="ml-auto shrink-0">
-            {new Date(nota.updated_at).toLocaleString('pt-BR', {
-              day: '2-digit',
-              month: '2-digit',
-              year: '2-digit',
-              hour: '2-digit',
-              minute: '2-digit',
+            {new Date(nota.updated_at).toLocaleString("pt-BR", {
+              day: "2-digit",
+              month: "2-digit",
+              year: "2-digit",
+              hour: "2-digit",
+              minute: "2-digit",
             })}
           </span>
         </footer>
@@ -1035,8 +1128,8 @@ function Chip({
       aria-pressed={ativo}
       className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition ${
         ativo
-          ? 'bg-brand-600 text-white shadow-sm dark:bg-emerald-600 dark:text-white dark:shadow-[0_0_18px_-4px_#10b981]'
-          : 'bg-white text-slate-600 ring-1 ring-slate-200 hover:bg-slate-50 dark:bg-slate-900/70 dark:text-slate-300 dark:ring-slate-700 dark:hover:bg-slate-800'
+          ? "bg-brand-600 text-white shadow-sm dark:bg-emerald-600 dark:text-white dark:shadow-[0_0_18px_-4px_#10b981]"
+          : "bg-white text-slate-600 ring-1 ring-slate-200 hover:bg-slate-50 dark:bg-slate-900/70 dark:text-slate-300 dark:ring-slate-700 dark:hover:bg-slate-800"
       }`}
     >
       {children}
@@ -1061,15 +1154,15 @@ function Secao({
         size={15}
         className={
           destaque
-            ? 'shrink-0 text-brand-600 dark:text-emerald-400'
-            : 'shrink-0 text-slate-400 dark:text-emerald-500/70'
+            ? "shrink-0 text-brand-600 dark:text-emerald-400"
+            : "shrink-0 text-slate-400 dark:text-emerald-500/70"
         }
       />
       <h3
         className={`shrink-0 text-xs font-bold tracking-[0.12em] uppercase ${
           destaque
-            ? 'text-brand-700 dark:text-emerald-300'
-            : 'text-slate-500 dark:text-slate-300'
+            ? "text-brand-700 dark:text-emerald-300"
+            : "text-slate-500 dark:text-slate-300"
         }`}
       >
         {children}
@@ -1139,9 +1232,9 @@ function Cartao({
     aoExcluir();
     void (async () => {
       const { error } = await supabase
-        .from('notes')
+        .from("notes")
         .update({ deleted_at: new Date().toISOString() })
-        .eq('id', nota.id);
+        .eq("id", nota.id);
       // o banco recusou: o card volta e a tela explica, em vez de a anotação
       // sumir da lista sem ter ido para lugar nenhum
       if (error) aoFalhar(error.message);
@@ -1166,9 +1259,9 @@ function Cartao({
       // aberto continua selecionável
       draggable={podeArrastar && pegou}
       onDragStart={(e) => {
-        e.dataTransfer.effectAllowed = 'move';
+        e.dataTransfer.effectAllowed = "move";
         // o Firefox só começa o arrasto com algum dado no pacote
-        e.dataTransfer.setData('text/plain', nota.id);
+        e.dataTransfer.setData("text/plain", nota.id);
 
         // a miniatura que segue o cursor passa a ser o próprio card, presa no
         // ponto onde o dedo está. Sem isso o navegador às vezes arrasta um
@@ -1186,7 +1279,7 @@ function Cartao({
       onDragOver={(e) => {
         if (!podeArrastar) return;
         e.preventDefault();
-        e.dataTransfer.dropEffect = 'move';
+        e.dataTransfer.dropEffect = "move";
         passarPorCima();
       }}
       onDrop={(e) => {
@@ -1200,14 +1293,14 @@ function Cartao({
       }}
       className={`borda-viva relative flex h-full flex-col overflow-hidden rounded-2xl p-4 pl-5 ring-1 transition ${
         nota.pinned
-          ? 'bg-brand-50/70 ring-brand-200 dark:bg-gradient-to-br dark:from-emerald-950/70 dark:via-slate-900 dark:to-slate-900 dark:ring-emerald-800/60'
-          : 'bg-white ring-slate-200 dark:bg-slate-900/80 dark:ring-slate-700/70'
+          ? "bg-brand-50/70 ring-brand-200 dark:bg-gradient-to-br dark:from-emerald-950/70 dark:via-slate-900 dark:to-slate-900 dark:ring-emerald-800/60"
+          : "bg-white ring-slate-200 dark:bg-slate-900/80 dark:ring-slate-700/70"
       } ${
         arrastando
-          ? 'scale-[0.98] opacity-40 ring-2 ring-brand-400'
+          ? "scale-[0.98] opacity-40 ring-2 ring-brand-400"
           : alvo
-            ? 'translate-y-1 shadow-lg ring-2 ring-brand-500 dark:ring-emerald-400'
-            : 'hover:ring-brand-300 hover:shadow-sm dark:hover:ring-slate-600'
+            ? "translate-y-1 shadow-lg ring-2 ring-brand-500 dark:ring-emerald-400"
+            : "hover:ring-brand-300 hover:shadow-sm dark:hover:ring-slate-600"
       }`}
     >
       {/* linha de chegada: diz em que lugar o card arrastado vai entrar */}
@@ -1218,7 +1311,10 @@ function Cartao({
         />
       )}
       {/* faixa de cor da etiqueta na lateral esquerda */}
-      <span aria-hidden className={`absolute inset-y-3 left-0 w-1 rounded-r-full ${info.barra}`} />
+      <span
+        aria-hidden
+        className={`absolute inset-y-3 left-0 w-1 rounded-r-full ${info.barra}`}
+      />
 
       {nota.pinned && (
         <Pin
@@ -1301,7 +1397,9 @@ function Cartao({
 
       {confirmando && (
         <div className="mt-2 flex flex-wrap items-center gap-2 rounded-xl bg-red-50 px-3 py-2 text-xs text-red-800 dark:bg-red-950/40 dark:text-red-300">
-          <span className="min-w-0 flex-1">Mandar esta anotação para a lixeira?</span>
+          <span className="min-w-0 flex-1">
+            Mandar esta anotação para a lixeira?
+          </span>
           <button
             type="button"
             onClick={() => setConfirmando(false)}
@@ -1323,28 +1421,34 @@ function Cartao({
       <button
         type="button"
         onClick={ver}
-        title={nota.title || 'Ver a anotação'}
+        title={nota.title || "Ver a anotação"}
         className="mt-2.5 flex w-full items-start gap-2 text-left"
       >
         {/* todos os cards têm a mesma altura: o título ocupa 3 linhas e o que passar disso vira "…" */}
         <h3 className="line-clamp-3 min-h-[4.125rem] min-w-0 flex-1 leading-snug font-semibold tracking-wide break-words text-slate-900 uppercase dark:text-slate-100">
-          {nota.title || 'Sem título'}
+          {nota.title || "Sem título"}
         </h3>
         <Marcas nota={nota} />
       </button>
 
       {/* rodapé: de onde a anotação veio */}
       <div className="mt-auto flex items-center gap-1.5 pt-3 text-xs text-slate-500 dark:text-slate-400">
-        <Folder size={13} className="shrink-0 text-slate-400 dark:text-slate-500" />
+        <Folder
+          size={13}
+          className="shrink-0 text-slate-400 dark:text-slate-500"
+        />
         {nota.topicoRef && nota.disciplinaSlug ? (
           <Link
             href={`/materias/${nota.disciplinaSlug}/${nota.topicoRef}`}
             className="truncate hover:underline"
           >
-            {nota.disciplinaNome ?? 'Sem matéria'} · {nota.topicoRef} {nota.topicoTitulo}
+            {nota.disciplinaNome ?? "Sem matéria"} · {nota.topicoRef}{" "}
+            {nota.topicoTitulo}
           </Link>
         ) : (
-          <span className="truncate">{nota.disciplinaNome ?? 'Sem matéria'}</span>
+          <span className="truncate">
+            {nota.disciplinaNome ?? "Sem matéria"}
+          </span>
         )}
       </div>
     </article>
@@ -1353,12 +1457,14 @@ function Cartao({
 
 /** Pistas do que tem dentro da anotação enquanto o card está fechado. */
 function Marcas({ nota }: { nota: NotaComContexto }) {
-  const temImagem = nota.images?.length > 0 || /<img[\s>/]/i.test(nota.body_html ?? '');
+  const temImagem =
+    nota.images?.length > 0 || /<img[\s>/]/i.test(nota.body_html ?? "");
   const temPdf = nota.attachments?.length > 0;
-  const temLink = /<a\s/i.test(nota.body_html ?? '');
+  const temLink = /<a\s/i.test(nota.body_html ?? "");
   const vinculos = nota.linked_ids?.length ?? 0;
   const fotos =
-    (nota.images?.length ?? 0) + (nota.body_html?.match(/<img[\s>/]/gi)?.length ?? 0);
+    (nota.images?.length ?? 0) +
+    (nota.body_html?.match(/<img[\s>/]/gi)?.length ?? 0);
 
   if (!temImagem && !temPdf && !temLink && !vinculos) return null;
 
@@ -1371,16 +1477,20 @@ function Marcas({ nota }: { nota: NotaComContexto }) {
       )}
       {vinculos > 0 && (
         <span
-          title={`vinculada a ${vinculos} ${vinculos === 1 ? 'anotação' : 'anotações'}`}
+          title={`vinculada a ${vinculos} ${vinculos === 1 ? "anotação" : "anotações"}`}
           className="inline-flex items-center gap-0.5 text-brand-600 dark:text-brand-300"
         >
           <Network size={14} />
-          {vinculos > 1 && <span className="text-[0.7rem] font-bold tabular-nums">{vinculos}</span>}
+          {vinculos > 1 && (
+            <span className="text-[0.7rem] font-bold tabular-nums">
+              {vinculos}
+            </span>
+          )}
         </span>
       )}
       {temImagem && (
         <span
-          title={fotos > 1 ? `tem ${fotos} imagens` : 'tem imagem'}
+          title={fotos > 1 ? `tem ${fotos} imagens` : "tem imagem"}
           // laranja sólido: aparece de longe, qualquer que seja a cor do layout
           className="inline-flex h-6 items-center gap-1 rounded-md bg-orange-500 px-1.5 text-[0.7rem] font-bold text-white shadow-sm ring-2 ring-orange-200 dark:ring-orange-400/40"
         >
@@ -1423,8 +1533,13 @@ function AtalhosDeNotas({
                 title={n.title}
                 className="flex max-w-full items-center gap-2 rounded-xl bg-slate-50 px-3 py-1.5 text-left text-sm font-medium text-slate-800 ring-1 ring-slate-200 transition hover:bg-brand-50 hover:ring-brand-300 dark:bg-slate-800 dark:text-slate-100 dark:ring-slate-700 dark:hover:bg-slate-700"
               >
-                <span aria-hidden className={`h-2.5 w-2.5 shrink-0 rounded-full ${info.barra}`} />
-                <span className="min-w-0 truncate">{n.title || 'Sem título'}</span>
+                <span
+                  aria-hidden
+                  className={`h-2.5 w-2.5 shrink-0 rounded-full ${info.barra}`}
+                />
+                <span className="min-w-0 truncate">
+                  {n.title || "Sem título"}
+                </span>
               </button>
             </li>
           );
