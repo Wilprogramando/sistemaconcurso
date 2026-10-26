@@ -27,6 +27,22 @@ const CORES_TEXTO = [
   { nome: 'Roxo', valor: '#7e22ce' },
 ];
 
+/**
+ * Tom de cada cor de texto no modo noturno.
+ *
+ * O contentEditable grava a cor embutida no HTML, então o que vale enquanto
+ * se digita é este tom. Depois o saneador troca a cor por classe e o CSS
+ * cuida dos dois modos — as duas versões caem na mesma classe.
+ */
+const TEXTO_NOTURNO: Record<string, string> = {
+  '#0f172a': '#e2e8f0',
+  '#dc2626': '#f87171',
+  '#ea580c': '#fb923c',
+  '#15803d': '#4ade80',
+  '#1d4ed8': '#93b4fb',
+  '#7e22ce': '#c084fc',
+};
+
 const CORES_FUNDO = [
   { nome: 'Amarelo', valor: '#fef08a' },
   { nome: 'Verde', valor: '#bbf7d0' },
@@ -596,7 +612,9 @@ export default function EditorRico({
         <Paleta
           cores={CORES_TEXTO}
           aoEscolher={(v) => {
-            comando('foreColor', v === 'inherit' ? '#0f172a' : v);
+            const base = v === 'inherit' ? '#0f172a' : v;
+            const noturno = document.documentElement.classList.contains('dark');
+            comando('foreColor', (noturno && TEXTO_NOTURNO[base]) || base);
             setMenu(null);
           }}
         />

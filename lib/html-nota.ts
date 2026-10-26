@@ -84,8 +84,64 @@ const escaparAtributo = (s: string) =>
 const corValida = (v: string) =>
   /^#[0-9a-f]{3,8}$/i.test(v) || /^rgba?\(\s*[\d.\s,%]+\)$/i.test(v) || /^[a-z]+$/i.test(v);
 
-function limparStyle(valor: string) {
+/**
+ * Cor em hex de seis dígitos, minúsculo, para comparar com a paleta.
+ * O contentEditable grava `rgb(220, 38, 38)`; a paleta guarda `#dc2626`.
+ */
+function hexDaCor(valor: string): string | null {
+  const v = valor.trim().toLowerCase();
+  const rgb = v.match(/^rgba?\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})/);
+  if (rgb)
+    return `#${rgb
+      .slice(1, 4)
+      .map((n) => Number(n).toString(16).padStart(2, '0'))
+      .join('')}`;
+  if (/^#[0-9a-f]{3}$/.test(v))
+    return `#${v
+      .slice(1)
+      .split('')
+      .map((c) => c + c)
+      .join('')}`;
+  if (/^#[0-9a-f]{6}$/.test(v)) return v;
+  return null;
+}
+
+/**
+ * A cor escolhida na paleta vira classe, e não estilo embutido.
+ *
+ * Estilo embutido ganha de qualquer regra do CSS, então o vermelho escuro
+ * continuava escuro sobre o fundo escuro do modo noturno. Virando classe,
+ * cada cor tem um tom para o modo claro e outro para o noturno, definidos em
+ * `app/globals.css`. Os dois tons de uma cor apontam para a mesma classe: a
+ * anotação escrita no modo noturno aparece certa no modo claro, e ao contrário.
+ */
+const CLASSE_TEXTO: Record<string, string> = {
+  '#0f172a': 'cor-padrao',
+  '#e2e8f0': 'cor-padrao',
+  '#dc2626': 'cor-vermelho',
+  '#f87171': 'cor-vermelho',
+  '#ea580c': 'cor-laranja',
+  '#fb923c': 'cor-laranja',
+  '#15803d': 'cor-verde',
+  '#4ade80': 'cor-verde',
+  '#1d4ed8': 'cor-azul',
+  '#93b4fb': 'cor-azul',
+  '#7e22ce': 'cor-roxo',
+  '#c084fc': 'cor-roxo',
+};
+
+const CLASSE_FUNDO: Record<string, string> = {
+  '#fef08a': 'grifo-amarelo',
+  '#bbf7d0': 'grifo-verde',
+  '#bfdbfe': 'grifo-azul',
+  '#fbcfe8': 'grifo-rosa',
+  '#fed7aa': 'grifo-laranja',
+};
+
+/** devolve o `style` que sobrou e as classes de cor que o substituem */
+function limparStyle(valor: string): { style: string; classes: string[] } {
   const partes: string[] = [];
+  const classes: string[] = [];
   for (const regra of valor.split(';')) {
     const [bruta, ...resto] = regra.split(':');
     if (!bruta || !resto.length) continue;
@@ -93,13 +149,22 @@ function limparStyle(valor: string) {
     const v = resto.join(':').trim();
     if (!PROPS_STYLE.has(prop) || !v) continue;
     if (/url\(|expression|var\(|\\/i.test(v)) continue;
-    if ((prop === 'color' || prop === 'background-color' || prop === 'background') && !corValida(v))
-      continue;
+    if (prop === 'color' || prop === 'background-color' || prop === 'background') {
+      if (!corValida(v)) continue;
+      const hex = hexDaCor(v);
+      const classe = hex ? (prop === 'color' ? CLASSE_TEXTO[hex] : CLASSE_FUNDO[hex]) : undefined;
+      if (classe) {
+        if (!classes.includes(classe)) classes.push(classe);
+        continue;
+      }
+      // fundo transparente é o botão "Tirar": não deixa grifo nenhum
+      if (prop !== 'color' && /^transparent$/i.test(v)) continue;
+    }
     if (prop === 'font-weight' && !/^(bold|[1-9]00)$/i.test(v)) continue;
     if (prop === 'text-decoration' && !/^(underline|line-through)$/i.test(v)) continue;
     partes.push(`${prop}: ${v}`);
   }
-  return partes.join('; ');
+  return { style: partes.join('; '), classes };
 }
 
 function limparHref(valor: string) {
@@ -125,6 +190,7 @@ function limparAtributos(tag: string, bruto: string) {
   if (!ok.length) return '';
 
   const saida: string[] = [];
+  const classes: string[] = [];
   let m: RegExpExecArray | null;
   ATRIBUTO.lastIndex = 0;
   while ((m = ATRIBUTO.exec(bruto))) {
@@ -133,7 +199,9 @@ function limparAtributos(tag: string, bruto: string) {
     if (!ok.includes(nome)) continue;
 
     if (nome === 'style') {
-      valor = limparStyle(valor);
+      const limpo = limparStyle(valor);
+      for (const c of limpo.classes) if (!classes.includes(c)) classes.push(c);
+      valor = limpo.style;
       if (!valor) continue;
     } else if (nome === 'href') {
       const h = limparHref(valor);
@@ -145,6 +213,12 @@ function limparAtributos(tag: string, bruto: string) {
       valor = s;
     } else if (nome === 'color') {
       if (!corValida(valor)) continue;
+      const hex = hexDaCor(valor);
+      const classe = hex ? CLASSE_TEXTO[hex] : undefined;
+      if (classe) {
+        if (!classes.includes(classe)) classes.push(classe);
+        continue;
+      }
       // <font color> vira style, já que a tag é renomeada para span
       saida.push(`style="color: ${escaparAtributo(valor)}"`);
       continue;
@@ -159,6 +233,9 @@ function limparAtributos(tag: string, bruto: string) {
     if (!saida.some((a) => a.startsWith('href='))) return null; // link sem destino: só o texto
     saida.push('target="_blank"', 'rel="noopener noreferrer nofollow"');
   }
+
+  // as classes são nossas, não vêm do HTML colado: entram depois da limpeza
+  if (classes.length) saida.push(`class="${classes.join(' ')}"`);
 
   return saida.length ? ` ${saida.join(' ')}` : '';
 }

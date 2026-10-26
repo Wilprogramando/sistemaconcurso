@@ -158,6 +158,81 @@ html.dark .nota-rica code {
   border-radius: 0.2rem;
   padding: 0 0.15rem;
 }
+/* ---------------- cores da paleta da anotação ----------------
+   O saneador troca a cor embutida pela classe (lib/html-nota.ts), porque
+   estilo embutido ganha do CSS e o tom escuro ficava ilegível no modo
+   noturno. Aqui cada cor tem um tom por modo. */
+.nota-rica .cor-padrao {
+  color: #0f172a;
+}
+.nota-rica .cor-vermelho {
+  color: #dc2626;
+}
+.nota-rica .cor-laranja {
+  color: #ea580c;
+}
+.nota-rica .cor-verde {
+  color: #15803d;
+}
+.nota-rica .cor-azul {
+  color: #1d4ed8;
+}
+.nota-rica .cor-roxo {
+  color: #7e22ce;
+}
+html.dark .nota-rica .cor-padrao {
+  color: #e2e8f0;
+}
+html.dark .nota-rica .cor-vermelho {
+  color: #fca5a5;
+}
+html.dark .nota-rica .cor-laranja {
+  color: #fdba74;
+}
+html.dark .nota-rica .cor-verde {
+  color: #86efac;
+}
+html.dark .nota-rica .cor-azul {
+  color: #93c5fd;
+}
+html.dark .nota-rica .cor-roxo {
+  color: #d8b4fe;
+}
+
+/* Marca-texto: o fundo claro continua igual nos dois modos, então a letra
+   dentro dele é sempre escura — inclusive a de uma cor de texto por cima,
+   senão o tom claro do modo noturno sumiria no amarelo. */
+.nota-rica [class*='grifo-'],
+.nota-rica [class*='grifo-'] *,
+html.dark .nota-rica [class*='grifo-'],
+html.dark .nota-rica [class*='grifo-'] * {
+  color: #0f172a;
+}
+.nota-rica [class*='grifo-'] {
+  border-radius: 0.2rem;
+  padding: 0 0.15rem;
+}
+.nota-rica .grifo-amarelo {
+  background-color: #fef08a;
+}
+.nota-rica .grifo-verde {
+  background-color: #bbf7d0;
+}
+.nota-rica .grifo-azul {
+  background-color: #bfdbfe;
+}
+.nota-rica .grifo-rosa {
+  background-color: #fbcfe8;
+}
+.nota-rica .grifo-laranja {
+  background-color: #fed7aa;
+}
+/* grifo antigo, feito antes das classes: o fundo vem embutido no style */
+html.dark .nota-rica mark,
+html.dark .nota-rica [style*='background-color']:not([style*='transparent']),
+html.dark .nota-rica [style*='background:']:not([style*='transparent']) {
+  color: #0f172a;
+}
 /* imagem dentro do texto: acompanha a largura do card */
 .nota-rica img {
   display: block;
