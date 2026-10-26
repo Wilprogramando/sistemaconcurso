@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { Activity, CalendarCheck, Flame, Target, TrendingUp, Trophy } from 'lucide-react';
 import { createClient, getUserId } from '@/lib/supabase/server';
-import { Card, Empty, Stat } from '@/components/ui';
+import { Anel, Card, Empty } from '@/components/ui';
+import Contador from '@/components/contador';
 import { BarrasDiarias, LinhaEvolucao, Medidor, type Dia, type Ponto } from '@/components/graficos';
 import type { DisciplineStats } from '@/lib/types';
 
@@ -81,8 +82,29 @@ export default async function EstatisticasPage() {
 
   const recentes = (sessions ?? []).slice().reverse().slice(0, 15);
 
+  const linhas = [
+    {
+      icone: Activity,
+      label: 'Questões respondidas',
+      valor: totalRespondidas.toLocaleString('pt-BR'),
+      nota: 'em todas as sessões',
+    },
+    {
+      icone: Trophy,
+      label: 'Questões dominadas',
+      valor: `${dominadas}/${estudadas}`,
+      nota: '3 acertos seguidos, sem recaída',
+    },
+    {
+      icone: Flame,
+      label: 'Sequência',
+      valor: `${sequencia} ${sequencia === 1 ? 'dia' : 'dias'}`,
+      nota: `${diasAtivos} de 14 dias ativos`,
+    },
+  ];
+
   return (
-    <div className="space-y-5">
+    <div className="entra space-y-5">
       <div>
         <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl dark:text-slate-100">
           Estatísticas
@@ -92,36 +114,57 @@ export default async function EstatisticasPage() {
         </p>
       </div>
 
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        <Stat
-          label="Questões respondidas"
-          value={totalRespondidas}
-          hint="em todas as sessões"
-          icon={Activity}
-          tone="brand"
-        />
-        <Stat
-          label="Acerto geral"
-          value={geral === null ? '—' : `${geral}%`}
-          hint={geral === null ? 'sem dados ainda' : `${totalAcertos} de ${totalRespondidas}`}
-          icon={Target}
-          tone={geral === null ? 'default' : geral >= 70 ? 'good' : geral >= 50 ? 'warn' : 'bad'}
-        />
-        <Stat
-          label="Questões dominadas"
-          value={`${dominadas}/${estudadas}`}
-          hint="3 acertos seguidos, sem recaída"
-          icon={Trophy}
-          tone="good"
-        />
-        <Stat
-          label="Sequência"
-          value={`${sequencia} ${sequencia === 1 ? 'dia' : 'dias'}`}
-          hint={`${diasAtivos} dias ativos nas últimas 2 semanas`}
-          icon={Flame}
-          tone={sequencia >= 3 ? 'good' : 'default'}
-        />
-      </div>
+      {/* Placar: o acerto geral é a razão que manda na tela, então ocupa o
+          anel; os outros três números ficam quietos ao lado, em linha. */}
+      <section className="rounded-2xl bg-white p-5 ring-1 ring-slate-200/80 sm:p-6 dark:bg-slate-900 dark:ring-slate-700/70">
+        <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-center sm:gap-8">
+          <Anel
+            valor={geral}
+            meta={geral === null ? undefined : 70}
+            rotulo={geral === null ? 'sem dados' : `acerto geral de ${geral}%`}
+          >
+            <span>
+              <span className="block text-4xl leading-none font-bold text-slate-900 tabular-nums dark:text-slate-100">
+                {geral === null ? '—' : <Contador para={geral} sufixo="%" />}
+              </span>
+              <span className="mt-1 block text-xs text-slate-500 dark:text-slate-400">acerto</span>
+            </span>
+          </Anel>
+
+          <div className="min-w-0 flex-1">
+            <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
+              {geral === null
+                ? 'Sem questões respondidas ainda'
+                : geral >= 70
+                  ? 'Acima da meta de 70%'
+                  : `Faltam ${70 - geral} pontos para a meta de 70%`}
+            </h2>
+            <p className="mt-0.5 text-sm text-slate-500 dark:text-slate-400">
+              {geral === null
+                ? 'Treine uma rodada de questões e o placar começa a contar.'
+                : `${totalAcertos.toLocaleString('pt-BR')} acertos em ${totalRespondidas.toLocaleString('pt-BR')} questões. O risco na trilha é a meta.`}
+            </p>
+
+            <dl className="mt-4 grid gap-x-6 gap-y-3 border-t border-slate-200 pt-4 sm:grid-cols-3 dark:border-slate-700/70">
+              {linhas.map((l) => {
+                const Icone = l.icone;
+                return (
+                  <div key={l.label} className="flex items-start gap-2.5">
+                    <Icone size={16} className="mt-1 shrink-0 text-slate-400 dark:text-slate-500" />
+                    <div className="min-w-0">
+                      <dd className="text-xl leading-tight font-bold text-slate-900 tabular-nums dark:text-slate-100">
+                        {l.valor}
+                      </dd>
+                      <dt className="text-sm text-slate-600 dark:text-slate-300">{l.label}</dt>
+                      <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">{l.nota}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </dl>
+          </div>
+        </div>
+      </section>
 
       <Card
         title="Últimos 14 dias"

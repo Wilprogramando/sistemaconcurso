@@ -98,6 +98,90 @@ export function Stat({
   );
 }
 
+/**
+ * Anel de progresso: a razão principal de uma tela, em volta do número.
+ *
+ * O traço é desenhado por `stroke-dasharray`, e a classe `.desenha` o faz
+ * nascer do zero na carga — `--traco` é o perímetro, de onde a animação
+ * parte. Só SVG e CSS: roda no servidor, sem JavaScript.
+ *
+ * A meta aparece como um risco na trilha, não como outra cor no traço: o
+ * semáforo verde-amarelo-vermelho num anel só confunde quem lê rápido.
+ */
+export function Anel({
+  valor,
+  meta,
+  tamanho = 148,
+  grossura = 12,
+  children,
+  rotulo,
+}: {
+  valor: number | null;
+  meta?: number;
+  tamanho?: number;
+  grossura?: number;
+  children?: React.ReactNode;
+  rotulo?: string;
+}) {
+  const v = valor === null ? 0 : Math.max(0, Math.min(100, valor));
+  const r = (tamanho - grossura) / 2;
+  const perimetro = 2 * Math.PI * r;
+  const centro = tamanho / 2;
+  const anguloMeta = meta !== undefined ? (meta / 100) * 360 - 90 : null;
+
+  return (
+    <div
+      className="viz relative shrink-0"
+      style={{ width: tamanho, height: tamanho }}
+      role="img"
+      aria-label={rotulo ?? (valor === null ? 'sem dados' : `${Math.round(v)}%`)}
+    >
+      <svg width={tamanho} height={tamanho} viewBox={`0 0 ${tamanho} ${tamanho}`} aria-hidden>
+        <circle
+          cx={centro}
+          cy={centro}
+          r={r}
+          fill="none"
+          strokeWidth={grossura}
+          stroke="var(--viz-grid)"
+        />
+        {valor !== null && (
+          <circle
+            className="desenha"
+            cx={centro}
+            cy={centro}
+            r={r}
+            fill="none"
+            strokeWidth={grossura}
+            strokeLinecap="round"
+            stroke="var(--viz-seq-450)"
+            style={
+              {
+                '--traco': perimetro,
+                strokeDasharray: perimetro,
+                strokeDashoffset: perimetro * (1 - v / 100),
+                transform: `rotate(-90deg)`,
+                transformOrigin: 'center',
+              } as React.CSSProperties
+            }
+          />
+        )}
+        {anguloMeta !== null && (
+          <line
+            x1={centro + (r - grossura / 2 - 1) * Math.cos((anguloMeta * Math.PI) / 180)}
+            y1={centro + (r - grossura / 2 - 1) * Math.sin((anguloMeta * Math.PI) / 180)}
+            x2={centro + (r + grossura / 2 + 1) * Math.cos((anguloMeta * Math.PI) / 180)}
+            y2={centro + (r + grossura / 2 + 1) * Math.sin((anguloMeta * Math.PI) / 180)}
+            stroke="var(--viz-meta)"
+            strokeWidth={2}
+          />
+        )}
+      </svg>
+      <div className="absolute inset-0 grid place-items-center text-center">{children}</div>
+    </div>
+  );
+}
+
 export function Bar({ percent, tone = 'brand' }: { percent: number; tone?: 'brand' | 'auto' }) {
   const p = Math.max(0, Math.min(100, percent));
   const cor =

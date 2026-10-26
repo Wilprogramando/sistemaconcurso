@@ -57,7 +57,7 @@ export default function ErrorItem({
 
   if (oculto) {
     return (
-      <div className="flex items-center justify-between gap-3 rounded-2xl bg-slate-100 px-4 py-3 text-sm text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+      <div className="surge flex items-center justify-between gap-3 rounded-2xl bg-slate-100 px-4 py-3 text-sm text-slate-600 dark:bg-slate-800 dark:text-slate-300">
         <span className="inline-flex items-center gap-2">
           <Check size={16} className="text-emerald-600" />
           {resolved ? 'Reaberto.' : 'Marcado como resolvido.'}
@@ -74,15 +74,27 @@ export default function ErrorItem({
   }
 
   const gabarito =
-    answer === 'C' ? 'CERTO' : answer === 'E' ? 'ERRADO' : answer ? `alternativa ${answer}` : '—';
+    answer === 'C' ? 'certo' : answer === 'E' ? 'errado' : answer ? `alternativa ${answer}` : '—';
+
+  const temMotivo = texto.trim().length > 0;
 
   return (
-    <article className="rounded-2xl bg-white p-4 ring-1 ring-slate-200 sm:p-5 dark:bg-slate-900 dark:ring-slate-700">
+    // A régua na lateral é o estado da ficha à distância: âmbar enquanto o
+    // motivo do erro não foi escrito, verde quando já foi.
+    <article
+      className={`relative overflow-hidden rounded-2xl bg-white p-4 pl-5 ring-1 ring-slate-200 sm:p-5 sm:pl-6 dark:bg-slate-900 dark:ring-slate-700`}
+    >
+      <span
+        aria-hidden
+        className={`absolute inset-y-0 left-0 w-1.5 transition-colors ${
+          temMotivo ? 'bg-emerald-500' : 'bg-amber-400'
+        }`}
+      />
       <header className="flex flex-wrap items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
         {disciplineName && disciplineSlug && (
           <Link
             href={`/materias/${disciplineSlug}`}
-            className="rounded-full bg-slate-100 px-2.5 py-0.5 font-semibold text-slate-700 transition hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300"
+            className="rounded-full bg-slate-100 px-2.5 py-0.5 font-semibold text-slate-700 transition hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
           >
             {disciplineName}
           </Link>
@@ -93,11 +105,14 @@ export default function ErrorItem({
       <p className="mt-2.5 text-sm leading-7 text-slate-900 dark:text-slate-100">{statement}</p>
 
       <div className="mt-3 rounded-xl bg-emerald-50 p-3.5 dark:bg-emerald-950/40">
-        <p className="text-xs font-bold tracking-wide text-emerald-800 uppercase dark:text-emerald-300">
-          Resposta correta: {gabarito}
+        <p className="text-sm text-emerald-900 dark:text-emerald-200">
+          Resposta correta:{' '}
+          <strong className="font-bold">{gabarito}</strong>
         </p>
         {explanation && (
-          <p className="mt-1.5 text-sm leading-7 text-slate-700 dark:text-slate-300">{explanation}</p>
+          <p className="mt-1.5 text-sm leading-7 text-slate-700 dark:text-slate-300">
+            {explanation}
+          </p>
         )}
       </div>
 

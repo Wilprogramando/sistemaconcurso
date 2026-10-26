@@ -1,8 +1,9 @@
 import Link from 'next/link';
-import { FileText, Flag, Scale } from 'lucide-react';
+import { FileText, Flag, Scale, Timer } from 'lucide-react';
 import { createClient, getUserId } from '@/lib/supabase/server';
 import QuestionRunner from '@/components/question-runner';
 import { Card } from '@/components/ui';
+import Contador from '@/components/contador';
 import type { Question } from '@/lib/types';
 import { COLUNAS, comTextosDeApoio, embaralhar } from '@/lib/questions';
 
@@ -26,35 +27,28 @@ export default async function SimuladoPage({
         supabase.from('questions').select('id', { count: 'exact', head: true }).neq('source', 'simulado'),
       ]);
 
-    const opcoes = [
-      {
-        modo: 'prova2023',
-        titulo: 'Prova oficial de 2023',
-        icone: Flag,
-        resumo: `${provaCount ?? 0} questões reais de Soldado da PMSC aplicadas pelo Cebraspe em 27/8/2023, com 5 alternativas, como na prova.`,
-        meta: `${provaCount ?? 0} questões · 2h`,
-        destaque: true,
-      },
+    const secundarios = [
       {
         modo: 'ponderado',
-        titulo: 'Simulado ponderado — 60 questões',
+        titulo: 'Simulado ponderado',
         icone: Scale,
-        resumo: `Sorteia do banco (${bancoCount ?? 0} questões) respeitando a Tabela 8.1: 10 de Institucional, 8 de Constitucional, 8 de Português e assim por diante.`,
-        meta: '60 questões · 2h',
-        destaque: false,
+        resumo: `Sorteia do banco de ${bancoCount ?? 0} questões respeitando a Tabela 8.1: 10 de Institucional, 8 de Constitucional, 8 de Português e assim por diante.`,
+        questoes: 60,
+        tempo: '2h',
       },
       {
         modo: 'apostila',
         titulo: 'Simulado da apostila',
         icone: FileText,
-        resumo: 'O simulado final do capítulo 11, em certo/errado, com o gabarito comentado.',
-        meta: `${simuladoCount ?? 0} questões · 1h`,
-        destaque: false,
+        resumo:
+          'O simulado final do capítulo 11, em certo/errado, com o gabarito comentado questão por questão.',
+        questoes: simuladoCount ?? 0,
+        tempo: '1h',
       },
     ];
 
     return (
-      <div className="space-y-5">
+      <div className="entra space-y-5">
         <div className="min-w-0 flex-1">
           <h1 className="text-2xl font-bold text-slate-900 sm:text-3xl dark:text-slate-100">
             Simulado
@@ -65,30 +59,84 @@ export default async function SimuladoPage({
           </p>
         </div>
 
-        <div className="grid gap-4 lg:grid-cols-3">
-          {opcoes.map((o) => {
+        {/* A prova oficial é a melhor medida que existe aqui, então ela ganha
+            a linha inteira e os números em tamanho de dado, não de etiqueta.
+            Os dois simulados montados ficam abaixo, do mesmo tamanho entre si. */}
+        <section className="overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200/80 dark:bg-slate-900 dark:ring-slate-700/70">
+          <div className="flex flex-col gap-6 p-5 sm:flex-row sm:items-center sm:p-6">
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center gap-2.5">
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-brand-600 text-white">
+                  <Flag size={20} />
+                </span>
+                <div>
+                  <h2 className="text-lg leading-tight font-semibold text-slate-900 dark:text-slate-100">
+                    Prova oficial PMSC 2023
+                  </h2>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    Soldado · Cebraspe · 27 de agosto de 2023
+                  </p>
+                </div>
+              </div>
+              <p className="mt-3 max-w-prose text-sm leading-6 text-slate-600 dark:text-slate-400">
+                As questões que caíram de verdade, com 5 alternativas e no tempo de prova. É o
+                número mais honesto que você consegue hoje.
+              </p>
+              <Link
+                href="/simulado?modo=prova2023"
+                className="mt-4 inline-flex items-center gap-2 rounded-xl bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700"
+              >
+                <Timer size={16} />
+                Iniciar a prova de 2h
+              </Link>
+            </div>
+
+            <dl className="flex shrink-0 gap-6 border-slate-200 sm:flex-col sm:gap-4 sm:border-l sm:pl-6 dark:border-slate-700/70">
+              <div>
+                <dd className="text-3xl leading-none font-bold text-slate-900 tabular-nums dark:text-slate-100">
+                  <Contador para={provaCount ?? 0} />
+                </dd>
+                <dt className="mt-1 text-sm text-slate-500 dark:text-slate-400">questões reais</dt>
+              </div>
+              <div>
+                <dd className="text-3xl leading-none font-bold text-slate-900 tabular-nums dark:text-slate-100">
+                  5
+                </dd>
+                <dt className="mt-1 text-sm text-slate-500 dark:text-slate-400">alternativas</dt>
+              </div>
+              <div>
+                <dd className="text-3xl leading-none font-bold text-slate-900 tabular-nums dark:text-slate-100">
+                  2h
+                </dd>
+                <dt className="mt-1 text-sm text-slate-500 dark:text-slate-400">de relógio</dt>
+              </div>
+            </dl>
+          </div>
+        </section>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          {secundarios.map((o) => {
             const Icone = o.icone;
             return (
-              <Card key={o.modo} className={o.destaque ? 'ring-2 ring-brand-400' : ''}>
+              <Card key={o.modo}>
                 <div className="flex h-full flex-col">
-                  <span
-                    className={`grid h-10 w-10 place-items-center rounded-xl ${
-                      o.destaque
-                        ? 'bg-violet-50 text-violet-600 dark:bg-violet-950 dark:text-violet-300'
-                        : 'bg-brand-50 text-brand-600 dark:bg-brand-950 dark:text-brand-300'
-                    }`}
-                  >
-                    <Icone size={20} />
-                  </span>
-                  <h2 className="mt-3 font-semibold text-slate-900 dark:text-slate-100">{o.titulo}</h2>
-                  <p className="mt-1 text-xs font-medium text-slate-400">{o.meta}</p>
-                  <p className="mt-2 flex-1 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                  <div className="flex items-center gap-2.5">
+                    <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-brand-50 text-brand-600 dark:bg-brand-950 dark:text-brand-300">
+                      <Icone size={18} />
+                    </span>
+                    <h2 className="font-semibold text-slate-900 dark:text-slate-100">{o.titulo}</h2>
+                  </div>
+                  <p className="mt-3 flex-1 text-sm leading-6 text-slate-600 dark:text-slate-400">
                     {o.resumo}
+                  </p>
+                  <p className="mt-3 text-sm text-slate-500 tabular-nums dark:text-slate-400">
+                    {o.questoes} questões em {o.tempo}
                   </p>
                   <Link
                     href={`/simulado?modo=${o.modo}`}
-                    className="mt-4 inline-flex justify-center rounded-xl bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700"
+                    className="mt-3 inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-brand-700 ring-1 ring-slate-300 transition hover:bg-brand-50 hover:ring-brand-300 dark:bg-slate-800 dark:text-brand-200 dark:ring-slate-600 dark:hover:bg-slate-700"
                   >
+                    <Timer size={16} />
                     Iniciar
                   </Link>
                 </div>

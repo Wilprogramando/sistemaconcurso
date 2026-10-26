@@ -49,7 +49,7 @@ export default function DayCheck({
       className={`rounded-md px-2.5 py-1 text-xs font-semibold transition disabled:opacity-60 ${
         marcado
           ? 'bg-emerald-600 text-white'
-          : 'bg-white text-slate-600 ring-1 ring-slate-300 hover:bg-slate-50'
+          : 'bg-white text-slate-600 ring-1 ring-slate-300 hover:bg-slate-50 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-600 dark:hover:bg-slate-700'
       }`}
     >
       {label ? (marcado ? `✓ ${label}` : label) : marcado ? `✓ ${day}` : day}

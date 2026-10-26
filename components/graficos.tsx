@@ -37,7 +37,7 @@ export function Medidor({
 
       <div className="relative mt-1.5 h-2.5 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
         <div
-          className="h-full rounded-full transition-[width] duration-500"
+          className="cresce h-full rounded-full transition-[width] duration-500"
           style={{ width: `${v}%`, background: 'var(--viz-seq-450)' }}
           role="progressbar"
           aria-valuenow={Math.round(v)}
@@ -203,18 +203,30 @@ export function BarrasDiarias({ dias, altura = 160 }: { dias: Dia[]; altura?: nu
                           style={{ height: 3, background: 'var(--viz-grid)' }}
                         />
                       ) : (
-                        <>
+                        // a coluna inteira cresce junto, da base para cima: escalar
+                        // cada segmento à parte desmancharia a proporção
+                        // acertos/erros no meio do caminho
+                        <span
+                          className="cresce-y flex w-full flex-col justify-end"
+                          style={{
+                            height: `${pctTotal}%`,
+                            animationDelay: `${i * 28}ms`,
+                          }}
+                        >
                           {pctErros > 0 && (
                             <span
                               className="block w-full rounded-t-md"
-                              style={{ height: `${pctErros}%`, background: 'var(--viz-s2)' }}
+                              style={{
+                                height: `${(pctErros / pctTotal) * 100}%`,
+                                background: 'var(--viz-s2)',
+                              }}
                             />
                           )}
                           {pctAcertos > 0 && (
                             <span
                               className="block w-full"
                               style={{
-                                height: `${pctAcertos}%`,
+                                height: `${(pctAcertos / pctTotal) * 100}%`,
                                 background: 'var(--viz-s1)',
                                 // 2px de superfície separando os dois segmentos
                                 marginTop: pctErros > 0 ? 2 : 0,
@@ -222,7 +234,7 @@ export function BarrasDiarias({ dias, altura = 160 }: { dias: Dia[]; altura?: nu
                               }}
                             />
                           )}
-                        </>
+                        </span>
                       )}
                     </button>
                   </li>
@@ -305,6 +317,12 @@ export function LinhaEvolucao({ pontos, meta = 70 }: { pontos: Ponto[]; meta?: n
   const ultimo = pontos[n - 1];
   const media = Math.round(pontos.reduce((a, p) => a + p.valor, 0) / n);
 
+  // comprimento da polilinha, para o traço nascer vazio e se desenhar
+  let comprimento = 0;
+  for (let i = 1; i < n; i++) {
+    comprimento += Math.hypot(x(i) - x(i - 1), y(pontos[i].valor) - y(pontos[i - 1].valor));
+  }
+
   function aoMover(e: React.PointerEvent<SVGSVGElement>) {
     const caixaSvg = e.currentTarget.getBoundingClientRect();
     const px = e.clientX - caixaSvg.left;
@@ -371,13 +389,19 @@ export function LinhaEvolucao({ pontos, meta = 70 }: { pontos: Ponto[]; meta?: n
           />
 
           {n > 1 && <path d={area} fill={`url(#${id}-area)`} />}
+          {/* a linha é desenhada da esquerda para a direita na carga: o
+              percurso do acerto é o assunto do gráfico. `--traco` é o
+              comprimento somado dos segmentos — basta para o traço, e não
+              exige medir o caminho no DOM. */}
           <path
+            className="desenha"
             d={linha}
             fill="none"
             stroke="var(--viz-s1)"
             strokeWidth={2.5}
             strokeLinecap="round"
             strokeLinejoin="round"
+            style={{ '--traco': comprimento } as React.CSSProperties}
           />
 
           {ativo !== null && (
