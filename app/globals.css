@@ -38,6 +38,57 @@ body {
   background: var(--fundo);
 }
 
+/* ---------------------------------------------------------------
+   Textura do fundo: malha de pontos finos com dois halos suaves
+   da cor da marca. É desenhada num pseudo-elemento fixo atrás de
+   tudo (`z-index: -1`), então não entra no fluxo, não rola com a
+   página e não rouba clique. Tudo em gradiente: nenhuma imagem
+   para baixar.
+
+   Os pontos vão perdendo força de cima para baixo pela máscara,
+   senão a malha briga com o texto dos cartões na parte de baixo.
+   --------------------------------------------------------------- */
+:root {
+  --ponto: rgba(31, 85, 196, 0.1);
+  --halo-1: rgba(47, 111, 228, 0.1);
+  --halo-2: rgba(96, 148, 247, 0.08);
+}
+
+html.dark {
+  --ponto: rgba(147, 184, 251, 0.1);
+  --halo-1: rgba(31, 85, 196, 0.22);
+  --halo-2: rgba(16, 31, 61, 0.55);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 15% -10%, var(--halo-1) 0, transparent 45%),
+    radial-gradient(circle at 92% 108%, var(--halo-2) 0, transparent 42%),
+    radial-gradient(var(--ponto) 1px, transparent 1px);
+  background-size:
+    100% 100%,
+    100% 100%,
+    24px 24px;
+  background-position:
+    0 0,
+    0 0,
+    0 0;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0, rgba(0, 0, 0, 0.35) 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0, rgba(0, 0, 0, 0.35) 70%, transparent 100%);
+}
+
+/* fundo impresso sai liso: a malha só gasta tinta */
+@media print {
+  body::before {
+    display: none;
+  }
+}
+
 /* respeita quem pediu menos animacao no sistema */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -200,13 +251,20 @@ html.dark .nota-rica .cor-roxo {
 }
 
 /* Marca-texto: o fundo claro continua igual nos dois modos, então a letra
-   dentro dele é sempre escura — inclusive a de uma cor de texto por cima,
-   senão o tom claro do modo noturno sumiria no amarelo. */
+   dentro dele é sempre preta, nos dois modos e em qualquer cor de grifo.
+   Vale também para o que está aninhado no grifo: texto com cor própria,
+   negrito, link. O `!important` é o que vence a cor embutida que o
+   contentEditable grava enquanto se digita — sem ele, o vermelho claro do
+   modo noturno sumiria dentro do amarelo. */
 .nota-rica [class*='grifo-'],
 .nota-rica [class*='grifo-'] *,
-html.dark .nota-rica [class*='grifo-'],
-html.dark .nota-rica [class*='grifo-'] * {
-  color: #0f172a;
+.nota-rica mark,
+.nota-rica mark *,
+.nota-rica [style*='background-color']:not([style*='transparent']),
+.nota-rica [style*='background-color']:not([style*='transparent']) *,
+.nota-rica [style*='background:']:not([style*='transparent']),
+.nota-rica [style*='background:']:not([style*='transparent']) * {
+  color: #0f172a !important;
 }
 .nota-rica [class*='grifo-'] {
   border-radius: 0.2rem;
@@ -226,12 +284,6 @@ html.dark .nota-rica [class*='grifo-'] * {
 }
 .nota-rica .grifo-laranja {
   background-color: #fed7aa;
-}
-/* grifo antigo, feito antes das classes: o fundo vem embutido no style */
-html.dark .nota-rica mark,
-html.dark .nota-rica [style*='background-color']:not([style*='transparent']),
-html.dark .nota-rica [style*='background:']:not([style*='transparent']) {
-  color: #0f172a;
 }
 /* imagem dentro do texto: acompanha a largura do card */
 .nota-rica img {
