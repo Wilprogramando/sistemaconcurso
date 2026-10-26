@@ -300,6 +300,74 @@ html.dark .nota-rica .cor-roxo {
 }
 
 /* ---------------------------------------------------------------
+   Linha verde correndo em volta do card ao passar o mouse.
+
+   É um gradiente cônico girando num pseudo-elemento. A máscara de
+   duas camadas (borda menos o recheio) deixa à vista só a moldura
+   de 1,5px, então o gradiente vira um traço que dá a volta.
+
+   O ângulo é uma propriedade registrada no `@property`: sem isso o
+   navegador trata `--angulo` como texto e não sabe interpolar — a
+   linha ficaria parada. Onde o `@property` não existe, sobra um
+   brilho verde fixo na borda, que é um degrau aceitável.
+   --------------------------------------------------------------- */
+@property --angulo {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.borda-viva {
+  --borda-viva-1: #16a34a;
+  --borda-viva-2: #86efac;
+}
+
+html.dark .borda-viva {
+  --borda-viva-1: #22c55e;
+  --borda-viva-2: #bbf7d0;
+}
+
+.borda-viva::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--angulo),
+    transparent 0 70%,
+    var(--borda-viva-1) 82%,
+    var(--borda-viva-2) 90%,
+    transparent 96%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  /* a camada de dentro é descontada: fica só a moldura */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+.borda-viva:hover::after,
+.borda-viva:focus-within::after {
+  opacity: 1;
+  animation: girar-borda 3.2s linear infinite;
+}
+
+@keyframes girar-borda {
+  to {
+    --angulo: 360deg;
+  }
+}
+
+/* ---------------------------------------------------------------
    Rede de proteção para o celular: palavra comprida (nome de lei,
    URL, PALAVRA EM CAIXA ALTA) quebra em vez de furar o cartão, e
    nenhuma tela rola de lado.

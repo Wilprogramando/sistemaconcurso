@@ -1198,7 +1198,7 @@ function Cartao({
         setPegou(false);
         encerrarArrasto();
       }}
-      className={`relative flex h-full flex-col overflow-hidden rounded-2xl p-4 pl-5 ring-1 transition ${
+      className={`borda-viva relative flex h-full flex-col overflow-hidden rounded-2xl p-4 pl-5 ring-1 transition ${
         nota.pinned
           ? 'bg-brand-50/70 ring-brand-200 dark:bg-gradient-to-br dark:from-emerald-950/70 dark:via-slate-900 dark:to-slate-900 dark:ring-emerald-800/60'
           : 'bg-white ring-slate-200 dark:bg-slate-900/80 dark:ring-slate-700/70'
