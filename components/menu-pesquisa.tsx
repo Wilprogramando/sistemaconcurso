@@ -1,8 +1,20 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Check, Copy, ExternalLink, Eye, EyeOff, Loader2, Scissors, Search, X } from 'lucide-react';
+import {
+  Check,
+  Copy,
+  ExternalLink,
+  Eye,
+  EyeOff,
+  Loader2,
+  Scissors,
+  Search,
+  Sparkles,
+  X,
+} from 'lucide-react';
 import { linkQConcursosGeral } from '@/lib/qconcursos';
+import { linkChatGPT } from '@/lib/chatgpt';
 import { useSessao } from '@/components/sessao';
 import { nextReview, type ReviewState } from '@/lib/srs';
 import type { Alternativa } from '@/lib/types';
@@ -104,12 +116,21 @@ export default function MenuPesquisa() {
 
   // não deixa o menu escapar pela borda da tela
   const largura = 288;
-  const altura = aberto.editavel ? 128 : 96;
+  // o item do ChatGPT entrou na conta: menu mais alto não pode nascer fora da tela
+  const altura = aberto.editavel ? 160 : 128;
   const x = Math.max(8, Math.min(aberto.x, window.innerWidth - largura - 8));
   const y = Math.max(8, Math.min(aberto.y, window.innerHeight - altura - 8));
 
   const pesquisar = () => {
     setBusca(aberto.texto);
+    fechar();
+  };
+  /**
+   * Abre o ChatGPT em outra aba com a pergunta já escrita. A seleção continua
+   * valendo: a aba atual não navega, então voltar não perde o lugar da leitura.
+   */
+  const explicar = () => {
+    window.open(linkChatGPT(aberto.texto), '_blank', 'noopener,noreferrer');
     fechar();
   };
   const copiar = () => {
@@ -141,6 +162,15 @@ export default function MenuPesquisa() {
         >
           <Search size={15} className="shrink-0 text-brand-600 dark:text-brand-300" />
           <span className="min-w-0 truncate">Pesquisar questões: “{aberto.texto}”</span>
+        </button>
+        <button
+          type="button"
+          role="menuitem"
+          onClick={explicar}
+          className="flex w-full items-center gap-2.5 px-3 py-2 text-left font-medium text-slate-900 transition hover:bg-brand-50 dark:text-slate-100 dark:hover:bg-slate-700"
+        >
+          <Sparkles size={15} className="shrink-0 text-emerald-600 dark:text-emerald-400" />
+          <span className="min-w-0 truncate">Explicar no ChatGPT</span>
         </button>
         <button
           type="button"
@@ -489,6 +519,16 @@ function PopupQuestoes({
             className="mr-auto inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-sm font-medium text-brand-700 transition hover:bg-brand-50 dark:text-brand-300 dark:hover:bg-slate-800"
           >
             <ExternalLink size={14} /> Ver mais no QConcursos
+          </a>
+          {/* o pop-up já tem o termo: a pergunta sai pronta, sem copiar e colar */}
+          <a
+            href={linkChatGPT(busca)}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={`Abre o ChatGPT em outra aba com a pergunta sobre “${busca}” já escrita`}
+            className="inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-sm font-medium text-emerald-700 transition hover:bg-emerald-50 dark:text-emerald-400 dark:hover:bg-slate-800"
+          >
+            <Sparkles size={14} /> Explicar no ChatGPT
           </a>
           <button
             type="button"
