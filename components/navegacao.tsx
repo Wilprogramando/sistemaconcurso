@@ -20,6 +20,7 @@ import {
   X,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
+import { avisarAbaReaberta } from '@/lib/reabrir-aba';
 
 export type Item = {
   href: string;
@@ -218,6 +219,7 @@ export function NavInferior() {
               <li key={href} className="flex-1">
                 <Link
                   href={href}
+                  onClick={() => ativo && avisarAbaReaberta(href)}
                   aria-current={ativo ? 'page' : undefined}
                   className={`flex flex-col items-center gap-0.5 py-2 text-[0.68rem] font-medium transition ${
                     ativo ? 'text-brand-600 dark:text-brand-300' : 'text-slate-500 dark:text-slate-400'
