@@ -24,7 +24,7 @@ const PERMITIDAS: Record<string, string[]> = {
   strike: [],
   mark: ['style'],
   span: ['style'],
-  font: ['color'],
+  font: ['color', 'style'],
   code: [],
   pre: [],
   blockquote: [],
@@ -90,7 +90,8 @@ const corValida = (v: string) =>
  */
 function hexDaCor(valor: string): string | null {
   const v = valor.trim().toLowerCase();
-  const rgb = v.match(/^rgba?\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})/);
+  // vírgulas ou espaços: o Chrome novo pode gravar `rgb(254 240 138)`
+  const rgb = v.match(/^rgba?\(\s*(\d{1,3})[\s,]+(\d{1,3})[\s,]+(\d{1,3})/);
   if (rgb)
     return `#${rgb
       .slice(1, 4)
@@ -138,6 +139,28 @@ const CLASSE_FUNDO: Record<string, string> = {
   '#fed7aa': 'grifo-laranja',
 };
 
+/**
+ * Grifo mais próximo de uma cor de fundo qualquer. O marca-texto tem que
+ * sobreviver ao salvar mesmo quando o navegador grava o tom por outro caminho
+ * (`background: rgb(...) none …`, tom levemente diferente): fundo que não é a
+ * paleta cai no grifo mais parecido, em vez de sumir.
+ */
+function grifoMaisProximo(hex: string): string {
+  const canais = (h: string) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
+  const [r, g, b] = canais(hex);
+  let melhor = 'grifo-amarelo';
+  let menor = Infinity;
+  for (const [h, classe] of Object.entries(CLASSE_FUNDO)) {
+    const [r2, g2, b2] = canais(h);
+    const d = (r - r2) ** 2 + (g - g2) ** 2 + (b - b2) ** 2;
+    if (d < menor) {
+      menor = d;
+      melhor = classe;
+    }
+  }
+  return melhor;
+}
+
 /** devolve o `style` que sobrou e as classes de cor que o substituem */
 function limparStyle(valor: string): { style: string; classes: string[] } {
   const partes: string[] = [];
@@ -146,13 +169,22 @@ function limparStyle(valor: string): { style: string; classes: string[] } {
     const [bruta, ...resto] = regra.split(':');
     if (!bruta || !resto.length) continue;
     const prop = bruta.trim().toLowerCase();
-    const v = resto.join(':').trim();
+    let v = resto.join(':').trim();
     if (!PROPS_STYLE.has(prop) || !v) continue;
+    // `background: rgb(254, 240, 138) none repeat scroll 0% 0%` → só a cor
+    if (prop === 'background') {
+      const cor = v.match(/#[0-9a-f]{3,8}\b|rgba?\([^)]*\)|\btransparent\b/i);
+      if (!cor) continue;
+      v = cor[0];
+    }
     if (/url\(|expression|var\(|\\/i.test(v)) continue;
     if (prop === 'color' || prop === 'background-color' || prop === 'background') {
       if (!corValida(v)) continue;
       const hex = hexDaCor(v);
-      const classe = hex ? (prop === 'color' ? CLASSE_TEXTO[hex] : CLASSE_FUNDO[hex]) : undefined;
+      let classe = hex ? (prop === 'color' ? CLASSE_TEXTO[hex] : CLASSE_FUNDO[hex]) : undefined;
+      if (!classe && hex && prop !== 'color' && !/^rgba\(.*[,/]\s*0\s*\)$/i.test(v)) {
+        classe = grifoMaisProximo(hex);
+      }
       if (classe) {
         if (!classes.includes(classe)) classes.push(classe);
         continue;
