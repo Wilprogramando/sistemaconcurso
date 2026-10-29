@@ -24,7 +24,9 @@ const PERMITIDAS: Record<string, string[]> = {
   strike: [],
   mark: ['style', 'class'],
   span: ['style', 'class'],
-  font: ['color'],
+  // o Chrome ainda grava <font style="background-color: …"> no marca-texto,
+  // então a tag precisa aceitar style e class além do color antigo
+  font: ['color', 'style', 'class'],
   code: [],
   pre: [],
   blockquote: [],
