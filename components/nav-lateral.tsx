@@ -3,6 +3,7 @@
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { Marca } from '@/components/configuracoes';
+import { avisarAbaReaberta } from '@/lib/reabrir-aba';
 import { ACOMPANHAR, AVALIAR, ESTUDAR, PAINEL, type Item } from '@/components/navegacao';
 
 const GRUPOS: { titulo: string | null; itens: Item[] }[] = [
@@ -42,6 +43,7 @@ export default function NavLateral({ rodape }: { rodape: React.ReactNode }) {
                   <li key={href}>
                     <Link
                       href={href}
+                      onClick={() => ativo && avisarAbaReaberta(href)}
                       aria-current={ativo ? 'page' : undefined}
                       className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition ${
                         ativo

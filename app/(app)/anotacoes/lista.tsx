@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import {
   AlertTriangle,
@@ -34,6 +34,7 @@ import AnexosDaNota from '@/components/anexos-nota';
 import CorpoNota from '@/components/corpo-nota';
 import { BUCKET } from '@/components/urls-assinadas';
 import { caminhosNoHtml } from '@/lib/html-nota';
+import { useAoReabrirAba } from '@/lib/reabrir-aba';
 import { visualDe } from '@/lib/disciplinas-visual';
 import { ORDEM_TAGS, TAGS, type Nota, type Tag } from '@/lib/notas';
 
@@ -59,6 +60,13 @@ export default function ListaDeNotas({
 }) {
   const [selecao, setSelecao] = useState<Selecao>(null);
   const [naLixeira, setNaLixeira] = useState(false);
+
+  // clicar em "Anotações" no menu volta para a grade com todas as matérias
+  const voltarParaGrade = useCallback(() => {
+    setSelecao(null);
+    setNaLixeira(false);
+  }, []);
+  useAoReabrirAba('/anotacoes', voltarParaGrade);
 
   /**
    * O que mudou de lado nesta visita, antes de o servidor devolver a página
