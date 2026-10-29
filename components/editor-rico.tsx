@@ -329,6 +329,28 @@ export default function EditorRico({
     });
   }
 
+  /**
+   * Tira o preto que sobra depois de remover o grifo.
+   *
+   * Dentro do marca-texto o CSS força a letra escura, e o Chrome copia essa
+   * cor calculada para dentro do `style` quando mexe no trecho. Sem o fundo
+   * amarelo por baixo, esse preto ficava invisível no modo noturno. Some só
+   * o preto do grifo: a cor escolhida na paleta pelo usuário fica.
+   */
+  function tirarPretoDoGrifo() {
+    const caixa = ref.current;
+    if (!caixa) return;
+    for (const el of caixa.querySelectorAll<HTMLElement>('[style*="color"]')) {
+      const cor = el.style.color.replace(/\s/g, '').toLowerCase();
+      if (cor !== '#0f172a' && cor !== 'rgb(15,23,42)') continue;
+      // ainda está dentro de um grifo: lá o preto é proposital
+      if (el.closest('[class*="grifo-"], mark')) continue;
+      el.style.removeProperty('color');
+      if (!el.getAttribute('style')) el.removeAttribute('style');
+    }
+    avisar();
+  }
+
   function inserirHtml(html: string) {
     restaurarIntervalo();
     document.execCommand('insertHTML', false, html);
@@ -624,6 +646,7 @@ export default function EditorRico({
           cores={CORES_FUNDO}
           aoEscolher={(v) => {
             comando('hiliteColor', v);
+            if (v === 'transparent') tirarPretoDoGrifo();
             setMenu(null);
           }}
         />
