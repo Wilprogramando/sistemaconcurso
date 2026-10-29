@@ -43,6 +43,12 @@ const TEXTO_NOTURNO: Record<string, string> = {
   '#7e22ce': '#c084fc',
 };
 
+/** `#dc2626` → `rgb(220,38,38)`, que é como o DOM devolve `style.color` */
+function hexParaRgb(hex: string) {
+  const n = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16));
+  return `rgb(${n.join(',')})`;
+}
+
 const CORES_FUNDO = [
   { nome: 'Amarelo', valor: '#fef08a' },
   { nome: 'Verde', valor: '#bbf7d0' },
@@ -330,20 +336,33 @@ export default function EditorRico({
   }
 
   /**
-   * Tira o preto que sobra depois de remover o grifo.
+   * As cores de letra da paleta, em rgb, do jeito que o DOM devolve. Os dois
+   * tons da cor-padrão ficam de fora de propósito: embutidos, eles seriam o
+   * preto do modo claro dentro do modo noturno, ou o contrário. Padrão é
+   * herdar a cor do tema, sem `style` nenhum.
+   */
+  const CORES_DA_PALETA = new Set(
+    [...Object.keys(TEXTO_NOTURNO), ...Object.values(TEXTO_NOTURNO)]
+      .filter((c) => c !== '#0f172a' && c !== '#e2e8f0')
+      .map(hexParaRgb),
+  );
+
+  /**
+   * Tira a cor que sobra depois de remover o grifo.
    *
-   * Dentro do marca-texto o CSS força a letra escura, e o Chrome copia essa
-   * cor calculada para dentro do `style` quando mexe no trecho. Sem o fundo
-   * amarelo por baixo, esse preto ficava invisível no modo noturno. Some só
-   * o preto do grifo: a cor escolhida na paleta pelo usuário fica.
+   * Ao mexer no trecho, o Chrome copia para o `style` a cor calculada da hora:
+   * o preto que o CSS força dentro do marca-texto, ou o cinza do modo claro.
+   * Sem o fundo amarelo por baixo, essa cor embutida vence o tema e o texto
+   * some no modo noturno. Só as cores da paleta ficam — o resto volta a herdar
+   * a cor do tema.
    */
   function tirarPretoDoGrifo() {
     const caixa = ref.current;
     if (!caixa) return;
     for (const el of caixa.querySelectorAll<HTMLElement>('[style*="color"]')) {
-      const cor = el.style.color.replace(/\s/g, '').toLowerCase();
-      if (cor !== '#0f172a' && cor !== 'rgb(15,23,42)') continue;
-      // ainda está dentro de um grifo: lá o preto é proposital
+      const cor = el.style.color.trim().toLowerCase();
+      if (!cor || CORES_DA_PALETA.has(cor.replace(/\s/g, ''))) continue;
+      // ainda está dentro de um grifo: lá a letra escura é proposital
       if (el.closest('[class*="grifo-"], mark')) continue;
       el.style.removeProperty('color');
       if (!el.getAttribute('style')) el.removeAttribute('style');

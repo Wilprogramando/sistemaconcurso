@@ -212,6 +212,13 @@ function limparStyle(valor: string): { style: string; classes: string[]; semFund
         semFundo = true;
         continue;
       }
+
+      // Cor de letra fora da paleta é jogada fora, e o trecho volta a herdar
+      // a cor do tema. É o que o contentEditable deixa para trás: ao mexer no
+      // trecho, o Chrome copia a cor calculada da hora (o cinza do modo claro,
+      // o preto de dentro do grifo) para o style. Embutida, ela ganha do CSS
+      // e sumia no modo noturno. Só as cores da paleta viram classe e ficam.
+      if (prop === 'color') continue;
     }
     if (prop === 'font-weight' && !/^(bold|[1-9]00)$/i.test(v)) continue;
     if (prop === 'text-decoration' && !/^(underline|line-through)$/i.test(v)) continue;
@@ -283,8 +290,7 @@ function limparAtributos(tag: string, bruto: string) {
         if (!classes.includes(classe)) classes.push(classe);
         continue;
       }
-      // <font color> vira style, já que a tag é renomeada para span
-      saida.push(`style="color: ${escaparAtributo(valor)}"`);
+      // fora da paleta, a cor cai: embutida, ela venceria o tema noturno
       continue;
     } else if (nome === 'data-path') {
       if (!/^[\w./-]+$/.test(valor)) continue;
