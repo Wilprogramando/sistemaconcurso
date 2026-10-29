@@ -359,6 +359,22 @@ export default function EditorRico({
   function tirarPretoDoGrifo() {
     const caixa = ref.current;
     if (!caixa) return;
+
+    // O grifo de um trecho já salvo mora na classe, e o botão "Tirar" só
+    // zera o fundo pelo style: o amarelo some, mas a classe fica e é ela que
+    // manda o CSS pintar a letra de preto. A classe sai junto com o fundo.
+    for (const el of caixa.querySelectorAll<HTMLElement>('[class*="grifo-"]')) {
+      const fundo = el.style.backgroundColor.replace(/\s/g, '').toLowerCase();
+      if (fundo !== 'transparent' && fundo !== 'rgba(0,0,0,0)') continue;
+      el.className = el.className
+        .split(/\s+/)
+        .filter((c) => c && !c.startsWith('grifo-'))
+        .join(' ');
+      if (!el.className) el.removeAttribute('class');
+      el.style.removeProperty('background-color');
+      el.style.removeProperty('background');
+    }
+
     for (const el of caixa.querySelectorAll<HTMLElement>('[style*="color"]')) {
       const cor = el.style.color.trim().toLowerCase();
       if (!cor || CORES_DA_PALETA.has(cor.replace(/\s/g, ''))) continue;
