@@ -172,10 +172,14 @@ function grifoMaisProximo(hex: string): string {
   return melhor;
 }
 
+/** fundo que não pinta nada: `transparent` ou qualquer `rgba(…, 0)` */
+const SEM_FUNDO = /^transparent$|^rgba\(.*[,/]\s*0(\.0+)?\s*\)$/i;
+
 /** devolve o `style` que sobrou e as classes de cor que o substituem */
-function limparStyle(valor: string): { style: string; classes: string[] } {
+function limparStyle(valor: string): { style: string; classes: string[]; semFundo: boolean } {
   const partes: string[] = [];
   const classes: string[] = [];
+  let semFundo = false;
   for (const regra of valor.split(';')) {
     const [bruta, ...resto] = regra.split(':');
     if (!bruta || !resto.length) continue;
@@ -193,21 +197,27 @@ function limparStyle(valor: string): { style: string; classes: string[] } {
       if (!corValida(v)) continue;
       const hex = hexDaCor(v);
       let classe = hex ? (prop === 'color' ? CLASSE_TEXTO[hex] : CLASSE_FUNDO[hex]) : undefined;
-      if (!classe && hex && prop !== 'color' && !/^rgba\(.*[,/]\s*0\s*\)$/i.test(v)) {
+      if (!classe && hex && prop !== 'color' && !SEM_FUNDO.test(v)) {
         classe = grifoMaisProximo(hex);
       }
       if (classe) {
         if (!classes.includes(classe)) classes.push(classe);
         continue;
       }
-      // fundo transparente é o botão "Tirar": não deixa grifo nenhum
-      if (prop !== 'color' && /^transparent$/i.test(v)) continue;
+      // fundo transparente é o botão "Tirar": não deixa grifo nenhum. O
+      // Chrome grava a ausência de fundo como `rgba(0, 0, 0, 0)`, que conta
+      // como transparente igual — e precisa sair do style, senão a regra do
+      // grifo no CSS pinta a letra de escuro sobre o fundo escuro.
+      if (prop !== 'color' && SEM_FUNDO.test(v)) {
+        semFundo = true;
+        continue;
+      }
     }
     if (prop === 'font-weight' && !/^(bold|[1-9]00)$/i.test(v)) continue;
     if (prop === 'text-decoration' && !/^(underline|line-through)$/i.test(v)) continue;
     partes.push(`${prop}: ${v}`);
   }
-  return { style: partes.join('; '), classes };
+  return { style: partes.join('; '), classes, semFundo };
 }
 
 function limparHref(valor: string) {
@@ -234,6 +244,8 @@ function limparAtributos(tag: string, bruto: string) {
 
   const saida: string[] = [];
   const classes: string[] = [];
+  /** o style do elemento zerou o fundo: a classe de grifo que ele trazia cai */
+  let tirouGrifo = false;
   let m: RegExpExecArray | null;
   ATRIBUTO.lastIndex = 0;
   while ((m = ATRIBUTO.exec(bruto))) {
@@ -251,6 +263,7 @@ function limparAtributos(tag: string, bruto: string) {
 
     if (nome === 'style') {
       const limpo = limparStyle(valor);
+      if (limpo.semFundo) tirouGrifo = true;
       for (const c of limpo.classes) if (!classes.includes(c)) classes.push(c);
       valor = limpo.style;
       if (!valor) continue;
@@ -285,8 +298,12 @@ function limparAtributos(tag: string, bruto: string) {
     saida.push('target="_blank"', 'rel="noopener noreferrer nofollow"');
   }
 
+  // o botão "Tirar" zera o fundo pelo style, mas a classe de grifo do trecho
+  // já salvo continua no elemento: sem isso o grifo voltava ao salvar
+  const finais = tirouGrifo ? classes.filter((c) => !c.startsWith('grifo-')) : classes;
+
   // as classes são nossas, não vêm do HTML colado: entram depois da limpeza
-  if (classes.length) saida.push(`class="${classes.join(' ')}"`);
+  if (finais.length) saida.push(`class="${finais.join(' ')}"`);
 
   return saida.length ? ` ${saida.join(' ')}` : '';
 }

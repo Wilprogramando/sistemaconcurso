@@ -260,10 +260,10 @@ html.dark .nota-rica .cor-roxo {
 .nota-rica [class*='grifo-'] *,
 .nota-rica mark,
 .nota-rica mark *,
-.nota-rica [style*='background-color']:not([style*='transparent']),
-.nota-rica [style*='background-color']:not([style*='transparent']) *,
-.nota-rica [style*='background:']:not([style*='transparent']),
-.nota-rica [style*='background:']:not([style*='transparent']) * {
+.nota-rica [style*='background-color']:not([style*='transparent']):not([style*='0, 0, 0, 0']):not([style*='0,0,0,0']),
+.nota-rica [style*='background-color']:not([style*='transparent']):not([style*='0, 0, 0, 0']):not([style*='0,0,0,0']) *,
+.nota-rica [style*='background:']:not([style*='transparent']):not([style*='0, 0, 0, 0']):not([style*='0,0,0,0']),
+.nota-rica [style*='background:']:not([style*='transparent']):not([style*='0, 0, 0, 0']):not([style*='0,0,0,0']) * {
   color: #0f172a !important;
 }
 .nota-rica [class*='grifo-'] {
