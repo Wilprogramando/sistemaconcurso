@@ -12,8 +12,8 @@
 
 /** tags mantidas; o valor é a lista de atributos permitidos */
 const PERMITIDAS: Record<string, string[]> = {
-  p: ['style'],
-  div: ['style'],
+  p: ['style', 'class'],
+  div: ['style', 'class'],
   br: [],
   b: [],
   strong: [],
@@ -22,8 +22,8 @@ const PERMITIDAS: Record<string, string[]> = {
   u: [],
   s: [],
   strike: [],
-  mark: ['style'],
-  span: ['style'],
+  mark: ['style', 'class'],
+  span: ['style', 'class'],
   font: ['color'],
   code: [],
   pre: [],
@@ -34,7 +34,7 @@ const PERMITIDAS: Record<string, string[]> = {
   h4: [],
   ul: [],
   ol: [],
-  li: ['style'],
+  li: ['style', 'class'],
   a: ['href', 'title'],
   img: ['src', 'alt', 'data-path', 'style'],
   hr: [],
@@ -138,6 +138,15 @@ const CLASSE_FUNDO: Record<string, string> = {
   '#fed7aa': 'grifo-laranja',
 };
 
+/**
+ * As classes de cor que o saneador escreve e que ele precisa aceitar de volta.
+ *
+ * O HTML gravado não guarda mais o estilo embutido, só a classe. Como o
+ * saneador roda outra vez ao abrir e ao exibir a anotação, uma classe recusada
+ * apagava o grifo e a cor da letra que já estavam salvos.
+ */
+const CLASSES_NOSSAS = new Set([...Object.values(CLASSE_TEXTO), ...Object.values(CLASSE_FUNDO)]);
+
 /** devolve o `style` que sobrou e as classes de cor que o substituem */
 function limparStyle(valor: string): { style: string; classes: string[] } {
   const partes: string[] = [];
@@ -197,6 +206,14 @@ function limparAtributos(tag: string, bruto: string) {
     const nome = m[1].toLowerCase();
     let valor = (m[2] ?? '').replace(/^["']|["']$/g, '');
     if (!ok.includes(nome)) continue;
+
+    if (nome === 'class') {
+      // só as classes da nossa paleta voltam; o resto é lixo do HTML colado
+      for (const c of valor.split(/\s+/)) {
+        if (CLASSES_NOSSAS.has(c) && !classes.includes(c)) classes.push(c);
+      }
+      continue;
+    }
 
     if (nome === 'style') {
       const limpo = limparStyle(valor);
